@@ -1,0 +1,13 @@
+# Keep manufacturer-supplied resources local; the public repository contains
+# our own notes and editable project design files only.
+/doc/电机/WHEELTEC 直流电机附送资料/
+/doc/fpga/**
+!/doc/fpga/**/
+!/doc/fpga/*.md
+!/doc/fpga/**/*.md
+/doc/123.txt
+/doc/技术文档模板.docx
+
+# KiCad local UI state and generated backups.
+*.kicad_prl
+*-backups/
