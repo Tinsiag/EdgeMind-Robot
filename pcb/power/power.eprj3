@@ -1,0 +1,87 @@
+{
+  "name": "power",
+  "owner_uuid": "491b5533a1f14b08a71e8299045b7753",
+  "creator_uuid": "491b5533a1f14b08a71e8299045b7753",
+  "created_at": "2026-09-29 14:27:12",
+  "updated_at": "2026-09-29 14:27:12",
+  "modifier_uuid": "491b5533a1f14b08a71e8299045b7753",
+  "content": "",
+  "archive": false,
+  "cbb_project": 0,
+  "thumb": "",
+  "ticket": 1,
+  "g_ticket": 1,
+  "boards": [],
+  "block_symbol_attrs_groups": {},
+  "default_sheet": "4687734e0e431145",
+  "branch_uuid": "",
+  "pcb_count": 0,
+  "format": "folder",
+  "profile": {
+    "boards": {
+      "f63ce685b2b6e3c6": {
+        "uuid": "f63ce685b2b6e3c6",
+        "title": "Board1",
+        "zIndex": 1
+      }
+    },
+    "schematics": {
+      "7b7ec305705820fb": {
+        "uuid": "7b7ec305705820fb",
+        "name": "Schematic1",
+        "board": "f63ce685b2b6e3c6",
+        "source": "",
+        "version": "1790768041440",
+        "updateTime": 1790768041440
+      }
+    },
+    "sheets": {
+      "acfb3dcf93f3c793": {
+        "uuid": "acfb3dcf93f3c793",
+        "title": "P1",
+        "schematic_uuid": "7b7ec305705820fb",
+        "zIndex": 1,
+        "source": "",
+        "version": "1790768041440",
+        "updateTime": 1790768041440
+      }
+    },
+    "pcbs": {
+      "07cf9457a4f723eb": {
+        "uuid": "07cf9457a4f723eb",
+        "title": "PCB1",
+        "board": "f63ce685b2b6e3c6",
+        "parent_uuid": "",
+        "source": "",
+        "version": "1790663234449",
+        "updateTime": 1790663234449
+      }
+    },
+    "panels": {
+      "c93207d10ee9e5df": {
+        "uuid": "c93207d10ee9e5df",
+        "title": "Panel1",
+        "zIndex": null
+      }
+    },
+    "blockSymbols": {
+      "43064969eb0803c0": {
+        "uuid": "43064969eb0803c0",
+        "title": "Schematic1",
+        "docType": 17,
+        "source": "",
+        "version": "1790765155177",
+        "updateTime": 1790765155177
+      }
+    },
+    "owner": {
+      "uuid": "491b5533a1f14b08a71e8299045b7753"
+    },
+    "simSchematics": {},
+    "simulations": {}
+  },
+  "config": {
+    "defaultSheet": "4687734e0e431145",
+    "settings": {}
+  }
+}
