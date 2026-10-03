@@ -1,0 +1,321 @@
+(footprint "SW-TH_SS-12D10L5"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -6.858 2.286 180)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "53506660-efd8-4c92-aa60-84329a97b3d2")
+		(effects
+			(font
+				(size 0.686 0.6285)
+				(thickness 0.1525)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "SW-TH_SS-12D10L5"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "fc0fb557-1d21-44bd-b9c9-3c33d13193d5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://item.szlcsc.com/datasheet/SS-12D10L5/300104.html"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "11b23d22-9ef7-4e4b-a0db-f87100c8d6c1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3bcfd6af-30c6-4a3f-9af3-6909453f33e9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "JLC_3DModel_Q" "c49f07a32c154ec8ad7cf47670a53981|0819f05c4eef4c71ace90d822a990e87"
+		(at 0 0 0)
+		(layer "Cmts.User")
+		(hide yes)
+		(uuid "2d1f1cd9-f5c1-4bdf-9ae0-53b59c1558f5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "JLC_3D_Size" "13 6.8"
+		(at 0 0 0)
+		(layer "Cmts.User")
+		(hide yes)
+		(uuid "e017ea73-0ff8-4813-a4c3-a5a84ed233fb")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer Part" "SS-12D10L5"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2b141eb1-c095-49ef-80c8-b90d4b1f3681")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "XKB Connection(中国星坤)"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "985f8f01-565e-4bae-bb07-5d383e1f84da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier Part" "C319012"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1831dfe2-f07c-44a8-a9e9-cd94abbbb94d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier" "LCSC"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a8498d9d-72e7-462e-85f5-568bf19343a3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part Name" "柄长5mm 直插双档 滑动开关"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0137ec38-8e73-40e9-a0f8-ca47f1f24e55")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -6.35 -3.35)
+		(end 6.35 -3.35)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "f2824f0f-c469-411c-b8b1-7b2cb0e28a52")
+	)
+	(fp_line
+		(start -6.35 3.35)
+		(end -6.35 -3.35)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1c888012-e9cc-4d5d-82d0-6dadbba182db")
+	)
+	(fp_line
+		(start 6.35 -3.35)
+		(end 6.35 3.35)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6682eba7-346e-449e-a144-fdee226039ad")
+	)
+	(fp_line
+		(start 6.35 3.35)
+		(end -6.35 3.35)
+		(stroke
+			(width 0.254)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "068bd073-07a4-4d42-8ff3-71afa7840cd4")
+	)
+	(fp_rect
+		(start -6.782433 -3.7525)
+		(end 6.7525 3.782433)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "cdbfc470-e922-497e-bee4-9c2a845cd7c6")
+	)
+	(fp_line
+		(start -6.477 -3.477)
+		(end 6.477 -3.477)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "c2ab468e-7ea3-4b95-a060-2a245b2b3882")
+	)
+	(fp_line
+		(start -6.477 3.477)
+		(end -6.477 -3.477)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "404365b8-9ddf-48ed-8042-b4625e617ff8")
+	)
+	(fp_line
+		(start 6.477 -3.477)
+		(end 6.477 3.477)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "7b837955-74f2-4afc-bb5a-218638de72b8")
+	)
+	(fp_line
+		(start 6.477 3.477)
+		(end -6.477 3.477)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "196b9d62-057c-489f-8d0e-bcaf3a80d9a3")
+	)
+	(fp_poly
+		(pts
+			(xy -6.421567 3.454039) (xy -6.454039 3.421567) (xy -6.499961 3.421567) (xy -6.532433 3.454039) (xy -6.532433 3.499961)
+			(xy -6.499961 3.532433) (xy -6.454039 3.532433) (xy -6.421567 3.499961)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "557ba67d-d633-435f-b37d-e369b94a87c8")
+	)
+	(fp_poly
+		(pts
+			(xy -5.1 -0.65) (xy -4.3 -0.65) (xy -4.3 0.65) (xy -5.1 0.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "User.1")
+		(uuid "9384c106-ec7f-4734-95f8-452b5a4dbe66")
+	)
+	(fp_poly
+		(pts
+			(xy -0.4 -0.65) (xy 0.4 -0.65) (xy 0.4 0.65) (xy -0.4 0.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "User.1")
+		(uuid "14338726-b203-4897-8636-4ef4a38efbe0")
+	)
+	(fp_poly
+		(pts
+			(xy 4.3 -0.65) (xy 5.1 -0.65) (xy 5.1 0.65) (xy 4.3 0.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "User.1")
+		(uuid "85368063-a57c-4b3a-8c06-9a01c7cce131")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "a4f5975a-8577-4e5d-bf81-fcc01c533eb6")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
+	)
+	(pad "1" thru_hole oval
+		(at -4.7 0)
+		(size 2 3)
+		(drill oval 1.3 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "af4ef04c-c7f3-4a78-b6be-c47bdf10d87a")
+	)
+	(pad "2" thru_hole oval
+		(at 0 0)
+		(size 2 3)
+		(drill oval 1.3 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "324d691c-c07c-42f3-bdc7-68b705bab5ac")
+	)
+	(pad "3" thru_hole oval
+		(at 4.7 0)
+		(size 2 3)
+		(drill oval 1.3 2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3a98e20b-b8be-440e-ba25-c4a776e8fad1")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/3dmodels/SS-12D10L5.step"
+		(offset (xyz 0 0 0))
+		(scale (xyz 1 1 1))
+		(rotate (xyz -90 0 0))
+	)
+)

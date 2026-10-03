@@ -1,0 +1,82 @@
+{
+  "review_date": "2026-10-03",
+  "scope": "schematic functional review; no circuit edits",
+  "schematic_sha256": "7c99ca9137d6ae5dde63f79e9cc4bcd253ad3965c0a183b6c4e471f2f4b7c98a",
+  "pcb_sha256_at_review": "6451b53c46c88f767f87f33e4068486a3ef0af90ab6724dc4ff1fc0a3def6a39",
+  "netlist_component_count": 53,
+  "connected_node_count": 189,
+  "erc": {
+    "errors": 4,
+    "warnings": 32,
+    "details": "functional-erc.json"
+  },
+  "motor_socket_geometry_read_only": {
+    "J7": {
+      "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+      "angle_degrees": 0,
+      "pad_1_mm": [
+        156.6325,
+        92.7465
+      ],
+      "pad_7_mm": [
+        171.8725,
+        92.7465
+      ],
+      "center_mm": [
+        164.2525,
+        92.7465
+      ]
+    },
+    "J6": {
+      "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+      "angle_degrees": 0,
+      "pad_1_mm": [
+        179.0655,
+        115.747
+      ],
+      "pad_7_mm": [
+        194.3055,
+        115.747
+      ],
+      "center_mm": [
+        186.6855,
+        115.747
+      ]
+    },
+    "J8": {
+      "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+      "angle_degrees": 0,
+      "pad_1_mm": [
+        156.6325,
+        115.874
+      ],
+      "pad_7_mm": [
+        171.8725,
+        115.874
+      ],
+      "center_mm": [
+        164.2525,
+        115.874
+      ]
+    },
+    "J5": {
+      "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+      "angle_degrees": 0,
+      "pad_1_mm": [
+        179.0655,
+        92.7465
+      ],
+      "pad_7_mm": [
+        194.3055,
+        92.7465
+      ],
+      "center_mm": [
+        186.6855,
+        92.7465
+      ]
+    }
+  },
+  "drc_rerun_this_review": false,
+  "hardware_measurements_performed": false,
+  "report": "原理图功能可行性审查_2026-10-03.md"
+}

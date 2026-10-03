@@ -27,57 +27,28 @@
         "uuid": "f63ce685b2b6e3c6",
         "title": "Board1",
         "zIndex": 1
+      },
+      "097ce7ef9b536d41": {
+        "uuid": "097ce7ef9b536d41",
+        "title": "Board1_1",
+        "zIndex": 2
+      },
+      "c5e63851e987d5b1": {
+        "uuid": "c5e63851e987d5b1",
+        "title": "Board1_2",
+        "zIndex": 3
+      },
+      "cc42346f48063979": {
+        "uuid": "cc42346f48063979",
+        "title": "Board1_3",
+        "zIndex": 4
       }
     },
-    "schematics": {
-      "7b7ec305705820fb": {
-        "uuid": "7b7ec305705820fb",
-        "name": "Schematic1",
-        "board": "f63ce685b2b6e3c6",
-        "source": "",
-        "version": "1790779984032",
-        "updateTime": 1790779984032
-      }
-    },
-    "sheets": {
-      "acfb3dcf93f3c793": {
-        "uuid": "acfb3dcf93f3c793",
-        "title": "P1",
-        "schematic_uuid": "7b7ec305705820fb",
-        "zIndex": 1,
-        "source": "",
-        "version": "1790779984032",
-        "updateTime": 1790779984032
-      }
-    },
-    "pcbs": {
-      "07cf9457a4f723eb": {
-        "uuid": "07cf9457a4f723eb",
-        "title": "PCB1",
-        "board": "f63ce685b2b6e3c6",
-        "parent_uuid": "",
-        "source": "",
-        "version": "1790836515435",
-        "updateTime": 1790836515435
-      }
-    },
-    "panels": {
-      "c93207d10ee9e5df": {
-        "uuid": "c93207d10ee9e5df",
-        "title": "Panel1",
-        "zIndex": null
-      }
-    },
-    "blockSymbols": {
-      "43064969eb0803c0": {
-        "uuid": "43064969eb0803c0",
-        "title": "Schematic1",
-        "docType": 17,
-        "source": "",
-        "version": "1790765155177",
-        "updateTime": 1790765155177
-      }
-    },
+    "schematics": {},
+    "sheets": {},
+    "pcbs": {},
+    "panels": {},
+    "blockSymbols": {},
     "owner": {
       "uuid": "491b5533a1f14b08a71e8299045b7753"
     },

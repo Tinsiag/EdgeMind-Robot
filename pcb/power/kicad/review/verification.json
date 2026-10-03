@@ -1,0 +1,105 @@
+{
+  "physical_components": 53,
+  "validated_pins": 189,
+  "project_local_footprints": 23,
+  "corrected_SMD_pads": 118,
+  "schematic_connectivity_unchanged": true,
+  "component_positions_and_pad_geometry_unchanged": true,
+  "existing_routing_geometry_unchanged": true,
+  "copper_zone_outlines_preserved_and_refilled": 9,
+  "imported_generated_teardrops_discarded_by_native_refill": 97,
+  "before_erc": {
+    "violations": {
+      "total": 230,
+      "errors": 22,
+      "warnings": 208,
+      "types": {
+        "pin_not_driven": 18,
+        "power_pin_not_driven": 4,
+        "footprint_link_issues": 89,
+        "lib_symbol_mismatch": 4,
+        "pin_to_pin": 83,
+        "unconnected_wire_endpoint": 32
+      }
+    }
+  },
+  "after_erc": {
+    "violations": {
+      "total": 36,
+      "errors": 4,
+      "warnings": 32,
+      "types": {
+        "power_pin_not_driven": 4,
+        "unconnected_wire_endpoint": 32
+      }
+    }
+  },
+  "before_drc": {
+    "violations": {
+      "total": 543,
+      "errors": 479,
+      "warnings": 64,
+      "types": {
+        "clearance": 141,
+        "shorting_items": 5,
+        "hole_clearance": 86,
+        "courtyards_overlap": 3,
+        "copper_edge_clearance": 11,
+        "drill_out_of_range": 118,
+        "starved_thermal": 19,
+        "solder_mask_bridge": 96,
+        "silk_edge_clearance": 8,
+        "lib_footprint_issues": 53,
+        "copper_sliver": 3
+      }
+    },
+    "unconnected_items": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "types": {}
+    },
+    "schematic_parity": {
+      "total": 224,
+      "errors": 0,
+      "warnings": 224,
+      "types": {
+        "duplicate_footprints": 3,
+        "missing_footprint": 1,
+        "footprint_symbol_mismatch": 59,
+        "footprint_symbol_field_mismatch": 51,
+        "net_conflict": 106,
+        "extra_footprint": 4
+      }
+    }
+  },
+  "after_drc": {
+    "violations": {
+      "total": 89,
+      "errors": 77,
+      "warnings": 12,
+      "types": {
+        "clearance": 48,
+        "courtyards_overlap": 3,
+        "copper_edge_clearance": 9,
+        "starved_thermal": 17,
+        "silk_edge_clearance": 8,
+        "silk_over_copper": 4
+      }
+    },
+    "unconnected_items": {
+      "total": 9,
+      "errors": 9,
+      "warnings": 0,
+      "types": {
+        "unconnected_items": 9
+      }
+    },
+    "schematic_parity": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "types": {}
+    }
+  }
+}

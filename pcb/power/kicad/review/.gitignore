@@ -1,0 +1,6 @@
+# Local visual inspection exports and Python cache, not manufacturing outputs.
+*.pdf
+*.png
+*.svg
+power-assembly.step
+__pycache__/

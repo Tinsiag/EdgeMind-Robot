@@ -1,0 +1,45 @@
+{
+  "non_model_data_unchanged": true,
+  "files_compared_to_latest_backup": 24,
+  "backup": "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\3d-backups\\20261003-003910",
+  "board_library_model_match": true,
+  "all_referenced_model_files_exist": true,
+  "model_bindings": 53,
+  "model_files": 13,
+  "step_export_success": true,
+  "native_render_success": true,
+  "motor_interfaces": {
+    "references": [
+      "J5",
+      "J6",
+      "J7",
+      "J8"
+    ],
+    "type": "female socket",
+    "pitch_mm": 2.54,
+    "pins_per_row": 7,
+    "schematic_footprints_match_pcb": true
+  },
+  "xt60_model": {
+    "file": "XT60PW-M.step",
+    "solids": 7,
+    "source_download_identical": true,
+    "simplified_model_used": false
+  },
+  "board_sha256": "6451b53c46c88f767f87f33e4068486a3ef0af90ab6724dc4ff1fc0a3def6a39",
+  "model_sha256": {
+    "C_0603_1608Metric.step": "4857b3dc717675bf1fb22edda622ac3b3ae03cf44d81eefaf3fa3ba3a86d84c1",
+    "C_0805_2012Metric.step": "9a669c1a2f1ea25b88b401acef6efeaa80a067bd7da9db6993de719a7fbe155c",
+    "D_SOD-123.step": "b3dc4065573abc72e3d5b4cca0e908f72a24205a41b6284b1f75ccacbe99adf8",
+    "JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step": "5a74ac21b099c174928a7afd6783a9e1d26e23a1f2418d4cb4856ad6430e9c2a",
+    "LED_0603_1608Metric.step": "98343205ec260ec165026ba2d44329a23096779ac36c553ea84aa7b370242e6d",
+    "L_TechFuse_SL0630.step": "f0b96855d9f723708a93f5c9de8edda87cb5b7e9fb80802daccc349eb1655fbe",
+    "PinHeader_1x08_P2.54mm_Vertical.step": "081e2b47a2d73a4502efc64d77b9002c9a28047b5776a46043c3d9ca37bac9e1",
+    "PinSocket_1x07_P2.54mm_Vertical.step": "ea5b937912dc661ec5e804aac6b5afbf539195f619f3d2b7e9a031e44d0e1b40",
+    "R_0603_1608Metric.step": "1875571c326d0d9e96f36b4efeb8094068ef7619f0a449c781caf0b49c2e5861",
+    "SS-12D10L5.step": "d2714563c30b53bb47bbeb089fed7b326f14920785bee98472bc4f03d66ae551",
+    "TSOT-23-8.step": "dc644a91883054d8f75e38542e63c2050dc8f2e8b7f12e1c57dcd93245fbd473",
+    "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step": "6338ce740fa231c2d3dcc6384e0576994a47240a312a21413cb85d76990a69a0",
+    "XT60PW-M.step": "4275e6105b49a74775c3eb50e679d0736e5a4f2b6ba738f9d29b52eaf1722003"
+  }
+}

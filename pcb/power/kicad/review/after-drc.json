@@ -1,0 +1,2292 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-02T22:51:47",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "ProPrj_power_2026-10-02.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U5 的焊盘 4 [GND]",
+                    "pos": {
+                        "x": 127.547,
+                        "y": 103.222
+                    },
+                    "uuid": "0de82053-521b-418b-a6b6-bb20f906a3aa"
+                },
+                {
+                    "description": "Top Layer 上 U5 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 127.547,
+                        "y": 101.271
+                    },
+                    "uuid": "35e0de08-ad1c-49a7-94e8-444ea05dd33d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U1 的焊盘 4 [GND]",
+                    "pos": {
+                        "x": 127.569,
+                        "y": 120.4215
+                    },
+                    "uuid": "569656cc-ccee-423b-93a4-47f1cbb38518"
+                },
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[VCCIN]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 119.078,
+                        "y": 118.176
+                    },
+                    "uuid": "5329f837-99c1-4e8c-bd14-0ca5b6e234d4"
+                },
+                {
+                    "description": "填充区[VCCIN]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 119.078,
+                        "y": 118.176
+                    },
+                    "uuid": "5329f837-99c1-4e8c-bd14-0ca5b6e234d4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 C9 的焊盘 2 [VCCIN]",
+                    "pos": {
+                        "x": 124.765,
+                        "y": 119.081
+                    },
+                    "uuid": "69e0de64-ae30-41a2-ab71-e1f078382074"
+                },
+                {
+                    "description": "填充区[VCCIN]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 119.078,
+                        "y": 118.176
+                    },
+                    "uuid": "5329f837-99c1-4e8c-bd14-0ca5b6e234d4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U1 的焊盘 2 [VCCIN]",
+                    "pos": {
+                        "x": 127.569,
+                        "y": 119.121
+                    },
+                    "uuid": "b38375dd-9bd9-458d-815a-f2f880c2f350"
+                },
+                {
+                    "description": "Top Layer 上 C9 的焊盘 2 [VCCIN]",
+                    "pos": {
+                        "x": 124.765,
+                        "y": 119.081
+                    },
+                    "uuid": "69e0de64-ae30-41a2-ab71-e1f078382074"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 L2 的焊盘 1 [VCCOUT1]",
+                    "pos": {
+                        "x": 134.5905,
+                        "y": 125.847
+                    },
+                    "uuid": "b2e8ecf4-e2a6-498d-8ab7-03f669a347db"
+                },
+                {
+                    "description": "Top Layer 上 C12 的焊盘 1 [VCCOUT1]",
+                    "pos": {
+                        "x": 138.2805,
+                        "y": 125.891
+                    },
+                    "uuid": "387d6fa4-6fd7-4791-9f80-da3d88b74219"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[VCCOUT1]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 132.385,
+                        "y": 123.891
+                    },
+                    "uuid": "2203300c-8116-4c0f-9857-1698df33ec86"
+                },
+                {
+                    "description": "填充区[VCCOUT1]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 132.385,
+                        "y": 123.891
+                    },
+                    "uuid": "2203300c-8116-4c0f-9857-1698df33ec86"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 L1 的焊盘 1 [VCCOUT]",
+                    "pos": {
+                        "x": 134.5685,
+                        "y": 108.647
+                    },
+                    "uuid": "679d3f4e-acbc-4bef-b87c-0f11ddb6a949"
+                },
+                {
+                    "description": "Top Layer 上 C5 的焊盘 1 [VCCOUT]",
+                    "pos": {
+                        "x": 138.2585,
+                        "y": 108.6915
+                    },
+                    "uuid": "46bea6af-df81-4d17-8a9a-69f305e7fe5a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[VCCOUT]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 132.363,
+                        "y": 106.6915
+                    },
+                    "uuid": "1cf399bb-1813-4132-9281-a857868996eb"
+                },
+                {
+                    "description": "填充区[VCCOUT]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 132.363,
+                        "y": 106.6915
+                    },
+                    "uuid": "1cf399bb-1813-4132-9281-a857868996eb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1517 mm)",
+            "items": [
+                {
+                    "description": "走线 [GND] (Top Layer), 长度: 2.2210 mm",
+                    "pos": {
+                        "x": 134.355,
+                        "y": 118.227
+                    },
+                    "uuid": "1b09ddab-5ab9-4cb4-9047-6a579fbec9b0"
+                },
+                {
+                    "description": "Top Layer 上 R13 的焊盘 1 [Net-(U1-EN)]",
+                    "pos": {
+                        "x": 135.0655,
+                        "y": 118.909
+                    },
+                    "uuid": "26f50c01-2538-4637-ba0e-33628c21faec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1653 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R3 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 100.0735
+                    },
+                    "uuid": "adb2f4d6-9e78-4753-9c3c-e6f6c5f336ec"
+                },
+                {
+                    "description": "走线 [Net-(U5-FB)] (Top Layer), 长度: 1.3970 mm",
+                    "pos": {
+                        "x": 133.5585,
+                        "y": 99.378
+                    },
+                    "uuid": "fcb5dd83-3b8e-4c39-8438-957132141d93"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1715 mm)",
+            "items": [
+                {
+                    "description": "过孔 [VCCIN] (Top Layer - Bottom Layer)",
+                    "pos": {
+                        "x": 135.7925,
+                        "y": 102.468
+                    },
+                    "uuid": "6fd494b8-adf1-433a-8882-9d125219fc11"
+                },
+                {
+                    "description": "Top Layer 上 R7 的焊盘 1 [Net-(U5-EN)]",
+                    "pos": {
+                        "x": 135.0435,
+                        "y": 101.709
+                    },
+                    "uuid": "c68df3ec-6d85-4157-b823-f6dd154f9540"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1653 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(U5-FB)] (Top Layer), 长度: 0.2539 mm",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 99.1985
+                    },
+                    "uuid": "565acf56-a1f0-4803-9409-4edc65f89f86"
+                },
+                {
+                    "description": "Top Layer 上 R3 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 100.0735
+                    },
+                    "uuid": "adb2f4d6-9e78-4753-9c3c-e6f6c5f336ec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1587 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R1 的焊盘 2 [Net-(U5-BST)]",
+                    "pos": {
+                        "x": 131.7285,
+                        "y": 103.216
+                    },
+                    "uuid": "8bf92670-f32a-45b8-9177-fa6499c30aee"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 1.0765 mm",
+                    "pos": {
+                        "x": 130.067,
+                        "y": 102.5715
+                    },
+                    "uuid": "94ac7eac-3a2f-49c5-b90b-5374f4475cfb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Bottom Layer), 长度: 1.3910 mm",
+                    "pos": {
+                        "x": 185.151,
+                        "y": 118.43
+                    },
+                    "uuid": "2042e624-1b77-4405-8185-d21255917ed3"
+                },
+                {
+                    "description": "J2 的PTH 焊盘 4 [GND]",
+                    "pos": {
+                        "x": 185.598,
+                        "y": 119.509
+                    },
+                    "uuid": "a7ec8c04-05d2-4a1a-846d-9b0dd9dbaba2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Bottom Layer), 长度: 1.5259 mm",
+                    "pos": {
+                        "x": 184.072,
+                        "y": 119.509
+                    },
+                    "uuid": "138d7505-688f-4449-b417-ab14020d9fcd"
+                },
+                {
+                    "description": "J2 的PTH 焊盘 4 [GND]",
+                    "pos": {
+                        "x": 185.598,
+                        "y": 119.509
+                    },
+                    "uuid": "a7ec8c04-05d2-4a1a-846d-9b0dd9dbaba2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 11.0305 mm",
+                    "pos": {
+                        "x": 181.624,
+                        "y": 118.075
+                    },
+                    "uuid": "b6dc37c2-37ba-4988-b54d-3c9adf1db428"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 22.7905 mm",
+                    "pos": {
+                        "x": 163.5575,
+                        "y": 117.719
+                    },
+                    "uuid": "f6940c1f-f869-43eb-a36d-0b9326d9f75b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LAIN1] (Bottom Layer), 长度: 4.6990 mm",
+                    "pos": {
+                        "x": 174.422,
+                        "y": 116.957
+                    },
+                    "uuid": "1be08916-9535-499e-a371-b4f2eb546ce2"
+                },
+                {
+                    "description": "过孔 [/LAIN2] (Top Layer - Bottom Layer)",
+                    "pos": {
+                        "x": 175.006,
+                        "y": 113.147
+                    },
+                    "uuid": "63bc2198-527c-4814-837f-4adcd29c115d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 0.9348 mm",
+                    "pos": {
+                        "x": 161.2445,
+                        "y": 114.745
+                    },
+                    "uuid": "0612bf2a-c0f2-4425-9c72-40f1e06079c2"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 3 [/RAIN1]",
+                    "pos": {
+                        "x": 161.7125,
+                        "y": 115.874
+                    },
+                    "uuid": "b14cb43a-0775-4fc9-8622-37973308fee1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1270 mm)",
+            "items": [
+                {
+                    "description": "走线 [/RAIN2] (Top Layer), 长度: 2.0704 mm",
+                    "pos": {
+                        "x": 164.2525,
+                        "y": 115.874
+                    },
+                    "uuid": "6767b10f-4f8d-432e-ac0e-ff0f55283f58"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 22.7905 mm",
+                    "pos": {
+                        "x": 163.5575,
+                        "y": 117.719
+                    },
+                    "uuid": "f6940c1f-f869-43eb-a36d-0b9326d9f75b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1950 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(USB1-CC2)] (Top Layer), 长度: 0.0396 mm",
+                    "pos": {
+                        "x": 136.83,
+                        "y": 86.284
+                    },
+                    "uuid": "5eb2db94-cef5-487d-81d4-44ec31d386a5"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 B4A9 [VCCOUT]",
+                    "pos": {
+                        "x": 136.208,
+                        "y": 86.312
+                    },
+                    "uuid": "f6035d54-23fc-433c-92d6-20af4836100d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1270 mm)",
+            "items": [
+                {
+                    "description": "走线 [/RAIN2] (Top Layer), 长度: 22.7905 mm",
+                    "pos": {
+                        "x": 165.7165,
+                        "y": 117.338
+                    },
+                    "uuid": "32d3203f-abb1-4636-bdb6-4e4edc962b40"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 2.5314 mm",
+                    "pos": {
+                        "x": 186.348,
+                        "y": 117.719
+                    },
+                    "uuid": "50ebe88a-ccb3-4710-8ce3-e76a1515a3e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1950 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(USB1-CC2)] (Top Layer), 长度: 1.8390 mm",
+                    "pos": {
+                        "x": 136.83,
+                        "y": 84.445
+                    },
+                    "uuid": "94141a68-6606-4a4d-9eb9-c7622a5a72f1"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 B4A9 [VCCOUT]",
+                    "pos": {
+                        "x": 136.208,
+                        "y": 86.312
+                    },
+                    "uuid": "f6035d54-23fc-433c-92d6-20af4836100d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "走线 [/RBIN1] (Top Layer), 长度: 1.5310 mm",
+                    "pos": {
+                        "x": 190.3545,
+                        "y": 115.114
+                    },
+                    "uuid": "45a83f10-11f8-4495-b38f-fb897c05c84c"
+                },
+                {
+                    "description": "J6 的PTH 焊盘 5 [/3.3V]",
+                    "pos": {
+                        "x": 189.2255,
+                        "y": 115.747
+                    },
+                    "uuid": "89d9cd9e-0f39-48f2-a3dc-81f48dd40369"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1950 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(USB2-CC2)] (Top Layer), 长度: 0.0396 mm",
+                    "pos": {
+                        "x": 151.054,
+                        "y": 86.284
+                    },
+                    "uuid": "3eae636f-b700-4f6d-9dfa-bd9e32a9f852"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 B4A9 [VCCOUT1]",
+                    "pos": {
+                        "x": 150.432,
+                        "y": 86.312
+                    },
+                    "uuid": "742ef16b-4f32-4cbd-9685-43dc8557805e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R14 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 118.909
+                    },
+                    "uuid": "48652cd9-bf4c-455e-8f77-c33eab99a117"
+                },
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 0.0113 mm",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 119.5995
+                    },
+                    "uuid": "df631c11-5e19-4932-83ec-0d1f62de7534"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1950 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(USB2-CC2)] (Top Layer), 长度: 2.4740 mm",
+                    "pos": {
+                        "x": 151.054,
+                        "y": 83.81
+                    },
+                    "uuid": "2ad8d731-bfb1-436a-82ab-13fc29ae1fb7"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 B4A9 [VCCOUT1]",
+                    "pos": {
+                        "x": 150.432,
+                        "y": 86.312
+                    },
+                    "uuid": "742ef16b-4f32-4cbd-9685-43dc8557805e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1603 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R14 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 118.909
+                    },
+                    "uuid": "48652cd9-bf4c-455e-8f77-c33eab99a117"
+                },
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 0.8165 mm",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 120.416
+                    },
+                    "uuid": "7986b895-2d57-45c3-a1b6-b674117be564"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1587 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R6 的焊盘 2 [Net-(U1-BST)]",
+                    "pos": {
+                        "x": 131.7505,
+                        "y": 120.416
+                    },
+                    "uuid": "83509f3a-bc24-4d68-910f-a800fe168a21"
+                },
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 1.0765 mm",
+                    "pos": {
+                        "x": 130.089,
+                        "y": 119.7715
+                    },
+                    "uuid": "eef19d74-d6c0-43f6-a7d4-ec7e1e64e44d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "J8 的PTH 焊盘 4 [/RAIN2]",
+                    "pos": {
+                        "x": 164.2525,
+                        "y": 115.874
+                    },
+                    "uuid": "a5b59f05-2d5a-4229-ac68-bc77d93d3252"
+                },
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 3.4425 mm",
+                    "pos": {
+                        "x": 164.687,
+                        "y": 114.745
+                    },
+                    "uuid": "e3682648-d751-4042-84ea-0434a2dd7b65"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R6 的焊盘 1 [Net-(C14-Pad1)]",
+                    "pos": {
+                        "x": 131.7505,
+                        "y": 118.909
+                    },
+                    "uuid": "1f6cfe4e-4903-4406-ba9b-5e723d44ff0f"
+                },
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 0.2546 mm",
+                    "pos": {
+                        "x": 131.1655,
+                        "y": 119.7715
+                    },
+                    "uuid": "ab497645-636b-46f4-87a4-93cf904fda81"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 1.4985 mm",
+                    "pos": {
+                        "x": 133.393,
+                        "y": 119.5915
+                    },
+                    "uuid": "0aeeb5bd-a73c-4dd8-8baa-78b76804bfc5"
+                },
+                {
+                    "description": "Top Layer 上 R14 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 118.909
+                    },
+                    "uuid": "48652cd9-bf4c-455e-8f77-c33eab99a117"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1521 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 0.9351 mm",
+                    "pos": {
+                        "x": 160.5835,
+                        "y": 116.3415
+                    },
+                    "uuid": "8e6082cf-4c9b-48df-83ed-79d7425c030a"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 3 [/RAIN1]",
+                    "pos": {
+                        "x": 161.7125,
+                        "y": 115.874
+                    },
+                    "uuid": "b14cb43a-0775-4fc9-8622-37973308fee1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 2.4629 mm",
+                    "pos": {
+                        "x": 162.338,
+                        "y": 117.003
+                    },
+                    "uuid": "3df0c44d-7eae-429c-ad74-25007a879f9c"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 2.6092 mm",
+                    "pos": {
+                        "x": 161.7125,
+                        "y": 115.874
+                    },
+                    "uuid": "6740eda0-a44c-471e-b70b-c860d15a4132"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1519 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN1] (Top Layer), 长度: 4.5071 mm",
+                    "pos": {
+                        "x": 161.211,
+                        "y": 119.509
+                    },
+                    "uuid": "7d841d55-0505-47df-a9dd-a4b66ef878a9"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 2 [unconnected-(J8-Pad2)]",
+                    "pos": {
+                        "x": 159.1725,
+                        "y": 115.874
+                    },
+                    "uuid": "9f8a2b9c-b8a2-4038-a01d-d97ea1e138a0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN1] (Top Layer), 长度: 2.0365 mm",
+                    "pos": {
+                        "x": 184.1455,
+                        "y": 92.7465
+                    },
+                    "uuid": "1ac4dab6-1b42-475e-b6b9-3350b4b27697"
+                },
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 31.1106 mm",
+                    "pos": {
+                        "x": 186.6855,
+                        "y": 92.7465
+                    },
+                    "uuid": "520e75d5-5b8b-42fb-8eea-460114eec3e2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN1] (Top Layer), 长度: 25.2522 mm",
+                    "pos": {
+                        "x": 184.1455,
+                        "y": 94.783
+                    },
+                    "uuid": "2cfe2d74-185b-4fcf-b5f5-eb701a958a3e"
+                },
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 31.1106 mm",
+                    "pos": {
+                        "x": 186.6855,
+                        "y": 92.7465
+                    },
+                    "uuid": "520e75d5-5b8b-42fb-8eea-460114eec3e2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN1] (Top Layer), 长度: 6.5995 mm",
+                    "pos": {
+                        "x": 166.2895,
+                        "y": 112.639
+                    },
+                    "uuid": "2fa3adfe-bafa-4954-a420-e8c98ac98f5d"
+                },
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 31.1106 mm",
+                    "pos": {
+                        "x": 186.6855,
+                        "y": 92.7465
+                    },
+                    "uuid": "520e75d5-5b8b-42fb-8eea-460114eec3e2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1715 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN1] (Top Layer), 长度: 0.9385 mm",
+                    "pos": {
+                        "x": 158.024,
+                        "y": 116.322
+                    },
+                    "uuid": "97619e3b-923e-435f-8b53-38f278b59876"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 2 [unconnected-(J8-Pad2)]",
+                    "pos": {
+                        "x": 159.1725,
+                        "y": 115.874
+                    },
+                    "uuid": "9f8a2b9c-b8a2-4038-a01d-d97ea1e138a0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "J8 的PTH 焊盘 3 [/RAIN1]",
+                    "pos": {
+                        "x": 161.7125,
+                        "y": 115.874
+                    },
+                    "uuid": "b14cb43a-0775-4fc9-8622-37973308fee1"
+                },
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 0.9355 mm",
+                    "pos": {
+                        "x": 160.5835,
+                        "y": 115.406
+                    },
+                    "uuid": "c69f6000-98ef-4ea5-a5b9-704e45ce4ebb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1520 mm)",
+            "items": [
+                {
+                    "description": "走线 [/LBIN2] (Top Layer), 长度: 1.0935 mm",
+                    "pos": {
+                        "x": 161.2445,
+                        "y": 117.003
+                    },
+                    "uuid": "18b32682-3641-428e-8254-b8134680b674"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 3 [/RAIN1]",
+                    "pos": {
+                        "x": 161.7125,
+                        "y": 115.874
+                    },
+                    "uuid": "b14cb43a-0775-4fc9-8622-37973308fee1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/RBIN1] (Top Layer), 长度: 1.4892 mm",
+                    "pos": {
+                        "x": 189.3015,
+                        "y": 114.061
+                    },
+                    "uuid": "a6ea4b53-d502-4b89-b47c-0542321a8eb8"
+                },
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 1.0420 mm",
+                    "pos": {
+                        "x": 189.3335,
+                        "y": 114.5965
+                    },
+                    "uuid": "d6573179-5a69-41ff-a7eb-c1331458bd93"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 2.0280 mm",
+                    "pos": {
+                        "x": 170.5935,
+                        "y": 118.075
+                    },
+                    "uuid": "9b6bc982-75f7-4319-a2df-ccb1b5a0185c"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 22.7905 mm",
+                    "pos": {
+                        "x": 163.5575,
+                        "y": 117.719
+                    },
+                    "uuid": "f6940c1f-f869-43eb-a36d-0b9326d9f75b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 0.2539 mm",
+                    "pos": {
+                        "x": 189.154,
+                        "y": 114.417
+                    },
+                    "uuid": "6af1e4c9-1a22-4d46-93c5-2854c20b6137"
+                },
+                {
+                    "description": "走线 [/RBIN1] (Top Layer), 长度: 8.8855 mm",
+                    "pos": {
+                        "x": 180.416,
+                        "y": 114.061
+                    },
+                    "uuid": "d89e86bd-a0b9-46f7-962b-916f2e4bcd67"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 2.0280 mm",
+                    "pos": {
+                        "x": 183.058,
+                        "y": 119.509
+                    },
+                    "uuid": "12bdc4fa-54d0-4789-a620-7889ebfdcf50"
+                },
+                {
+                    "description": "走线 [/RAIN1] (Top Layer), 长度: 22.7905 mm",
+                    "pos": {
+                        "x": 163.5575,
+                        "y": 117.719
+                    },
+                    "uuid": "f6940c1f-f869-43eb-a36d-0b9326d9f75b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1020 mm)",
+            "items": [
+                {
+                    "description": "走线 [/3.3V] (Top Layer), 长度: 20.9050 mm",
+                    "pos": {
+                        "x": 168.249,
+                        "y": 114.417
+                    },
+                    "uuid": "46dc8de0-a007-4d21-bd00-dd97f05e5ef7"
+                },
+                {
+                    "description": "走线 [/RBIN1] (Top Layer), 长度: 8.8855 mm",
+                    "pos": {
+                        "x": 180.416,
+                        "y": 114.061
+                    },
+                    "uuid": "d89e86bd-a0b9-46f7-962b-916f2e4bcd67"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1653 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(U1-FB)] (Top Layer), 长度: 1.3970 mm",
+                    "pos": {
+                        "x": 133.5805,
+                        "y": 116.578
+                    },
+                    "uuid": "aea09618-2bcc-4311-8737-b4b1346169f5"
+                },
+                {
+                    "description": "Top Layer 上 R12 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 117.2735
+                    },
+                    "uuid": "fcfd8de3-837f-4ce2-84ed-1724dd597e32"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1653 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(U1-FB)] (Top Layer), 长度: 0.2542 mm",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 116.398
+                    },
+                    "uuid": "c656a312-5e89-47c3-b3d6-7d480370899f"
+                },
+                {
+                    "description": "Top Layer 上 R12 的焊盘 2 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 117.2735
+                    },
+                    "uuid": "fcfd8de3-837f-4ce2-84ed-1724dd597e32"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R1 的焊盘 1 [Net-(C6-Pad1)]",
+                    "pos": {
+                        "x": 131.7285,
+                        "y": 101.709
+                    },
+                    "uuid": "5392fa77-eceb-40c7-9b7a-f92b2103eb8c"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 2.0475 mm",
+                    "pos": {
+                        "x": 131.3235,
+                        "y": 102.3915
+                    },
+                    "uuid": "e303b569-6c89-4a1f-a955-7dafe21ad1b5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R10 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 101.709
+                    },
+                    "uuid": "8eea0da7-8332-4fba-b03a-9d1ba4d528ee"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 0.0117 mm",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 102.4
+                    },
+                    "uuid": "b6f73719-a29e-48f5-8dcb-2df8a96ab600"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1608 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R10 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 101.709
+                    },
+                    "uuid": "8eea0da7-8332-4fba-b03a-9d1ba4d528ee"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 0.8160 mm",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 103.216
+                    },
+                    "uuid": "c7d22f3d-6f91-40b5-a315-681dabaa9cb3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R1 的焊盘 1 [Net-(C6-Pad1)]",
+                    "pos": {
+                        "x": 131.7285,
+                        "y": 101.709
+                    },
+                    "uuid": "5392fa77-eceb-40c7-9b7a-f92b2103eb8c"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 0.2546 mm",
+                    "pos": {
+                        "x": 131.1435,
+                        "y": 102.5715
+                    },
+                    "uuid": "d30e75da-2c6a-4e17-9de0-3f14eafe3a14"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R10 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.379,
+                        "y": 101.709
+                    },
+                    "uuid": "8eea0da7-8332-4fba-b03a-9d1ba4d528ee"
+                },
+                {
+                    "description": "走线 [Net-(U5-EN)] (Top Layer), 长度: 1.4985 mm",
+                    "pos": {
+                        "x": 133.371,
+                        "y": 102.3915
+                    },
+                    "uuid": "9dedaf87-65e0-4e34-a230-dec04c6d05fc"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1884 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R13 的焊盘 1 [Net-(U1-EN)]",
+                    "pos": {
+                        "x": 135.0655,
+                        "y": 118.909
+                    },
+                    "uuid": "26f50c01-2538-4637-ba0e-33628c21faec"
+                },
+                {
+                    "description": "过孔 [VCCIN] (Top Layer - Bottom Layer)",
+                    "pos": {
+                        "x": 135.739,
+                        "y": 119.7425
+                    },
+                    "uuid": "ac6e9277-d4e4-4a7b-8dc0-6473b3c5ead3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1522 mm)",
+            "items": [
+                {
+                    "description": "走线 [Net-(U1-EN)] (Top Layer), 长度: 2.0475 mm",
+                    "pos": {
+                        "x": 131.3455,
+                        "y": 119.5915
+                    },
+                    "uuid": "0f9c1017-5f09-46fe-b3b0-03884fcbb1bc"
+                },
+                {
+                    "description": "Top Layer 上 R6 的焊盘 1 [Net-(C14-Pad1)]",
+                    "pos": {
+                        "x": 131.7505,
+                        "y": 118.909
+                    },
+                    "uuid": "1f6cfe4e-4903-4406-ba9b-5e723d44ff0f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1517 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 R7 的焊盘 1 [Net-(U5-EN)]",
+                    "pos": {
+                        "x": 135.0435,
+                        "y": 101.709
+                    },
+                    "uuid": "c68df3ec-6d85-4157-b823-f6dd154f9540"
+                },
+                {
+                    "description": "走线 [GND] (Top Layer), 长度: 1.4550 mm",
+                    "pos": {
+                        "x": 135.951,
+                        "y": 101.027
+                    },
+                    "uuid": "d097c3df-dd50-4297-aad1-673ea0b2ffa1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 ( 间距 0.2000 mm; 实际 0.1517 mm)",
+            "items": [
+                {
+                    "description": "走线 [GND] (Top Layer), 长度: 0.9648 mm",
+                    "pos": {
+                        "x": 134.496,
+                        "y": 101.027
+                    },
+                    "uuid": "7d1b01af-fa21-42ed-bb1f-2e834e40dd13"
+                },
+                {
+                    "description": "Top Layer 上 R7 的焊盘 1 [Net-(U5-EN)]",
+                    "pos": {
+                        "x": 135.0435,
+                        "y": 101.709
+                    },
+                    "uuid": "c68df3ec-6d85-4157-b823-f6dd154f9540"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "封装 D1",
+                    "pos": {
+                        "x": 129.845,
+                        "y": 88.509
+                    },
+                    "uuid": "9306bd9a-301b-4e4a-bf87-a307ab5e097a"
+                },
+                {
+                    "description": "封装 R15",
+                    "pos": {
+                        "x": 129.906,
+                        "y": 90.987
+                    },
+                    "uuid": "a34e44de-35d5-4dfe-ae66-dc3f779164c8"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "封装 D1",
+                    "pos": {
+                        "x": 129.845,
+                        "y": 88.509
+                    },
+                    "uuid": "9306bd9a-301b-4e4a-bf87-a307ab5e097a"
+                },
+                {
+                    "description": "封装 SW2",
+                    "pos": {
+                        "x": 123.622,
+                        "y": 83.81
+                    },
+                    "uuid": "f1f5035e-89b4-4605-b11c-ce960b77a46e"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "封装 D1",
+                    "pos": {
+                        "x": 129.845,
+                        "y": 88.509
+                    },
+                    "uuid": "9306bd9a-301b-4e4a-bf87-a307ab5e097a"
+                },
+                {
+                    "description": "封装 LED1",
+                    "pos": {
+                        "x": 128.24,
+                        "y": 90.98
+                    },
+                    "uuid": "f788e50a-85fe-4344-b441-933eff04f471"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.3970 mm)",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "CN1 的PTH 焊盘 4 [GND]",
+                    "pos": {
+                        "x": 100.997,
+                        "y": 90.081
+                    },
+                    "uuid": "0ba35382-8cb4-421d-acbf-87012fdb6982"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.1778 mm)",
+            "items": [
+                {
+                    "description": "USB1 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 141.17578,
+                        "y": 85.284421
+                    },
+                    "uuid": "4603f682-f1c8-45d7-a5c3-5cc28e07b836"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 A1B12 [GND]",
+                    "pos": {
+                        "x": 141.808,
+                        "y": 86.312
+                    },
+                    "uuid": "ad157715-ec61-4d71-9b38-b4090bfb914e"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.2102 mm)",
+            "items": [
+                {
+                    "description": "USB1 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 141.17578,
+                        "y": 85.284421
+                    },
+                    "uuid": "4603f682-f1c8-45d7-a5c3-5cc28e07b836"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 A4B9 [VCCOUT]",
+                    "pos": {
+                        "x": 141.008,
+                        "y": 86.312
+                    },
+                    "uuid": "f4cf6e6f-aebe-42c4-971f-e2f053453223"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.1778 mm)",
+            "items": [
+                {
+                    "description": "USB1 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 135.39578,
+                        "y": 85.284421
+                    },
+                    "uuid": "4634e00f-9fca-4275-a5c8-c533c5142e92"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 B1A12 [GND]",
+                    "pos": {
+                        "x": 135.408,
+                        "y": 86.312
+                    },
+                    "uuid": "6b43a29b-8a54-44e9-b966-cc243d75a82f"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.2102 mm)",
+            "items": [
+                {
+                    "description": "USB1 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 135.39578,
+                        "y": 85.284421
+                    },
+                    "uuid": "4634e00f-9fca-4275-a5c8-c533c5142e92"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 B4A9 [VCCOUT]",
+                    "pos": {
+                        "x": 136.208,
+                        "y": 86.312
+                    },
+                    "uuid": "f6035d54-23fc-433c-92d6-20af4836100d"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.1778 mm)",
+            "items": [
+                {
+                    "description": "USB2 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 155.39978,
+                        "y": 85.284421
+                    },
+                    "uuid": "afefb379-e173-40a1-847a-23ed355ad9d6"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 A1B12 [GND]",
+                    "pos": {
+                        "x": 156.032,
+                        "y": 86.312
+                    },
+                    "uuid": "79e09b61-1c7a-453e-820d-e5fd0afc5007"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.2102 mm)",
+            "items": [
+                {
+                    "description": "USB2 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 155.39978,
+                        "y": 85.284421
+                    },
+                    "uuid": "afefb379-e173-40a1-847a-23ed355ad9d6"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 A4B9 [VCCOUT1]",
+                    "pos": {
+                        "x": 155.232,
+                        "y": 86.312
+                    },
+                    "uuid": "3f4121d7-9071-4f55-b1a1-20ed6e2b22ad"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.1778 mm)",
+            "items": [
+                {
+                    "description": "USB2 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 149.61978,
+                        "y": 85.284421
+                    },
+                    "uuid": "b8389a09-55c3-4c70-9aa1-db8e57c92206"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 B1A12 [GND]",
+                    "pos": {
+                        "x": 149.632,
+                        "y": 86.312
+                    },
+                    "uuid": "a5b0225f-2cb4-4070-bd63-63d565ef032b"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "电路板边缘间距违规 (<电路板配置> 中的 \"板边\" 约束 间距 0.5000 mm; 实际 0.2102 mm)",
+            "items": [
+                {
+                    "description": "USB2 的 多边形, 位于 Multi-Layer",
+                    "pos": {
+                        "x": 149.61978,
+                        "y": 85.284421
+                    },
+                    "uuid": "b8389a09-55c3-4c70-9aa1-db8e57c92206"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 B4A9 [VCCOUT1]",
+                    "pos": {
+                        "x": 150.432,
+                        "y": 86.312
+                    },
+                    "uuid": "742ef16b-4f32-4cbd-9685-43dc8557805e"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[Net-(U1-SW)]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 125.781,
+                        "y": 119.573
+                    },
+                    "uuid": "fd6237dd-0604-415c-a7ec-6f4182511ad5"
+                },
+                {
+                    "description": "Top Layer 上 L2 的焊盘 2 [Net-(U1-SW)]",
+                    "pos": {
+                        "x": 127.5245,
+                        "y": 125.847
+                    },
+                    "uuid": "443925ec-1e32-46af-a808-ebcd2674cce9"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[VCCOUT]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 132.363,
+                        "y": 106.6915
+                    },
+                    "uuid": "1cf399bb-1813-4132-9281-a857868996eb"
+                },
+                {
+                    "description": "Top Layer 上 C4 的焊盘 1 [VCCOUT]",
+                    "pos": {
+                        "x": 140.475,
+                        "y": 108.6915
+                    },
+                    "uuid": "7695f7e6-4a4e-4d36-9080-d690d436f27b"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[/VM]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 126.7655,
+                        "y": 82.159
+                    },
+                    "uuid": "da27104c-b0ac-4419-8ba5-3ae266fe4521"
+                },
+                {
+                    "description": "SW2 的PTH 焊盘 1 [/VM]",
+                    "pos": {
+                        "x": 128.322,
+                        "y": 83.81
+                    },
+                    "uuid": "af4ef04c-c7f3-4a78-b6be-c47bdf10d87a"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[Net-(U5-SW)]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 125.759,
+                        "y": 102.3735
+                    },
+                    "uuid": "d71b9409-51fc-44d0-b283-6dfa5eebf142"
+                },
+                {
+                    "description": "Top Layer 上 L1 的焊盘 2 [Net-(U5-SW)]",
+                    "pos": {
+                        "x": 127.5025,
+                        "y": 108.647
+                    },
+                    "uuid": "d4fef03d-0780-46c9-bfd6-3cabbcc98773"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[VCCIN]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 119.056,
+                        "y": 100.9765
+                    },
+                    "uuid": "ea570b17-055f-48b1-a668-0a66e8a47c24"
+                },
+                {
+                    "description": "Top Layer 上 U5 的焊盘 2 [VCCIN]",
+                    "pos": {
+                        "x": 127.547,
+                        "y": 101.9215
+                    },
+                    "uuid": "fdc6d7c1-ffa7-4c29-bf5e-7beab686a694"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[VCCIN]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 119.056,
+                        "y": 100.9765
+                    },
+                    "uuid": "ea570b17-055f-48b1-a668-0a66e8a47c24"
+                },
+                {
+                    "description": "Top Layer 上 C1 的焊盘 2 [VCCIN]",
+                    "pos": {
+                        "x": 120.3515,
+                        "y": 101.906
+                    },
+                    "uuid": "b1657b82-aaef-42a2-84bb-435c0e5ac159"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 U5 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 127.547,
+                        "y": 101.271
+                    },
+                    "uuid": "35e0de08-ad1c-49a7-94e8-444ea05dd33d"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 13 [GND]",
+                    "pos": {
+                        "x": 134.288,
+                        "y": 85.742
+                    },
+                    "uuid": "4e74f324-70d2-41de-9709-d28da5fcb2f8"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 16 [GND]",
+                    "pos": {
+                        "x": 142.928,
+                        "y": 85.742
+                    },
+                    "uuid": "4c001212-3ded-40b9-9e1f-ed48ea9665c2"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 A1B12 [GND]",
+                    "pos": {
+                        "x": 141.808,
+                        "y": 86.312
+                    },
+                    "uuid": "ad157715-ec61-4d71-9b38-b4090bfb914e"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 USB1 的焊盘 B1A12 [GND]",
+                    "pos": {
+                        "x": 135.408,
+                        "y": 86.312
+                    },
+                    "uuid": "6b43a29b-8a54-44e9-b966-cc243d75a82f"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 1 条引线与死铜相连)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "USB2 的PTH 焊盘 13 [GND]",
+                    "pos": {
+                        "x": 148.512,
+                        "y": 85.742
+                    },
+                    "uuid": "ecbf5087-188f-4e0f-87df-1653ddee479a"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 1 条引线与死铜相连)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "USB2 的PTH 焊盘 16 [GND]",
+                    "pos": {
+                        "x": 157.152,
+                        "y": 85.742
+                    },
+                    "uuid": "e028c69c-ba9f-47a4-829c-cc150c996936"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 A1B12 [GND]",
+                    "pos": {
+                        "x": 156.032,
+                        "y": 86.312
+                    },
+                    "uuid": "79e09b61-1c7a-453e-820d-e5fd0afc5007"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 USB2 的焊盘 B1A12 [GND]",
+                    "pos": {
+                        "x": 149.632,
+                        "y": 86.312
+                    },
+                    "uuid": "a5b0225f-2cb4-4070-bd63-63d565ef032b"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 1 条引线与死铜相连)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "J8 的PTH 焊盘 7 [GND]",
+                    "pos": {
+                        "x": 171.8725,
+                        "y": 115.874
+                    },
+                    "uuid": "cf7edd13-82cc-4762-bc29-b01a9625b140"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 Top Layer; 填充区 最小引线数量 2; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 500",
+                    "pos": {
+                        "x": 95.682,
+                        "y": 75.936
+                    },
+                    "uuid": "71b137da-bd5f-42cb-ae40-3020ac78c231"
+                },
+                {
+                    "description": "Top Layer 上 R14 的焊盘 1 [GND]",
+                    "pos": {
+                        "x": 133.401,
+                        "y": 118.909
+                    },
+                    "uuid": "48652cd9-bf4c-455e-8f77-c33eab99a117"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "CN1 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 99.997,
+                        "y": 79.9155
+                    },
+                    "uuid": "01778d7f-e8d4-4176-9a73-94ae22476412"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "CN1 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 99.997,
+                        "y": 79.9155
+                    },
+                    "uuid": "593dce0b-6f7d-49e8-bfe2-63d514b2c065"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "CN1 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 115.497,
+                        "y": 79.9155
+                    },
+                    "uuid": "b15ed987-09a2-4de4-ade1-4e1d92dc9bc7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "CN1 的 弧线, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 105.99658,
+                        "y": 93.827936
+                    },
+                    "uuid": "4801a8e7-6dcb-41ba-82c8-27cc63db7079"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "USB1 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 134.138,
+                        "y": 78.973
+                    },
+                    "uuid": "f2dd281b-bd6d-453f-ac25-12b95970f3f5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "USB1 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 143.078,
+                        "y": 78.973
+                    },
+                    "uuid": "1a1b2d1f-c396-42dc-be38-85b66d9f3940"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "USB2 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 148.362,
+                        "y": 78.973
+                    },
+                    "uuid": "f990e24a-9228-437e-9890-919df50d5ebf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Multi-Layer 上的 矩形",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "2aab4f2c-2550-427b-ba10-03ae5598c068"
+                },
+                {
+                    "description": "USB2 的 线段, 位于 Top Silkscreen Layer",
+                    "pos": {
+                        "x": 157.302,
+                        "y": 78.973
+                    },
+                    "uuid": "25aa53d8-1fd0-4be2-832b-52ec9641d669"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "H4 的参考字段",
+                    "pos": {
+                        "x": 196.012,
+                        "y": 84.064
+                    },
+                    "uuid": "d03e488d-c905-403e-827c-1c266927ac71"
+                },
+                {
+                    "description": "H4 的 NPTH 焊盘",
+                    "pos": {
+                        "x": 196.012,
+                        "y": 84.064
+                    },
+                    "uuid": "10173360-1288-4a29-9c7d-8448ae586840"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "H3 的参考字段",
+                    "pos": {
+                        "x": 195.504,
+                        "y": 125.847
+                    },
+                    "uuid": "7df7dde1-c37e-4a76-a1a9-1913456f1f66"
+                },
+                {
+                    "description": "H3 的 NPTH 焊盘",
+                    "pos": {
+                        "x": 195.504,
+                        "y": 125.847
+                    },
+                    "uuid": "e0738913-345e-4146-ac15-cb682d546408"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "H2 的参考字段",
+                    "pos": {
+                        "x": 104.826,
+                        "y": 103.495
+                    },
+                    "uuid": "1056b6ca-6572-47b8-8331-92baeba21d35"
+                },
+                {
+                    "description": "H2 的 NPTH 焊盘",
+                    "pos": {
+                        "x": 104.826,
+                        "y": 103.495
+                    },
+                    "uuid": "7cd5748a-f57d-41fd-a989-112ace46b222"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "H1 的参考字段",
+                    "pos": {
+                        "x": 104.572,
+                        "y": 125.466
+                    },
+                    "uuid": "5ec63c31-c820-4485-a6b2-263cec243fb3"
+                },
+                {
+                    "description": "H1 的 NPTH 焊盘",
+                    "pos": {
+                        "x": 104.572,
+                        "y": 125.466
+                    },
+                    "uuid": "dea368f6-9468-4393-8e76-c827bb8f63d0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

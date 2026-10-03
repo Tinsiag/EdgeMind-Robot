@@ -1,0 +1,1177 @@
+{
+  "physical_footprints": 57,
+  "model_bindings": 53,
+  "mechanical_holes_without_models": 4,
+  "local_library_files": 23,
+  "unique_models": 13,
+  "non_model_data_unchanged": true,
+  "backup": "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\3d-backups\\20261003-003910",
+  "bindings": [
+    {
+      "reference": "C1",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C10",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C11",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C12",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C13",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C14",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C15",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C16",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C2",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C3",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C4",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C5",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C58",
+      "footprint": "C0805_C58",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C59",
+      "footprint": "C0805_C59",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C6",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C60",
+      "footprint": "C0805_C60",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C61",
+      "footprint": "C0805_C61",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C7",
+      "footprint": "C0603",
+      "source": "Capacitor_SMD.3dshapes/C_0603_1608Metric.step",
+      "file": "C_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C8",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "C9",
+      "footprint": "C0805",
+      "source": "Capacitor_SMD.3dshapes/C_0805_2012Metric.step",
+      "file": "C_0805_2012Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "CN1",
+      "footprint": "CONN-TH_XT60PW-M",
+      "source": "@local",
+      "file": "XT60PW-M.step",
+      "offset": [
+        -12.35,
+        0,
+        4.2
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        -90,
+        0,
+        90
+      ],
+      "note": "Detailed XT60PW-M SolidWorks STEP from Northeastern Rover Electrical Team CADLAB library; original 7 solids, full housing and contacts; body 18.2 x 15.5 x 8.4 mm, both contacts and retention tabs aligned"
+    },
+    {
+      "reference": "D1",
+      "footprint": "SOD-123_L2.7-W1.8-LS3.7-RD",
+      "source": "Diode_SMD.3dshapes/D_SOD-123.step",
+      "file": "D_SOD-123.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J1",
+      "footprint": "CONN-TH_LAIL-PZ2.54-8P-L",
+      "source": "Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x08_P2.54mm_Vertical.step",
+      "file": "PinHeader_1x08_P2.54mm_Vertical.step",
+      "offset": [
+        -8.89,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J2",
+      "footprint": "CONN-TH_LAIL-PZ2.54-8P-L",
+      "source": "Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x08_P2.54mm_Vertical.step",
+      "file": "PinHeader_1x08_P2.54mm_Vertical.step",
+      "offset": [
+        -8.89,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J3",
+      "footprint": "CONN-TH_6P-P2.50_BX-XH2.54-6PZZ",
+      "source": "Connector_JST.3dshapes/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+      "file": "JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+      "offset": [
+        -6.25,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "XH geometry substitute; pin pitch 2.50 mm, not manufacturer-exact"
+    },
+    {
+      "reference": "J4",
+      "footprint": "CONN-TH_6P-P2.50_BX-XH2.54-6PZZ",
+      "source": "Connector_JST.3dshapes/JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+      "file": "JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step",
+      "offset": [
+        -6.25,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "XH geometry substitute; pin pitch 2.50 mm, not manufacturer-exact"
+    },
+    {
+      "reference": "J5",
+      "footprint": "HDR-TH_LAIL-PM2.54-7P-L",
+      "source": "Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x07_P2.54mm_Vertical.step",
+      "file": "PinSocket_1x07_P2.54mm_Vertical.step",
+      "offset": [
+        -7.62,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J6",
+      "footprint": "HDR-TH_LAIL-PM2.54-7P-L",
+      "source": "Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x07_P2.54mm_Vertical.step",
+      "file": "PinSocket_1x07_P2.54mm_Vertical.step",
+      "offset": [
+        -7.62,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J7",
+      "footprint": "HDR-TH_LAIL-PM2.54-7P-L",
+      "source": "Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x07_P2.54mm_Vertical.step",
+      "file": "PinSocket_1x07_P2.54mm_Vertical.step",
+      "offset": [
+        -7.62,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "J8",
+      "footprint": "HDR-TH_LAIL-PM2.54-7P-L",
+      "source": "Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x07_P2.54mm_Vertical.step",
+      "file": "PinSocket_1x07_P2.54mm_Vertical.step",
+      "offset": [
+        -7.62,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "L1",
+      "footprint": "IND-SMD_L7.3-W6.6",
+      "source": "Inductor_SMD.3dshapes/L_TechFuse_SL0630.step",
+      "file": "L_TechFuse_SL0630.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "0630 geometric substitute, 7.12 x 6.60 x 3.00 mm; PSA maximum package 7.3 x 6.6 x 3.0 mm, independent of inductance"
+    },
+    {
+      "reference": "L2",
+      "footprint": "IND-SMD_L7.3-W6.6",
+      "source": "Inductor_SMD.3dshapes/L_TechFuse_SL0630.step",
+      "file": "L_TechFuse_SL0630.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "0630 geometric substitute, 7.12 x 6.60 x 3.00 mm; PSA maximum package 7.3 x 6.6 x 3.0 mm, independent of inductance"
+    },
+    {
+      "reference": "LED1",
+      "footprint": "LED_0603",
+      "source": "LED_SMD.3dshapes/LED_0603_1608Metric.step",
+      "file": "LED_0603_1608Metric.step",
+      "offset": [
+        -0.05075,
+        -0.0075,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R1",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R10",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R11",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R12",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R13",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R14",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R15",
+      "footprint": "R0603_R15",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R2",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R3",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R4",
+      "footprint": "R0603_R4",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R5",
+      "footprint": "R0603_R5",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R6",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R7",
+      "footprint": "R0603",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R8",
+      "footprint": "R0603_R8",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "R9",
+      "footprint": "R0603_R9",
+      "source": "Resistor_SMD.3dshapes/R_0603_1608Metric.step",
+      "file": "R_0603_1608Metric.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "SW2",
+      "footprint": "SW-TH_SS-12D10L5",
+      "source": "@author",
+      "file": "SS-12D10L5.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        -90,
+        0,
+        0
+      ],
+      "note": "Public SS-12D10L5 CAD by McFLY; matching +/-4.7 mm terminal positions, not OEM mechanical sign-off"
+    },
+    {
+      "reference": "U1",
+      "footprint": "TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL",
+      "source": "Package_TO_SOT_SMD.3dshapes/TSOT-23-8.step",
+      "file": "TSOT-23-8.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "U5",
+      "footprint": "TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL",
+      "source": "Package_TO_SOT_SMD.3dshapes/TSOT-23-8.step",
+      "file": "TSOT-23-8.step",
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "note": "KiCad library geometric equivalent"
+    },
+    {
+      "reference": "USB1",
+      "footprint": "TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT",
+      "source": "Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+      "file": "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+      "offset": [
+        0,
+        -1.3,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "GCT geometric substitute; shell pins align after PCB-y +1.30 mm offset; not LAIL OEM CAD"
+    },
+    {
+      "reference": "USB2",
+      "footprint": "TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT",
+      "source": "Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+      "file": "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+      "offset": [
+        0,
+        -1.3,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "note": "GCT geometric substitute; shell pins align after PCB-y +1.30 mm offset; not LAIL OEM CAD"
+    }
+  ]
+}

@@ -1,0 +1,4151 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-02T22:39:47",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/734fd4e0-a6e1-4cb5-8348-642b7ec58253",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C7 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.2413
+                            },
+                            "uuid": "7f13cbe6-5e09-41f0-81da-16d55125a57a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol LED1 引脚 2 [A, Input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.397
+                            },
+                            "uuid": "f699b01f-7e1c-4e8e-ae62-d2c5cd2eee00"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol LED1 引脚 1 [C, Input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.4986
+                            },
+                            "uuid": "97d8e237-054d-4248-9150-9b96ca1a55d2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C15 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.7239
+                            },
+                            "uuid": "5e9c15b7-b072-4e74-8ed5-71dffb0ffca2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 0.7874
+                            },
+                            "uuid": "5ca962d2-6bf7-42d9-b0bd-a5e84e01101f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C6 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 0.508
+                            },
+                            "uuid": "4a1bd4f2-bdfd-4ffe-8957-04ec09074976"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C6 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 0.508
+                            },
+                            "uuid": "e4d2bc05-117d-4dc1-bc19-4a39bd3a6993"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R1 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.3683
+                            },
+                            "uuid": "b2281051-865c-4a0d-8058-7e95b889df40"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C14 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 1.3462,
+                                "y": 0.9906
+                            },
+                            "uuid": "afeed589-1872-407e-90dd-e9fd2f69cbe2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C11 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.3589,
+                                "y": 0.3175
+                            },
+                            "uuid": "75054c34-1cef-42ff-afaa-472e4ccbafc7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R7 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 0.3429
+                            },
+                            "uuid": "8356cde0-55da-4c1e-b28c-60af1bfd0142"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C14 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 0.9906
+                            },
+                            "uuid": "f77f06bd-4d86-46f0-ae4a-208f80821b46"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R6 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 0.8509
+                            },
+                            "uuid": "80132add-ba79-4741-953e-636450f09155"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol C16 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.8001
+                            },
+                            "uuid": "53d3985e-5b83-4312-b70c-9da07fbe0e09"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.9271
+                            },
+                            "uuid": "6c24820b-7622-4dee-9f69-812d475e22f3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R13 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.5748,
+                                "y": 0.8255
+                            },
+                            "uuid": "f26308bc-ba66-4a3e-ba48-77f0fefcb945"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.4064
+                            },
+                            "uuid": "f12b5973-781c-4c29-aee4-3aa56403d0db"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.635
+                            },
+                            "uuid": "7da275d7-b577-47a1-b097-2afad6ccdee6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R4 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.2032
+                            },
+                            "uuid": "66e3a587-da7c-4361-8037-6e633986cfcf"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R5 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.3556
+                            },
+                            "uuid": "d428ffe9-7842-4556-94fc-dcd223057080"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R8 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.7239
+                            },
+                            "uuid": "7011df56-fe6f-4c91-9471-7e9dd715b871"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol R9 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.8763
+                            },
+                            "uuid": "21e7e320-3ed3-44ef-9450-0345e59a23c7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 ? [Drawing-Symbol_A4]",
+                            "pos": {
+                                "x": 0.0,
+                                "y": 2.9718
+                            },
+                            "uuid": "1f4be32f-7c4c-465e-987c-95182a248187"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C58 [CapAcitance]",
+                            "pos": {
+                                "x": 0.2032,
+                                "y": 0.8255
+                            },
+                            "uuid": "6b5f31ba-0130-4157-888a-45b77c490136"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.1651
+                            },
+                            "uuid": "d23871e0-8379-49f5-81be-f0f3c51c75d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "符号 'Ground-GND' 与来源库 'ProPrj_pow-easyedapro' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.1651
+                            },
+                            "uuid": "d23871e0-8379-49f5-81be-f0f3c51c75d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol CN1 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.2159
+                            },
+                            "uuid": "236eb7ba-4474-4e21-b918-2d0160f7b338"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.1651
+                            },
+                            "uuid": "2035d539-f732-4281-96c9-19a65276a1e6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol CN1 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.3429
+                            },
+                            "uuid": "f4847c84-b220-41a1-a395-6af90ab64a18"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.3937
+                            },
+                            "uuid": "f7583eae-3072-4b90-a083-bd8bb9ee94bc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.3937
+                            },
+                            "uuid": "3cb8238b-0658-4961-8013-c9c7589919d8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "符号 'Ground-GND' 与来源库 'ProPrj_pow-easyedapro' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.3937
+                            },
+                            "uuid": "3cb8238b-0658-4961-8013-c9c7589919d8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 CN1 [XT60PW-M]",
+                            "pos": {
+                                "x": 0.254,
+                                "y": 0.254
+                            },
+                            "uuid": "e4d0630e-82af-4a79-92ae-d8a64a0afee4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol CN1 引脚 2 [+, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 0.2667
+                            },
+                            "uuid": "2ab7ac2e-e0c4-454b-ba05-bfc12837dcc9"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT, Power input, Line]",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.1651
+                            },
+                            "uuid": "8db2b3c1-c92e-4ebf-b80a-aef19cd9c6fe"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol CN1 引脚 1 [-, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 0.2921
+                            },
+                            "uuid": "241a6369-9495-466b-9759-63d33d56477d"
+                        },
+                        {
+                            "description": "Symbol CN1 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.2159,
+                                "y": 0.3429
+                            },
+                            "uuid": "f4847c84-b220-41a1-a395-6af90ab64a18"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C59 [CapAcitance]",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 0.8255
+                            },
+                            "uuid": "d4f09e2c-5d51-45a8-8b9e-09a698c97715"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 1.905
+                            },
+                            "uuid": "9e78be90-72c6-421c-8c51-127b918e463c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 1.9304
+                            },
+                            "uuid": "77b4df5f-f1e1-4c01-8933-1d86f6507d56"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 1.9558
+                            },
+                            "uuid": "8c06cd38-bef4-4041-b0e7-6eb46225179f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 1.9812
+                            },
+                            "uuid": "4526319d-86f4-4ac8-9fa7-cef73032d57f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 2.0066
+                            },
+                            "uuid": "5e2fcd00-4a77-46eb-a45f-29f002c2c1f5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.3048,
+                                "y": 2.032
+                            },
+                            "uuid": "2b868e73-aea1-4bd6-8ba0-a452e7644395"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [5-Voltage]",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.1651
+                            },
+                            "uuid": "ed3999ed-0aea-4769-b01d-44c69b2f6be7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.3937
+                            },
+                            "uuid": "435652dd-f1ce-47c3-ac2c-06d76e806c95"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "符号 'Ground-GND' 与来源库 'ProPrj_pow-easyedapro' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.3937
+                            },
+                            "uuid": "435652dd-f1ce-47c3-ac2c-06d76e806c95"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 0.3556,
+                                "y": 0.7493
+                            },
+                            "uuid": "b32246b5-9cf4-483d-86c7-a001317abdb3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.3683,
+                                "y": 0.9017
+                            },
+                            "uuid": "42c9b3ae-d6ce-4aec-a849-e55e1d9cf2f5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "符号 'Ground-GND' 与来源库 'ProPrj_pow-easyedapro' 中的符号存在差异",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.3683,
+                                "y": 0.9017
+                            },
+                            "uuid": "42c9b3ae-d6ce-4aec-a849-e55e1d9cf2f5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.4478
+                            },
+                            "uuid": "d51912b9-e1c8-4bbd-b3c6-f94d62bfe400"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol SW2 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.3937,
+                                "y": 1.4478
+                            },
+                            "uuid": "75bcc6ae-7231-4b30-b31e-da9fee38b8f8"
+                        },
+                        {
+                            "description": "Symbol LED1 引脚 2 [A, Input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.397
+                            },
+                            "uuid": "f699b01f-7e1c-4e8e-ae62-d2c5cd2eee00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U2 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 1.905
+                            },
+                            "uuid": "87bbb859-3366-4b87-8bb3-600af628817e"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.8034
+                            },
+                            "uuid": "1a8820ed-66c6-4bf4-a898-eed938a92a5b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U2 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 1.9304
+                            },
+                            "uuid": "742d8d95-95d4-4358-9ebc-f7a642e2e974"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.9304
+                            },
+                            "uuid": "745f0633-3ea8-477b-beec-be8e11eddc10"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U2 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 2.0066
+                            },
+                            "uuid": "1b949123-da9f-41c9-8990-4afca839f6d0"
+                        },
+                        {
+                            "description": "Symbol U3 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.9558
+                            },
+                            "uuid": "d959044d-808d-4541-ba56-c3ffe2847beb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U2 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 2.032
+                            },
+                            "uuid": "67a9ab27-4283-433a-ab68-0f18a7e35a5f"
+                        },
+                        {
+                            "description": "Symbol U3 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.9304
+                            },
+                            "uuid": "be089945-2ea8-46ec-b406-36587a06da1c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U2 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 2.0574
+                            },
+                            "uuid": "0c907691-a680-424a-9b36-23fb475f9889"
+                        },
+                        {
+                            "description": "Symbol U3 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.905
+                            },
+                            "uuid": "144c6c2e-d0c1-4a33-aa37-2cfe7ed67b53"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C60 [CapAcitance]",
+                            "pos": {
+                                "x": 0.4191,
+                                "y": 0.8255
+                            },
+                            "uuid": "d68a2f01-8047-40b0-bf61-a3bae9a1620b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4478
+                            },
+                            "uuid": "5373a301-ca44-4499-82ed-7f76d420d1e0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol SW2 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4478
+                            },
+                            "uuid": "ed4de581-5a4d-4ca9-98a1-18cb70646765"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4478
+                            },
+                            "uuid": "73ff37dc-8ff1-4653-ad39-78e5d4448464"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 SW2 [SS-12D10L5]",
+                            "pos": {
+                                "x": 0.4445,
+                                "y": 1.4732
+                            },
+                            "uuid": "7395b7dc-db82-4265-8a70-dee9f300b3c4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U2 [LAIL-PM2.54-7P-L]",
+                            "pos": {
+                                "x": 0.4572,
+                                "y": 1.9812
+                            },
+                            "uuid": "766a0616-875f-42d8-8773-a2e6d72213b3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C61 [CapAcitance]",
+                            "pos": {
+                                "x": 0.5207,
+                                "y": 0.8255
+                            },
+                            "uuid": "40f9e80c-3f30-4c43-853c-718f6dd60f85"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.4638
+                            },
+                            "uuid": "099550dc-edcc-4774-b7f8-d1096fac6b0c"
+                        },
+                        {
+                            "description": "Symbol U3 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 2.0066
+                            },
+                            "uuid": "e65654bd-d88a-42e7-9996-83c407ce1d07"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.4892
+                            },
+                            "uuid": "af1b1133-49c9-4e7a-9707-80174e9a3e96"
+                        },
+                        {
+                            "description": "Symbol U3 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.9812
+                            },
+                            "uuid": "0279349e-1d67-4e27-a149-1c4c090a1cb8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.5146
+                            },
+                            "uuid": "5e1d9730-8c42-4529-a83f-a02410afbaef"
+                        },
+                        {
+                            "description": "Symbol U2 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 1.9558
+                            },
+                            "uuid": "bb147c45-a06f-48b2-b335-f465e6997c5c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.54
+                            },
+                            "uuid": "6e3029d5-46d5-40ed-8721-838112213fab"
+                        },
+                        {
+                            "description": "Symbol U2 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.4064,
+                                "y": 1.9812
+                            },
+                            "uuid": "21db756f-5629-4781-bda5-5c9ca75f4225"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.5654
+                            },
+                            "uuid": "6439c22e-001e-4c27-bfa8-3c078dece65e"
+                        },
+                        {
+                            "description": "Symbol R 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5654
+                            },
+                            "uuid": "f3b3ca42-75dd-4e0c-abd0-38d73a42ec06"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.5908
+                            },
+                            "uuid": "fbabe854-614d-4d81-957f-2f374559ece8"
+                        },
+                        {
+                            "description": "Symbol R 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5908
+                            },
+                            "uuid": "e404fca2-4d29-4f3e-a023-6cd797572ba0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.6162
+                            },
+                            "uuid": "e7e974e4-d30f-47ff-9728-8eb368cfc7f8"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.8542
+                            },
+                            "uuid": "66587eb1-a62c-4798-8a92-83b44556e10a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol L 引脚 8 [8, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6096,
+                                "y": 2.6416
+                            },
+                            "uuid": "ef55068a-6f85-49be-8beb-15f30d6c01b3"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.8796
+                            },
+                            "uuid": "9c1c0c00-4ded-4e56-a70b-11817376213c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U3 [LAIL-PM2.54-7P-L]",
+                            "pos": {
+                                "x": 0.635,
+                                "y": 1.9812
+                            },
+                            "uuid": "08693e48-0fe5-46f3-9019-0a8054827d94"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C7 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.2921
+                            },
+                            "uuid": "af627279-93d4-4241-adc3-1744a714d9f3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [5-Voltage]",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.3429
+                            },
+                            "uuid": "fee326cc-853a-40c5-a5c0-e887534de742"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 L [LAIL-PZ2.54-8P-L]",
+                            "pos": {
+                                "x": 0.6604,
+                                "y": 2.5527
+                            },
+                            "uuid": "5112548e-285c-4489-8e9e-88c8e0732f34"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U3 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.905
+                            },
+                            "uuid": "144c6c2e-d0c1-4a33-aa37-2cfe7ed67b53"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.6002
+                            },
+                            "uuid": "4c9249b1-4172-4f31-9dae-7ac7c3426bb7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U3 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.9304
+                            },
+                            "uuid": "be089945-2ea8-46ec-b406-36587a06da1c"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0574
+                            },
+                            "uuid": "b5bccf6b-f0e3-41dd-986b-42df39a1775e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U3 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.6858,
+                                "y": 1.9558
+                            },
+                            "uuid": "d959044d-808d-4541-ba56-c3ffe2847beb"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.032
+                            },
+                            "uuid": "7941dfb4-b566-490c-9ead-f6ce9c760313"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R2 [电阻]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 0.2921
+                            },
+                            "uuid": "2f26aac6-589c-4fdb-8d1f-1511160b43ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R3 [电阻]",
+                            "pos": {
+                                "x": 0.7747,
+                                "y": 0.2159
+                            },
+                            "uuid": "9cb05ea4-0e7e-45f9-a0c6-c8a85922a2e1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.905
+                            },
+                            "uuid": "368ea9b2-d876-40af-944c-a732c1ea6bc6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.9304
+                            },
+                            "uuid": "0345bb4b-6193-42f5-a16e-76308eabd5c4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.9558
+                            },
+                            "uuid": "fe2a680f-5586-4609-b564-8e5355d0fb2b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 1.9812
+                            },
+                            "uuid": "05631033-a8ed-495b-b067-a9906a26c42c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 0.7874,
+                                "y": 2.0066
+                            },
+                            "uuid": "c9582bbd-5da9-471a-9ad4-42a189551f15"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 0.8001,
+                                "y": 0.3048
+                            },
+                            "uuid": "f63cef35-5cac-4a52-b344-69617ddbc836"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "垂直线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.397
+                            },
+                            "uuid": "ecc31ba7-9665-4c68-b766-1c26b8c35568"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 LED1 [LED_R]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.4478
+                            },
+                            "uuid": "f419531e-10cf-498c-a31b-054a72ff144f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R15 [电阻]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.5494
+                            },
+                            "uuid": "5858d3cd-12b7-4cdd-bd08-edd0d1bce6c1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.6002
+                            },
+                            "uuid": "5b610307-f5f1-4b7a-a1d1-ae30696d0957"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C15 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.7747
+                            },
+                            "uuid": "4dd19102-da9a-46ca-8fb9-09c124bb3f9d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [5-Voltage]",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.8255
+                            },
+                            "uuid": "e5d9a937-44b3-4c98-8e3f-983ec82d7ed1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C1 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.8509,
+                                "y": 0.2159
+                            },
+                            "uuid": "37b9c335-f631-458c-82e4-fa062fa6d9e8"
+                        },
+                        {
+                            "description": "Symbol R3 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 0.8255,
+                                "y": 0.2159
+                            },
+                            "uuid": "3c5506f6-955e-4b63-9cb2-66fe4b26a292"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C1 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 0.8509,
+                                "y": 0.2667
+                            },
+                            "uuid": "9532639a-192f-4387-9e30-d6a73039d06c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C1 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.8509,
+                                "y": 0.3175
+                            },
+                            "uuid": "8359f993-2b60-4ca9-b6cb-0fc4138e9ae1"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 0.8001,
+                                "y": 0.3048
+                            },
+                            "uuid": "8c587fdc-5abb-4b2b-a369-2c96aa2b6497"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R [LAIL-PZ2.54-8P-L]",
+                            "pos": {
+                                "x": 0.8509,
+                                "y": 2.5527
+                            },
+                            "uuid": "ef2d492a-48b1-4996-9c39-5091efacfc96"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C5 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.889,
+                                "y": 0.3429
+                            },
+                            "uuid": "25411bb4-0423-4c42-82a8-0de4d16842ee"
+                        },
+                        {
+                            "description": "Symbol L1 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.3429
+                            },
+                            "uuid": "a5ccaaac-8fe2-4df8-bd09-e83c64cf9540"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C5 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 0.889,
+                                "y": 0.3937
+                            },
+                            "uuid": "2e962bbf-c5cf-4e30-9079-d0a39561dbfb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C5 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.889,
+                                "y": 0.4445
+                            },
+                            "uuid": "ad122944-7205-46ec-bf4b-8109eccb39b3"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 0.4445
+                            },
+                            "uuid": "f6ac67fb-19ad-4705-92a3-cc059795813a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R11 [电阻]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 0.7747
+                            },
+                            "uuid": "886d6720-7b69-4064-87df-b892b91ca5f9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 8 [8, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.4638
+                            },
+                            "uuid": "0c8fa9f5-2524-492a-99c0-80dad50a08e4"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0066
+                            },
+                            "uuid": "c3bb2720-7fd7-4d96-b212-c1fa547e739f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.4892
+                            },
+                            "uuid": "4ec2300a-bf47-4ba1-aefe-bf3214ca0625"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9812
+                            },
+                            "uuid": "9f207f88-a16d-4a84-ba06-523da417b264"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5146
+                            },
+                            "uuid": "e0dc035e-2532-4dba-8854-44d1161022cb"
+                        },
+                        {
+                            "description": "Symbol U6 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 2.0066
+                            },
+                            "uuid": "bf011910-bec3-416b-8783-e1dc0a7401b1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.54
+                            },
+                            "uuid": "af9a0cbc-d5b7-4629-8d14-51c5be6bb3a0"
+                        },
+                        {
+                            "description": "Symbol U6 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 2.032
+                            },
+                            "uuid": "062756c4-0367-44e0-a836-e5c640a522cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5654
+                            },
+                            "uuid": "f3b3ca42-75dd-4e0c-abd0-38d73a42ec06"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0828
+                            },
+                            "uuid": "2199cc06-539c-492a-b390-36993211b874"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5908
+                            },
+                            "uuid": "e404fca2-4d29-4f3e-a023-6cd797572ba0"
+                        },
+                        {
+                            "description": "Symbol U4 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.032
+                            },
+                            "uuid": "7941dfb4-b566-490c-9ead-f6ce9c760313"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.6162
+                            },
+                            "uuid": "0fbd179c-21c5-44e8-ad0c-d8c088c21601"
+                        },
+                        {
+                            "description": "Symbol 右电机 引脚 3 [3, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.8542
+                            },
+                            "uuid": "be54bffd-48d6-4633-be1e-1182f02d66d3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol R 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.6416
+                            },
+                            "uuid": "fd773a59-8e4f-4dc4-84a8-7c6af74e8051"
+                        },
+                        {
+                            "description": "Symbol 右电机 引脚 4 [4, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.8796
+                            },
+                            "uuid": "4f91bebe-18e9-445c-a2c1-be51a368d867"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C2 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9271,
+                                "y": 0.2159
+                            },
+                            "uuid": "79e3d665-5846-4040-87e8-234d2f32f549"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 0.2159
+                            },
+                            "uuid": "41a707c3-b8af-4160-b712-2aeeb739144f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C2 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 0.9271,
+                                "y": 0.2667
+                            },
+                            "uuid": "7f2cbcad-14d4-4bbe-b2f9-b1617291b055"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C2 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9271,
+                                "y": 0.3175
+                            },
+                            "uuid": "0aaef664-6935-47e6-9dbf-50e863bda063"
+                        },
+                        {
+                            "description": "Symbol C3 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 0.3175
+                            },
+                            "uuid": "b82826ba-1802-4356-bfb7-ce0afb13fa88"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C4 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.3429
+                            },
+                            "uuid": "ab088394-9418-4135-b816-401281955ecc"
+                        },
+                        {
+                            "description": "Symbol L1 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.3429
+                            },
+                            "uuid": "a5ccaaac-8fe2-4df8-bd09-e83c64cf9540"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C4 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.3937
+                            },
+                            "uuid": "72d2bf58-6353-4183-b7b6-6b4cb20d9fb2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C4 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.4445
+                            },
+                            "uuid": "e4035a2f-4466-4cc3-becf-b7a1eb60771a"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 0.4445
+                            },
+                            "uuid": "f6ac67fb-19ad-4705-92a3-cc059795813a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R12 [电阻]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.6985
+                            },
+                            "uuid": "b306b020-325f-4f20-add0-3304ba71f81b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 0.2159
+                            },
+                            "uuid": "8a0f595c-adb8-4271-bf9b-13e61d607c4d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 0.7874
+                            },
+                            "uuid": "389624e3-6258-4ca7-bc19-e1e394264bbb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.4638
+                            },
+                            "uuid": "1383655a-4b75-4370-abd0-229a75f9093e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.4892
+                            },
+                            "uuid": "0c0874cb-481a-4f62-8a1a-40e866d6aecb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5146
+                            },
+                            "uuid": "32018266-3379-4aa8-b8fa-40176f67313e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.54
+                            },
+                            "uuid": "e0b195a8-edcf-4541-a4a5-b8dc86c0a818"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5654
+                            },
+                            "uuid": "aacaed9b-a45f-4f3a-927c-07203fff0c8c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 2.5908
+                            },
+                            "uuid": "223836b5-0cb2-4323-84c5-4879b6dab782"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 2.6162
+                            },
+                            "uuid": "c9104e47-9a8d-4b33-b9a4-b61edc636c13"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 2.6416
+                            },
+                            "uuid": "24bba3bf-c92a-4e92-a18a-db63ed9e6dcd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 L1 [MCS0630-2R2MPY1]",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 0.3429
+                            },
+                            "uuid": "5c5e4349-2926-40cb-b7ab-c67266cd6f10"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 0.4445
+                            },
+                            "uuid": "0a0dd1b8-eecb-48fe-8f73-5bdbd11ebc6a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C3 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 0.2159
+                            },
+                            "uuid": "c4be3eb0-bccb-44b5-a176-2cfacae6a502"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 0.2159
+                            },
+                            "uuid": "41a707c3-b8af-4160-b712-2aeeb739144f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C3 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 0.2667
+                            },
+                            "uuid": "23087e86-c8b5-4564-97f4-7d17299d3ddd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C3 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 0.3175
+                            },
+                            "uuid": "b82826ba-1802-4356-bfb7-ce0afb13fa88"
+                        },
+                        {
+                            "description": "Symbol U5 引脚 2 [IN, Input, Line]",
+                            "pos": {
+                                "x": 1.0922,
+                                "y": 0.3175
+                            },
+                            "uuid": "79dca452-ed6b-41fa-8021-652a4f3f9508"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C8 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.0287,
+                                "y": 0.6985
+                            },
+                            "uuid": "0d10fa03-58e6-4d99-8f53-541cbd304037"
+                        },
+                        {
+                            "description": "Symbol R12 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 0.6985
+                            },
+                            "uuid": "77a72643-5e28-4ed7-94c9-fe3c063e5b58"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C8 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.0287,
+                                "y": 0.7493
+                            },
+                            "uuid": "c504bdd2-2733-411f-bde3-000039744738"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C8 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.0287,
+                                "y": 0.8001
+                            },
+                            "uuid": "8049b674-ee3e-4266-bd24-da15647297cb"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 0.7874
+                            },
+                            "uuid": "5ca962d2-6bf7-42d9-b0bd-a5e84e01101f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C13 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.0668,
+                                "y": 0.8255
+                            },
+                            "uuid": "5ca22632-8e47-4632-ad0f-396ccf4fba96"
+                        },
+                        {
+                            "description": "Symbol L2 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8255
+                            },
+                            "uuid": "3dc8c8ac-2c42-41a0-93de-49cd5223606a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C13 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.0668,
+                                "y": 0.8763
+                            },
+                            "uuid": "38ec3d84-3969-4862-bada-fc1936cae331"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C13 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.0668,
+                                "y": 0.9271
+                            },
+                            "uuid": "e5ffd708-33c3-41ce-a65d-9b6793049885"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.1811,
+                                "y": 0.9271
+                            },
+                            "uuid": "24cf06b9-3ca4-452d-aa5d-0ab36eb13dcb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9304
+                            },
+                            "uuid": "094ec872-5664-47f9-8443-09077d3236cf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9558
+                            },
+                            "uuid": "25e8065c-5369-4847-a6c0-c82c3ef6db2c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9812
+                            },
+                            "uuid": "34c1966b-720b-4002-b57a-6c79d77e4e3a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0066
+                            },
+                            "uuid": "27c77c1b-bbc3-42d1-b2b5-3d03c7e81fc8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0574
+                            },
+                            "uuid": "995a3964-8b24-430c-87d9-40099123bcc3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C9 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1049,
+                                "y": 0.6985
+                            },
+                            "uuid": "1b6836ee-e33a-45b8-b62d-64ff28954258"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.143,
+                                "y": 0.6985
+                            },
+                            "uuid": "050b8cc8-f080-4406-a2e8-4425e52b2e38"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C9 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.1049,
+                                "y": 0.7493
+                            },
+                            "uuid": "57b80bd0-39f0-4d18-b0c7-d87276b52727"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C9 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1049,
+                                "y": 0.8001
+                            },
+                            "uuid": "10d0fe76-d3dc-4501-94f0-16a99793712b"
+                        },
+                        {
+                            "description": "Symbol C10 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.8001
+                            },
+                            "uuid": "3606c09f-f184-4a92-9d1a-7ed723fb3d91"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C12 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8255
+                            },
+                            "uuid": "4c07dba3-4dd0-400d-b1ff-5b5af609dacc"
+                        },
+                        {
+                            "description": "Symbol L2 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8255
+                            },
+                            "uuid": "3dc8c8ac-2c42-41a0-93de-49cd5223606a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C12 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8763
+                            },
+                            "uuid": "c2c508c0-bf8f-451f-9bde-c009541b1a25"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C12 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.9271
+                            },
+                            "uuid": "778c3224-b07c-4a15-91bd-386e968c9ac9"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.1811,
+                                "y": 0.9271
+                            },
+                            "uuid": "24cf06b9-3ca4-452d-aa5d-0ab36eb13dcb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.143,
+                                "y": 0.6985
+                            },
+                            "uuid": "774ddafc-6843-406e-b37d-3d4c3530d6fd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U4 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9304
+                            },
+                            "uuid": "e8201bf2-e06c-47a5-91fa-092ca240389d"
+                        },
+                        {
+                            "description": "Symbol 右电机 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.8034
+                            },
+                            "uuid": "53b9c3f5-3dd3-45ea-ac2e-0046b34f70f7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U4 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.9558
+                            },
+                            "uuid": "532605db-1e36-4e7a-836c-b2bebdff0c0b"
+                        },
+                        {
+                            "description": "Symbol 右电机 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.9304
+                            },
+                            "uuid": "0870363b-3be1-4e9d-95bc-aeda159fcc93"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U4 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.032
+                            },
+                            "uuid": "7941dfb4-b566-490c-9ead-f6ce9c760313"
+                        },
+                        {
+                            "description": "Symbol U6 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9812
+                            },
+                            "uuid": "d9b2ffa6-35c9-48a8-bc9d-30700317370b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U4 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0574
+                            },
+                            "uuid": "b5bccf6b-f0e3-41dd-986b-42df39a1775e"
+                        },
+                        {
+                            "description": "Symbol U6 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9558
+                            },
+                            "uuid": "30cb418c-8aa2-4ebe-b6fc-6aff92c2dd11"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U4 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 2.0828
+                            },
+                            "uuid": "2199cc06-539c-492a-b390-36993211b874"
+                        },
+                        {
+                            "description": "Symbol U6 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9304
+                            },
+                            "uuid": "7e4274fa-9161-4b43-82ee-1948de8758a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 L2 [MCS0630-2R2MPY1]",
+                            "pos": {
+                                "x": 1.1811,
+                                "y": 0.8255
+                            },
+                            "uuid": "d97f0fd9-a549-49b7-b88f-26f1f5de5849"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.1811,
+                                "y": 0.9271
+                            },
+                            "uuid": "fda0595b-b4b8-4265-b525-d94ef668953d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U5 [MP2236GJ-Z]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.3302
+                            },
+                            "uuid": "d3a73723-1e55-4c12-8185-20c99c1305b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C10 引脚 1 [1, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.6985
+                            },
+                            "uuid": "f844850d-9e19-48fc-8c1c-e2f35357add2"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 1.143,
+                                "y": 0.6985
+                            },
+                            "uuid": "050b8cc8-f080-4406-a2e8-4425e52b2e38"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C10 [CGA0805X5R226M250MT]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.7493
+                            },
+                            "uuid": "11f0bf5d-6d31-4b30-b69c-010147395bed"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol C10 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 0.8001
+                            },
+                            "uuid": "3606c09f-f184-4a92-9d1a-7ed723fb3d91"
+                        },
+                        {
+                            "description": "Symbol U1 引脚 2 [IN, Input, Line]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 0.8001
+                            },
+                            "uuid": "6d92251e-3683-4a9e-9c01-9d247b37295b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.0762 mm",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 1.4478
+                            },
+                            "uuid": "857c6330-b875-4bea-82fa-152bd0976a08"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C6 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 0.508
+                            },
+                            "uuid": "c6cc2986-c24c-49a6-9292-7f62d4b97e26"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U4 [LAIL-PM2.54-7P-L]",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 2.0066
+                            },
+                            "uuid": "f208105a-ff9d-4c3b-8650-04d6ba2ac73d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol D1 引脚 1 [C, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 1.4478
+                            },
+                            "uuid": "906f9842-f061-4591-87b9-03825cb37708"
+                        },
+                        {
+                            "description": "Symbol LED1 引脚 2 [A, Input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.397
+                            },
+                            "uuid": "f699b01f-7e1c-4e8e-ae62-d2c5cd2eee00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R1 [电阻]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 0.4191
+                            },
+                            "uuid": "61ba72f0-1ff7-421e-bab6-32709c92e1f4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 D1 [SMF12A_C435478]",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 1.4478
+                            },
+                            "uuid": "57dec5da-6c74-4818-bf3e-1db1f6b62e60"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.3589,
+                                "y": 0.2159
+                            },
+                            "uuid": "0d1bf82f-055a-4efa-9912-15b469ddfc82"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C11 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 1.3589,
+                                "y": 0.2667
+                            },
+                            "uuid": "e0c9893c-b05d-4818-834e-09107e14feec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R10 [电阻]",
+                            "pos": {
+                                "x": 1.3589,
+                                "y": 0.3937
+                            },
+                            "uuid": "2b2a0e58-b563-4535-ad58-7efa42b84bdc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.3589,
+                                "y": 0.4445
+                            },
+                            "uuid": "af7b7580-2e94-4214-9488-75c306b68828"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U1 [MP2236GJ-Z]",
+                            "pos": {
+                                "x": 1.3716,
+                                "y": 0.8128
+                            },
+                            "uuid": "67683d25-7046-4451-ae87-ffdebe9a5c02"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol D1 引脚 2 [A, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.3716,
+                                "y": 1.4478
+                            },
+                            "uuid": "06cd3070-6aa7-4a6f-a010-c6b95aab4556"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.4224,
+                                "y": 1.4478
+                            },
+                            "uuid": "9b5c2f78-c4e4-4b43-abfb-fd6761919729"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C14 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 0.9906
+                            },
+                            "uuid": "6335cdf8-e346-4349-8c81-24dc77578d3b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 U6 [LAIL-PM2.54-7P-L]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 2.0066
+                            },
+                            "uuid": "93c33505-69c1-49ed-9501-fe01a7061a5c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.4224,
+                                "y": 1.4478
+                            },
+                            "uuid": "3176235e-374b-4bfb-aae8-03a1ca9832a5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R7 [电阻]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 0.3429
+                            },
+                            "uuid": "efe14a0c-8a71-47ab-85be-733947c107ef"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U6 引脚 7 [7, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9304
+                            },
+                            "uuid": "7e4274fa-9161-4b43-82ee-1948de8758a7"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.4224,
+                                "y": 1.4478
+                            },
+                            "uuid": "9b5c2f78-c4e4-4b43-abfb-fd6761919729"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U6 引脚 6 [6, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9558
+                            },
+                            "uuid": "30cb418c-8aa2-4ebe-b6fc-6aff92c2dd11"
+                        },
+                        {
+                            "description": "Symbol LED1 引脚 2 [A, Input, Line]",
+                            "pos": {
+                                "x": 0.8128,
+                                "y": 1.397
+                            },
+                            "uuid": "f699b01f-7e1c-4e8e-ae62-d2c5cd2eee00"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol U6 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9812
+                            },
+                            "uuid": "d9b2ffa6-35c9-48a8-bc9d-30700317370b"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.8288
+                            },
+                            "uuid": "dbeb8cbd-fdf6-4a6d-9113-e408071f603e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 0.3429
+                            },
+                            "uuid": "50a3e5f5-fe4f-47ee-b3cd-556d0b5caa36"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R6 [电阻]",
+                            "pos": {
+                                "x": 1.4986,
+                                "y": 0.9017
+                            },
+                            "uuid": "ce3b80d9-e6c0-49d5-b3cb-af47cac27dfd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.6985
+                            },
+                            "uuid": "c5619ef1-31b0-4dfa-b962-65f90871d794"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 C16 [C1210X7R475K630NT]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.7493
+                            },
+                            "uuid": "35d280a0-4851-40bf-8536-f3caf303f1d6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R14 [电阻]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.8763
+                            },
+                            "uuid": "71f19bc7-a25f-4903-8983-fc5cf7c55e25"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 1.5367,
+                                "y": 0.9271
+                            },
+                            "uuid": "1e8822fb-afdf-4ccc-9f99-60b561ec1d1e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9304
+                            },
+                            "uuid": "7c444cd1-b672-4bb2-840e-7b868d0c5a30"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9558
+                            },
+                            "uuid": "2acfe273-d8b2-4831-aa0c-3707f3080b18"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 1.9812
+                            },
+                            "uuid": "50403178-8b4b-4ab9-9b17-c64e191f280c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 2.0066
+                            },
+                            "uuid": "cfc666c1-f392-47c7-8edb-0e2d1ccf311c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.1016 mm",
+                            "pos": {
+                                "x": 1.4478,
+                                "y": 2.032
+                            },
+                            "uuid": "2c3cfb59-3622-4e33-87d5-37342a9ef1f7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R13 [电阻]",
+                            "pos": {
+                                "x": 1.6256,
+                                "y": 0.8255
+                            },
+                            "uuid": "de05160c-f8f1-46ab-a932-784272a100a8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8255
+                            },
+                            "uuid": "a82464c7-6d53-47a3-a2f6-f5094232f3e3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [5-Voltage]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.1143
+                            },
+                            "uuid": "22c4d4bc-4cc2-4a8b-8e8c-2bfb43eddd3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [5-Voltage]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.4064
+                            },
+                            "uuid": "10105f07-4b0a-4196-a828-35ac46b1aad1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.635
+                            },
+                            "uuid": "647617e4-c780-47ec-9508-0d1d5056d94d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Power-VCC]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.9271
+                            },
+                            "uuid": "ddade8f7-384f-40f4-b859-6a5cb0195429"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R4 [0603WAF5602T5E]",
+                            "pos": {
+                                "x": 2.3749,
+                                "y": 0.2032
+                            },
+                            "uuid": "51d822eb-f890-4954-8e72-ba256bf78d42"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R5 [0603WAF5602T5E]",
+                            "pos": {
+                                "x": 2.3749,
+                                "y": 0.3556
+                            },
+                            "uuid": "78040820-ff9e-42d7-b0d1-b3506ef38a79"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R8 [0603WAF5602T5E]",
+                            "pos": {
+                                "x": 2.3749,
+                                "y": 0.7239
+                            },
+                            "uuid": "cdd45272-2df1-4a11-9e0f-a6db088dc14b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 R9 [0603WAF5602T5E]",
+                            "pos": {
+                                "x": 2.3749,
+                                "y": 0.8763
+                            },
+                            "uuid": "af9c484d-8540-47b2-971c-ffdd4f47e8a1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.127
+                            },
+                            "uuid": "1aeb7509-55dd-491b-bf1b-fd77d3414b18"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 A1B12 [GND, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.127
+                            },
+                            "uuid": "2be04aee-8b97-44ef-ba9e-1258c73502f3"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.127
+                            },
+                            "uuid": "e87c3c25-9e72-4553-b1fc-47e27302ec1b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 A4B9 [VBUS, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.1524
+                            },
+                            "uuid": "c71f766d-fb8a-41c9-b1a6-4c65072e6de1"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.1143
+                            },
+                            "uuid": "432f5fae-924d-4936-86ed-5e0ebaa286af"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 A5 [CC1, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.2032
+                            },
+                            "uuid": "f3d1825a-1791-472b-b708-0c3631b92cd0"
+                        },
+                        {
+                            "description": "Symbol R4 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.2032
+                            },
+                            "uuid": "66e3a587-da7c-4361-8037-6e633986cfcf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 B5 [CC2, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.3556
+                            },
+                            "uuid": "4bf72cfd-8faa-497f-a195-0375ef731363"
+                        },
+                        {
+                            "description": "Symbol R5 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.3556
+                            },
+                            "uuid": "d428ffe9-7842-4556-94fc-dcd223057080"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 B4A9 [VBUS, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.381
+                            },
+                            "uuid": "9d04a8c0-2829-4f97-a674-679df5559e19"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.4064
+                            },
+                            "uuid": "f12b5973-781c-4c29-aee4-3aa56403d0db"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.4064
+                            },
+                            "uuid": "2b24a28c-515c-433f-b6df-746454871ef6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 B1A12 [GND, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.4064
+                            },
+                            "uuid": "c83df5fd-4abe-4134-a334-25ab209053f5"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.4064
+                            },
+                            "uuid": "0eb827f9-1876-4059-a49d-22b3e68830df"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.6477
+                            },
+                            "uuid": "2ff46504-89e8-4fd8-9a84-79f31f09224a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 A1B12 [GND, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.6477
+                            },
+                            "uuid": "e0d2c2be-bcc8-4bec-9b35-6d18181be863"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.6477
+                            },
+                            "uuid": "20c2cc64-3d6c-445d-8183-2f3c9bbc77a3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 A4B9 [VBUS, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.6731
+                            },
+                            "uuid": "92ce234f-239f-49f6-86e3-86c508517d84"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.635
+                            },
+                            "uuid": "7da275d7-b577-47a1-b097-2afad6ccdee6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 A5 [CC1, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.7239
+                            },
+                            "uuid": "d70d485d-4486-4362-a314-4a530d16b7b3"
+                        },
+                        {
+                            "description": "Symbol R8 引脚 1 [1, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.7239
+                            },
+                            "uuid": "7011df56-fe6f-4c91-9471-7e9dd715b871"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 B5 [CC2, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.8763
+                            },
+                            "uuid": "8af1f0f4-08ed-40fa-89cb-8036b5562d60"
+                        },
+                        {
+                            "description": "Symbol R9 引脚 2 [2, Input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.8763
+                            },
+                            "uuid": "21e7e320-3ed3-44ef-9450-0345e59a23c7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 B4A9 [VBUS, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.9017
+                            },
+                            "uuid": "50b8ab85-ee74-4826-9d0a-51713c136a06"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [VCCOUT1, Power input, Line]",
+                            "pos": {
+                                "x": 2.3241,
+                                "y": 0.9271
+                            },
+                            "uuid": "485041cd-922a-40bd-9ddd-c3f637c782fc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.9271
+                            },
+                            "uuid": "44b92c32-9bbb-436e-a92c-bc3aa34cd0e5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 B1A12 [GND, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.9271
+                            },
+                            "uuid": "d7bc01d9-8ec9-4bf9-99a8-d97f5aed070a"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4257,
+                                "y": 0.9271
+                            },
+                            "uuid": "c7101235-c4f2-419c-98db-075183fa46af"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 USB1 [LAIL-TYPE-C-16PIN-08-WT]",
+                            "pos": {
+                                "x": 2.5273,
+                                "y": 0.254
+                            },
+                            "uuid": "1b301c4a-3f38-4d16-9c3d-389362e3cffb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 USB2 [LAIL-TYPE-C-16PIN-08-WT]",
+                            "pos": {
+                                "x": 2.5273,
+                                "y": 0.7747
+                            },
+                            "uuid": "b0689d2e-5e7e-4a3a-99e5-4a5d671d9054"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 16 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.127
+                            },
+                            "uuid": "6def6f71-1304-4504-889d-87e7f7c773c3"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.1524
+                            },
+                            "uuid": "b7b6b43a-406f-4dfa-bc2b-11e12c49aec0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 15 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.1524
+                            },
+                            "uuid": "569b182c-e819-4070-882d-1eaa9dfe0bd3"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.1524
+                            },
+                            "uuid": "b7b6b43a-406f-4dfa-bc2b-11e12c49aec0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 14 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.381
+                            },
+                            "uuid": "d60dabd0-12a9-4048-a1b8-f11fef62a2ae"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.4064
+                            },
+                            "uuid": "ca0a81b5-85b5-4db5-b944-24b77f501705"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB1 引脚 13 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.4064
+                            },
+                            "uuid": "b2cfb716-ecfd-49a4-8aa2-73ad84b9e408"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.4064
+                            },
+                            "uuid": "ca0a81b5-85b5-4db5-b944-24b77f501705"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 16 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.6477
+                            },
+                            "uuid": "d2a4782a-7cc3-4173-bd3d-e779005cec2f"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.6731
+                            },
+                            "uuid": "166d86f6-9d03-4d37-9771-f6ea179c6a6b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 15 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.6731
+                            },
+                            "uuid": "1a2776dd-e8f0-4425-bdd5-eda90b01aefd"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.6731
+                            },
+                            "uuid": "166d86f6-9d03-4d37-9771-f6ea179c6a6b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 14 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.9017
+                            },
+                            "uuid": "ba915c2e-1e93-4c5d-84b8-63ae07e75e76"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.9271
+                            },
+                            "uuid": "9fa311d4-4ff5-487d-9b8b-5e6f5c4bca13"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol USB2 引脚 13 [SHELL, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.6543,
+                                "y": 0.9271
+                            },
+                            "uuid": "d7a08dd3-9852-4e64-83c8-192adf9965fc"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.9271
+                            },
+                            "uuid": "9fa311d4-4ff5-487d-9b8b-5e6f5c4bca13"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.1524
+                            },
+                            "uuid": "7bde58d8-5327-47a4-88e0-9ea17db97c7b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.4064
+                            },
+                            "uuid": "2e6f3df9-2b88-47a6-8013-59c776f70eac"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.6731
+                            },
+                            "uuid": "849f93a8-772a-42e8-8d2c-507e016ce727"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 #PWR? [Ground-GND]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.9271
+                            },
+                            "uuid": "b924a832-a61e-4ae6-913f-08c86020fb2d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Power input 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol 左电机 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.905
+                            },
+                            "uuid": "38199420-5ba8-4626-938d-781e5bd1d88e"
+                        },
+                        {
+                            "description": "Symbol #PWR? 引脚 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 0.9271
+                            },
+                            "uuid": "9fa311d4-4ff5-487d-9b8b-5e6f5c4bca13"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 左电机 [HX-XH2.54-6PZZ]",
+                            "pos": {
+                                "x": 2.7178,
+                                "y": 1.8669
+                            },
+                            "uuid": "8c04e8b2-f09a-451e-9582-67f7d7caf0cb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol 右电机 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.8288
+                            },
+                            "uuid": "ef5facdc-9fbf-40f9-9463-1955ccecd724"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 2 [2, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.8288
+                            },
+                            "uuid": "dbeb8cbd-fdf6-4a6d-9113-e408071f603e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "类型为 Unspecified 和 Unspecified 的引脚已连接",
+                    "items": [
+                        {
+                            "description": "Symbol 右电机 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.905
+                            },
+                            "uuid": "0b832e1e-62b6-4c26-80b8-6bcc859c526b"
+                        },
+                        {
+                            "description": "Symbol 左电机 引脚 5 [5, Unspecified, Line]",
+                            "pos": {
+                                "x": 2.667,
+                                "y": 1.905
+                            },
+                            "uuid": "38199420-5ba8-4626-938d-781e5bd1d88e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'ProPrj_pow-easyedapro'",
+                    "items": [
+                        {
+                            "description": "符号 右电机 [HX-XH2.54-6PZZ]",
+                            "pos": {
+                                "x": 3.0988,
+                                "y": 1.8669
+                            },
+                            "uuid": "4ba2f72a-f3a5-4eed-b8ad-2a634c3534d3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                }
+            ]
+        }
+    ],
+    "source": "ProPrj_power_2026-10-02.kicad_sch"
+}

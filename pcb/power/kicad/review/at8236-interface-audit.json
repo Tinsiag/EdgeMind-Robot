@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-02",
+  "source_image": "doc/电机/合并长图_1-9.png",
+  "board": "pcb/power/kicad/ProPrj_power_2026-10-02.kicad_pcb",
+  "connectors": {
+    "J3": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/LAOUT2",
+          "x_mm": 152.297,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "2",
+          "net": "/3.3V",
+          "x_mm": 154.797,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "3",
+          "net": "/LF_ENA",
+          "x_mm": 157.297,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "4",
+          "net": "/LF_ENB",
+          "x_mm": 159.797,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "5",
+          "net": "GND",
+          "x_mm": 162.297,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "6",
+          "net": "/LAOUT1",
+          "x_mm": 164.797,
+          "y_mm": 126.736
+        }
+      ]
+    },
+    "J1": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/LAIN1",
+          "x_mm": 156.4595,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "2",
+          "net": "/LAIN2",
+          "x_mm": 158.9995,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "3",
+          "net": "/LBIN1",
+          "x_mm": 161.5395,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "4",
+          "net": "/LBIN2",
+          "x_mm": 164.0795,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "5",
+          "net": "GND",
+          "x_mm": 166.6195,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "6",
+          "net": "/3.3V",
+          "x_mm": 169.1595,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "7",
+          "net": "/LF_ENA",
+          "x_mm": 171.6995,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "8",
+          "net": "/LF_ENB",
+          "x_mm": 174.2395,
+          "y_mm": 119.509
+        }
+      ]
+    },
+    "J4": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/RAOUT2",
+          "x_mm": 170.966,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "2",
+          "net": "/3.3V",
+          "x_mm": 173.466,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "3",
+          "net": "/RF_ENA",
+          "x_mm": 175.966,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "4",
+          "net": "/RF_ENB",
+          "x_mm": 178.466,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "5",
+          "net": "GND",
+          "x_mm": 180.966,
+          "y_mm": 126.736
+        },
+        {
+          "pad": "6",
+          "net": "/RAOUT1",
+          "x_mm": 183.466,
+          "y_mm": 126.736
+        }
+      ]
+    },
+    "J7": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/RAOUT2",
+          "x_mm": 156.6325,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "2",
+          "net": "/RAOUT1",
+          "x_mm": 159.1725,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "3",
+          "net": "/RBIN1",
+          "x_mm": 161.7125,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "4",
+          "net": "/RBIN2",
+          "x_mm": 164.2525,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "5",
+          "net": "/3.3V",
+          "x_mm": 166.7925,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "6",
+          "net": "/VM",
+          "x_mm": 169.3325,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "7",
+          "net": "GND",
+          "x_mm": 171.8725,
+          "y_mm": 92.7465
+        }
+      ]
+    },
+    "J6": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "unconnected-(J6-Pad1)",
+          "x_mm": 179.0655,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "2",
+          "net": "unconnected-(J6-Pad2)",
+          "x_mm": 181.6055,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "3",
+          "net": "/LAIN1",
+          "x_mm": 184.1455,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "4",
+          "net": "/LAIN2",
+          "x_mm": 186.6855,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "5",
+          "net": "/3.3V",
+          "x_mm": 189.2255,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "6",
+          "net": "/VM",
+          "x_mm": 191.7655,
+          "y_mm": 115.747
+        },
+        {
+          "pad": "7",
+          "net": "GND",
+          "x_mm": 194.3055,
+          "y_mm": 115.747
+        }
+      ]
+    },
+    "J8": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "unconnected-(J8-Pad1)",
+          "x_mm": 156.6325,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "2",
+          "net": "unconnected-(J8-Pad2)",
+          "x_mm": 159.1725,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "3",
+          "net": "/RAIN1",
+          "x_mm": 161.7125,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "4",
+          "net": "/RAIN2",
+          "x_mm": 164.2525,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "5",
+          "net": "/3.3V",
+          "x_mm": 166.7925,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "6",
+          "net": "/VM",
+          "x_mm": 169.3325,
+          "y_mm": 115.874
+        },
+        {
+          "pad": "7",
+          "net": "GND",
+          "x_mm": 171.8725,
+          "y_mm": 115.874
+        }
+      ]
+    },
+    "J5": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/LAOUT2",
+          "x_mm": 179.0655,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "2",
+          "net": "/LAOUT1",
+          "x_mm": 181.6055,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "3",
+          "net": "/LBIN1",
+          "x_mm": 184.1455,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "4",
+          "net": "/LBIN2",
+          "x_mm": 186.6855,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "5",
+          "net": "/3.3V",
+          "x_mm": 189.2255,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "6",
+          "net": "/VM",
+          "x_mm": 191.7655,
+          "y_mm": 92.7465
+        },
+        {
+          "pad": "7",
+          "net": "GND",
+          "x_mm": 194.3055,
+          "y_mm": 92.7465
+        }
+      ]
+    },
+    "J2": {
+      "rotation_degrees": 0.0,
+      "pads": [
+        {
+          "pad": "1",
+          "net": "/RF_ENB",
+          "x_mm": 177.978,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "2",
+          "net": "/RF_ENA",
+          "x_mm": 180.518,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "3",
+          "net": "/3.3V",
+          "x_mm": 183.058,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "4",
+          "net": "GND",
+          "x_mm": 185.598,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "5",
+          "net": "/RAIN1",
+          "x_mm": 188.138,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "6",
+          "net": "/RAIN2",
+          "x_mm": 190.678,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "7",
+          "net": "/RBIN1",
+          "x_mm": 193.218,
+          "y_mm": 119.509
+        },
+        {
+          "pad": "8",
+          "net": "/RBIN2",
+          "x_mm": 195.758,
+          "y_mm": 119.509
+        }
+      ]
+    }
+  },
+  "schematic_pad_net_matches": 56,
+  "module_row_spacing_mm": {
+    "J5-J6": 23.0005,
+    "J7-J8": 23.1275
+  },
+  "module_expected_functions_along_J5_pad_1_to_7": {
+    "J5/J7": [
+      "AOUT2",
+      "AOUT1",
+      "BIN1",
+      "BIN2",
+      "VCC",
+      "VM",
+      "GND"
+    ],
+    "J6/J8": [
+      "GND",
+      "VM",
+      "VCC",
+      "AIN2",
+      "AIN1",
+      "BOUT1",
+      "BOUT2"
+    ]
+  },
+  "finding": "J6/J8 pad geometry needs reversed ordering to match module opposite row; measured row spacing is not a verified module specification."
+}

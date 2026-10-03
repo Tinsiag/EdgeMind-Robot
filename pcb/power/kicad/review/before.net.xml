@@ -1,0 +1,2742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\dev\EdgeMind-Robot\pcb\power\kicad\ProPrj_power_2026-10-02.kicad_sch</source>
+    <date>2026-10-02T22:39:44</date>
+    <tool>Eeschema 10.0.5</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>ProPrj_power_2026-10-02.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="?">
+      <value>~</value>
+      <footprint>ProPrj_pow-easyedapro:</footprint>
+      <fields>
+        <field name="@Assembly Variant">Basic</field>
+        <field name="@Board Name">Board1</field>
+        <field name="@Create Date">2026-09-30</field>
+        <field name="@Create Time">14:27:14</field>
+        <field name="@Page Count">1</field>
+        <field name="@Page Name">P1</field>
+        <field name="@Page No">1</field>
+        <field name="@Project Name">power</field>
+        <field name="@Schematic Name">Schematic1</field>
+        <field name="@Update Date">2026-09-30</field>
+        <field name="@Update Time">14:27:14</field>
+        <field name="Blade Width">10</field>
+        <field name="Border">1</field>
+        <field name="Company">嘉立创EDA</field>
+        <field name="Height">1170</field>
+        <field name="Page Size">A4</field>
+        <field name="Region Start">1</field>
+        <field name="Size">A4</field>
+        <field name="Title Block">1</field>
+        <field name="Title Block Position">3</field>
+        <field name="Version">V1.0</field>
+        <field name="Width">1655</field>
+        <field name="X Region Count">6</field>
+        <field name="Y Region Count">4</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="Drawing-Symbol_A4" description=""/>
+      <property name="@Assembly Variant" value="Basic"/>
+      <property name="@Board Name" value="Board1"/>
+      <property name="@Create Date" value="2026-09-30"/>
+      <property name="@Create Time" value="14:27:14"/>
+      <property name="@Page Count" value="1"/>
+      <property name="@Page Name" value="P1"/>
+      <property name="@Page No" value="1"/>
+      <property name="@Project Name" value="power"/>
+      <property name="@Schematic Name" value="Schematic1"/>
+      <property name="@Update Date" value="2026-09-30"/>
+      <property name="@Update Time" value="14:27:14"/>
+      <property name="Blade Width" value="10"/>
+      <property name="Border" value="1"/>
+      <property name="Company" value="嘉立创EDA"/>
+      <property name="Height" value="1170"/>
+      <property name="Page Size" value="A4"/>
+      <property name="Region Start" value="1"/>
+      <property name="Size" value="A4"/>
+      <property name="Title Block" value="1"/>
+      <property name="Title Block Position" value="3"/>
+      <property name="Version" value="V1.0"/>
+      <property name="Width" value="1655"/>
+      <property name="X Region Count" value="6"/>
+      <property name="Y Region Count" value="4"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1f4be32f-7c4c-465e-987c-95182a248187</tstamps>
+      <units>
+        <unit name="A">
+          <pins/>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C1">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9532639a-192f-4387-9e30-d6a73039d06c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7f2cbcad-14d4-4bbe-b2f9-b1617291b055</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>23087e86-c8b5-4564-97f4-7d17299d3ddd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>72d2bf58-6353-4183-b7b6-6b4cb20d9fb2</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2e962bbf-c5cf-4e30-9079-d0a39561dbfb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c6cc2986-c24c-49a6-9292-7f62d4b97e26</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>220PF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>af627279-93d4-4241-adc3-1744a714d9f3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c504bdd2-2733-411f-bde3-000039744738</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57b80bd0-39f0-4d18-b0c7-d87276b52727</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11f0bf5d-6d31-4b30-b69c-010147395bed</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>1uf</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e0c9893c-b05d-4818-834e-09107e14feec</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c2c508c0-bf8f-451f-9bde-c009541b1a25</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>22uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</datasheet>
+      <description>容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</description>
+      <fields>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+        <field name="3D Model">1ba041120af144c991958decab20d241</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Temperature Coefficient">X5R</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Voltage Rating">25V</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description">容值:22uF;精度:±20%;额定电压:25V;温度系数:X5R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT" description=""/>
+      <property name="Manufacturer Part" value="CGA0805X5R226M250MT"/>
+      <property name="Manufacturer" value="HRE(芯声)"/>
+      <property name="Supplier Part" value="C6119899"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="22uF ±20% 25V"/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Temperature Coefficient" value="X5R"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Voltage Rating" value="25V"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38ec3d84-3969-4862-bada-fc1936cae331</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6335cdf8-e346-4349-8c81-24dc77578d3b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>220PF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4dd19102-da9a-46ca-8fb9-09c124bb3f9d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>1uf</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <description>容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</description>
+      <fields>
+        <field name="3D Model">ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0603_L1.6-W0.8-H0.8</field>
+        <field name="3D Model Transform">62.992,31.496,0,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description">容值:100nF;精度:±10%;额定电压:50V;温度系数:X7R;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT" description=""/>
+      <property name="3D Model" value="ac125912035d415993ca9572d50418b1|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0603_L1.6-W0.8-H0.8"/>
+      <property name="3D Model Transform" value="62.992,31.496,0,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>35d280a0-4851-40bf-8536-f3caf303f1d6</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C58">
+      <value>100uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <fields>
+        <field name="3D Model">1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CapAcitance" description=""/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b5f31ba-0130-4157-888a-45b77c490136</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C59">
+      <value>10uF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <fields>
+        <field name="3D Model">1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CapAcitance" description=""/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d4f09e2c-5d51-45a8-8b9e-09a698c97715</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C60">
+      <value>100nF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <fields>
+        <field name="3D Model">1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CapAcitance" description=""/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d68a2f01-8047-40b0-bf61-a3bae9a1620b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C61">
+      <value>100nF</value>
+      <footprint>ProPrj_pow-easyedapro:C0805</footprint>
+      <fields>
+        <field name="3D Model">1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">C0805_L2.0-W1.3-H1.3</field>
+        <field name="3D Model Transform">78.74,51.181,0,0,0,0,0,0.0005,0</field>
+        <field name="Supplier Footprint">0805</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="CapAcitance" description=""/>
+      <property name="3D Model" value="1ba041120af144c991958decab20d241|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="C0805_L2.0-W1.3-H1.3"/>
+      <property name="3D Model Transform" value="78.74,51.181,0,0,0,0,0,0.0005,0"/>
+      <property name="Supplier Footprint" value="0805"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>40f9e80c-3f30-4c43-853c-718f6dd60f85</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="CN1">
+      <value>XT60PW-M</value>
+      <footprint>ProPrj_pow-easyedapro:CONN-TH_XT60PW-M</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20240118/44A3DCFF53BE25DC65378AFFB21277A4.pdf</datasheet>
+      <description>类别:-;类型1:-;</description>
+      <fields>
+        <field name="Manufacturer Part">XT60PW-M</field>
+        <field name="Manufacturer">AMASS(艾迈斯)</field>
+        <field name="Supplier Part">C98732</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">AMASS(艾迈斯)航模插头xt60连接器150公母对接pw锂电池公头 板插卧式XT60PW-M</field>
+        <field name="3D Model">37912d55e50045169535334d164bae93|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">CONN-TH_XT60PW-M</field>
+        <field name="3D Model Transform">712.597,610.235,0,0,0,0,-161.417,0,-118.11</field>
+        <field name="Belt length">-</field>
+        <field name="Colour">黄色</field>
+        <field name="FlameRetardantGrade">-</field>
+        <field name="Input">-</field>
+        <field name="InsulationMaterial">-</field>
+        <field name="Interface">-</field>
+        <field name="InterfaceType">公头</field>
+        <field name="JLCPCB Part Class">扩展库</field>
+        <field name="MaximumCurrent">-</field>
+        <field name="MetalMaterial">-</field>
+        <field name="NumberOfUSBHoles">-</field>
+        <field name="Output">-</field>
+        <field name="Power">-</field>
+        <field name="RatedCurrent">-</field>
+        <field name="RatedVoltage">-</field>
+        <field name="RecommendedWireGauge">-</field>
+        <field name="Size">-</field>
+        <field name="Supplier Footprint">-</field>
+        <field name="Type">卧式插头</field>
+        <field name="Type1">-</field>
+        <field name="contact resistance">-</field>
+        <field name="specifications">-</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_XT60PW-M</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20240118/44A3DCFF53BE25DC65378AFFB21277A4.pdf</field>
+        <field name="Description">类别:-;类型1:-;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="XT60PW-M" description=""/>
+      <property name="Manufacturer Part" value="XT60PW-M"/>
+      <property name="Manufacturer" value="AMASS(艾迈斯)"/>
+      <property name="Supplier Part" value="C98732"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="AMASS(艾迈斯)航模插头xt60连接器150公母对接pw锂电池公头 板插卧式XT60PW-M"/>
+      <property name="3D Model" value="37912d55e50045169535334d164bae93|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="CONN-TH_XT60PW-M"/>
+      <property name="3D Model Transform" value="712.597,610.235,0,0,0,0,-161.417,0,-118.11"/>
+      <property name="Belt length" value="-"/>
+      <property name="Colour" value="黄色"/>
+      <property name="FlameRetardantGrade" value="-"/>
+      <property name="Input" value="-"/>
+      <property name="InsulationMaterial" value="-"/>
+      <property name="Interface" value="-"/>
+      <property name="InterfaceType" value="公头"/>
+      <property name="JLCPCB Part Class" value="扩展库"/>
+      <property name="MaximumCurrent" value="-"/>
+      <property name="MetalMaterial" value="-"/>
+      <property name="NumberOfUSBHoles" value="-"/>
+      <property name="Output" value="-"/>
+      <property name="Power" value="-"/>
+      <property name="RatedCurrent" value="-"/>
+      <property name="RatedVoltage" value="-"/>
+      <property name="RecommendedWireGauge" value="-"/>
+      <property name="Size" value="-"/>
+      <property name="Supplier Footprint" value="-"/>
+      <property name="Type" value="卧式插头"/>
+      <property name="Type1" value="-"/>
+      <property name="contact resistance" value="-"/>
+      <property name="specifications" value="-"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e4d0630e-82af-4a79-92ae-d8a64a0afee4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>SMF12A</value>
+      <footprint>ProPrj_pow-easyedapro:SOD-123_L2.7-W1.8-LS3.7-RD</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/SMF12A/432816.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">SMF12A</field>
+        <field name="Manufacturer">AnBon(安邦)</field>
+        <field name="Supplier Part">C435478</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">12V 10.1A</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:SOD-123_L2.7-W1.8-LS3.7-RD</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/SMF12A/432816.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="SMF12A_C435478" description=""/>
+      <property name="Manufacturer Part" value="SMF12A"/>
+      <property name="Manufacturer" value="AnBon(安邦)"/>
+      <property name="Supplier Part" value="C435478"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="12V 10.1A"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57dec5da-6c74-4818-bf3e-1db1f6b62e60</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L">
+      <value>LAIL-PZ2.54-8P-L</value>
+      <footprint>ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PZ2.54-8P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54950609</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x8P 间距:2.54mm 方针 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PZ2.54-8P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PZ2.54-8P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54950609"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x8P 间距:2.54mm 方针 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5112548e-285c-4489-8e9e-88c8e0732f34</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>4.8uh</value>
+      <footprint>ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</datasheet>
+      <description>电感值:2.2uH;精度:±20%;额定电流:8A;饱和电流(Isat):12A;直流电阻(DCR):17mΩ;</description>
+      <fields>
+        <field name="Manufacturer Part">MCS0630-2R2MPY1</field>
+        <field name="Manufacturer">PSA(信昌电陶)</field>
+        <field name="Supplier Part">C2937096</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">2.2uH ±20% 8A 17mΩ</field>
+        <field name="3D Model">f365aa58eec94c2a8dfc1404764b7425|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">IND-SMD_L7.1-W6.6-H2.8</field>
+        <field name="3D Model Transform">279.5,259.8,0,0,0,0,0,0,0</field>
+        <field name="DC Resistance (DCR)">17mΩ</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Rated Current">8A</field>
+        <field name="Saturation Current (Isat)">12A</field>
+        <field name="Supplier Footprint">0630</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</field>
+        <field name="Description">电感值:2.2uH;精度:±20%;额定电流:8A;饱和电流(Isat):12A;直流电阻(DCR):17mΩ;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="MCS0630-2R2MPY1" description=""/>
+      <property name="Manufacturer Part" value="MCS0630-2R2MPY1"/>
+      <property name="Manufacturer" value="PSA(信昌电陶)"/>
+      <property name="Supplier Part" value="C2937096"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="2.2uH ±20% 8A 17mΩ"/>
+      <property name="3D Model" value="f365aa58eec94c2a8dfc1404764b7425|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="IND-SMD_L7.1-W6.6-H2.8"/>
+      <property name="3D Model Transform" value="279.5,259.8,0,0,0,0,0,0,0"/>
+      <property name="DC Resistance (DCR)" value="17mΩ"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Rated Current" value="8A"/>
+      <property name="Saturation Current (Isat)" value="12A"/>
+      <property name="Supplier Footprint" value="0630"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5c5e4349-2926-40cb-b7ab-c67266cd6f10</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L2">
+      <value>4.8uh</value>
+      <footprint>ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6</footprint>
+      <datasheet>https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</datasheet>
+      <description>电感值:2.2uH;精度:±20%;额定电流:8A;饱和电流(Isat):12A;直流电阻(DCR):17mΩ;</description>
+      <fields>
+        <field name="Manufacturer Part">MCS0630-2R2MPY1</field>
+        <field name="Manufacturer">PSA(信昌电陶)</field>
+        <field name="Supplier Part">C2937096</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">2.2uH ±20% 8A 17mΩ</field>
+        <field name="3D Model">f365aa58eec94c2a8dfc1404764b7425|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">IND-SMD_L7.1-W6.6-H2.8</field>
+        <field name="3D Model Transform">279.5,259.8,0,0,0,0,0,0,0</field>
+        <field name="DC Resistance (DCR)">17mΩ</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Rated Current">8A</field>
+        <field name="Saturation Current (Isat)">12A</field>
+        <field name="Supplier Footprint">0630</field>
+        <field name="Tolerance">±20%</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</field>
+        <field name="Description">电感值:2.2uH;精度:±20%;额定电流:8A;饱和电流(Isat):12A;直流电阻(DCR):17mΩ;</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="MCS0630-2R2MPY1" description=""/>
+      <property name="Manufacturer Part" value="MCS0630-2R2MPY1"/>
+      <property name="Manufacturer" value="PSA(信昌电陶)"/>
+      <property name="Supplier Part" value="C2937096"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="2.2uH ±20% 8A 17mΩ"/>
+      <property name="3D Model" value="f365aa58eec94c2a8dfc1404764b7425|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="IND-SMD_L7.1-W6.6-H2.8"/>
+      <property name="3D Model Transform" value="279.5,259.8,0,0,0,0,0,0,0"/>
+      <property name="DC Resistance (DCR)" value="17mΩ"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Rated Current" value="8A"/>
+      <property name="Saturation Current (Isat)" value="12A"/>
+      <property name="Supplier Footprint" value="0630"/>
+      <property name="Tolerance" value="±20%"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d97f0fd9-a549-49b7-b88f-26f1f5de5849</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="LED1">
+      <value>~</value>
+      <footprint>ProPrj_pow-easyedapro:LED_0603</footprint>
+      <fields>
+        <field name="Footprint">ProPrj_pow-easyedapro:LED_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LED_R" description=""/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f419531e-10cf-498c-a31b-054a72ff144f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R">
+      <value>LAIL-PZ2.54-8P-L</value>
+      <footprint>ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PZ2.54-8P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54950609</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x8P 间距:2.54mm 方针 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PZ2.54-8P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PZ2.54-8P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54950609"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x8P 间距:2.54mm 方针 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ef2d492a-48b1-4996-9c39-5091efacfc96</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>10R</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <description>10R</description>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description">10R</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>61ba72f0-1ff7-421e-bab6-32709c92e1f4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>82K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2f26aac6-589c-4fdb-8d1f-1511160b43ea</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>11.1K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9cb05ea4-0e7e-45f9-a0c6-c8a85922a2e1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>10kΩ</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">0603WAF5602T5E</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="Supplier Part">C23206</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">56kΩ ±1% 100mW 厚膜电阻</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="0603WAF5602T5E" description=""/>
+      <property name="Manufacturer Part" value="0603WAF5602T5E"/>
+      <property name="Manufacturer" value="UNI-ROYAL(厚声)"/>
+      <property name="Supplier Part" value="C23206"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="56kΩ ±1% 100mW 厚膜电阻"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>51d822eb-f890-4954-8e72-ba256bf78d42</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>10kΩ</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">0603WAF5602T5E</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="Supplier Part">C23206</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">56kΩ ±1% 100mW 厚膜电阻</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="0603WAF5602T5E" description=""/>
+      <property name="Manufacturer Part" value="0603WAF5602T5E"/>
+      <property name="Manufacturer" value="UNI-ROYAL(厚声)"/>
+      <property name="Supplier Part" value="C23206"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="56kΩ ±1% 100mW 厚膜电阻"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>78040820-ff9e-42d7-b0d1-b3506ef38a79</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>10R</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <description>10R</description>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description">10R</field>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ce3b80d9-e6c0-49d5-b3cb-af47cac27dfd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>300K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>efe14a0c-8a71-47ab-85be-733947c107ef</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>10kΩ</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">0603WAF5602T5E</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="Supplier Part">C23206</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">56kΩ ±1% 100mW 厚膜电阻</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="0603WAF5602T5E" description=""/>
+      <property name="Manufacturer Part" value="0603WAF5602T5E"/>
+      <property name="Manufacturer" value="UNI-ROYAL(厚声)"/>
+      <property name="Supplier Part" value="C23206"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="56kΩ ±1% 100mW 厚膜电阻"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cdd45272-2df1-4a11-9e0f-a6db088dc14b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>10kΩ</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">0603WAF5602T5E</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="Supplier Part">C23206</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">56kΩ ±1% 100mW 厚膜电阻</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="0603WAF5602T5E" description=""/>
+      <property name="Manufacturer Part" value="0603WAF5602T5E"/>
+      <property name="Manufacturer" value="UNI-ROYAL(厚声)"/>
+      <property name="Supplier Part" value="C23206"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="56kΩ ±1% 100mW 厚膜电阻"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>af9c484d-8540-47b2-971c-ffdd4f47e8a1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>130K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2b2a0e58-b563-4535-ad58-7efa42b84bdc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>82K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>886d6720-7b69-4064-87df-b892b91ca5f9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>11.1K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b306b020-325f-4f20-add0-3304ba71f81b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>300K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>de05160c-f8f1-46ab-a932-784272a100a8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>130K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="3D Model">8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">R0603_L1.6-W0.8-H0.5</field>
+        <field name="3D Model Transform">63,31.5,20.1,0,0,0,0,0,0</field>
+        <field name="Supplier Footprint">0603</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="3D Model" value="8176a32bb9f4431db75ab5f6460c2416|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="R0603_L1.6-W0.8-H0.5"/>
+      <property name="3D Model Transform" value="63,31.5,20.1,0,0,0,0,0,0"/>
+      <property name="Supplier Footprint" value="0603"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>71f19bc7-a25f-4903-8983-fc5cf7c55e25</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>10K</value>
+      <footprint>ProPrj_pow-easyedapro:R0603</footprint>
+      <fields>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="电阻" description=""/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5858d3cd-12b7-4cdd-bd08-edd0d1bce6c1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW2">
+      <value>SS-12D10L5</value>
+      <footprint>ProPrj_pow-easyedapro:SW-TH_SS-12D10L5</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/SS-12D10L5/300104.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">SS-12D10L5</field>
+        <field name="Manufacturer">XKB Connection(中国星坤)</field>
+        <field name="Supplier Part">C319012</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">柄长5mm 直插双档 滑动开关</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:SW-TH_SS-12D10L5</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/SS-12D10L5/300104.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="SS-12D10L5" description=""/>
+      <property name="Manufacturer Part" value="SS-12D10L5"/>
+      <property name="Manufacturer" value="XKB Connection(中国星坤)"/>
+      <property name="Supplier Part" value="C319012"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="柄长5mm 直插双档 滑动开关"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7395b7dc-db82-4265-8a70-dee9f300b3c4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>MP2236GJ-Z</value>
+      <footprint>ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL</footprint>
+      <fields>
+        <field name="Manufacturer Part">MP2236GJ-Z</field>
+        <field name="Supplier Part">C9900000708</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">MP2236GJ-Z</field>
+        <field name="3D Model">dee2381274cf43f7a1d90e9872eb6b7d|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">TSOT-23-8_L2.9-W1.6-H1.1-LS2.8-P0.65</field>
+        <field name="3D Model Transform">110.5,114.2,0,90,0,0,0,0,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">TSOT-23-8_L2.9-W1.6-P0.65-LS2.8</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="MP2236GJ-Z" description=""/>
+      <property name="Manufacturer Part" value="MP2236GJ-Z"/>
+      <property name="Supplier Part" value="C9900000708"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="MP2236GJ-Z"/>
+      <property name="3D Model" value="dee2381274cf43f7a1d90e9872eb6b7d|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="TSOT-23-8_L2.9-W1.6-H1.1-LS2.8-P0.65"/>
+      <property name="3D Model Transform" value="110.5,114.2,0,90,0,0,0,0,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="TSOT-23-8_L2.9-W1.6-P0.65-LS2.8"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>67683d25-7046-4451-ae87-ffdebe9a5c02</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>LAIL-PM2.54-7P-L</value>
+      <footprint>ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PM2.54-7P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54973832</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x7P 间距:2.54mm 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PM2.54-7P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PM2.54-7P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54973832"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x7P 间距:2.54mm 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>766a0616-875f-42d8-8773-a2e6d72213b3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>LAIL-PM2.54-7P-L</value>
+      <footprint>ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PM2.54-7P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54973832</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x7P 间距:2.54mm 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PM2.54-7P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PM2.54-7P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54973832"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x7P 间距:2.54mm 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08693e48-0fe5-46f3-9019-0a8054827d94</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U4">
+      <value>LAIL-PM2.54-7P-L</value>
+      <footprint>ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PM2.54-7P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54973832</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x7P 间距:2.54mm 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PM2.54-7P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PM2.54-7P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54973832"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x7P 间距:2.54mm 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f208105a-ff9d-4c3b-8650-04d6ba2ac73d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U5">
+      <value>MP2236GJ-Z</value>
+      <footprint>ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL</footprint>
+      <fields>
+        <field name="Manufacturer Part">MP2236GJ-Z</field>
+        <field name="Supplier Part">C9900000708</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">MP2236GJ-Z</field>
+        <field name="3D Model">dee2381274cf43f7a1d90e9872eb6b7d|0819f05c4eef4c71ace90d822a990e87</field>
+        <field name="3D Model Title">TSOT-23-8_L2.9-W1.6-H1.1-LS2.8-P0.65</field>
+        <field name="3D Model Transform">110.5,114.2,0,90,0,0,0,0,0</field>
+        <field name="JLCPCB Part Class">Extended Part</field>
+        <field name="Supplier Footprint">TSOT-23-8_L2.9-W1.6-P0.65-LS2.8</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="MP2236GJ-Z" description=""/>
+      <property name="Manufacturer Part" value="MP2236GJ-Z"/>
+      <property name="Supplier Part" value="C9900000708"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="MP2236GJ-Z"/>
+      <property name="3D Model" value="dee2381274cf43f7a1d90e9872eb6b7d|0819f05c4eef4c71ace90d822a990e87"/>
+      <property name="3D Model Title" value="TSOT-23-8_L2.9-W1.6-H1.1-LS2.8-P0.65"/>
+      <property name="3D Model Transform" value="110.5,114.2,0,90,0,0,0,0,0"/>
+      <property name="JLCPCB Part Class" value="Extended Part"/>
+      <property name="Supplier Footprint" value="TSOT-23-8_L2.9-W1.6-P0.65-LS2.8"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d3a73723-1e55-4c12-8185-20c99c1305b4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U6">
+      <value>LAIL-PM2.54-7P-L</value>
+      <footprint>ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-PM2.54-7P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54973832</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x7P 间距:2.54mm 直插</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-PM2.54-7P-L" description=""/>
+      <property name="Manufacturer Part" value="LAIL-PM2.54-7P-L"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C54973832"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x7P 间距:2.54mm 直插"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>93c33505-69c1-49ed-9501-fe01a7061a5c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="USB1">
+      <value>LAIL-TYPE-C-16PIN-08-WT</value>
+      <footprint>ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C55591235</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">Type-C 母 卧贴</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-TYPE-C-16PIN-08-WT" description=""/>
+      <property name="Manufacturer Part" value="LAIL-TYPE-C-16PIN-08-WT"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C55591235"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="Type-C 母 卧贴"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1b301c4a-3f38-4d16-9c3d-389362e3cffb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A1B12"/>
+            <pin num="A4B9"/>
+            <pin num="B8"/>
+            <pin num="A5"/>
+            <pin num="B7"/>
+            <pin num="A6"/>
+            <pin num="A7"/>
+            <pin num="B6"/>
+            <pin num="A8"/>
+            <pin num="B5"/>
+            <pin num="B4A9"/>
+            <pin num="B1A12"/>
+            <pin num="16"/>
+            <pin num="15"/>
+            <pin num="14"/>
+            <pin num="13"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="USB2">
+      <value>LAIL-TYPE-C-16PIN-08-WT</value>
+      <footprint>ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C55591235</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">Type-C 母 卧贴</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="LAIL-TYPE-C-16PIN-08-WT" description=""/>
+      <property name="Manufacturer Part" value="LAIL-TYPE-C-16PIN-08-WT"/>
+      <property name="Manufacturer" value="LAILAN(莱联)"/>
+      <property name="Supplier Part" value="C55591235"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="Type-C 母 卧贴"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b0689d2e-5e7e-4a3a-99e5-4a5d671d9054</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="A1B12"/>
+            <pin num="A4B9"/>
+            <pin num="B8"/>
+            <pin num="A5"/>
+            <pin num="B7"/>
+            <pin num="A6"/>
+            <pin num="A7"/>
+            <pin num="B6"/>
+            <pin num="A8"/>
+            <pin num="B5"/>
+            <pin num="B4A9"/>
+            <pin num="B1A12"/>
+            <pin num="16"/>
+            <pin num="15"/>
+            <pin num="14"/>
+            <pin num="13"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="右电机">
+      <value>HX-XH2.54-6PZZ</value>
+      <footprint>ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">HX-XH2.54-6PZZ</field>
+        <field name="Manufacturer">hanxia(韩下)</field>
+        <field name="Supplier Part">C42391664</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x6P 间距:2.54mm 直插 系列:XH</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="HX-XH2.54-6PZZ" description=""/>
+      <property name="Manufacturer Part" value="HX-XH2.54-6PZZ"/>
+      <property name="Manufacturer" value="hanxia(韩下)"/>
+      <property name="Supplier Part" value="C42391664"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x6P 间距:2.54mm 直插 系列:XH"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ba2f72a-f3a5-4eed-b8ad-2a634c3534d3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="左电机">
+      <value>HX-XH2.54-6PZZ</value>
+      <footprint>ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ</footprint>
+      <datasheet>https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</datasheet>
+      <fields>
+        <field name="Manufacturer Part">HX-XH2.54-6PZZ</field>
+        <field name="Manufacturer">hanxia(韩下)</field>
+        <field name="Supplier Part">C42391664</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x6P 间距:2.54mm 直插 系列:XH</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ProPrj_pow-easyedapro" part="HX-XH2.54-6PZZ" description=""/>
+      <property name="Manufacturer Part" value="HX-XH2.54-6PZZ"/>
+      <property name="Manufacturer" value="hanxia(韩下)"/>
+      <property name="Supplier Part" value="C42391664"/>
+      <property name="Supplier" value="LCSC"/>
+      <property name="LCSC Part Name" value="1x6P 间距:2.54mm 直插 系列:XH"/>
+      <property name="Sheetname" value="Schematic1"/>
+      <property name="Sheetfile" value="ProPrj_power_2026-10-02.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8c04e8b2-f09a-451e-9582-67f7d7caf0cb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="ProPrj_pow-easyedapro" part="0603WAF5602T5E">
+      <docs>https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</docs>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">56kΩ</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/0603WAF5602T5E/23933.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">0603WAF5602T5E</field>
+        <field name="Manufacturer">UNI-ROYAL(厚声)</field>
+        <field name="Supplier Part">C23206</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">56kΩ ±1% 100mW 厚膜电阻</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="C1210X7R475K630NT">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="CGA0805X5R226M250MT">
+      <docs>https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</docs>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">22uF</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/CGA0805X5R226M250MT/7062605.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">CGA0805X5R226M250MT</field>
+        <field name="Manufacturer">HRE(芯声)</field>
+        <field name="Supplier Part">C6119899</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">22uF ±20% 25V</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="CapAcitance">
+      <fields>
+        <field name="Reference"/>
+        <field name="Value">100nF</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:C0805</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="Drawing-Symbol_A4">
+      <fields>
+        <field name="Reference"/>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="HX-XH2.54-6PZZ">
+      <docs>https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</docs>
+      <fields>
+        <field name="Reference">CN</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/HX-XH2.54-6PZZ/44326936.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">HX-XH2.54-6PZZ</field>
+        <field name="Manufacturer">hanxia(韩下)</field>
+        <field name="Supplier Part">C42391664</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x6P 间距:2.54mm 直插 系列:XH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+        <pin num="5" name="5" type="unspecified"/>
+        <pin num="6" name="6" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="LAIL-PM2.54-7P-L">
+      <docs>https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PM2.54-7P-L/58554910.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">LAIL-PM2.54-7P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54973832</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x7P 间距:2.54mm 直插</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+        <pin num="5" name="5" type="unspecified"/>
+        <pin num="6" name="6" type="unspecified"/>
+        <pin num="7" name="7" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="LAIL-PZ2.54-8P-L">
+      <docs>https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</docs>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-PZ2.54-8P-L/58519962.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">LAIL-PZ2.54-8P-L</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C54950609</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">1x8P 间距:2.54mm 方针 直插</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+        <pin num="5" name="5" type="unspecified"/>
+        <pin num="6" name="6" type="unspecified"/>
+        <pin num="7" name="7" type="unspecified"/>
+        <pin num="8" name="8" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="LAIL-TYPE-C-16PIN-08-WT">
+      <docs>https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</docs>
+      <fields>
+        <field name="Reference">USB</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/LAIL-TYPE-C-16PIN-08-WT/59664940.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">LAIL-TYPE-C-16PIN-08-WT</field>
+        <field name="Manufacturer">LAILAN(莱联)</field>
+        <field name="Supplier Part">C55591235</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">Type-C 母 卧贴</field>
+      </fields>
+      <pins>
+        <pin num="13" name="SHELL" type="unspecified"/>
+        <pin num="14" name="SHELL" type="unspecified"/>
+        <pin num="15" name="SHELL" type="unspecified"/>
+        <pin num="16" name="SHELL" type="unspecified"/>
+        <pin num="A1B12" name="GND" type="unspecified"/>
+        <pin num="A4B9" name="VBUS" type="unspecified"/>
+        <pin num="A5" name="CC1" type="unspecified"/>
+        <pin num="A6" name="DP1" type="unspecified"/>
+        <pin num="A7" name="DN1" type="unspecified"/>
+        <pin num="A8" name="SBU1" type="unspecified"/>
+        <pin num="B1A12" name="GND" type="unspecified"/>
+        <pin num="B4A9" name="VBUS" type="unspecified"/>
+        <pin num="B5" name="CC2" type="unspecified"/>
+        <pin num="B6" name="DP2" type="unspecified"/>
+        <pin num="B7" name="DN2" type="unspecified"/>
+        <pin num="B8" name="SBU2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="LED_R">
+      <fields>
+        <field name="Reference"/>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:LED_0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="input"/>
+        <pin num="2" name="A" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="MCS0630-2R2MPY1">
+      <docs>https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</docs>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">2.2uH</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20220121/EA6E6E6F70ED7BAE67EC293805EAAACB.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">MCS0630-2R2MPY1</field>
+        <field name="Manufacturer">PSA(信昌电陶)</field>
+        <field name="Supplier Part">C2937096</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">2.2uH ±20% 8A 17mΩ</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="MP2236GJ-Z">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+        <field name="Manufacturer Part">MP2236GJ-Z</field>
+        <field name="Supplier Part">C9900000708</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">MP2236GJ-Z</field>
+      </fields>
+      <pins>
+        <pin num="1" name="AGND" type="input"/>
+        <pin num="2" name="IN" type="input"/>
+        <pin num="3" name="SW" type="input"/>
+        <pin num="4" name="GND" type="input"/>
+        <pin num="5" name="BST" type="input"/>
+        <pin num="6" name="EN" type="input"/>
+        <pin num="7" name="VCC" type="input"/>
+        <pin num="8" name="FB" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="SMF12A_C435478">
+      <docs>https://item.szlcsc.com/datasheet/SMF12A/432816.html</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:SOD-123_L2.7-W1.8-LS3.7-RD</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/SMF12A/432816.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">SMF12A</field>
+        <field name="Manufacturer">AnBon(安邦)</field>
+        <field name="Supplier Part">C435478</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">12V 10.1A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="unspecified"/>
+        <pin num="2" name="A" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="SS-12D10L5">
+      <docs>https://item.szlcsc.com/datasheet/SS-12D10L5/300104.html</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:SW-TH_SS-12D10L5</field>
+        <field name="Datasheet">https://item.szlcsc.com/datasheet/SS-12D10L5/300104.html</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">SS-12D10L5</field>
+        <field name="Manufacturer">XKB Connection(中国星坤)</field>
+        <field name="Supplier Part">C319012</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">柄长5mm 直插双档 滑动开关</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="XT60PW-M">
+      <docs>https://atta.szlcsc.com/upload/public/pdf/source/20240118/44A3DCFF53BE25DC65378AFFB21277A4.pdf</docs>
+      <fields>
+        <field name="Reference">CN</field>
+        <field name="Value"/>
+        <field name="Footprint">ProPrj_pow-easyedapro:CONN-TH_XT60PW-M</field>
+        <field name="Datasheet">https://atta.szlcsc.com/upload/public/pdf/source/20240118/44A3DCFF53BE25DC65378AFFB21277A4.pdf</field>
+        <field name="Description"/>
+        <field name="Manufacturer Part">XT60PW-M</field>
+        <field name="Manufacturer">AMASS(艾迈斯)</field>
+        <field name="Supplier Part">C98732</field>
+        <field name="Supplier">LCSC</field>
+        <field name="LCSC Part Name">AMASS(艾迈斯)航模插头xt60连接器150公母对接pw锂电池公头 板插卧式XT60PW-M</field>
+      </fields>
+      <pins>
+        <pin num="1" name="-" type="unspecified"/>
+        <pin num="2" name="+" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="ProPrj_pow-easyedapro" part="电阻">
+      <fields>
+        <field name="Reference"/>
+        <field name="Value">10K</field>
+        <field name="Footprint">ProPrj_pow-easyedapro:R0603</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="ProPrj_pow-easyedapro">
+      <uri>${KIPRJMOD}/ProPrj_pow-easyedapro.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/3.3V" class="Default">
+      <node ref="L" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="R" pin="3" pinfunction="3_3" pintype="unspecified"/>
+      <node ref="U2" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="U3" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="U4" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="U6" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="右电机" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="左电机" pin="2" pinfunction="2_2" pintype="unspecified"/>
+    </net>
+    <net code="2" name="/LAIN1" class="Default">
+      <node ref="L" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="U3" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="3" name="/LAIN2" class="Default">
+      <node ref="L" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U3" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="4" name="/LAOUT1" class="Default">
+      <node ref="U2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="左电机" pin="6" pinfunction="6_6" pintype="unspecified"/>
+    </net>
+    <net code="5" name="/LAOUT2" class="Default">
+      <node ref="U2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="左电机" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="6" name="/LBIN1" class="Default">
+      <node ref="L" pin="3" pinfunction="3_3" pintype="unspecified"/>
+      <node ref="U2" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="7" name="/LBIN2" class="Default">
+      <node ref="L" pin="4" pinfunction="4_4" pintype="unspecified"/>
+      <node ref="U2" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="8" name="/LF_ENA" class="Default">
+      <node ref="L" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="左电机" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="9" name="/LF_ENB" class="Default">
+      <node ref="L" pin="8" pinfunction="8_8" pintype="unspecified"/>
+      <node ref="左电机" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="10" name="/RAIN1" class="Default">
+      <node ref="R" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="U6" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="11" name="/RAIN2" class="Default">
+      <node ref="R" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="U6" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="12" name="/RAOUT1" class="Default">
+      <node ref="U4" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="右电机" pin="6" pinfunction="6_6" pintype="unspecified"/>
+    </net>
+    <net code="13" name="/RAOUT2" class="Default">
+      <node ref="U4" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="右电机" pin="1" pinfunction="1_1" pintype="unspecified"/>
+    </net>
+    <net code="14" name="/RBIN1" class="Default">
+      <node ref="R" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="U4" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="15" name="/RBIN2" class="Default">
+      <node ref="R" pin="8" pinfunction="8_8" pintype="unspecified"/>
+      <node ref="U4" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="16" name="/RF_ENA" class="Default">
+      <node ref="R" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="右电机" pin="3" pinfunction="3_3" pintype="unspecified"/>
+    </net>
+    <net code="17" name="/RF_ENB" class="Default">
+      <node ref="R" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="右电机" pin="4" pinfunction="4_4" pintype="unspecified"/>
+    </net>
+    <net code="18" name="/VM" class="Default">
+      <node ref="D1" pin="1" pinfunction="C_1" pintype="unspecified"/>
+      <node ref="LED1" pin="2" pinfunction="A_2" pintype="input"/>
+      <node ref="SW2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="U2" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="U3" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="U4" pin="6" pinfunction="6_6" pintype="unspecified"/>
+      <node ref="U6" pin="6" pinfunction="6_6" pintype="unspecified"/>
+    </net>
+    <net code="19" name="GND" class="Default">
+      <node ref="C1" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C10" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C11" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C12" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C13" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C16" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C2" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C3" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C4" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C5" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C58" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C59" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C60" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C61" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="C8" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C9" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="CN1" pin="1" pinfunction="-_1" pintype="unspecified"/>
+      <node ref="CN1" pin="3" pinfunction="3_3" pintype="unspecified"/>
+      <node ref="CN1" pin="4" pinfunction="4_4" pintype="unspecified"/>
+      <node ref="D1" pin="2" pinfunction="A_2" pintype="unspecified"/>
+      <node ref="L" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="R" pin="4" pinfunction="4_4" pintype="unspecified"/>
+      <node ref="R10" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R12" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R14" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R15" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R3" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U1" pin="1" pinfunction="AGND_1" pintype="input"/>
+      <node ref="U1" pin="4" pinfunction="GND_4" pintype="input"/>
+      <node ref="U2" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="U3" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="U4" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="U5" pin="1" pinfunction="AGND_1" pintype="input"/>
+      <node ref="U5" pin="4" pinfunction="GND_4" pintype="input"/>
+      <node ref="U6" pin="7" pinfunction="7_7" pintype="unspecified"/>
+      <node ref="USB1" pin="13" pinfunction="SHELL_13" pintype="unspecified"/>
+      <node ref="USB1" pin="14" pinfunction="SHELL_14" pintype="unspecified"/>
+      <node ref="USB1" pin="15" pinfunction="SHELL_15" pintype="unspecified"/>
+      <node ref="USB1" pin="16" pinfunction="SHELL_16" pintype="unspecified"/>
+      <node ref="USB1" pin="A1B12" pinfunction="GND_A1B12" pintype="unspecified"/>
+      <node ref="USB1" pin="B1A12" pinfunction="GND_B1A12" pintype="unspecified"/>
+      <node ref="USB2" pin="13" pinfunction="SHELL_13" pintype="unspecified"/>
+      <node ref="USB2" pin="14" pinfunction="SHELL_14" pintype="unspecified"/>
+      <node ref="USB2" pin="15" pinfunction="SHELL_15" pintype="unspecified"/>
+      <node ref="USB2" pin="16" pinfunction="SHELL_16" pintype="unspecified"/>
+      <node ref="USB2" pin="A1B12" pinfunction="GND_A1B12" pintype="unspecified"/>
+      <node ref="USB2" pin="B1A12" pinfunction="GND_B1A12" pintype="unspecified"/>
+      <node ref="右电机" pin="5" pinfunction="5_5" pintype="unspecified"/>
+      <node ref="左电机" pin="5" pinfunction="5_5" pintype="unspecified"/>
+    </net>
+    <net code="20" name="Net-(C6-Pad1)" class="Default">
+      <node ref="C6" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="input"/>
+    </net>
+    <net code="21" name="Net-(C14-Pad1)" class="Default">
+      <node ref="C14" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R6" pin="1" pinfunction="1_1" pintype="input"/>
+    </net>
+    <net code="22" name="Net-(LED1-C)" class="Default">
+      <node ref="LED1" pin="1" pinfunction="C_1" pintype="input"/>
+      <node ref="R15" pin="2" pinfunction="2_2" pintype="input"/>
+    </net>
+    <net code="23" name="Net-(U1-BST)" class="Default">
+      <node ref="R6" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U1" pin="5" pinfunction="BST_5" pintype="input"/>
+    </net>
+    <net code="24" name="Net-(U1-EN)" class="Default">
+      <node ref="R13" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R14" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U1" pin="6" pinfunction="EN_6" pintype="input"/>
+    </net>
+    <net code="25" name="Net-(U1-FB)" class="Default">
+      <node ref="C15" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R11" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R12" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U1" pin="8" pinfunction="FB_8" pintype="input"/>
+    </net>
+    <net code="26" name="Net-(U1-SW)" class="Default">
+      <node ref="C14" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="L2" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U1" pin="3" pinfunction="SW_3" pintype="input"/>
+    </net>
+    <net code="27" name="Net-(U1-VCC)" class="Default">
+      <node ref="C16" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U1" pin="7" pinfunction="VCC_7" pintype="input"/>
+    </net>
+    <net code="28" name="Net-(U5-BST)" class="Default">
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U5" pin="5" pinfunction="BST_5" pintype="input"/>
+    </net>
+    <net code="29" name="Net-(U5-EN)" class="Default">
+      <node ref="R10" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R7" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U5" pin="6" pinfunction="EN_6" pintype="input"/>
+    </net>
+    <net code="30" name="Net-(U5-FB)" class="Default">
+      <node ref="C7" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R2" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R3" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U5" pin="8" pinfunction="FB_8" pintype="input"/>
+    </net>
+    <net code="31" name="Net-(U5-SW)" class="Default">
+      <node ref="C6" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="L1" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="U5" pin="3" pinfunction="SW_3" pintype="input"/>
+    </net>
+    <net code="32" name="Net-(U5-VCC)" class="Default">
+      <node ref="C11" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="U5" pin="7" pinfunction="VCC_7" pintype="input"/>
+    </net>
+    <net code="33" name="Net-(USB1-CC1)" class="Default">
+      <node ref="R4" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="USB1" pin="A5" pinfunction="CC1_A5" pintype="unspecified"/>
+    </net>
+    <net code="34" name="Net-(USB1-CC2)" class="Default">
+      <node ref="R5" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="USB1" pin="B5" pinfunction="CC2_B5" pintype="unspecified"/>
+    </net>
+    <net code="35" name="Net-(USB2-CC1)" class="Default">
+      <node ref="R8" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="USB2" pin="A5" pinfunction="CC1_A5" pintype="unspecified"/>
+    </net>
+    <net code="36" name="Net-(USB2-CC2)" class="Default">
+      <node ref="R9" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="USB2" pin="B5" pinfunction="CC2_B5" pintype="unspecified"/>
+    </net>
+    <net code="37" name="VCCIN" class="Default">
+      <node ref="C1" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C10" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C3" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C58" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C59" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C60" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C61" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="C8" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="C9" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="CN1" pin="2" pinfunction="+_2" pintype="unspecified"/>
+      <node ref="R13" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R7" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="SW2" pin="2" pinfunction="2_2" pintype="unspecified"/>
+      <node ref="U1" pin="2" pinfunction="IN_2" pintype="input"/>
+      <node ref="U5" pin="2" pinfunction="IN_2" pintype="input"/>
+    </net>
+    <net code="38" name="VCCOUT" class="Default">
+      <node ref="C4" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C5" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C7" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="L1" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R2" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R4" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R5" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="USB1" pin="A4B9" pinfunction="VBUS_A4B9" pintype="unspecified"/>
+      <node ref="USB1" pin="B4A9" pinfunction="VBUS_B4A9" pintype="unspecified"/>
+    </net>
+    <net code="39" name="VCCOUT1" class="Default">
+      <node ref="C12" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C13" pin="1" pinfunction="1_1" pintype="unspecified"/>
+      <node ref="C15" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="L2" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R11" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="R8" pin="2" pinfunction="2_2" pintype="input"/>
+      <node ref="R9" pin="1" pinfunction="1_1" pintype="input"/>
+      <node ref="USB2" pin="A4B9" pinfunction="VBUS_A4B9" pintype="unspecified"/>
+      <node ref="USB2" pin="B4A9" pinfunction="VBUS_B4A9" pintype="unspecified"/>
+    </net>
+    <net code="40" name="unconnected-(SW2-Pad3)" class="Default">
+      <node ref="SW2" pin="3" pinfunction="3_3" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U3-Pad1)" class="Default">
+      <node ref="U3" pin="1" pinfunction="1_1" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U3-Pad2)" class="Default">
+      <node ref="U3" pin="2" pinfunction="2_2" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U6-Pad1)" class="Default">
+      <node ref="U6" pin="1" pinfunction="1_1" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U6-Pad2)" class="Default">
+      <node ref="U6" pin="2" pinfunction="2_2" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(USB1-DN1-PadA7)" class="Default">
+      <node ref="USB1" pin="A7" pinfunction="DN1_A7" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(USB1-DN2-PadB7)" class="Default">
+      <node ref="USB1" pin="B7" pinfunction="DN2_B7" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(USB1-DP1-PadA6)" class="Default">
+      <node ref="USB1" pin="A6" pinfunction="DP1_A6" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(USB1-DP2-PadB6)" class="Default">
+      <node ref="USB1" pin="B6" pinfunction="DP2_B6" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(USB1-SBU1-PadA8)" class="Default">
+      <node ref="USB1" pin="A8" pinfunction="SBU1_A8" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(USB1-SBU2-PadB8)" class="Default">
+      <node ref="USB1" pin="B8" pinfunction="SBU2_B8" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(USB2-DN1-PadA7)" class="Default">
+      <node ref="USB2" pin="A7" pinfunction="DN1_A7" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(USB2-DN2-PadB7)" class="Default">
+      <node ref="USB2" pin="B7" pinfunction="DN2_B7" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="53" name="unconnected-(USB2-DP1-PadA6)" class="Default">
+      <node ref="USB2" pin="A6" pinfunction="DP1_A6" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="54" name="unconnected-(USB2-DP2-PadB6)" class="Default">
+      <node ref="USB2" pin="B6" pinfunction="DP2_B6" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="55" name="unconnected-(USB2-SBU1-PadA8)" class="Default">
+      <node ref="USB2" pin="A8" pinfunction="SBU1_A8" pintype="unspecified+no_connect"/>
+    </net>
+    <net code="56" name="unconnected-(USB2-SBU2-PadB8)" class="Default">
+      <node ref="USB2" pin="B8" pinfunction="SBU2_B8" pintype="unspecified+no_connect"/>
+    </net>
+  </nets>
+</export>

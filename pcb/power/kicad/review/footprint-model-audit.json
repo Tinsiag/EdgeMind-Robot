@@ -1,0 +1,52 @@
+{
+  "libraries": {
+    "Capacitor_THT": 4,
+    "Capacitor_SMD": 58,
+    "Connector_AMASS": 1,
+    "Diode_SMD": 8,
+    "Fuse": 3,
+    "Package_TO_SOT_THT": 6,
+    "Package_TO_SOT_SMD": 14,
+    "Resistor_SMD": 85,
+    "Package_SO": 12,
+    "Inductor_SMD": 4,
+    "Connector_USB": 2,
+    "Connector_PinHeader_2.54mm": 5,
+    "Connector_JST": 6,
+    "TerminalBlock_Phoenix": 4,
+    "Potentiometer_THT": 2,
+    "EdgeMind_Module": 2,
+    "TestPoint": 1
+  },
+  "missing_footprints": [],
+  "pad_pin_mismatches": [],
+  "missing_models": [
+    [
+      "CN1",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_AMASS.3dshapes/AMASS_XT60PW-M_1x02_P7.20mm_Horizontal.step"
+    ],
+    [
+      "F1",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Blade_ATO_Littelfuse_Pudenz_2_Pin.step"
+    ],
+    [
+      "USB1",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-17.step"
+    ],
+    [
+      "USB2",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-17.step"
+    ],
+    [
+      "F2",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal.step"
+    ],
+    [
+      "F3",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal.step"
+    ]
+  ],
+  "no_models": [
+    "TP1"
+  ]
+}

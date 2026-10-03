@@ -1,0 +1,479 @@
+[
+  {
+    "reference": "U5",
+    "original_reference": "U5",
+    "value": "MP2236GJ-Z",
+    "footprint": "ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL",
+    "schematic_uuid": "d3a73723-1e55-4c12-8185-20c99c1305b4",
+    "pcb_uuid": "03e3ab6a-440a-43d8-afa5-23b546309bee",
+    "pin_count": 8
+  },
+  {
+    "reference": "R11",
+    "original_reference": "R11",
+    "value": "82K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "886d6720-7b69-4064-87df-b892b91ca5f9",
+    "pcb_uuid": "075139c1-6232-4985-ae3d-e34fd60cfb9c",
+    "pin_count": 2
+  },
+  {
+    "reference": "C1",
+    "original_reference": "C1",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "9532639a-192f-4387-9e30-d6a73039d06c",
+    "pcb_uuid": "0df21acf-8c04-4aea-ac9e-fe96935ed2fa",
+    "pin_count": 2
+  },
+  {
+    "reference": "R7",
+    "original_reference": "R7",
+    "value": "300K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "efe14a0c-8a71-47ab-85be-733947c107ef",
+    "pcb_uuid": "0ef5e38e-42c1-408b-ae23-517a6d893bb9",
+    "pin_count": 2
+  },
+  {
+    "reference": "J3",
+    "original_reference": "左电机",
+    "value": "HX-XH2.54-6PZZ",
+    "footprint": "ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ",
+    "schematic_uuid": "8c04e8b2-f09a-451e-9582-67f7d7caf0cb",
+    "pcb_uuid": "113f1858-6b92-4114-9f73-80916323fcff",
+    "pin_count": 6
+  },
+  {
+    "reference": "C7",
+    "original_reference": "C7",
+    "value": "220PF",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "af627279-93d4-4241-adc3-1744a714d9f3",
+    "pcb_uuid": "18a23152-5f7a-41a6-adf0-478e81632ba2",
+    "pin_count": 2
+  },
+  {
+    "reference": "J1",
+    "original_reference": "L",
+    "value": "LAIL-PZ2.54-8P-L",
+    "footprint": "ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L",
+    "schematic_uuid": "5112548e-285c-4489-8e9e-88c8e0732f34",
+    "pcb_uuid": "1dc8323d-9bc4-4a8f-91b4-48b0fb295b21",
+    "pin_count": 8
+  },
+  {
+    "reference": "R13",
+    "original_reference": "R13",
+    "value": "300K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "de05160c-f8f1-46ab-a932-784272a100a8",
+    "pcb_uuid": "22e7aa17-d0e4-4215-931f-9e296f9f94d2",
+    "pin_count": 2
+  },
+  {
+    "reference": "R12",
+    "original_reference": "R12",
+    "value": "11.1K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "b306b020-325f-4f20-add0-3304ba71f81b",
+    "pcb_uuid": "2534c34c-3e7f-466b-8445-7f2018436395",
+    "pin_count": 2
+  },
+  {
+    "reference": "R9",
+    "original_reference": "R9",
+    "value": "10kΩ",
+    "footprint": "ProPrj_pow-easyedapro:R0603_R9",
+    "schematic_uuid": "af9c484d-8540-47b2-971c-ffdd4f47e8a1",
+    "pcb_uuid": "2568b238-d9db-45ea-8900-cebd7e0a3cf3",
+    "pin_count": 2
+  },
+  {
+    "reference": "C61",
+    "original_reference": "C61",
+    "value": "100nF",
+    "footprint": "ProPrj_pow-easyedapro:C0805_C61",
+    "schematic_uuid": "40f9e80c-3f30-4c43-853c-718f6dd60f85",
+    "pcb_uuid": "28d5e85e-c0c7-4509-8459-fc7ea5b01f40",
+    "pin_count": 2
+  },
+  {
+    "reference": "C58",
+    "original_reference": "C58",
+    "value": "100uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805_C58",
+    "schematic_uuid": "6b5f31ba-0130-4157-888a-45b77c490136",
+    "pcb_uuid": "31bc1cc5-b329-416e-8ab7-29c62b43bb07",
+    "pin_count": 2
+  },
+  {
+    "reference": "J4",
+    "original_reference": "右电机",
+    "value": "HX-XH2.54-6PZZ",
+    "footprint": "ProPrj_pow-easyedapro:CONN-TH_6P-P2.50_BX-XH2.54-6PZZ",
+    "schematic_uuid": "4ba2f72a-f3a5-4eed-b8ad-2a634c3534d3",
+    "pcb_uuid": "3621a9c9-f322-4450-a96a-85727be919ab",
+    "pin_count": 6
+  },
+  {
+    "reference": "R6",
+    "original_reference": "R6",
+    "value": "10R",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "ce3b80d9-e6c0-49d5-b3cb-af47cac27dfd",
+    "pcb_uuid": "3970d737-4f71-4414-a59a-cbcc951723fa",
+    "pin_count": 2
+  },
+  {
+    "reference": "CN1",
+    "original_reference": "CN1",
+    "value": "XT60PW-M",
+    "footprint": "ProPrj_pow-easyedapro:CONN-TH_XT60PW-M",
+    "schematic_uuid": "e4d0630e-82af-4a79-92ae-d8a64a0afee4",
+    "pcb_uuid": "473ee340-aff0-40db-8769-92d0b3d4fe71",
+    "pin_count": 4
+  },
+  {
+    "reference": "U1",
+    "original_reference": "U1",
+    "value": "MP2236GJ-Z",
+    "footprint": "ProPrj_pow-easyedapro:TSOT-23-8_L2.9-W1.6-P0.65-LS2.8-BL",
+    "schematic_uuid": "67683d25-7046-4451-ae87-ffdebe9a5c02",
+    "pcb_uuid": "4c72bf91-89f8-4041-b979-acac13b25d02",
+    "pin_count": 8
+  },
+  {
+    "reference": "C16",
+    "original_reference": "C16",
+    "value": "1uf",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "35d280a0-4851-40bf-8536-f3caf303f1d6",
+    "pcb_uuid": "53be75bc-39a1-4790-aab4-5f783507bdbc",
+    "pin_count": 2
+  },
+  {
+    "reference": "C9",
+    "original_reference": "C9",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "57b80bd0-39f0-4d18-b0c7-d87276b52727",
+    "pcb_uuid": "56c0cbe0-7464-4605-8a6f-75b952cdbe9f",
+    "pin_count": 2
+  },
+  {
+    "reference": "R2",
+    "original_reference": "R2",
+    "value": "82K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "2f26aac6-589c-4fdb-8d1f-1511160b43ea",
+    "pcb_uuid": "5841ff03-057a-4276-9f0e-5d3695529eb0",
+    "pin_count": 2
+  },
+  {
+    "reference": "J7",
+    "original_reference": "U4",
+    "value": "LAIL-PM2.54-7P-L",
+    "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+    "schematic_uuid": "f208105a-ff9d-4c3b-8650-04d6ba2ac73d",
+    "pcb_uuid": "59235e31-bc9d-44ca-a839-3602d11bced8",
+    "pin_count": 7
+  },
+  {
+    "reference": "USB1",
+    "original_reference": "USB1",
+    "value": "LAIL-TYPE-C-16PIN-08-WT",
+    "footprint": "ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT",
+    "schematic_uuid": "1b301c4a-3f38-4d16-9c3d-389362e3cffb",
+    "pcb_uuid": "5d977d5f-25f2-412d-b08f-976409cfa901",
+    "pin_count": 16
+  },
+  {
+    "reference": "USB2",
+    "original_reference": "USB2",
+    "value": "LAIL-TYPE-C-16PIN-08-WT",
+    "footprint": "ProPrj_pow-easyedapro:TYPE-C-SMD_LAIL-TYPE-C-16PIN-08-WT",
+    "schematic_uuid": "b0689d2e-5e7e-4a3a-99e5-4a5d671d9054",
+    "pcb_uuid": "69c736fa-ef6e-42bc-b7ca-a8d7cea245e4",
+    "pin_count": 16
+  },
+  {
+    "reference": "L1",
+    "original_reference": "L1",
+    "value": "4.8uh",
+    "footprint": "ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6",
+    "schematic_uuid": "5c5e4349-2926-40cb-b7ab-c67266cd6f10",
+    "pcb_uuid": "6c59555d-478f-4c1f-9453-73f19cd84801",
+    "pin_count": 2
+  },
+  {
+    "reference": "J6",
+    "original_reference": "U3",
+    "value": "LAIL-PM2.54-7P-L",
+    "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+    "schematic_uuid": "08693e48-0fe5-46f3-9019-0a8054827d94",
+    "pcb_uuid": "6e1de153-858d-4afd-9828-4fd4efb7d19e",
+    "pin_count": 7
+  },
+  {
+    "reference": "C3",
+    "original_reference": "C3",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "23087e86-c8b5-4564-97f4-7d17299d3ddd",
+    "pcb_uuid": "6e3f7528-650a-4d0f-956a-5babf2ef4fd6",
+    "pin_count": 2
+  },
+  {
+    "reference": "R1",
+    "original_reference": "R1",
+    "value": "10R",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "61ba72f0-1ff7-421e-bab6-32709c92e1f4",
+    "pcb_uuid": "6f82eca5-70b5-4264-97b1-8ea5a465e22b",
+    "pin_count": 2
+  },
+  {
+    "reference": "J8",
+    "original_reference": "U6",
+    "value": "LAIL-PM2.54-7P-L",
+    "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+    "schematic_uuid": "93c33505-69c1-49ed-9501-fe01a7061a5c",
+    "pcb_uuid": "706cf072-125d-4beb-90d9-126528c7e897",
+    "pin_count": 7
+  },
+  {
+    "reference": "R4",
+    "original_reference": "R4",
+    "value": "10kΩ",
+    "footprint": "ProPrj_pow-easyedapro:R0603_R4",
+    "schematic_uuid": "51d822eb-f890-4954-8e72-ba256bf78d42",
+    "pcb_uuid": "7503f82f-a692-4485-a09a-09df8f520838",
+    "pin_count": 2
+  },
+  {
+    "reference": "R5",
+    "original_reference": "R5",
+    "value": "10kΩ",
+    "footprint": "ProPrj_pow-easyedapro:R0603_R5",
+    "schematic_uuid": "78040820-ff9e-42d7-b0d1-b3506ef38a79",
+    "pcb_uuid": "79e6f318-2b62-4e4a-af60-7811a36600c4",
+    "pin_count": 2
+  },
+  {
+    "reference": "C6",
+    "original_reference": "C6",
+    "value": "100nF",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "c6cc2986-c24c-49a6-9292-7f62d4b97e26",
+    "pcb_uuid": "7a53606b-0dcc-4245-803b-9d87cdb2da9a",
+    "pin_count": 2
+  },
+  {
+    "reference": "C12",
+    "original_reference": "C12",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "c2c508c0-bf8f-451f-9bde-c009541b1a25",
+    "pcb_uuid": "7fa0ac60-c9b9-4979-bb88-59778011b39d",
+    "pin_count": 2
+  },
+  {
+    "reference": "C5",
+    "original_reference": "C5",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "2e962bbf-c5cf-4e30-9079-d0a39561dbfb",
+    "pcb_uuid": "8069594b-2fcd-4a02-875e-ec7e2216ed21",
+    "pin_count": 2
+  },
+  {
+    "reference": "C13",
+    "original_reference": "C13",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "38ec3d84-3969-4862-bada-fc1936cae331",
+    "pcb_uuid": "8c9db3bb-3ed0-43ff-89ad-ef59067bf8f6",
+    "pin_count": 2
+  },
+  {
+    "reference": "C15",
+    "original_reference": "C15",
+    "value": "220PF",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "4dd19102-da9a-46ca-8fb9-09c124bb3f9d",
+    "pcb_uuid": "8cd93dd1-539b-475e-842c-469d8067a6c0",
+    "pin_count": 2
+  },
+  {
+    "reference": "C4",
+    "original_reference": "C4",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "72d2bf58-6353-4183-b7b6-6b4cb20d9fb2",
+    "pcb_uuid": "905ff56c-14bb-4505-a252-f58795936c84",
+    "pin_count": 2
+  },
+  {
+    "reference": "D1",
+    "original_reference": "D1",
+    "value": "SMF12A",
+    "footprint": "ProPrj_pow-easyedapro:SOD-123_L2.7-W1.8-LS3.7-RD",
+    "schematic_uuid": "57dec5da-6c74-4818-bf3e-1db1f6b62e60",
+    "pcb_uuid": "9306bd9a-301b-4e4a-bf87-a307ab5e097a",
+    "pin_count": 2
+  },
+  {
+    "reference": "C14",
+    "original_reference": "C14",
+    "value": "100nF",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "6335cdf8-e346-4349-8c81-24dc77578d3b",
+    "pcb_uuid": "95fbb784-ed8e-4c73-bb4f-afae9b0ed530",
+    "pin_count": 2
+  },
+  {
+    "reference": "R8",
+    "original_reference": "R8",
+    "value": "10kΩ",
+    "footprint": "ProPrj_pow-easyedapro:R0603_R8",
+    "schematic_uuid": "cdd45272-2df1-4a11-9e0f-a6db088dc14b",
+    "pcb_uuid": "99df8970-c0f5-49a8-8580-96bb6294665f",
+    "pin_count": 2
+  },
+  {
+    "reference": "R15",
+    "original_reference": "R15",
+    "value": "10K",
+    "footprint": "ProPrj_pow-easyedapro:R0603_R15",
+    "schematic_uuid": "5858d3cd-12b7-4cdd-bd08-edd0d1bce6c1",
+    "pcb_uuid": "a34e44de-35d5-4dfe-ae66-dc3f779164c8",
+    "pin_count": 2
+  },
+  {
+    "reference": "C8",
+    "original_reference": "C8",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "c504bdd2-2733-411f-bde3-000039744738",
+    "pcb_uuid": "a8b9b5ea-ff94-4f72-b218-bd10f378a5d2",
+    "pin_count": 2
+  },
+  {
+    "reference": "J5",
+    "original_reference": "U2",
+    "value": "LAIL-PM2.54-7P-L",
+    "footprint": "ProPrj_pow-easyedapro:HDR-TH_LAIL-PM2.54-7P-L",
+    "schematic_uuid": "766a0616-875f-42d8-8773-a2e6d72213b3",
+    "pcb_uuid": "b54be2a6-8e2d-430e-8129-7cb8f266c155",
+    "pin_count": 7
+  },
+  {
+    "reference": "C2",
+    "original_reference": "C2",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "7f2cbcad-14d4-4bbe-b2f9-b1617291b055",
+    "pcb_uuid": "c0a39133-b87a-4211-b177-444096d060e8",
+    "pin_count": 2
+  },
+  {
+    "reference": "C11",
+    "original_reference": "C11",
+    "value": "1uf",
+    "footprint": "ProPrj_pow-easyedapro:C0603",
+    "schematic_uuid": "e0c9893c-b05d-4818-834e-09107e14feec",
+    "pcb_uuid": "ce10c02c-668b-4ccb-bf71-26d9173ccedb",
+    "pin_count": 2
+  },
+  {
+    "reference": "J2",
+    "original_reference": "R",
+    "value": "LAIL-PZ2.54-8P-L",
+    "footprint": "ProPrj_pow-easyedapro:CONN-TH_LAIL-PZ2.54-8P-L",
+    "schematic_uuid": "ef2d492a-48b1-4996-9c39-5091efacfc96",
+    "pcb_uuid": "ce9a3634-beb9-4711-8e14-d60eae1e27a1",
+    "pin_count": 8
+  },
+  {
+    "reference": "L2",
+    "original_reference": "L2",
+    "value": "4.8uh",
+    "footprint": "ProPrj_pow-easyedapro:IND-SMD_L7.3-W6.6",
+    "schematic_uuid": "d97f0fd9-a549-49b7-b88f-26f1f5de5849",
+    "pcb_uuid": "d0740779-c4c8-4459-85ee-ec65c818e9b7",
+    "pin_count": 2
+  },
+  {
+    "reference": "R10",
+    "original_reference": "R10",
+    "value": "130K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "2b2a0e58-b563-4535-ad58-7efa42b84bdc",
+    "pcb_uuid": "d2b0a5c7-90d1-4ce6-9b6a-85680d5d1d9d",
+    "pin_count": 2
+  },
+  {
+    "reference": "C60",
+    "original_reference": "C60",
+    "value": "100nF",
+    "footprint": "ProPrj_pow-easyedapro:C0805_C60",
+    "schematic_uuid": "d68a2f01-8047-40b0-bf61-a3bae9a1620b",
+    "pcb_uuid": "d3cca279-9f16-46d5-9048-b7995ace7fb8",
+    "pin_count": 2
+  },
+  {
+    "reference": "C10",
+    "original_reference": "C10",
+    "value": "22uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805",
+    "schematic_uuid": "11f0bf5d-6d31-4b30-b69c-010147395bed",
+    "pcb_uuid": "d5407d85-29da-4f9a-a644-b58888c76032",
+    "pin_count": 2
+  },
+  {
+    "reference": "R14",
+    "original_reference": "R14",
+    "value": "130K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "71f19bc7-a25f-4903-8983-fc5cf7c55e25",
+    "pcb_uuid": "ec281cc4-a389-401f-8791-28d185e6c9e0",
+    "pin_count": 2
+  },
+  {
+    "reference": "R3",
+    "original_reference": "R3",
+    "value": "11.1K",
+    "footprint": "ProPrj_pow-easyedapro:R0603",
+    "schematic_uuid": "9cb05ea4-0e7e-45f9-a0c6-c8a85922a2e1",
+    "pcb_uuid": "edf23295-c6f4-4445-be1a-51454ec126cc",
+    "pin_count": 2
+  },
+  {
+    "reference": "SW2",
+    "original_reference": "SW2",
+    "value": "SS-12D10L5",
+    "footprint": "ProPrj_pow-easyedapro:SW-TH_SS-12D10L5",
+    "schematic_uuid": "7395b7dc-db82-4265-8a70-dee9f300b3c4",
+    "pcb_uuid": "f1f5035e-89b4-4605-b11c-ce960b77a46e",
+    "pin_count": 3
+  },
+  {
+    "reference": "LED1",
+    "original_reference": "LED1",
+    "value": "LED",
+    "footprint": "ProPrj_pow-easyedapro:LED_0603",
+    "schematic_uuid": "f419531e-10cf-498c-a31b-054a72ff144f",
+    "pcb_uuid": "f788e50a-85fe-4344-b441-933eff04f471",
+    "pin_count": 2
+  },
+  {
+    "reference": "C59",
+    "original_reference": "C59",
+    "value": "10uF",
+    "footprint": "ProPrj_pow-easyedapro:C0805_C59",
+    "schematic_uuid": "d4f09e2c-5d51-45a8-8b9e-09a698c97715",
+    "pcb_uuid": "fd91b041-8aaf-4d76-93a2-d3f963299ba0",
+    "pin_count": 2
+  }
+]
