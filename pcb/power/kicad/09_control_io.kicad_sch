@@ -1594,7 +1594,7 @@
 		)
 		(uuid "ffd862c9-a40f-527f-8092-251b8d2943da")
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 149.86 162.56 180)
 		(effects
@@ -1616,7 +1616,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 149.86 66.04 180)
 		(effects
@@ -1638,7 +1638,7 @@
 			)
 		)
 	)
-	(global_label "供电口2_故障脉冲_低有效"
+	(global_label "USB2_FAULT_PULSE_N"
 		(shape passive)
 		(at 149.86 182.88 180)
 		(effects
@@ -1660,7 +1660,7 @@
 			)
 		)
 	)
-	(global_label "供电口1_故障脉冲_低有效"
+	(global_label "USB1_FAULT_PULSE_N"
 		(shape passive)
 		(at 149.86 180.34 180)
 		(effects
@@ -1682,7 +1682,7 @@
 			)
 		)
 	)
-	(global_label "急停回路闭合"
+	(global_label "ESTOP_OK"
 		(shape passive)
 		(at 149.86 185.42 180)
 		(effects
@@ -1704,7 +1704,7 @@
 			)
 		)
 	)
-	(global_label "电池电压采样"
+	(global_label "BAT_ADC"
 		(shape passive)
 		(at 149.86 165.1 180)
 		(effects
@@ -1726,7 +1726,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板3.3V_输入"
+	(global_label "3V3_FPGA_IN"
 		(shape passive)
 		(at 335.28 60.96 180)
 		(effects
@@ -1748,7 +1748,7 @@
 			)
 		)
 	)
-	(global_label "电池电压采样"
+	(global_label "BAT_ADC"
 		(shape passive)
 		(at 245.11 190.5 0)
 		(effects
@@ -1770,7 +1770,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 335.28 63.5 180)
 		(effects
@@ -1792,7 +1792,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 149.86 175.26 180)
 		(effects
@@ -1814,7 +1814,7 @@
 			)
 		)
 	)
-	(global_label "电池欠压告警_低有效"
+	(global_label "BAT_WARN_N"
 		(shape passive)
 		(at 149.86 167.64 180)
 		(effects
@@ -1836,7 +1836,7 @@
 			)
 		)
 	)
-	(global_label "右电机_母线电流采样"
+	(global_label "VM_R_IMON"
 		(shape passive)
 		(at 149.86 172.72 180)
 		(effects
@@ -1858,7 +1858,7 @@
 			)
 		)
 	)
-	(global_label "左编码器_A_逻辑板输入"
+	(global_label "ENC_L_A_FPGA"
 		(shape passive)
 		(at 149.86 71.12 180)
 		(effects
@@ -1880,7 +1880,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板3.3V_输入"
+	(global_label "3V3_FPGA_IN"
 		(shape passive)
 		(at 149.86 68.58 180)
 		(effects
@@ -1902,7 +1902,7 @@
 			)
 		)
 	)
-	(global_label "左电机_母线电流采样"
+	(global_label "VM_L_IMON"
 		(shape passive)
 		(at 149.86 170.18 180)
 		(effects
@@ -1924,7 +1924,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_A_逻辑板输入"
+	(global_label "ENC_R_A_FPGA"
 		(shape passive)
 		(at 335.28 58.42 180)
 		(effects
@@ -1946,7 +1946,7 @@
 			)
 		)
 	)
-	(global_label "左编码器_B_逻辑板输入"
+	(global_label "ENC_L_B_FPGA"
 		(shape passive)
 		(at 149.86 73.66 180)
 		(effects
@@ -1968,7 +1968,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 245.11 170.18 0)
 		(effects
@@ -1990,7 +1990,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 149.86 177.8 180)
 		(effects
@@ -2012,7 +2012,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 149.86 160.02 180)
 		(effects
@@ -2034,7 +2034,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_B_逻辑板输入"
+	(global_label "ENC_R_B_FPGA"
 		(shape passive)
 		(at 335.28 55.88 180)
 		(effects
@@ -2056,7 +2056,7 @@
 			)
 		)
 	)
-	(global_label "上电复位完成"
+	(global_label "POR_OK"
 		(shape passive)
 		(at 149.86 187.96 180)
 		(effects
@@ -2078,7 +2078,7 @@
 			)
 		)
 	)
-	(hierarchical_label "左反转"
+	(hierarchical_label "L_PWM_REV_RAW"
 		(shape passive)
 		(at 149.86 58.42 180)
 		(effects
@@ -2089,7 +2089,7 @@
 		)
 		(uuid "1cb911fb-59c2-5248-86fe-3b21dd649356")
 	)
-	(hierarchical_label "外部故障"
+	(hierarchical_label "EXT_KILL_N"
 		(shape passive)
 		(at 335.28 71.12 180)
 		(effects
@@ -2100,7 +2100,7 @@
 		)
 		(uuid "1cde5a24-a7c7-5e57-8e3c-f765b33bd22c")
 	)
-	(hierarchical_label "运行许可"
+	(hierarchical_label "MOTOR_PERMIT"
 		(shape passive)
 		(at 149.86 63.5 180)
 		(effects
@@ -2111,7 +2111,7 @@
 		)
 		(uuid "430ff2b5-4dc7-549b-8abe-5f741de00754")
 	)
-	(hierarchical_label "右正转"
+	(hierarchical_label "R_PWM_FWD_RAW"
 		(shape passive)
 		(at 335.28 66.04 180)
 		(effects
@@ -2122,7 +2122,7 @@
 		)
 		(uuid "84cedbc5-f71d-5c74-aadc-35c2290c5cb7")
 	)
-	(hierarchical_label "右反转"
+	(hierarchical_label "R_PWM_REV_RAW"
 		(shape passive)
 		(at 335.28 68.58 180)
 		(effects
@@ -2133,7 +2133,7 @@
 		)
 		(uuid "c87fb206-f08f-5651-83a6-79eae8d8a410")
 	)
-	(hierarchical_label "解锁脉冲"
+	(hierarchical_label "MOTOR_ARM"
 		(shape passive)
 		(at 149.86 60.96 180)
 		(effects
@@ -2144,7 +2144,7 @@
 		)
 		(uuid "e0531cf6-4610-5867-983a-d6cc45a066bc")
 	)
-	(hierarchical_label "左正转"
+	(hierarchical_label "L_PWM_FWD_RAW"
 		(shape passive)
 		(at 149.86 55.88 180)
 		(effects
@@ -2155,7 +2155,7 @@
 		)
 		(uuid "e68335c6-a75f-5744-bb56-1f6846b9784b")
 	)
-	(hierarchical_label "已解锁"
+	(hierarchical_label "MOTOR_ARMED"
 		(shape passive)
 		(at 335.28 73.66 180)
 		(effects
@@ -2574,7 +2574,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 266.7 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -2652,7 +2652,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 245.11 194.31 0)
 			(hide yes)
 			(show_name no)

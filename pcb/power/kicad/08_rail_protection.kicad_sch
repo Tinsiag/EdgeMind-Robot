@@ -1713,7 +1713,7 @@
 		)
 		(uuid "eeb8de0f-a5d9-5aa6-853c-32e34f270944")
 	)
-	(text "5V过压关断 / 标称约5.364V / 逻辑板5V_保护输出"
+	(text "逻辑板供电过压关断 / 标称约5.364V"
 		(exclude_from_sim no)
 		(at 18 20 0)
 		(effects
@@ -1746,7 +1746,7 @@
 		)
 		(uuid "afac01c8-25db-5f46-84c1-7ae2b30f4552")
 	)
-	(text "5V过压关断 / 标称约5.364V / 计算板5V_保护输出"
+	(text "计算板供电过压关断 / 标称约5.364V"
 		(exclude_from_sim no)
 		(at 212.31 20 0)
 		(effects
@@ -2948,7 +2948,7 @@
 		)
 		(uuid "ffe4d749-75dc-5e2b-bc02-28dbd8b666a6")
 	)
-	(global_label "计算板5V_稳压输出"
+	(global_label "+5V_AI"
 		(shape passive)
 		(at 364.49 27.94 0)
 		(effects
@@ -2970,7 +2970,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 63.5 58.42 180)
 		(effects
@@ -2992,7 +2992,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_电压正常"
+	(global_label "3V3_ONBOARD_OK"
 		(shape passive)
 		(at 88.9 246.38 0)
 		(effects
@@ -3014,7 +3014,7 @@
 			)
 		)
 	)
-	(global_label "电池欠压告警_低有效"
+	(global_label "BAT_WARN_N"
 		(shape passive)
 		(at 293.37 179.07 0)
 		(effects
@@ -3036,7 +3036,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 229.87 101.6 0)
 		(effects
@@ -3058,7 +3058,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 121.92 97.79 0)
 		(effects
@@ -3080,7 +3080,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_电压正常"
+	(global_label "+5V_FPGA_OK"
 		(shape passive)
 		(at 35.56 116.84 0)
 		(effects
@@ -3102,7 +3102,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 67.31 105.41 180)
 		(effects
@@ -3124,7 +3124,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_稳压输出"
+	(global_label "+3V3_RAW"
 		(shape passive)
 		(at 149.86 170.18 180)
 		(effects
@@ -3146,7 +3146,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 261.62 105.41 180)
 		(effects
@@ -3168,7 +3168,7 @@
 			)
 		)
 	)
-	(global_label "过流基准_1.217V"
+	(global_label "CURRENT_REF_1V217"
 		(shape passive)
 		(at 266.7 213.36 180)
 		(effects
@@ -3190,7 +3190,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_稳压输出"
+	(global_label "+5V_FPGA"
 		(shape passive)
 		(at 160.02 62.23 0)
 		(effects
@@ -3212,7 +3212,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 297.18 215.9 0)
 		(effects
@@ -3234,7 +3234,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 297.18 246.38 0)
 		(effects
@@ -3256,7 +3256,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 35.56 101.6 0)
 		(effects
@@ -3278,7 +3278,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_稳压输出"
+	(global_label "+3V3_RAW"
 		(shape passive)
 		(at 160.02 198.12 0)
 		(effects
@@ -3300,7 +3300,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_电压正常"
+	(global_label "3V3_ONBOARD_OK"
 		(shape passive)
 		(at 93.98 184.15 0)
 		(effects
@@ -3322,7 +3322,7 @@
 			)
 		)
 	)
-	(global_label "电池欠压告警_低有效"
+	(global_label "BAT_WARN_N"
 		(shape passive)
 		(at 353.06 181.61 0)
 		(effects
@@ -3344,7 +3344,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_稳压输出"
+	(global_label "+5V_FPGA"
 		(shape passive)
 		(at 144.78 26.67 0)
 		(effects
@@ -3366,7 +3366,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_稳压输出"
+	(global_label "+5V_AI"
 		(shape passive)
 		(at 339.09 26.67 0)
 		(effects
@@ -3388,7 +3388,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 88.9 231.14 0)
 		(effects
@@ -3410,7 +3410,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 262.89 181.61 180)
 		(effects
@@ -3432,7 +3432,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 226.06 208.28 0)
 		(effects
@@ -3454,7 +3454,7 @@
 			)
 		)
 	)
-	(global_label "过流基准_1.217V"
+	(global_label "CURRENT_REF_1V217"
 		(shape passive)
 		(at 226.06 228.6 0)
 		(effects
@@ -3476,7 +3476,7 @@
 			)
 		)
 	)
-	(global_label "左电机_母线电流采样"
+	(global_label "VM_L_IMON"
 		(shape passive)
 		(at 266.7 218.44 180)
 		(effects
@@ -3498,7 +3498,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 31.75 224.79 0)
 		(effects
@@ -3520,7 +3520,7 @@
 			)
 		)
 	)
-	(global_label "右电机_母线电流采样"
+	(global_label "VM_R_IMON"
 		(shape passive)
 		(at 266.7 248.92 180)
 		(effects
@@ -3542,7 +3542,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 67.31 110.49 180)
 		(effects
@@ -3564,7 +3564,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 63.5 181.61 180)
 		(effects
@@ -3586,7 +3586,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_电压正常"
+	(global_label "+5V_FPGA_OK"
 		(shape passive)
 		(at 93.98 60.96 0)
 		(effects
@@ -3608,7 +3608,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_电压正常"
+	(global_label "+5V_AI_OK"
 		(shape passive)
 		(at 288.29 60.96 0)
 		(effects
@@ -3630,7 +3630,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 316.23 97.79 0)
 		(effects
@@ -3652,7 +3652,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 353.06 166.37 0)
 		(effects
@@ -3674,7 +3674,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_电压正常"
+	(global_label "+5V_AI_OK"
 		(shape passive)
 		(at 304.8 86.36 180)
 		(effects
@@ -3696,7 +3696,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_电压正常"
+	(global_label "+5V_FPGA_OK"
 		(shape passive)
 		(at 110.49 86.36 180)
 		(effects
@@ -3718,7 +3718,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_电压正常"
+	(global_label "+5V_AI_OK"
 		(shape passive)
 		(at 229.87 116.84 0)
 		(effects
@@ -3740,7 +3740,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_稳压输出"
+	(global_label "+5V_AI"
 		(shape passive)
 		(at 354.33 62.23 0)
 		(effects
@@ -3762,7 +3762,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 353.06 219.71 0)
 		(effects
@@ -3784,7 +3784,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 240.03 156.21 0)
 		(effects
@@ -3806,7 +3806,7 @@
 			)
 		)
 	)
-	(global_label "过流基准_1.217V"
+	(global_label "CURRENT_REF_1V217"
 		(shape passive)
 		(at 266.7 243.84 180)
 		(effects
@@ -3828,7 +3828,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 261.62 110.49 180)
 		(effects
@@ -3850,7 +3850,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_稳压输出"
+	(global_label "+5V_FPGA"
 		(shape passive)
 		(at 170.18 27.94 0)
 		(effects
@@ -3872,7 +3872,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 257.81 58.42 180)
 		(effects
@@ -3894,7 +3894,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_电压正常"
+	(global_label "3V3_ONBOARD_OK"
 		(shape passive)
 		(at 102.87 219.71 180)
 		(effects
@@ -3916,7 +3916,7 @@
 			)
 		)
 	)
-	(hierarchical_label "逻辑5V保护"
+	(hierarchical_label "+5V_FPGA_PROT"
 		(shape passive)
 		(at 190.5 45.72 0)
 		(effects
@@ -3927,7 +3927,7 @@
 		)
 		(uuid "0eec5854-5f66-5c3d-9203-aac0cd1da114")
 	)
-	(hierarchical_label "逻辑5V"
+	(hierarchical_label "+5V_FPGA"
 		(shape passive)
 		(at 40.64 43.18 0)
 		(effects
@@ -3938,7 +3938,7 @@
 		)
 		(uuid "27cf785a-dad1-50dd-abfe-cf847aadeaa9")
 	)
-	(hierarchical_label "计算5V"
+	(hierarchical_label "+5V_AI"
 		(shape passive)
 		(at 234.95 43.18 0)
 		(effects
@@ -3949,7 +3949,7 @@
 		)
 		(uuid "2f1e21f0-74ce-5f76-9416-45cfeeb88105")
 	)
-	(hierarchical_label "计算5V保护"
+	(hierarchical_label "+5V_AI_PROT"
 		(shape passive)
 		(at 384.81 45.72 0)
 		(effects
@@ -3960,7 +3960,7 @@
 		)
 		(uuid "70d956de-9eb5-535f-98ad-e2ff76fc6c16")
 	)
-	(hierarchical_label "板载3.3V"
+	(hierarchical_label "+3V3_RAW"
 		(shape passive)
 		(at 40.64 166.37 0)
 		(effects
@@ -3971,7 +3971,7 @@
 		)
 		(uuid "b39ee05d-18cf-532d-b411-e0f3eee85590")
 	)
-	(hierarchical_label "保护后3.3V"
+	(hierarchical_label "+3V3_ONBOARD"
 		(shape passive)
 		(at 170.18 170.18 0)
 		(effects
@@ -4205,7 +4205,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 52.07 237.49 0)
 			(hide yes)
 			(show_name no)
@@ -4662,7 +4662,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 339.09 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -5239,7 +5239,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 40.64 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -5881,7 +5881,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 336.55 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -6227,7 +6227,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 234.95 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -6305,7 +6305,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 142.24 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -6467,7 +6467,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 240.03 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -6857,7 +6857,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 226.06 232.41 0)
 			(hide yes)
 			(show_name no)
@@ -7944,7 +7944,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 142.24 212.09 0)
 			(hide yes)
 			(show_name no)
@@ -8413,7 +8413,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 144.78 78.74 0)
 			(hide yes)
 			(show_name no)
@@ -8491,7 +8491,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 40.64 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -8677,7 +8677,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 373.38 229.87 0)
 			(hide yes)
 			(show_name no)

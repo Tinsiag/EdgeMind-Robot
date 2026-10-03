@@ -3433,7 +3433,7 @@
 		)
 		(uuid "fef5e21a-83b8-50cf-823e-095e61a43b07")
 	)
-	(label "电池正极"
+	(global_label "BAT_POS" (shape passive)
 		(at 50.8 52.07 0)
 		(effects
 			(font
@@ -3443,7 +3443,7 @@
 		)
 		(uuid "e4bc94ff-1a52-4c17-9667-5388e6b17ac5")
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 35.56 58.42 0)
 		(effects
@@ -3465,7 +3465,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 276.86 229.87 0)
 		(effects
@@ -3487,7 +3487,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 335.28 201.93 180)
 		(effects
@@ -3509,7 +3509,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 360.68 247.65 0)
 		(effects
@@ -3531,7 +3531,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 365.76 204.47 0)
 		(effects
@@ -3553,7 +3553,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 335.28 149.86 180)
 		(effects
@@ -3575,7 +3575,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 222.25 129.54 0)
 		(effects
@@ -3597,7 +3597,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 104.14 143.51 0)
 		(effects
@@ -3619,7 +3619,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 307.34 229.87 0)
 		(effects
@@ -3641,7 +3641,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 119.38 165.1 180)
 		(effects
@@ -3663,7 +3663,7 @@
 			)
 		)
 	)
-	(global_label "降压电源输入"
+	(global_label "VLOGIC_IN"
 		(shape passive)
 		(at 157.48 233.68 0)
 		(effects
@@ -3685,7 +3685,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 222.25 181.61 0)
 		(effects
@@ -3707,7 +3707,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 360.68 232.41 0)
 		(effects
@@ -3729,7 +3729,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 240.03 222.25 0)
 		(effects
@@ -3751,7 +3751,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 119.38 179.07 0)
 		(effects
@@ -3773,7 +3773,7 @@
 			)
 		)
 	)
-	(global_label "降压电源输入"
+	(global_label "VLOGIC_IN"
 		(shape passive)
 		(at 172.72 233.68 0)
 		(effects
@@ -3795,7 +3795,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 276.86 214.63 0)
 		(effects
@@ -3817,7 +3817,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 53.34 146.05 0)
 		(effects
@@ -3839,7 +3839,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 275.59 152.4 0)
 		(effects
@@ -3861,7 +3861,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 245.11 154.94 180)
 		(effects
@@ -3883,7 +3883,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 312.42 186.69 0)
 		(effects
@@ -3905,7 +3905,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 365.76 152.4 0)
 		(effects
@@ -3927,7 +3927,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 245.11 207.01 180)
 		(effects
@@ -3949,7 +3949,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 53.34 125.73 0)
 		(effects
@@ -3971,7 +3971,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 312.42 134.62 0)
 		(effects
@@ -3993,7 +3993,7 @@
 			)
 		)
 	)
-	(hierarchical_label "降压输入"
+	(hierarchical_label "VLOGIC_IN"
 		(shape passive)
 		(at 144.78 165.1 0)
 		(effects
@@ -4004,7 +4004,7 @@
 		)
 		(uuid "2ecfc4b0-1c73-534f-901f-49db14ad7671")
 	)
-	(hierarchical_label "使能"
+	(hierarchical_label "BUCK_ENABLE"
 		(shape passive)
 		(at 69.85 203.2 180)
 		(effects
@@ -4015,7 +4015,7 @@
 		)
 		(uuid "368e85b0-4ceb-5e39-a932-89cbf037f7d0")
 	)
-	(hierarchical_label "电池母线"
+	(hierarchical_label "VBAT_SYS"
 		(shape passive)
 		(at 187.96 63.5 0)
 		(effects
@@ -4026,7 +4026,7 @@
 		)
 		(uuid "38e5d441-8c2a-5cf9-8ad4-b31ba4e80987")
 	)
-	(hierarchical_label "动力正常"
+	(hierarchical_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 275.59 204.47 0)
 		(effects
@@ -4780,7 +4780,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 35.56 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -4858,7 +4858,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 260.35 232.41 0)
 			(hide yes)
 			(show_name no)
@@ -6039,7 +6039,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 158.75 0)
 			(hide yes)
 			(show_name no)
@@ -6309,7 +6309,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 222.25 205.74 0)
 			(hide yes)
 			(show_name no)
@@ -6591,7 +6591,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 246.38 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -7212,7 +7212,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 222.25 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -7290,7 +7290,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 327.66 240.03 0)
 			(hide yes)
 			(show_name no)
@@ -7368,7 +7368,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 157.48 232.41 0)
 			(hide yes)
 			(show_name no)
@@ -7446,7 +7446,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 205.74 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -7632,7 +7632,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 53.34 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -8063,7 +8063,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 104.14 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -8234,7 +8234,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 111.76 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -8420,7 +8420,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 269.24 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -8498,7 +8498,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 226.06 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -8747,7 +8747,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 210.82 0)
 			(hide yes)
 			(show_name no)

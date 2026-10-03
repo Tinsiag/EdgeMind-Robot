@@ -4,6 +4,7 @@
 
 ## 当前完成状态
 
+- 最新将原来的中文地网恢复为 `GND`，原理图与 PCB 同步改名 51 个网络，更新 462 个有编号物理焊盘的网络字符串。全部 122 个连接分组、633 个有编号物理焊盘的连接关系保持一致，地网含 154 个焊盘；所有实际网络名均为 ASCII，没有问号。本轮保留 211 个元件及全部 PCB 几何和项目配置。
 - F1 按后续绑定要求恢复为板载 MINI 总保险座。保险片采用集电通 `0297010.J / C55117678`、10A/32V；座绑定 KiCad 自带 `Fuse:Fuseholder_Blade_Mini_Keystone_3568` 及其 3D 模型。F2/F3 保持删除。
 - 输入连接为 **CN1.2 → F1.1；F1.2 → Q1.2**。保险片两端网络不同，没有旁路；PCB 中 CN1.2、Q1.2 的网络已对应调整。
 - 四个 PCB 焊脚分为 1/1、2/2 两组，每组是保险片的一端。孔中心距 **9.92×3.40mm**，钻孔 **1.78mm**。MINI 保险片插入保险座上部两个夹口；四孔是焊接保险座使用。保险片与保险座分别采购，国产同孔位座尚未定型。
@@ -13,7 +14,7 @@
 
 ## 原生核验
 
-KiCad 10.0.5，使用现有项目检查设置，未降低规则或排除违规。原理图 ERC 为 0 错误、0 警告；完成 148 条功能连接断言。
+KiCad 10.0.5，使用现有项目检查设置，未降低规则或排除违规。最新原理图 ERC 为 0 错误、0 警告；完成 147 条功能连接断言，并核对改名前后 122 个完整网络分组。
 
 | PCB 检查 | 初次同步前 | 删除三只板上保险座后 | 本次恢复 F1 后 |
 | --- | ---: | ---: | ---: |
@@ -27,12 +28,12 @@ KiCad 10.0.5，使用现有项目检查设置，未降低规则或排除违规�
 
 本次 F1 绑定前备份在 `pcb-sync-backups/2026-10-03_163643-before-F1-onboard/`，包含原 210 元件 PCB、项目配置、原理图及说明。项目配置本次未改动。
 
-最新核验见 [f1-board-verification.json](f1-board-verification.json)，原生 DRC 见 `f1-board-drc.json`。PCB 预览见 [封装同步预览](PCB封装同步预览_R2.svg)。保险座采购参考见 [Keystone 3568](https://www.digikey.cn/zh/products/detail/keystone-electronics/3568/2137306)，原厂安装图见 [3568 图纸](https://www.keyelco.com/product-pdf.cfm?p=306)。
+F1 绑定阶段核验见 [f1-board-verification.json](f1-board-verification.json)，该阶段原生 DRC 见 `f1-board-drc.json`。最新网络改名的核验见 [ascii-net-verification.json](ascii-net-verification.json)，原生 DRC 见 `ascii-net-drc.json`，备份在 `pcb-sync-backups/2026-10-03_184337-before-ascii-nets/`。PCB 预览见 [封装同步预览](PCB封装同步预览_R2.svg)。保险座采购参考见 [Keystone 3568](https://www.digikey.cn/zh/products/detail/keystone-electronics/3568/2137306)，原厂安装图见 [3568 图纸](https://www.keyelco.com/product-pdf.cfm?p=306)。
 
 此前删除板上 F1/F2/F3、修正五个旧焊盘网络并迁移 XT60 模型路径的同步记录及备份保留在 `pcb-sync-verification.json`、`pcb-sync-backups/2026-10-03_160748/`；它们描述旧的 210 元件状态。
 
-本次同步前 PCB SHA256：`6290ea1feab70c6ea538cd58d0e12ebbe2cdf3fa1d98c8f8c1145aca0d4fbca3`。
+最新网络改名前 PCB SHA256：`536fd8fdd1bcec057a0fd25e6ed1a4e6c79b3d643fadfa5d0f319316a79f03e5`。
 
-当前 PCB SHA256：`1e7e579938bbb6ca7d0e379cfd7b8ecfb621f75466b9ff7ac7237e60e9b38790`。
+当前 PCB SHA256：`c3b1d15efbe7096269f7d33f84a0cc79ab8c1fce4724fd6b868cd14353462e71`。
 
-编辑器曾保存旧的210元件状态；已保留该写回文件并补回F1和两处输入网络。当前编辑器需要重新载入磁盘文件，避免继续保存旧状态。
+此前编辑器曾保存旧的 210 元件状态；当时已保留该写回文件并补回 F1 和两处输入网络。若编辑器中仍打开修改前的版本，请重新载入磁盘文件再继续编辑，以读取最新网络名称。

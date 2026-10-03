@@ -657,7 +657,7 @@
 		)
 		(uuid "ff1c5869-e95b-5b42-a81a-69791db76921")
 	)
-	(global_label "电机总开关输出"
+	(global_label "VM_SWITCHED"
 		(shape passive)
 		(at 118.11 264.16 0)
 		(effects
@@ -679,7 +679,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 356.87 245.11 0)
 		(effects
@@ -701,7 +701,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 147.32 158.75 180)
 		(effects
@@ -723,7 +723,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_稳压输出"
+	(global_label "+3V3_RAW"
 		(shape passive)
 		(at 118.11 158.75 0)
 		(effects
@@ -745,7 +745,7 @@
 			)
 		)
 	)
-	(global_label "左电机_原始反转脉宽"
+	(global_label "L_PWM_REV_RAW"
 		(shape passive)
 		(at 320.04 219.71 0)
 		(effects
@@ -767,7 +767,7 @@
 			)
 		)
 	)
-	(global_label "降压电源输入"
+	(global_label "VLOGIC_IN"
 		(shape passive)
 		(at 118.11 52.07 0)
 		(effects
@@ -789,7 +789,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_保护输出"
+	(global_label "+3V3_ONBOARD"
 		(shape passive)
 		(at 118.11 171.45 0)
 		(effects
@@ -811,7 +811,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 190.5 231.14 0)
 		(effects
@@ -833,7 +833,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 118.11 66.04 0)
 		(effects
@@ -855,7 +855,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 325.12 245.11 0)
 		(effects
@@ -877,7 +877,7 @@
 			)
 		)
 	)
-	(global_label "外部故障_低有效"
+	(global_label "EXT_KILL_N"
 		(shape passive)
 		(at 252.73 184.15 0)
 		(effects
@@ -899,7 +899,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_保护输出"
+	(global_label "+3V3_ONBOARD"
 		(shape passive)
 		(at 347.98 120.65 0)
 		(effects
@@ -921,7 +921,7 @@
 			)
 		)
 	)
-	(global_label "右电机_原始正转脉宽"
+	(global_label "R_PWM_FWD_RAW"
 		(shape passive)
 		(at 281.94 278.13 180)
 		(effects
@@ -943,7 +943,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 118.11 184.15 0)
 		(effects
@@ -965,7 +965,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 222.25 245.11 0)
 		(effects
@@ -987,7 +987,7 @@
 			)
 		)
 	)
-	(global_label "电机供电正常"
+	(global_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 90.17 120.65 0)
 		(effects
@@ -1009,7 +1009,7 @@
 			)
 		)
 	)
-	(global_label "右电机_原始反转脉宽"
+	(global_label "R_PWM_REV_RAW"
 		(shape passive)
 		(at 281.94 290.83 180)
 		(effects
@@ -1031,7 +1031,7 @@
 			)
 		)
 	)
-	(global_label "右电机_原始正转脉宽"
+	(global_label "R_PWM_FWD_RAW"
 		(shape passive)
 		(at 340.36 219.71 0)
 		(effects
@@ -1053,7 +1053,7 @@
 			)
 		)
 	)
-	(global_label "电机运行许可"
+	(global_label "MOTOR_PERMIT"
 		(shape passive)
 		(at 252.73 171.45 0)
 		(effects
@@ -1075,7 +1075,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 281.94 196.85 180)
 		(effects
@@ -1097,7 +1097,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_稳压输出"
+	(global_label "+5V_FPGA"
 		(shape passive)
 		(at 252.73 52.07 0)
 		(effects
@@ -1119,7 +1119,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板5V_保护输出"
+	(global_label "+5V_FPGA_PROT"
 		(shape passive)
 		(at 252.73 80.01 0)
 		(effects
@@ -1141,7 +1141,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_保护输出"
+	(global_label "+5V_AI_PROT"
 		(shape passive)
 		(at 252.73 93.98 0)
 		(effects
@@ -1163,7 +1163,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 76.2 219.71 0)
 		(effects
@@ -1185,7 +1185,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 303.53 245.11 0)
 		(effects
@@ -1207,7 +1207,7 @@
 			)
 		)
 	)
-	(global_label "右电机_原始反转脉宽"
+	(global_label "R_PWM_REV_RAW"
 		(shape passive)
 		(at 360.68 219.71 0)
 		(effects
@@ -1229,7 +1229,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 100.33 144.78 0)
 		(effects
@@ -1251,7 +1251,7 @@
 			)
 		)
 	)
-	(global_label "板载3.3V_稳压输出"
+	(global_label "+3V3_RAW"
 		(shape passive)
 		(at 309.88 120.65 0)
 		(effects
@@ -1273,7 +1273,7 @@
 			)
 		)
 	)
-	(global_label "左电机_原始正转脉宽"
+	(global_label "L_PWM_FWD_RAW"
 		(shape passive)
 		(at 147.32 278.13 180)
 		(effects
@@ -1295,7 +1295,7 @@
 			)
 		)
 	)
-	(global_label "左电机_原始正转脉宽"
+	(global_label "L_PWM_FWD_RAW"
 		(shape passive)
 		(at 299.72 219.71 0)
 		(effects
@@ -1317,7 +1317,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 43.18 123.19 0)
 		(effects
@@ -1339,7 +1339,7 @@
 			)
 		)
 	)
-	(global_label "左电机_原始反转脉宽"
+	(global_label "L_PWM_REV_RAW"
 		(shape passive)
 		(at 147.32 290.83 180)
 		(effects
@@ -1361,7 +1361,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 190.5 245.11 0)
 		(effects
@@ -1383,7 +1383,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 168.91 245.11 0)
 		(effects
@@ -1405,7 +1405,7 @@
 			)
 		)
 	)
-	(global_label "电机解锁脉冲"
+	(global_label "MOTOR_ARM"
 		(shape passive)
 		(at 252.73 158.75 0)
 		(effects
@@ -1427,7 +1427,7 @@
 			)
 		)
 	)
-	(global_label "计算板5V_稳压输出"
+	(global_label "+5V_AI"
 		(shape passive)
 		(at 252.73 66.04 0)
 		(effects
@@ -1486,7 +1486,7 @@
 				)
 			)
 		)
-		(pin "电机总电源" passive
+		(pin "VM_SWITCHED" passive
 			(at 289.56 264.16 180)
 			(uuid "163b9bcf-cb49-5f49-8856-8c492e5b0e43")
 			(effects
@@ -1495,7 +1495,7 @@
 				)
 			)
 		)
-		(pin "本板3.3V" passive
+		(pin "+3V3" passive
 			(at 303.53 250.19 90)
 			(uuid "2cfcf893-bb98-50b4-a5fb-d7a40a01bd9f")
 			(effects
@@ -1504,7 +1504,7 @@
 				)
 			)
 		)
-		(pin "已解锁" passive
+		(pin "MOTOR_ARMED" passive
 			(at 325.12 250.19 90)
 			(uuid "1a0ba765-c1bb-5baa-9a84-80740ca672b8")
 			(effects
@@ -1513,7 +1513,7 @@
 				)
 			)
 		)
-		(pin "传感器电源" passive
+		(pin "+3V3_SENS" passive
 			(at 356.87 250.19 90)
 			(uuid "5947f582-7ec0-558f-a54f-30fce0dfe412")
 			(effects
@@ -1522,7 +1522,7 @@
 				)
 			)
 		)
-		(pin "正转脉宽" passive
+		(pin "R_PWM_FWD_RAW" passive
 			(at 289.56 278.13 180)
 			(uuid "b32e6b0d-c269-5f8d-ad3f-e50a9ee685ec")
 			(effects
@@ -1531,7 +1531,7 @@
 				)
 			)
 		)
-		(pin "反转脉宽" passive
+		(pin "R_PWM_REV_RAW" passive
 			(at 289.56 290.83 180)
 			(uuid "f700c540-21ad-57ca-8465-d007b0d65ac9")
 			(effects
@@ -1585,7 +1585,7 @@
 				)
 			)
 		)
-		(pin "电机总电源" passive
+		(pin "VM_SWITCHED" passive
 			(at 154.94 264.16 180)
 			(uuid "ed62af2a-1319-52cd-8593-316874dac6a7")
 			(effects
@@ -1594,7 +1594,7 @@
 				)
 			)
 		)
-		(pin "本板3.3V" passive
+		(pin "+3V3" passive
 			(at 168.91 250.19 90)
 			(uuid "6d20ce75-3843-54d4-bf6d-d036a403ced6")
 			(effects
@@ -1603,7 +1603,7 @@
 				)
 			)
 		)
-		(pin "已解锁" passive
+		(pin "MOTOR_ARMED" passive
 			(at 190.5 250.19 90)
 			(uuid "c331ff85-30e3-5b0b-86b5-180e7d839a1d")
 			(effects
@@ -1612,7 +1612,7 @@
 				)
 			)
 		)
-		(pin "传感器电源" passive
+		(pin "+3V3_SENS" passive
 			(at 222.25 250.19 90)
 			(uuid "d44e3e74-f64f-521f-966f-85b0fdda1b50")
 			(effects
@@ -1621,7 +1621,7 @@
 				)
 			)
 		)
-		(pin "正转脉宽" passive
+		(pin "L_PWM_FWD_RAW" passive
 			(at 154.94 278.13 180)
 			(uuid "e3a682c4-c344-5d70-bc29-3a7b2e79683c")
 			(effects
@@ -1630,7 +1630,7 @@
 				)
 			)
 		)
-		(pin "反转脉宽" passive
+		(pin "L_PWM_REV_RAW" passive
 			(at 154.94 290.83 180)
 			(uuid "a800e907-d487-58f6-be6f-c085e097dcc2")
 			(effects
@@ -1684,7 +1684,7 @@
 				)
 			)
 		)
-		(pin "本板3.3V" passive
+		(pin "+3V3" passive
 			(at 154.94 184.15 180)
 			(uuid "834847c1-4331-5ead-8dc0-935fe1f80963")
 			(effects
@@ -1693,7 +1693,7 @@
 				)
 			)
 		)
-		(pin "动力正常" passive
+		(pin "MOTOR_POWER_OK" passive
 			(at 154.94 158.75 180)
 			(uuid "c0b4d5c5-03d2-52d4-ba4d-c27bfb5130fd")
 			(effects
@@ -1702,7 +1702,7 @@
 				)
 			)
 		)
-		(pin "解锁脉冲" passive
+		(pin "MOTOR_ARM" passive
 			(at 245.11 158.75 0)
 			(uuid "32aa2fff-a986-5d09-ad2f-922ad4f5db05")
 			(effects
@@ -1711,7 +1711,7 @@
 				)
 			)
 		)
-		(pin "运行许可" passive
+		(pin "MOTOR_PERMIT" passive
 			(at 245.11 171.45 0)
 			(uuid "6e0f7e6f-7eb3-5220-ad99-5016d3b5c124")
 			(effects
@@ -1720,7 +1720,7 @@
 				)
 			)
 		)
-		(pin "外部故障" passive
+		(pin "EXT_KILL_N" passive
 			(at 245.11 184.15 0)
 			(uuid "1773d084-554e-5ff6-a823-a6f2a34a343f")
 			(effects
@@ -1729,7 +1729,7 @@
 				)
 			)
 		)
-		(pin "已解锁" passive
+		(pin "MOTOR_ARMED" passive
 			(at 190.5 214.63 270)
 			(uuid "890f13fe-1570-572a-b32d-35515533ab48")
 			(effects
@@ -1783,7 +1783,7 @@
 				)
 			)
 		)
-		(pin "电池母线" passive
+		(pin "VBAT_SYS" passive
 			(at 43.18 250.19 90)
 			(uuid "e08eafdf-83fc-5dd4-bf43-660ff75d0af9")
 			(effects
@@ -1792,7 +1792,7 @@
 				)
 			)
 		)
-		(pin "已解锁" passive
+		(pin "MOTOR_ARMED" passive
 			(at 90.17 250.19 90)
 			(uuid "e202bdeb-9e1e-502a-b698-022fdb698f59")
 			(effects
@@ -1801,7 +1801,7 @@
 				)
 			)
 		)
-		(pin "电机总电源" passive
+		(pin "VM_SWITCHED" passive
 			(at 110.49 264.16 0)
 			(uuid "b47bf139-a77c-5889-959e-234d159c1fcb")
 			(effects
@@ -1855,7 +1855,7 @@
 				)
 			)
 		)
-		(pin "降压输入" passive
+		(pin "VLOGIC_IN" passive
 			(at 154.94 52.07 180)
 			(uuid "aac82fed-5276-5080-b7e2-118f461e8437")
 			(effects
@@ -1864,7 +1864,7 @@
 				)
 			)
 		)
-		(pin "使能" passive
+		(pin "BUCK_ENABLE" passive
 			(at 154.94 66.04 180)
 			(uuid "4c572397-a83f-5b2f-bb14-2ccb971b1db8")
 			(effects
@@ -1873,7 +1873,7 @@
 				)
 			)
 		)
-		(pin "逻辑5V" passive
+		(pin "+5V_FPGA" passive
 			(at 245.11 52.07 0)
 			(uuid "132cc453-6614-51d4-b8de-7b70501048f4")
 			(effects
@@ -1882,7 +1882,7 @@
 				)
 			)
 		)
-		(pin "计算5V" passive
+		(pin "+5V_AI" passive
 			(at 245.11 66.04 0)
 			(uuid "163c3b10-ec02-57dd-a400-db574c35f3cc")
 			(effects
@@ -1891,7 +1891,7 @@
 				)
 			)
 		)
-		(pin "逻辑5V保护" passive
+		(pin "+5V_FPGA_PROT" passive
 			(at 245.11 80.01 0)
 			(uuid "93fd1a69-2a65-5a7c-8e5e-315d23076986")
 			(effects
@@ -1900,7 +1900,7 @@
 				)
 			)
 		)
-		(pin "计算5V保护" passive
+		(pin "+5V_AI_PROT" passive
 			(at 245.11 93.98 0)
 			(uuid "a1845600-1610-5753-9a6e-1fa994a28287")
 			(effects
@@ -1954,7 +1954,7 @@
 				)
 			)
 		)
-		(pin "逻辑5V" passive
+		(pin "+5V_FPGA" passive
 			(at 289.56 52.07 180)
 			(uuid "375156ca-2c5f-51c0-827e-af50476f38d7")
 			(effects
@@ -1963,7 +1963,7 @@
 				)
 			)
 		)
-		(pin "计算5V" passive
+		(pin "+5V_AI" passive
 			(at 289.56 66.04 180)
 			(uuid "b83287e3-b609-5878-ac58-aabd27c45ab2")
 			(effects
@@ -1972,7 +1972,7 @@
 				)
 			)
 		)
-		(pin "逻辑5V保护" passive
+		(pin "+5V_FPGA_PROT" passive
 			(at 289.56 80.01 180)
 			(uuid "219b8f8b-5bc0-5460-bf07-c2696df71e59")
 			(effects
@@ -1981,7 +1981,7 @@
 				)
 			)
 		)
-		(pin "计算5V保护" passive
+		(pin "+5V_AI_PROT" passive
 			(at 289.56 93.98 180)
 			(uuid "fcb87423-20c3-5df6-800f-14a05b730cae")
 			(effects
@@ -1990,7 +1990,7 @@
 				)
 			)
 		)
-		(pin "板载3.3V" passive
+		(pin "+3V3_RAW" passive
 			(at 309.88 115.57 270)
 			(uuid "40461dfd-537a-5714-95d7-b9e65d627082")
 			(effects
@@ -1999,7 +1999,7 @@
 				)
 			)
 		)
-		(pin "保护后3.3V" passive
+		(pin "+3V3_ONBOARD" passive
 			(at 347.98 115.57 270)
 			(uuid "14c2182a-c1b7-5e97-969b-a4c42c54b2ca")
 			(effects
@@ -2053,7 +2053,7 @@
 				)
 			)
 		)
-		(pin "降压输入" passive
+		(pin "VLOGIC_IN" passive
 			(at 110.49 52.07 0)
 			(uuid "74867f0d-c669-547a-b230-3c8c042c1f7d")
 			(effects
@@ -2062,7 +2062,7 @@
 				)
 			)
 		)
-		(pin "使能" passive
+		(pin "BUCK_ENABLE" passive
 			(at 110.49 66.04 0)
 			(uuid "b37baa81-a289-53af-8487-33d11bd26983")
 			(effects
@@ -2071,7 +2071,7 @@
 				)
 			)
 		)
-		(pin "电池母线" passive
+		(pin "VBAT_SYS" passive
 			(at 43.18 115.57 270)
 			(uuid "fa60a3e3-357d-5b9d-97db-b8ada99a1c32")
 			(effects
@@ -2080,7 +2080,7 @@
 				)
 			)
 		)
-		(pin "动力正常" passive
+		(pin "MOTOR_POWER_OK" passive
 			(at 90.17 115.57 270)
 			(uuid "2b48fa3e-904d-51f9-9c57-b8e31ca02717")
 			(effects
@@ -2134,7 +2134,7 @@
 				)
 			)
 		)
-		(pin "解锁脉冲" passive
+		(pin "MOTOR_ARM" passive
 			(at 289.56 158.75 180)
 			(uuid "95192b96-31d4-52d8-ad46-87211263b877")
 			(effects
@@ -2143,7 +2143,7 @@
 				)
 			)
 		)
-		(pin "运行许可" passive
+		(pin "MOTOR_PERMIT" passive
 			(at 289.56 171.45 180)
 			(uuid "b18199c5-75a3-59eb-b150-bfe6bf5149c7")
 			(effects
@@ -2152,7 +2152,7 @@
 				)
 			)
 		)
-		(pin "外部故障" passive
+		(pin "EXT_KILL_N" passive
 			(at 289.56 184.15 180)
 			(uuid "e6b0c903-e249-5ce2-bb7d-0542af206d71")
 			(effects
@@ -2161,7 +2161,7 @@
 				)
 			)
 		)
-		(pin "已解锁" passive
+		(pin "MOTOR_ARMED" passive
 			(at 289.56 196.85 180)
 			(uuid "3b347346-e489-5ebb-b545-7dd30e7031cd")
 			(effects
@@ -2170,7 +2170,7 @@
 				)
 			)
 		)
-		(pin "左正转" passive
+		(pin "L_PWM_FWD_RAW" passive
 			(at 299.72 214.63 270)
 			(uuid "55807144-c3be-5429-b244-40a4ab0c7cf0")
 			(effects
@@ -2179,7 +2179,7 @@
 				)
 			)
 		)
-		(pin "左反转" passive
+		(pin "L_PWM_REV_RAW" passive
 			(at 320.04 214.63 270)
 			(uuid "d0ea0b97-d849-5372-b160-584a4ccfb54d")
 			(effects
@@ -2188,7 +2188,7 @@
 				)
 			)
 		)
-		(pin "右正转" passive
+		(pin "R_PWM_FWD_RAW" passive
 			(at 340.36 214.63 270)
 			(uuid "3e8a6099-659e-5020-82be-e81b70606758")
 			(effects
@@ -2197,7 +2197,7 @@
 				)
 			)
 		)
-		(pin "右反转" passive
+		(pin "R_PWM_REV_RAW" passive
 			(at 360.68 214.63 270)
 			(uuid "c3d7992c-7319-5427-a9e4-ae1b524e7f0f")
 			(effects
@@ -2251,7 +2251,7 @@
 				)
 			)
 		)
-		(pin "降压输入" passive
+		(pin "VLOGIC_IN" passive
 			(at 50.8 149.86 90)
 			(uuid "2288690e-e3da-5b6b-89ed-8c2c0d42469a")
 			(effects
@@ -2260,7 +2260,7 @@
 				)
 			)
 		)
-		(pin "使能" passive
+		(pin "BUCK_ENABLE" passive
 			(at 100.33 149.86 90)
 			(uuid "ce0d8766-c286-5847-bd7b-70cac12d2cda")
 			(effects
@@ -2269,7 +2269,7 @@
 				)
 			)
 		)
-		(pin "板载3.3V" passive
+		(pin "+3V3_RAW" passive
 			(at 110.49 158.75 0)
 			(uuid "59e7b592-0dd4-5a54-8dc7-f934148ca2ce")
 			(effects
@@ -2278,7 +2278,7 @@
 				)
 			)
 		)
-		(pin "保护后3.3V" passive
+		(pin "+3V3_ONBOARD" passive
 			(at 110.49 171.45 0)
 			(uuid "8637c36a-6a05-5f58-af6e-e439789112f7")
 			(effects
@@ -2287,7 +2287,7 @@
 				)
 			)
 		)
-		(pin "本板3.3V" passive
+		(pin "+3V3" passive
 			(at 110.49 184.15 0)
 			(uuid "4d6a17ae-1e56-54ab-99e7-d1fe13d66575")
 			(effects
@@ -2296,7 +2296,7 @@
 				)
 			)
 		)
-		(pin "传感器电源" passive
+		(pin "+3V3_SENS" passive
 			(at 76.2 214.63 270)
 			(uuid "26f60629-f83d-5a94-a37b-79df3421cbe7")
 			(effects

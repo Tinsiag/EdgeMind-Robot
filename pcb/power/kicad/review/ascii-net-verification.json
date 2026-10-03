@@ -1,0 +1,2893 @@
+{
+  "日期": "2026-10-03T18:43:39",
+  "备份目录": "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-backups\\2026-10-03_184337-before-ascii-nets",
+  "修改前PCB_SHA256": "536fd8fdd1bcec057a0fd25e6ed1a4e6c79b3d643fadfa5d0f319316a79f03e5",
+  "修改后PCB_SHA256": "c3b1d15efbe7096269f7d33f84a0cc79ab8c1fce4724fd6b868cd14353462e71",
+  "网络数量": 122,
+  "网络重命名数量": 51,
+  "改名焊盘数量": 462,
+  "核对有编号物理焊盘数量": 633,
+  "板上元件数量": 211,
+  "整个网表电气连接分组保持不变": true,
+  "PCB元件位置方向UUID与焊盘几何保持不变": true,
+  "项目配置未修改": true,
+  "GND有编号物理焊盘数量": 154,
+  "电气网络名全部ASCII": true,
+  "网络名问号数量": 0,
+  "旧名到新名": {
+    "/三串电池输入与电压保护/电池正极": "BAT_POS",
+    "Net-(C6-Pad1)": "Net-(C6-Pad1)",
+    "Net-(C14-Pad1)": "Net-(C14-Pad1)",
+    "Net-(D2-A)": "Net-(D2-A)",
+    "Net-(D3-A)": "Net-(D3-A)",
+    "Net-(D4-A)": "Net-(D4-A)",
+    "Net-(D5-K)": "Net-(D5-K)",
+    "Net-(D6-K)": "Net-(D6-K)",
+    "Net-(D7-A)": "Net-(D7-A)",
+    "Net-(D8-A)": "Net-(D8-A)",
+    "Net-(J3-Pin_1)": "Net-(J3-Pin_1)",
+    "Net-(J3-Pin_6)": "Net-(J3-Pin_6)",
+    "Net-(J4-Pin_1)": "Net-(J4-Pin_1)",
+    "Net-(J4-Pin_6)": "Net-(J4-Pin_6)",
+    "Net-(J16-Pin_2)": "Net-(J16-Pin_2)",
+    "Net-(J17-Pin_2)": "Net-(J17-Pin_2)",
+    "Net-(Q1-D)": "Net-(Q1-D)",
+    "Net-(Q4-B)": "Net-(Q4-B)",
+    "Net-(Q5-B)": "Net-(Q5-B)",
+    "Net-(Q9-B)": "Net-(Q9-B)",
+    "Net-(Q11-B)": "Net-(Q11-B)",
+    "Net-(Q12-G)": "Net-(Q12-G)",
+    "Net-(Q13-B)": "Net-(Q13-B)",
+    "Net-(R85-Pad1)": "Net-(R85-Pad1)",
+    "Net-(R86-Pad1)": "Net-(R86-Pad1)",
+    "Net-(R95-Pad1)": "Net-(R95-Pad1)",
+    "Net-(R96-Pad1)": "Net-(R96-Pad1)",
+    "Net-(U1-BST)": "Net-(U1-BST)",
+    "Net-(U1-FB)": "Net-(U1-FB)",
+    "Net-(U1-SW)": "Net-(U1-SW)",
+    "Net-(U1-VCC)": "Net-(U1-VCC)",
+    "Net-(U2-AIN1)": "Net-(U2-AIN1)",
+    "Net-(U2-AIN2)": "Net-(U2-AIN2)",
+    "Net-(U3-BST)": "Net-(U3-BST)",
+    "Net-(U3-SW)": "Net-(U3-SW)",
+    "Net-(U4-AIN1)": "Net-(U4-AIN1)",
+    "Net-(U4-AIN2)": "Net-(U4-AIN2)",
+    "Net-(U5-BST)": "Net-(U5-BST)",
+    "Net-(U5-FB)": "Net-(U5-FB)",
+    "Net-(U5-SW)": "Net-(U5-SW)",
+    "Net-(U5-VCC)": "Net-(U5-VCC)",
+    "Net-(U7-CC1)": "Net-(U7-CC1)",
+    "Net-(U7-CC2)": "Net-(U7-CC2)",
+    "Net-(U7-ISET)": "Net-(U7-ISET)",
+    "Net-(U8-CC1)": "Net-(U8-CC1)",
+    "Net-(U8-CC2)": "Net-(U8-CC2)",
+    "Net-(U8-ISET)": "Net-(U8-ISET)",
+    "Net-(U10-Pad3)": "Net-(U10-Pad3)",
+    "Net-(U10-Pad10)": "Net-(U10-Pad10)",
+    "Net-(U10-Pad12)": "Net-(U10-Pad12)",
+    "Net-(U12A-~{R})": "Net-(U12A-~{R})",
+    "Net-(U22A-+)": "Net-(U22A-+)",
+    "Net-(U22B--)": "Net-(U22B--)",
+    "Net-(U23A-+)": "Net-(U23A-+)",
+    "Net-(U23B--)": "Net-(U23B--)",
+    "Net-(U24A-+)": "Net-(U24A-+)",
+    "Net-(U24B-+)": "Net-(U24B-+)",
+    "Net-(U27A--)": "Net-(U27A--)",
+    "Net-(U28A--)": "Net-(U28A--)",
+    "Net-(U29A--)": "Net-(U29A--)",
+    "Net-(U29B-+)": "Net-(U29B-+)",
+    "unconnected-(U2-BOUT1-Pad13)": "unconnected-(U2-BOUT1-Pad13)",
+    "unconnected-(U2-BOUT2-Pad14)": "unconnected-(U2-BOUT2-Pad14)",
+    "unconnected-(U4-BOUT1-Pad13)": "unconnected-(U4-BOUT1-Pad13)",
+    "unconnected-(U4-BOUT2-Pad14)": "unconnected-(U4-BOUT2-Pad14)",
+    "unconnected-(U7-NC-Pad4)": "unconnected-(U7-NC-Pad4)",
+    "unconnected-(U8-NC-Pad4)": "unconnected-(U8-NC-Pad4)",
+    "unconnected-(U12A-~{Q}-Pad6)": "unconnected-(U12A-~{Q}-Pad6)",
+    "unconnected-(U12B-Q-Pad9)": "unconnected-(U12B-Q-Pad9)",
+    "unconnected-(U12B-~{Q}-Pad8)": "unconnected-(U12B-~{Q}-Pad8)",
+    "unconnected-(U27-Pad7)": "unconnected-(U27-Pad7)",
+    "unconnected-(U28-Pad7)": "unconnected-(U28-Pad7)",
+    "上电复位完成": "POR_OK",
+    "传感器3.3V": "+3V3_SENS",
+    "供电口1_总线电源": "USB1_VBUS",
+    "供电口1_故障脉冲_低有效": "USB1_FAULT_PULSE_N",
+    "供电口2_总线电源": "USB2_VBUS",
+    "供电口2_故障脉冲_低有效": "USB2_FAULT_PULSE_N",
+    "右电机_动力电源": "VM_R",
+    "右电机_原始反转脉宽": "R_PWM_REV_RAW",
+    "右电机_原始正转脉宽": "R_PWM_FWD_RAW",
+    "右电机_母线电流采样": "VM_R_IMON",
+    "右电机_限流参考": "VREF_R",
+    "右编码器_A": "ENC_R_A",
+    "右编码器_A_逻辑板输入": "ENC_R_A_FPGA",
+    "右编码器_B": "ENC_R_B",
+    "右编码器_B_逻辑板输入": "ENC_R_B_FPGA",
+    "地": "GND",
+    "基准电压_2.495V": "VREF_2V495",
+    "外部故障_低有效": "EXT_KILL_N",
+    "左电机_动力电源": "VM_L",
+    "左电机_原始反转脉宽": "L_PWM_REV_RAW",
+    "左电机_原始正转脉宽": "L_PWM_FWD_RAW",
+    "左电机_母线电流采样": "VM_L_IMON",
+    "左电机_限流参考": "VREF_L",
+    "左编码器_A": "ENC_L_A",
+    "左编码器_A_逻辑板输入": "ENC_L_A_FPGA",
+    "左编码器_B": "ENC_L_B",
+    "左编码器_B_逻辑板输入": "ENC_L_B_FPGA",
+    "急停回路闭合": "ESTOP_OK",
+    "本板3.3V": "+3V3",
+    "板载3.3V_保护输出": "+3V3_ONBOARD",
+    "板载3.3V_电压正常": "3V3_ONBOARD_OK",
+    "板载3.3V_稳压输出": "+3V3_RAW",
+    "电机供电正常": "MOTOR_POWER_OK",
+    "电机已解锁": "MOTOR_ARMED",
+    "电机总开关输出": "VM_SWITCHED",
+    "电机解锁脉冲": "MOTOR_ARM",
+    "电机运行许可": "MOTOR_PERMIT",
+    "电池保护后母线": "VBAT_SYS",
+    "电池欠压告警_低有效": "BAT_WARN_N",
+    "电池电压采样": "BAT_ADC",
+    "计算板5V_保护输出": "+5V_AI_PROT",
+    "计算板5V_电压正常": "+5V_AI_OK",
+    "计算板5V_稳压输出": "+5V_AI",
+    "过流基准_1.217V": "CURRENT_REF_1V217",
+    "逻辑板3.3V_输入": "3V3_FPGA_IN",
+    "逻辑板5V_保护输出": "+5V_FPGA_PROT",
+    "逻辑板5V_电压正常": "+5V_FPGA_OK",
+    "逻辑板5V_稳压输出": "+5V_FPGA",
+    "降压使能": "BUCK_ENABLE",
+    "降压电源输入": "VLOGIC_IN"
+  },
+  "原理图标签与说明修改": [
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机总开关输出",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_稳压输出",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_原始反转脉宽",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压电源输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_保护输出",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "外部故障_低有效",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_保护输出",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_原始正转脉宽",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_原始反转脉宽",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_原始正转脉宽",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_稳压输出",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_保护输出",
+      "新名称": "+5V_FPGA_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_保护输出",
+      "新名称": "+5V_AI_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_原始反转脉宽",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_稳压输出",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_原始正转脉宽",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_原始正转脉宽",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_原始反转脉宽",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_稳压输出",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "正转脉宽",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "反转脉宽",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "正转脉宽",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "反转脉宽",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "动力正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "外部故障",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "电池母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "逻辑5V",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "计算5V",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "逻辑5V保护",
+      "新名称": "+5V_FPGA_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "计算5V保护",
+      "新名称": "+5V_AI_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "逻辑5V",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "计算5V",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "逻辑5V保护",
+      "新名称": "+5V_FPGA_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "计算5V保护",
+      "新名称": "+5V_AI_PROT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "板载3.3V",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "保护后3.3V",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "电池母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "动力正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "外部故障",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "左正转",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "左反转",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "右正转",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "右反转",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "板载3.3V",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "保护后3.3V",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "ProPrj_power_2026-10-02.kicad_sch",
+      "类型": "sheet_pin",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "label",
+      "原名称": "电池正极",
+      "新名称": "BAT_POS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压电源输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压电源输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "电池母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "动力正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "01_power_input.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口1_总线电源",
+      "新名称": "USB1_VBUS"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口2_故障脉冲_低有效",
+      "新名称": "USB2_FAULT_PULSE_N"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口2_总线电源",
+      "新名称": "USB2_VBUS"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口2_故障脉冲_低有效",
+      "新名称": "USB2_FAULT_PULSE_N"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压电源输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口1_故障脉冲_低有效",
+      "新名称": "USB1_FAULT_PULSE_N"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "降压使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口1_故障脉冲_低有效",
+      "新名称": "USB1_FAULT_PULSE_N"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "逻辑5V保护",
+      "新名称": "+5V_FPGA_PROT"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "计算5V",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "计算5V保护",
+      "新名称": "+5V_AI_PROT"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "逻辑5V",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ordinary_description",
+      "原名称": "逻辑板5V_稳压输出 / 5.10V / 供电目标3A",
+      "新名称": "逻辑板降压输出 / 5.10V / 供电目标3A"
+    },
+    {
+      "文件": "02_usb_5v.kicad_sch",
+      "类型": "ordinary_description",
+      "原名称": "计算板5V_稳压输出 / 5.10V / 供电目标3A",
+      "新名称": "计算板降压输出 / 5.10V / 供电目标3A"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板3.3V_输入",
+      "新名称": "3V3_FPGA_IN"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板3.3V_输入",
+      "新名称": "3V3_FPGA_IN"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "传感器3.3V",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板3.3V_输入",
+      "新名称": "3V3_FPGA_IN"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "保护后3.3V",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "使能",
+      "新名称": "BUCK_ENABLE"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "板载3.3V",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "降压输入",
+      "新名称": "VLOGIC_IN"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "03_aux_3v3.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "上电复位完成",
+      "新名称": "POR_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "急停回路闭合",
+      "新名称": "ESTOP_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "上电复位完成",
+      "新名称": "POR_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "急停回路闭合",
+      "新名称": "ESTOP_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "外部故障_低有效",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "急停回路闭合",
+      "新名称": "ESTOP_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "动力正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "外部故障",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "04_motor_safety.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_A_逻辑板输入",
+      "新名称": "ENC_L_A_FPGA"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_A",
+      "新名称": "ENC_L_A"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_动力电源",
+      "新名称": "VM_L"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_限流参考",
+      "新名称": "VREF_L"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_母线电流采样",
+      "新名称": "VM_L_IMON"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_B",
+      "新名称": "ENC_L_B"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_B_逻辑板输入",
+      "新名称": "ENC_L_B_FPGA"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_A",
+      "新名称": "ENC_L_A"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_动力电源",
+      "新名称": "VM_L"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_B",
+      "新名称": "ENC_L_B"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "反转脉宽",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "正转脉宽",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_动力电源",
+      "新名称": "VM_R"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_B",
+      "新名称": "ENC_R_B"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_动力电源",
+      "新名称": "VM_R"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_限流参考",
+      "新名称": "VREF_R"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_A",
+      "新名称": "ENC_R_A"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_B_逻辑板输入",
+      "新名称": "ENC_R_B_FPGA"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_B",
+      "新名称": "ENC_R_B"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_A_逻辑板输入",
+      "新名称": "ENC_R_A_FPGA"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_A",
+      "新名称": "ENC_R_A"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_母线电流采样",
+      "新名称": "VM_R_IMON"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "反转脉宽",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "传感器电源",
+      "新名称": "+3V3_SENS"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "正转脉宽",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_动力电源",
+      "新名称": "VM_R"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_动力电源",
+      "新名称": "VM_R"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_动力电源",
+      "新名称": "VM_R"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机总开关输出",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_动力电源",
+      "新名称": "VM_L"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_动力电源",
+      "新名称": "VM_L"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_动力电源",
+      "新名称": "VM_L"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机总开关输出",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "电机总电源",
+      "新名称": "VM_SWITCHED"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "电池母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "07_motor_dump.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_稳压输出",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_电压正常",
+      "新名称": "3V3_ONBOARD_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池欠压告警_低有效",
+      "新名称": "BAT_WARN_N"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_电压正常",
+      "新名称": "+5V_FPGA_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_稳压输出",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "过流基准_1.217V",
+      "新名称": "CURRENT_REF_1V217"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_稳压输出",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_稳压输出",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_电压正常",
+      "新名称": "3V3_ONBOARD_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池欠压告警_低有效",
+      "新名称": "BAT_WARN_N"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_稳压输出",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_稳压输出",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "过流基准_1.217V",
+      "新名称": "CURRENT_REF_1V217"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_母线电流采样",
+      "新名称": "VM_L_IMON"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_母线电流采样",
+      "新名称": "VM_R_IMON"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_电压正常",
+      "新名称": "+5V_FPGA_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_电压正常",
+      "新名称": "+5V_AI_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_电压正常",
+      "新名称": "+5V_AI_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_电压正常",
+      "新名称": "+5V_FPGA_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_电压正常",
+      "新名称": "+5V_AI_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "计算板5V_稳压输出",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "过流基准_1.217V",
+      "新名称": "CURRENT_REF_1V217"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板5V_稳压输出",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "基准电压_2.495V",
+      "新名称": "VREF_2V495"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "global_label",
+      "原名称": "板载3.3V_电压正常",
+      "新名称": "3V3_ONBOARD_OK"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "逻辑5V保护",
+      "新名称": "+5V_FPGA_PROT"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "逻辑5V",
+      "新名称": "+5V_FPGA"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "计算5V",
+      "新名称": "+5V_AI"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "计算5V保护",
+      "新名称": "+5V_AI_PROT"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "板载3.3V",
+      "新名称": "+3V3_RAW"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "保护后3.3V",
+      "新名称": "+3V3_ONBOARD"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ordinary_description",
+      "原名称": "5V过压关断 / 标称约5.364V / 逻辑板5V_保护输出",
+      "新名称": "逻辑板供电过压关断 / 标称约5.364V"
+    },
+    {
+      "文件": "08_rail_protection.kicad_sch",
+      "类型": "ordinary_description",
+      "原名称": "5V过压关断 / 标称约5.364V / 计算板5V_保护输出",
+      "新名称": "计算板供电过压关断 / 标称约5.364V"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口2_故障脉冲_低有效",
+      "新名称": "USB2_FAULT_PULSE_N"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "供电口1_故障脉冲_低有效",
+      "新名称": "USB1_FAULT_PULSE_N"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "急停回路闭合",
+      "新名称": "ESTOP_OK"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池电压采样",
+      "新名称": "BAT_ADC"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板3.3V_输入",
+      "新名称": "3V3_FPGA_IN"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池电压采样",
+      "新名称": "BAT_ADC"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机供电正常",
+      "新名称": "MOTOR_POWER_OK"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池欠压告警_低有效",
+      "新名称": "BAT_WARN_N"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右电机_母线电流采样",
+      "新名称": "VM_R_IMON"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_A_逻辑板输入",
+      "新名称": "ENC_L_A_FPGA"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "逻辑板3.3V_输入",
+      "新名称": "3V3_FPGA_IN"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左电机_母线电流采样",
+      "新名称": "VM_L_IMON"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_A_逻辑板输入",
+      "新名称": "ENC_R_A_FPGA"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "左编码器_B_逻辑板输入",
+      "新名称": "ENC_L_B_FPGA"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电池保护后母线",
+      "新名称": "VBAT_SYS"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "电机已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "本板3.3V",
+      "新名称": "+3V3"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "右编码器_B_逻辑板输入",
+      "新名称": "ENC_R_B_FPGA"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "global_label",
+      "原名称": "上电复位完成",
+      "新名称": "POR_OK"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "左反转",
+      "新名称": "L_PWM_REV_RAW"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "外部故障",
+      "新名称": "EXT_KILL_N"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "运行许可",
+      "新名称": "MOTOR_PERMIT"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "右正转",
+      "新名称": "R_PWM_FWD_RAW"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "右反转",
+      "新名称": "R_PWM_REV_RAW"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "解锁脉冲",
+      "新名称": "MOTOR_ARM"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "左正转",
+      "新名称": "L_PWM_FWD_RAW"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "hierarchical_label",
+      "原名称": "已解锁",
+      "新名称": "MOTOR_ARMED"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    },
+    {
+      "文件": "09_control_io.kicad_sch",
+      "类型": "ground_power_name",
+      "原名称": "地",
+      "新名称": "GND"
+    }
+  ],
+  "说明": "电气名称不参加中文翻译；功能说明保留中文默认字体；普通说明不直接插入网络标识。",
+  "网络标签视觉间距调整": [
+    {
+      "文件": "05_motor_left.kicad_sch",
+      "标签": "MOTOR_ARMED",
+      "原坐标": [
+        96.52,
+        217.17
+      ],
+      "新坐标": [
+        78.74,
+        217.17
+      ],
+      "目的": "与编码器上拉电源标签留出横向间隔，保持原信号连接"
+    },
+    {
+      "文件": "06_motor_right.kicad_sch",
+      "标签": "MOTOR_ARMED",
+      "原坐标": [
+        96.52,
+        217.17
+      ],
+      "新坐标": [
+        78.74,
+        217.17
+      ],
+      "目的": "与编码器上拉电源标签留出横向间隔，保持原信号连接"
+    }
+  ],
+  "最终全网连接分组复核": true,
+  "原生ERC问题数量": 0,
+  "原理图PCB一致性问题数量": 0,
+  "既有DRC数量": 25,
+  "既有未连接数量": 499,
+  "功能连接断言数量": 147,
+  "PDF_SHA256": "05f4352d0a941c9f4f2c1f27f70bea7efbc92779fd0d021ab76ca7841c17d5ce",
+  "PDF页数": 10,
+  "逐页视觉检查": true
+}

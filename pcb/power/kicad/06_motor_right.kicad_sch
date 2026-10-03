@@ -3409,7 +3409,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 217.17) (xy 96.52 217.17)
+			(xy 104.14 217.17) (xy 78.74 217.17)
 		)
 		(stroke
 			(width 0)
@@ -3577,7 +3577,7 @@
 		)
 		(uuid "fd690a57-9566-5395-af68-7cd52a7d3087")
 	)
-	(global_label "右电机_动力电源"
+	(global_label "VM_R"
 		(shape passive)
 		(at 220.98 161.29 0)
 		(effects
@@ -3599,7 +3599,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_B"
+	(global_label "ENC_R_B"
 		(shape passive)
 		(at 281.94 194.31 180)
 		(effects
@@ -3621,7 +3621,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 200.66 218.44 0)
 		(effects
@@ -3643,7 +3643,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 195.58 95.25 0)
 		(effects
@@ -3665,7 +3665,7 @@
 			)
 		)
 	)
-	(global_label "右电机_动力电源"
+	(global_label "VM_R"
 		(shape passive)
 		(at 254 50.8 0)
 		(effects
@@ -3687,7 +3687,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 281.94 189.23 180)
 		(effects
@@ -3709,7 +3709,7 @@
 			)
 		)
 	)
-	(global_label "右电机_限流参考"
+	(global_label "VREF_R"
 		(shape passive)
 		(at 181.61 147.32 0)
 		(effects
@@ -3731,7 +3731,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_A"
+	(global_label "ENC_R_A"
 		(shape passive)
 		(at 48.26 238.76 180)
 		(effects
@@ -3753,7 +3753,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 91.44 218.44 0)
 		(effects
@@ -3775,7 +3775,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_B_逻辑板输入"
+	(global_label "ENC_R_B_FPGA"
 		(shape passive)
 		(at 177.8 238.76 0)
 		(effects
@@ -3797,7 +3797,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 281.94 196.85 180)
 		(effects
@@ -3819,7 +3819,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_B"
+	(global_label "ENC_R_B"
 		(shape passive)
 		(at 157.48 238.76 180)
 		(effects
@@ -3841,7 +3841,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_A_逻辑板输入"
+	(global_label "ENC_R_A_FPGA"
 		(shape passive)
 		(at 68.58 238.76 0)
 		(effects
@@ -3863,7 +3863,7 @@
 			)
 		)
 	)
-	(global_label "右编码器_A"
+	(global_label "ENC_R_A"
 		(shape passive)
 		(at 281.94 191.77 180)
 		(effects
@@ -3885,7 +3885,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 342.9 180.34 0)
 		(effects
@@ -3907,9 +3907,9 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
-		(at 96.52 217.17 180)
+		(at 78.74 217.17 180)
 		(effects
 			(font
 				(size 1 1)
@@ -3918,7 +3918,7 @@
 		)
 		(uuid "e2261c4c-e523-5192-8319-89ac5f778748")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 96.52 217.17 180)
+			(at 78.74 217.17 180)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3929,7 +3929,7 @@
 			)
 		)
 	)
-	(global_label "右电机_母线电流采样"
+	(global_label "VM_R_IMON"
 		(shape passive)
 		(at 209.55 81.28 0)
 		(effects
@@ -3951,7 +3951,7 @@
 			)
 		)
 	)
-	(hierarchical_label "电机总电源"
+	(hierarchical_label "VM_SWITCHED"
 		(shape passive)
 		(at 34.29 50.8 180)
 		(effects
@@ -3962,7 +3962,7 @@
 		)
 		(uuid "30370182-1059-5087-a9bd-804e1e41ef7f")
 	)
-	(hierarchical_label "反转脉宽"
+	(hierarchical_label "R_PWM_REV_RAW"
 		(shape passive)
 		(at 96.52 212.09 180)
 		(effects
@@ -3973,7 +3973,7 @@
 		)
 		(uuid "327de5f0-0c39-5be9-9e34-4e5c4931f470")
 	)
-	(hierarchical_label "传感器电源"
+	(hierarchical_label "+3V3_SENS"
 		(shape passive)
 		(at 132.08 139.7 0)
 		(effects
@@ -3984,7 +3984,7 @@
 		)
 		(uuid "41de738f-337f-5d0a-8c3c-42db9db09680")
 	)
-	(hierarchical_label "正转脉宽"
+	(hierarchical_label "R_PWM_FWD_RAW"
 		(shape passive)
 		(at 96.52 186.69 180)
 		(effects
@@ -3995,7 +3995,7 @@
 		)
 		(uuid "457020cb-3a64-52a2-acba-4e06a1fbd369")
 	)
-	(hierarchical_label "已解锁"
+	(hierarchical_label "MOTOR_ARMED"
 		(shape passive)
 		(at 96.52 191.77 180)
 		(effects
@@ -4006,7 +4006,7 @@
 		)
 		(uuid "9a15ca0d-f22b-5f81-b938-13dd221a1991")
 	)
-	(hierarchical_label "本板3.3V"
+	(hierarchical_label "+3V3"
 		(shape passive)
 		(at 154.94 69.85 0)
 		(effects
@@ -4129,7 +4129,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 199.39 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -4306,7 +4306,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 342.9 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -4606,7 +4606,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 246.38 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -4684,7 +4684,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 147.32 219.71 0)
 			(hide yes)
 			(show_name no)
@@ -4762,7 +4762,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 195.58 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -4840,7 +4840,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 220.98 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -5098,7 +5098,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 177.8 242.57 0)
 			(hide yes)
 			(show_name no)
@@ -5418,7 +5418,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 132.08 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5683,7 +5683,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 200.66 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -6098,7 +6098,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 181.61 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -6260,7 +6260,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 226.06 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -6533,7 +6533,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 160.02 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -7326,7 +7326,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 68.58 242.57 0)
 			(hide yes)
 			(show_name no)
@@ -7404,7 +7404,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 154.94 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -7482,7 +7482,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 209.55 87.63 0)
 			(hide yes)
 			(show_name no)

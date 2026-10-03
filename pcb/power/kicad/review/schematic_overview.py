@@ -47,6 +47,7 @@ def build_overview(root,pages):
     for file,x,y,w,h,description,pins in configs:
         p=byfile[file];pinitems=[]
         for net,alias,side,offset in pins:
+            alias=net  # Electrical hierarchy ports use the canonical ASCII net name.
             # Promote one real child net attachment to a hierarchy port.
             prefix='(global_label '+q(net)+' '
             index=next(i for i,v in enumerate(p.items) if v.startswith(prefix))

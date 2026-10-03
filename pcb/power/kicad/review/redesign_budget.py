@@ -143,7 +143,7 @@ def build():
             pos='(at 76.2 46.99 90)' if pn[1]=='Reference' else '(at 76.2 44.45 90)'
             field_edits.append((at.start,at.end,pos))
     p.items[-1]=apply_edits(p.items[-1],field_edits)
-    p.wire(con.pin(2),main_fuse.pin(1));p.label('电池正极',(50.8,52.07));p.flag('电池正极',(50.8,52.07));p.dot((50.8,52.07))
+    p.wire(con.pin(2),main_fuse.pin(1));p.flag('BAT_POS',(50.8,52.07));p.dot((50.8,52.07))
     rev=p.sym('Transistor_FET:Q_PMOS_GDS','Q1',111.76,66.04,'IRF4905',TO220,mpn='IRF4905',angle=90)
     p.wire(main_fuse.pin(2),(96.52,main_fuse.pin(2)[1]),(96.52,rev.pin(2)[1]),rev.pin(2))
     end=(187.96,rev.pin(3)[1]);p.wire(rev.pin(3),end);p.flag('VBAT_SYS',end)
@@ -290,7 +290,7 @@ def build():
             unit=1+i*2+j;gy=189.23+j*25.4
             gate=p.sym('EdgeMind_Power:74HC08','U11',111.76,gy,'74HC08D',SO14,unit=unit,mpn='SN74HC08DR')
             aa,bb,oo={1:(1,2,3),2:(4,5,6),3:(9,10,8),4:(12,13,11)}[unit]
-            p.stub(gate,aa,side+'_PWM_'+('FWD_RAW' if j==0 else 'REV_RAW'),7.62);p.stub(gate,bb,'MOTOR_ARMED',7.62)
+            p.stub(gate,aa,side+'_PWM_'+('FWD_RAW' if j==0 else 'REV_RAW'),7.62);p.stub(gate,bb,'MOTOR_ARMED',25.4 if j==1 else 7.62)
             xx=160.02-j*12.7;p.wire(gate.pin(oo),(xx,gy),(xx,at.pin(k)[1]),at.pin(k))
             rd=R(p,xx,gy+13.97,'10k');p.wire(rd.pin(1),(xx,at.pin(k)[1]));p.dot((xx,at.pin(k)[1]));p.ground(rd.pin(2))
         if i==0:

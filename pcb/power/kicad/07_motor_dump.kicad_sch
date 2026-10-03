@@ -2881,7 +2881,7 @@
 		)
 		(uuid "f62c46cd-4091-50d9-99f2-98a6a7ccea0d")
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 251.46 66.04 180)
 		(effects
@@ -2903,7 +2903,7 @@
 			)
 		)
 	)
-	(global_label "右电机_动力电源"
+	(global_label "VM_R"
 		(shape passive)
 		(at 224.79 146.05 0)
 		(effects
@@ -2925,7 +2925,7 @@
 			)
 		)
 	)
-	(global_label "右电机_动力电源"
+	(global_label "VM_R"
 		(shape passive)
 		(at 302.26 142.24 0)
 		(effects
@@ -2947,7 +2947,7 @@
 			)
 		)
 	)
-	(global_label "右电机_动力电源"
+	(global_label "VM_R"
 		(shape passive)
 		(at 375.92 152.4 180)
 		(effects
@@ -2969,7 +2969,7 @@
 			)
 		)
 	)
-	(global_label "电机总开关输出"
+	(global_label "VM_SWITCHED"
 		(shape passive)
 		(at 43.18 119.38 0)
 		(effects
@@ -2991,7 +2991,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 81.28 39.37 0)
 		(effects
@@ -3013,7 +3013,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 241.3 227.33 0)
 		(effects
@@ -3035,7 +3035,7 @@
 			)
 		)
 	)
-	(global_label "基准电压_2.495V"
+	(global_label "VREF_2V495"
 		(shape passive)
 		(at 251.46 170.18 180)
 		(effects
@@ -3057,7 +3057,7 @@
 			)
 		)
 	)
-	(global_label "左电机_动力电源"
+	(global_label "VM_L"
 		(shape passive)
 		(at 375.92 48.26 180)
 		(effects
@@ -3079,7 +3079,7 @@
 			)
 		)
 	)
-	(global_label "左电机_动力电源"
+	(global_label "VM_L"
 		(shape passive)
 		(at 224.79 41.91 0)
 		(effects
@@ -3101,7 +3101,7 @@
 			)
 		)
 	)
-	(global_label "电池保护后母线"
+	(global_label "VBAT_SYS"
 		(shape passive)
 		(at 96.52 74.93 0)
 		(effects
@@ -3123,7 +3123,7 @@
 			)
 		)
 	)
-	(global_label "左电机_动力电源"
+	(global_label "VM_L"
 		(shape passive)
 		(at 302.26 38.1 0)
 		(effects
@@ -3145,7 +3145,7 @@
 			)
 		)
 	)
-	(global_label "电机总开关输出"
+	(global_label "VM_SWITCHED"
 		(shape passive)
 		(at 158.75 123.19 0)
 		(effects
@@ -3167,7 +3167,7 @@
 			)
 		)
 	)
-	(hierarchical_label "电机总电源"
+	(hierarchical_label "VM_SWITCHED"
 		(shape passive)
 		(at 121.92 60.96 0)
 		(effects
@@ -3178,7 +3178,7 @@
 		)
 		(uuid "0d4f0dbb-2cd8-5df2-83eb-f726eacaaa70")
 	)
-	(hierarchical_label "已解锁"
+	(hierarchical_label "MOTOR_ARMED"
 		(shape passive)
 		(at 46.99 99.06 180)
 		(effects
@@ -3189,7 +3189,7 @@
 		)
 		(uuid "19f26628-ef22-50a0-8ffe-a9f6f25b99aa")
 	)
-	(hierarchical_label "电池母线"
+	(hierarchical_label "VBAT_SYS"
 		(shape passive)
 		(at 96.52 60.96 180)
 		(effects
@@ -3653,7 +3653,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 224.79 170.18 0)
 			(hide yes)
 			(show_name no)
@@ -4168,7 +4168,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -4246,7 +4246,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 335.28 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -4324,7 +4324,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -5224,7 +5224,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 261.62 237.49 0)
 			(hide yes)
 			(show_name no)
@@ -5573,7 +5573,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 81.28 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -5651,7 +5651,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 224.79 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -5886,7 +5886,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 335.28 160.02 0)
 			(hide yes)
 			(show_name no)

@@ -2152,7 +2152,7 @@
 		)
 		(uuid "fd16e03e-4eb9-5447-ae55-edcddf2c9641")
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 175.26 234.95 180)
 		(effects
@@ -2174,7 +2174,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 298.45 237.49 180)
 		(effects
@@ -2196,7 +2196,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 298.45 185.42 180)
 		(effects
@@ -2218,7 +2218,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 44.45 179.07 180)
 		(effects
@@ -2240,7 +2240,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板3.3V_输入"
+	(global_label "3V3_FPGA_IN"
 		(shape passive)
 		(at 365.76 93.98 180)
 		(effects
@@ -2262,7 +2262,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 298.45 234.95 180)
 		(effects
@@ -2284,7 +2284,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 93.98 238.76 180)
 		(effects
@@ -2306,7 +2306,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 228.6 177.8 0)
 		(effects
@@ -2328,7 +2328,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 309.88 49.53 0)
 		(effects
@@ -2350,7 +2350,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 351.79 177.8 0)
 		(effects
@@ -2372,7 +2372,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 298.45 187.96 180)
 		(effects
@@ -2394,7 +2394,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 175.26 185.42 180)
 		(effects
@@ -2416,7 +2416,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 93.98 241.3 180)
 		(effects
@@ -2438,7 +2438,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 175.26 237.49 180)
 		(effects
@@ -2460,7 +2460,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 228.6 227.33 0)
 		(effects
@@ -2482,7 +2482,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 175.26 187.96 180)
 		(effects
@@ -2504,7 +2504,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板3.3V_输入"
+	(global_label "3V3_FPGA_IN"
 		(shape passive)
 		(at 309.88 72.39 0)
 		(effects
@@ -2526,7 +2526,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 365.76 96.52 180)
 		(effects
@@ -2548,7 +2548,7 @@
 			)
 		)
 	)
-	(global_label "传感器3.3V"
+	(global_label "+3V3_SENS"
 		(shape passive)
 		(at 351.79 227.33 0)
 		(effects
@@ -2570,7 +2570,7 @@
 			)
 		)
 	)
-	(global_label "逻辑板3.3V_输入"
+	(global_label "3V3_FPGA_IN"
 		(shape passive)
 		(at 284.48 52.07 180)
 		(effects
@@ -2592,7 +2592,7 @@
 			)
 		)
 	)
-	(hierarchical_label "本板3.3V"
+	(hierarchical_label "+3V3"
 		(shape passive)
 		(at 284.48 49.53 180)
 		(effects
@@ -2603,7 +2603,7 @@
 		)
 		(uuid "3754eb07-8c94-599f-9407-d67fdefab9ed")
 	)
-	(hierarchical_label "保护后3.3V"
+	(hierarchical_label "+3V3_ONBOARD"
 		(shape passive)
 		(at 284.48 46.99 180)
 		(effects
@@ -2614,7 +2614,7 @@
 		)
 		(uuid "7e5d6449-c9b4-56ae-af61-c5b5a8e64267")
 	)
-	(hierarchical_label "使能"
+	(hierarchical_label "BUCK_ENABLE"
 		(shape passive)
 		(at 76.2 69.85 180)
 		(effects
@@ -2625,7 +2625,7 @@
 		)
 		(uuid "9683e1de-298c-5ff4-a71a-9e61277c2e9d")
 	)
-	(hierarchical_label "板载3.3V"
+	(hierarchical_label "+3V3_RAW"
 		(shape passive)
 		(at 207.01 64.77 0)
 		(effects
@@ -2636,7 +2636,7 @@
 		)
 		(uuid "def8be30-d205-5c0a-ae01-a994ac79c0bb")
 	)
-	(hierarchical_label "降压输入"
+	(hierarchical_label "VLOGIC_IN"
 		(shape passive)
 		(at 45.72 64.77 180)
 		(effects
@@ -2647,7 +2647,7 @@
 		)
 		(uuid "edc86de7-5f61-5d2e-90d9-6bd02f47c009")
 	)
-	(hierarchical_label "传感器电源"
+	(hierarchical_label "+3V3_SENS"
 		(shape passive)
 		(at 111.76 179.07 0)
 		(effects
@@ -2950,7 +2950,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 228.6 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -3129,7 +3129,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 177.8 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -3303,7 +3303,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 105.41 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -3381,7 +3381,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 86.36 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -3561,7 +3561,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 351.79 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -3639,7 +3639,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 198.12 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -3981,7 +3981,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 351.79 226.06 0)
 			(hide yes)
 			(show_name no)
@@ -4138,7 +4138,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 93.98 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -4295,7 +4295,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 228.6 226.06 0)
 			(hide yes)
 			(show_name no)
@@ -4897,7 +4897,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 45.72 74.93 0)
 			(hide yes)
 			(show_name no)

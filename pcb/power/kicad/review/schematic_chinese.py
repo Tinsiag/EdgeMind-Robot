@@ -1,8 +1,8 @@
-"""Chinese presentation layer; keep references, part numbers and library IDs exact."""
+"""Chinese descriptions only; electrical net names and power values stay ASCII."""
 from kicad_tools import parse, Node, children, child
 import json,re
 
-NETS={
+LEGACY_NETS={
  'GND':'地','VBAT_SYS':'电池保护后母线','VLOGIC_IN':'降压电源输入','VREF_2V495':'基准电压_2.495V',
  'BUCK_ENABLE':'降压使能','MOTOR_POWER_OK':'电机供电正常','VM_SWITCHED':'电机总开关输出',
  '+3V3_RAW':'板载3.3V_稳压输出','+3V3_ONBOARD':'板载3.3V_保护输出','+3V3':'本板3.3V',
@@ -16,11 +16,14 @@ NETS={
  'USB1_FAULT_PULSE_N':'供电口1_故障脉冲_低有效','USB2_FAULT_PULSE_N':'供电口2_故障脉冲_低有效',
 }
 for side,name in [('L','左'),('R','右')]:
- NETS.update({f'VM_{side}':name+'电机_动力电源',f'VM_{side}_IMON':name+'电机_母线电流采样',
+ LEGACY_NETS.update({f'VM_{side}':name+'电机_动力电源',f'VM_{side}_IMON':name+'电机_母线电流采样',
   f'VREF_{side}':name+'电机_限流参考',f'{side}_PWM_FWD_RAW':name+'电机_原始正转脉宽',
   f'{side}_PWM_REV_RAW':name+'电机_原始反转脉宽',
   **{f'ENC_{side}_{ch}':name+'编码器_'+ch for ch in ['A','B']},
   **{f'ENC_{side}_{ch}_FPGA':name+'编码器_'+ch+'_逻辑板输入' for ch in ['A','B']}})
+
+# Kept for functional audits. Network identifiers are excluded from translation.
+NETS={name:name for name in LEGACY_NETS}
 
 TEXT={
  'EdgeMind Robot power / 2x5V + independent 3V3':'机器人电源板 / 两路5V与独立3.3V',
@@ -82,7 +85,7 @@ TEXT={
 def translated(v):
  if v in TEXT:return TEXT[v]
  if v in NETS:return NETS[v]
- if v.endswith(' / 5.10V / USB-C 3A target'):return NETS[v.split(' /')[0]]+' / 5.10V / 供电目标3A'
+ if v.endswith(' / 5.10V / USB-C 3A target'):return ('逻辑板降压输出' if v.split(' /')[0]=='+5V_FPGA' else '计算板降压输出')+' / 5.10V / 供电目标3A'
  if ' / 6P power-only / fixed 5V' in v:return v.split(' /')[0]+' / 六针供电口 / 固定5V'
  if v.startswith('Gain 20 / shunt'):return '增益20，采样电阻20mΩ：约0.4V/A\n输出滤波约1ms；母线电流不同于绕组电流\n标称母线过流阈值约3.04A，须实测设定'
  if ' MOTOR / branch fuse / bus current monitor / local bulk' in v:return ('左' if v[0]=='L' else '右')+'电机：分支保险、电流监测与本地储能'
@@ -91,7 +94,7 @@ def translated(v):
  if v.startswith('ROW='):
   row=re.search(r'ROW=([\d.]+)',v).group(1)
   return f'排间距{row}毫米，沿用原电路板；对排引脚编号已纠正。\n限流电流=参考电压/(10×采样电阻)；安装电机前先测阻值并校准。\n10正转、01反转、00滑行、11制动；B通道未用。编码器线序须与实物一致。'
- if v.startswith('5V OV cutoff ~5.364V / '):return '5V过压关断 / 标称约5.364V / '+NETS[v.split(' / ')[-1]]
+ if v.startswith('5V OV cutoff ~5.364V / '):return ('逻辑板供电过压关断' if v.split(' / ')[-1]=='+5V_FPGA_PROT' else '计算板供电过压关断')+' / 标称约5.364V'
  return v
 
 def localize(file):
@@ -100,12 +103,18 @@ def localize(file):
   if str(atom)!=value:edits.append((atom.start,atom.end,json.dumps(value,ensure_ascii=False)))
  for n in root[1:]:
   if not isinstance(n,Node):continue
-  if n[0]=='global_label':put(n[1],NETS.get(str(n[1]),str(n[1])))
+  if n[0] in ('label','global_label','hierarchical_label'):
+   assert str(n[1]).isascii(),'Electrical labels must not be translated'
   elif n[0]=='text':put(n[1],translated(str(n[1])))
   elif n[0]=='symbol':
    for p in children(n,'property'):
-    if p[1]=='Value':put(p[2],translated(str(p[2])))
+    if p[1]=='Value':
+     lib_id=child(n,'lib_id')
+     if lib_id and str(lib_id[1]).startswith('power:'):
+      assert str(p[2]).isascii(),'Power names must not be translated'
+     else:put(p[2],translated(str(p[2])))
   elif n[0]=='sheet':
+   for pin in children(n,'pin'):assert str(pin[1]).isascii(),'Hierarchy ports must not be translated'
    for p in children(n,'property'):
     if p[1]=='Sheetname':put(p[2],translated(str(p[2])))
   elif n[0]=='title_block':

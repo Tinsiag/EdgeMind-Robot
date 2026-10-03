@@ -2713,7 +2713,7 @@
 		)
 		(uuid "f6fcd71e-2f38-5404-ac5d-97121d2cb60e")
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 73.66 226.06 0)
 		(effects
@@ -2735,7 +2735,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 53.34 207.01 0)
 		(effects
@@ -2757,7 +2757,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 137.16 226.06 0)
 		(effects
@@ -2779,7 +2779,7 @@
 			)
 		)
 	)
-	(global_label "上电复位完成"
+	(global_label "POR_OK"
 		(shape passive)
 		(at 172.72 54.61 0)
 		(effects
@@ -2801,7 +2801,7 @@
 			)
 		)
 	)
-	(global_label "电机运行许可"
+	(global_label "MOTOR_PERMIT"
 		(shape passive)
 		(at 228.6 66.04 180)
 		(effects
@@ -2823,7 +2823,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 116.84 209.55 0)
 		(effects
@@ -2845,7 +2845,7 @@
 			)
 		)
 	)
-	(global_label "急停回路闭合"
+	(global_label "ESTOP_OK"
 		(shape passive)
 		(at 83.82 57.15 0)
 		(effects
@@ -2867,7 +2867,7 @@
 			)
 		)
 	)
-	(global_label "上电复位完成"
+	(global_label "POR_OK"
 		(shape passive)
 		(at 228.6 101.6 180)
 		(effects
@@ -2889,7 +2889,7 @@
 			)
 		)
 	)
-	(global_label "电机已解锁"
+	(global_label "MOTOR_ARMED"
 		(shape passive)
 		(at 369.57 212.09 0)
 		(effects
@@ -2911,7 +2911,7 @@
 			)
 		)
 	)
-	(global_label "急停回路闭合"
+	(global_label "ESTOP_OK"
 		(shape passive)
 		(at 40.64 54.61 180)
 		(effects
@@ -2933,7 +2933,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 172.72 173.99 0)
 		(effects
@@ -2955,7 +2955,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 307.34 177.8 180)
 		(effects
@@ -2977,7 +2977,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 320.04 167.64 0)
 		(effects
@@ -2999,7 +2999,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 102.87 57.15 0)
 		(effects
@@ -3021,7 +3021,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 179.07 80.01 0)
 		(effects
@@ -3043,7 +3043,7 @@
 			)
 		)
 	)
-	(global_label "外部故障_低有效"
+	(global_label "EXT_KILL_N"
 		(shape passive)
 		(at 228.6 106.68 180)
 		(effects
@@ -3065,7 +3065,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 161.29 182.88 180)
 		(effects
@@ -3087,7 +3087,7 @@
 			)
 		)
 	)
-	(global_label "急停回路闭合"
+	(global_label "ESTOP_OK"
 		(shape passive)
 		(at 228.6 60.96 180)
 		(effects
@@ -3109,7 +3109,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 154.94 40.64 0)
 		(effects
@@ -3131,7 +3131,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 172.72 196.85 0)
 		(effects
@@ -3153,7 +3153,7 @@
 			)
 		)
 	)
-	(global_label "电机解锁脉冲"
+	(global_label "MOTOR_ARM"
 		(shape passive)
 		(at 304.8 180.34 180)
 		(effects
@@ -3175,7 +3175,7 @@
 			)
 		)
 	)
-	(global_label "地"
+	(global_label "GND"
 		(shape passive)
 		(at 161.29 185.42 180)
 		(effects
@@ -3197,7 +3197,7 @@
 			)
 		)
 	)
-	(hierarchical_label "解锁脉冲"
+	(hierarchical_label "MOTOR_ARM"
 		(shape passive)
 		(at 71.12 86.36 0)
 		(effects
@@ -3208,7 +3208,7 @@
 		)
 		(uuid "0d6a1781-19de-5e5e-9851-fa213b5936eb")
 	)
-	(hierarchical_label "已解锁"
+	(hierarchical_label "MOTOR_ARMED"
 		(shape passive)
 		(at 335.28 177.8 0)
 		(effects
@@ -3219,7 +3219,7 @@
 		)
 		(uuid "65972802-510a-57c1-98d9-371d9981590f")
 	)
-	(hierarchical_label "动力正常"
+	(hierarchical_label "MOTOR_POWER_OK"
 		(shape passive)
 		(at 228.6 147.32 180)
 		(effects
@@ -3230,7 +3230,7 @@
 		)
 		(uuid "65b46882-8f9e-5000-b738-b834601676e2")
 	)
-	(hierarchical_label "外部故障"
+	(hierarchical_label "EXT_KILL_N"
 		(shape passive)
 		(at 102.87 72.39 0)
 		(effects
@@ -3241,7 +3241,7 @@
 		)
 		(uuid "6e5afd14-31c5-5739-b984-666c2839b0ef")
 	)
-	(hierarchical_label "运行许可"
+	(hierarchical_label "MOTOR_PERMIT"
 		(shape passive)
 		(at 40.64 86.36 0)
 		(effects
@@ -3252,7 +3252,7 @@
 		)
 		(uuid "7548903e-c881-50c2-aebd-56db7b780b19")
 	)
-	(hierarchical_label "本板3.3V"
+	(hierarchical_label "+3V3"
 		(shape passive)
 		(at 40.64 52.07 180)
 		(effects
@@ -3285,7 +3285,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 154.94 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -3363,7 +3363,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 116.84 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -3520,7 +3520,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 137.16 224.79 0)
 			(hide yes)
 			(show_name no)
@@ -3808,7 +3808,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 40.64 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -3886,7 +3886,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 369.57 210.82 0)
 			(hide yes)
 			(show_name no)
@@ -4174,7 +4174,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 73.66 224.79 0)
 			(hide yes)
 			(show_name no)
@@ -4378,7 +4378,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 71.12 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -4456,7 +4456,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 53.34 223.52 0)
 			(hide yes)
 			(show_name no)
@@ -4756,7 +4756,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 83.82 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -4834,7 +4834,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 179.07 78.74 0)
 			(hide yes)
 			(show_name no)

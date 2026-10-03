@@ -1675,7 +1675,7 @@
 		)
 		(uuid "e4f43727-4d9c-567b-999f-39341129991d")
 	)
-	(text "逻辑板5V_稳压输出 / 5.10V / 供电目标3A"
+	(text "逻辑板降压输出 / 5.10V / 供电目标3A"
 		(exclude_from_sim no)
 		(at 18 34.21 0)
 		(effects
@@ -1719,7 +1719,7 @@
 		)
 		(uuid "bfa66cf9-ddae-5d46-83c7-8ad65b3bce75")
 	)
-	(text "计算板5V_稳压输出 / 5.10V / 供电目标3A"
+	(text "计算板降压输出 / 5.10V / 供电目标3A"
 		(exclude_from_sim no)
 		(at 18 147.24 0)
 		(effects
@@ -3124,7 +3124,7 @@
 		)
 		(uuid "fed3427d-547e-5bdc-8ae0-4ba2a9bcc1ee")
 	)
-	(global_label "供电口1_总线电源"
+	(global_label "USB1_VBUS"
 		(shape passive)
 		(at 312.42 64.77 0)
 		(effects
@@ -3146,7 +3146,7 @@
 			)
 		)
 	)
-	(global_label "供电口2_故障脉冲_低有效"
+	(global_label "USB2_FAULT_PULSE_N"
 		(shape passive)
 		(at 302.26 198.12 0)
 		(effects
@@ -3168,7 +3168,7 @@
 			)
 		)
 	)
-	(global_label "供电口2_总线电源"
+	(global_label "USB2_VBUS"
 		(shape passive)
 		(at 312.42 177.8 0)
 		(effects
@@ -3190,7 +3190,7 @@
 			)
 		)
 	)
-	(global_label "供电口2_故障脉冲_低有效"
+	(global_label "USB2_FAULT_PULSE_N"
 		(shape passive)
 		(at 347.98 229.87 0)
 		(effects
@@ -3212,7 +3212,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 347.98 214.63 0)
 		(effects
@@ -3234,7 +3234,7 @@
 			)
 		)
 	)
-	(global_label "降压电源输入"
+	(global_label "VLOGIC_IN"
 		(shape passive)
 		(at 35.56 177.8 180)
 		(effects
@@ -3256,7 +3256,7 @@
 			)
 		)
 	)
-	(global_label "本板3.3V"
+	(global_label "+3V3"
 		(shape passive)
 		(at 347.98 101.6 0)
 		(effects
@@ -3278,7 +3278,7 @@
 			)
 		)
 	)
-	(global_label "供电口1_故障脉冲_低有效"
+	(global_label "USB1_FAULT_PULSE_N"
 		(shape passive)
 		(at 302.26 85.09 0)
 		(effects
@@ -3300,7 +3300,7 @@
 			)
 		)
 	)
-	(global_label "降压使能"
+	(global_label "BUCK_ENABLE"
 		(shape passive)
 		(at 63.5 185.42 180)
 		(effects
@@ -3322,7 +3322,7 @@
 			)
 		)
 	)
-	(global_label "供电口1_故障脉冲_低有效"
+	(global_label "USB1_FAULT_PULSE_N"
 		(shape passive)
 		(at 347.98 116.84 0)
 		(effects
@@ -3344,7 +3344,7 @@
 			)
 		)
 	)
-	(hierarchical_label "逻辑5V保护"
+	(hierarchical_label "+5V_FPGA_PROT"
 		(shape passive)
 		(at 243.84 64.77 0)
 		(effects
@@ -3355,7 +3355,7 @@
 		)
 		(uuid "01a70849-cba8-5126-a502-e866f8efe771")
 	)
-	(hierarchical_label "使能"
+	(hierarchical_label "BUCK_ENABLE"
 		(shape passive)
 		(at 63.5 72.39 180)
 		(effects
@@ -3366,7 +3366,7 @@
 		)
 		(uuid "38372ce6-b7fa-5e9c-b632-52d102b24398")
 	)
-	(hierarchical_label "计算5V"
+	(hierarchical_label "+5V_AI"
 		(shape passive)
 		(at 205.74 177.8 0)
 		(effects
@@ -3377,7 +3377,7 @@
 		)
 		(uuid "5b10e577-2b3d-531d-8e97-322d9a0affc4")
 	)
-	(hierarchical_label "计算5V保护"
+	(hierarchical_label "+5V_AI_PROT"
 		(shape passive)
 		(at 243.84 177.8 0)
 		(effects
@@ -3388,7 +3388,7 @@
 		)
 		(uuid "61a33990-77a7-58f3-9973-fe7de5e46b2f")
 	)
-	(hierarchical_label "逻辑5V"
+	(hierarchical_label "+5V_FPGA"
 		(shape passive)
 		(at 205.74 64.77 0)
 		(effects
@@ -3399,7 +3399,7 @@
 		)
 		(uuid "6b7da242-7316-5a11-9bfd-673b5b765a24")
 	)
-	(hierarchical_label "降压输入"
+	(hierarchical_label "VLOGIC_IN"
 		(shape passive)
 		(at 35.56 64.77 180)
 		(effects
@@ -3624,7 +3624,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 205.74 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -3702,7 +3702,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 165.1 207.01 0)
 			(hide yes)
 			(show_name no)
@@ -3780,7 +3780,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 251.46 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -3954,7 +3954,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 360.68 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -4032,7 +4032,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 368.3 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -4506,7 +4506,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 35.56 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -4584,7 +4584,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 251.46 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -4741,7 +4741,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 38.1 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -4819,7 +4819,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 360.68 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -5077,7 +5077,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 63.5 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -5155,7 +5155,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 193.04 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -5491,7 +5491,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -5665,7 +5665,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 193.04 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -6217,7 +6217,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 312.42 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -6295,7 +6295,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 50.8 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -6631,7 +6631,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 279.4 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -6709,7 +6709,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 63.5 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -6787,7 +6787,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 205.74 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -6865,7 +6865,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 165.1 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -7021,7 +7021,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 50.8 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -7963,7 +7963,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 243.84 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -8041,7 +8041,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 368.3 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -8227,7 +8227,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 243.84 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -8305,7 +8305,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 86.36 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -8671,7 +8671,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 86.36 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -9063,7 +9063,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 35.56 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -9246,7 +9246,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 279.4 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -9324,7 +9324,7 @@
 				)
 			)
 		)
-		(property "Value" "地"
+		(property "Value" "GND"
 			(at 38.1 66.04 0)
 			(hide yes)
 			(show_name no)
