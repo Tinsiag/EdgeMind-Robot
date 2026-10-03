@@ -1,0 +1,2322 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "734fd4e0-a6e1-4cb5-8348-642b7ec58253")
+	(paper "User" 420 370)
+	(title_block
+		(title "机器人电源板 / 两路5V与独立3.3V")
+		(date "2026-10-03")
+		(rev "第二版原理图")
+		(company "EdgeMind机器人")
+		(comment 1 "仅修改原理图，本次未更新电路板")
+	)
+	(lib_symbols)
+	(text "独立降压、跳帽选择与传感器滤波"
+		(exclude_from_sim no)
+		(at 24.32 205.74 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "1446ad69-3be2-5d22-abab-515f6cbe5272")
+	)
+	(text "默认短接JP1的1-2：板载3.3V。只安装一个跳帽；电机故障恢复后须重新发解锁脉冲。"
+		(exclude_from_sim no)
+		(at 20 316 0)
+		(effects
+			(font
+				(size 1.05 1.05)
+			)
+			(justify left)
+		)
+		(uuid "1cd763a9-80ed-5303-8ba6-a94b2ece57fd")
+	)
+	(text "右侧AT8236、编码器与电流监测"
+		(exclude_from_sim no)
+		(at 293.56 289.56 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "2b0f22fb-10d1-5be9-8d58-f7382d73cb3b")
+	)
+	(text "保险、防反接与电压窗口"
+		(exclude_from_sim no)
+		(at 24.32 106.68 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "48f7ff96-aae7-5c6c-93fe-31bb7f5bbc7e")
+	)
+	(text "动力总开关与回生泄放"
+		(exclude_from_sim no)
+		(at 24.32 289.56 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "5159658c-7294-56f3-a567-31cec73278de")
+	)
+	(text "急停、上电复位与解锁锁存"
+		(exclude_from_sim no)
+		(at 158.94 205.74 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "54a90648-5882-5151-b554-53b84c74e7b9")
+	)
+	(text "实线为实际层级网络连接；远距离控制、监测信号采用同名标签。"
+		(exclude_from_sim no)
+		(at 20 27 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+			)
+			(justify left)
+		)
+		(uuid "5f63334d-0e9b-535c-9161-37a768214529")
+	)
+	(text "输出过压与动力过流检测"
+		(exclude_from_sim no)
+		(at 293.56 106.68 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "61b0dda1-5dbc-5b9f-b2cb-b41013d99d47")
+	)
+	(text "左侧AT8236、编码器与电流监测"
+		(exclude_from_sim no)
+		(at 158.94 289.56 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "624203e6-7802-5033-b575-bd3bbd8f7c8f")
+	)
+	(text "逻辑板控制与电源监测接口"
+		(exclude_from_sim no)
+		(at 293.56 205.74 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "750d1532-30fa-5295-8e48-1f1b170b2b63")
+	)
+	(text "两路降压与六针供电口"
+		(exclude_from_sim no)
+		(at 158.94 106.68 0)
+		(effects
+			(font
+				(size 0.95 0.95)
+			)
+			(justify left)
+		)
+		(uuid "782e0767-aeb6-52e2-ac33-a0ed0497ffb5")
+	)
+	(text "本页连接来自真实层级引脚；子页保留跨模块同名网络。原电路板未同步，不能直接投板。"
+		(exclude_from_sim no)
+		(at 20 324 0)
+		(effects
+			(font
+				(size 1.05 1.05)
+			)
+			(justify left)
+		)
+		(uuid "99fee39e-b9a4-5309-b7d5-5d79aea05815")
+	)
+	(text "电源板功能连接总图：两路5V、独立3.3V与双电机驱动"
+		(exclude_from_sim no)
+		(at 20 18 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left)
+		)
+		(uuid "9e182cff-b895-5bed-9e97-c614d2e2be59")
+	)
+	(junction
+		(at 133.35 52.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "26d4792b-1197-5693-8bcd-b96b96b88cc4")
+	)
+	(junction
+		(at 133.35 264.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67fbc6a5-d4e2-5649-b2f5-891efc017c96")
+	)
+	(wire
+		(pts
+			(xy 43.18 123.19) (xy 12.7 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0500b897-99ba-500c-a7ce-7daa63c0ed71")
+	)
+	(wire
+		(pts
+			(xy 245.11 52.07) (xy 289.56 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b7bf875-4af5-5dbb-bed9-f1c687c3abb3")
+	)
+	(wire
+		(pts
+			(xy 154.94 278.13) (xy 147.32 278.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c163c73-d217-5fec-b1ab-dbe36f9ed2c6")
+	)
+	(wire
+		(pts
+			(xy 245.11 171.45) (xy 289.56 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e24f851-fc60-552f-b7f2-1bacd03371e3")
+	)
+	(wire
+		(pts
+			(xy 168.91 250.19) (xy 168.91 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f063bdf-1fa8-5b99-b14c-3346e4745ccb")
+	)
+	(wire
+		(pts
+			(xy 245.11 184.15) (xy 289.56 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "223b9459-6599-5e71-a560-14b012a6bb6a")
+	)
+	(wire
+		(pts
+			(xy 245.11 93.98) (xy 289.56 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26263f12-3409-5420-be50-edd7f9df6ff0")
+	)
+	(wire
+		(pts
+			(xy 43.18 115.57) (xy 43.18 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b6adebd-90b8-5871-b9f5-6b82276a08b3")
+	)
+	(wire
+		(pts
+			(xy 133.35 240.03) (xy 266.7 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e7b9daa-84c0-5047-b571-4d9f761a9ab4")
+	)
+	(wire
+		(pts
+			(xy 190.5 231.14) (xy 90.17 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38967a25-bf40-5c61-8561-5f9a9e52cc0c")
+	)
+	(wire
+		(pts
+			(xy 100.33 149.86) (xy 100.33 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "391c6b7c-896a-51b2-abd9-7808eeb3ef7a")
+	)
+	(wire
+		(pts
+			(xy 90.17 231.14) (xy 90.17 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d764759-3793-59e1-87a5-0160a9353197")
+	)
+	(wire
+		(pts
+			(xy 289.56 196.85) (xy 281.94 196.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4669cc85-df1e-5da8-9214-f818bdc192af")
+	)
+	(wire
+		(pts
+			(xy 347.98 115.57) (xy 347.98 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cae2033-0c52-59d7-a9e3-578b9f177565")
+	)
+	(wire
+		(pts
+			(xy 154.94 158.75) (xy 147.32 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5020b552-f887-5b95-a9b9-ddaa6046cebe")
+	)
+	(wire
+		(pts
+			(xy 110.49 52.07) (xy 154.94 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52de997d-b30c-5789-811d-29a1edf10a65")
+	)
+	(wire
+		(pts
+			(xy 303.53 250.19) (xy 303.53 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56ffa4de-9e4b-510f-b706-4009ac66242b")
+	)
+	(wire
+		(pts
+			(xy 222.25 250.19) (xy 222.25 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597093ae-d50e-5ee1-af51-912b700699c1")
+	)
+	(wire
+		(pts
+			(xy 360.68 214.63) (xy 360.68 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f4e8810-89a7-5f90-9065-ad8b47dec536")
+	)
+	(wire
+		(pts
+			(xy 110.49 66.04) (xy 154.94 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "605febb2-1dc7-57f0-a908-da9db43e45e0")
+	)
+	(wire
+		(pts
+			(xy 266.7 240.03) (xy 266.7 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d1b2d8a-1c93-5bad-98b8-dc29591b7b08")
+	)
+	(wire
+		(pts
+			(xy 190.5 214.63) (xy 190.5 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70bffa56-153b-5629-8d56-1b607fc154c1")
+	)
+	(wire
+		(pts
+			(xy 12.7 123.19) (xy 12.7 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "721b0d8c-88dd-5dfb-991b-0f67fdc17c64")
+	)
+	(wire
+		(pts
+			(xy 43.18 238.76) (xy 43.18 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b481715-000e-5cf6-9c35-18551267572a")
+	)
+	(wire
+		(pts
+			(xy 110.49 171.45) (xy 118.11 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b88c5f6-595a-5b2c-aa04-3a9c3d59a6a2")
+	)
+	(wire
+		(pts
+			(xy 110.49 264.16) (xy 154.94 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89a72470-9fd0-5a74-81a6-c36fa79eee74")
+	)
+	(wire
+		(pts
+			(xy 50.8 133.35) (xy 50.8 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b11789c-9af5-53fb-b606-56ccbaff998a")
+	)
+	(wire
+		(pts
+			(xy 320.04 214.63) (xy 320.04 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98cc85cd-ddde-5b30-a352-6e7257d7b06f")
+	)
+	(wire
+		(pts
+			(xy 289.56 290.83) (xy 281.94 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a25f8db3-385a-5afb-8670-3982c5fed4b8")
+	)
+	(wire
+		(pts
+			(xy 245.11 158.75) (xy 289.56 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3fc4acd-15a7-5ae9-9337-1986c1178f98")
+	)
+	(wire
+		(pts
+			(xy 299.72 214.63) (xy 299.72 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a71d64bf-2442-573c-a8f9-875cbefb4059")
+	)
+	(wire
+		(pts
+			(xy 245.11 80.01) (xy 289.56 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "adcb9ace-3392-5281-89a6-7170cdd17cf4")
+	)
+	(wire
+		(pts
+			(xy 110.49 158.75) (xy 118.11 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b757df3e-002f-5c9a-819b-1020004e49d6")
+	)
+	(wire
+		(pts
+			(xy 133.35 52.07) (xy 133.35 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf6ed95c-14b9-5712-b8e3-4110a8cdaa34")
+	)
+	(wire
+		(pts
+			(xy 12.7 238.76) (xy 43.18 238.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c086a6f8-94e1-5de4-ae3c-d5927368830a")
+	)
+	(wire
+		(pts
+			(xy 340.36 214.63) (xy 340.36 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c77ce240-cf10-5aeb-be2d-28e8559726d5")
+	)
+	(wire
+		(pts
+			(xy 325.12 250.19) (xy 325.12 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9f6afd8-8240-5f4e-abfb-9ca2fe15fe81")
+	)
+	(wire
+		(pts
+			(xy 356.87 250.19) (xy 356.87 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cadef488-83f7-55d6-81f5-d4aba3e3f10e")
+	)
+	(wire
+		(pts
+			(xy 133.35 133.35) (xy 50.8 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb5c19ce-5c98-51b4-9667-369a76c50995")
+	)
+	(wire
+		(pts
+			(xy 154.94 290.83) (xy 147.32 290.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb5cce89-a976-50d0-a108-736fea00e443")
+	)
+	(wire
+		(pts
+			(xy 266.7 264.16) (xy 289.56 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce3e8f43-78f8-5381-8e25-f01b39a3eb3c")
+	)
+	(wire
+		(pts
+			(xy 289.56 278.13) (xy 281.94 278.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d92c075b-140b-5c89-9a6a-b2a3adaaef52")
+	)
+	(wire
+		(pts
+			(xy 245.11 66.04) (xy 289.56 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de79fdd9-1d01-5946-85e2-fcd175b2f64d")
+	)
+	(wire
+		(pts
+			(xy 76.2 214.63) (xy 76.2 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e840f27f-b4d1-59d3-add0-c39176fc8002")
+	)
+	(wire
+		(pts
+			(xy 133.35 264.16) (xy 133.35 240.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e98af1b8-1e6c-52b3-a326-fbc27801e074")
+	)
+	(wire
+		(pts
+			(xy 190.5 250.19) (xy 190.5 245.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0aaaf5c-abc4-5914-992e-d361e4194386")
+	)
+	(wire
+		(pts
+			(xy 110.49 184.15) (xy 154.94 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2c31833-ccb3-5441-917d-aadbe7ef4b05")
+	)
+	(wire
+		(pts
+			(xy 309.88 115.57) (xy 309.88 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7472e7d-3364-5879-a5d1-bce1253c78de")
+	)
+	(wire
+		(pts
+			(xy 90.17 115.57) (xy 90.17 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff1c5869-e95b-5b42-a81a-69791db76921")
+	)
+	(global_label "电机总开关输出"
+		(shape passive)
+		(at 118.11 264.16 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "0168e45d-995e-5470-b96f-02e9d4c29111")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "传感器3.3V"
+		(shape passive)
+		(at 356.87 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "02f6b74a-d40c-509c-8c14-3beae442cae4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 356.87 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机供电正常"
+		(shape passive)
+		(at 147.32 158.75 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "048fe61c-a485-5b49-a349-fb30249c9809")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 158.75 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "板载3.3V_稳压输出"
+		(shape passive)
+		(at 118.11 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "11d29ccf-a6b5-5918-bca5-c9ad948729a7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "左电机_原始反转脉宽"
+		(shape passive)
+		(at 320.04 219.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "12f01cbf-5756-50d9-be4e-6d99df2745a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.04 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "降压电源输入"
+		(shape passive)
+		(at 118.11 52.07 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "3d680336-4163-53e5-a6ed-5f7b27d9a3a0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "板载3.3V_保护输出"
+		(shape passive)
+		(at 118.11 171.45 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "3fbaa787-ea5a-5890-9f8b-b5a34e2d5efa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机已解锁"
+		(shape passive)
+		(at 190.5 231.14 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "49d633dc-9f9b-5cf8-91b2-6606cc21fc2d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "降压使能"
+		(shape passive)
+		(at 118.11 66.04 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "4f980b11-862f-526b-ac43-3b9a7db69c1e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机已解锁"
+		(shape passive)
+		(at 325.12 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "54403a61-2e4d-5150-947d-1c83f9457cd1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 325.12 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "外部故障_低有效"
+		(shape passive)
+		(at 252.73 184.15 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "59cc021a-af71-5940-a1df-2440c2173596")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "板载3.3V_保护输出"
+		(shape passive)
+		(at 347.98 120.65 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "5a5ee873-66fe-5bf9-9efb-113c704b9221")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 347.98 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "右电机_原始正转脉宽"
+		(shape passive)
+		(at 281.94 278.13 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "741068f6-81a4-5779-a916-aea702fce338")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 281.94 278.13 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "本板3.3V"
+		(shape passive)
+		(at 118.11 184.15 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "75507f24-4c63-5d5e-aa6c-0acc14fb3d2a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.11 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "传感器3.3V"
+		(shape passive)
+		(at 222.25 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "77ebf95b-dad6-5449-8235-7b4fdb66c0f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 222.25 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机供电正常"
+		(shape passive)
+		(at 90.17 120.65 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "8caa5e3b-3338-5efc-a41f-be9bfdfb7cf6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.17 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "右电机_原始反转脉宽"
+		(shape passive)
+		(at 281.94 290.83 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "9270db92-c883-51f1-a765-66094888a619")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 281.94 290.83 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "右电机_原始正转脉宽"
+		(shape passive)
+		(at 340.36 219.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "9cb57b27-7b45-59ef-b43a-05370811360e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 340.36 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机运行许可"
+		(shape passive)
+		(at 252.73 171.45 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "a3cbcba0-c0da-5899-9471-2488d1c8e382")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机已解锁"
+		(shape passive)
+		(at 281.94 196.85 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "ac0db28e-966c-5ace-a1af-b3f7fa6ee313")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 281.94 196.85 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "逻辑板5V_稳压输出"
+		(shape passive)
+		(at 252.73 52.07 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "b0037388-7da6-5538-bb77-8b24a861fb19")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 52.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "逻辑板5V_保护输出"
+		(shape passive)
+		(at 252.73 80.01 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "b9f9cecb-33d9-50ac-8569-de7775495293")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "计算板5V_保护输出"
+		(shape passive)
+		(at 252.73 93.98 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "ba90f6bb-dddc-55e0-a66c-d7ef2f379cbb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "传感器3.3V"
+		(shape passive)
+		(at 76.2 219.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "bf959641-1368-531c-8947-3ca64137bea2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "本板3.3V"
+		(shape passive)
+		(at 303.53 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "c2c96590-6789-501d-b0c7-cc4ee03bf697")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 303.53 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "右电机_原始反转脉宽"
+		(shape passive)
+		(at 360.68 219.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "cbb6e8be-9e21-5706-a1fd-4397fadf9769")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 360.68 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "降压使能"
+		(shape passive)
+		(at 100.33 144.78 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "cec7aa29-8640-57b6-8159-ed9e748de818")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.33 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "板载3.3V_稳压输出"
+		(shape passive)
+		(at 309.88 120.65 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "d362f3ae-c4e4-5e6a-bb8b-3a3a395eaa27")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.88 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "左电机_原始正转脉宽"
+		(shape passive)
+		(at 147.32 278.13 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "d8f998ba-7f68-50c6-b7bb-d30a848a408d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 278.13 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "左电机_原始正转脉宽"
+		(shape passive)
+		(at 299.72 219.71 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "dbf21beb-bd3e-528f-8110-6428e5f60300")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 299.72 219.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电池保护后母线"
+		(shape passive)
+		(at 43.18 123.19 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "eb3921a3-b11d-547e-bb96-6fc6fad47fed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 43.18 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "左电机_原始反转脉宽"
+		(shape passive)
+		(at 147.32 290.83 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "ec87e7d1-160a-5a08-a98f-d1e3f94459c0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 290.83 180)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机已解锁"
+		(shape passive)
+		(at 190.5 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "ed1fc649-a06a-506a-a2cb-368352d400f7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "本板3.3V"
+		(shape passive)
+		(at 168.91 245.11 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "f31f1a03-372a-50f5-b780-da5b5a969f4f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 168.91 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "电机解锁脉冲"
+		(shape passive)
+		(at 252.73 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "fb076ba0-db97-53b8-bca1-66dc48c81ba6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(global_label "计算板5V_稳压输出"
+		(shape passive)
+		(at 252.73 66.04 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "fc067a9b-ea32-5de4-89a8-9f4907f6eeb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 252.73 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 289.56 250.19)
+		(size 90.17 48.26)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "015db7ac-da44-5e93-93fc-bfa2c2bc8914")
+		(property "Sheetname" "右电机驱动与电流监测"
+			(at 289.56 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "06_motor_right.kicad_sch"
+			(at 289.56 300.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "电机总电源" passive
+			(at 289.56 264.16 180)
+			(uuid "163b9bcf-cb49-5f49-8856-8c492e5b0e43")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "本板3.3V" passive
+			(at 303.53 250.19 90)
+			(uuid "2cfcf893-bb98-50b4-a5fb-d7a40a01bd9f")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "已解锁" passive
+			(at 325.12 250.19 90)
+			(uuid "1a0ba765-c1bb-5baa-9a84-80740ca672b8")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "传感器电源" passive
+			(at 356.87 250.19 90)
+			(uuid "5947f582-7ec0-558f-a54f-30fce0dfe412")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "正转脉宽" passive
+			(at 289.56 278.13 180)
+			(uuid "b32e6b0d-c269-5f8d-ad3f-e50a9ee685ec")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "反转脉宽" passive
+			(at 289.56 290.83 180)
+			(uuid "f700c540-21ad-57ca-8465-d007b0d65ac9")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.94 250.19)
+		(size 90.17 48.26)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0b2dc632-1c78-5f19-910b-1c0831ef10cb")
+		(property "Sheetname" "左电机驱动与电流监测"
+			(at 154.94 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "05_motor_left.kicad_sch"
+			(at 154.94 300.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "电机总电源" passive
+			(at 154.94 264.16 180)
+			(uuid "ed62af2a-1319-52cd-8593-316874dac6a7")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "本板3.3V" passive
+			(at 168.91 250.19 90)
+			(uuid "6d20ce75-3843-54d4-bf6d-d036a403ced6")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "已解锁" passive
+			(at 190.5 250.19 90)
+			(uuid "c331ff85-30e3-5b0b-86b5-180e7d839a1d")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "传感器电源" passive
+			(at 222.25 250.19 90)
+			(uuid "d44e3e74-f64f-521f-966f-85b0fdda1b50")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "正转脉宽" passive
+			(at 154.94 278.13 180)
+			(uuid "e3a682c4-c344-5d70-bc29-3a7b2e79683c")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "反转脉宽" passive
+			(at 154.94 290.83 180)
+			(uuid "a800e907-d487-58f6-be6f-c085e097dcc2")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.94 149.86)
+		(size 90.17 64.77)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0ca63616-b8a9-5b46-b761-341e3d10d434")
+		(property "Sheetname" "急停与显式解锁锁存"
+			(at 154.94 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "04_motor_safety.kicad_sch"
+			(at 154.94 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "本板3.3V" passive
+			(at 154.94 184.15 180)
+			(uuid "834847c1-4331-5ead-8dc0-935fe1f80963")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "动力正常" passive
+			(at 154.94 158.75 180)
+			(uuid "c0b4d5c5-03d2-52d4-ba4d-c27bfb5130fd")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "解锁脉冲" passive
+			(at 245.11 158.75 0)
+			(uuid "32aa2fff-a986-5d09-ad2f-922ad4f5db05")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "运行许可" passive
+			(at 245.11 171.45 0)
+			(uuid "6e0f7e6f-7eb3-5220-ad99-5016d3b5c124")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "外部故障" passive
+			(at 245.11 184.15 0)
+			(uuid "1773d084-554e-5ff6-a823-a6f2a34a343f")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "已解锁" passive
+			(at 190.5 214.63 270)
+			(uuid "890f13fe-1570-572a-b32d-35515533ab48")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 250.19)
+		(size 90.17 48.26)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0dfade07-784c-5230-b040-2c1912034ad8")
+		(property "Sheetname" "电机回生能量泄放"
+			(at 20.32 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "07_motor_dump.kicad_sch"
+			(at 20.32 300.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "电池母线" passive
+			(at 43.18 250.19 90)
+			(uuid "e08eafdf-83fc-5dd4-bf43-660ff75d0af9")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "已解锁" passive
+			(at 90.17 250.19 90)
+			(uuid "e202bdeb-9e1e-502a-b698-022fdb698f59")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "电机总电源" passive
+			(at 110.49 264.16 0)
+			(uuid "b47bf139-a77c-5889-959e-234d159c1fcb")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 154.94 40.64)
+		(size 90.17 74.93)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "41653a50-5cae-5040-b916-fff577265a5c")
+		(property "Sheetname" "两路5V降压与六针供电口"
+			(at 154.94 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "02_usb_5v.kicad_sch"
+			(at 154.94 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "降压输入" passive
+			(at 154.94 52.07 180)
+			(uuid "aac82fed-5276-5080-b7e2-118f461e8437")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "使能" passive
+			(at 154.94 66.04 180)
+			(uuid "4c572397-a83f-5b2f-bb14-2ccb971b1db8")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "逻辑5V" passive
+			(at 245.11 52.07 0)
+			(uuid "132cc453-6614-51d4-b8de-7b70501048f4")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "计算5V" passive
+			(at 245.11 66.04 0)
+			(uuid "163c3b10-ec02-57dd-a400-db574c35f3cc")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "逻辑5V保护" passive
+			(at 245.11 80.01 0)
+			(uuid "93fd1a69-2a65-5a7c-8e5e-315d23076986")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "计算5V保护" passive
+			(at 245.11 93.98 0)
+			(uuid "a1845600-1610-5753-9a6e-1fa994a28287")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 289.56 40.64)
+		(size 90.17 74.93)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "49fe33bc-a611-5583-962d-908cbb84b12c")
+		(property "Sheetname" "低成本输出过压关断"
+			(at 289.56 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "08_rail_protection.kicad_sch"
+			(at 289.56 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "逻辑5V" passive
+			(at 289.56 52.07 180)
+			(uuid "375156ca-2c5f-51c0-827e-af50476f38d7")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "计算5V" passive
+			(at 289.56 66.04 180)
+			(uuid "b83287e3-b609-5878-ac58-aabd27c45ab2")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "逻辑5V保护" passive
+			(at 289.56 80.01 180)
+			(uuid "219b8f8b-5bc0-5460-bf07-c2696df71e59")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "计算5V保护" passive
+			(at 289.56 93.98 180)
+			(uuid "fcb87423-20c3-5df6-800f-14a05b730cae")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "板载3.3V" passive
+			(at 309.88 115.57 270)
+			(uuid "40461dfd-537a-5714-95d7-b9e65d627082")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "保护后3.3V" passive
+			(at 347.98 115.57 270)
+			(uuid "14c2182a-c1b7-5e97-969b-a4c42c54b2ca")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 40.64)
+		(size 90.17 74.93)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5ceea232-ca68-509c-9071-2c8aa227135d")
+		(property "Sheetname" "三串电池输入与电压保护"
+			(at 20.32 39.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "01_power_input.kicad_sch"
+			(at 20.32 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "降压输入" passive
+			(at 110.49 52.07 0)
+			(uuid "74867f0d-c669-547a-b230-3c8c042c1f7d")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "使能" passive
+			(at 110.49 66.04 0)
+			(uuid "b37baa81-a289-53af-8487-33d11bd26983")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "电池母线" passive
+			(at 43.18 115.57 270)
+			(uuid "fa60a3e3-357d-5b9d-97db-b8ada99a1c32")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "动力正常" passive
+			(at 90.17 115.57 270)
+			(uuid "2b48fa3e-904d-51f9-9c57-b8e31ca02717")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 289.56 149.86)
+		(size 90.17 64.77)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "93f771f4-fd13-5eac-b493-919841c752e6")
+		(property "Sheetname" "逻辑板控制与电源监测接口"
+			(at 289.56 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "09_control_io.kicad_sch"
+			(at 289.56 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "解锁脉冲" passive
+			(at 289.56 158.75 180)
+			(uuid "95192b96-31d4-52d8-ad46-87211263b877")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "运行许可" passive
+			(at 289.56 171.45 180)
+			(uuid "b18199c5-75a3-59eb-b150-bfe6bf5149c7")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "外部故障" passive
+			(at 289.56 184.15 180)
+			(uuid "e6b0c903-e249-5ce2-bb7d-0542af206d71")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "已解锁" passive
+			(at 289.56 196.85 180)
+			(uuid "3b347346-e489-5ebb-b545-7dd30e7031cd")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "左正转" passive
+			(at 299.72 214.63 270)
+			(uuid "55807144-c3be-5429-b244-40a4ab0c7cf0")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "左反转" passive
+			(at 320.04 214.63 270)
+			(uuid "d0ea0b97-d849-5372-b160-584a4ccfb54d")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "右正转" passive
+			(at 340.36 214.63 270)
+			(uuid "3e8a6099-659e-5020-82be-e81b70606758")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "右反转" passive
+			(at 360.68 214.63 270)
+			(uuid "c3d7992c-7319-5427-a9e4-ae1b524e7f0f")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 149.86)
+		(size 90.17 64.77)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c4783e17-47d5-53f9-9126-7d7e334f8e34")
+		(property "Sheetname" "独立3.3V与电源选择"
+			(at 20.32 148.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.95 0.95)
+				)
+				(justify left)
+			)
+		)
+		(property "Sheetfile" "03_aux_3v3.kicad_sch"
+			(at 20.32 217.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+			)
+		)
+		(pin "降压输入" passive
+			(at 50.8 149.86 90)
+			(uuid "2288690e-e3da-5b6b-89ed-8c2c0d42469a")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "使能" passive
+			(at 100.33 149.86 90)
+			(uuid "ce0d8766-c286-5847-bd7b-70cac12d2cda")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "板载3.3V" passive
+			(at 110.49 158.75 0)
+			(uuid "59e7b592-0dd4-5a54-8dc7-f934148ca2ce")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "保护后3.3V" passive
+			(at 110.49 171.45 0)
+			(uuid "8637c36a-6a05-5f58-af6e-e439789112f7")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "本板3.3V" passive
+			(at 110.49 184.15 0)
+			(uuid "4d6a17ae-1e56-54ab-99e7-d1fe13d66575")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(pin "传感器电源" passive
+			(at 76.2 214.63 270)
+			(uuid "26f60629-f83d-5a94-a37b-79df3421cbe7")
+			(effects
+				(font
+					(size 0.85 0.85)
+				)
+			)
+		)
+		(instances
+			(project "ProPrj_power_2026-10-02"
+				(path "/734fd4e0-a6e1-4cb5-8348-642b7ec58253"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

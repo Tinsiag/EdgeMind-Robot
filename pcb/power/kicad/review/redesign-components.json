@@ -34,17 +34,6 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "F1",
-    "unit": 1,
-    "value": "10A 32VDC ATO (initial)",
-    "footprint": "Fuse:Fuseholder_Blade_ATO_Littelfuse_Pudenz_2_Pin",
-    "lib_id": "Device:Fuse",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "01_power_input.kicad_sch",
     "reference": "Q1",
     "unit": 1,
     "value": "IRF4905",
@@ -419,17 +408,6 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR112",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "01_power_input.kicad_sch",
     "reference": "C102",
     "unit": 1,
     "value": "100nF 50V",
@@ -441,7 +419,7 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR113",
+    "reference": "#PWR112",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -496,7 +474,7 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR114",
+    "reference": "#PWR113",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -540,7 +518,7 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR115",
+    "reference": "#PWR114",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -562,17 +540,6 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR116",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "01_power_input.kicad_sch",
     "reference": "C103",
     "unit": 1,
     "value": "100nF 50V",
@@ -584,7 +551,7 @@
   },
   {
     "sheet": "01_power_input.kicad_sch",
-    "reference": "#PWR117",
+    "reference": "#PWR115",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -628,7 +595,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR118",
+    "reference": "#PWR116",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -650,7 +617,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR119",
+    "reference": "#PWR117",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -672,7 +639,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR120",
+    "reference": "#PWR118",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -694,7 +661,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR121",
+    "reference": "#PWR119",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -705,7 +672,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR122",
+    "reference": "#PWR120",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -771,7 +738,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR123",
+    "reference": "#PWR121",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -793,7 +760,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR124",
+    "reference": "#PWR122",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -826,7 +793,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR125",
+    "reference": "#PWR123",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -881,7 +848,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR126",
+    "reference": "#PWR124",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -897,6 +864,50 @@
     "value": "150k 1%",
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "lib_id": "Device:R",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "#PWR125",
+    "unit": 1,
+    "value": "GND",
+    "footprint": "",
+    "lib_id": "power:GND",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "#PWR126",
+    "unit": 1,
+    "value": "GND",
+    "footprint": "",
+    "lib_id": "power:GND",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "USB1",
+    "unit": 1,
+    "value": "USB4125-GF-A / 六针供电",
+    "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+    "lib_id": "Connector:USB_C_Receptacle_PowerOnly_6P",
+    "mpn": "USB4125-GF-A",
+    "datasheet": "https://gct.co/files/drawings/usb4125.pdf",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "C105",
+    "unit": 1,
+    "value": "4.7uF 10V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "lib_id": "Device:C",
     "mpn": null,
     "datasheet": "",
     "dnp": false
@@ -925,51 +936,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "USB1",
-    "unit": 1,
-    "value": "TYPE-C-31-M-17 / 6P",
-    "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-17",
-    "lib_id": "Connector:USB_C_Receptacle_PowerOnly_6P",
-    "mpn": "TYPE-C-31-M-17",
-    "datasheet": "https://omo-oss-file.thefastfile.com/portal-saas/new2023011311465142457/cms/file/134891b2-9b01-4104-89d3-96207243f692.pdf",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "C105",
-    "unit": 1,
-    "value": "4.7uF 10V X7R",
-    "footprint": "Capacitor_SMD:C_0805_2012Metric",
-    "lib_id": "Device:C",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
     "reference": "#PWR129",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR130",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR131",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1013,7 +980,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR132",
+    "reference": "#PWR130",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1035,7 +1002,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR133",
+    "reference": "#PWR131",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1057,7 +1024,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR134",
+    "reference": "#PWR132",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1079,7 +1046,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR135",
+    "reference": "#PWR133",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1090,7 +1057,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR136",
+    "reference": "#PWR134",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1156,7 +1123,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR137",
+    "reference": "#PWR135",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1178,7 +1145,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR138",
+    "reference": "#PWR136",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1211,7 +1178,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR139",
+    "reference": "#PWR137",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1266,7 +1233,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR140",
+    "reference": "#PWR138",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1282,6 +1249,50 @@
     "value": "150k 1%",
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "lib_id": "Device:R",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "#PWR139",
+    "unit": 1,
+    "value": "GND",
+    "footprint": "",
+    "lib_id": "power:GND",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "#PWR140",
+    "unit": 1,
+    "value": "GND",
+    "footprint": "",
+    "lib_id": "power:GND",
+    "mpn": null,
+    "datasheet": "",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "USB2",
+    "unit": 1,
+    "value": "USB4125-GF-A / 六针供电",
+    "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+    "lib_id": "Connector:USB_C_Receptacle_PowerOnly_6P",
+    "mpn": "USB4125-GF-A",
+    "datasheet": "https://gct.co/files/drawings/usb4125.pdf",
+    "dnp": false
+  },
+  {
+    "sheet": "02_usb_5v.kicad_sch",
+    "reference": "C107",
+    "unit": 1,
+    "value": "4.7uF 10V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "lib_id": "Device:C",
     "mpn": null,
     "datasheet": "",
     "dnp": false
@@ -1310,51 +1321,7 @@
   },
   {
     "sheet": "02_usb_5v.kicad_sch",
-    "reference": "USB2",
-    "unit": 1,
-    "value": "TYPE-C-31-M-17 / 6P",
-    "footprint": "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-17",
-    "lib_id": "Connector:USB_C_Receptacle_PowerOnly_6P",
-    "mpn": "TYPE-C-31-M-17",
-    "datasheet": "https://omo-oss-file.thefastfile.com/portal-saas/new2023011311465142457/cms/file/134891b2-9b01-4104-89d3-96207243f692.pdf",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "C107",
-    "unit": 1,
-    "value": "4.7uF 10V X7R",
-    "footprint": "Capacitor_SMD:C_0805_2012Metric",
-    "lib_id": "Device:C",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
     "reference": "#PWR143",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR144",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "02_usb_5v.kicad_sch",
-    "reference": "#PWR145",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1398,7 +1365,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR146",
+    "reference": "#PWR144",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1409,7 +1376,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR147",
+    "reference": "#PWR145",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1464,7 +1431,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR148",
+    "reference": "#PWR146",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1486,7 +1453,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR149",
+    "reference": "#PWR147",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1563,7 +1530,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR150",
+    "reference": "#PWR148",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1585,7 +1552,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR151",
+    "reference": "#PWR149",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1618,7 +1585,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR152",
+    "reference": "#PWR150",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1651,7 +1618,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR153",
+    "reference": "#PWR151",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1684,7 +1651,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR154",
+    "reference": "#PWR152",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1717,7 +1684,7 @@
   },
   {
     "sheet": "03_aux_3v3.kicad_sch",
-    "reference": "#PWR155",
+    "reference": "#PWR153",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1761,7 +1728,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR156",
+    "reference": "#PWR154",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1783,7 +1750,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR157",
+    "reference": "#PWR155",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1805,7 +1772,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR158",
+    "reference": "#PWR156",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1838,7 +1805,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR159",
+    "reference": "#PWR157",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1860,7 +1827,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR160",
+    "reference": "#PWR158",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1948,7 +1915,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR161",
+    "reference": "#PWR159",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1970,7 +1937,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR162",
+    "reference": "#PWR160",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -1992,7 +1959,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR163",
+    "reference": "#PWR161",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2014,7 +1981,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR164",
+    "reference": "#PWR162",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2036,7 +2003,7 @@
   },
   {
     "sheet": "04_motor_safety.kicad_sch",
-    "reference": "#PWR165",
+    "reference": "#PWR163",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2091,7 +2058,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR166",
+    "reference": "#PWR164",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2168,7 +2135,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR167",
+    "reference": "#PWR165",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2201,7 +2168,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR168",
+    "reference": "#PWR166",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2223,7 +2190,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR169",
+    "reference": "#PWR167",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2289,7 +2256,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR170",
+    "reference": "#PWR168",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2322,7 +2289,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR171",
+    "reference": "#PWR169",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2344,7 +2311,7 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR172",
+    "reference": "#PWR170",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2388,17 +2355,6 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR173",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "07_motor_dump.kicad_sch",
     "reference": "C121",
     "unit": 1,
     "value": "100nF 50V",
@@ -2410,22 +2366,11 @@
   },
   {
     "sheet": "07_motor_dump.kicad_sch",
-    "reference": "#PWR174",
+    "reference": "#PWR171",
     "unit": 1,
     "value": "GND",
     "footprint": "",
     "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "05_motor_left.kicad_sch",
-    "reference": "F2",
-    "unit": 1,
-    "value": "3.15A slow 5x20 (initial)",
-    "footprint": "Fuse:Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal",
-    "lib_id": "Device:Fuse",
     "mpn": null,
     "datasheet": "",
     "dnp": false
@@ -2465,7 +2410,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR175",
+    "reference": "#PWR172",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2487,7 +2432,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR176",
+    "reference": "#PWR173",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2509,7 +2454,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR177",
+    "reference": "#PWR174",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2531,7 +2476,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR178",
+    "reference": "#PWR175",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2564,7 +2509,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR179",
+    "reference": "#PWR176",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2586,7 +2531,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR180",
+    "reference": "#PWR177",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2608,7 +2553,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR181",
+    "reference": "#PWR178",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2641,7 +2586,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR182",
+    "reference": "#PWR179",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2663,7 +2608,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR183",
+    "reference": "#PWR180",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2696,7 +2641,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR184",
+    "reference": "#PWR181",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2729,7 +2674,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR185",
+    "reference": "#PWR182",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2751,7 +2696,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR186",
+    "reference": "#PWR183",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2773,7 +2718,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR187",
+    "reference": "#PWR184",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2784,7 +2729,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR188",
+    "reference": "#PWR185",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2828,7 +2773,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR189",
+    "reference": "#PWR186",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2872,7 +2817,7 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR190",
+    "reference": "#PWR187",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2905,22 +2850,11 @@
   },
   {
     "sheet": "05_motor_left.kicad_sch",
-    "reference": "#PWR191",
+    "reference": "#PWR188",
     "unit": 1,
     "value": "GND",
     "footprint": "",
     "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "06_motor_right.kicad_sch",
-    "reference": "F3",
-    "unit": 1,
-    "value": "3.15A slow 5x20 (initial)",
-    "footprint": "Fuse:Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal",
-    "lib_id": "Device:Fuse",
     "mpn": null,
     "datasheet": "",
     "dnp": false
@@ -2960,7 +2894,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR192",
+    "reference": "#PWR189",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -2982,7 +2916,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR193",
+    "reference": "#PWR190",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3004,7 +2938,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR194",
+    "reference": "#PWR191",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3026,7 +2960,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR195",
+    "reference": "#PWR192",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3059,7 +2993,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR196",
+    "reference": "#PWR193",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3081,7 +3015,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR197",
+    "reference": "#PWR194",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3103,7 +3037,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR198",
+    "reference": "#PWR195",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3136,7 +3070,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR199",
+    "reference": "#PWR196",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3158,7 +3092,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR200",
+    "reference": "#PWR197",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3191,7 +3125,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR201",
+    "reference": "#PWR198",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3224,7 +3158,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR202",
+    "reference": "#PWR199",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3235,7 +3169,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR203",
+    "reference": "#PWR200",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3279,7 +3213,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR204",
+    "reference": "#PWR201",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3323,7 +3257,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR205",
+    "reference": "#PWR202",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3356,7 +3290,7 @@
   },
   {
     "sheet": "06_motor_right.kicad_sch",
-    "reference": "#PWR206",
+    "reference": "#PWR203",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3400,7 +3334,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR207",
+    "reference": "#PWR204",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3433,17 +3367,6 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR208",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "08_rail_protection.kicad_sch",
     "reference": "C139",
     "unit": 1,
     "value": "100nF 50V",
@@ -3455,7 +3378,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR209",
+    "reference": "#PWR205",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3521,7 +3444,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR210",
+    "reference": "#PWR206",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3576,7 +3499,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR211",
+    "reference": "#PWR207",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3609,17 +3532,6 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR212",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "08_rail_protection.kicad_sch",
     "reference": "C140",
     "unit": 1,
     "value": "100nF 50V",
@@ -3631,7 +3543,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR213",
+    "reference": "#PWR208",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3697,7 +3609,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR214",
+    "reference": "#PWR209",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3752,7 +3664,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR215",
+    "reference": "#PWR210",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3796,7 +3708,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR216",
+    "reference": "#PWR211",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3840,17 +3752,6 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR217",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "08_rail_protection.kicad_sch",
     "reference": "C141",
     "unit": 1,
     "value": "100nF 50V",
@@ -3862,7 +3763,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR218",
+    "reference": "#PWR212",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3906,7 +3807,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR219",
+    "reference": "#PWR213",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -3961,17 +3862,6 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR220",
-    "unit": 1,
-    "value": "GND",
-    "footprint": "",
-    "lib_id": "power:GND",
-    "mpn": null,
-    "datasheet": "",
-    "dnp": false
-  },
-  {
-    "sheet": "08_rail_protection.kicad_sch",
     "reference": "C142",
     "unit": 1,
     "value": "100nF 50V",
@@ -3983,7 +3873,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR221",
+    "reference": "#PWR214",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -4016,7 +3906,7 @@
   },
   {
     "sheet": "08_rail_protection.kicad_sch",
-    "reference": "#PWR222",
+    "reference": "#PWR215",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -4082,7 +3972,7 @@
   },
   {
     "sheet": "09_control_io.kicad_sch",
-    "reference": "#PWR223",
+    "reference": "#PWR216",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -4104,7 +3994,7 @@
   },
   {
     "sheet": "09_control_io.kicad_sch",
-    "reference": "#PWR224",
+    "reference": "#PWR217",
     "unit": 1,
     "value": "GND",
     "footprint": "",
@@ -4112,5 +4002,20 @@
     "mpn": null,
     "datasheet": "",
     "dnp": false
+  },
+  {
+    "sheet": "01_power_input.kicad_sch",
+    "reference": "F1",
+    "unit": 1,
+    "value": "10A/32V MINI总保险",
+    "footprint": "Fuse:Fuseholder_Blade_Mini_Keystone_3568",
+    "lib_id": "Device:Fuse",
+    "mpn": "0297010.J",
+    "datasheet": "https://www.lcsc.com/datasheet/C55117678.pdf",
+    "dnp": false,
+    "on_board": true,
+    "采购链接": "https://www.lcsc.com/pt/product-detail/C55117678.html?is_substitute=1&original_product_code=C315865&original_unit_price=0.3407",
+    "保险座参考链接": "https://www.digikey.cn/zh/products/detail/keystone-electronics/3568/2137306",
+    "安装位置": "板上，XT60正极之后、防反接管之前"
   }
 ]

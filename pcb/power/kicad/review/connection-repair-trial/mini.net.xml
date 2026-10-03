@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\dev\EdgeMind-Robot\pcb\power\kicad\review\connection-repair-trial\mini.kicad_sch</source>
+    <date>2026-10-03T12:52:06</date>
+    <tool>Eeschema 10.0.5</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>mini.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U11">
+      <value>74HC08D</value>
+      <footprint>Package_SO:SOIC-14_3.9x8.7mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/gpn/sn74HC08</datasheet>
+      <description>Quad And2</description>
+      <fields>
+        <field name="MPN">SN74HC08DR</field>
+        <field name="Footprint">Package_SO:SOIC-14_3.9x8.7mm_P1.27mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/gpn/sn74HC08</field>
+        <field name="Description">Quad And2</field>
+      </fields>
+      <libsource lib="EdgeMind_Power" part="74HC08" description="Quad And2"/>
+      <property name="MPN" value="SN74HC08DR"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/mini.kicad_sch"/>
+      <property name="ki_keywords" value="TTL and2"/>
+      <property name="ki_fp_filters" value="DIP*W7.62mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87bd0aad-73c3-58e3-ab31-6c77095326eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+        <unit name="B">
+          <pins>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+        <unit name="C">
+          <pins>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+        <unit name="D">
+          <pins>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="11"/>
+          </pins>
+        </unit>
+        <unit name="E">
+          <pins>
+            <pin num="14"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="EdgeMind_Power" part="74HC08">
+      <description>Quad And2</description>
+      <docs>http://www.ti.com/lit/gpn/sn74HC08</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74HC08</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">http://www.ti.com/lit/gpn/sn74HC08</field>
+        <field name="Description">Quad And2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="input"/>
+        <pin num="2" name="" type="input"/>
+        <pin num="3" name="" type="output"/>
+        <pin num="4" name="" type="input"/>
+        <pin num="5" name="" type="input"/>
+        <pin num="6" name="" type="output"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="" type="output"/>
+        <pin num="9" name="" type="input"/>
+        <pin num="10" name="" type="input"/>
+        <pin num="11" name="" type="output"/>
+        <pin num="12" name="" type="input"/>
+        <pin num="13" name="" type="input"/>
+        <pin num="14" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries/>
+  <nets>
+    <net code="1" name="/OUT" class="Default">
+      <node ref="U11" pin="3" pintype="output"/>
+    </net>
+    <net code="2" name="unconnected-(U11-Pad1)" class="Default">
+      <node ref="U11" pin="1" pintype="input"/>
+    </net>
+    <net code="3" name="unconnected-(U11-Pad2)" class="Default">
+      <node ref="U11" pin="2" pintype="input"/>
+    </net>
+  </nets>
+</export>

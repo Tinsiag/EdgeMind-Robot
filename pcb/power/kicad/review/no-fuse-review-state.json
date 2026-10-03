@@ -1,0 +1,13 @@
+{
+  "日期": "2026-10-03T13:37:09",
+  "PCB_SHA256": "3da1b3dc999a7904a88a402d0e8d128fb54cd3a1ff294e775012b16c73e10d34",
+  "PROJECT_SHA256": "adc472abcfaa4e09be493d0a2de9d7c0d8c3c4ad83ccd5588e65643fe1bff137",
+  "原理图修改前哈希": {
+    "ProPrj_power_2026-10-02.kicad_sch": "12b03b16533c393961aaa13fafb3003b4d771fd7efd80c383d929af938696a98",
+    "01_power_input.kicad_sch": "bd938fed4b30126080083e56d100b26a251691f521229304be532bcc0685fb0f",
+    "05_motor_left.kicad_sch": "f8d96092751063a22a4cb3e4ef01dc70d97b31290e9b562d039ae279c061f3a0",
+    "06_motor_right.kicad_sch": "b73b401438baf082a87b1d6d86fe175e3603e97b34224fc2e6e23b94b35da7b2",
+    "08_rail_protection.kicad_sch": "6342562db4a5b86cf7013276969d653987f4562bf147a552acd2998c64d1c30a"
+  },
+  "操作": "删除板上F1、F2、F3；保留电子过流关断，入口保护依赖外部3S保护板"
+}

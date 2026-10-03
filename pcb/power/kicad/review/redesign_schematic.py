@@ -208,7 +208,7 @@ class Schematic:
     def nc(self,c,pin):
         p=c.pin(pin)
         self.items.append(f'(no_connect (at {num(p[0])} {num(p[1])}) (uuid {q(self.uuid("nc"))}))')
-    def sym(self,lib_id,ref,x,y,value=None,fp=None,angle=0,unit=1,desc='',datasheet=None,mpn=None,dnp=False):
+    def sym(self,lib_id,ref,x,y,value=None,fp=None,angle=0,unit=1,desc='',datasheet=None,mpn=None,dnp=False,on_board=True):
         x,y=snap(x),snap(y)
         if ref is None:
             prefix=prop(resolved(lib_id),'Reference')
@@ -226,7 +226,7 @@ class Schematic:
         propvals={'Reference':ref,'Value':value,'Footprint':fp,'Datasheet':datasheet,'Description':desc or prop(s,'Description')}
         if lib_id.startswith('Device:') and ' ' in value:propvals['Specification']=value
         if mpn:propvals['MPN']=mpn
-        body=[f'(symbol (lib_id {q(lib_id)}) (at {num(x)} {num(y)} {angle}) (unit {unit}) (in_bom {"no" if ref.startswith("#") else "yes"}) (on_board {"no" if ref.startswith("#") else "yes"}) (dnp {"yes" if dnp else "no"}) (uuid {q(uid("component:"+ref+":"+str(unit)))}))']
+        body=[f'(symbol (lib_id {q(lib_id)}) (at {num(x)} {num(y)} {angle}) (unit {unit}) (in_bom {"no" if ref.startswith("#") else "yes"}) (on_board {"no" if ref.startswith("#") or not on_board else "yes"}) (dnp {"yes" if dnp else "no"}) (uuid {q(uid("component:"+ref+":"+str(unit)))}))']
         body[0]=body[0][:-1]
         small=lib_id.startswith('Device:') or lib_id.startswith('Jumper:')
         for name,v in propvals.items():
@@ -238,7 +238,8 @@ class Schematic:
                     pn=next(t for t in children(s,'property') if t[1]==name);at=child(pn,'at');lx,ly=map(float,at[1:3]);aa=math.radians(angle)
                     px=x+lx*math.cos(aa)-ly*math.sin(aa);py=y-lx*math.sin(aa)-ly*math.cos(aa)
                 else:py=y-19.05 if name=='Reference' else y-16.51
-                if lib_id.startswith('Connector_Generic:'):px=x+5.08;py=y-15.24 if name=='Reference' else y-12.7
+                if lib_id.startswith('Connector_Generic:'):
+                    px=x+5.08;py=min(t[1] for t in c.pins.values())-(6.35 if name=='Reference' else 3.81)
                 if lib_id.startswith('Reference_Voltage:'):px=x+13.97;py=y-2.54 if name=='Reference' else y
                 if lib_id.startswith('Transistor_FET:'):px=x+13.97;py=y-10.16 if name=='Reference' else y-7.62
                 if lib_id.startswith('Transistor_BJT:'):px=x+13.97;py=y-2.54 if name=='Reference' else y
@@ -249,18 +250,27 @@ class Schematic:
                 elif lib_id.startswith('Device:C'):
                     v='/'.join(value.split()[:2])
                 elif lib_id=='Device:R':v=value.replace(' ','/')
-                elif lib_id=='Device:Fuse':v=value.split()[0]
+                elif lib_id=='Device:Fuse':
+                    current=value.split()[0]
+                    v=(current+' / MINI 插片保险丝') if 'MINI' in value else (current+' 慢断保险丝 / 5×20mm') if '5x20' in value else value
                 elif lib_id=='Device:R_Potentiometer':v='10k/3296W'
             if small and angle in [90,270]:py=y-10.16 if name=='Reference' else y-6.35
             if lib_id=='EdgeMind_Power:AT8236_Dual_Module' and name in ['Reference','Value']:
                 px=x+24.13;py=y-25.4 if name=='Reference' else y-22.86
+            if lib_id=='EdgeMind_Power:74HC08' and name in ['Reference','Value']:
+                px=x+(15.24 if unit==5 else 0)
+                py=y-((5.08 if name=='Reference' else 2.54) if unit==5 else (10.16 if name=='Reference' else 7.62))
+            if lib_id=='Connector:USB_C_Receptacle_PowerOnly_6P' and name in ['Reference','Value']:
+                px=x;py=y+(26.67 if name=='Reference' else 29.21)
+            if lib_id=='Device:D_Zener' and angle in [90,270] and name in ['Reference','Value']:
+                px=x+7.62;py=y-(2.54 if name=='Reference' else 0)
             fieldangle=0 if angle==180 else angle
             body.append(f'(property {q(name)} {q(v)} (at {num(px)} {num(py)} {fieldangle}) {effects(0.9 if name=="Value" else 1.0,hide, "left" if small and angle==0 else "")} )')
         for pin in c.pins:
             body.append(f'(pin {q(pin)} (uuid {q(uid("pin:"+ref+":"+str(unit)+":"+pin))}))')
         body.append(f'(instances (project {q(STEM)} (path {q(self.path)} (reference {q(ref)}) (unit {unit})))) )')
         self.items.append('\n'.join(body))
-        COMPONENTS.append({'sheet':self.file,'reference':ref,'unit':unit,'value':value,'footprint':fp,'lib_id':lib_id,'mpn':mpn,'datasheet':datasheet,'dnp':dnp})
+        COMPONENTS.append({'sheet':self.file,'reference':ref,'unit':unit,'value':value,'footprint':fp,'lib_id':lib_id,'mpn':mpn,'datasheet':datasheet,'dnp':dnp,'on_board':on_board and not ref.startswith('#')})
         return c
     def ground(self,p,length=3.81):
         end=(p[0],p[1]+length);self.wire(p,end)
@@ -268,8 +278,16 @@ class Schematic:
     def flag(self,name,p):
         self.label(name,p);self.sym('power:PWR_FLAG',None,*p,fp='')
     def finish(self):
+        # Native cleanup can merge collinear segments. Every intentional T must
+        # retain an explicit junction so the endpoint stays connected after save.
+        for a,b in self.wires:
+            for point in (a,b):
+                if any(c[0]==d[0]==point[0] and min(c[1],d[1])<point[1]<max(c[1],d[1])
+                       or c[1]==d[1]==point[1] and min(c[0],d[0])<point[0]<max(c[0],d[0])
+                       for c,d in self.wires):
+                    self.dot(point)
         data=['(kicad_sch (version 20260306) (generator "eeschema") (generator_version "10.0")',
-          f'(uuid {q(self.id)}) '+('(paper "User" 420 320)' if self.paper=='User' else f'(paper {q(self.paper)})'),
+          f'(uuid {q(self.id)}) '+('(paper "User" 420 320)' if self.paper=='User' else '(paper "User" 420 370)' if self.paper=='Overview' else f'(paper {q(self.paper)})'),
           f'(title_block (title {q(self.title)}) (date "2026-10-03") (rev "R2 schematic") (company "EdgeMind Robot") (comment 1 "Schematic redesign only - PCB intentionally unchanged"))',
           '(lib_symbols '+'\n'.join(cached(k) for k in sorted(self.lib))+')']
         data+=self.items
@@ -441,8 +459,8 @@ def module_fp(row):
         for dx,t in [(0,left[i]),(row,right[i])]:
             tx=dx+(3.2 if dx==0 else -3.2)
             body.append(f'(fp_text user {q(t)} (at {tx} {i*2.54} 0) (layer "F.SilkS") (effects (font (size 0.7 0.7) (thickness 0.12))))')
-    body += [f'(fp_text user "CAP SIDE / MODULE TOP" (at {row/2} -2.8 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))',
-             f'(fp_text user "ROW={row:.4f} mm / VERIFY FIT" (at {row/2} 17.4 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.12))))',')']
+    body += [f'(fp_text user "电容侧 / 模块顶部" (at {row/2} -2.8 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))',
+             f'(fp_text user "排间距={row:.4f}毫米 / 请试装核验" (at {row/2} 17.4 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.12))))',')']
     path.write_text('\n'.join(body)+'\n',encoding='utf-8')
     return 'EdgeMind_Module:'+name
 

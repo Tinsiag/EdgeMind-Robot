@@ -62,6 +62,6 @@
 (fp_text user "BOUT1" (at 19.8005 12.7 0) (layer "F.SilkS") (effects (font (size 0.7 0.7) (thickness 0.12))))
 (fp_text user "GND" (at 3.2 15.24 0) (layer "F.SilkS") (effects (font (size 0.7 0.7) (thickness 0.12))))
 (fp_text user "BOUT2" (at 19.8005 15.24 0) (layer "F.SilkS") (effects (font (size 0.7 0.7) (thickness 0.12))))
-(fp_text user "CAP SIDE / MODULE TOP" (at 11.50025 -2.8 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
-(fp_text user "ROW=23.0005 mm / VERIFY FIT" (at 11.50025 17.4 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.12))))
+(fp_text user "电容侧 / 模块顶部" (at 11.50025 -2.8 0) (layer "F.SilkS") (effects (font (size 0.8 0.8) (thickness 0.12))))
+(fp_text user "排间距=23.0005毫米 / 请试装核验" (at 11.50025 17.4 0) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.12))))
 )

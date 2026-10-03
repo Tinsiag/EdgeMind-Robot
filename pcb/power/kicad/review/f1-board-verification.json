@@ -1,0 +1,46 @@
+{
+  "日期": "2026-10-03T17:00:45",
+  "备份目录": "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-backups\\2026-10-03_163643-before-F1-onboard",
+  "修改前PCB_SHA256": "6290ea1feab70c6ea538cd58d0e12ebbe2cdf3fa1d98c8f8c1145aca0d4fbca3",
+  "修改后PCB_SHA256": "1e7e579938bbb6ca7d0e379cfd7b8ecfb621f75466b9ff7ac7237e60e9b38790",
+  "F1封装": "Fuse:Fuseholder_Blade_Mini_Keystone_3568",
+  "F1板载": true,
+  "F1原理图UUID": "d06f66b1-504a-57cb-97b0-c79fa1bda9e9",
+  "板上元件数": 211,
+  "原有210个元件位置与方向及焊盘几何保留": true,
+  "F1位置毫米": [
+    -18.21,
+    53.55
+  ],
+  "F1模型": [
+    "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuseholder_Blade_Mini_Keystone_3568.step"
+  ],
+  "输入连接": "CN1.2 -> F1.1; F1.2 -> Q1.2",
+  "原有焊盘网络调整": [
+    [
+      "CN1",
+      "2",
+      "Net-(CN1-Pin_2)",
+      "/三串电池输入与电压保护/电池正极"
+    ],
+    [
+      "Q1",
+      "2",
+      "Net-(CN1-Pin_2)",
+      "Net-(Q1-D)"
+    ]
+  ],
+  "逐个核对有编号焊盘数": 633,
+  "原理图一致性问题数": 0,
+  "现有设计规则违规数": 25,
+  "未连接项目数": 499,
+  "项目配置未修改": true,
+  "保险片购买链接": "https://www.lcsc.com/pt/product-detail/C55117678.html?is_substitute=1&original_product_code=C315865&original_unit_price=0.3407",
+  "保险座购买参考": "https://www.digikey.cn/zh/products/detail/keystone-electronics/3568/2137306",
+  "保险座原厂图纸": "https://www.keyelco.com/product-pdf.cfm?p=306",
+  "保险座焊孔": "中心距9.92×3.40mm，钻孔1.78mm，1/1与2/2各为同一电气端",
+  "采购边界": "封装按3568标准四孔；国产同孔位保险座尚未定型，不将01530008.J直接认作兼容。",
+  "十页中文PDF视觉检查": "全部页面已渲染检查，F1位置及文本无重叠，功能连线与图框正常",
+  "最新PDF_SHA256": "feb4f8f430974b68aaf97f05555052cce27dddbda8c4809d8db02097eb139d8a",
+  "编辑器旧状态写回处理": "保留写回文件及所有现有210个元件；仅补回F1和CN1.2/Q1.2网络；当前编辑器需重新载入磁盘文件"
+}

@@ -1,0 +1,473 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-03T12:47:04",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/3dcb01e4-c967-53cb-8248-76de28289511",
+            "violations": [
+                {
+                    "description": "根图纸中的层次标签 '电机总电源' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '电机总电源'",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.508
+                            },
+                            "uuid": "04926d42-d750-58d4-91c4-05e9b8f11504"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 14 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 0.4826,
+                                "y": 1.4224
+                            },
+                            "uuid": "3974f7c8-9a34-52cf-9086-08e694ce1625"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "根图纸中的层次标签 '正转脉宽' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '正转脉宽'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 1.8669
+                            },
+                            "uuid": "93d87a0b-3e21-52c5-af9d-703c1790dbf7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "根图纸中的层次标签 '已解锁' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '已解锁'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 1.9177
+                            },
+                            "uuid": "029a86dc-6bb7-537f-b06f-bdb40acb3380"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "根图纸中的层次标签 '反转脉宽' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '反转脉宽'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 2.1209
+                            },
+                            "uuid": "1b68a80c-c33b-53a7-a8bd-26a65650304b"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 1 [Input, Line]",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 1.8669
+                            },
+                            "uuid": "e07529ff-1aea-5634-80e3-a0cd1edfc3fe"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 2 [Input, Line]",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 1.9177
+                            },
+                            "uuid": "b2ae0508-518a-5d0f-9ec3-a3e70edaa475"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 4 [Input, Line]",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 2.1209
+                            },
+                            "uuid": "375ae995-3ab4-5718-9252-ed2406d0b039"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 5 [Input, Line]",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 2.1717
+                            },
+                            "uuid": "a2bf6589-7d07-5d31-8b12-a6e183d9e6e8"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 3 [Output, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 1.8923
+                            },
+                            "uuid": "4265d86f-876c-54cd-b8bc-94cf63d6c1b3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol U11 引脚 6 [Output, Line]",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 2.1463
+                            },
+                            "uuid": "086bc359-8997-5768-aba8-ac39ed1cb9ff"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "根图纸中的层次标签 '传感器电源' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '传感器电源'",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 1.397
+                            },
+                            "uuid": "8fed2ccc-45b6-5bd0-a99b-6649d915a2a2"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "根图纸中的层次标签 '本板3.3V' 无法连接到不存在的父图纸",
+                    "items": [
+                        {
+                            "description": "层次标签 '本板3.3V'",
+                            "pos": {
+                                "x": 1.5494,
+                                "y": 0.6985
+                            },
+                            "uuid": "ae2280b2-598b-5021-bcb4-595690caad99"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR172 引脚 1 [Power input, Line]",
+                            "pos": {
+                                "x": 2.2606,
+                                "y": 0.8128
+                            },
+                            "uuid": "229780e6-5774-5b1a-a8ad-151342753ab6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "层次标签 '电机总电源'",
+                            "pos": {
+                                "x": 0.3429,
+                                "y": 0.508
+                            },
+                            "uuid": "04926d42-d750-58d4-91c4-05e9b8f11504"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "当前配置不包含符号库 'EdgeMind_Power'",
+                    "items": [
+                        {
+                            "description": "符号 U11 [74HC08]",
+                            "pos": {
+                                "x": 0.4826,
+                                "y": 1.5494
+                            },
+                            "uuid": "1b260575-fe1e-52ca-8d3a-cd2382ed59e7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "符号 U11 在未放置的单元 [ C, D ] 中存在输入引脚",
+                    "items": [
+                        {
+                            "description": "符号 U11 [74HC08]",
+                            "pos": {
+                                "x": 0.4826,
+                                "y": 1.5494
+                            },
+                            "uuid": "1b260575-fe1e-52ca-8d3a-cd2382ed59e7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "missing_input_pin"
+                },
+                {
+                    "description": "符号 U11 有未放置的单元 [ C, D ]",
+                    "items": [
+                        {
+                            "description": "符号 U11 [74HC08]",
+                            "pos": {
+                                "x": 0.4826,
+                                "y": 1.5494
+                            },
+                            "uuid": "1b260575-fe1e-52ca-8d3a-cd2382ed59e7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "missing_unit"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "层次标签 '正转脉宽'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 1.8669
+                            },
+                            "uuid": "93d87a0b-3e21-52c5-af9d-703c1790dbf7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "层次标签 '已解锁'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 1.9177
+                            },
+                            "uuid": "029a86dc-6bb7-537f-b06f-bdb40acb3380"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "层次标签 '反转脉宽'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 2.1209
+                            },
+                            "uuid": "1b68a80c-c33b-53a7-a8bd-26a65650304b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "全局标签 '电机已解锁'",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 2.1717
+                            },
+                            "uuid": "378e1d18-013d-5e6a-ab3c-4b5766ac0802"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "当前配置不包含符号库 'EdgeMind_Power'",
+                    "items": [
+                        {
+                            "description": "符号 U11 [74HC08]",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 1.8923
+                            },
+                            "uuid": "87bd0aad-73c3-58e3-ab31-6c77095326eb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'EdgeMind_Power'",
+                    "items": [
+                        {
+                            "description": "符号 U11 [74HC08]",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 2.1463
+                            },
+                            "uuid": "88f5b380-5bf6-5143-9edf-eb13d314b8be"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "层次标签 '传感器电源'",
+                            "pos": {
+                                "x": 1.3208,
+                                "y": 1.397
+                            },
+                            "uuid": "8fed2ccc-45b6-5bd0-a99b-6649d915a2a2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.2794 mm",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 2.1463
+                            },
+                            "uuid": "a2c4bd53-d586-571d-84b8-9eccbdccbc11"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "未连接的连线端点",
+                    "items": [
+                        {
+                            "description": "水平线, 长度 0.4064 mm",
+                            "pos": {
+                                "x": 1.1938,
+                                "y": 1.8923
+                            },
+                            "uuid": "526f89f1-cfad-5f55-925c-ea9bfe42492a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "当前配置中不包含封装库 'EdgeMind_Module'",
+                    "items": [
+                        {
+                            "description": "符号 U2 [AT8236_Dual_Module]",
+                            "pos": {
+                                "x": 2.2098,
+                                "y": 1.8923
+                            },
+                            "uuid": "99e64686-b5d6-580b-9ea2-fde4f27ad50f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "当前配置不包含符号库 'EdgeMind_Power'",
+                    "items": [
+                        {
+                            "description": "符号 U2 [AT8236_Dual_Module]",
+                            "pos": {
+                                "x": 2.2098,
+                                "y": 1.8923
+                            },
+                            "uuid": "99e64686-b5d6-580b-9ea2-fde4f27ad50f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        }
+    ],
+    "source": "05_motor_left.kicad_sch"
+}

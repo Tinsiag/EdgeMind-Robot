@@ -5,10 +5,10 @@ the two AT8236 socket carriers. Run this builder, then validate the native netli
 """
 import redesign_schematic as g
 from redesign_schematic import *
+from kicad_tools import apply_edits
 
-FUSE='Fuse:Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal'
 INDUCTOR='Inductor_SMD:L_Changjiang_FXL0630'
-USB6='Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-17'
+USB6='Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal'
 HUSB_DS='https://www.hynetek.com/uploadfiles/site/219/news/2a2293ad-5b62-48ab-b902-a09e7bf50a18.pdf'
 
 def define_parts():
@@ -32,7 +32,13 @@ def define_parts():
 
 def cmp_power(p,ref,x,y):
     u=p.sym('Comparator:LM393',ref,x,y,'LM393BIDR',SO8,unit=3,mpn='LM393BIDR')
-    p.stub(u,8,'VBAT_SYS',3.81);p.ground(u.pin(4));decouple(p,x+17.78,y,'VBAT_SYS')
+    cc=C(p,x+17.78,y,'100nF 50V',fp=C8FP)
+    supply_y=min(u.pin(8)[1],cc.pin(1)[1])-3.81
+    p.wire(u.pin(8),(u.pin(8)[0],supply_y),(cc.pin(1)[0],supply_y),cc.pin(1))
+    p.label('VBAT_SYS',(u.pin(8)[0],supply_y))
+    ground_y=max(u.pin(4)[1],cc.pin(2)[1])+3.81
+    common=(cc.pin(2)[0],ground_y)
+    p.wire(u.pin(4),(u.pin(4)[0],ground_y),common,cc.pin(2));p.dot(common);p.ground(common)
 
 def threshold(p,x,y,ref,unit,rail,top,bottom,out,low=False):
     """OC pulls low below threshold (low=True) or above threshold."""
@@ -97,7 +103,7 @@ def usb_port(p,y,out,icref,usbref):
     vin=(243.84,u.pin(1)[1]);p.wire(vin,u.pin(1));p.flag(out+'_PROT',vin)
     ci=C(p,243.84,y+5.08,'1uF 25V',fp=C8FP);p.wire(ci.pin(1),vin);p.dot(vin);p.ground(ci.pin(2))
     rs=R(p,251.46,y+26.67,'150k 1%');p.wire(u.pin(3),(251.46,u.pin(3)[1]),rs.pin(1));p.ground(rs.pin(2));p.ground(u.pin(2));p.nc(u,4)
-    con=p.sym('Connector:USB_C_Receptacle_PowerOnly_6P',usbref,360.68,y-15.24,'TYPE-C-31-M-17 / 6P',USB6,angle=180,mpn='TYPE-C-31-M-17',datasheet='https://omo-oss-file.thefastfile.com/portal-saas/new2023011311465142457/cms/file/134891b2-9b01-4104-89d3-96207243f692.pdf')
+    con=p.sym('Connector:USB_C_Receptacle_PowerOnly_6P',usbref,360.68,y-15.24,'USB4125-GF-A / 六针供电',USB6,angle=180,mpn='USB4125-GF-A',datasheet='https://gct.co/files/drawings/usb4125.pdf')
     p.wire(u.pin(8),con.pin('A9'));p.label(usbref+'_VBUS',(312.42,u.pin(8)[1]))
     for k,cp,xx in [(6,'A5',327.66),(5,'B5',335.28)]:
         p.wire(u.pin(k),(xx,u.pin(k)[1]),(xx,con.pin(cp)[1]),con.pin(cp))
@@ -116,20 +122,30 @@ def build():
     power,usb,aux,safe,ml,mr,dump,prot,io=pages
     root.text('两路独立 5V + 默认独立 3.3V；USB-C 使用 6P 供电插座。',20,25,1.6)
     root.text('区内实线连接；跨模块标签。AT8236 使用两排排母；原 PCB 不更新。',20,35,1.3)
-    root.text('3S protected battery -> fuse / reverse protection -> VBAT_SYS\nLogic switch -> VLOGIC_IN -> two 5V bucks + independent 3V3 buck\nMotor arm switch -> branch fuses / shunts -> VM_L / VM_R\nJP1: 1-2 ONBOARD (default); 2-3 FPGA IN (optional, confirm current headroom)',20,50,1.1)
+    root.text('三串电池经XT60接板载MINI总保险，再经防反接进入母线；单体电芯保护仍须落实。\n逻辑电源开关供两路5V降压与独立3.3V降压；动力总开关供左右电机采样电阻。\nJP1默认短接1-2，备用输入须先确认电流余量。',20,50,1.1)
     for i,page in enumerate(pages):
         xx=20+(i%3)*128;yy=89+(i//3)*57
         root.items.append(f'(sheet (at {xx} {yy}) (size 116 32) (stroke (width 0.254) (type default)) (fill (color 0 0 0 0)) (uuid {q(uid("sheet:"+page.file))}) (property "Sheetname" {q(page.title)} (at {xx} {yy-1.27} 0) {effects(0.95,justify="left")}) (property "Sheetfile" {q(page.file)} (at {xx} {yy+34} 0) {effects(0.9,justify="left")}) (instances (project {q(STEM)} (path {q("/"+ROOT_ID)} (page {q(page.index)})))))')
     root.text('Schematic R2 / PCB intentionally unchanged. Bench validation required before fabrication.\nExternal 3S cell protection required. Stepper drivers and FPGA RTL are separate system work.',20,270,1.05)
 
-    # Raw input chain: detailed stock XT60, fuse holder, reverse-source PMOS.
-    p=power;p.box(15,15,380,94,'INPUT / 3S pack + external BMS / fuse + reverse polarity')
+    # Raw input: 3S pack, stock XT60, board-mounted MINI fuse, reverse-source PMOS.
+    p=power;p.box(15,15,380,94,'输入：三串11.1V锂聚合物电池 / 板载总保险与防反接')
     con=hdr(p,30.48,54.61,2,'CN1','XT60PW-M / 3S','Connector_AMASS:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal',a=180)
     p.ground(con.pin(1));p.flag('GND',(con.pin(1)[0],con.pin(1)[1]+3.81))
-    f=p.sym('Device:Fuse','F1',76.2,con.pin(2)[1],'10A 32VDC ATO (initial)','Fuse:Fuseholder_Blade_ATO_Littelfuse_Pudenz_2_Pin',angle=90)
-    p.wire(con.pin(2),f.pin(1))
+    main_fuse=p.sym('Device:Fuse','F1',76.2,52.07,'10A/32V MINI总保险','Fuse:Fuseholder_Blade_Mini_Keystone_3568',angle=90,
+                    mpn='0297010.J',on_board=True,
+                    desc='板载MINI总保险；XT60正极经F1再进入防反接管；保险片与保险座分别采购',
+                    datasheet='https://www.lcsc.com/datasheet/C55117678.pdf')
+    item=parse(p.items[-1]);field_edits=[]
+    for pn in children(item,'property'):
+        at=child(pn,'at')
+        if pn[1] in ['Reference','Value']:
+            pos='(at 76.2 46.99 90)' if pn[1]=='Reference' else '(at 76.2 44.45 90)'
+            field_edits.append((at.start,at.end,pos))
+    p.items[-1]=apply_edits(p.items[-1],field_edits)
+    p.wire(con.pin(2),main_fuse.pin(1));p.label('电池正极',(50.8,52.07));p.flag('电池正极',(50.8,52.07));p.dot((50.8,52.07))
     rev=p.sym('Transistor_FET:Q_PMOS_GDS','Q1',111.76,66.04,'IRF4905',TO220,mpn='IRF4905',angle=90)
-    p.wire(f.pin(2),(96.52,f.pin(2)[1]),(96.52,rev.pin(2)[1]),rev.pin(2))
+    p.wire(main_fuse.pin(2),(96.52,main_fuse.pin(2)[1]),(96.52,rev.pin(2)[1]),rev.pin(2))
     end=(187.96,rev.pin(3)[1]);p.wire(rev.pin(3),end);p.flag('VBAT_SYS',end)
     rg=R(p,111.76,85.09,'100k');p.wire(rev.pin(1),rg.pin(1));p.ground(rg.pin(2))
     z=p.sym('Device:D_Zener',None,139.7,80.01,'BZT52C12','Diode_SMD:D_SOD-123',angle=270)
@@ -137,7 +153,7 @@ def build():
     p.wire(end,(end[0],50.8),(269.24,50.8))
     for xx,ref,v,polar in [(205.74,'C58','470uF 35V low-ESR',True),(226.06,'C59','10uF 50V',False),(246.38,'C60','100nF 50V',False)]:cap(p,xx,66.04,'VBAT_SYS',v,ref,polar,bus=(xx,50.8))
     tv=p.sym('Device:D_TVS','D1',269.24,66.04,'SMBJ15CA','Diode_SMD:D_SMB',angle=270,mpn='SMBJ15CA');p.wire(tv.pin(1),(269.24,50.8));p.ground(tv.pin(2))
-    p.text('Q1: D=BAT input / S=VBAT_SYS\nTVS handles transients, not a 17V clamp.\nFuse rating must match copper and harness.',290,56,1.0)
+    p.text('电池：11.1V / 3600mAh / 35C；满电12.6V。\nF1板载：XT60正极之后、防反接管之前。\n保险片：集电通0297010.J，10A/32V，初值待实测。\n保险座：四孔9.92×3.40mm；与保险片分别采购。\n照片不能确认电池保护板；单体电芯保护仍须落实。\n瞬态抑制二极管不能把电压固定在17V以下。',290,56,1.0)
     p.box(15,118,177,140,'RAW-BUS reference / logic input switch')
     tl=p.sym('Reference_Voltage:TL431DBZ',None,53.34,148.59,'TL431BIDBZR','Package_TO_SOT_SMD:SOT-23',angle=90,mpn='TL431BIDBZR')
     p.wire(tl.pin(2),(tl.pin(2)[0],tl.pin(1)[1]),tl.pin(1));p.dot(tl.pin(1));p.ground(tl.pin(3))
@@ -177,7 +193,8 @@ def build():
     p.box(244,15,151,129,'JP1: one shunt only / source selection')
     j=hdr(p,294.64,49.53,3,'JP1','1-2 ONBOARD / 2-3 FPGA',nets=['+3V3_ONBOARD','+3V3','3V3_FPGA_IN'])
     p.flag('+3V3',(309.88,49.53));p.flag('3V3_FPGA_IN',(309.88,72.39))
-    hdr(p,375.92,93.98,2,None,'OPTIONAL FPGA 3V3 IN',nets=['3V3_FPGA_IN','GND'])
+    spare=hdr(p,375.92,93.98,2,None,'OPTIONAL FPGA 3V3 IN',nets=['3V3_FPGA_IN','GND'])
+    p.wire(j.pin(3),(266.7,j.pin(3)[1]),(266.7,78.74),(360.68,78.74),(360.68,spare.pin(1)[1]),spare.pin(1))
     p.text('Default shunt 1-2: onboard 3V3.\n2-3 only after verifying FPGA headroom.\nNever fit two shunts. No hard paralleling.\nOnboard buck remains populated by default.',250,116,1.0)
     p.box(15,153,380,106,'FILTERED SENSOR POWER / finished 3.3V-compatible modules only')
     bead=p.sym('Device:FerriteBead',None,55.88,179.07,'220R@100MHz 1A','Inductor_SMD:L_0805_2012Metric',angle=90)
@@ -185,13 +202,20 @@ def build():
     for xx,value in [(86.36,'10uF 10V X7R'),(105.41,'100nF 50V')]:cap(p,xx,194.31,'+3V3_SENS',value,bus=(xx,179.07))
     for i,name in enumerate(['IMU PWR','TOF1 PWR','TOF2 PWR','TOF3 PWR']):
         xx=185.42+(i%2)*123.19;yy=185.42+(i//2)*49.53
-        h=hdr(p,xx,yy,2,None,name,'Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',nets=['+3V3_SENS','GND']);decouple(p,xx+43.18,yy,'+3V3_SENS')
+        h=hdr(p,xx,yy,2,None,name,'Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',nets=['+3V3_SENS','GND'])
+        bypass=decouple(p,xx+43.18,yy,'+3V3_SENS')
+        routex=h.pin(1)[0]-2.54
+        p.wire(h.pin(1),(routex,h.pin(1)[1]),(routex,yy-13.97),(bypass.pin(1)[0],yy-13.97),bypass.pin(1))
+        groundbus=(bypass.pin(2)[0],yy+6.35)
+        p.wire(h.pin(2),(routex,h.pin(2)[1]),(routex,yy+6.35),groundbus)
+        p.dot(groundbus)
     hdr(p,104.14,238.76,2,None,'3V3 AUX OUT',TERM,nets=['+3V3','GND'])
     p.text('Default +3V3 powers encoders, current monitors and safety logic. Sensor signals connect to FPGA.\nBare sensor chips and finished modules may need different supply levels; confirm actual modules.',18,276,1.0)
 
     # Four physical AND gates + asynchronous-clear FF: wired local chain.
     p=safe;p.box(15,15,380,251,'MOTOR HARDWARE LATCH: power-on OFF / NC E-stop / explicit ARM rising edge')
-    est=hdr(p,50.8,52.07,2,None,'ESTOP NC LOOP',TERM,nets=['+3V3','ESTOP_OK']);down(p,83.82,64.77,'ESTOP_OK')
+    est=hdr(p,50.8,52.07,2,None,'ESTOP NC LOOP',TERM,nets=['+3V3','ESTOP_OK']);estpd=down(p,83.82,64.77,'ESTOP_OK')
+    p.wire(est.pin(2),(73.66,est.pin(2)[1]),(73.66,estpd.pin(1)[1]),estpd.pin(1))
     down(p,40.64,93.98,'MOTOR_PERMIT');down(p,71.12,93.98,'MOTOR_ARM');pull(p,102.87,64.77,'EXT_KILL_N')
     rst=p.sym('Power_Supervisor:MCP100-300D','U13',157.48,54.61,'MCP100-300DI/TO','Package_TO_SOT_THT:TO-92_Inline',mpn='MCP100-300DI/TO')
     p.stub(rst,2,'+3V3',3.81);p.ground(rst.pin(3));p.stub(rst,1,'POR_OK',7.62);decouple(p,179.07,87.63)
@@ -234,7 +258,7 @@ def build():
         rg=R(p,302.26,yy-17.78,'4.7k');p.stub(rg,1,'VM_'+side,3.81);p.wire(rg.pin(2),gate);p.dot(gate)
         mos=p.sym('Transistor_FET:Q_NMOS_GDS',None,332.74,yy,'IRLZ44N',TO220,mpn='IRLZ44N');p.wire(gate,mos.pin(1));p.ground(mos.pin(3))
         z=p.sym('Device:D_Zener',None,312.42,yy+20.32,'BZT52C12','Diode_SMD:D_SOD-123',angle=270);p.wire(z.pin(1),(312.42,yy));p.dot((312.42,yy));p.ground(z.pin(2))
-        rh=R(p,264.16,yy+33.02,'1M',a=90);p.wire(rh.pin(1),(224.79,yy+33.02),rb.pin(1));p.dot(rb.pin(1));p.wire(rh.pin(2),(289.56,yy+33.02),(289.56,yy),gate);p.dot((289.56,yy))
+        rh=R(p,264.16,yy+33.02,'1M',a=90);p.wire(rh.pin(1),(212.09,yy+33.02),(212.09,rb.pin(1)[1]),rb.pin(1));p.dot(rb.pin(1));p.wire(rh.pin(2),(289.56,yy+33.02),(289.56,yy),gate);p.dot((289.56,yy))
         conn=hdr(p,386.08,yy-15.24,2,None,side+' DUMP / external 3R3',TERM)
         p.stub(conn,1,'VM_'+side,5.08);p.wire(conn.pin(2),(mos.pin(2)[0],conn.pin(2)[1]),mos.pin(2))
     cmp_power(p,br,243.84,239.395)
@@ -242,10 +266,9 @@ def build():
 
     # Motor modules: correct opposing row order, old row pitch retained.
     for i,(p,side,modref,row,jref) in enumerate([(ml,'L','U2',23.0005,'J3'),(mr,'R','U4',23.1275,'J4')]):
-        p.box(15,15,380,99,side+' MOTOR / branch fuse / bus current monitor / local bulk')
-        f=p.sym('Device:Fuse',None,45.72,50.8,'3.15A slow 5x20 (initial)',FUSE,angle=90);p.stub(f,1,'VM_SWITCHED',7.62)
+        p.box(15,15,380,99,('左' if side=='L' else '右')+'电机：电子过流关断、电流监测与本地储能')
         sh=p.sym('Device:R',None,106.68,50.8,'0.020R 1% 1W','Resistor_SMD:R_2512_6332Metric',angle=90)
-        p.wire(f.pin(2),sh.pin(1));bus=(167.64,50.8);p.wire(sh.pin(2),bus,(254,50.8));p.flag('VM_'+side,(254,50.8))
+        p.label('VM_SWITCHED',(34.29,50.8));p.wire((34.29,50.8),sh.pin(1));bus=(167.64,50.8);p.wire(sh.pin(2),bus,(254,50.8));p.flag('VM_'+side,(254,50.8))
         for xx,value,polar in [(226.06,'470uF 25V low-ESR',True),(246.38,'100nF 50V',False)]:cap(p,xx,73.66,'VM_'+side,value,polar=polar,bus=(xx,50.8))
         mon=p.sym('Amplifier_Current:INA180A1',None,157.48,81.28,'INA180A1IDBVR',SOT5,mpn='INA180A1IDBVR')
         p.wire(sh.pin(1),(86.36,50.8),(86.36,mon.pin(3)[1]),mon.pin(3));p.dot((86.36,50.8))
@@ -253,7 +276,7 @@ def build():
         p.stub(mon,5,'+3V3',3.81);p.ground(mon.pin(2));decouple(p,195.58,102.87)
         ri=R(p,194.31,81.28,'1k',a=90);p.wire(mon.pin(1),ri.pin(1));target=(209.55,81.28);p.wire(ri.pin(2),target);p.label('VM_'+side+'_IMON',target)
         cf=C(p,209.55,96.52,'1uF 25V');p.wire(cf.pin(1),target);p.dot(target);p.ground(cf.pin(2))
-        p.text('Gain 20 / shunt 20mohm -> 0.4V/A\n1ms output filter; bus current != winding current\nFault threshold ~3.04A bus, needs bench setting',280,75,1.0)
+        p.text('增益20，采样电阻20mΩ：约0.4V/A\n输出滤波约1ms；母线过流阈值约3.04A\n母线电流不同于绕组电流；滤波关断不能替代入口保护\n入口总保险板载；模块内部限流须校准',280,75,1.0)
         p.box(15,122,380,139,side+' AT8236 / A channel / VREF adjustable / female sockets')
         at=p.sym('EdgeMind_Power:AT8236_Dual_Module',modref,220.98,189.23,'AT8236 dual module',module_fp(row),mpn='AT8236 dual module / vendor-specific')
         p.stub(at,6,'VM_'+side,7.62);p.ground(at.pin(7))
@@ -268,7 +291,7 @@ def build():
             gate=p.sym('EdgeMind_Power:74HC08','U11',111.76,gy,'74HC08D',SO14,unit=unit,mpn='SN74HC08DR')
             aa,bb,oo={1:(1,2,3),2:(4,5,6),3:(9,10,8),4:(12,13,11)}[unit]
             p.stub(gate,aa,side+'_PWM_'+('FWD_RAW' if j==0 else 'REV_RAW'),7.62);p.stub(gate,bb,'MOTOR_ARMED',7.62)
-            xx=165.1+j*12.7;p.wire(gate.pin(oo),(xx,gy),(xx,at.pin(k)[1]),at.pin(k))
+            xx=160.02-j*12.7;p.wire(gate.pin(oo),(xx,gy),(xx,at.pin(k)[1]),at.pin(k))
             rd=R(p,xx,gy+13.97,'10k');p.wire(rd.pin(1),(xx,at.pin(k)[1]));p.dot((xx,at.pin(k)[1]));p.ground(rd.pin(2))
         if i==0:
             pp=p.sym('EdgeMind_Power:74HC08','U11',48.26,154.94,'74HC08D',SO14,unit=5,mpn='SN74HC08DR');p.stub(pp,14,'+3V3',3.81);p.ground(pp.pin(7));decouple(p,67.31,161.29)
@@ -312,7 +335,7 @@ def build():
         p.stub(cc,cp,'CURRENT_REF_1V217',7.62);p.stub(cc,cn,'VM_'+side+'_IMON',7.62);p.stub(cc,co,'MOTOR_POWER_OK',7.62)
     cmp_power(p,oc,355.6,230.505)
     rh=R(p,226.06,215.9,'10.5k 0.1%');rl=R(p,226.06,241.3,'10.0k 0.1%');p.stub(rh,1,'VREF_2V495',3.81);p.wire(rh.pin(2),rl.pin(1));p.label('CURRENT_REF_1V217',(226.06,228.6));p.dot((226.06,228.6));p.ground(rl.pin(2))
-    p.text('Discrete OV disconnects are cost-oriented. Verify fault-step overshoot and thermal behavior.\nNo claim of true reverse-current blocking: use supply selection/isolation on attached boards.\nMotor bus current threshold ~3.04A plus tolerance; fuse is harness protection, not winding limit.',18,276,1.0)
+    p.text('分立过压关断方案用于控制成本；故障阶跃过冲和温升须实测。\n本方案不保证所有状态下阻断反灌，接入板卡仍须核对电源选择与隔离。\n母线过流阈值标称约3.04A；入口总保险板载，电池单体保护和模块限流仍须落实。',18,276,1.0)
 
     p=io;p.box(15,15,380,241,'CONTROL / power direction / explicit source selection')
     hdr(p,160.02,63.5,8,'J1','LEFT CTRL',nets=['L_PWM_FWD_RAW','L_PWM_REV_RAW','MOTOR_ARM','MOTOR_PERMIT','GND','3V3_FPGA_IN','ENC_L_A_FPGA','ENC_L_B_FPGA'])
@@ -324,7 +347,12 @@ def build():
     p.text('BAT_ADC: 12.6V -> 2.71V; requires external ADC.\nJ1.6 and J2.3 = same FPGA 3V3 INPUT,\nnot local 3V3 OUTPUT. JP1 isolates by default.\nOnly connect one FPGA supply domain.\nPERMIT low during reset / watchdog timeout.\nARM rising edge after safety checks.\nKILL_N accepts external open-drain fault.\nLichee Pi GPIO needs appropriate level translation.',294.64,182.88,1.0)
     p.text('Do not fabricate the existing PCB using this schematic. Synchronization/layout is separate work.\nAT8236 Rsense / encoder variant / ACG720 Type-C supply path remain hardware verification items.',18,276,1.0)
 
-    for page in [root]+pages:page.finish()
+    from schematic_overview import build_overview
+    build_overview(root,pages)
+    root.paper='Overview'
+    from schematic_chinese import localize
+    for page in [root]+pages:
+        page.finish();localize(ROOT/page.file)
     (ROOT/'EdgeMind_Power.kicad_sym').write_text('(kicad_symbol_lib (version 20231120) (generator "kicad_symbol_editor")\n'+'\n'.join(g.CUSTOM.values())+'\n)\n',encoding='utf-8')
     (ROOT/'review'/'redesign-components.json').write_text(json.dumps(g.COMPONENTS,ensure_ascii=False,indent=2),encoding='utf-8')
     assert hashlib.sha256((ROOT/(STEM+'.kicad_pcb')).read_bytes()).hexdigest()==EXPECTED_BOARD

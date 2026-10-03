@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\dev\EdgeMind-Robot\pcb\power\kicad\review\connection-repair-trial\05_motor_left.kicad_sch</source>
+    <date>2026-10-03T12:57:33</date>
+    <tool>Eeschema 10.0.5</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>左电机驱动与电流监测</title>
+        <company>EdgeMind机器人</company>
+        <rev>第二版原理图</rev>
+        <date>2026-10-03</date>
+        <source>05_motor_left.kicad_sch</source>
+        <comment number="1" value="仅修改原理图，本次未更新电路板"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C122">
+      <value>470uF/25V</value>
+      <footprint>Capacitor_THT:CP_Radial_D10.0mm_P5.00mm</footprint>
+      <description>Polarized capacitor</description>
+      <fields>
+        <field name="Specification">470uF 25V low-ESR</field>
+        <field name="Footprint">Capacitor_THT:CP_Radial_D10.0mm_P5.00mm</field>
+        <field name="Datasheet"/>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Specification" value="470uF 25V low-ESR"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>15759c9f-ff12-5c5c-bfc5-894d5bb2c335</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C123">
+      <value>100nF/50V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">100nF 50V</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="100nF 50V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>80877402-b4b0-5ac2-9452-2b72f5342e7a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C124">
+      <value>100nF/50V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">100nF 50V</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="100nF 50V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5f072ade-4c38-5ef3-b236-bb44ca5fccca</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C125">
+      <value>1uF/25V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">1uF 25V</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="1uF 25V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e03d580d-f002-555b-88fe-66cf54a1523a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C126">
+      <value>1uF/25V</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">1uF 25V</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="1uF 25V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d510b8c6-61ab-5d63-aa9e-6e84df2fd84e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C127">
+      <value>100nF/50V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">100nF 50V</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="100nF 50V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c63f5aa4-5bf3-5522-b01b-f4a20312424e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C128">
+      <value>1nF/C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">1nF C0G</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="1nF C0G"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>86959b82-f523-5d11-acc1-a19ef734e806</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C129">
+      <value>1nF/C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">1nF C0G</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="1nF C0G"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7be54d75-d80d-5d52-8aaf-0c4b90ea5178</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C130">
+      <value>100nF/50V</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <description>Unpolarized capacitor</description>
+      <fields>
+        <field name="Specification">100nF 50V</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Specification" value="100nF 50V"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c484df3c-caec-5a41-83d1-90c93b70fbbf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="F2">
+      <value>3.15A 慢断保险丝 / 5×20mm</value>
+      <footprint>Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open</footprint>
+      <description>左电机支路保险丝；常见5×20mm慢断保险丝管；保险丝与保险座分别采购，优先国产通用件</description>
+      <fields>
+        <field name="Specification">3.15A 慢断5×20mm保险丝管（初始值，须实测确认）</field>
+        <field name="Footprint">Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open</field>
+        <field name="Datasheet"/>
+        <field name="Description">左电机支路保险丝；常见5×20mm慢断保险丝管；保险丝与保险座分别采购，优先国产通用件</field>
+      </fields>
+      <libsource lib="Device" part="Fuse" description="Fuse"/>
+      <property name="Specification" value="3.15A 慢断5×20mm保险丝管（初始值，须实测确认）"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="fuse"/>
+      <property name="ki_fp_filters" value="*Fuse*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>95bb68b6-c706-5ad7-809d-b7c164ce2163</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>MG513电机 / 核对线序</value>
+      <footprint>Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</footprint>
+      <description>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <fields>
+        <field name="Footprint">Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_01x06" description="Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>66f0bf6d-406a-5f8d-8909-e9f96d9446a0</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R84">
+      <value>0.020R/1%/1W</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Specification">0.020R 1% 1W</field>
+        <field name="Footprint">Resistor_SMD:R_2512_6332Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Specification" value="0.020R 1% 1W"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a6fa3937-4ccf-585c-a67c-a6ab362d3739</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R85">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ef2f6613-eba3-5a90-aec3-dce2de49d558</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R86">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ebeca71-1ddc-54b1-9810-a2de39362556</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R87">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>47b6e86b-5f54-5933-8e9e-ce120a61f1a5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R88">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>43f1dc31-d5bd-5789-9107-a80b23eabb9e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R89">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2b450628-f330-5a91-9d34-3a3d1c7adae9</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R90">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ad2ff29-bbe6-5846-a238-956b30a1d50d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R91">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>53ef4a27-3f74-5245-a6b9-7b2a314c9a7e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R92">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>70a3b405-06a0-5029-9fd0-be1809f7982f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R93">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <description>Resistor</description>
+      <fields>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e06c98d5-04fe-5527-857b-a50d967f8a31</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RV1">
+      <value>10k/3296W</value>
+      <footprint>Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical</footprint>
+      <description>Potentiometer</description>
+      <fields>
+        <field name="Specification">10k 3296W / VREF</field>
+        <field name="MPN">3296W-1-103LF</field>
+        <field name="Footprint">Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description">Potentiometer</field>
+      </fields>
+      <libsource lib="Device" part="R_Potentiometer" description="Potentiometer"/>
+      <property name="Specification" value="10k 3296W / VREF"/>
+      <property name="MPN" value="3296W-1-103LF"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="resistor variable"/>
+      <property name="ki_fp_filters" value="Potentiometer*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>69299cfe-dbb9-5c91-9e63-908a47ac940e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>AT8236双路模块</value>
+      <footprint>EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.0005mm</footprint>
+      <description>Two 1x7 female sockets; left top-to-bottom 1..7, right top-to-bottom 8..14. VCC is current-limit reference, not a supply output.</description>
+      <fields>
+        <field name="MPN">AT8236 dual module / vendor-specific</field>
+        <field name="Footprint">EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.0005mm</field>
+        <field name="Datasheet"/>
+        <field name="Description">Two 1x7 female sockets; left top-to-bottom 1..7, right top-to-bottom 8..14. VCC is current-limit reference, not a supply output.</field>
+      </fields>
+      <libsource lib="EdgeMind_Power" part="AT8236_Dual_Module" description="Two 1x7 female sockets; left top-to-bottom 1..7, right top-to-bottom 8..14. VCC is current-limit reference, not a supply output."/>
+      <property name="MPN" value="AT8236 dual module / vendor-specific"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>99e64686-b5d6-580b-9ea2-fde4f27ad50f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="12"/>
+            <pin num="11"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="10"/>
+            <pin num="6"/>
+            <pin num="9"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="2"/>
+            <pin num="1"/>
+            <pin num="13"/>
+            <pin num="14"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U11">
+      <value>74HC08D</value>
+      <footprint>Package_SO:SOIC-14_3.9x8.7mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/gpn/sn74HC08</datasheet>
+      <description>Quad And2</description>
+      <fields>
+        <field name="MPN">SN74HC08DR</field>
+        <field name="Footprint">Package_SO:SOIC-14_3.9x8.7mm_P1.27mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/gpn/sn74HC08</field>
+        <field name="Description">Quad And2</field>
+      </fields>
+      <libsource lib="EdgeMind_Power" part="74HC08" description="Quad And2"/>
+      <property name="MPN" value="SN74HC08DR"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="TTL and2"/>
+      <property name="ki_fp_filters" value="DIP*W7.62mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87bd0aad-73c3-58e3-ab31-6c77095326eb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+        <unit name="B">
+          <pins>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+        <unit name="C">
+          <pins>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="8"/>
+          </pins>
+        </unit>
+        <unit name="D">
+          <pins>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="11"/>
+          </pins>
+        </unit>
+        <unit name="E">
+          <pins>
+            <pin num="14"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U25">
+      <value>INA180A1IDBVR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ina180.pdf</datasheet>
+      <description>Current Sense Amplifier, 1 Circuit, Rail-to-Rail, 26V, Gain 20 V/V, SOT-23-5</description>
+      <fields>
+        <field name="MPN">INA180A1IDBVR</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/ina180.pdf</field>
+        <field name="Description">Current Sense Amplifier, 1 Circuit, Rail-to-Rail, 26V, Gain 20 V/V, SOT-23-5</field>
+      </fields>
+      <libsource lib="Amplifier_Current" part="INA180A1" description="Current Sense Amplifier, 1 Circuit, Rail-to-Rail, 26V, Gain 20 V/V, SOT-23-5"/>
+      <property name="MPN" value="INA180A1IDBVR"/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="pcb/power/kicad/review/connection-repair-trial/05_motor_left.kicad_sch"/>
+      <property name="ki_keywords" value="current monitor shunt sensor"/>
+      <property name="ki_fp_filters" value="SOT?23*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>92d1f70d-5753-5c23-9262-de57e01b949a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Current" part="INA180A1">
+      <description>Current Sense Amplifier, 1 Circuit, Rail-to-Rail, 26V, Gain 20 V/V, SOT-23-5</description>
+      <docs>http://www.ti.com/lit/ds/symlink/ina180.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">INA180A1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/ina180.pdf</field>
+        <field name="Description">Current Sense Amplifier, 1 Circuit, Rail-to-Rail, 26V, Gain 20 V/V, SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="output"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="-" type="input"/>
+        <pin num="5" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x06">
+      <description>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x06</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized">
+      <description>Polarized capacitor</description>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Fuse">
+      <description>Fuse</description>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Fuse</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Potentiometer">
+      <description>Potentiometer</description>
+      <footprints>
+        <fp>Potentiometer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">R_Potentiometer</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Potentiometer</field>
+        <field name="Sim.Device">R</field>
+        <field name="Sim.Type">POT</field>
+        <field name="Sim.Pins">1=r0 2=wiper 3=r1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="EdgeMind_Power" part="74HC08">
+      <description>Quad And2</description>
+      <docs>http://www.ti.com/lit/gpn/sn74HC08</docs>
+      <footprints>
+        <fp>DIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74HC08</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">http://www.ti.com/lit/gpn/sn74HC08</field>
+        <field name="Description">Quad And2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="input"/>
+        <pin num="2" name="" type="input"/>
+        <pin num="3" name="" type="output"/>
+        <pin num="4" name="" type="input"/>
+        <pin num="5" name="" type="input"/>
+        <pin num="6" name="" type="output"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="" type="output"/>
+        <pin num="9" name="" type="input"/>
+        <pin num="10" name="" type="input"/>
+        <pin num="11" name="" type="output"/>
+        <pin num="12" name="" type="input"/>
+        <pin num="13" name="" type="input"/>
+        <pin num="14" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="EdgeMind_Power" part="AT8236_Dual_Module">
+      <description>Two 1x7 female sockets; left top-to-bottom 1..7, right top-to-bottom 8..14. VCC is current-limit reference, not a supply output.</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AT8236_Dual_Module</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Two 1x7 female sockets; left top-to-bottom 1..7, right top-to-bottom 8..14. VCC is current-limit reference, not a supply output.</field>
+      </fields>
+      <pins>
+        <pin num="1" name="AOUT2" type="output"/>
+        <pin num="2" name="AOUT1" type="output"/>
+        <pin num="3" name="BIN1" type="input"/>
+        <pin num="4" name="BIN2" type="input"/>
+        <pin num="5" name="VCC_REF" type="input"/>
+        <pin num="6" name="VM" type="power_in"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="GND" type="passive"/>
+        <pin num="9" name="VM" type="passive"/>
+        <pin num="10" name="VCC_REF" type="passive"/>
+        <pin num="11" name="AIN2" type="input"/>
+        <pin num="12" name="AIN1" type="input"/>
+        <pin num="13" name="BOUT1" type="output"/>
+        <pin num="14" name="BOUT2" type="output"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Current">
+      <uri>${KICAD10_SYMBOL_DIR}/Amplifier_Current.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>${KICAD10_SYMBOL_DIR}/Device.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/传感器电源" class="Default">
+      <node ref="RV1" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="3" name="/已解锁" class="Default">
+      <node ref="U11" pin="2" pintype="input"/>
+    </net>
+    <net code="4" name="/正转脉宽" class="Default">
+      <node ref="U11" pin="1" pintype="input"/>
+    </net>
+    <net code="5" name="/电机总电源" class="Default">
+      <node ref="F2" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(J3-Pin_1)" class="Default">
+      <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="AOUT2_1" pintype="output"/>
+    </net>
+    <net code="7" name="Net-(J3-Pin_6)" class="Default">
+      <node ref="J3" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="AOUT1_2" pintype="output"/>
+    </net>
+    <net code="8" name="Net-(R85-Pad1)" class="Default">
+      <node ref="R85" pin="1" pintype="passive"/>
+      <node ref="U25" pin="1" pintype="output"/>
+    </net>
+    <net code="9" name="Net-(R86-Pad1)" class="Default">
+      <node ref="R86" pin="1" pintype="passive"/>
+      <node ref="RV1" pin="2" pinfunction="2_2" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(U2-AIN1)" class="Default">
+      <node ref="R88" pin="1" pintype="passive"/>
+      <node ref="U2" pin="12" pinfunction="AIN1_12" pintype="input"/>
+    </net>
+    <net code="11" name="Net-(U2-AIN2)" class="Default">
+      <node ref="R89" pin="1" pintype="passive"/>
+      <node ref="U2" pin="11" pinfunction="AIN2_11" pintype="input"/>
+    </net>
+    <net code="12" name="Net-(U25-+)" class="Default">
+      <node ref="F2" pin="2" pintype="passive"/>
+      <node ref="R84" pin="1" pintype="passive"/>
+      <node ref="U25" pin="3" pinfunction="+_3" pintype="input"/>
+    </net>
+    <net code="13" name="unconnected-(U2-BOUT1-Pad13)" class="Default">
+      <node ref="U2" pin="13" pinfunction="BOUT1_13" pintype="output+no_connect"/>
+    </net>
+    <net code="14" name="unconnected-(U2-BOUT2-Pad14)" class="Default">
+      <node ref="U2" pin="14" pinfunction="BOUT2_14" pintype="output+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(U11-Pad3)" class="Default">
+      <node ref="U11" pin="3" pintype="output"/>
+    </net>
+    <net code="16" name="地" class="Default">
+      <node ref="C122" pin="2" pintype="passive"/>
+      <node ref="C123" pin="2" pintype="passive"/>
+      <node ref="C124" pin="2" pintype="passive"/>
+      <node ref="C125" pin="2" pintype="passive"/>
+      <node ref="C126" pin="2" pintype="passive"/>
+      <node ref="C127" pin="2" pintype="passive"/>
+      <node ref="C128" pin="2" pintype="passive"/>
+      <node ref="C129" pin="2" pintype="passive"/>
+      <node ref="C130" pin="2" pintype="passive"/>
+      <node ref="J3" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
+      <node ref="R87" pin="2" pintype="passive"/>
+      <node ref="R88" pin="2" pintype="passive"/>
+      <node ref="R89" pin="2" pintype="passive"/>
+      <node ref="RV1" pin="3" pinfunction="3_3" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="BIN1_3" pintype="input"/>
+      <node ref="U2" pin="4" pinfunction="BIN2_4" pintype="input"/>
+      <node ref="U2" pin="7" pinfunction="GND_7" pintype="power_in"/>
+      <node ref="U2" pin="8" pinfunction="GND_8" pintype="passive"/>
+      <node ref="U25" pin="2" pinfunction="GND_2" pintype="power_in"/>
+    </net>
+    <net code="17" name="左电机_动力电源" class="Default">
+      <node ref="C122" pin="1" pintype="passive"/>
+      <node ref="C123" pin="1" pintype="passive"/>
+      <node ref="R84" pin="2" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="VM_6" pintype="power_in"/>
+      <node ref="U2" pin="9" pinfunction="VM_9" pintype="passive"/>
+      <node ref="U25" pin="4" pinfunction="-_4" pintype="input"/>
+    </net>
+    <net code="18" name="左电机_母线电流采样" class="Default">
+      <node ref="C125" pin="1" pintype="passive"/>
+      <node ref="R85" pin="2" pintype="passive"/>
+    </net>
+    <net code="19" name="左电机_限流参考" class="Default">
+      <node ref="C126" pin="1" pintype="passive"/>
+      <node ref="R86" pin="2" pintype="passive"/>
+      <node ref="R87" pin="1" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="VCC_REF_10" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="VCC_REF_5" pintype="input"/>
+    </net>
+    <net code="20" name="左编码器_A" class="Default">
+      <node ref="J3" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="R90" pin="1" pintype="passive"/>
+    </net>
+    <net code="21" name="左编码器_A_逻辑板输入" class="Default">
+      <node ref="C128" pin="1" pintype="passive"/>
+      <node ref="R90" pin="2" pintype="passive"/>
+      <node ref="R91" pin="2" pintype="passive"/>
+    </net>
+    <net code="22" name="左编码器_B" class="Default">
+      <node ref="J3" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="R92" pin="1" pintype="passive"/>
+    </net>
+    <net code="23" name="左编码器_B_逻辑板输入" class="Default">
+      <node ref="C129" pin="1" pintype="passive"/>
+      <node ref="R92" pin="2" pintype="passive"/>
+      <node ref="R93" pin="2" pintype="passive"/>
+    </net>
+    <net code="24" name="本板3.3V" class="Default">
+      <node ref="C124" pin="1" pintype="passive"/>
+      <node ref="C127" pin="1" pintype="passive"/>
+      <node ref="C130" pin="1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="R91" pin="1" pintype="passive"/>
+      <node ref="R93" pin="1" pintype="passive"/>
+      <node ref="U25" pin="5" pinfunction="V+_5" pintype="power_in"/>
+    </net>
+  </nets>
+</export>

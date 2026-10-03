@@ -1,52 +1,1901 @@
-{
-  "libraries": {
-    "Capacitor_THT": 4,
-    "Capacitor_SMD": 58,
-    "Connector_AMASS": 1,
-    "Diode_SMD": 8,
-    "Fuse": 3,
-    "Package_TO_SOT_THT": 6,
-    "Package_TO_SOT_SMD": 14,
-    "Resistor_SMD": 85,
-    "Package_SO": 12,
-    "Inductor_SMD": 4,
-    "Connector_USB": 2,
-    "Connector_PinHeader_2.54mm": 5,
-    "Connector_JST": 6,
-    "TerminalBlock_Phoenix": 4,
-    "Potentiometer_THT": 2,
-    "EdgeMind_Module": 2,
-    "TestPoint": 1
-  },
-  "missing_footprints": [],
-  "pad_pin_mismatches": [],
-  "missing_models": [
-    [
-      "CN1",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_AMASS.3dshapes/AMASS_XT60PW-M_1x02_P7.20mm_Horizontal.step"
-    ],
-    [
-      "F1",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Blade_ATO_Littelfuse_Pudenz_2_Pin.step"
-    ],
-    [
-      "USB1",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-17.step"
-    ],
-    [
-      "USB2",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-17.step"
-    ],
-    [
-      "F2",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal.step"
-    ],
-    [
-      "F3",
-      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels/Fuse.3dshapes/Fuseholder_Clip-5x20mm_Littelfuse_100_Inline_P20.50x4.60mm_D1.30mm_Horizontal.step"
+[
+  {
+    "位号": "C58",
+    "封装": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_THT.3dshapes\\CP_Radial_D10.0mm_P5.00mm.step"
     ]
-  ],
-  "no_models": [
-    "TP1"
-  ]
-}
+  },
+  {
+    "位号": "C59",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C60",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C101",
+    "封装": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_THT.3dshapes\\CP_Radial_D10.0mm_P5.00mm.step"
+    ]
+  },
+  {
+    "位号": "C102",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C103",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "CN1",
+    "封装": "Connector_AMASS:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_AMASS.3dshapes\\AMASS_XT60PW-M_1x02_P7.20mm_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "D1",
+    "封装": "Diode_SMD:D_SMB",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SMB.step"
+    ]
+  },
+  {
+    "位号": "D2",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "D3",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "F1",
+    "封装": "Fuse:Fuseholder_Blade_Mini_Keystone_3568",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Fuse.3dshapes\\Fuseholder_Blade_Mini_Keystone_3568.step"
+    ]
+  },
+  {
+    "位号": "Q1",
+    "封装": "Package_TO_SOT_THT:TO-220-3_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-220-3_Vertical.step"
+    ]
+  },
+  {
+    "位号": "Q3",
+    "封装": "Package_TO_SOT_THT:TO-220-3_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-220-3_Vertical.step"
+    ]
+  },
+  {
+    "位号": "Q4",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "R51",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R52",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R53",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R54",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R55",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R56",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R57",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R58",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R59",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R60",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R61",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R62",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R63",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R64",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "U21",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "U22",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U23",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "C1",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C2",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C3",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C4",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C5",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C6",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C7",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C8",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C9",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C10",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C11",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C12",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C13",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C14",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C15",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C16",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C104",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C105",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C106",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C107",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "L1",
+    "封装": "Inductor_SMD:L_Changjiang_FXL0630",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Inductor_SMD.3dshapes\\L_Changjiang_FXL0630.step"
+    ]
+  },
+  {
+    "位号": "L2",
+    "封装": "Inductor_SMD:L_Changjiang_FXL0630",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Inductor_SMD.3dshapes\\L_Changjiang_FXL0630.step"
+    ]
+  },
+  {
+    "位号": "R1",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R2",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R3",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R6",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R11",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R12",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R65",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R66",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R67",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R68",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "U1",
+    "封装": "Package_TO_SOT_SMD:TSOT-23-8",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\TSOT-23-8.step"
+    ]
+  },
+  {
+    "位号": "U5",
+    "封装": "Package_TO_SOT_SMD:TSOT-23-8",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\TSOT-23-8.step"
+    ]
+  },
+  {
+    "位号": "U7",
+    "封装": "Package_TO_SOT_SMD:TSOT-23-8",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\TSOT-23-8.step"
+    ]
+  },
+  {
+    "位号": "U8",
+    "封装": "Package_TO_SOT_SMD:TSOT-23-8",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\TSOT-23-8.step"
+    ]
+  },
+  {
+    "位号": "USB1",
+    "封装": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_USB.3dshapes\\USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "USB2",
+    "封装": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_USB.3dshapes\\USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "C108",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C109",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C110",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C111",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C112",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C113",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C114",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C115",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C116",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C117",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "FB1",
+    "封装": "Inductor_SMD:L_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Inductor_SMD.3dshapes\\L_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "J9",
+    "封装": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinHeader_2.54mm.3dshapes\\PinHeader_1x02_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J10",
+    "封装": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J11",
+    "封装": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J12",
+    "封装": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J13",
+    "封装": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J14",
+    "封装": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\TerminalBlock_Phoenix.3dshapes\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "JP1",
+    "封装": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinHeader_2.54mm.3dshapes\\PinHeader_1x03_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "L3",
+    "封装": "Inductor_SMD:L_Changjiang_FXL0630",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Inductor_SMD.3dshapes\\L_Changjiang_FXL0630.step"
+    ]
+  },
+  {
+    "位号": "U3",
+    "封装": "Package_TO_SOT_SMD:TSOT-23-6",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\TSOT-23-6.step"
+    ]
+  },
+  {
+    "位号": "C118",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C119",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C120",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "J15",
+    "封装": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\TerminalBlock_Phoenix.3dshapes\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "R69",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R70",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R71",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R72",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R73",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "U10",
+    "封装": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-14_3.9x8.7mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U12",
+    "封装": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-14_3.9x8.7mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U13",
+    "封装": "Package_TO_SOT_THT:TO-92_Inline",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-92_Inline.step"
+    ]
+  },
+  {
+    "位号": "C122",
+    "封装": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_THT.3dshapes\\CP_Radial_D10.0mm_P5.00mm.step"
+    ]
+  },
+  {
+    "位号": "C123",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C124",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C125",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C126",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C127",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C128",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C129",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C130",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "J3",
+    "封装": "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "R84",
+    "封装": "Resistor_SMD:R_2512_6332Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_2512_6332Metric.step"
+    ]
+  },
+  {
+    "位号": "R85",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R86",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R87",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R88",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R89",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R90",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R91",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R92",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R93",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "RV1",
+    "封装": "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Potentiometer_THT.3dshapes\\Potentiometer_Bourns_3296W_Vertical.step"
+    ]
+  },
+  {
+    "位号": "U2",
+    "封装": "EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.0005mm",
+    "来源": "项目自建双排排母",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinSocket_2.54mm.3dshapes\\PinSocket_1x07_P2.54mm_Vertical.step",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinSocket_2.54mm.3dshapes\\PinSocket_1x07_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "U11",
+    "封装": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-14_3.9x8.7mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U25",
+    "封装": "Package_TO_SOT_SMD:SOT-23-5",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23-5.step"
+    ]
+  },
+  {
+    "位号": "C131",
+    "封装": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_THT.3dshapes\\CP_Radial_D10.0mm_P5.00mm.step"
+    ]
+  },
+  {
+    "位号": "C132",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C133",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C134",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C135",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C136",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C137",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "C138",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "J4",
+    "封装": "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_JST.3dshapes\\JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "R94",
+    "封装": "Resistor_SMD:R_2512_6332Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_2512_6332Metric.step"
+    ]
+  },
+  {
+    "位号": "R95",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R96",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R97",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R98",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R99",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R100",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R101",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R102",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R103",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "RV2",
+    "封装": "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Potentiometer_THT.3dshapes\\Potentiometer_Bourns_3296W_Vertical.step"
+    ]
+  },
+  {
+    "位号": "U4",
+    "封装": "EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.1275mm",
+    "来源": "项目自建双排排母",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinSocket_2.54mm.3dshapes\\PinSocket_1x07_P2.54mm_Vertical.step",
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinSocket_2.54mm.3dshapes\\PinSocket_1x07_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "U26",
+    "封装": "Package_TO_SOT_SMD:SOT-23-5",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23-5.step"
+    ]
+  },
+  {
+    "位号": "C121",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "D4",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "D5",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "D6",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "J16",
+    "封装": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\TerminalBlock_Phoenix.3dshapes\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "J17",
+    "封装": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\TerminalBlock_Phoenix.3dshapes\\TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.step"
+    ]
+  },
+  {
+    "位号": "Q2",
+    "封装": "Package_TO_SOT_THT:TO-220-3_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-220-3_Vertical.step"
+    ]
+  },
+  {
+    "位号": "Q5",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "Q6",
+    "封装": "Package_TO_SOT_THT:TO-220-3_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-220-3_Vertical.step"
+    ]
+  },
+  {
+    "位号": "Q7",
+    "封装": "Package_TO_SOT_THT:TO-220-3_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_THT.3dshapes\\TO-220-3_Vertical.step"
+    ]
+  },
+  {
+    "位号": "R74",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R75",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R76",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R77",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R78",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R79",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R80",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R81",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R82",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R83",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "TP1",
+    "封装": "TestPoint:TestPoint_Pad_D2.0mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": []
+  },
+  {
+    "位号": "U24",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "C139",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C140",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C141",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "C142",
+    "封装": "Capacitor_SMD:C_0805_2012Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0805_2012Metric.step"
+    ]
+  },
+  {
+    "位号": "D7",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "D8",
+    "封装": "Diode_SMD:D_SOD-123",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Diode_SMD.3dshapes\\D_SOD-123.step"
+    ]
+  },
+  {
+    "位号": "Q8",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "Q9",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "Q10",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "Q11",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "Q12",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "Q13",
+    "封装": "Package_TO_SOT_SMD:SOT-23",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_TO_SOT_SMD.3dshapes\\SOT-23.step"
+    ]
+  },
+  {
+    "位号": "R104",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R105",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R106",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R107",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R108",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R109",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R110",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R111",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R112",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R113",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R114",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R115",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R116",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R117",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R118",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R119",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R120",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R121",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R122",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R123",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "U27",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U28",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U29",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "U30",
+    "封装": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Package_SO.3dshapes\\SOIC-8_3.9x4.9mm_P1.27mm.step"
+    ]
+  },
+  {
+    "位号": "C143",
+    "封装": "Capacitor_SMD:C_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Capacitor_SMD.3dshapes\\C_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "J1",
+    "封装": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinHeader_2.54mm.3dshapes\\PinHeader_1x08_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J2",
+    "封装": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinHeader_2.54mm.3dshapes\\PinHeader_1x08_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "J18",
+    "封装": "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Connector_PinHeader_2.54mm.3dshapes\\PinHeader_1x12_P2.54mm_Vertical.step"
+    ]
+  },
+  {
+    "位号": "R124",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  },
+  {
+    "位号": "R125",
+    "封装": "Resistor_SMD:R_0603_1608Metric",
+    "来源": "KiCad自带库",
+    "焊盘与符号引脚一致": true,
+    "模型": [
+      "D:\\KiCad\\10.0\\share\\kicad\\3dmodels\\Resistor_SMD.3dshapes\\R_0603_1608Metric.step"
+    ]
+  }
+]

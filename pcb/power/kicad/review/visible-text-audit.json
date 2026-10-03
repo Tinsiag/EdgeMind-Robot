@@ -1,0 +1,2751 @@
+{
+  "visible": [
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "独立降压、跳帽选择与传感器滤波"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "默认短接JP1的1-2：板载3.3V。只安装一个跳帽；电机故障恢复后须重新发解锁脉冲。"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "右侧AT8236、编码器与电流监测"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "板载总保险、防反接与电压窗口"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "动力总开关与回生泄放"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "急停、上电复位与解锁锁存"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "实线为实际层级网络连接；远距离控制、监测信号采用同名标签。"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "输出过压与动力过流检测"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "左侧AT8236、编码器与电流监测"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "逻辑板控制与电源监测接口"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "两路降压与六针供电口"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "电池经XT60接入板载MINI总保险；单体电芯保护仍须落实。PCB封装与网络已同步，布局布线待完成。"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "text",
+      "text": "电源板功能连接总图：两路5V、独立3.3V与双电机驱动"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机总开关输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_稳压输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_原始反转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "降压电源输入"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_保护输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "外部故障_低有效"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_保护输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_原始正转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_原始反转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_原始正转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机运行许可"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_稳压输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_保护输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_保护输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_原始反转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_稳压输出"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_原始正转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_原始正转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_原始反转脉宽"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "电机解锁脉冲"
+    },
+    {
+      "file": "ProPrj_power_2026-10-02.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_稳压输出"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "text",
+      "text": "电池母线基准与降压输入开关"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "text",
+      "text": "欠压与过压窗口：逻辑约9.0-14.1V；动力约9.65-14.1V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "text",
+      "text": "输入：三串11.1V锂聚合物电池 / 板载总保险与防反接"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "text",
+      "text": "开集电极故障输出共同拉低使能。电机故障清除解锁锁存；电压恢复后不自动解锁。\n总电压监测不能替代单体电芯保护。阈值、响应和过冲须实测。"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "text",
+      "text": "电池：11.1V / 3600mAh / 35C；满电12.6V。\nF1板载：XT60正极之后、防反接管之前。\n保险片：集电通0297010.J，10A/32V，初值待实测。\n保险座：四孔9.92×3.40mm；与保险片分别采购。\n照片不能确认电池保护板；单体电芯保护仍须落实。\n瞬态抑制二极管不能把电压固定在17V以下。"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "降压电源输入"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "降压电源输入"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "2.2k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "470uF/35V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "XT60PW-M / 三串电池"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "46.4k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "46.4k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "TL431BIDBZR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "100uF/25V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "28.7k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "100k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10uF/50V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "SMBJ15CA"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "26.1k/0.1%"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "IRF4905"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "IRF4905"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "10A/32V MINI总保险"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "逻辑板5V_稳压输出 / 5.10V / 供电目标3A"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "USB2 / 六针供电口 / 固定5V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "连接检测与总线电源开关由控制器完成\n限流电阻150kΩ：典型限流3.6A，宣告供电能力3A\n无需外部上拉电阻；仅固定5V供电"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "两路 5V 不并联。实际负载、板端电压、线缆压降和温升需实测；USB-C 不宣告 4A。"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "计算板5V_稳压输出 / 5.10V / 供电目标3A"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "连接检测与总线电源开关由控制器完成\n限流电阻150kΩ：典型限流3.6A，宣告供电能力3A\n无需外部上拉电阻；仅固定5V供电"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "text",
+      "text": "USB1 / 六针供电口 / 固定5V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口1_总线电源"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口2_故障脉冲_低有效"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口2_总线电源"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口2_故障脉冲_低有效"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "降压电源输入"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口1_故障脉冲_低有效"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "降压使能"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口1_故障脉冲_低有效"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "MP2236GJ-Z"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "10R"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "4.7uH"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "10R"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "220pF/C0G"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "82.5k/0.1%"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "MP2236GJ-Z"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "4.7uF/10V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "150k/1%"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "82.5k/0.1%"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "4.7uF/10V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "220pF/C0G"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "11.0k/0.1%"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "HUSB305-02"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "150k/1%"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "HUSB305-02"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "4.7uH"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "USB4125-GF-A / 六针供电"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "USB4125-GF-A / 六针供电"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "22uF/25V"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "11.0k/0.1%"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "默认独立3.3V降压 / 初始负载预算0.5A"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "传感器电源滤波 / 仅接已确认支持3.3V的成品模块"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "芯片标称2A能力不能代替接口与散热验收。\n反馈取自保护开关前的稳压输出。\n4.7µH位于手册允许的2.2-10µH范围内。"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "默认短接1-2：板载3.3V供电。\n确认逻辑板电流余量后，才能改为2-3。\n只能装一个跳帽，不能并联两个电源。\n默认安装板载降压电路。"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "本板3.3V供给编码器、电流监测和安全逻辑；传感器信号接逻辑板。\n裸芯片与成品模块的供电要求可能不同，须核对实际模块。"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "text",
+      "text": "JP1电源选择：只安装一个跳帽"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板3.3V_输入"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板3.3V_输入"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "传感器3.3V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板3.3V_输入"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "4.7uH"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "10uF/10V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "AP63203WU-7"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "22uF/10V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "220Ω@100MHz / 1A"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "测距传感器2电源"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "测距传感器1电源"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "惯性传感器电源"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "22uF/10V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "测距传感器3电源"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "可选逻辑板3.3V输入"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "3.3V辅助输出"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "1-2板载 / 2-3逻辑板"
+    },
+    {
+      "file": "03_aux_3v3.kicad_sch",
+      "kind": "value",
+      "text": "10uF/25V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "text",
+      "text": "急停断开、运行许可撤销、外部故障、欠压或过流均立即清除解锁。\n条件恢复后还须发出解锁脉冲；逻辑板须在看门狗超时或堵转时撤销运行许可。\n使用支持3.3V的74HC08与74HC74，不可换成74LS系列。"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "text",
+      "text": "动力硬件锁存：上电关闭 / 常闭急停 / 解锁需要上升沿"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "上电复位完成"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "电机运行许可"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "急停回路闭合"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "上电复位完成"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "急停回路闭合"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "外部故障_低有效"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "急停回路闭合"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "电机解锁脉冲"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "急停常闭回路"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC74D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC74D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC74D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "MCP100-300DI/TO"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "04_motor_safety.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "text",
+      "text": "增益20，采样电阻20mΩ：约0.4V/A\n输出滤波约1ms；母线过流阈值约3.04A\n母线电流不同于绕组电流；滤波关断不能替代入口保护\n入口总保险板载；模块内部限流须校准"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "text",
+      "text": "左电机驱动：使用A通道 / 可调限流参考 / 双排排母"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "text",
+      "text": "排间距23.0005毫米，沿用原电路板；对排引脚编号已纠正。\n限流电流=参考电压/(10×采样电阻)；安装电机前先测阻值并校准。\n10正转、01反转、00滑行、11制动；B通道未用。编码器线序须与实物一致。"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "text",
+      "text": "左电机：电子过流关断、电流监测与本地储能"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_A_逻辑板输入"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_A"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_动力电源"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_限流参考"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_母线电流采样"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_B"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_B_逻辑板输入"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_A"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_动力电源"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_B"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "470uF/25V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "MG513电机 / 核对线序"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "10k/3296W"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100R"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100R"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1nF/C0G"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1nF/C0G"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "INA180A1IDBVR"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "AT8236双路模块"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "0.020R/1%/1W"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "text",
+      "text": "排间距23.1275毫米，沿用原电路板；对排引脚编号已纠正。\n限流电流=参考电压/(10×采样电阻)；安装电机前先测阻值并校准。\n10正转、01反转、00滑行、11制动；B通道未用。编码器线序须与实物一致。"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "text",
+      "text": "增益20，采样电阻20mΩ：约0.4V/A\n输出滤波约1ms；母线过流阈值约3.04A\n母线电流不同于绕组电流；滤波关断不能替代入口保护\n入口总保险板载；模块内部限流须校准"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "text",
+      "text": "右电机驱动：使用A通道 / 可调限流参考 / 双排排母"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "text",
+      "text": "右电机：电子过流关断、电流监测与本地储能"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_动力电源"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_B"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_动力电源"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_限流参考"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_A"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_B_逻辑板输入"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_B"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_A_逻辑板输入"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_A"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_母线电流采样"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "0.020R/1%/1W"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "INA180A1IDBVR"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "AT8236双路模块"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1nF/C0G"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1nF/C0G"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "MG513电机 / 核对线序"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100R"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "10k/3296W"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100R"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "1uF/25V"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "74HC08D"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "470uF/25V"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "text",
+      "text": "回生能量泄放 / 外接底盘散热电阻"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "text",
+      "text": "约15.39V开始泄放；关闭阈值和最坏过冲须实测。\n若电源或电池保护板不能吸收回生，外接两只3.3Ω、至少100W的底盘散热电阻。\n电路由电池母线供电，本板3.3V消失时仍可工作；功率管需要散热。"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "text",
+      "text": "动力总开关 / 急停触点只承载控制电流"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "电机总开关输出"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_动力电源"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "global_label",
+      "text": "电机总开关输出"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "左回生泄放 / 外接3.3Ω"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "IRF4905"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "电机总开关输出"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "IRLZ44N"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "IRLZ44N"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "1M"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "51.1k/0.1%"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "51.1k/0.1%"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "1M"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "右回生泄放 / 外接3.3Ω"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "text",
+      "text": "5V过压关断 / 标称约5.364V / 逻辑板5V_保护输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "text",
+      "text": "板载3.3V过压关断 / 标称约3.451V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "text",
+      "text": "动力过流检测 / 滤波后母线电流 / 共用锁存清除"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "text",
+      "text": "5V过压关断 / 标称约5.364V / 计算板5V_保护输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "text",
+      "text": "分立过压关断方案用于控制成本；故障阶跃过冲和温升须实测。\n本方案不保证所有状态下阻断反灌，接入板卡仍须核对电源选择与隔离。\n母线过流阈值标称约3.04A；入口总保险板载，电池单体保护和模块限流仍须落实。"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池欠压告警_低有效"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "过流基准_1.217V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池欠压告警_低有效"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "过流基准_1.217V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_母线电流采样"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_母线电流采样"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "计算板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "过流基准_1.217V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板5V_稳压输出"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "基准电压_2.495V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "global_label",
+      "text": "板载3.3V_电压正常"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "AO4409"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "11.5k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.5k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "11.5k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "BZT52C12"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "AO3401A"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "1k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "3.83k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "30.9k/0.1%"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "4.7k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "100nF/50V"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "AO4409"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10k"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "10.0k/0.1%"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "text",
+      "text": "电池采样：12.6V对应约2.71V，需要外部模数转换器。\nJ1第6脚与J2第3脚均为逻辑板3.3V输入，\n默认与本板输出隔离，只接同一个电源域。\n复位或看门狗超时时，运行许可必须为低。\n安全检查后，以解锁脉冲的上升沿解锁。\n外部故障脚接受开漏低电平。\n荔枝派普通输入输出需要合适的电平转换。"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "text",
+      "text": "控制接口 / 电源方向 / 互斥电源选择"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "text",
+      "text": "PCB封装与网络已同步，布局布线待完成。\n仍须核对模块采样电阻、编码器版本与逻辑板供电接口。"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口2_故障脉冲_低有效"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "供电口1_故障脉冲_低有效"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "急停回路闭合"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电池电压采样"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板3.3V_输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电池电压采样"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "地"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电机供电正常"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电池欠压告警_低有效"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "右电机_母线电流采样"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_A_逻辑板输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "逻辑板3.3V_输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "左电机_母线电流采样"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_A_逻辑板输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "左编码器_B_逻辑板输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电池保护后母线"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "电机已解锁"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "本板3.3V"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "右编码器_B_逻辑板输入"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "global_label",
+      "text": "上电复位完成"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "右轮控制"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "27.4k/0.1%"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "左轮控制"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "100nF/25V"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "100k/0.1%"
+    },
+    {
+      "file": "09_control_io.kicad_sch",
+      "kind": "value",
+      "text": "电源监测 / 外部模数转换"
+    }
+  ],
+  "latin_only_candidates": [
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "TL431BIDBZR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "SMBJ15CA"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "01_power_input.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "HUSB305-02"
+    },
+    {
+      "file": "02_usb_5v.kicad_sch",
+      "kind": "value",
+      "text": "HUSB305-02"
+    },
+    {
+      "file": "05_motor_left.kicad_sch",
+      "kind": "value",
+      "text": "INA180A1IDBVR"
+    },
+    {
+      "file": "06_motor_right.kicad_sch",
+      "kind": "value",
+      "text": "INA180A1IDBVR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "IRLZ44N"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "IRLZ44N"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "07_motor_dump.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "MMBT3904"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    },
+    {
+      "file": "08_rail_protection.kicad_sch",
+      "kind": "value",
+      "text": "LM393BIDR"
+    }
+  ]
+}
