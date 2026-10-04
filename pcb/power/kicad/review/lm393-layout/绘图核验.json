@@ -1,0 +1,47 @@
+{
+  "日期": "2026-10-04",
+  "手册": "https://www.ti.com/lit/ds/symlink/lm393.pdf",
+  "网表逐脚校验": true,
+  "图中实物位号": [
+    "U21",
+    "R52",
+    "U22",
+    "C102",
+    "R55",
+    "R56",
+    "R57",
+    "R58",
+    "R59",
+    "U23",
+    "C103",
+    "R60",
+    "R61",
+    "R62",
+    "R63",
+    "R64"
+  ],
+  "现有去耦焊盘中心距离_mm": {
+    "C102": 19.582396431489183,
+    "C103": 23.59775942753887
+  },
+  "原理图与PCB_SHA256": {
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_pcb": "b39e2e870fe5a5e10f2e3ae6d517a32101da59f3e549819b79618d94c17793ef",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_sch": "02fdf18fa4dd4b90d6e9262bc4e0a5e893edaa3cc1b4921da60639be98d4926e",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\01_power_input.kicad_sch": "9ec3fbd96833d26a64d5715194a43dd2fedf7e1e5a7750da9eabee454ad2a7bf",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\02_usb_5v.kicad_sch": "01398e22df0567086854b9f33da22d135bc3c47fe03651c76163c477f4fa19d8",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\03_aux_3v3.kicad_sch": "c0b1dd6d0879658ceb7f01b1eefc3d0be580c84ad035e2a76b65582c20fd1ed7",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\04_motor_safety.kicad_sch": "8a5616a5049529f024b4ef50df5c4d34ef1ff1d69ae26336fac9c6e5825a518a",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\05_motor_left.kicad_sch": "bf8d1539a072fbe48432d7d49cd748a3c49cd2483c8c0f072eb50569779c0185",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\06_motor_right.kicad_sch": "8ba077f7996cd8e8f3d570a498e19d547b6e17ee40e8e5806719e628f97bf995",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\07_motor_dump.kicad_sch": "a600c44fbd885e7efb6a588ad014b0b44840aeb5ce8210ae6d985cac884bcad2",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\08_rail_protection.kicad_sch": "f5e19af67107d022a429df81f7422579b97e675249d1bd3a22625990055f90b7",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\09_control_io.kicad_sch": "ecd011d5848d5a0a050ab0482d8971385fdb3b1513ada57e70a2cc5efd5b0b91"
+  },
+  "主工程只读": true,
+  "说明": "图为确定性SVG示意；SOIC、0603、0805和SOT23按现有封装焊盘尺寸绘制，不是完成布线的PCB。",
+  "SVG_XML检查": true,
+  "全部16个实物位号可见": true,
+  "引脚编号与连接视觉检查": true,
+  "文字遮挡修复与复核": true,
+  "PNG_SHA256": "4f823ed14d86fc9ad188f4e5ae8b7337bdb2b7975ffbf84aa87b62005560a238"
+}

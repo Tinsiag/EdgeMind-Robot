@@ -1,0 +1,1853 @@
+{
+  "PCB_SHA256": "e0b062aaead73f881844def6af63bfe32d7d706914558bfe03fd13fee646b319",
+  "parts": [
+    {
+      "ref": "USB1",
+      "value": "USB4125-GF-A / 六针供电",
+      "position": [
+        133.615,
+        28.2875
+      ],
+      "angle": 180.0,
+      "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "pads": [
+        {
+          "pin": "A5",
+          "net": "Net-(U7-CC1)",
+          "position": [
+            134.115,
+            31.3675
+          ],
+          "size": [
+            0.7,
+            1.2
+          ]
+        },
+        {
+          "pin": "A9",
+          "net": "USB1_VBUS",
+          "position": [
+            132.095,
+            31.3675
+          ],
+          "size": [
+            0.76,
+            1.2
+          ]
+        },
+        {
+          "pin": "A12",
+          "net": "GND",
+          "position": [
+            130.865,
+            31.3675
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "pin": "B5",
+          "net": "Net-(U7-CC2)",
+          "position": [
+            133.115,
+            31.3675
+          ],
+          "size": [
+            0.7,
+            1.2
+          ]
+        },
+        {
+          "pin": "B9",
+          "net": "USB1_VBUS",
+          "position": [
+            135.135,
+            31.3675
+          ],
+          "size": [
+            0.76,
+            1.2
+          ]
+        },
+        {
+          "pin": "B12",
+          "net": "GND",
+          "position": [
+            136.365,
+            31.3675
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            137.935,
+            31.2875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            137.935,
+            27.4875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            129.295,
+            31.2875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            129.295,
+            27.4875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "L1",
+      "value": "4.7uH",
+      "position": [
+        77.25,
+        59.5
+      ],
+      "angle": 0.0,
+      "footprint": "Inductor_SMD:L_Changjiang_FXL0630",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U5-SW)",
+          "position": [
+            74.225,
+            59.5
+          ],
+          "size": [
+            2.35,
+            3.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+5V_FPGA",
+          "position": [
+            80.275,
+            59.5
+          ],
+          "size": [
+            2.35,
+            3.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R1",
+      "value": "10R",
+      "position": [
+        84.0,
+        62.0
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U5-BST)",
+          "position": [
+            83.175,
+            62.0
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(C6-Pad1)",
+          "position": [
+            84.825,
+            62.0
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "U8",
+      "value": "HUSB305-02",
+      "position": [
+        94.115,
+        33.2875
+      ],
+      "angle": -90.0,
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI_PROT",
+          "position": [
+            95.09,
+            32.15
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            94.44,
+            32.15
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "Net-(U8-ISET)",
+          "position": [
+            93.79,
+            32.15
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "4",
+          "net": "unconnected-(U8-NC-Pad4)",
+          "position": [
+            93.14,
+            32.15
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "5",
+          "net": "Net-(U8-CC2)",
+          "position": [
+            93.14,
+            34.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "6",
+          "net": "Net-(U8-CC1)",
+          "position": [
+            93.79,
+            34.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "7",
+          "net": "USB2_FAULT_PULSE_N",
+          "position": [
+            94.44,
+            34.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "8",
+          "net": "USB2_VBUS",
+          "position": [
+            95.09,
+            34.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C9",
+      "value": "22uF/25V",
+      "position": [
+        141.065,
+        49.2975
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            140.115,
+            49.2975
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            142.015,
+            49.2975
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R3",
+      "value": "11.0k/0.1%",
+      "position": [
+        87.49,
+        59.19
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U5-FB)",
+          "position": [
+            86.665,
+            59.19
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            88.315,
+            59.19
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C11",
+      "value": "1uF/25V",
+      "position": [
+        85.0,
+        52.5
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U5-VCC)",
+          "position": [
+            84.05,
+            52.5
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            85.95,
+            52.5
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "U1",
+      "value": "MP2236GJ-Z",
+      "position": [
+        80.5,
+        49.25
+      ],
+      "angle": 0.0,
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "position": [
+            79.3625,
+            48.275
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "VLOGIC_IN",
+          "position": [
+            79.3625,
+            48.925
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "Net-(U1-SW)",
+          "position": [
+            79.3625,
+            49.575
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "4",
+          "net": "GND",
+          "position": [
+            79.3625,
+            50.225
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "5",
+          "net": "Net-(U1-BST)",
+          "position": [
+            81.6375,
+            50.225
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "6",
+          "net": "BUCK_ENABLE",
+          "position": [
+            81.6375,
+            49.575
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "7",
+          "net": "Net-(U1-VCC)",
+          "position": [
+            81.6375,
+            48.925
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "8",
+          "net": "Net-(U1-FB)",
+          "position": [
+            81.6375,
+            48.275
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C8",
+      "value": "22uF/25V",
+      "position": [
+        141.065,
+        46.2875
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            140.115,
+            46.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            142.015,
+            46.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C5",
+      "value": "22uF/25V",
+      "position": [
+        75.5,
+        54.84
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA",
+          "position": [
+            74.55,
+            54.84
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            76.45,
+            54.84
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R11",
+      "value": "82.5k/0.1%",
+      "position": [
+        150.355,
+        62.5975
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI",
+          "position": [
+            149.53,
+            62.5975
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U1-FB)",
+          "position": [
+            151.18,
+            62.5975
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C104",
+      "value": "1uF/25V",
+      "position": [
+        136.845,
+        39.3675
+      ],
+      "angle": 180.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA_PROT",
+          "position": [
+            137.795,
+            39.3675
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            135.895,
+            39.3675
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R6",
+      "value": "10R",
+      "position": [
+        150.355,
+        60.0875
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U1-BST)",
+          "position": [
+            149.53,
+            60.0875
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(C14-Pad1)",
+          "position": [
+            151.18,
+            60.0875
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R68",
+      "value": "10k",
+      "position": [
+        102.11,
+        31.9875
+      ],
+      "angle": 180.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+3V3",
+          "position": [
+            102.935,
+            31.9875
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "USB2_FAULT_PULSE_N",
+          "position": [
+            101.285,
+            31.9875
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C7",
+      "value": "220pF/C0G",
+      "position": [
+        83.48,
+        59.19
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA",
+          "position": [
+            82.705,
+            59.19
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U5-FB)",
+          "position": [
+            84.255,
+            59.19
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C10",
+      "value": "22uF/25V",
+      "position": [
+        141.065,
+        52.3075
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            140.115,
+            52.3075
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            142.015,
+            52.3075
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C16",
+      "value": "1uF/25V",
+      "position": [
+        145.515,
+        52.3075
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U1-VCC)",
+          "position": [
+            144.565,
+            52.3075
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            146.465,
+            52.3075
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "U5",
+      "value": "MP2236GJ-Z",
+      "position": [
+        80.5,
+        52.75
+      ],
+      "angle": 0.0,
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "position": [
+            79.3625,
+            51.775
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "VLOGIC_IN",
+          "position": [
+            79.3625,
+            52.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "Net-(U5-SW)",
+          "position": [
+            79.3625,
+            53.075
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "4",
+          "net": "GND",
+          "position": [
+            79.3625,
+            53.725
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "5",
+          "net": "Net-(U5-BST)",
+          "position": [
+            81.6375,
+            53.725
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "6",
+          "net": "BUCK_ENABLE",
+          "position": [
+            81.6375,
+            53.075
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "7",
+          "net": "Net-(U5-VCC)",
+          "position": [
+            81.6375,
+            52.425
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "8",
+          "net": "Net-(U5-FB)",
+          "position": [
+            81.6375,
+            51.775
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C3",
+      "value": "22uF/25V",
+      "position": [
+        75.5,
+        50.75
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            74.55,
+            50.75
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            76.45,
+            50.75
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C105",
+      "value": "4.7uF/10V",
+      "position": [
+        121.615,
+        29.0375
+      ],
+      "angle": 180.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "USB1_VBUS",
+          "position": [
+            122.565,
+            29.0375
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            120.665,
+            29.0375
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C107",
+      "value": "4.7uF/10V",
+      "position": [
+        86.865,
+        33.2875
+      ],
+      "angle": 180.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "USB2_VBUS",
+          "position": [
+            87.815,
+            33.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            85.915,
+            33.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R2",
+      "value": "82.5k/0.1%",
+      "position": [
+        87.49,
+        56.68
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA",
+          "position": [
+            86.665,
+            56.68
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U5-FB)",
+          "position": [
+            88.315,
+            56.68
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R12",
+      "value": "11.0k/0.1%",
+      "position": [
+        150.355,
+        65.1075
+      ],
+      "angle": 0.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U1-FB)",
+          "position": [
+            149.53,
+            65.1075
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            151.18,
+            65.1075
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "USB2",
+      "value": "USB4125-GF-A / 六针供电",
+      "position": [
+        93.615,
+        26.2875
+      ],
+      "angle": 180.0,
+      "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "pads": [
+        {
+          "pin": "A5",
+          "net": "Net-(U8-CC1)",
+          "position": [
+            94.115,
+            29.3675
+          ],
+          "size": [
+            0.7,
+            1.2
+          ]
+        },
+        {
+          "pin": "A9",
+          "net": "USB2_VBUS",
+          "position": [
+            92.095,
+            29.3675
+          ],
+          "size": [
+            0.76,
+            1.2
+          ]
+        },
+        {
+          "pin": "A12",
+          "net": "GND",
+          "position": [
+            90.865,
+            29.3675
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "pin": "B5",
+          "net": "Net-(U8-CC2)",
+          "position": [
+            93.115,
+            29.3675
+          ],
+          "size": [
+            0.7,
+            1.2
+          ]
+        },
+        {
+          "pin": "B9",
+          "net": "USB2_VBUS",
+          "position": [
+            95.135,
+            29.3675
+          ],
+          "size": [
+            0.76,
+            1.2
+          ]
+        },
+        {
+          "pin": "B12",
+          "net": "GND",
+          "position": [
+            96.365,
+            29.3675
+          ],
+          "size": [
+            0.8,
+            1.2
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            97.935,
+            29.2875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            97.935,
+            25.4875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            89.295,
+            29.2875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        },
+        {
+          "pin": "SH",
+          "net": "GND",
+          "position": [
+            89.295,
+            25.4875
+          ],
+          "size": [
+            1.1,
+            1.7
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C6",
+      "value": "100nF/50V",
+      "position": [
+        83.48,
+        56.68
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(C6-Pad1)",
+          "position": [
+            82.705,
+            56.68
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U5-SW)",
+          "position": [
+            84.255,
+            56.68
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R66",
+      "value": "10k",
+      "position": [
+        139.345,
+        34.8675
+      ],
+      "angle": 180.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+3V3",
+          "position": [
+            140.17,
+            34.8675
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "USB1_FAULT_PULSE_N",
+          "position": [
+            138.52,
+            34.8675
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C1",
+      "value": "22uF/25V",
+      "position": [
+        75.5,
+        46.44
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            74.55,
+            46.44
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            76.45,
+            46.44
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C2",
+      "value": "22uF/25V",
+      "position": [
+        75.5,
+        48.59
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "VLOGIC_IN",
+          "position": [
+            74.55,
+            48.59
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            76.45,
+            48.59
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C106",
+      "value": "1uF/25V",
+      "position": [
+        98.365,
+        36.2875
+      ],
+      "angle": 180.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI_PROT",
+          "position": [
+            99.315,
+            36.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            97.415,
+            36.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C4",
+      "value": "22uF/25V",
+      "position": [
+        75.5,
+        52.84
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA",
+          "position": [
+            74.55,
+            52.84
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            76.45,
+            52.84
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "U7",
+      "value": "HUSB305-02",
+      "position": [
+        131.7275,
+        36.8125
+      ],
+      "angle": 180.0,
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_FPGA_PROT",
+          "position": [
+            132.865,
+            37.7875
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            132.865,
+            37.1375
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "Net-(U7-ISET)",
+          "position": [
+            132.865,
+            36.4875
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "4",
+          "net": "unconnected-(U7-NC-Pad4)",
+          "position": [
+            132.865,
+            35.8375
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "5",
+          "net": "Net-(U7-CC2)",
+          "position": [
+            130.59,
+            35.8375
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "6",
+          "net": "Net-(U7-CC1)",
+          "position": [
+            130.59,
+            36.4875
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "7",
+          "net": "USB1_FAULT_PULSE_N",
+          "position": [
+            130.59,
+            37.1375
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        },
+        {
+          "pin": "8",
+          "net": "USB1_VBUS",
+          "position": [
+            130.59,
+            37.7875
+          ],
+          "size": [
+            1.325,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "L2",
+      "value": "4.7uH",
+      "position": [
+        139.365,
+        66.0375
+      ],
+      "angle": 0.0,
+      "footprint": "Inductor_SMD:L_Changjiang_FXL0630",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U1-SW)",
+          "position": [
+            136.34,
+            66.0375
+          ],
+          "size": [
+            2.35,
+            3.5
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+5V_AI",
+          "position": [
+            142.39,
+            66.0375
+          ],
+          "size": [
+            2.35,
+            3.5
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C14",
+      "value": "100nF/50V",
+      "position": [
+        146.345,
+        60.0875
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(C14-Pad1)",
+          "position": [
+            145.57,
+            60.0875
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U1-SW)",
+          "position": [
+            147.12,
+            60.0875
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R65",
+      "value": "150k/1%",
+      "position": [
+        143.54,
+        32.0375
+      ],
+      "angle": 180.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U7-ISET)",
+          "position": [
+            144.365,
+            32.0375
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            142.715,
+            32.0375
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "R67",
+      "value": "150k/1%",
+      "position": [
+        102.11,
+        34.4975
+      ],
+      "angle": 180.0,
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U8-ISET)",
+          "position": [
+            102.935,
+            34.4975
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            101.285,
+            34.4975
+          ],
+          "size": [
+            0.8,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C12",
+      "value": "22uF/25V",
+      "position": [
+        145.515,
+        46.2875
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI",
+          "position": [
+            144.565,
+            46.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            146.465,
+            46.2875
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C15",
+      "value": "220pF/C0G",
+      "position": [
+        146.345,
+        62.5975
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI",
+          "position": [
+            145.57,
+            62.5975
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(U1-FB)",
+          "position": [
+            147.12,
+            62.5975
+          ],
+          "size": [
+            0.9,
+            0.95
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "C13",
+      "value": "22uF/25V",
+      "position": [
+        145.515,
+        49.2975
+      ],
+      "angle": 0.0,
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+5V_AI",
+          "position": [
+            144.565,
+            49.2975
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position": [
+            146.465,
+            49.2975
+          ],
+          "size": [
+            1.0,
+            1.45
+          ]
+        }
+      ]
+    }
+  ]
+}

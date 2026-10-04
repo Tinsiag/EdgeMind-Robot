@@ -17,7 +17,7 @@
 		(at 24.32 205.74 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -28,7 +28,7 @@
 		(at 20 316 0)
 		(effects
 			(font
-				(size 1.05 1.05)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -36,10 +36,10 @@
 	)
 	(text "右侧AT8236、编码器与电流监测"
 		(exclude_from_sim no)
-		(at 293.56 289.56 0)
+		(at 290.576 295.656 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -50,7 +50,7 @@
 		(at 24.32 106.68 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -61,7 +61,7 @@
 		(at 24.32 289.56 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -72,7 +72,7 @@
 		(at 158.94 205.74 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -83,7 +83,7 @@
 		(at 20 27 0)
 		(effects
 			(font
-				(size 1.1 1.1)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -94,7 +94,7 @@
 		(at 293.56 106.68 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -102,10 +102,10 @@
 	)
 	(text "左侧AT8236、编码器与电流监测"
 		(exclude_from_sim no)
-		(at 158.94 289.56 0)
+		(at 155.956 295.148 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -116,7 +116,7 @@
 		(at 293.56 205.74 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -127,7 +127,7 @@
 		(at 158.94 106.68 0)
 		(effects
 			(font
-				(size 0.95 0.95)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -138,7 +138,7 @@
 		(at 20 324 0)
 		(effects
 			(font
-				(size 1.05 1.05)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -149,7 +149,7 @@
 		(at 20 18 0)
 		(effects
 			(font
-				(size 1.8 1.8)
+				(size 2.54 2.54)
 			)
 			(justify left)
 		)
@@ -1465,12 +1465,12 @@
 		)
 		(uuid "015db7ac-da44-5e93-93fc-bfa2c2bc8914")
 		(property "Sheetname" "右电机驱动与电流监测"
-			(at 289.56 248.92 0)
+			(at 289.306 248.158 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -1493,6 +1493,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(pin "+3V3" passive
@@ -1502,6 +1503,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "MOTOR_ARMED" passive
@@ -1511,6 +1513,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "+3V3_SENS" passive
@@ -1520,6 +1523,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "R_PWM_FWD_RAW" passive
@@ -1529,6 +1533,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(pin "R_PWM_REV_RAW" passive
@@ -1538,6 +1543,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(instances
@@ -1564,12 +1570,12 @@
 		)
 		(uuid "0b2dc632-1c78-5f19-910b-1c0831ef10cb")
 		(property "Sheetname" "左电机驱动与电流监测"
-			(at 154.94 248.92 0)
+			(at 152.4 247.396 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -1592,6 +1598,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(pin "+3V3" passive
@@ -1601,6 +1608,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "MOTOR_ARMED" passive
@@ -1610,6 +1618,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "+3V3_SENS" passive
@@ -1619,6 +1628,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify right)
 			)
 		)
 		(pin "L_PWM_FWD_RAW" passive
@@ -1628,6 +1638,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(pin "L_PWM_REV_RAW" passive
@@ -1637,6 +1648,7 @@
 				(font
 					(size 0.85 0.85)
 				)
+				(justify left)
 			)
 		)
 		(instances
@@ -1668,7 +1680,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -1839,7 +1851,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -1938,7 +1950,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -2037,7 +2049,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -2113,12 +2125,12 @@
 		)
 		(uuid "93f771f4-fd13-5eac-b493-919841c752e6")
 		(property "Sheetname" "逻辑板控制与电源监测接口"
-			(at 289.56 148.59 0)
+			(at 289.56 147.574 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)
@@ -2235,7 +2247,7 @@
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 0.95 0.95)
+					(size 2.54 2.54)
 				)
 				(justify left)
 			)

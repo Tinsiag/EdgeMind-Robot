@@ -1,0 +1,33 @@
+{
+  "components": 211,
+  "nets": 122,
+  "numbered_pads_checked": 633,
+  "atlas_values_footprints_and_pin_nets_match": true,
+  "design_hashes_match_atlas": true,
+  "erc_violations_under_project_settings": 0,
+  "copper_layers": 2,
+  "track_and_via_objects": 95,
+  "zones": 3,
+  "edge_cut_objects": 0,
+  "nominal_thresholds_V": {
+    "logic_uv": 9.006950000000002,
+    "motor_uv": 9.655650000000001,
+    "logic_and_motor_ov": 14.0718,
+    "battery_warning": 10.20455,
+    "dump_on_assuming_comparator_low_0p2V": 15.361724500000001,
+    "dump_off_assuming_gate_high_12V": 14.7587445
+  },
+  "hashes": {
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\01_power_input.kicad_sch": "2dd8d9fb794e779eea8a4fd03a346dfc9f60bb11fe907cfb4ebb683cfb837568",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\02_usb_5v.kicad_sch": "01398e22df0567086854b9f33da22d135bc3c47fe03651c76163c477f4fa19d8",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\03_aux_3v3.kicad_sch": "079aba0bdce4b7398baa31d7fbf5af743a2be72141fc6cc17b52720c4fd21318",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\04_motor_safety.kicad_sch": "7fda74ef90afd4049af1ac922267f76a25fdb0ba43bbfc91cb7828bba6cfa915",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\05_motor_left.kicad_sch": "bf8d1539a072fbe48432d7d49cd748a3c49cd2483c8c0f072eb50569779c0185",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\06_motor_right.kicad_sch": "8ba077f7996cd8e8f3d570a498e19d547b6e17ee40e8e5806719e628f97bf995",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\07_motor_dump.kicad_sch": "a600c44fbd885e7efb6a588ad014b0b44840aeb5ce8210ae6d985cac884bcad2",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\08_rail_protection.kicad_sch": "9f21b206ca40f6893899e553e141da768cf0cc1942f0e0a55d194a90b9557fba",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\09_control_io.kicad_sch": "ba305bfd6915e5594ea9400d61d2d3c7b44dc13363b4e8836104dfed952f22f1",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_sch": "e91de1506ae461112bd34dde3fea158b9d3e850e730a2afda57a9df0483a449c",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_pcb": "b505e4b72a2dd45f8b926a40abd79370f040e6f8cea3b8f07658cf181f3e59ff"
+  }
+}

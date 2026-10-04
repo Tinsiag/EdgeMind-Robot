@@ -1,0 +1,520 @@
+                                                        USB Type-C Source Controller
+                                                                  with Power Switch
+Hynetek Semiconductor Co., Ltd.                                                                           HUSB305
+FEATURES                                                          GENERAL DESCRIPTION
+Integrated 15mΩ Power Switch                                      HUSB305 is a USB Type-C Source port controller,
+                                                                  which integrates multiples essential functions for a
+Programmable Current Limit                                        USB Type-C source port. There is an ultra-low
+Low Load Current Sensing                                          conduction resistance (15mΩ) N-channel MOSFET
+Integrated USB Type-C Rp Current Source                           integrated. It is designed for a 5V USB Type-C source
+Automatic USB Type-C Rp 1.5A/3A Switching                         port application, which requires a high current switch.
+                                                                  The programmable current limit provides an easy way
+Status Indication                                                 to fine-tune the current limit through an external
+Over Voltage and Over Current Protection                          resistor. HUSB305 can detect its load current and
+Low Operation Current                                             change its status output to notify that there is a load
+±8kV HBM ESD Rating for USB IO pins                               applied at the current USB Type-C port. The output
+                                                                  voltage and output current are both monitored by
+                                                                  HUSB305 so that it can performs an OVP, OCP, OTP.
+                                                                  HUSB305 has USB Type-C 1.5A/ 3A protocols
+                                                                  integrated. It can automatically switch different Rp per
+                                                                  the ISET setting.
+                                                                  Only 150μA operation current is required for HUSB305
+                                                                  to save the standby power loss of whole system.
+
+
+APPLICATIONS
+USB Type-C Adaptor
+USB A to C Conversion Connector
+
+
+
+TYPICAL APPLICATION CIRCUIT
+
+
+                             VOUT                       VIN            VBUS          VBUS
+                                                                                             RECEPTACLE
+
+
+
+
+                                                        STAT
+                                                           HUSB305
+                                                                                                USB-C
+
+
+
+
+                       POWER
+                       SUPPLY                           ISET            CC1          CC1
+                                                                        CC2          CC2
+                                                                GND
+
+                              GND                                                    GND
+
+
+                                          Figure 1. HUSB305 Typical Application
+
+
+
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights                                                      www.hynetek.com
+reserved.
+Rev. 1.2
+  HUSB305                                                                                                                                      DATA SHEET
+
+TABLE OF CONTENTS
+Features ............................................................................................................................................................................1
+Applications .......................................................................................................................................................................1
+General Description ..........................................................................................................................................................1
+Typical Application Circuit .................................................................................................................................................1
+Table of Contents ..............................................................................................................................................................2
+Revision History ................................................................................................................................................................2
+Pin Configuration and Function Descriptions ....................................................................................................................3
+Specifications ....................................................................................................................................................................4
+Absolute Maximum Ratings ..............................................................................................................................................5
+   Thermal Resistance .......................................................................................................................................................5
+   ESD Caution ..................................................................................................................................................................5
+Functional Block Diagram .................................................................................................................................................6
+Theory of Operation ..........................................................................................................................................................7
+   VIN and POR .................................................................................................................................................................7
+   Power Switch .................................................................................................................................................................7
+   ISET and Current Limit Mode ........................................................................................................................................7
+   STAT ..............................................................................................................................................................................8
+   Type-C MODE (CC1 and CC2) ......................................................................................................................................8
+   VBUS .............................................................................................................................................................................8
+   Fault response ...............................................................................................................................................................8
+Typical Application Circuits ................................................................................................................................................9
+Package Outline Dimensions ......................................................................................................................................... 10
+Package Top Marking ...................................................................................................................................................... 11
+Ordering Guide ............................................................................................................................................................... 12
+Important Notice ............................................................................................................................................................. 13
+
+
+REVISION HISTORY
+ Version                Date             Owner                    Descriptions
+ Rev. 1.0               07/2020          Yingyang Ou              Initial version
+ Rev. 1.1               07/2021          Yingyang Ou              Add Block Diagram and Theory of operation
+                                                                  Update Top Marking
+ Rev. 1.2               10/2021          Yingyang Ou              Update Ordering Guide
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                                                                      Page 2 of 13
+  DATA SHEET                                                                                                             HUSB305
+
+PIN CONFIGURATION AND FUNCTION DESCRIPTIONS
+
+
+                                                VIN      1                                8   VBUS
+
+                                               GND       2                                7   STAT
+                                                                   HUSB305
+                                                                   TSOT23-8
+                                               ISET      3                                6   CC1
+
+                                                 NC      4                                5   CC2
+
+                                                               Figure 2. Pin Assignment
+
+
+
+Table 1. Pin Function Descriptions
+ Pin No. Pin Name        Type1     Description
+  1               VIN           P             Input pin to power switch and internal circuit
+  2               GND           A             Ground plane. All signals are referred to this pin
+  3               ISET          I             This pin is used to set the constant current (CC) limit threshold. Tie a resistor to ground can
+                                              vary the CC threshold. For HUSB305, it is trimmed at 3.6A
+  4               NC                          Not Connected Pin
+  5               CC2           A             Configuration line 2 of USB Type-C connector
+  6               CC1           A             Configuration line 1 of USB Type-C connector
+  7               STAT          O             Open drain output. It is active low to indicate the port is active in HUSB305-01 or output
+                                              blinking pulse when any fault is triggered in HUSB305-02
+  8               VBUS          P             Output of USB Type-C port
+1 Legend:
+A = Analog Pin
+P = Power Pin
+D = Digital Pin
+I = Input Pin
+O = Output Pin
+
+
+
+
+  ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                                 Page 3 of 13
+ HUSB305                                                                                               DATA SHEET
+
+SPECIFICATIONS
+VIN = 5 V, TA = 25°C for typical specifications, unless otherwise noted.
+Table 2.
+ Parameter                              Symbol                    Test Conditions/Comments              Min   Typ      Max     Unit
+ VIN Input Supply
+  Input Voltage Range                   VIN_RG                                                          3              6.5     V
+  VIN UVLO Threshold                    VIN_UVLO                  VIN Rising Edge to Clear UVLO               3.8              V
+  UVLO Hysteresis                       VUVLO_HYS                                                             0.7              V
+  VIN Quiescent Current                 IQ                        VIN=5V, CC is NOT attached                  150              μA
+ ISET
+  Current Limit Threshold               ILIM                      RISET=150K                                  3.6              A
+                                                                  RISET=200K                                  2.8              A
+                                                                  RISET=348K                                  1.8              A
+ STAT
+  Low load threshold                    ILLD                      VIN=5V                                      40               mA
+  STAT Sink current                     ISTAT                     When STAT output Low                        4                mA
+ Protections
+  OVP Threshold                         VOVP                                                            5.6   5.8      6       V
+  OVP Hysteresis                        VOVP_HYS                                                              0.3              V
+  VBUS UVP Threshold                    VVBUS_UV                  VBUS UVP and in CL mode                     3.6              V
+  VBUS UVP Hysteresis                   VVBUS_UV_HYS                                                          0.1              V
+  OTP Threshold                         TOTP                                                                  135              ℃
+  OTP Hysteresis                        TOTP_HYS                                                              20               ℃
+  Fault recovery time                   ttry                                                                  0.65             s
+ Type-C Pull up Current Source
+  3A Current Source                     IRP_3A                                                                330              μA
+  1.5A Current Source                   IRP_1.5A                                                              180              μA
+  3A Rp EN Rising threshold             ILIM_CC_R                 3A Rp current source is enabled             2.5              A
+  3A Rp EN Falling threshold            ILIM_CC_F                 3A Rp current source is enabled             2.4              A
+  Rd detection threshold 1              vRd_OPEN_1.5A             1.5A Rp current source is enabled           1.6              V
+  Rd detection threshold 2              vRd_OPEN_3A               3A Rp current source is enabled             2.6              V
+  Ra detection threshold 1              vRa_OPEN_1.5A             1.5A Rp current source is enabled           0.4              V
+  Ra detection threshold 2              vRa_OPEN_3A               3A Rp current source is enabled             0.8              V
+  Connection Wait Deglitch              tCCdebounce               Time to wait before entry of                150              ms
+                                                                  Attached.src
+ VBUS
+  VBUS Discharge Resistance             RDSCG                     When Power Switch is off, VIN=5V            300              Ω
+ Power FET
+  Conduction Resistance                 RDSON                     VIN=5V, HUSB305 is in Attached.src          15               mΩ
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                      Page 4 of 13
+ DATA SHEET                                                                                                       HUSB305
+
+ABSOLUTE MAXIMUM RATINGS
+Table 3.
+ Parameter                                                                                      Rating
+ VIN, VBUS, STAT to GND                                                                         −0.3 V to +7 V
+ CC1,CC2, ISET to GND                                                                           −0.3 V to +7 V
+ Operating Temperature Range (Junction)                                                         −40°C to +150°C
+ Soldering Conditions                                                                           JEDEC J-STD-020
+ Electrostatic Discharge (ESD)
+  Human Body Mode (VIN, ISET and STAT pin)                                                      ±4000 V
+  Human Body Mode (CC1, CC2 and VBUS pin)                                                       ±8000 V
+Stresses at or above those listed under Absolute Maximum Ratings may cause permanent damage to the product.
+This is a stress rating only; functional operation of the product at these or any other conditions above those indicated
+in the operational section of this specification is not implied. Operation beyond the maximum operating conditions for
+extended periods may affect product reliability.
+THERMAL RESISTANCE
+Thermal performance is directly linked to printed circuit board (PCB) design and operating environment. Close
+attention to PCB thermal design is required.
+θJA is the natural convection junction to ambient thermal resistance measured in a one cubic foot sealed enclosure.
+θJC is the junction to case thermal resistance.
+Table 4. Thermal Resistance
+ Package Type                                                                             θJA             θJC         Unit
+ TSOT23-8                                                                                 88              45          °C/W
+
+ESD CAUTION
+                      Electrostatic Discharge Sensitive Device.
+                      Charged devices and circuit boards can discharge without detection. Although this product features patented
+                      or proprietary protection circuitry, damage may occur on devices subjected to high energy ESD. Therefore,
+                      proper ESD precautions should be taken to avoid performance degradation or loss of functionality.
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                           Page 5 of 13
+HUSB305                                                                                                 DATA SHEET
+
+FUNCTIONAL BLOCK DIAGRAM
+
+                   VIN                                                                                   VBUS
+
+
+
+
+                                        OV/                                                    Charge
+                                       UVLO                                                    Pump
+                                                                   Gate
+                                                                  Control
+                                                                                               Type C    CC1
+                                        OTP
+                                                                                                Logic    CC2
+
+                STAT
+                                                                 Current
+                                                                  Limit
+
+
+
+
+                                        GND                        ISET
+                                                  Figure 3. HUSB305 Functional Block Diagram
+
+
+
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                  Page 6 of 13
+ DATA SHEET                                                                                                 HUSB305
+
+THEORY OF OPERATION
+HUSB305 is a USB Type-C source port controller that integrates multiples essential functions for a USB Type-C
+source port. There is an ultra-low RDSON (15mΩ) N-channel MOSFET integrated as the VBUS load switch. It is
+designed for a 5V USB Type-C port application that requires a high current switch up to 3A. The programmable
+current limit provides an easy way to fine-tune the current limit through an external resistor. HUSB305-01 can detect
+its load current and change its STAT output to notify that there is a load applied at this port. HUSB305-02 employs
+STAT pin to indicate the fault status.
+VIN AND POR
+The VIN pin is the input source of internal circuit of HUSB305. There is a under voltage lockout (UVLO) circuit to
+control the internal circuit and the power switch. When the VIN reaches the VIN_UVLO, the internal circuit works and is
+able to detect the connection of external device. Built-in hysteresis of UVLO (VUVLO_HYS) prevents unwanted ON/OFF
+cycling due to input voltage drop from large current surges. If VIN is lower than VIN_UVLO- VUVLO_HYS , the internal circuit
+is reset and Gate Control is disabled.
+The VIN pin is also the input of integrated power FET. The load current flows from VIN pin to VBUS pin.
+POWER SWITCH
+HUSB305 integrates a power FET to block the voltage from VIN to VBUS. This power FET has low conduction
+resistance as low as to 15mΩ. It is turned off when there is NOT a Sink device attached at CC1 or CC2 pin. Only a
+valid USB Type-C connection is established between HUSB305 and a Sink, the power FET is turned on.
+ISET AND CURRENT LIMIT MODE
+HUSB305 employs VIN and VBUS to sense the load current on the USB Type-C port. It can detect the ISET pin to
+determine the current limit threshold. The current limit threshold (ILIM) is set by the resistor RISET across ISET pin and
+GND. The recommend RISET as show in Table 5.
+Table 5.
+ RISET (KΩ)                 Current Limit Threshold (A)
+ 150                        3.6
+ 200                        2.8
+ 348                        1.8
+Once the load current flowing from VIN to VBUS exceeds the current limit threshold (ILIM), HUSB305 tries to limit load
+current by reducing the VBUS voltage. If the load current continues to increase which results in the VBUS to be lower
+than VVBUS_UV, the VBUS UVP fault is triggered. HUSB305 enters hiccup mode until the VBUS UVP fault is cleared.
+
+                                                                                           VBUS Load
+                                                                                           Resistance
+                                         VBUS                                              Decreased
+
+
+
+
+                                                            Slope=-RDSON
+
+
+
+
+                                                 0                                  ILIM        Load
+                                                                                               Current
+                                                     Figure 4. HUSB305 Output IV Characteristics
+
+The HUSB305 may enter hiccup mode if an overload condition is present long enough to activate OTP fault during the
+Current Limit Mode. This is due to the relatively large power dissipation [(VIN – VBUS) × ILIM] driving the junction
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                      Page 7 of 13
+ HUSB305                                                                                                       DATA SHEET
+temperature up. HUSB305 turns off power FET when the junction temperature exceeds OTP threshold (TOTP) and
+remains power FET off until the junction temperature cools 20°C. After that, HUSB305 enters hiccup mode.
+STAT
+The STAT pin is an open-drain output. HUSB305 monitors the load current from VIN to VBUS. In HUSB305-01, STAT
+is employed to indicate load current is higher than ILLD. The STAT pin is pulled down when the load current condition
+is met. Similarly, when the load current is lower than ILLD, the STAT pin returns to HIZ.
+In HUSB305-02, STAT is configured as fault status indication, it outputs blinking pulses under an OTP, OVP or VBUS
+UVP fault condition, as well as the following hiccup mode. When the device in UVLO, STAT is HIZ.
+TYPE-C MODE (CC1 AND CC2)
+HUSB305 is used for a USB Type-C source controller. HUSB305 checks the status of CC1 and CC2 before it is going
+to work. HUSB305 also checks the current limit set by ISET pin and determines the advertised Rp at both CC pins.
+After Rp is set, HUSB305 is able to detect a possible connection of a USB Type-C Sink, as shown below.
+
+                       HUSB305
+
+
+                      180/330uA     180/330uA                        Type C Cable                         Type C Sink
+
+                     CC1 CC2
+                                                                                                     Rd
+
+
+
+
+                                                      Ra(Optional)
+
+
+                        CC Monitor
+
+                                                Figure 5. USB Type-C Source Connection with a Sink
+
+The connected CC pin is monitored to check whether a valid USB Type-C attachment or detachment happens.
+VBUS
+The VBUS pin is the output of power FET. It is connected to the USB Type-C connector. During detachment or hiccup
+mode, an integrated RDSCG is enabled to dissipate the energy at VBUS pin timely.
+FAULT RESPONSE
+HUSB305 monitors the VIN voltage, VBUS voltage, load current from VIN to VBUS and the internal junction
+temperature.
+Once VIN is above OVP threshold (VOVP), OVP fault is triggered. The internal power FET shuts down. Only after the
+OVP fault is cleared, the HUSB305 enters hiccup mode.
+The VBUS voltage is also monitored. There is a VBUS UVP fault mechanism implemented for VBUS voltage, see the
+section of “ISET AND CURRENT LIMIT MODE” for more details.
+HUSB305 has internal over-temperature protection, OTP. It is used to protect the internal FET from damage and
+assist with overall safety of the system. OTP fault is triggered when the junction temperature exceeds TOTP.
+The hiccup mode is applied for the VBUS UVP, OTP and OVP, when the VBUS UVP, OTP and OVP flags are
+cleared, the HUSB305 is going to perform restart after ttry.
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                         Page 8 of 13
+DATA SHEET                                                                                                                           HUSB305
+
+TYPICAL APPLICATION CIRCUITS
+                                    VOUT                                VIN          VBUS              VBUS
+
+                                                             2K
+                                                                                                 1μF
+
+
+
+
+                                                                                                                RECEPTACLE
+                                                                        STAT
+                                                                           HUSB305
+
+
+
+
+                                                                                                                   USB-C
+                             POWER
+                                                  4.7μF
+                             SUPPLY                                     ISET          CC1              CC1
+                                                                                      CC2              CC2
+                                                              150K             GND
+
+                                     GND                                                               GND
+
+                                                 Figure 6. USB Type-C 5V3A Single Source Port
+
+
+                                VOUT                              VIN           VBUS                      VBUS
+                                                                                                    47K
+                                                                                                          DP1
+                                                                  STAT                      4.7μF         DM1
+
+
+
+
+                                                                                                                        RECEPTACLE
+                                                        2K
+                                                                        HUSB305                           DP2
+
+
+
+
+                                                                                                                           USB-C
+                          USB-A
+                                             4.7μF                ISET                                    DM2
+                          PLUG                                                                      56K
+                                                                                  CC1                     CC1
+                                                                                  CC2                     CC2
+                                                                          GND
+                                                          RISET
+                                  GND                                                                     GND
+
+                                                     Figure 7. USB A to C Conversion Connector
+
+
+
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                                          Page 9 of 13
+HUSB305                                                                               DATA SHEET
+
+PACKAGE OUTLINE DIMENSIONS
+
+
+
+
+                                                         Figure 8. TSOT23-8 Package
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                             Page 10 of 13
+DATA SHEET                                                                                                HUSB305
+
+PACKAGE TOP MARKING
+
+                                 HUSB305                                             General Part Number
+
+
+                                                                                      Internal Use Code
+
+
+                      Model Number
+                                                    Figure 9. HUSB305 Package Top Marking
+
+
+
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                              Page 11 of 13
+HUSB305                                                                                     DATA SHEET
+
+ORDERING GUIDE
+Model              Temperature Range (℃)              STAT Configuration   Package Option    Quantity
+HUSB305-01         -40 to 135                         LLD Indication       TSOT23-8L         Tape & Reel, 4K
+HUSB305-02         -40 to 135                         Fault Indication     TSOT23-8L         Tape & Reel, 4K
+
+
+
+
+©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                          Page 12 of 13
+ DATA SHEET                                                                                                        HUSB305
+
+ IMPORTANT NOTICE
+Hynetek Semiconductor Co., Ltd. and its subsidiaries (Hynetek) reserve the right to make corrections, enhancements,
+improvements and other changes to its semiconductor products and services per JESD46, latest issue, and to discontinue any
+product or service per JESD48, latest issue. Buyers should obtain the latest relevant information before placing orders and should
+verify that such information is current and complete. All semiconductor products (also referred to herein as “components”) are sold
+subject to Hynetek’s terms and conditions of sale supplied at the time of order acknowledgment.
+Hynetek warrants performance of its components to the specifications applicable at the time of sale, in accordance with the
+warranty in Hynetek’s terms and conditions of sale of semiconductor products. Testing and other quality control techniques are
+used to the extent Hynetek deems necessary to support this warranty. Except where mandated by applicable law, testing of all
+parameters of each component is not necessarily performed.
+Hynetek assumes no liability for applications assistance or the design of Buyers’ products. Buyers are responsible for their
+products and applications using Hynetek components. To minimize the risks associated with Buyers’ products and applications,
+Buyers should provide adequate design and operating safeguards.
+Hynetek does not warrant or represent that any license, either express or implied, is granted under any patent right, copyright,
+mask work right, or other intellectual property right relating to any combination, machine, or process in which Hynetek components
+or services are used. Information published by Hynetek regarding third-party products or services does not constitute a license to
+use such products or services or a warranty or endorsement thereof. Use of such information may require a license from a third
+party under the patents or other intellectual property of the third party, or a license from Hynetek under the patents or other
+intellectual property of Hynetek.
+Reproduction of significant portions of Hynetek information in Hynetek data books or data sheets is permissible only if reproduction
+is without alteration and is accompanied by all associated warranties, conditions, limitations, and notices. Hynetek is not
+responsible or liable for such altered documentation. Information of third parties may be subject to additional restrictions.
+Resale of Hynetek components or services with statements different from or beyond the parameters stated by Hynetek for that
+component or service voids all express and any implied warranties for the associated Hynetek component or service and is an
+unfair and deceptive business practice.
+Hynetek is not responsible or liable for any such statements.
+Buyer acknowledges and agrees that it is solely responsible for compliance with all legal, regulatory and safety-related
+requirements concerning its products, and any use of Hynetek components in its applications, notwithstanding any applications-
+related information or support that may be provided by Hynetek. Buyer represents and agrees that it has all the necessary
+expertise to create and implement safeguards which anticipate dangerous consequences of failures, monitor failures and their
+consequences, lessen the likelihood of failures that might cause harm and take appropriate remedial actions. Buyer will fully
+indemnify Hynetek and its representatives against any damages arising out of the use of any Hynetek components in safety-critical
+applications.
+In some cases, Hynetek components may be promoted specifically to facilitate safety-related applications. With such components,
+Hynetek’s goal is to help enable customers to design and create their own end-product solutions that meet applicable functional
+safety standards and requirements. Nonetheless, such components are subject to these terms.
+No Hynetek components are authorized for use in FDA Class III (or similar life-critical medical equipment) unless authorized
+officers of the parties have executed a special agreement specifically governing such use.
+Only those Hynetek components which Hynetek has specifically designated as military grade or “enhanced plastic” are designed
+and intended for use in military/aerospace applications or environments. Buyer acknowledges and agrees that any military or
+aerospace use of Hynetek components which have not been so designated is solely at the Buyer's risk, and that Buyer is solely
+responsible for compliance with all legal and regulatory requirements in connection with such use.
+Hynetek has specifically designated certain components as meeting ISO/TS16949 requirements, mainly for automotive use. In any
+case of use of non-designated products, Hynetek will not be responsible for any failure to meet ISO/TS16949.
+Please refer to below URL for other products and solutions of Hynetek Semiconductor Co., Ltd.
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd. All rights reserved.
+ Trademarks and registered trademarks are the property of their respective owners.
+ www.hynetek.com
+
+
+
+
+ ©2020-2021 Hynetek Semiconductor Co., Ltd All rights reserved.                                                           Page 13 of 13
+

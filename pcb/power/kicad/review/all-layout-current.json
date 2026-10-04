@@ -1,0 +1,3199 @@
+{
+  "sheets": {
+    "01_power_input": [
+      "C101",
+      "C102",
+      "C103",
+      "C58",
+      "C59",
+      "C60",
+      "CN1",
+      "D1",
+      "D2",
+      "D3",
+      "F1",
+      "Q1",
+      "Q3",
+      "Q4",
+      "R51",
+      "R52",
+      "R53",
+      "R54",
+      "R55",
+      "R56",
+      "R57",
+      "R58",
+      "R59",
+      "R60",
+      "R61",
+      "R62",
+      "R63",
+      "R64",
+      "U21",
+      "U22",
+      "U23"
+    ],
+    "02_usb_5v": [
+      "C1",
+      "C10",
+      "C104",
+      "C105",
+      "C106",
+      "C107",
+      "C11",
+      "C12",
+      "C13",
+      "C14",
+      "C15",
+      "C16",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "L1",
+      "L2",
+      "R1",
+      "R11",
+      "R12",
+      "R2",
+      "R3",
+      "R6",
+      "R65",
+      "R66",
+      "R67",
+      "R68",
+      "U1",
+      "U5",
+      "U7",
+      "U8",
+      "USB1",
+      "USB2"
+    ],
+    "03_aux_3v3": [
+      "C108",
+      "C109",
+      "C110",
+      "C111",
+      "C112",
+      "C113",
+      "C114",
+      "C115",
+      "C116",
+      "C117",
+      "FB1",
+      "J10",
+      "J11",
+      "J12",
+      "J13",
+      "J14",
+      "J9",
+      "JP1",
+      "L3",
+      "U3"
+    ],
+    "04_motor_safety": [
+      "C118",
+      "C119",
+      "C120",
+      "J15",
+      "R69",
+      "R70",
+      "R71",
+      "R72",
+      "R73",
+      "U10",
+      "U12",
+      "U13"
+    ],
+    "05_motor_left": [
+      "C122",
+      "C123",
+      "C124",
+      "C125",
+      "C126",
+      "C127",
+      "C128",
+      "C129",
+      "C130",
+      "J3",
+      "R84",
+      "R85",
+      "R86",
+      "R87",
+      "R88",
+      "R89",
+      "R90",
+      "R91",
+      "R92",
+      "R93",
+      "RV1",
+      "U11",
+      "U2",
+      "U25"
+    ],
+    "06_motor_right": [
+      "C131",
+      "C132",
+      "C133",
+      "C134",
+      "C135",
+      "C136",
+      "C137",
+      "C138",
+      "J4",
+      "R100",
+      "R101",
+      "R102",
+      "R103",
+      "R94",
+      "R95",
+      "R96",
+      "R97",
+      "R98",
+      "R99",
+      "RV2",
+      "U11",
+      "U26",
+      "U4"
+    ],
+    "07_motor_dump": [
+      "C121",
+      "D4",
+      "D5",
+      "D6",
+      "J16",
+      "J17",
+      "Q2",
+      "Q5",
+      "Q6",
+      "Q7",
+      "R74",
+      "R75",
+      "R76",
+      "R77",
+      "R78",
+      "R79",
+      "R80",
+      "R81",
+      "R82",
+      "R83",
+      "TP1",
+      "U24"
+    ],
+    "08_rail_protection": [
+      "C139",
+      "C140",
+      "C141",
+      "C142",
+      "D7",
+      "D8",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q8",
+      "Q9",
+      "R104",
+      "R105",
+      "R106",
+      "R107",
+      "R108",
+      "R109",
+      "R110",
+      "R111",
+      "R112",
+      "R113",
+      "R114",
+      "R115",
+      "R116",
+      "R117",
+      "R118",
+      "R119",
+      "R120",
+      "R121",
+      "R122",
+      "R123",
+      "U27",
+      "U28",
+      "U29",
+      "U30"
+    ],
+    "09_control_io": [
+      "C143",
+      "J1",
+      "J18",
+      "J2",
+      "R124",
+      "R125"
+    ]
+  },
+  "parts": {
+    "C101": {
+      "value": "100uF/25V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "position": [
+        58.0,
+        65.8225
+      ],
+      "angle": 90.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C102": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        68.39,
+        70.9025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C103": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        82.005,
+        70.9025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C58": {
+      "value": "470uF/35V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "position": [
+        49.247323,
+        77.4875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C59": {
+      "value": "10uF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        42.465,
+        87.25
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C60": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        42.465,
+        89.25
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "CN1": {
+      "value": "XT60PW-M / 三串电池",
+      "footprint": "Connector_AMASS:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+      "position": [
+        31.265,
+        53.4375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "GND",
+        "2": "BAT_POS"
+      }
+    },
+    "D1": {
+      "value": "SMBJ15CA",
+      "footprint": "Diode_SMD:D_SMB",
+      "position": [
+        43.665,
+        83.75
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "D2": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        39.865,
+        80.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D2-A)"
+      }
+    },
+    "D3": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        46.365,
+        65.8
+      ],
+      "angle": 90.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D3-A)"
+      }
+    },
+    "F1": {
+      "value": "10A/32V MINI总保险",
+      "footprint": "Fuse:Fuseholder_Blade_Mini_Keystone_3568",
+      "position": [
+        40.065,
+        60.3275
+      ],
+      "angle": -90.0,
+      "pins": {
+        "1": "BAT_POS",
+        "2": "Net-(Q1-D)"
+      }
+    },
+    "Q1": {
+      "value": "IRF4905",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "position": [
+        37.575,
+        77.4875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D2-A)",
+        "2": "Net-(Q1-D)",
+        "3": "VBAT_SYS"
+      }
+    },
+    "Q3": {
+      "value": "IRF4905",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "position": [
+        49.247323,
+        63.2825
+      ],
+      "angle": -90.0,
+      "pins": {
+        "1": "Net-(D3-A)",
+        "2": "VLOGIC_IN",
+        "3": "VBAT_SYS"
+      }
+    },
+    "Q4": {
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        45.865,
+        61.2875
+      ],
+      "angle": -90.0,
+      "pins": {
+        "1": "Net-(Q4-B)",
+        "2": "GND",
+        "3": "Net-(D3-A)"
+      }
+    },
+    "R51": {
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        33.865,
+        76.6625
+      ],
+      "angle": 90.0,
+      "pins": {
+        "1": "Net-(D2-A)",
+        "2": "GND"
+      }
+    },
+    "R52": {
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        70.1875,
+        79.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "VREF_2V495"
+      }
+    },
+    "R53": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        44.365,
+        65.8225
+      ],
+      "angle": 90.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D3-A)"
+      }
+    },
+    "R54": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        47.64,
+        58.25
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "BUCK_ENABLE",
+        "2": "Net-(Q4-B)"
+      }
+    },
+    "R55": {
+      "value": "26.1k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        59.64,
+        75.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(U22A-+)"
+      }
+    },
+    "R56": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        59.639127,
+        76.811817
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "Net-(U22A-+)",
+        "2": "GND"
+      }
+    },
+    "R57": {
+      "value": "46.4k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        70.215,
+        75.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(U22B--)"
+      }
+    },
+    "R58": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        70.215,
+        76.76695
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U22B--)",
+        "2": "GND"
+      }
+    },
+    "R59": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        61.59,
+        70.7675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "BUCK_ENABLE"
+      }
+    },
+    "R60": {
+      "value": "28.7k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        73.20785,
+        75.2675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(U23A-+)"
+      }
+    },
+    "R61": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        73.20785,
+        76.76695
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "Net-(U23A-+)",
+        "2": "GND"
+      }
+    },
+    "R62": {
+      "value": "46.4k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        83.755,
+        75.2675
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(U23B--)"
+      }
+    },
+    "R63": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        83.755,
+        76.9025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U23B--)",
+        "2": "GND"
+      }
+    },
+    "R64": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        75.185,
+        70.7675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "MOTOR_POWER_OK"
+      }
+    },
+    "U21": {
+      "value": "TL431BIDBZR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        73.7625,
+        79.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_2V495",
+        "2": "VREF_2V495",
+        "3": "GND"
+      }
+    },
+    "U22": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        64.89,
+        74.6525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "BUCK_ENABLE",
+        "2": "VREF_2V495",
+        "3": "Net-(U22A-+)",
+        "4": "GND",
+        "5": "VREF_2V495",
+        "6": "Net-(U22B--)",
+        "7": "BUCK_ENABLE",
+        "8": "VBAT_SYS"
+      }
+    },
+    "U23": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        78.485,
+        74.6325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_POWER_OK",
+        "2": "VREF_2V495",
+        "3": "Net-(U23A-+)",
+        "4": "GND",
+        "5": "VREF_2V495",
+        "6": "Net-(U23B--)",
+        "7": "MOTOR_POWER_OK",
+        "8": "VBAT_SYS"
+      }
+    },
+    "C1": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        71.5,
+        49.44
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C10": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        141.065,
+        52.3075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C104": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        136.845,
+        39.3675
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "+5V_FPGA_PROT",
+        "2": "GND"
+      }
+    },
+    "C105": {
+      "value": "4.7uF/10V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        121.615,
+        29.0375
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "USB1_VBUS",
+        "2": "GND"
+      }
+    },
+    "C106": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        98.365,
+        36.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "+5V_AI_PROT",
+        "2": "GND"
+      }
+    },
+    "C107": {
+      "value": "4.7uF/10V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        86.865,
+        33.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "USB2_VBUS",
+        "2": "GND"
+      }
+    },
+    "C11": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        81.0,
+        55.5
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U5-VCC)",
+        "2": "GND"
+      }
+    },
+    "C12": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        145.515,
+        46.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "GND"
+      }
+    },
+    "C13": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        145.515,
+        49.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "GND"
+      }
+    },
+    "C14": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        146.345,
+        60.0875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(C14-Pad1)",
+        "2": "Net-(U1-SW)"
+      }
+    },
+    "C15": {
+      "value": "220pF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        146.345,
+        62.5975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "Net-(U1-FB)"
+      }
+    },
+    "C16": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        145.515,
+        52.3075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U1-VCC)",
+        "2": "GND"
+      }
+    },
+    "C2": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        71.5,
+        51.59
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C3": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        71.5,
+        53.75
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C4": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        71.5,
+        55.84
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "GND"
+      }
+    },
+    "C5": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        71.5,
+        57.84
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "GND"
+      }
+    },
+    "C6": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        79.48,
+        59.68
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(C6-Pad1)",
+        "2": "Net-(U5-SW)"
+      }
+    },
+    "C7": {
+      "value": "220pF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        79.48,
+        62.19
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "Net-(U5-FB)"
+      }
+    },
+    "C8": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        141.065,
+        46.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C9": {
+      "value": "22uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        141.065,
+        49.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "L1": {
+      "value": "4.7uH",
+      "footprint": "Inductor_SMD:L_Changjiang_FXL0630",
+      "position": [
+        73.25,
+        62.5
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U5-SW)",
+        "2": "+5V_FPGA"
+      }
+    },
+    "L2": {
+      "value": "4.7uH",
+      "footprint": "Inductor_SMD:L_Changjiang_FXL0630",
+      "position": [
+        139.365,
+        66.0375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U1-SW)",
+        "2": "+5V_AI"
+      }
+    },
+    "R1": {
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        80.0,
+        65.0
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U5-BST)",
+        "2": "Net-(C6-Pad1)"
+      }
+    },
+    "R11": {
+      "value": "82.5k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        150.355,
+        62.5975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "Net-(U1-FB)"
+      }
+    },
+    "R12": {
+      "value": "11.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        150.355,
+        65.1075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U1-FB)",
+        "2": "GND"
+      }
+    },
+    "R2": {
+      "value": "82.5k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        83.49,
+        59.68
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "Net-(U5-FB)"
+      }
+    },
+    "R3": {
+      "value": "11.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        83.49,
+        62.19
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U5-FB)",
+        "2": "GND"
+      }
+    },
+    "R6": {
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        150.355,
+        60.0875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U1-BST)",
+        "2": "Net-(C14-Pad1)"
+      }
+    },
+    "R65": {
+      "value": "150k/1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        143.54,
+        32.0375
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "Net-(U7-ISET)",
+        "2": "GND"
+      }
+    },
+    "R66": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        139.345,
+        34.8675
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "USB1_FAULT_PULSE_N"
+      }
+    },
+    "R67": {
+      "value": "150k/1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        102.11,
+        34.4975
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "Net-(U8-ISET)",
+        "2": "GND"
+      }
+    },
+    "R68": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        102.11,
+        31.9875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "USB2_FAULT_PULSE_N"
+      }
+    },
+    "U1": {
+      "value": "MP2236GJ-Z",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "position": [
+        76.5,
+        52.25
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "GND",
+        "2": "VLOGIC_IN",
+        "3": "Net-(U1-SW)",
+        "4": "GND",
+        "5": "Net-(U1-BST)",
+        "6": "BUCK_ENABLE",
+        "7": "Net-(U1-VCC)",
+        "8": "Net-(U1-FB)"
+      }
+    },
+    "U5": {
+      "value": "MP2236GJ-Z",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "position": [
+        76.5,
+        55.75
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "GND",
+        "2": "VLOGIC_IN",
+        "3": "Net-(U5-SW)",
+        "4": "GND",
+        "5": "Net-(U5-BST)",
+        "6": "BUCK_ENABLE",
+        "7": "Net-(U5-VCC)",
+        "8": "Net-(U5-FB)"
+      }
+    },
+    "U7": {
+      "value": "HUSB305-02",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "position": [
+        131.7275,
+        36.8125
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "+5V_FPGA_PROT",
+        "2": "GND",
+        "3": "Net-(U7-ISET)",
+        "4": "unconnected-(U7-NC-Pad4)",
+        "5": "Net-(U7-CC2)",
+        "6": "Net-(U7-CC1)",
+        "7": "USB1_FAULT_PULSE_N",
+        "8": "USB1_VBUS"
+      }
+    },
+    "U8": {
+      "value": "HUSB305-02",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-8",
+      "position": [
+        94.115,
+        33.2875
+      ],
+      "angle": -90.0,
+      "pins": {
+        "1": "+5V_AI_PROT",
+        "2": "GND",
+        "3": "Net-(U8-ISET)",
+        "4": "unconnected-(U8-NC-Pad4)",
+        "5": "Net-(U8-CC2)",
+        "6": "Net-(U8-CC1)",
+        "7": "USB2_FAULT_PULSE_N",
+        "8": "USB2_VBUS"
+      }
+    },
+    "USB1": {
+      "value": "USB4125-GF-A / 六针供电",
+      "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "position": [
+        133.615,
+        28.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "A5": "Net-(U7-CC1)",
+        "A9": "USB1_VBUS",
+        "A12": "GND",
+        "B5": "Net-(U7-CC2)",
+        "B9": "USB1_VBUS",
+        "B12": "GND",
+        "SH": "GND"
+      }
+    },
+    "USB2": {
+      "value": "USB4125-GF-A / 六针供电",
+      "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal",
+      "position": [
+        93.615,
+        26.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "A5": "Net-(U8-CC1)",
+        "A9": "USB2_VBUS",
+        "A12": "GND",
+        "B5": "Net-(U8-CC2)",
+        "B9": "USB2_VBUS",
+        "B12": "GND",
+        "SH": "GND"
+      }
+    },
+    "C108": {
+      "value": "10uF/25V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        185.775,
+        128.2775
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "C109": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        177.605,
+        154.2275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U3-SW)",
+        "2": "Net-(U3-BST)"
+      }
+    },
+    "C110": {
+      "value": "22uF/10V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        185.775,
+        131.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_RAW",
+        "2": "GND"
+      }
+    },
+    "C111": {
+      "value": "22uF/10V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        185.775,
+        134.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_RAW",
+        "2": "GND"
+      }
+    },
+    "C112": {
+      "value": "10uF/10V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        190.225,
+        128.2775
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "C113": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        190.225,
+        131.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "C114": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        190.225,
+        134.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "C115": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        194.675,
+        128.2775
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "C116": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        194.675,
+        131.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "C117": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        194.675,
+        134.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "FB1": {
+      "value": "220Ω@100MHz / 1A",
+      "footprint": "Inductor_SMD:L_0805_2012Metric",
+      "position": [
+        199.175,
+        132.7675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "+3V3_SENS"
+      }
+    },
+    "J10": {
+      "value": "惯性传感器电源",
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "position": [
+        178.575,
+        129.4975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "J11": {
+      "value": "测距传感器1电源",
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "position": [
+        178.575,
+        136.0475
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "J12": {
+      "value": "测距传感器2电源",
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "position": [
+        178.575,
+        142.5975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "J13": {
+      "value": "测距传感器3电源",
+      "footprint": "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+      "position": [
+        178.575,
+        149.1475
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "GND"
+      }
+    },
+    "J14": {
+      "value": "3.3V辅助输出",
+      "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "position": [
+        187.115,
+        142.0375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "J9": {
+      "value": "可选逻辑板3.3V输入",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "position": [
+        195.795,
+        150.2175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "3V3_FPGA_IN",
+        "2": "GND"
+      }
+    },
+    "JP1": {
+      "value": "1-2板载 / 2-3逻辑板",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+      "position": [
+        198.065,
+        138.0975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_ONBOARD",
+        "2": "+3V3",
+        "3": "3V3_FPGA_IN"
+      }
+    },
+    "L3": {
+      "value": "4.7uH",
+      "footprint": "Inductor_SMD:L_Changjiang_FXL0630",
+      "position": [
+        188.525,
+        151.9975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U3-SW)",
+        "2": "+3V3_RAW"
+      }
+    },
+    "U3": {
+      "value": "AP63203WU-7",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "position": [
+        199.475,
+        129.1725
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_RAW",
+        "2": "BUCK_ENABLE",
+        "3": "VLOGIC_IN",
+        "4": "GND",
+        "5": "Net-(U3-SW)",
+        "6": "Net-(U3-BST)"
+      }
+    },
+    "C118": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        149.95,
+        162.73
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "C119": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        149.95,
+        165.74
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "C120": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        149.95,
+        168.75
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "J15": {
+      "value": "急停常闭回路",
+      "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "position": [
+        139.07,
+        167.46
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "ESTOP_OK"
+      }
+    },
+    "R69": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        133.5,
+        162.48
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ESTOP_OK",
+        "2": "GND"
+      }
+    },
+    "R70": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        133.5,
+        164.99
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_PERMIT",
+        "2": "GND"
+      }
+    },
+    "R71": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        133.5,
+        167.5
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_ARM",
+        "2": "GND"
+      }
+    },
+    "R72": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        133.5,
+        170.01
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "EXT_KILL_N"
+      }
+    },
+    "R73": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        133.5,
+        172.52
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_ARMED",
+        "2": "GND"
+      }
+    },
+    "U10": {
+      "value": "74HC08D",
+      "footprint": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+      "position": [
+        135.72,
+        156.125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ESTOP_OK",
+        "2": "MOTOR_PERMIT",
+        "3": "Net-(U10-Pad3)",
+        "4": "POR_OK",
+        "5": "EXT_KILL_N",
+        "6": "Net-(U10-Pad10)",
+        "7": "GND",
+        "8": "Net-(U10-Pad12)",
+        "9": "Net-(U10-Pad3)",
+        "10": "Net-(U10-Pad10)",
+        "11": "Net-(U12A-~{R})",
+        "12": "Net-(U10-Pad12)",
+        "13": "MOTOR_POWER_OK",
+        "14": "+3V3"
+      }
+    },
+    "U12": {
+      "value": "74HC74D",
+      "footprint": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+      "position": [
+        144.17,
+        156.125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U12A-~{R})",
+        "2": "+3V3",
+        "3": "MOTOR_ARM",
+        "4": "+3V3",
+        "5": "MOTOR_ARMED",
+        "6": "unconnected-(U12A-~{Q}-Pad6)",
+        "7": "GND",
+        "8": "unconnected-(U12B-~{Q}-Pad8)",
+        "9": "unconnected-(U12B-Q-Pad9)",
+        "10": "+3V3",
+        "11": "GND",
+        "12": "GND",
+        "13": "GND",
+        "14": "+3V3"
+      }
+    },
+    "U13": {
+      "value": "MCP100-300DI/TO",
+      "footprint": "Package_TO_SOT_THT:TO-92_Inline",
+      "position": [
+        150.38,
+        154.12
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "POR_OK",
+        "2": "+3V3",
+        "3": "GND"
+      }
+    },
+    "C122": {
+      "value": "470uF/25V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "position": [
+        131.747323,
+        92.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L",
+        "2": "GND"
+      }
+    },
+    "C123": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        133.865,
+        100.7875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L",
+        "2": "GND"
+      }
+    },
+    "C124": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        133.865,
+        103.7975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "C125": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        128.965,
+        100.7875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L_IMON",
+        "2": "GND"
+      }
+    },
+    "C126": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        53.6,
+        164.8975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_L",
+        "2": "GND"
+      }
+    },
+    "C127": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        65.85,
+        168.6575
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "C128": {
+      "value": "1nF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        53.6,
+        167.4075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_L_A_FPGA",
+        "2": "GND"
+      }
+    },
+    "C129": {
+      "value": "1nF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        53.6,
+        169.9175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_L_B_FPGA",
+        "2": "GND"
+      }
+    },
+    "C130": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        65.85,
+        171.6675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "J3": {
+      "value": "MG513电机 / 核对线序",
+      "footprint": "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "position": [
+        35.62,
+        164.5075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(J3-Pin_1)",
+        "2": "+3V3",
+        "3": "ENC_L_A",
+        "4": "ENC_L_B",
+        "5": "GND",
+        "6": "Net-(J3-Pin_6)"
+      }
+    },
+    "R84": {
+      "value": "0.020R/1%/1W",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "position": [
+        114.8225,
+        103.5425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_SWITCHED",
+        "2": "VM_L"
+      }
+    },
+    "R85": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        128.965,
+        105.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R85-Pad1)",
+        "2": "VM_L_IMON"
+      }
+    },
+    "R86": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        57.61,
+        162.3875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R86-Pad1)",
+        "2": "VREF_L"
+      }
+    },
+    "R87": {
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        57.61,
+        164.8975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_L",
+        "2": "GND"
+      }
+    },
+    "R88": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        57.61,
+        167.4075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U2-AIN1)",
+        "2": "GND"
+      }
+    },
+    "R89": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        57.61,
+        169.9175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U2-AIN2)",
+        "2": "GND"
+      }
+    },
+    "R90": {
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        57.61,
+        172.4275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_L_A",
+        "2": "ENC_L_A_FPGA"
+      }
+    },
+    "R91": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        61.62,
+        162.3875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "ENC_L_A_FPGA"
+      }
+    },
+    "R92": {
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        61.62,
+        164.8975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_L_B",
+        "2": "ENC_L_B_FPGA"
+      }
+    },
+    "R93": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        61.62,
+        167.4075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "ENC_L_B_FPGA"
+      }
+    },
+    "RV1": {
+      "value": "10k/3296W",
+      "footprint": "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical",
+      "position": [
+        68.16,
+        148.5275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "Net-(R86-Pad1)",
+        "3": "GND"
+      }
+    },
+    "U11": {
+      "value": "74HC08D",
+      "footprint": "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm",
+      "position": [
+        123.865,
+        185.0875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "L_PWM_FWD_RAW",
+        "2": "MOTOR_ARMED",
+        "3": "Net-(U2-AIN1)",
+        "4": "L_PWM_REV_RAW",
+        "5": "MOTOR_ARMED",
+        "6": "Net-(U2-AIN2)",
+        "7": "GND",
+        "8": "Net-(U4-AIN1)",
+        "9": "R_PWM_FWD_RAW",
+        "10": "MOTOR_ARMED",
+        "11": "Net-(U4-AIN2)",
+        "12": "R_PWM_REV_RAW",
+        "13": "MOTOR_ARMED",
+        "14": "+3V3"
+      }
+    },
+    "U2": {
+      "value": "AT8236双路模块",
+      "footprint": "EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.0005mm",
+      "position": [
+        26.86475,
+        135.9175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(J3-Pin_1)",
+        "2": "Net-(J3-Pin_6)",
+        "3": "GND",
+        "4": "GND",
+        "5": "VREF_L",
+        "6": "VM_L",
+        "7": "GND",
+        "8": "GND",
+        "9": "VM_L",
+        "10": "VREF_L",
+        "11": "Net-(U2-AIN2)",
+        "12": "Net-(U2-AIN1)",
+        "13": "unconnected-(U2-BOUT1-Pad13)",
+        "14": "unconnected-(U2-BOUT2-Pad14)"
+      }
+    },
+    "U25": {
+      "value": "INA180A1IDBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "position": [
+        121.7525,
+        103.4875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R85-Pad1)",
+        "2": "GND",
+        "3": "VM_SWITCHED",
+        "4": "VM_L",
+        "5": "+3V3"
+      }
+    },
+    "C131": {
+      "value": "470uF/25V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "position": [
+        112.615,
+        124.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R",
+        "2": "GND"
+      }
+    },
+    "C132": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        123.110354,
+        131.4175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R",
+        "2": "GND"
+      }
+    },
+    "C133": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        123.110354,
+        134.4275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "C134": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        124.825,
+        116.6375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R_IMON",
+        "2": "GND"
+      }
+    },
+    "C135": {
+      "value": "1uF/25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        107.22625,
+        153.6325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_R",
+        "2": "GND"
+      }
+    },
+    "C136": {
+      "value": "1nF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        107.22625,
+        156.1425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_R_A_FPGA",
+        "2": "GND"
+      }
+    },
+    "C137": {
+      "value": "1nF/C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        107.22625,
+        158.6525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_R_B_FPGA",
+        "2": "GND"
+      }
+    },
+    "C138": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        91.54625,
+        188.3725
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      }
+    },
+    "J4": {
+      "value": "MG513电机 / 核对线序",
+      "footprint": "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",
+      "position": [
+        97.24625,
+        184.2225
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(J4-Pin_1)",
+        "2": "+3V3",
+        "3": "ENC_R_A",
+        "4": "ENC_R_B",
+        "5": "GND",
+        "6": "Net-(J4-Pin_6)"
+      }
+    },
+    "R100": {
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        111.23625,
+        161.1625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_R_A",
+        "2": "ENC_R_A_FPGA"
+      }
+    },
+    "R101": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        115.24625,
+        151.1225
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "ENC_R_A_FPGA"
+      }
+    },
+    "R102": {
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        115.24625,
+        153.6325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_R_B",
+        "2": "ENC_R_B_FPGA"
+      }
+    },
+    "R103": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        115.24625,
+        156.1425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "ENC_R_B_FPGA"
+      }
+    },
+    "R94": {
+      "value": "0.020R/1%/1W",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "position": [
+        127.732677,
+        124.0375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_SWITCHED",
+        "2": "VM_R"
+      }
+    },
+    "R95": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        125.382677,
+        120.3275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R95-Pad1)",
+        "2": "VM_R_IMON"
+      }
+    },
+    "R96": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        111.23625,
+        151.1225
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R96-Pad1)",
+        "2": "VREF_R"
+      }
+    },
+    "R97": {
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        111.23625,
+        153.6325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_R",
+        "2": "GND"
+      }
+    },
+    "R98": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        111.23625,
+        156.1425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U4-AIN1)",
+        "2": "GND"
+      }
+    },
+    "R99": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        111.23625,
+        158.6525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U4-AIN2)",
+        "2": "GND"
+      }
+    },
+    "RV2": {
+      "value": "10k/3296W",
+      "footprint": "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical",
+      "position": [
+        85.59625,
+        184.4325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_SENS",
+        "2": "Net-(R96-Pad1)",
+        "3": "GND"
+      }
+    },
+    "U26": {
+      "value": "INA180A1IDBVR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "position": [
+        132.370177,
+        131.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(R95-Pad1)",
+        "2": "GND",
+        "3": "VM_SWITCHED",
+        "4": "VM_R",
+        "5": "+3V3"
+      }
+    },
+    "U4": {
+      "value": "AT8236双路模块",
+      "footprint": "EdgeMind_Module:AT8236_Dual_PinSocket_2x7_P2.54_Row23.1275mm",
+      "position": [
+        79.80625,
+        152.1625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(J4-Pin_1)",
+        "2": "Net-(J4-Pin_6)",
+        "3": "GND",
+        "4": "GND",
+        "5": "VREF_R",
+        "6": "VM_R",
+        "7": "GND",
+        "8": "GND",
+        "9": "VM_R",
+        "10": "VREF_R",
+        "11": "Net-(U4-AIN2)",
+        "12": "Net-(U4-AIN1)",
+        "13": "unconnected-(U4-BOUT1-Pad13)",
+        "14": "unconnected-(U4-BOUT2-Pad14)"
+      }
+    },
+    "C121": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        257.715,
+        131.8825
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "D4": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        254.88,
+        145.4525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D4-A)"
+      }
+    },
+    "D5": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        254.88,
+        148.8025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D5-K)",
+        "2": "GND"
+      }
+    },
+    "D6": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        254.88,
+        152.1525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D6-K)",
+        "2": "GND"
+      }
+    },
+    "J16": {
+      "value": "左回生泄放 / 外接3.3Ω",
+      "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "position": [
+        235.285,
+        132.1625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L",
+        "2": "Net-(J16-Pin_2)"
+      }
+    },
+    "J17": {
+      "value": "右回生泄放 / 外接3.3Ω",
+      "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "position": [
+        235.285,
+        144.2875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R",
+        "2": "Net-(J17-Pin_2)"
+      }
+    },
+    "Q2": {
+      "value": "IRF4905",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "position": [
+        247.175,
+        129.8525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D4-A)",
+        "2": "VM_SWITCHED",
+        "3": "VBAT_SYS"
+      }
+    },
+    "Q5": {
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        257.945,
+        128.1525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q5-B)",
+        "2": "GND",
+        "3": "Net-(D4-A)"
+      }
+    },
+    "Q6": {
+      "value": "IRLZ44N",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "position": [
+        247.175,
+        135.8025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D5-K)",
+        "2": "Net-(J16-Pin_2)",
+        "3": "GND"
+      }
+    },
+    "Q7": {
+      "value": "IRLZ44N",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "position": [
+        247.175,
+        141.7525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D6-K)",
+        "2": "Net-(J17-Pin_2)",
+        "3": "GND"
+      }
+    },
+    "R74": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        245.945,
+        145.0325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D4-A)"
+      }
+    },
+    "R75": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        245.945,
+        147.5425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_ARMED",
+        "2": "Net-(Q5-B)"
+      }
+    },
+    "R76": {
+      "value": "51.1k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        245.945,
+        150.0525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L",
+        "2": "Net-(U24A-+)"
+      }
+    },
+    "R77": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        245.945,
+        152.5625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U24A-+)",
+        "2": "GND"
+      }
+    },
+    "R78": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        245.945,
+        155.0725
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_L",
+        "2": "Net-(D5-K)"
+      }
+    },
+    "R79": {
+      "value": "1M",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.955,
+        145.0325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U24A-+)",
+        "2": "Net-(D5-K)"
+      }
+    },
+    "R80": {
+      "value": "51.1k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.955,
+        147.5425
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R",
+        "2": "Net-(U24B-+)"
+      }
+    },
+    "R81": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.955,
+        150.0525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U24B-+)",
+        "2": "GND"
+      }
+    },
+    "R82": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.955,
+        152.5625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_R",
+        "2": "Net-(D6-K)"
+      }
+    },
+    "R83": {
+      "value": "1M",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.955,
+        155.0725
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U24B-+)",
+        "2": "Net-(D6-K)"
+      }
+    },
+    "TP1": {
+      "value": "电机总开关输出",
+      "footprint": "TestPoint:TestPoint_Pad_D2.0mm",
+      "position": [
+        257.515,
+        135.4125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VM_SWITCHED"
+      }
+    },
+    "U24": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        235.945,
+        153.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(D5-K)",
+        "2": "VREF_2V495",
+        "3": "Net-(U24A-+)",
+        "4": "GND",
+        "5": "Net-(U24B-+)",
+        "6": "VREF_2V495",
+        "7": "Net-(D6-K)",
+        "8": "VBAT_SYS"
+      }
+    },
+    "C139": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        236.2,
+        57.8975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C140": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        233.225,
+        88.3575
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C141": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        265.475,
+        53.8625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C142": {
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "position": [
+        266.14,
+        90.9775
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "D7": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        241.345,
+        58.0675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "Net-(D7-A)"
+      }
+    },
+    "D8": {
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "position": [
+        238.37,
+        88.8675
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "Net-(D8-A)"
+      }
+    },
+    "Q10": {
+      "value": "AO4409",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        221.865,
+        93.7875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "+5V_AI",
+        "3": "+5V_AI",
+        "4": "Net-(D8-A)",
+        "5": "+5V_AI_PROT",
+        "6": "+5V_AI_PROT",
+        "7": "+5V_AI_PROT",
+        "8": "+5V_AI_PROT"
+      }
+    },
+    "Q11": {
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        228.545,
+        90.5175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q11-B)",
+        "2": "GND",
+        "3": "Net-(D8-A)"
+      }
+    },
+    "Q12": {
+      "value": "AO3401A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        260.795,
+        57.4625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q12-G)",
+        "2": "+3V3_RAW",
+        "3": "+3V3_ONBOARD"
+      }
+    },
+    "Q13": {
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        260.795,
+        61.9125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q13-B)",
+        "2": "GND",
+        "3": "Net-(Q12-G)"
+      }
+    },
+    "Q8": {
+      "value": "AO4409",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        224.84,
+        59.7525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "+5V_FPGA",
+        "3": "+5V_FPGA",
+        "4": "Net-(D7-A)",
+        "5": "+5V_FPGA_PROT",
+        "6": "+5V_FPGA_PROT",
+        "7": "+5V_FPGA_PROT",
+        "8": "+5V_FPGA_PROT"
+      }
+    },
+    "Q9": {
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "position": [
+        231.52,
+        58.6175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q9-B)",
+        "2": "GND",
+        "3": "Net-(D7-A)"
+      }
+    },
+    "R104": {
+      "value": "11.5k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        238.34,
+        66.4225
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "Net-(U27A--)"
+      }
+    },
+    "R105": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        238.34,
+        68.9325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U27A--)",
+        "2": "GND"
+      }
+    },
+    "R106": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        249.365,
+        67.2875
+      ],
+      "angle": 180.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "+5V_FPGA_OK"
+      }
+    },
+    "R107": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        238.34,
+        73.9525
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA",
+        "2": "Net-(D7-A)"
+      }
+    },
+    "R108": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        238.34,
+        76.4625
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA_OK",
+        "2": "Net-(Q9-B)"
+      }
+    },
+    "R109": {
+      "value": "11.5k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        232.105,
+        102.8975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "Net-(U28A--)"
+      }
+    },
+    "R110": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        232.105,
+        105.4075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U28A--)",
+        "2": "GND"
+      }
+    },
+    "R111": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        232.105,
+        107.9175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "+5V_AI_OK"
+      }
+    },
+    "R112": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        232.105,
+        110.4275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI",
+        "2": "Net-(D8-A)"
+      }
+    },
+    "R113": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        232.105,
+        112.9375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI_OK",
+        "2": "Net-(Q11-B)"
+      }
+    },
+    "R114": {
+      "value": "3.83k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        268.365,
+        65.3925
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3_RAW",
+        "2": "Net-(U29A--)"
+      }
+    },
+    "R115": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        268.365,
+        67.9025
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U29A--)",
+        "2": "GND"
+      }
+    },
+    "R116": {
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        268.365,
+        70.4125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(Q12-G)",
+        "2": "+3V3_RAW"
+      }
+    },
+    "R117": {
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        268.365,
+        72.9225
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "3V3_ONBOARD_OK",
+        "2": "Net-(Q13-B)"
+      }
+    },
+    "R118": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        268.365,
+        75.4325
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "3V3_ONBOARD_OK"
+      }
+    },
+    "R119": {
+      "value": "30.9k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        273.04,
+        99.4975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(U29B-+)"
+      }
+    },
+    "R120": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        273.04,
+        102.0075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "Net-(U29B-+)",
+        "2": "GND"
+      }
+    },
+    "R121": {
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        273.04,
+        104.5175
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "BAT_WARN_N"
+      }
+    },
+    "R122": {
+      "value": "10.5k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        273.04,
+        107.0275
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VREF_2V495",
+        "2": "CURRENT_REF_1V217"
+      }
+    },
+    "R123": {
+      "value": "10.0k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        273.04,
+        109.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "CURRENT_REF_1V217",
+        "2": "GND"
+      }
+    },
+    "U27": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        249.365,
+        71.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_FPGA_OK",
+        "2": "Net-(U27A--)",
+        "3": "VREF_2V495",
+        "4": "GND",
+        "5": "GND",
+        "6": "VREF_2V495",
+        "7": "unconnected-(U27-Pad7)",
+        "8": "VBAT_SYS"
+      }
+    },
+    "U28": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        221.865,
+        106.9575
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+5V_AI_OK",
+        "2": "Net-(U28A--)",
+        "3": "VREF_2V495",
+        "4": "GND",
+        "5": "GND",
+        "6": "VREF_2V495",
+        "7": "unconnected-(U28-Pad7)",
+        "8": "VBAT_SYS"
+      }
+    },
+    "U29": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        259.365,
+        70.5375
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "3V3_ONBOARD_OK",
+        "2": "Net-(U29A--)",
+        "3": "VREF_2V495",
+        "4": "GND",
+        "5": "Net-(U29B-+)",
+        "6": "VREF_2V495",
+        "7": "BAT_WARN_N",
+        "8": "VBAT_SYS"
+      }
+    },
+    "U30": {
+      "value": "LM393BIDR",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "position": [
+        259.505,
+        107.6125
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "MOTOR_POWER_OK",
+        "2": "VM_L_IMON",
+        "3": "CURRENT_REF_1V217",
+        "4": "GND",
+        "5": "CURRENT_REF_1V217",
+        "6": "VM_R_IMON",
+        "7": "MOTOR_POWER_OK",
+        "8": "VBAT_SYS"
+      }
+    },
+    "C143": {
+      "value": "100nF/25V",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "position": [
+        169.825,
+        86.5875
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "BAT_ADC",
+        "2": "GND"
+      }
+    },
+    "J1": {
+      "value": "左轮控制",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+      "position": [
+        169.115,
+        65.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "L_PWM_FWD_RAW",
+        "2": "L_PWM_REV_RAW",
+        "3": "MOTOR_ARM",
+        "4": "MOTOR_PERMIT",
+        "5": "GND",
+        "6": "3V3_FPGA_IN",
+        "7": "ENC_L_A_FPGA",
+        "8": "ENC_L_B_FPGA"
+      }
+    },
+    "J18": {
+      "value": "电源监测 / 外部模数转换",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical",
+      "position": [
+        165.25,
+        65.28
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "BAT_ADC",
+        "4": "BAT_WARN_N",
+        "5": "VM_L_IMON",
+        "6": "VM_R_IMON",
+        "7": "MOTOR_POWER_OK",
+        "8": "MOTOR_ARMED",
+        "9": "USB1_FAULT_PULSE_N",
+        "10": "USB2_FAULT_PULSE_N",
+        "11": "ESTOP_OK",
+        "12": "POR_OK"
+      }
+    },
+    "J2": {
+      "value": "右轮控制",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+      "position": [
+        172.865,
+        65.2975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "ENC_R_B_FPGA",
+        "2": "ENC_R_A_FPGA",
+        "3": "3V3_FPGA_IN",
+        "4": "GND",
+        "5": "R_PWM_FWD_RAW",
+        "6": "R_PWM_REV_RAW",
+        "7": "EXT_KILL_N",
+        "8": "MOTOR_ARMED"
+      }
+    },
+    "R124": {
+      "value": "100k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        169.825,
+        89.0975
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "BAT_ADC"
+      }
+    },
+    "R125": {
+      "value": "27.4k/0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "position": [
+        169.825,
+        91.6075
+      ],
+      "angle": 0.0,
+      "pins": {
+        "1": "BAT_ADC",
+        "2": "GND"
+      }
+    }
+  },
+  "edge": [],
+  "layers": 2,
+  "tracks": 95,
+  "zones": 3,
+  "hashes": {
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\01_power_input.kicad_sch": "2dd8d9fb794e779eea8a4fd03a346dfc9f60bb11fe907cfb4ebb683cfb837568",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\02_usb_5v.kicad_sch": "01398e22df0567086854b9f33da22d135bc3c47fe03651c76163c477f4fa19d8",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\03_aux_3v3.kicad_sch": "079aba0bdce4b7398baa31d7fbf5af743a2be72141fc6cc17b52720c4fd21318",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\04_motor_safety.kicad_sch": "7fda74ef90afd4049af1ac922267f76a25fdb0ba43bbfc91cb7828bba6cfa915",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\05_motor_left.kicad_sch": "bf8d1539a072fbe48432d7d49cd748a3c49cd2483c8c0f072eb50569779c0185",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\06_motor_right.kicad_sch": "8ba077f7996cd8e8f3d570a498e19d547b6e17ee40e8e5806719e628f97bf995",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\07_motor_dump.kicad_sch": "a600c44fbd885e7efb6a588ad014b0b44840aeb5ce8210ae6d985cac884bcad2",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\08_rail_protection.kicad_sch": "9f21b206ca40f6893899e553e141da768cf0cc1942f0e0a55d194a90b9557fba",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\09_control_io.kicad_sch": "ba305bfd6915e5594ea9400d61d2d3c7b44dc13363b4e8836104dfed952f22f1",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_sch": "e91de1506ae461112bd34dde3fea158b9d3e850e730a2afda57a9df0483a449c",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_pcb": "b505e4b72a2dd45f8b926a40abd79370f040e6f8cea3b8f07658cf181f3e59ff"
+  }
+}

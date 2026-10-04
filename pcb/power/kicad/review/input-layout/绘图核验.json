@@ -1,0 +1,450 @@
+{
+  "元件数": 17,
+  "元件": {
+    "CN1": {
+      "position": [
+        34.4,
+        62.75
+      ],
+      "angle": 0.0,
+      "value": "XT60PW-M / 三串电池",
+      "footprint": "Connector_AMASS:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal",
+      "pins": {
+        "1": "GND",
+        "2": "BAT_POS"
+      }
+    },
+    "F1": {
+      "position": [
+        43.2,
+        69.64
+      ],
+      "angle": -90.0,
+      "value": "10A/32V MINI总保险",
+      "footprint": "Fuse:Fuseholder_Blade_Mini_Keystone_3568",
+      "pins": {
+        "1": "BAT_POS",
+        "2": "Net-(Q1-D)"
+      }
+    },
+    "Q1": {
+      "position": [
+        40.71,
+        86.8
+      ],
+      "angle": 0.0,
+      "value": "IRF4905",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "pins": {
+        "1": "Net-(D2-A)",
+        "2": "Net-(Q1-D)",
+        "3": "VBAT_SYS"
+      }
+    },
+    "D2": {
+      "position": [
+        43.0,
+        89.6
+      ],
+      "angle": 180.0,
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D2-A)"
+      }
+    },
+    "R51": {
+      "position": [
+        37.0,
+        85.975
+      ],
+      "angle": 90.0,
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "Net-(D2-A)",
+        "2": "GND"
+      }
+    },
+    "D1": {
+      "position": [
+        46.8,
+        97.1
+      ],
+      "angle": 0.0,
+      "value": "SMBJ15CA",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C58": {
+      "position": [
+        52.382323,
+        86.8
+      ],
+      "angle": 0.0,
+      "value": "470uF/35V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C59": {
+      "position": [
+        45.6,
+        91.85
+      ],
+      "angle": 0.0,
+      "value": "10uF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "C60": {
+      "position": [
+        45.6,
+        93.85
+      ],
+      "angle": 0.0,
+      "value": "100nF/50V",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "GND"
+      }
+    },
+    "Q3": {
+      "position": [
+        49.75,
+        113.5
+      ],
+      "angle": 180.0,
+      "value": "IRF4905",
+      "footprint": "Package_TO_SOT_THT:TO-220-3_Vertical",
+      "pins": {
+        "1": "Net-(D3-A)",
+        "2": "VLOGIC_IN",
+        "3": "VBAT_SYS"
+      }
+    },
+    "D3": {
+      "position": [
+        46.3,
+        100.6
+      ],
+      "angle": 0.0,
+      "value": "BZT52C12",
+      "footprint": "Diode_SMD:D_SOD-123",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D3-A)"
+      }
+    },
+    "R53": {
+      "position": [
+        45.5,
+        102.6
+      ],
+      "angle": 0.0,
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "Net-(D3-A)"
+      }
+    },
+    "Q4": {
+      "position": [
+        47.95,
+        104.35
+      ],
+      "angle": 90.0,
+      "value": "MMBT3904",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "Net-(Q4-B)",
+        "2": "GND",
+        "3": "Net-(D3-A)"
+      }
+    },
+    "R54": {
+      "position": [
+        47.825,
+        107.35
+      ],
+      "angle": 180.0,
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_ENABLE",
+        "2": "Net-(Q4-B)"
+      }
+    },
+    "C101": {
+      "position": [
+        47.245,
+        120.082323
+      ],
+      "angle": -90.0,
+      "value": "100uF/25V",
+      "footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "pins": {
+        "1": "VLOGIC_IN",
+        "2": "GND"
+      }
+    },
+    "U21": {
+      "position": [
+        91.3725,
+        111.885
+      ],
+      "angle": 0.0,
+      "value": "TL431BIDBZR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "VREF_2V495",
+        "2": "VREF_2V495",
+        "3": "GND"
+      }
+    },
+    "R52": {
+      "position": [
+        87.7975,
+        111.885
+      ],
+      "angle": 0.0,
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_SYS",
+        "2": "VREF_2V495"
+      }
+    }
+  },
+  "原理图与PCB焊盘网络核对": "通过",
+  "分组示意坐标": {
+    "入口": {
+      "CN1": [
+        10,
+        20,
+        0
+      ],
+      "F1": [
+        18.8,
+        26.89,
+        -90
+      ],
+      "Q1": [
+        16.31,
+        44.05,
+        0
+      ],
+      "R51": [
+        12.6,
+        43.225,
+        90
+      ],
+      "D2": [
+        18.6,
+        46.95,
+        180
+      ],
+      "D1": [
+        28,
+        47.2,
+        0
+      ],
+      "C58": [
+        38,
+        44.05,
+        0
+      ],
+      "C59": [
+        28,
+        51,
+        0
+      ],
+      "C60": [
+        32,
+        51,
+        0
+      ]
+    },
+    "开关": {
+      "Q3": [
+        10,
+        11,
+        180
+      ],
+      "D3": [
+        7.45,
+        8,
+        0
+      ],
+      "R53": [
+        7.45,
+        5.8,
+        0
+      ],
+      "Q4": [
+        14.75,
+        7.9,
+        180
+      ],
+      "R54": [
+        18.25,
+        8.85,
+        180
+      ],
+      "C101": [
+        7.495,
+        17.58,
+        -90
+      ]
+    },
+    "基准": {
+      "U21": [
+        10,
+        4,
+        0
+      ],
+      "R52": [
+        6,
+        4,
+        0
+      ]
+    }
+  },
+  "分组装配边界包围盒": {
+    "入口": {
+      "CN1": [
+        5.325,
+        3.125,
+        21.875,
+        22.575
+      ],
+      "F1": [
+        13.455,
+        23.575,
+        20.745,
+        40.125
+      ],
+      "Q1": [
+        13.574999,
+        40.625,
+        24.124999,
+        45.575
+      ],
+      "R51": [
+        11.845,
+        41.72,
+        13.355,
+        44.73
+      ],
+      "D2": [
+        16.225,
+        45.775,
+        20.975,
+        48.125
+      ],
+      "D1": [
+        24.325,
+        44.925,
+        31.675,
+        49.475
+      ],
+      "C58": [
+        35.225,
+        38.775,
+        45.775,
+        49.325
+      ],
+      "C59": [
+        26.275,
+        49.995,
+        29.725,
+        52.005
+      ],
+      "C60": [
+        30.275,
+        49.995,
+        33.725,
+        52.005
+      ]
+    },
+    "开关": {
+      "Q3": [
+        2.185,
+        9.475,
+        12.735,
+        14.425
+      ],
+      "D3": [
+        5.075,
+        6.825,
+        9.825,
+        9.175
+      ],
+      "R53": [
+        5.945,
+        5.045,
+        8.955,
+        6.555
+      ],
+      "Q4": [
+        12.795,
+        6.175,
+        16.705,
+        9.625
+      ],
+      "R54": [
+        16.745,
+        8.095,
+        19.755,
+        9.605
+      ],
+      "C101": [
+        2.22,
+        14.805,
+        12.77,
+        25.355
+      ]
+    },
+    "基准": {
+      "U21": [
+        8.045,
+        2.275,
+        11.955,
+        5.725
+      ],
+      "R52": [
+        4.495,
+        3.245,
+        7.505,
+        4.755
+      ]
+    }
+  },
+  "本组装配边界包围盒重叠": false,
+  "原文件SHA256": {
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_pcb": "4c51148debb75d29d3822a49c1d0fbc4ce313ab3566bfefa5589c79acdf8e21b",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\01_power_input.kicad_sch": "2dd8d9fb794e779eea8a4fd03a346dfc9f60bb11fe907cfb4ebb683cfb837568",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\02_usb_5v.kicad_sch": "01398e22df0567086854b9f33da22d135bc3c47fe03651c76163c477f4fa19d8",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\03_aux_3v3.kicad_sch": "079aba0bdce4b7398baa31d7fbf5af743a2be72141fc6cc17b52720c4fd21318",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\04_motor_safety.kicad_sch": "7fda74ef90afd4049af1ac922267f76a25fdb0ba43bbfc91cb7828bba6cfa915",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\05_motor_left.kicad_sch": "bf8d1539a072fbe48432d7d49cd748a3c49cd2483c8c0f072eb50569779c0185",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\06_motor_right.kicad_sch": "8ba077f7996cd8e8f3d570a498e19d547b6e17ee40e8e5806719e628f97bf995",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\07_motor_dump.kicad_sch": "a600c44fbd885e7efb6a588ad014b0b44840aeb5ce8210ae6d985cac884bcad2",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\08_rail_protection.kicad_sch": "9f21b206ca40f6893899e553e141da768cf0cc1942f0e0a55d194a90b9557fba",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\09_control_io.kicad_sch": "ecd011d5848d5a0a050ab0482d8971385fdb3b1513ada57e70a2cc5efd5b0b91",
+    "D:\\dev\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_sch": "e91de1506ae461112bd34dde3fea158b9d3e850e730a2afda57a9df0483a449c"
+  },
+  "原文件修改": false,
+  "说明": "独立小组的顶层示意，未完成整板放置、走线、散热或电流承载验证"
+}
