@@ -6790,7 +6790,7 @@
 	(footprint "Package_TO_SOT_SMD:TSOT-23-8"
 		(layer "F.Cu")
 		(uuid "14c3f9d5-84f1-4912-90cf-95ed335c09bc")
-		(at 93 33.5 90)
+		(at 78.885 47.7125 90)
 		(descr "TSOT, 8 Pin (https://www.jedec.org/sites/default/files/docs/MO-193D.pdf variant BA)")
 		(tags "TSOT TO_SOT_SMD")
 		(property "Reference" "U8"
@@ -19797,7 +19797,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "52f3f3ab-5044-4194-9608-fcdce4cb8afa")
-		(at 102.11 31.9875 180)
+		(at 87.995 46.2 180)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R68"
@@ -25413,7 +25413,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "77f34b18-7a0b-41f5-ba20-8ba3344178e6")
-		(at 86.865 33.2875 180)
+		(at 72.75 47.5 180)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C107"
@@ -28905,7 +28905,7 @@
 	(footprint "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x_6P_TopMnt_Horizontal"
 		(layer "F.Cu")
 		(uuid "89563f70-6f0d-48eb-b27f-38c43996eea5")
-		(at 93.615 26.2875 180)
+		(at 79.5 40.5 180)
 		(descr "USB Type C Receptacle, GCT, power-only, 6P, top mounted, horizontal, 3A, 1mm stake: https://gct.co/files/drawings/usb4125.pdf")
 		(tags "USB C Type-C receptacle power-only charging-only 6P 6C right angled")
 		(property "Reference" "USB2"
@@ -36488,7 +36488,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "aa3fd12f-ae65-4c0f-88dc-3fa030357612")
-		(at 98.365 36.2875 180)
+		(at 84.25 50.5 180)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor")
 		(property "Reference" "C106"
@@ -44052,7 +44052,7 @@
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "d80cc4a2-df13-4f2f-8320-b39730fa8aa8")
-		(at 102.11 34.4975 180)
+		(at 87.995 48.71 180)
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "resistor")
 		(property "Reference" "R67"
@@ -53930,12 +53930,44 @@
 		(uuid "0197d207-dba8-4e63-b4c3-356af2bdca7f")
 	)
 	(segment
+		(start 68.758435 57.741565)
+		(end 67.5 59)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "3796c2a0-3ed9-4b46-b40a-02b43083f204")
+	)
+	(segment
+		(start 71.25 57.370926)
+		(end 70.879361 57.741565)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "65c924e2-492c-483a-8d40-2051c6ba5936")
+	)
+	(segment
+		(start 70.879361 57.741565)
+		(end 68.758435 57.741565)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "83ca7eb4-2173-4dde-8b1a-9501e9211dae")
+	)
+	(segment
 		(start 64.235 72.7475)
 		(end 65.505 74.0175)
 		(width 0.5)
 		(layer "F.Cu")
 		(net "BUCK_ENABLE")
 		(uuid "87c6a507-d356-420d-bde8-d4ba4cfcbe86")
+	)
+	(segment
+		(start 67.5 59)
+		(end 62.5 59)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "921aed8b-1f2d-4895-a29d-53a37063c29b")
 	)
 	(segment
 		(start 62.415 72.7475)
@@ -53962,6 +53994,14 @@
 		(uuid "aa173a5c-214d-475e-9150-bee559da21b6")
 	)
 	(segment
+		(start 71.25 56.6125)
+		(end 71.25 57.370926)
+		(width 0.4)
+		(layer "F.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "b4897ed8-6d19-4ad8-a043-f92d1d3f4fe5")
+	)
+	(segment
 		(start 51 58.25)
 		(end 48.465 58.25)
 		(width 0.8)
@@ -53976,6 +54016,14 @@
 		(layers "F.Cu" "B.Cu")
 		(net "BUCK_ENABLE")
 		(uuid "3df8dd1d-f481-4fae-86b1-a97150ed6b3f")
+	)
+	(via
+		(at 62.5 59)
+		(size 0.5)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "9930867d-c670-4389-915a-a10b6819f5c8")
 	)
 	(via
 		(at 51 58.25)
@@ -54002,12 +54050,28 @@
 		(uuid "6c848bc9-fb70-4efe-ae88-4bf858ff0593")
 	)
 	(segment
+		(start 62.5 59)
+		(end 60 61.5)
+		(width 0.4)
+		(layer "B.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "85769c56-eee4-407b-8432-d3b289406a09")
+	)
+	(segment
 		(start 62.415 69.5)
 		(end 62.415 65.665)
 		(width 0.8)
 		(layer "B.Cu")
 		(net "BUCK_ENABLE")
 		(uuid "ba5375e4-7d61-442f-aed2-e55773d21654")
+	)
+	(segment
+		(start 60 61.5)
+		(end 60 63.25)
+		(width 0.4)
+		(layer "B.Cu")
+		(net "BUCK_ENABLE")
+		(uuid "c4f9323b-defc-4779-9174-044e737cdb9f")
 	)
 	(segment
 		(start 62.415 65.665)
