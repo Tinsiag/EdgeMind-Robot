@@ -4,6 +4,8 @@
 
 完整排查、实现与复现文档：[DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md](DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)。
 
+仓库也保存 [工程重建脚本](scripts/README.md)、`rtl/camera_init/` 中自编 SCCB 源码和 [实板验证快照](verification/README.md)。原厂依赖按脚本说明放入本机 `.local` 后，可重建本次三个工作工程。
+
 历史交接记录：[DEBUG-HANDOFF-2026-10-06.md](DEBUG-HANDOFF-2026-10-06.md)。10 月 7 日已按用户要求继续，最新过程见 [DEBUG-SESSION-2026-10-07.md](DEBUG-SESSION-2026-10-07.md)。
 
 2026-10-08 用户调整方向：先以官方第 38 章帧缓冲为基线，再向上接入 TY-OV5640。源码、硬件、电平和逻辑分析仪核对结果见 [FRAMEBUFFER-FIRST-PLAN-2026-10-08.md](FRAMEBUFFER-FIRST-PLAN-2026-10-08.md)。随后完成静态整帧验证，用户确认 `0x41A4` 的 D0～D5 亮、D6 灭、D7 闪：384000 像素 / 768000 字节经两端 FIFO 和 DDR 逐像素一致。详见 [FRAMEBUFFER-TEST-RESULT-2026-10-08.md](FRAMEBUFFER-TEST-RESULT-2026-10-08.md)。官方参考副本保持不变，摄像头彩条测试在独立工程继续。

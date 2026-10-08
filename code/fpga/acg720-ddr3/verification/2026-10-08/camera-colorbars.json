@@ -1,0 +1,14 @@
+{
+  "user_code": "0x00004FCF",
+  "sha256": "5C13FEA6833E57650914D20B5983ED79A3BC3F629AAC3DCAD06833C74970BD92",
+  "leds": "D0-D5 on, D6 off, D7 blinking",
+  "user_confirmed": true,
+  "source": "OV5640 internal color bars",
+  "frame_pixels": 384000,
+  "frame_bytes": 768000,
+  "camera_register_readback": true,
+  "frame_geometry_verified": true,
+  "ddr_roundtrip_crc_match": true,
+  "hdmi_verified": false,
+  "timing_signed_off": false
+}
