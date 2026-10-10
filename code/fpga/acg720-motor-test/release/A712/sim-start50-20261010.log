@@ -1,0 +1,2 @@
+PASS: 1 kHz wrapper, exact 500/1000 duty, single-wheel timeout, held-key lockout and asynchronous stop
+tests/acg720_motor_test_1khz_tb.v:74: $finish called at 57008501000 (1ps)

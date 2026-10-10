@@ -1,0 +1,5 @@
+PASS: configuration-held key and bounce rejected, encoder startup baseline clean
+PASS: left-only 25% PWM, encoder activity, bounded timeout, no held-key repeat
+PASS: right-only test and asynchronous S0 stop, no restart on reset release
+PASS: chord rejection/rearm and right encoder; all motor safety checks passed
+tests/acg720_motor_test_tb.v:137: $finish called at 41156000 (1ps)
