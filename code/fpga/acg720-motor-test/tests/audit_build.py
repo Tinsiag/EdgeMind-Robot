@@ -8,7 +8,7 @@ import re
 root = Path(__file__).resolve().parents[1]
 pnr = root / "impl/pnr"
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "toggle", "toggle80", "toggle20k80", "toggle50k80"], default="20khz")
+parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "toggle", "toggle80", "toggle20k80", "toggle50k80", "sweep"], default="20khz")
 args = parser.parse_args()
 variant = args.variant
 basename, user_code = {
@@ -19,6 +19,7 @@ basename, user_code = {
     "toggle80": ("acg720_motor_toggle_80", "0000a714"),
     "toggle20k80": ("acg720_motor_toggle_20khz_80", "0000a715"),
     "toggle50k80": ("acg720_motor_toggle_50khz_80", "0000a716"),
+    "sweep": ("acg720_motor_sweep", "0000a717"),
 }[variant]
 expected = {
     "clk": ("Y18", "in"), "stop_n": ("F15", "in"),
@@ -83,6 +84,9 @@ elif variant == "toggle50k80":
     sources = ["rtl/acg720_motor_toggle.v", "rtl/acg720_motor_toggle_50khz_80.v",
                "constraints/acg720_motor_test.cst", "constraints/acg720_motor_test.sdc",
                "acg720_motor_toggle_50khz_80.gprj", "build_toggle50k80.tcl"]
+elif variant == "sweep":
+    sources = ["rtl/acg720_motor_sweep.v", "constraints/acg720_motor_test.cst",
+               "constraints/acg720_motor_test.sdc", "acg720_motor_sweep.gprj", "build_sweep.tcl"]
 audit = {
     "device": "GW5AT-LV60PG484AC1/I0 (GW5AT-60B)", "pins": pins,
     "timing_violations": violations, "fmax_mhz": float(fmax[1]),

@@ -1,0 +1,125 @@
+{
+  "device": "GW5AT-LV60PG484AC1/I0 (GW5AT-60B)",
+  "pins": {
+    "clk": {
+      "ball": "Y18",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "stop_n": {
+      "ball": "F15",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "left_key_n": {
+      "ball": "A20",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "right_key_n": {
+      "ball": "B20",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "left_enc_a": {
+      "ball": "A15",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "left_enc_b": {
+      "ball": "A16",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "right_enc_a": {
+      "ball": "D20",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "right_enc_b": {
+      "ball": "C20",
+      "direction": "in",
+      "io_type": "LVCMOS33"
+    },
+    "left_in1": {
+      "ball": "A13",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "left_in2": {
+      "ball": "A14",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "right_in1": {
+      "ball": "F16",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "right_in2": {
+      "ball": "E17",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "camera_reset_n": {
+      "ball": "C14",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[0]": {
+      "ball": "M22",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[1]": {
+      "ball": "N22",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[2]": {
+      "ball": "L21",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[3]": {
+      "ball": "K21",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[4]": {
+      "ball": "K22",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[5]": {
+      "ball": "J22",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[6]": {
+      "ball": "H22",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    },
+    "led[7]": {
+      "ball": "M21",
+      "direction": "out",
+      "io_type": "LVCMOS33"
+    }
+  },
+  "timing_violations": {
+    "Setup": 0,
+    "Hold": 0
+  },
+  "fmax_mhz": 184.331,
+  "variant": "sweep",
+  "bitstream_user_code": "0x0000A717",
+  "bitstream_sha256": "B54E13D91CA2C3A3F0A788FA0ACB1AB27E2A2DB854872CBFF902E770F6D48BC7",
+  "source_sha256": {
+    "rtl/acg720_motor_sweep.v": "CFCC840B79BFEA2CAC426C13D5B6B62A82C1398E1F73569CFB290DBDCBA8628D",
+    "constraints/acg720_motor_test.cst": "C13F0476981E16CC4706AB34CFA824503540A044C9B996D8824120E92044A0B7",
+    "constraints/acg720_motor_test.sdc": "16EFEC5F1BA357D3AD3E01DCA60C66475EDE2A00C9142EBE43035F0A5982C595",
+    "acg720_motor_sweep.gprj": "C778AADC8F9DC753A18D9FD090BC13AF28040F06328D0B8D4A6F1E48F2F02BA0",
+    "build_sweep.tcl": "5717D4F7CE7D6E07DB58F34061192A1C18F795E196F7E47C0B7BB0A21A2BCFF1"
+  }
+}
