@@ -1,0 +1,111 @@
+commit b5fbaf59bf3d8972bb79b1362dd0f0470a7b7cf9
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-08T21:11:38+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-08T21:11:38+08:00
+
+    docs: document DDR3 timing closure experiments
+
+commit 052e0f1272f118d04a1f06a9341f80033643440d
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-08T21:05:52+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-08T21:05:52+08:00
+
+    docs: classify DDR3 live timing violations
+
+commit a1c4aa2c7958eed85fb62057e58c48d2907f48b6
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-08T20:54:24+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-08T20:54:24+08:00
+
+    feat: add DDR3 dual-frame live HDMI firmware and board feedback
+
+commit 7aaa86a6873d96460cc141e2d5a46db619d3fcae
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-06T18:33:54+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-06T18:33:54+08:00
+
+    docs: record official ch47 calibration failure and correct LED numbering
+
+commit fdee5417469c58d22f1e32408d6e14c351aacd2e
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-06T18:18:14+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-06T18:18:14+08:00
+
+    feat: adapt official ch47 full design to third-party OV5640 wiring
+
+commit 706ae3b28c44adb4d572b3c0d686eda6964cabc6
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-06T09:59:43+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-06T09:59:43+08:00
+
+    docs: switch bring-up plan to official ch47 full design
+
+commit 6dc7d8e1afb1232e8bfab0e8039e2d66f4e76990
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-06T09:52:09+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-06T09:52:09+08:00
+
+    docs: record ch47 board failure and diagnostic rollback
+
+commit 8283b17a8610028df5895cd9ad575e7c21348a10
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-05T21:29:27+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-05T21:29:27+08:00
+
+    feat: validate official ch47 DDR FIFO HDMI pattern path
+
+commit 87ed33612659cb7902f91d1efcd9182e558c5d71
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-05T19:55:34+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-05T19:55:34+08:00
+
+    chore: snapshot current official DDR baseline
+
+commit bc84f0bac6c5c847ad21025a72e42350f5b87941
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-05T11:34:00+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-05T11:34:00+08:00
+
+    Snapshot DDR bring-up and first-error diagnostics
+
+commit ad49393f49660eac80dc92afc28b9444355de938
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-02T21:00:43+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-02T21:00:43+08:00
+
+    Add validated BRAM camera display and color diagnostics
+    
+    Enable OV5640 ISP scaling and correct camera D0 pin to C15. Include standalone RGB565 and sensor color tests and live display builds.
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+commit f1153e81ab3771d2fdfa6379d2e4f404f5ebbc03
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-01T22:27:05+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-01T22:27:05+08:00
+
+    Add HDMI and DDR camera display projects
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+commit 452c3fe761289b5f8509e24f9695d47e78c26d05
+Author:     tinsiag <ztx6506@hotmail.com>
+AuthorDate: 2026-10-01T19:24:13+08:00
+Commit:     tinsiag <ztx6506@hotmail.com>
+CommitDate: 2026-10-01T19:24:13+08:00
+
+    Initial ACG720 OV5640 multi-LED diagnostic firmware
+    
+    Co-Authored-By: Claude <noreply@anthropic.com>

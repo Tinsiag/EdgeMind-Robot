@@ -1,6 +1,8 @@
 # ACG720 GW5AT-60 DDR3 验证工程
 
-本目录保存 ACG720 / GW5AT-60B 的 DDR3 调试工程。2026-10-08 已按官方第 38 章基线打通 OV5640 → 写 FIFO → DDR3 → 读 FIFO，800×480 RGB565 静态、彩条、实景整帧验证均通过。当前为实景单帧自检，只有 SRAM 配置，不断电保存，连续 HDMI 显示未验证。第 47 章 1280×720 主工程保留作历史。原厂源码、加密 IP、位流和日志保存在被 Git 忽略的 .local/ 下；原始资料包保持不变。
+本目录保存 ACG720 / GW5AT-60B 的 DDR3 调试工程。2026-10-08 本机已按官方第 38 章基线打通 OV5640 → 写 FIFO → DDR3 → 读 FIFO，800×480 RGB565 静态、彩条、实景整帧验证均通过。原有工程为实景单帧自检，只有 SRAM 配置，不断电保存；该阶段未验证连续 HDMI 显示。第 47 章 1280×720 主工程保留作历史。原厂依赖及本机构建产物保存在被 Git 忽略的 .local/ 下；原始资料包保持不变。
+
+2026-10-10 另合入用户提供的 [DDR3 实景 HDMI 交付包](verification/verified-20261008/README.md)，完整保存 30 个原始文件，包含 `0x0000BC6C` 位流、HDMI 实景照片、用户反馈、构建/仿真及 PNR 报告。该包有实景显示功能反馈，完整时序仍有 101 个 setup、29 个 hold 违反端点；镜头移动后的刷新及长时间稳定性未单独确认，包内没有完整 RTL 源码。它与下述单帧自检工程和历史结果分开归档。
 
 完整排查、实现与复现文档：[DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md](DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)。
 
@@ -12,7 +14,7 @@
 
 2026-10-08 接线位置图及采集步骤见 [LOGIC-ANALYZER-WIRING-2026-10-08.md](LOGIC-ANALYZER-WIRING-2026-10-08.md)。P7 正面左下为 1 脚方形焊盘，外排偶数、内排奇数；模块 PWDN 在模块侧采集。本次仅整理接线图，没有编译、下载、实物接线或采集。
 
-## 当前状态（2026-10-08）
+## 本机单帧验证历史状态（2026-10-08）
 
 | 验证层级 | 已取得的证据 | 结论 |
 | --- | --- | --- |
@@ -24,7 +26,7 @@
 | 摄像头像素经 DDR 读回 | 彩条 `0x4FCF`、实景 `0xAF89` 均由用户确认 D0～D5 亮、D6 灭、D7 闪，完整帧 CRC 一致 | 摄像头完整帧链路通过；旧校准失败唯一触发未确定 |
 | HDMI 图像 | 没有连接显示器 | 未验证 |
 
-**当前板上运行已通过的实景单帧版 `0xAF89`，用户确认 D0～D5 亮、D6 灭、D7 闪；彩条 `0x4FCF` 和静态 `0x41A4` 也已通过。三版均仅 SRAM 下载，外部配置 Flash 未写，断电会丢失本次配置。** 摄像头版位流、哈希、灯态定义、仿真和时序限制见 [CAMERA-FRAME-TEST-2026-10-08.md](CAMERA-FRAME-TEST-2026-10-08.md)。
+**2026-10-08 本机下载并验证了实景单帧版 `0xAF89`，用户确认 D0～D5 亮、D6 灭、D7 闪；彩条 `0x4FCF` 和静态 `0x41A4` 也已通过。三版均仅 SRAM 下载，外部配置 Flash 未写，断电会丢失配置。** 摄像头版位流、哈希、灯态定义、仿真和时序限制见 [CAMERA-FRAME-TEST-2026-10-08.md](CAMERA-FRAME-TEST-2026-10-08.md)。历史快照不表示当前板上配置；最近一次本机下载见 [电机工程 A717](../acg720-motor-test/README.md)。
 
 - 已通过位流：.local/framebuffer-first/ch38-frame-test/impl/pnr/ch38_frame_test.fs
 - SHA256：DD7959D0C266BD507D50DE8FBCF6DE9F9487E5F3B2076F643A168929D81A6222
@@ -69,13 +71,15 @@
 
 ## 已知通过的位流
 
-- 当前实景单帧：.local/framebuffer-first/ch38-camera-live/impl/pnr/ch38_camera_live.fs，User Code 0x0000AF89。
+- 已验证实景单帧：.local/framebuffer-first/ch38-camera-live/impl/pnr/ch38_camera_live.fs，User Code 0x0000AF89。
   SHA256：A718EFC364FEB9A6B47AD333686F0518D76A56DAD1955ABBA607262CAE790553
 - 彩条和静态整帧：0x4FCF、0x41A4，分别保存在 `.local/framebuffer-first/ch38-camera-bars/`、`ch38-frame-test/`；哈希及证据见完整实现文档。
 - 主工程：.local/ch47/impl/pnr/ov5640_ddr3_hdmi.fs，User Code 0x0000D80B。
   SHA256：D3CD6E1D3967B70441F22201E6A95FC143C7A99BDF63DE3F3B619E04EB23E09D
 - 固定模式 BIST：.local/bist/impl/pnr/ddr3_bist.fs，User Code 0x00007CCF。
   SHA256：E3A7E06628D7E7600527DE1F8512C7F75EABC1F56067D59ECA29C410E99C5CBD
+- 导入的 HDMI 实景交付：`verification/verified-20261008/firmware/ddr3_live_hdmi.fs`，文件头 User Code `0x0000BC6C`。
+  SHA256：B6E3967AFC4785FF42CB147C1060A8A3D5E2AD39C560904A4F1E8B8B3D8FD6F8；实物反馈及未闭合时序见 [导入说明](verification/verified-20261008/README.md)。
 
 位流身份/下载状态不表示 DDR 运行结果；校准和比较结果来自用户对相应 LED 的观察。10 月 7 日恢复原主工程后，D0～D3 全亮已再次由用户确认。
 

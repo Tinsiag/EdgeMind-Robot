@@ -1,0 +1,7 @@
+DISPLAY frame=          1 pixels=     384000 word=f800
+DISPLAY frame=          2 pixels=     384000 word=07e0
+DISPLAY frame=          3 pixels=     384000 word=07e0
+DISPLAY frame=          4 pixels=     384000 word=ffff
+DISPLAY frame=          5 pixels=     384000 word=ffff
+PASS full pipeline writes=     144099 reads=     240000 display_frames=          5; independent stalls, repeat, swap, bad frame retry
+tb/ddr3_live_pipeline_tb.v:117: $finish called at 100482109264 (1ps)

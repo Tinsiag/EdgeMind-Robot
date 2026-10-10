@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "errors": [],
+  "firmware": "/home/tinsiag/Documents/cam/build/ddr3_live_hdmi/20261008T202857/impl/pnr/ddr3_live_hdmi.fs",
+  "firmware_sha256": "b6e3967afc4785ff42cb147c1060a8a3d5e2ad39c560904a4f1e8b8b3d8fd6f8",
+  "bitstream_generated": true,
+  "generated_fifos": {
+    "rd_data_fifo": {
+      "config_match": true,
+      "sha256": "bf2a0d02e8e7a0069b228b1a6d971feda279f13df437fc845bd7d4cbc626f131"
+    },
+    "wr_data_fifo": {
+      "config_match": true,
+      "sha256": "0f0ccb309f5c24a455c4b01a3ad4a73971a7e442aff9f8067f8cf74f2f2eceef"
+    }
+  },
+  "fresh": true,
+  "hardware_verified": false,
+  "timing_closed": false
+}

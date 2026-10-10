@@ -1,0 +1,7 @@
+# Preserve original delivery bytes and the hashes recorded in both manifests.
+* -text -whitespace
+**/* -text -whitespace
+*.fs binary
+**/*.fs binary
+*.png binary
+**/*.png binary

@@ -9,8 +9,9 @@
 - [电源预算与电源板架构初稿](doc/电源板/电源预算与架构初稿.md)
 - [拟用电机资料核对](doc/电机/拟用电机资料核对.md)
 - [FPGA 资料索引](doc/fpga/README.md)
-- [代码目录](code/README.md)（含 ACG720 DDR3 本地验证工程入口与联调记录）
-- [OV5640 与 DDR3 帧缓存排查及实现](code/fpga/acg720-ddr3/DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)（800×480 静态、彩条、实景整帧链路通过；当前仅 SRAM 单帧自检）
+- [代码目录](code/README.md)（含 ACG720 摄像头、DDR3 和电机工程入口与联调记录）
+- [OV5640 与 DDR3 帧缓存排查及实现](code/fpga/acg720-ddr3/DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)（800×480 静态、彩条、实景单帧链路通过）
+- [DDR3 实景 HDMI 固件与验证资料](code/fpga/acg720-ddr3/verification/verified-20261008/README.md)（导入位流、实景显示反馈、照片与构建报告；完整时序尚未闭合）
 - [机械参考图](model/README.md)（仅供版型与尺寸初查）
 - [KiCad 电源板工程](pcb/power/)
 
