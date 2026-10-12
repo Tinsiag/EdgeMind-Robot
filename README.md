@@ -10,6 +10,7 @@
 - [拟用电机资料核对](doc/电机/拟用电机资料核对.md)
 - [FPGA 资料索引](doc/fpga/README.md)
 - [代码目录](code/README.md)（含 ACG720 摄像头、DDR3 和电机工程入口与联调记录）
+- [ACG720 双轮运动控制工程](code/fpga/acg720-motion-control/README.md)（编码器闭环、差速运动、定点旋转、CH340E Type-C 串口和 Python CLI；数字验证通过，实车标定待完成）
 - [OV5640 与 DDR3 帧缓存排查及实现](code/fpga/acg720-ddr3/DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)（800×480 静态、彩条、实景单帧链路通过）
 - [DDR3 实景 HDMI 固件与验证资料](code/fpga/acg720-ddr3/verification/verified-20261008/README.md)（导入位流、实景显示反馈、照片与构建报告；完整时序尚未闭合）
 - [硬件机械模型与参考图](model/README.md)（电源驱动板、荔枝派、MG513X、ACX720 V2/V3；含 STEP、DWG 和离线查看器）
