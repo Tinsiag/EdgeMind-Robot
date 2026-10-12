@@ -1,0 +1,614 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-12T08:03:20",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "schematic_parity": [],
+    "source": "ProPrj_power_2026-10-02.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U10 的焊盘 11 [Net-(U12A-~{R})]",
+                    "pos": {
+                        "x": 44.475,
+                        "y": 106.0
+                    },
+                    "uuid": "cc00d438-1850-48ed-af31-04ebd2039994"
+                },
+                {
+                    "description": "Top Layer 上 U12 的焊盘 1 [Net-(U12A-~{R})]",
+                    "pos": {
+                        "x": 98.525,
+                        "y": 102.19
+                    },
+                    "uuid": "1d5cf7a8-0ecb-4178-879d-6dc54e27f93e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Bottom Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7708be58-cad8-45f5-a233-d4429e968ceb"
+                },
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7d0e818f-cc6a-48d8-a25c-09f393fa532f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Bottom Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7708be58-cad8-45f5-a233-d4429e968ceb"
+                },
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7d0e818f-cc6a-48d8-a25c-09f393fa532f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Bottom Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7708be58-cad8-45f5-a233-d4429e968ceb"
+                },
+                {
+                    "description": "J9 的PTH 焊盘 2 [GND]",
+                    "pos": {
+                        "x": 114.8,
+                        "y": 46.54
+                    },
+                    "uuid": "28d9f36d-026e-4753-8e4c-704532855c85"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7d0e818f-cc6a-48d8-a25c-09f393fa532f"
+                },
+                {
+                    "description": "填充区[GND]在 Top Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 25.475,
+                        "y": 36.475
+                    },
+                    "uuid": "7d0e818f-cc6a-48d8-a25c-09f393fa532f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "走线 [+5V_FPGA] (Top Layer), 长度: 2.9251 mm",
+                    "pos": {
+                        "x": 87.1538,
+                        "y": 64.4738
+                    },
+                    "uuid": "efa06d9a-054f-4f6e-bb67-32922624f1e1"
+                },
+                {
+                    "description": "走线 [+5V_FPGA] (Top Layer), 长度: 0.8850 mm",
+                    "pos": {
+                        "x": 87.56,
+                        "y": 60.49
+                    },
+                    "uuid": "1a2d3872-c2ab-49ef-a3c1-ca4da6eefd30"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 R78 的焊盘 1 [VM_L]",
+                    "pos": {
+                        "x": 57.825,
+                        "y": 86.5
+                    },
+                    "uuid": "20d659cd-a9e9-4855-9d47-2df695c9d55c"
+                },
+                {
+                    "description": "走线 [VM_L] (Top Layer), 长度: 1.2440 mm",
+                    "pos": {
+                        "x": 33.8079,
+                        "y": 89.9111
+                    },
+                    "uuid": "e65db381-b6d5-4312-a9e5-d4ace6773ef2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[VM_L]在 Top Layer 上, 优先级 5",
+                    "pos": {
+                        "x": 64.6625,
+                        "y": 93.35
+                    },
+                    "uuid": "1e5c08c7-3c8e-4f2f-b1ca-a75ecc6d2e73"
+                },
+                {
+                    "description": "U2 的PTH 焊盘 9 [VM_L]",
+                    "pos": {
+                        "x": 58.0005,
+                        "y": 101.54
+                    },
+                    "uuid": "a115aaec-4a74-4fe5-837f-7233d05e0fda"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "走线 [VM_SWITCHED] (Top Layer), 长度: 1.4750 mm",
+                    "pos": {
+                        "x": 59.3875,
+                        "y": 92.3
+                    },
+                    "uuid": "1f94d6d9-4447-46ff-b29d-151f462017f7"
+                },
+                {
+                    "description": "过孔 [VM_SWITCHED] (Top Layer - Bottom Layer)",
+                    "pos": {
+                        "x": 90.2375,
+                        "y": 93.899999
+                    },
+                    "uuid": "50a8a356-9562-4a5d-a375-16c73f3b9f8a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U8 的焊盘 7 [USB2_FAULT_PULSE_N]",
+                    "pos": {
+                        "x": 83.475,
+                        "y": 48.7725
+                    },
+                    "uuid": "8670b00d-b5ec-459e-b0ca-706eafdf95cd"
+                },
+                {
+                    "description": "走线 [USB2_FAULT_PULSE_N] (Top Layer), 长度: 2.3073 mm",
+                    "pos": {
+                        "x": 91.2703,
+                        "y": 51.8898
+                    },
+                    "uuid": "eaa44657-2ea6-402e-8206-fffb0c2ebc89"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "走线 [VLOGIC_IN] (Top Layer), 长度: 1.6625 mm",
+                    "pos": {
+                        "x": 70.6,
+                        "y": 58.8875
+                    },
+                    "uuid": "25c677fc-cd4c-4093-ba5b-fb467b7e5511"
+                },
+                {
+                    "description": "走线 [VLOGIC_IN] (Top Layer), 长度: 2.7500 mm",
+                    "pos": {
+                        "x": 101.8625,
+                        "y": 66.95
+                    },
+                    "uuid": "f08a3bc0-e436-4450-9ab3-cd52e67b7bb4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "走线 [VLOGIC_IN] (Top Layer), 长度: 1.6625 mm",
+                    "pos": {
+                        "x": 70.6,
+                        "y": 108.8875
+                    },
+                    "uuid": "17f6d253-c6c3-4e95-bc94-e4dce0bc7635"
+                },
+                {
+                    "description": "C101 的PTH 焊盘 1 [VLOGIC_IN]",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 65.8225
+                    },
+                    "uuid": "5a106929-1036-4278-9cd4-a1ec4f4ce402"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "J17 的PTH 焊盘 1 [VM_R]",
+                    "pos": {
+                        "x": 67.5,
+                        "y": 127.0
+                    },
+                    "uuid": "e33f52a6-d09b-4245-9085-54f3d2678df9"
+                },
+                {
+                    "description": "Top Layer 上 C132 的焊盘 1 [VM_R]",
+                    "pos": {
+                        "x": 80.05,
+                        "y": 113.25
+                    },
+                    "uuid": "aaa17a74-1f95-456f-9798-ebedb6f790a0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "U4 的PTH 焊盘 9 [VM_R]",
+                    "pos": {
+                        "x": 85.0,
+                        "y": 111.7
+                    },
+                    "uuid": "3c6e513c-e5af-4cfb-9c3f-25c1a186cb0f"
+                },
+                {
+                    "description": "C131 的PTH 焊盘 1 [VM_R]",
+                    "pos": {
+                        "x": 95.5,
+                        "y": 122.5
+                    },
+                    "uuid": "36ea28aa-741c-4333-8d48-00d714ed21c0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "走线 [VM_R] (Top Layer), 长度: 1.4750 mm",
+                    "pos": {
+                        "x": 97.6125,
+                        "y": 92.3
+                    },
+                    "uuid": "bde09bdb-845e-4281-ab40-f1c6ece97ab7"
+                },
+                {
+                    "description": "走线 [VM_R] (Top Layer), 长度: 1.5927 mm",
+                    "pos": {
+                        "x": 87.9917,
+                        "y": 94.074
+                    },
+                    "uuid": "5eb6fb70-18fd-4a11-89ce-656e913de47b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "U4 的PTH 焊盘 6 [VM_R]",
+                    "pos": {
+                        "x": 108.1275,
+                        "y": 101.54
+                    },
+                    "uuid": "7a517353-0ef0-4e7b-9819-62339694073c"
+                },
+                {
+                    "description": "填充区[VM_R]在 Bottom Layer 上, 优先级 5",
+                    "pos": {
+                        "x": 97.6625,
+                        "y": 93.35
+                    },
+                    "uuid": "3af1794b-4ced-4d9c-a772-c00a154be547"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[+5V_AI]在 Top Layer 上, 优先级 4",
+                    "pos": {
+                        "x": 77.675,
+                        "y": 43.975
+                    },
+                    "uuid": "22d04ad5-42ec-4d07-a86b-da6a20d4bfaa"
+                },
+                {
+                    "description": "填充区[+5V_AI]在 Top Layer 上, 优先级 4",
+                    "pos": {
+                        "x": 77.675,
+                        "y": 43.975
+                    },
+                    "uuid": "22d04ad5-42ec-4d07-a86b-da6a20d4bfaa"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Top Layer 上 U7 的焊盘 7 [USB1_FAULT_PULSE_N]",
+                    "pos": {
+                        "x": 97.13,
+                        "y": 48.3625
+                    },
+                    "uuid": "b9fdce4f-8235-4348-adb9-f7d778f2e691"
+                },
+                {
+                    "description": "走线 [USB1_FAULT_PULSE_N] (Top Layer), 长度: 0.3104 mm",
+                    "pos": {
+                        "x": 101.3854,
+                        "y": 53.25
+                    },
+                    "uuid": "c8db1367-ded0-4664-95b9-a775f299b392"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区[BAT_POS]在 Bottom Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 34.615,
+                        "y": 62.5375
+                    },
+                    "uuid": "02379cd6-e9e2-4596-88d2-2444ff894630"
+                },
+                {
+                    "description": "填充区[BAT_POS]在 Top Layer 上, 优先级 0",
+                    "pos": {
+                        "x": 34.615,
+                        "y": 62.5375
+                    },
+                    "uuid": "0e0f202c-39f2-476e-8465-8c0f0a675bce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1954 mm)",
+            "items": [
+                {
+                    "description": "走线 [ENC_R_B_FPGA] (Top Layer), 长度: 3.1543 mm",
+                    "pos": {
+                        "x": 89.825,
+                        "y": 109.7696
+                    },
+                    "uuid": "4b4072c5-6f0b-49a4-a2e8-03296d6d6281"
+                },
+                {
+                    "description": "走线 [VREF_R] (Top Layer), 长度: 0.5350 mm",
+                    "pos": {
+                        "x": 91.4474,
+                        "y": 110.2625
+                    },
+                    "uuid": "ca3b0f9d-62a2-44f6-9e57-ad7f8b19e4e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1954 mm)",
+            "items": [
+                {
+                    "description": "走线 [VREF_R] (Top Layer), 长度: 5.0062 mm",
+                    "pos": {
+                        "x": 91.7963,
+                        "y": 111.1464
+                    },
+                    "uuid": "21c4c086-4766-4d04-a226-20d379fad14a"
+                },
+                {
+                    "description": "走线 [ENC_R_B_FPGA] (Top Layer), 长度: 3.1543 mm",
+                    "pos": {
+                        "x": 89.825,
+                        "y": 109.7696
+                    },
+                    "uuid": "4b4072c5-6f0b-49a4-a2e8-03296d6d6281"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1968 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 Q10 的焊盘 1 [+5V_AI]",
+                    "pos": {
+                        "x": 77.155,
+                        "y": 45.275
+                    },
+                    "uuid": "0e657736-28a5-43ea-95d5-adea857fcef5"
+                },
+                {
+                    "description": "走线 [MOTOR_POWER_OK] (Top Layer), 长度: 0.0680 mm",
+                    "pos": {
+                        "x": 76.52,
+                        "y": 44.4048
+                    },
+                    "uuid": "cd383c55-c1ee-487f-91a8-0ebb8bd32a1b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1860 mm)",
+            "items": [
+                {
+                    "description": "走线 [MOTOR_POWER_OK] (Top Layer), 长度: 0.3322 mm",
+                    "pos": {
+                        "x": 38.264,
+                        "y": 103.3916
+                    },
+                    "uuid": "6374dd90-7443-4d9f-a9c8-2c4e5c878549"
+                },
+                {
+                    "description": "Top Layer 上 U10 的焊盘 2 [MOTOR_PERMIT]",
+                    "pos": {
+                        "x": 39.525,
+                        "y": 103.46
+                    },
+                    "uuid": "e7a15c36-1df7-4aa2-ad3b-2482293f6499"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1968 mm)",
+            "items": [
+                {
+                    "description": "Top Layer 上 Q10 的焊盘 1 [+5V_AI]",
+                    "pos": {
+                        "x": 77.155,
+                        "y": 45.275
+                    },
+                    "uuid": "0e657736-28a5-43ea-95d5-adea857fcef5"
+                },
+                {
+                    "description": "走线 [MOTOR_POWER_OK] (Top Layer), 长度: 0.1573 mm",
+                    "pos": {
+                        "x": 76.5681,
+                        "y": 44.3567
+                    },
+                    "uuid": "297d4000-4f49-481e-ab25-88e3fce5d41c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (网络类 'Default' 间距 0.2000 mm; 实际 0.1860 mm)",
+            "items": [
+                {
+                    "description": "走线 [MOTOR_POWER_OK] (Top Layer), 长度: 0.1038 mm",
+                    "pos": {
+                        "x": 38.1906,
+                        "y": 103.465
+                    },
+                    "uuid": "13232183-e50f-41ad-aef8-eb22c165b5da"
+                },
+                {
+                    "description": "Top Layer 上 U10 的焊盘 2 [MOTOR_PERMIT]",
+                    "pos": {
+                        "x": 39.525,
+                        "y": 103.46
+                    },
+                    "uuid": "e7a15c36-1df7-4aa2-ad3b-2482293f6499"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

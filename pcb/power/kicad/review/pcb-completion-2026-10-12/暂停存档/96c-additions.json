@@ -1,0 +1,1148 @@
+{
+  "tracks": [
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        65.55,
+        60.15
+      ],
+      "end": [
+        64.35,
+        60.15
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        64.35,
+        60.15
+      ],
+      "end": [
+        64.35,
+        57.3
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        64.35,
+        57.3
+      ],
+      "end": [
+        64.5,
+        57.15
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        64.5,
+        57.15
+      ],
+      "end": [
+        64.5,
+        56.85
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        64.5,
+        56.85
+      ],
+      "end": [
+        65.1,
+        56.25
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        65.1,
+        56.25
+      ],
+      "end": [
+        65.25,
+        56.25
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        65.25,
+        56.25
+      ],
+      "end": [
+        65.4,
+        56.1
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        65.4,
+        56.1
+      ],
+      "end": [
+        80.1,
+        56.1
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        80.1,
+        56.1
+      ],
+      "end": [
+        92.25,
+        68.25
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        92.25,
+        68.25
+      ],
+      "end": [
+        92.55,
+        68.25
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        92.55,
+        68.25
+      ],
+      "end": [
+        92.7,
+        68.4
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        92.7,
+        68.4
+      ],
+      "end": [
+        96.3,
+        68.4
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        96.3,
+        68.4
+      ],
+      "end": [
+        96.75,
+        68.85
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        96.75,
+        68.85
+      ],
+      "end": [
+        96.9,
+        68.85
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        96.9,
+        68.85
+      ],
+      "end": [
+        97.05,
+        69.0
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        97.05,
+        69.0
+      ],
+      "end": [
+        101.1,
+        69.0
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        101.1,
+        69.0
+      ],
+      "end": [
+        101.85,
+        68.25
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        101.85,
+        68.25
+      ],
+      "end": [
+        101.85,
+        69.0
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        79.95,
+        65.4
+      ],
+      "end": [
+        79.95,
+        65.1
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        79.95,
+        65.1
+      ],
+      "end": [
+        82.2,
+        62.85
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.2,
+        62.85
+      ],
+      "end": [
+        82.2,
+        61.2
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.2,
+        61.2
+      ],
+      "end": [
+        82.35,
+        61.05
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.35,
+        61.05
+      ],
+      "end": [
+        82.35,
+        60.6
+      ],
+      "width": 1.2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.35,
+        60.6
+      ],
+      "end": [
+        84.9,
+        58.05
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        84.9,
+        58.05
+      ],
+      "end": [
+        85.05,
+        58.05
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        85.05,
+        58.05
+      ],
+      "end": [
+        85.8,
+        57.3
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        85.8,
+        57.3
+      ],
+      "end": [
+        85.95,
+        57.3
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        85.95,
+        57.3
+      ],
+      "end": [
+        86.7,
+        56.55
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        86.7,
+        56.55
+      ],
+      "end": [
+        86.85,
+        56.55
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        86.85,
+        56.55
+      ],
+      "end": [
+        89.4,
+        54.0
+      ],
+      "width": 1.2,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        66.6,
+        94.95
+      ],
+      "end": [
+        61.65,
+        99.9
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        61.65,
+        99.9
+      ],
+      "end": [
+        61.5,
+        99.9
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        61.5,
+        99.9
+      ],
+      "end": [
+        61.35,
+        100.05
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        61.35,
+        100.05
+      ],
+      "end": [
+        60.6,
+        100.05
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        60.6,
+        100.05
+      ],
+      "end": [
+        59.55,
+        101.1
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        59.55,
+        101.1
+      ],
+      "end": [
+        59.25,
+        101.1
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        59.25,
+        101.1
+      ],
+      "end": [
+        59.1,
+        101.25
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        59.1,
+        101.25
+      ],
+      "end": [
+        58.95,
+        101.25
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_L",
+      "start": [
+        58.95,
+        101.25
+      ],
+      "end": [
+        58.8,
+        101.4
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        85.8,
+        111.9
+      ],
+      "end": [
+        85.95,
+        112.05
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        85.95,
+        112.05
+      ],
+      "end": [
+        86.25,
+        112.05
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        86.25,
+        112.05
+      ],
+      "end": [
+        86.4,
+        112.2
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        86.4,
+        112.2
+      ],
+      "end": [
+        86.55,
+        112.2
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        86.55,
+        112.2
+      ],
+      "end": [
+        87.15,
+        112.8
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        87.15,
+        112.8
+      ],
+      "end": [
+        87.15,
+        113.1
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        87.15,
+        113.1
+      ],
+      "end": [
+        87.3,
+        113.25
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        87.3,
+        113.25
+      ],
+      "end": [
+        87.3,
+        114.3
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        87.3,
+        114.3
+      ],
+      "end": [
+        90.15,
+        117.15
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.15,
+        117.15
+      ],
+      "end": [
+        90.15,
+        118.35
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.15,
+        118.35
+      ],
+      "end": [
+        90.3,
+        118.5
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.3,
+        118.5
+      ],
+      "end": [
+        90.3,
+        118.8
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.3,
+        118.8
+      ],
+      "end": [
+        90.45,
+        118.95
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.45,
+        118.95
+      ],
+      "end": [
+        90.45,
+        119.1
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.45,
+        119.1
+      ],
+      "end": [
+        90.9,
+        119.55
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        90.9,
+        119.55
+      ],
+      "end": [
+        91.05,
+        119.55
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        91.05,
+        119.55
+      ],
+      "end": [
+        91.2,
+        119.7
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        91.2,
+        119.7
+      ],
+      "end": [
+        91.35,
+        119.7
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        91.35,
+        119.7
+      ],
+      "end": [
+        91.5,
+        119.85
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        91.5,
+        119.85
+      ],
+      "end": [
+        92.85,
+        119.85
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        92.85,
+        119.85
+      ],
+      "end": [
+        94.65,
+        121.65
+      ],
+      "width": 2,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        88.8,
+        93.8
+      ],
+      "end": [
+        89.3,
+        93.3
+      ],
+      "width": 0.3,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        89.3,
+        93.3
+      ],
+      "end": [
+        89.3,
+        93.2
+      ],
+      "width": 0.3,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        89.3,
+        93.2
+      ],
+      "end": [
+        89.6,
+        92.9
+      ],
+      "width": 0.3,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        89.6,
+        92.9
+      ],
+      "end": [
+        93.4,
+        92.9
+      ],
+      "width": 0.3,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        93.4,
+        92.9
+      ],
+      "end": [
+        93.6,
+        93.1
+      ],
+      "width": 0.3,
+      "layers": [
+        2
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        93.6,
+        93.1
+      ],
+      "end": [
+        95.4,
+        93.1
+      ],
+      "width": 0.3,
+      "layers": [
+        0
+      ],
+      "via": false
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        95.4,
+        93.1
+      ],
+      "end": [
+        96.1,
+        92.4
+      ],
+      "width": 0.3,
+      "layers": [
+        0
+      ],
+      "via": false
+    }
+  ],
+  "vias": [
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        64.35,
+        60.15
+      ],
+      "width": 1.2,
+      "drill": 0.6,
+      "layers": [
+        0,
+        2
+      ],
+      "via": true
+    },
+    {
+      "net": "VLOGIC_IN",
+      "start": [
+        101.85,
+        68.25
+      ],
+      "width": 1.2,
+      "drill": 0.6,
+      "layers": [
+        0,
+        2
+      ],
+      "via": true
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.2,
+        62.85
+      ],
+      "width": 1.2,
+      "drill": 0.6,
+      "layers": [
+        0,
+        2
+      ],
+      "via": true
+    },
+    {
+      "net": "+5V_FPGA",
+      "start": [
+        82.35,
+        60.6
+      ],
+      "width": 1.2,
+      "drill": 0.6,
+      "layers": [
+        0,
+        2
+      ],
+      "via": true
+    },
+    {
+      "net": "VM_R",
+      "start": [
+        93.6,
+        93.1
+      ],
+      "width": 0.6,
+      "drill": 0.3,
+      "layers": [
+        0,
+        2
+      ],
+      "via": true
+    }
+  ]
+}

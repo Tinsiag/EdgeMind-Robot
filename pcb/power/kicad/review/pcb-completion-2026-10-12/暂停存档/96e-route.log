@@ -1,0 +1,32 @@
+ROUTE USB1_FAULT_PULSE_N U7:7 to R66:2 width 0.2
+DONE 28 segments 2 vias; 261601 states; 6.8 s
+ROUTE USB2_FAULT_PULSE_N U8:7 to R68:2 width 0.2
+DONE 8 segments 0 vias; 5282 states; 5.8 s
+ROUTE Net-(U12A-~{R}) U10:11 to U12:1 width 0.2
+DONE 82 segments 6 vias; 1272210 states; 11.4 s
+ROUTE VM_SWITCHED main bus width 3
+NO ENDPOINT CELLS 15 0
+ROUTE VM_SWITCHED main bus width 2.5
+NO PATH 179335 states 2.1 s
+ROUTE VM_SWITCHED main bus width 2
+NO PATH 305654 states 2.6 s
+ROUTE VM_SWITCHED main bus width 1.8
+NO PATH 343604 states 2.9 s
+ROUTE VLOGIC_IN C101:1 to C8:1 width 1.5
+DONE 61 segments 1 vias; 101182 states; 2.0 s
+ROUTE VM_L U2:6 to U2:9 width 2
+NO PATH 248453 states 2.4 s
+ROUTE VM_L U2:6 to U2:9 width 1.8
+DONE 89 segments 0 vias; 81362 states; 1.9 s
+ROUTE VM_R U4:9 to U4:6 width 2
+NO PATH 95971 states 1.8 s
+ROUTE VM_R U4:9 to U4:6 width 1.8
+NO PATH 104698 states 1.9 s
+ROUTE VM_R U4:9 to U4:6 width 1.5
+NO PATH 444336 states 3.1 s
+ROUTE VM_R C131:1 to J17:1 width 2
+NO PATH 81705 states 1.9 s
+ROUTE VM_R C131:1 to J17:1 width 1.8
+NO PATH 89180 states 2.0 s
+ROUTE VM_R C131:1 to J17:1 width 1.5
+NO PATH 444336 states 3.0 s
