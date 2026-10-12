@@ -1,0 +1,135 @@
+{
+  "errors": [],
+  "layer_mapping": {
+    "ASSEMBLY_BOTTOM": {
+      "kicad_layer": "B.Fab",
+      "method": "auto"
+    },
+    "ASSEMBLY_TOP": {
+      "kicad_layer": "F.Fab",
+      "method": "auto"
+    },
+    "B.Adhesive": {
+      "kicad_layer": "B.Adhes",
+      "method": "auto"
+    },
+    "BOTTOM": {
+      "kicad_layer": "B.Cu",
+      "method": "auto"
+    },
+    "Bottom Overlay": {
+      "kicad_layer": "B.SilkS",
+      "method": "auto"
+    },
+    "Bottom Paste": {
+      "kicad_layer": "B.Paste",
+      "method": "auto"
+    },
+    "Bottom Solder": {
+      "kicad_layer": "B.Mask",
+      "method": "auto"
+    },
+    "DFA_BOUND_BOTTOM": {
+      "kicad_layer": "B.CrtYd",
+      "method": "auto"
+    },
+    "DFA_BOUND_TOP": {
+      "kicad_layer": "F.CrtYd",
+      "method": "auto"
+    },
+    "DRAWING_ORIGIN": {
+      "kicad_layer": "User.11",
+      "method": "auto"
+    },
+    "F.Adhesive": {
+      "kicad_layer": "F.Adhes",
+      "method": "auto"
+    },
+    "Margin": {
+      "kicad_layer": "Margin",
+      "method": "auto"
+    },
+    "NCLEGEND-1-6": {
+      "kicad_layer": "User.10",
+      "method": "auto"
+    },
+    "OUTLINE": {
+      "kicad_layer": "Edge.Cuts",
+      "method": "auto"
+    },
+    "PIN_NUMBER": {
+      "kicad_layer": "User.12",
+      "method": "auto"
+    },
+    "PLACE_BOUND_BOTTOM": {
+      "kicad_layer": "User.8",
+      "method": "auto"
+    },
+    "PLACE_BOUND_TOP": {
+      "kicad_layer": "User.7",
+      "method": "auto"
+    },
+    "TOP": {
+      "kicad_layer": "F.Cu",
+      "method": "auto"
+    },
+    "Top Overlay": {
+      "kicad_layer": "F.SilkS",
+      "method": "auto"
+    },
+    "Top Paste": {
+      "kicad_layer": "F.Paste",
+      "method": "auto"
+    },
+    "Top Solder": {
+      "kicad_layer": "F.Mask",
+      "method": "auto"
+    },
+    "User.1": {
+      "kicad_layer": "User.1",
+      "method": "auto"
+    },
+    "User.2": {
+      "kicad_layer": "User.2",
+      "method": "auto"
+    },
+    "User.3": {
+      "kicad_layer": "User.3",
+      "method": "auto"
+    },
+    "User.4": {
+      "kicad_layer": "User.4",
+      "method": "auto"
+    },
+    "User.Comments": {
+      "kicad_layer": "Cmts.User",
+      "method": "auto"
+    },
+    "User.Drawings": {
+      "kicad_layer": "Dwgs.User",
+      "method": "auto"
+    },
+    "User.Eco1": {
+      "kicad_layer": "Eco1.User",
+      "method": "auto"
+    },
+    "User.Eco2": {
+      "kicad_layer": "Eco2.User",
+      "method": "auto"
+    },
+    "恢复": {
+      "kicad_layer": "Rescue",
+      "method": "auto"
+    }
+  },
+  "output_file": "acx720_v2.kicad_pcb",
+  "source_file": "ACX720-v2机械文件.PcbDoc",
+  "source_format": "Altium Designer",
+  "statistics": {
+    "footprints": 33,
+    "tracks": 0,
+    "vias": 32,
+    "zones": 0
+  },
+  "warnings": []
+}

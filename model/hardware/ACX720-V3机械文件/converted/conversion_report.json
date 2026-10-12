@@ -1,0 +1,326 @@
+{
+  "source_sha256": {
+    "ACX720-v2机械文件.PcbDoc": "b2199389924b26142aca47f0be626da5d60ee86d3b9bd3f602fbac2de1cddc34",
+    "ACX720-V3.DWG": "f6bb623a6451fad67cc167028831750ba49d55e6438d0496024a058a1e735cce"
+  },
+  "v2": {
+    "body_count": 33,
+    "unique_drilled_features": 250,
+    "imported_stack_thickness_mm_unverified": 0.28416,
+    "board_bbox_mm": [
+      0,
+      0,
+      149.861016,
+      109.22
+    ],
+    "bodies": [
+      {
+        "reference": "P5",
+        "pattern": "HDR2X18",
+        "source_body_index": 0,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "P3",
+        "pattern": "IDC-40J",
+        "source_body_index": 1,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "J3",
+        "pattern": "RJ45_HR911130C",
+        "source_body_index": 2,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 8
+      },
+      {
+        "reference": "P1",
+        "pattern": "IDC3-14",
+        "source_body_index": 3,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "J5",
+        "pattern": "USB-MICRO",
+        "source_body_index": 4,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "J2",
+        "pattern": "USB-MICRO",
+        "source_body_index": 5,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "P6",
+        "pattern": "HDR2X4",
+        "source_body_index": 6,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW4",
+        "pattern": "SW-1X2",
+        "source_body_index": 7,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW7",
+        "pattern": "SW-1X2",
+        "source_body_index": 8,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW6",
+        "pattern": "SW-1X2",
+        "source_body_index": 9,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW5",
+        "pattern": "SW-1X2",
+        "source_body_index": 10,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW2",
+        "pattern": "SW-1X2",
+        "source_body_index": 11,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW3",
+        "pattern": "SW-1X2",
+        "source_body_index": 12,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW1",
+        "pattern": "SW-1X2",
+        "source_body_index": 13,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "SW0",
+        "pattern": "SW-1X2",
+        "source_body_index": 14,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "BT1",
+        "pattern": "CR1220",
+        "source_body_index": 15,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "J4",
+        "pattern": "JACK_PWR",
+        "source_body_index": 16,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "D34",
+        "pattern": "SIP3",
+        "source_body_index": 17,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "P2",
+        "pattern": "HDR1X3",
+        "source_body_index": 18,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "LS1",
+        "pattern": "BEEP09X05",
+        "source_body_index": 19,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "S4",
+        "pattern": "SW-PB_3_6_4_3",
+        "source_body_index": 20,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 12
+      },
+      {
+        "reference": "S2",
+        "pattern": "SW-PB_3_6_4_3",
+        "source_body_index": 21,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 12
+      },
+      {
+        "reference": "S3",
+        "pattern": "SW-PB_3_6_4_3",
+        "source_body_index": 22,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 12
+      },
+      {
+        "reference": "S1",
+        "pattern": "SW-PB_3_6_4_3",
+        "source_body_index": 23,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 12
+      },
+      {
+        "reference": "S0",
+        "pattern": "SW-PB_3_6_4_3",
+        "source_body_index": 24,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 12
+      },
+      {
+        "reference": "H4",
+        "pattern": "HOLE5R715MM3R175MM-8STAR",
+        "source_body_index": 25,
+        "kind": "mount_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 46
+      },
+      {
+        "reference": "H3",
+        "pattern": "HOLE5R715MM3R175MM-8STAR",
+        "source_body_index": 26,
+        "kind": "mount_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 46
+      },
+      {
+        "reference": "H2",
+        "pattern": "HOLE5R715MM3R175MM-8STAR",
+        "source_body_index": 27,
+        "kind": "mount_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 46
+      },
+      {
+        "reference": "H1",
+        "pattern": "HOLE5R715MM3R175MM-8STAR",
+        "source_body_index": 28,
+        "kind": "mount_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 46
+      },
+      {
+        "reference": "S5",
+        "pattern": "SS12D06_1P2T_",
+        "source_body_index": 29,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 8
+      },
+      {
+        "reference": "P4",
+        "pattern": "HD20-100-R",
+        "source_body_index": 30,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 6
+      },
+      {
+        "reference": "J7",
+        "pattern": "HDMI_A",
+        "source_body_index": 31,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 8
+      },
+      {
+        "reference": "J6",
+        "pattern": "HDMI_A",
+        "source_body_index": 32,
+        "kind": "component_envelope",
+        "source_height_mm": 3.81,
+        "source_vertex_count": 8
+      }
+    ]
+  },
+  "v3": {
+    "units": "mm",
+    "board_width_mm": 138.049,
+    "board_height_mm": 91.567,
+    "hole_entities": 206,
+    "valid_hole_cuts": 194,
+    "self_intersecting_slots_preserved_as_linework": [
+      "942",
+      "953",
+      "96E",
+      "97F",
+      "A54",
+      "A65",
+      "A80",
+      "A91",
+      "AB1",
+      "AD3",
+      "1235",
+      "1242"
+    ],
+    "modelspace_entity_types": {
+      "LINE": 2919,
+      "ARC": 285,
+      "CIRCLE": 2638,
+      "LWPOLYLINE": 33
+    },
+    "source_has_3d_solids": false,
+    "export_is_zero_thickness_surface": true,
+    "dxf_audit_errors": 0
+  },
+  "conversion_tolerances_mm": {
+    "mesh_linear_deflection": 0.015,
+    "v3_slot_flattening": 0.005
+  },
+  "warnings": [
+    "V2 and V3 board sizes and revisions differ: never combine their geometry.",
+    "V2 component bodies all use source-defined 3.81 mm envelope height, including mounting-hole envelopes; these are not detailed physical parts.",
+    "V2 PCB stack thickness is imported from incomplete mechanical PCB data and is not verified against hardware.",
+    "V3 has no Z/height data: STEP and GLB contain a planar reference only.",
+    "12 V3 slot outlines self-intersect after DWG decoding; preserved as linework, not silently repaired or used as hole cuts.",
+    "LibreDWG reported source checksum/material/table warnings; DXF geometry audit has no errors.",
+    "KiCad import reported unmapped non-mechanical layers and two TH-pad warnings; conversion is not a production PCB translation."
+  ]
+}

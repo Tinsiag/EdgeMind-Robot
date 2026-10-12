@@ -1,0 +1,6 @@
+# Preserve supplied model and conversion files byte-for-byte on every platform.
+model/hardware/** -text
+model/hardware/**/*.step -diff
+model/hardware/**/*.stp -diff
+model/hardware/**/*.dxf -diff
+model/hardware/SIPEED_LPi4A_51601.step filter=lfs diff=lfs merge=lfs -text

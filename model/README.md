@@ -1,8 +1,48 @@
-# 机械参考图
+# 硬件机械模型与参考图
 
-本目录当前包含两张用户保存的板卡机械参考图，并非可编辑的 STEP/DWG 模型，也不能替代实物测量。
+2026-10-12 按用户要求，将 `C:/Users/sc/Downloads/1` 中的模型、转换资料和离线查看器复制到 [hardware/](hardware/)，并收纳本轮使用的嘉立创 EDA 电源驱动板 STEP。原文件内容保持不变；每个文件的大小与 SHA-256 见 [复制校验清单](hardware/model-manifest.json)。
 
-- `BE11300D28AD57C96EC11B6DEDBB3751.bmp`：灰度板卡布局图，图中标注外形约 84.45 mm × 99.06 mm；具体板型尚未核实。
-- `EDE6B28DC4BC051CA18BC4B2684486C0.png`：Autodesk Viewer 的 `ACX720-V3.DWG.png` 截图，图中标注约 132.46 mm × 85.98 mm。
+## 主要模型
 
-两张图的尺寸不同，不能把它们当成同一板卡的正反面或直接套用到 ACG720。开孔、接口和板框须对照实物及对应版本的正式机械图复核。原始设计文件的权利仍归相应提供方所有。
+| 部件 | 文件 | 尺寸与用途 |
+| --- | --- | --- |
+| 电源驱动板 | [3D_PCB1_2026-10-12.step](hardware/3D_PCB1_2026-10-12.step) | 用户当前嘉立创 EDA 现板导出；PCB 约 100×50 mm，模型包络约 100×50.06×18.30 mm |
+| 荔枝派 LPi4A | [SIPEED_LPi4A_51601.step](hardware/SIPEED_LPi4A_51601.step) | 原始装配模型；含突出接口的包络约 84.455×103.814×20.358 mm；使用 Git LFS |
+| MG513X 霍尔编码电机 | [电机 STP](hardware/直流电机-MG513X（霍尔编码器）/直流电机-MG513X（霍尔编码器）.stp) | 含安装法兰的包络 64.5×57.6×38 mm；四轮概念使用两台驱动后轮 |
+| FPGA V3 机械图 | [ACX720-V3.DWG](hardware/ACX720-V3机械文件/ACX720-V3.DWG) | 二维图纸；V3 板面 138.049×91.567 mm；实际 ACG720 版本须复核 |
+| FPGA V2 原始机械 PCB | [ACX720-v2机械文件.PcbDoc](hardware/ACX720-V3机械文件/ACX720-v2机械文件.PcbDoc) | V2 与 V3 尺寸不同，不混用几何 |
+
+## FPGA 转换资料
+
+[converted/](hardware/ACX720-V3机械文件/converted/) 保留从下载目录复制的 STEP、STL、GLB、DXF、SVG、转换脚本、报告及离线 HTML 查看器。
+
+- [V2 STEP 包络模型](hardware/ACX720-V3机械文件/converted/acx720_v2_reference.step)：板面约 149.861×109.220 mm，源器件包络统一高 3.81 mm；这些高度及层叠厚度未按实物验证。
+- [V3 平面 STEP](hardware/ACX720-V3机械文件/converted/acx720_v3_planar_reference.step)：来自二维 DWG，无器件高度信息，保持零厚度平面。
+- [转换报告](hardware/ACX720-V3机械文件/converted/conversion_report.json)：记录源文件哈希、板框、已知异常及转换边界。
+- [离线查看器](hardware/ACX720-V3机械文件/converted/open_3d.html)：克隆并取得实际文件后，用浏览器打开本地文件；保留同目录文件和 `vendor/`。GitHub 文件页面显示 HTML 源码。
+
+转换资料中的 `acx720_v2.kicad_pcb` 只是 V2 原机械图的中间转换文件，与当前嘉立创电源板无关。没有复制 `.kicad_prl` 编辑器个人状态。
+
+## 获取大模型
+
+首次克隆时先安装 Git LFS，然后执行：
+
+```sh
+git lfs install
+git clone https://github.com/Tinsiag/EdgeMind-Robot.git
+cd EdgeMind-Robot
+git lfs pull
+```
+
+已有仓库执行 `git lfs pull` 即可取得荔枝派的完整 STEP。只得到三行 LFS 指针文本时，不能将其直接作为 STEP 打开。
+
+## 底盘概念
+
+[四轮版本说明](../output/chassis-concept-2026-10-12/四轮版本说明.md) 包含后轮 MG513X×2、前万向轮×2 的布局、原尺寸装配参考和 AI 造型效果图。电池按用户给定 105×33×25 mm 留位，没有独立的电池 STEP。模型和概念图用于结构讨论；实际开孔、轴线、接口净空和完整干涉仍需核验。
+
+## 原有参考图
+
+- `BE11300D28AD57C96EC11B6DEDBB3751.bmp`：灰度板卡布局图，标注约 84.45×99.06 mm；单独截图的板型尚未最终核实。
+- `EDE6B28DC4BC051CA18BC4B2684486C0.png`：Autodesk Viewer 的 `ACX720-V3.DWG.png` 截图。132.461×85.979 mm 标注取点位于角部孔中心，不能直接当作完整板框尺寸；V3 板框以正式图纸及转换报告为准。
+
+原始模型、转换数据和附带库的作者信息与许可文本保持原样，设计权利仍归相应提供方。

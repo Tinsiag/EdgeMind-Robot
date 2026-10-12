@@ -1,5 +1,5 @@
-# Keep manufacturer-supplied resources local; the public repository contains
-# our own notes and editable project design files only.
+# Keep other manufacturer-supplied packages local. User-selected mechanical
+# models are explicitly included under model/hardware/.
 /doc/电机/WHEELTEC 直流电机附送资料/
 /doc/fpga/**
 !/doc/fpga/**/
@@ -12,3 +12,6 @@
 *.kicad_prl
 *-backups/
 **/.history/
+
+# CAD conversion runtimes and scratch meshes used for chassis concept previews.
+/tmp/chassis-concept/

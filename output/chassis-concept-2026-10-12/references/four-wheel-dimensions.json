@@ -1,0 +1,54 @@
+{
+  "dimensions": {
+    "bodyLength": 260,
+    "bodyWidth": 180,
+    "rearWheelDiameter": 80,
+    "rearWheelWidth": 18,
+    "frontCasterDiameter": 50,
+    "frontCasterWidth": 16,
+    "rearAxleY": 80,
+    "frontCasterWheelY": -95,
+    "rearWheelCentreX": 106,
+    "frontCasterCentreX": 100,
+    "overallWidthIncludingHubs": 234,
+    "battery": [
+      105,
+      33,
+      25
+    ],
+    "fpga": [
+      138.049,
+      91.567
+    ],
+    "licheeEnvelope": [
+      84.455,
+      103.814,
+      20.35827
+    ],
+    "powerEnvelope": [
+      99.99049,
+      50.05637,
+      18.3
+    ],
+    "upperDeckBottomZ": 64,
+    "boardDatumZ": 76,
+    "drive": "Rear MG513X x2, front passive swivel castors x2; no belt transmission"
+  },
+  "bounds": {
+    "min": [
+      -117,
+      -130.5,
+      0
+    ],
+    "max": [
+      117,
+      130,
+      95.20083045959473
+    ],
+    "size": [
+      234,
+      260.5,
+      95.20083045959473
+    ]
+  }
+}
