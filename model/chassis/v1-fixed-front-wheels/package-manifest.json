@@ -1,0 +1,260 @@
+{
+  "units": "CAD: mm; GLB: m",
+  "files": [
+    {
+      "file": "build_chassis.py",
+      "bytes": 21657,
+      "sha256": "1abbf28c5f72a9e0c9a45943354017113e6b72902262d45b33428dbd39997703"
+    },
+    {
+      "file": "create_preview.py",
+      "bytes": 6252,
+      "sha256": "c116d18d231d1dda1ac7c191472736b04b5ad2d5da20dac98e33adab89bb9f0a"
+    },
+    {
+      "file": "package_model.py",
+      "bytes": 2106,
+      "sha256": "d2d312c496a74ef5e16dd81d30aeb1dd4f93f267206aad884e3c464d5587a74e"
+    },
+    {
+      "file": "parameters.json",
+      "bytes": 962,
+      "sha256": "a71fb7bbbd7a62d4cb0d8b1591289ab775591176285f129bdaff2fb1f5238cc7"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5207,
+      "sha256": "df68ad920a90c1aaa154fdb0c31a7f71683b747b73b43e639c893ac070d841b1"
+    },
+    {
+      "file": "v1-fixed-front-wheels/EdgeMind_Assembly.glb",
+      "bytes": 4954628,
+      "sha256": "4e1aaccaf7421fb98d010828178254f544a920a8f9096d8fe30464cdf7f89475"
+    },
+    {
+      "file": "v1-fixed-front-wheels/EdgeMind_Assembly.step",
+      "bytes": 35894546,
+      "sha256": "0f0ac997ab50b033cd77d78d67c011c4c6c391f5750af2be0321700b3cd61fd1"
+    },
+    {
+      "file": "v1-fixed-front-wheels/EdgeMind_Chassis.FCStd",
+      "bytes": 5155590,
+      "sha256": "df2f053f2930b27e0661a6cce726a7e6ca42764e522deef940b4bca49c98c31e"
+    },
+    {
+      "file": "v1-fixed-front-wheels/EdgeMind_Shell.step",
+      "bytes": 510359,
+      "sha256": "fc1e8943f7d27ad0b644d40e3b50ac48d303ce6d42c4b8fd63b78f188e3ac55c"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/BatteryCradle.step",
+      "bytes": 37368,
+      "sha256": "019ed4c5baa04b2bdbc2d2ba29296440b386713f5e7aee75755b2c57b6ddfe52"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/FrontAxleBracketL.step",
+      "bytes": 13870,
+      "sha256": "4ef6472658697fda2bd67c80d40f154c59b8b88c002d931cd5ffd965afa17cef"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/FrontAxleBracketR.step",
+      "bytes": 13807,
+      "sha256": "9b72887b5d5f12c1b643816de082f308d334368d40f14ea1d0a4707fa90da97c"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/FrontBumper.step",
+      "bytes": 16966,
+      "sha256": "e25413e13509d5fbce649bebf3e557171d60efd42894591b921b999fddea1e30"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/FrontCheekL.step",
+      "bytes": 7338,
+      "sha256": "76adc174d39db9aa1e1c853e3895fab97ef0642d5ac8aabf9a93adf7164a782e"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/FrontCheekR.step",
+      "bytes": 7306,
+      "sha256": "e50c17906037203ab96fbc4b1cd84ae37598a9f3b3686bce734013fbb5b07d51"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/LowerDeck.step",
+      "bytes": 66896,
+      "sha256": "8ed917ec3789ef660910ad8dcf2865fdf0737a96a76c42733d6f2e4edc2209ce"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/MotorBracketL.step",
+      "bytes": 19791,
+      "sha256": "27f9831fa2759b21d847ac91df878571385a8b987819cd99e90379eff4476163"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/MotorBracketR.step",
+      "bytes": 19709,
+      "sha256": "1237f1150bdb8111290f1ad7c158775916ceff3314db7db2487d25401969970a"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/RearBumper.step",
+      "bytes": 11923,
+      "sha256": "03e5fe5edba50d43603112ab5ff430b0a3697e63ed955b707efd944cd919f54a"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/SidePanelL.step",
+      "bytes": 42361,
+      "sha256": "a88b51f2d852f8c0dc80a553efe9123a3fc6d040bdd6ec7f1c99c22cf99d0f76"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/SidePanelR.step",
+      "bytes": 42221,
+      "sha256": "338db390f4567d672f718d098de9a25ad0234de2f144a2190b07dde15ea1c22b"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/SideRailL.step",
+      "bytes": 13803,
+      "sha256": "c4992044f020997d37d2d6a0a466ee862cbbfa64ddbb368444bdf92bbc313550"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/SideRailR.step",
+      "bytes": 13741,
+      "sha256": "6258fdb96939a712784e77fa99ab74a04538abf45aacacedc5e75adc15e08a6f"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-step/UpperDeck.step",
+      "bytes": 144844,
+      "sha256": "d50afc4970d5ecd894ec8af3875ad593a626f22ba46719d0d4c1b19b2f452a41"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/BatteryCradle.stl",
+      "bytes": 55884,
+      "sha256": "1682577d6b11b15ced7695dc7443d9c23ad6aaf9cb8ec180f4343131fcc73459"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/FrontAxleBracketL.stl",
+      "bytes": 39484,
+      "sha256": "57301bce94a74d8d210629497666906000d6680cb7e57603928a79ed293dab6a"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/FrontAxleBracketR.stl",
+      "bytes": 39484,
+      "sha256": "de3800b191942bd825893853f509aa4574fb59813db80a5c74464bedea66785a"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/FrontBumper.stl",
+      "bytes": 2684,
+      "sha256": "78d044996bc862a47ee2973217514d17679fe4fbf6de56d5c70dab138764f064"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/FrontCheekL.stl",
+      "bytes": 684,
+      "sha256": "e958bfe3835aeb96f3e0222fcb345cd439f550ac853a71cf21a2bd01cd804085"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/FrontCheekR.stl",
+      "bytes": 684,
+      "sha256": "eb6a9fe5c959bb8930c58fb918279ab4eb3a35b7a5078ef6aac141549ca5f8eb"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/LowerDeck.stl",
+      "bytes": 336684,
+      "sha256": "71ecfd8f63f5d6457ce65026ce03fd519383b9e382a33cc4a306c5ffe73ba15a"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/MotorBracketL.stl",
+      "bytes": 90684,
+      "sha256": "9fa7c9a213fcd1147fab12b4ce3a5081ac81b0d640fd4c180325bdae89325c83"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/MotorBracketR.stl",
+      "bytes": 90684,
+      "sha256": "129bc4595dbdb59e3dca473af2e924e0d3de169ce7d199a48ff935357b235d2e"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/RearBumper.stl",
+      "bytes": 1684,
+      "sha256": "550308f43592bdc5a562c78339e7fa1543f6fe825a6a121b7569a39cc3300163"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/SidePanelL.stl",
+      "bytes": 25084,
+      "sha256": "443167c29c281bea74a4e9ea473f06bdddfb80cccf66ab4b55061c7bbdb58a62"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/SidePanelR.stl",
+      "bytes": 25084,
+      "sha256": "27389da285246f3f2ff60f791f10bdbcd5c532ea3a1a4c5cadb7d861e317ab13"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/SideRailL.stl",
+      "bytes": 6684,
+      "sha256": "cf3820869c14eb8c74f060ccf1c041b6ee368ae674bd1dd8c3c8c308582687df"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/SideRailR.stl",
+      "bytes": 6684,
+      "sha256": "c88f5b37bbbc266207dc02cf5db540a2bf32a4a03bb1598f7f38867c102beb39"
+    },
+    {
+      "file": "v1-fixed-front-wheels/parts-stl/UpperDeck.stl",
+      "bytes": 360884,
+      "sha256": "698e5983145fa1f5f163ce10752ac5f6fd24aab8c3a5c87f34138d07b3c4bc0e"
+    },
+    {
+      "file": "v1-fixed-front-wheels/preview-assembled.png",
+      "bytes": 435345,
+      "sha256": "a3490ea53ad908e3594b13927cfe10cada74dc21c546d71c6df2c8aa84320a2f"
+    },
+    {
+      "file": "v1-fixed-front-wheels/preview-exploded.png",
+      "bytes": 519202,
+      "sha256": "64658c356d234b6c09124d962cbefb358893a64907f9babaf8a8a7e72b031368"
+    },
+    {
+      "file": "v1-fixed-front-wheels/preview-shell.png",
+      "bytes": 385367,
+      "sha256": "361ae05d14623ce51d30207e1717194b140cfcbb2f045a93d3bd336182eab422"
+    },
+    {
+      "file": "v1-fixed-front-wheels/preview-top.png",
+      "bytes": 251534,
+      "sha256": "e3b10cfa9adf0af7c763fba8c792998928c3607fd59607aa773f250450419a6f"
+    },
+    {
+      "file": "v1-fixed-front-wheels/preview-viewer.png",
+      "bytes": 501587,
+      "sha256": "bb7b789b7db408b4a7a11e095026251cd8e27031c69572b90610d8a296e5768e"
+    },
+    {
+      "file": "v1-fixed-front-wheels/vendor/three.LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+    },
+    {
+      "file": "v1-fixed-front-wheels/vendor/three.min.js",
+      "bytes": 669884,
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+    },
+    {
+      "file": "v1-fixed-front-wheels/verification.json",
+      "bytes": 73541,
+      "sha256": "da046bb887b18c5bf7150caabd0a272a33ba47245f989f4447bbe4c3daa8d5de"
+    },
+    {
+      "file": "v1-fixed-front-wheels/viewer-verification.json",
+      "bytes": 947,
+      "sha256": "f8fbe475be54914ccc00119be7cd773b09f8cce0f54b663591bd3d3f0b56a047"
+    },
+    {
+      "file": "v1-fixed-front-wheels/查看模型.html",
+      "bytes": 7583739,
+      "sha256": "06e84fe83032e0b8500718b0eb8852d5b4fcab661f5160f44e9bba75bd637cd2"
+    },
+    {
+      "file": "verify_model.py",
+      "bytes": 2529,
+      "sha256": "fd40172daaad10e0ae4ce6de712778f9187e005bedb9ba2dab891a9d938c3a93"
+    },
+    {
+      "file": "verify_preview.cjs",
+      "bytes": 3332,
+      "sha256": "3e962a7d5d7465c5b3f1bbacae42291bd5a4c522aeca0b6e94384bb48b81ac31"
+    }
+  ]
+}

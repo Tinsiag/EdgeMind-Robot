@@ -1,0 +1,3113 @@
+{
+  "units": "mm",
+  "parameters": {
+    "version": "v1-fixed-front-wheels",
+    "units": "mm",
+    "body_length": 260.0,
+    "body_width": 180.0,
+    "plate_thickness": 3.0,
+    "lower_deck_bottom_z": 18.0,
+    "upper_deck_bottom_z": 64.0,
+    "board_datum_z": 76.0,
+    "wheel_diameter": 80.0,
+    "wheel_width": 18.0,
+    "wheel_centre_x": 106.0,
+    "rear_axle_y": 80.0,
+    "front_axle_y": -95.0,
+    "front_axle_diameter": 8.0,
+    "front_bearing_outer_diameter": 22.0,
+    "front_bearing_width": 7.0,
+    "battery_width": 33.0,
+    "battery_length": 105.0,
+    "battery_height": 25.0,
+    "fpga_width": 138.049,
+    "fpga_length": 91.567,
+    "fpga_centre_y": -64.0,
+    "lichee_width": 84.455,
+    "lichee_length": 103.814,
+    "lichee_height": 20.35827,
+    "lichee_centre_y": 53.0,
+    "front_wheels": "Fixed heading, freely rolling independent bearing hubs; no front drive motors.",
+    "mounting_holes": "Power PCB and MG513X holes are read from supplied STEP; FPGA and LPi4A mounts remain reference positions with adjustable deck slots."
+  },
+  "parts": [
+    {
+      "name": "LowerDeck",
+      "label": "下层底板 260×180×3",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 137057.9761698821,
+      "bounds": [
+        -90.0,
+        -130.0,
+        18.0,
+        90.0,
+        130.0,
+        21.000000000000004
+      ]
+    },
+    {
+      "name": "UpperDeck",
+      "label": "上层可拆托盘 Z64 / 板卡 Z76",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 134684.9416565598,
+      "bounds": [
+        -90.0,
+        -130.0,
+        64.0,
+        90.0,
+        130.0,
+        67.0
+      ]
+    },
+    {
+      "name": "SidePanelL",
+      "label": "侧护板左",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11735.123302524824,
+      "bounds": [
+        -90.0,
+        -105.0,
+        21.0,
+        -87.0,
+        111.0,
+        43.0
+      ]
+    },
+    {
+      "name": "SideRailL",
+      "label": "银色侧护边L",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6284.131433401193,
+      "bounds": [
+        -92.5,
+        -107.0,
+        43.99999999999999,
+        -90.0,
+        104.0,
+        56.0
+      ]
+    },
+    {
+      "name": "AccentL",
+      "label": "侧边琥珀装饰条L",
+      "category": "Shell",
+      "role": "decorative",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 321.59999999999883,
+      "bounds": [
+        -93.3,
+        -102.0,
+        52.0,
+        -92.5,
+        99.0,
+        54.0
+      ]
+    },
+    {
+      "name": "SidePanelR",
+      "label": "侧护板右",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11735.123302524824,
+      "bounds": [
+        87.0,
+        -105.0,
+        21.0,
+        90.0,
+        111.0,
+        43.0
+      ]
+    },
+    {
+      "name": "SideRailR",
+      "label": "银色侧护边R",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6284.131433401193,
+      "bounds": [
+        90.0,
+        -107.0,
+        43.99999999999999,
+        92.5,
+        104.0,
+        56.0
+      ]
+    },
+    {
+      "name": "AccentR",
+      "label": "侧边琥珀装饰条R",
+      "category": "Shell",
+      "role": "decorative",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 321.59999999999883,
+      "bounds": [
+        92.5,
+        -102.0,
+        52.0,
+        93.3,
+        99.0,
+        54.0
+      ]
+    },
+    {
+      "name": "FrontBumper",
+      "label": "前通风护板",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7728.0,
+      "bounds": [
+        -68.0,
+        -130.0,
+        21.0,
+        68.0,
+        -127.0,
+        44.0
+      ]
+    },
+    {
+      "name": "FrontCheekL",
+      "label": "前倒角护板L",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1426.0000000000005,
+      "bounds": [
+        -90.0,
+        -130.0,
+        21.0,
+        -68.0,
+        -108.0,
+        44.0
+      ]
+    },
+    {
+      "name": "FrontCheekR",
+      "label": "前倒角护板R",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1426.0000000000005,
+      "bounds": [
+        68.0,
+        -130.0,
+        21.0,
+        90.0,
+        -108.0,
+        44.0
+      ]
+    },
+    {
+      "name": "RearBumper",
+      "label": "后护板与线束出口",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9900.0,
+      "bounds": [
+        -75.0,
+        127.0,
+        21.0,
+        75.0,
+        130.0,
+        47.0
+      ]
+    },
+    {
+      "name": "BatteryCradle",
+      "label": "电池托架 内腔38×111",
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 22383.049566773516,
+      "bounds": [
+        -31.0,
+        -58.0,
+        21.0,
+        31.0,
+        58.0,
+        32.0
+      ]
+    },
+    {
+      "name": "MainPost1",
+      "label": "上下层支柱1",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2367.763405139188,
+      "bounds": [
+        -80.5,
+        -115.5,
+        21.0,
+        -71.5,
+        -106.5,
+        64.0
+      ]
+    },
+    {
+      "name": "MainPost2",
+      "label": "上下层支柱2",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2367.763405139188,
+      "bounds": [
+        71.5,
+        -115.5,
+        21.0,
+        80.5,
+        -106.5,
+        64.0
+      ]
+    },
+    {
+      "name": "MainPost3",
+      "label": "上下层支柱3",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2367.763405139188,
+      "bounds": [
+        -80.5,
+        109.5,
+        21.0,
+        -71.5,
+        118.5,
+        64.0
+      ]
+    },
+    {
+      "name": "MainPost4",
+      "label": "上下层支柱4",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2367.763405139188,
+      "bounds": [
+        71.5,
+        109.5,
+        21.0,
+        80.5,
+        118.5,
+        64.0
+      ]
+    },
+    {
+      "name": "BoardPost1",
+      "label": "板卡支柱参考1",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618915,
+      "bounds": [
+        -69.2305,
+        -109.98949999999999,
+        67.0,
+        -63.230500000000006,
+        -103.98949999999999,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost2",
+      "label": "板卡支柱参考2",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618904,
+      "bounds": [
+        -69.2305,
+        -24.0105,
+        67.0,
+        -63.230500000000006,
+        -18.0105,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost3",
+      "label": "板卡支柱参考3",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618918,
+      "bounds": [
+        63.230500000000006,
+        -109.98949999999999,
+        67.0,
+        69.2305,
+        -103.98949999999999,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost4",
+      "label": "板卡支柱参考4",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618904,
+      "bounds": [
+        63.230500000000006,
+        -24.0105,
+        67.0,
+        69.2305,
+        -18.0105,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost5",
+      "label": "板卡支柱参考5",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618938,
+      "bounds": [
+        -41.2,
+        6.0,
+        67.0,
+        -35.2,
+        12.0,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost6",
+      "label": "板卡支柱参考6",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618943,
+      "bounds": [
+        -41.2,
+        94.0,
+        67.0,
+        -35.2,
+        100.0,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost7",
+      "label": "板卡支柱参考7",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618938,
+      "bounds": [
+        35.2,
+        6.0,
+        67.0,
+        41.2,
+        12.0,
+        76.0
+      ]
+    },
+    {
+      "name": "BoardPost8",
+      "label": "板卡支柱参考8",
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 177.49213094618943,
+      "bounds": [
+        35.2,
+        94.0,
+        67.0,
+        41.2,
+        100.0,
+        76.0
+      ]
+    },
+    {
+      "name": "PowerPost1",
+      "label": "现板孔位支柱1",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.85485351294602,
+      "bounds": [
+        -48.845,
+        -84.0809,
+        21.0,
+        -42.845,
+        -78.0809,
+        29.0
+      ]
+    },
+    {
+      "name": "PowerPost2",
+      "label": "现板孔位支柱2",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.8548535129461,
+      "bounds": [
+        -48.419999999999995,
+        -113.4661,
+        21.0,
+        -42.419999999999995,
+        -107.4661,
+        29.0
+      ]
+    },
+    {
+      "name": "PowerPost3",
+      "label": "现板孔位支柱3",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.85485351294608,
+      "bounds": [
+        -48.166,
+        -91.495,
+        21.0,
+        -42.166,
+        -85.495,
+        29.0
+      ]
+    },
+    {
+      "name": "PowerPost4",
+      "label": "现板孔位支柱4",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.8548535129461,
+      "bounds": [
+        -41.645199999999996,
+        -84.0809,
+        21.0,
+        -35.645199999999996,
+        -78.0809,
+        29.0
+      ]
+    },
+    {
+      "name": "PowerPost5",
+      "label": "现板孔位支柱5",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.85485351294608,
+      "bounds": [
+        42.5122,
+        -113.8471,
+        21.0,
+        48.5122,
+        -107.8471,
+        29.0
+      ]
+    },
+    {
+      "name": "PowerPost6",
+      "label": "现板孔位支柱6",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 161.8548535129461,
+      "bounds": [
+        43.02020000000001,
+        -72.064,
+        21.0,
+        49.02020000000001,
+        -66.064,
+        29.0
+      ]
+    },
+    {
+      "name": "MotorL",
+      "label": "MG513X 原STEP L",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 50168.376019813535,
+      "bounds": [
+        -100.5,
+        28.4,
+        21.0,
+        -42.89999999999999,
+        92.9,
+        59.0
+      ]
+    },
+    {
+      "name": "MotorBracketL",
+      "label": "后电机安装座L",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11270.377481317748,
+      "bounds": [
+        -89.0,
+        26.65,
+        18.0,
+        -70.0,
+        94.65,
+        60.0
+      ]
+    },
+    {
+      "name": "FrontAxleBracketL",
+      "label": "前从动轮固定轴座L",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2943.2897314703573,
+      "bounds": [
+        -89.0,
+        -106.0,
+        18.0,
+        -70.0,
+        -84.0,
+        50.0
+      ]
+    },
+    {
+      "name": "MotorR",
+      "label": "MG513X 原STEP R",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 50168.376019813535,
+      "bounds": [
+        42.9,
+        28.39999999999999,
+        21.0,
+        100.5,
+        92.9,
+        59.0
+      ]
+    },
+    {
+      "name": "MotorBracketR",
+      "label": "后电机安装座R",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 11270.377481317752,
+      "bounds": [
+        70.0,
+        26.65,
+        18.0,
+        89.0,
+        94.65,
+        60.0
+      ]
+    },
+    {
+      "name": "FrontAxleBracketR",
+      "label": "前从动轮固定轴座R",
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2943.289731470357,
+      "bounds": [
+        70.0,
+        -106.0,
+        18.0,
+        89.0,
+        -84.0,
+        50.0
+      ]
+    },
+    {
+      "name": "FrontLTyre",
+      "label": "前从动轮胎L",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35794.53857559824,
+      "bounds": [
+        -115.0,
+        -135.0,
+        0.0,
+        -97.0,
+        -55.0,
+        80.0
+      ]
+    },
+    {
+      "name": "FrontLHub",
+      "label": "前轴承轮毂L",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 41469.02302738525,
+      "bounds": [
+        -117.0,
+        -126.0,
+        9.0,
+        -95.0,
+        -64.0,
+        71.0
+      ]
+    },
+    {
+      "name": "FrontLBearing1",
+      "label": "前轮轴承包络L1",
+      "category": "Wheels",
+      "role": "bearing_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2309.070600388498,
+      "bounds": [
+        -103.0,
+        -106.0,
+        29.0,
+        -96.0,
+        -84.0,
+        51.0
+      ]
+    },
+    {
+      "name": "FrontLBearing2",
+      "label": "前轮轴承包络L2",
+      "category": "Wheels",
+      "role": "bearing_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2309.070600388498,
+      "bounds": [
+        -116.0,
+        -106.0,
+        29.0,
+        -109.0,
+        -84.0,
+        51.0
+      ]
+    },
+    {
+      "name": "FrontLAxle",
+      "label": "前轮8mm独立轮轴L",
+      "category": "Wheels",
+      "role": "axle_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1608.4954386379736,
+      "bounds": [
+        -117.0,
+        -99.0,
+        36.0,
+        -85.0,
+        -91.0,
+        44.0
+      ]
+    },
+    {
+      "name": "RearLTyre",
+      "label": "后驱动轮胎L",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35794.53857559824,
+      "bounds": [
+        -115.0,
+        40.0,
+        0.0,
+        -97.0,
+        120.0,
+        80.0
+      ]
+    },
+    {
+      "name": "RearLHub",
+      "label": "后驱轮毂参考L",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 49167.747152419324,
+      "bounds": [
+        -117.0,
+        49.0,
+        9.0,
+        -95.0,
+        111.0,
+        71.0
+      ]
+    },
+    {
+      "name": "RearLCoupling",
+      "label": "后轮6mm轴适配包络L",
+      "category": "Wheels",
+      "role": "coupling_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1243.5994519235192,
+      "bounds": [
+        -102.5,
+        74.0,
+        34.0,
+        -87.5,
+        86.0,
+        46.0
+      ]
+    },
+    {
+      "name": "FrontRTyre",
+      "label": "前从动轮胎R",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35794.53857559824,
+      "bounds": [
+        97.0,
+        -135.0,
+        0.0,
+        115.0,
+        -55.0,
+        80.0
+      ]
+    },
+    {
+      "name": "FrontRHub",
+      "label": "前轴承轮毂R",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 41469.02302738524,
+      "bounds": [
+        95.0,
+        -126.0,
+        9.0,
+        117.0,
+        -64.0,
+        71.0
+      ]
+    },
+    {
+      "name": "FrontRBearing1",
+      "label": "前轮轴承包络R1",
+      "category": "Wheels",
+      "role": "bearing_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2309.070600388498,
+      "bounds": [
+        96.0,
+        -106.0,
+        29.0,
+        103.0,
+        -84.0,
+        51.0
+      ]
+    },
+    {
+      "name": "FrontRBearing2",
+      "label": "前轮轴承包络R2",
+      "category": "Wheels",
+      "role": "bearing_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2309.070600388498,
+      "bounds": [
+        109.0,
+        -106.0,
+        29.0,
+        116.0,
+        -84.0,
+        51.0
+      ]
+    },
+    {
+      "name": "FrontRAxle",
+      "label": "前轮8mm独立轮轴R",
+      "category": "Wheels",
+      "role": "axle_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1608.4954386379736,
+      "bounds": [
+        85.0,
+        -99.0,
+        36.0,
+        117.0,
+        -91.0,
+        44.0
+      ]
+    },
+    {
+      "name": "RearRTyre",
+      "label": "后驱动轮胎R",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35794.53857559824,
+      "bounds": [
+        97.0,
+        40.0,
+        0.0,
+        115.0,
+        120.0,
+        80.0
+      ]
+    },
+    {
+      "name": "RearRHub",
+      "label": "后驱轮毂参考R",
+      "category": "Wheels",
+      "role": "wheel_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 49167.747152419324,
+      "bounds": [
+        95.0,
+        49.0,
+        9.0,
+        117.0,
+        111.0,
+        71.0
+      ]
+    },
+    {
+      "name": "RearRCoupling",
+      "label": "后轮6mm轴适配包络R",
+      "category": "Wheels",
+      "role": "coupling_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1243.5994519235194,
+      "bounds": [
+        87.5,
+        74.0,
+        34.0,
+        102.5,
+        86.0,
+        46.0
+      ]
+    },
+    {
+      "name": "PowerComponent0",
+      "label": "现有电源板 STEP 0",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7829.190590788507,
+      "bounds": [
+        -49.97929997459995,
+        -114.98739903479,
+        29.0,
+        49.995500635001,
+        -65.01270002540005,
+        30.600050800102
+      ]
+    },
+    {
+      "name": "PowerComponent1",
+      "label": "现有电源板 STEP 1",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774381,
+      "bounds": [
+        -13.651923799847998,
+        -73.51601600681501,
+        30.60005079985,
+        -13.391923799847998,
+        -72.716016006816,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent2",
+      "label": "现有电源板 STEP 2",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.008640000000853163,
+      "bounds": [
+        -13.381923799847998,
+        -73.51601600681501,
+        31.040050799848,
+        -12.301923799847996,
+        -72.716016006816,
+        31.050050799849
+      ]
+    },
+    {
+      "name": "PowerComponent3",
+      "label": "现有电源板 STEP 3",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774374,
+      "bounds": [
+        -12.291923799847996,
+        -73.51601600681501,
+        30.60005079985,
+        -12.031923799847997,
+        -72.716016006816,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent4",
+      "label": "现有电源板 STEP 4",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5505951456156747,
+      "bounds": [
+        -13.641923799846998,
+        -73.526016006815,
+        30.610050799849,
+        -12.041923799847996,
+        -72.716016006816,
+        31.040050799848
+      ]
+    },
+    {
+      "name": "PowerComponent5",
+      "label": "现有电源板 STEP 5",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774379,
+      "bounds": [
+        -10.726917449834998,
+        -73.51601600681501,
+        30.60005079985,
+        -10.466917449834998,
+        -72.716016006816,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent6",
+      "label": "现有电源板 STEP 6",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.008640000000853163,
+      "bounds": [
+        -10.456917449834998,
+        -73.51601600681501,
+        31.040050799848,
+        -9.376917449834997,
+        -72.716016006816,
+        31.050050799849
+      ]
+    },
+    {
+      "name": "PowerComponent7",
+      "label": "现有电源板 STEP 7",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774374,
+      "bounds": [
+        -9.366917449834997,
+        -73.51601600681501,
+        30.60005079985,
+        -9.106917449834997,
+        -72.716016006816,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent8",
+      "label": "现有电源板 STEP 8",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5505951456156745,
+      "bounds": [
+        -10.716917449833998,
+        -73.526016006815,
+        30.610050799849,
+        -9.116917449834997,
+        -72.716016006816,
+        31.040050799848
+      ]
+    },
+    {
+      "name": "PowerComponent9",
+      "label": "现有电源板 STEP 9",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774448,
+      "bounds": [
+        4.123110490221004,
+        -73.524017022817,
+        30.60005079985,
+        4.3831104902210045,
+        -72.724017022818,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent10",
+      "label": "现有电源板 STEP 10",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.008640000000853167,
+      "bounds": [
+        4.393110490221004,
+        -73.524017022817,
+        31.040050799848,
+        5.473110490221004,
+        -72.724017022818,
+        31.050050799849
+      ]
+    },
+    {
+      "name": "PowerComponent11",
+      "label": "现有电源板 STEP 11",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.0069999999997744896,
+      "bounds": [
+        5.483110490221004,
+        -73.524017022817,
+        30.60005079985,
+        5.743110490221005,
+        -72.724017022818,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent12",
+      "label": "现有电源板 STEP 12",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5505951456156742,
+      "bounds": [
+        4.133110490222005,
+        -73.534017022817,
+        30.610050799849,
+        5.733110490221005,
+        -72.724017022818,
+        31.040050799848
+      ]
+    },
+    {
+      "name": "PowerComponent13",
+      "label": "现有电源板 STEP 13",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774398,
+      "bounds": [
+        1.1981066802130036,
+        -73.524017022817,
+        30.60005079985,
+        1.458106680213004,
+        -72.724017022818,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent14",
+      "label": "现有电源板 STEP 14",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.008640000000853167,
+      "bounds": [
+        1.4681066802130038,
+        -73.524017022817,
+        31.040050799848,
+        2.548106680213004,
+        -72.724017022818,
+        31.050050799849
+      ]
+    },
+    {
+      "name": "PowerComponent15",
+      "label": "现有电源板 STEP 15",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774409,
+      "bounds": [
+        2.5581066802130037,
+        -73.524017022817,
+        30.60005079985,
+        2.8181066802130044,
+        -72.724017022818,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent16",
+      "label": "现有电源板 STEP 16",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5505951456156745,
+      "bounds": [
+        1.2081066802140037,
+        -73.534017022817,
+        30.610050799849,
+        2.808106680213004,
+        -72.724017022818,
+        31.040050799848
+      ]
+    },
+    {
+      "name": "PowerComponent17",
+      "label": "现有电源板 STEP 17",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.006999999999774988,
+      "bounds": [
+        -20.481183393149998,
+        -75.437195834392,
+        30.60005079985,
+        -19.681183393151,
+        -75.177195834392,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent18",
+      "label": "现有电源板 STEP 18",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.008640000000853187,
+      "bounds": [
+        -20.481183393149998,
+        -76.527195834392,
+        31.040050799848,
+        -19.681183393151,
+        -75.44719583439199,
+        31.050050799849
+      ]
+    },
+    {
+      "name": "PowerComponent19",
+      "label": "现有电源板 STEP 19",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.00699999999977499,
+      "bounds": [
+        -20.481183393149998,
+        -76.797195834392,
+        30.60005079985,
+        -19.681183393151,
+        -76.537195834392,
+        31.050050799848
+      ]
+    },
+    {
+      "name": "PowerComponent20",
+      "label": "现有电源板 STEP 20",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5505951456156735,
+      "bounds": [
+        -20.49118339315,
+        -76.787195834392,
+        30.610050799849,
+        -19.681183393151,
+        -75.187195834393,
+        31.040050799848
+      ]
+    },
+    {
+      "name": "PowerComponent21",
+      "label": "现有电源板 STEP 21",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5.22410922322284,
+      "bounds": [
+        -21.996940309880998,
+        -74.409017018034,
+        30.600050790839,
+        -18.296940309880995,
+        -72.60901701803449,
+        31.710050790839105
+      ]
+    },
+    {
+      "name": "PowerComponent22",
+      "label": "现有电源板 STEP 22",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.261782312740909,
+      "bounds": [
+        -25.725421386843,
+        -77.073538227076,
+        30.600050776259998,
+        -24.425421386842885,
+        -75.073538227076,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent23",
+      "label": "现有电源板 STEP 23",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409085,
+      "bounds": [
+        -27.773770383541,
+        -77.073538227076,
+        30.600050776259998,
+        -26.473770383540884,
+        -75.073538227076,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent24",
+      "label": "现有电源板 STEP 24",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409067,
+      "bounds": [
+        -31.870465836932,
+        -77.073538227076,
+        30.600050776259998,
+        -30.570465836931884,
+        -75.073538227076,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent25",
+      "label": "现有电源板 STEP 25",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.261782312740908,
+      "bounds": [
+        -29.822116840234,
+        -77.073538227076,
+        30.600050776259998,
+        -28.522116840233885,
+        -75.073538227076,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent26",
+      "label": "现有电源板 STEP 26",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409125,
+      "bounds": [
+        -30.290602997206,
+        -86.90601981204,
+        30.600050776259998,
+        -28.990602997205887,
+        -84.90601981204,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent27",
+      "label": "现有电源板 STEP 27",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.261782312740909,
+      "bounds": [
+        -28.131598679197,
+        -86.90601981204,
+        30.600050776259998,
+        -26.831598679196887,
+        -84.90601981204,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent28",
+      "label": "现有电源板 STEP 28",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409067,
+      "bounds": [
+        -25.898985013969998,
+        -86.881346202692,
+        30.600050776259998,
+        -24.598985013969884,
+        -84.881346202692,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent29",
+      "label": "现有电源板 STEP 29",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409094,
+      "bounds": [
+        -10.16698094996211,
+        -93.691353822708,
+        30.600050776259998,
+        -8.866980949961995,
+        -91.691353822708,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent30",
+      "label": "现有电源板 STEP 30",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.26178231274091,
+      "bounds": [
+        -12.383592583185113,
+        -93.691353822708,
+        30.600050776259998,
+        -11.083592583184998,
+        -91.691353822708,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent31",
+      "label": "现有电源板 STEP 31",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.261782312740908,
+      "bounds": [
+        -30.268555753112,
+        -104.105943611887,
+        30.600050776259998,
+        -28.968555753111886,
+        -102.105943611887,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent32",
+      "label": "现有电源板 STEP 32",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409107,
+      "bounds": [
+        -28.109551435103,
+        -104.105943611887,
+        30.600050776259998,
+        -26.809551435102886,
+        -102.105943611887,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent33",
+      "label": "现有电源板 STEP 33",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409094,
+      "bounds": [
+        -25.876937769876,
+        -104.08127000254001,
+        30.600050776259998,
+        -24.576937769875887,
+        -102.08127000254001,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent34",
+      "label": "现有电源板 STEP 34",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.261782312740908,
+      "bounds": [
+        -10.14493370586711,
+        -110.89127762255501,
+        30.600050776259998,
+        -8.844933705866996,
+        -108.89127762255501,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent35",
+      "label": "现有电源板 STEP 35",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3.2617823127409076,
+      "bounds": [
+        -12.361545339091109,
+        -110.89127762255501,
+        30.600050776259998,
+        -11.061545339090994,
+        -108.89127762255501,
+        31.900050776260002
+      ]
+    },
+    {
+      "name": "PowerComponent36",
+      "label": "现有电源板 STEP 36",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.0567198915632813,
+      "bounds": [
+        -22.077699519684998,
+        -76.72569113988806,
+        30.600050798239,
+        -21.425985519685998,
+        -76.353283139888,
+        30.862598438238
+      ]
+    },
+    {
+      "name": "PowerComponent37",
+      "label": "现有电源板 STEP 37",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.056719891563281284,
+      "bounds": [
+        -22.077699519684998,
+        -75.606605099888,
+        30.600050798239,
+        -21.425985519685998,
+        -75.23419709988795,
+        30.862598438238
+      ]
+    },
+    {
+      "name": "PowerComponent38",
+      "label": "现有电源板 STEP 38",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.23432791372786974,
+      "bounds": [
+        -22.125181539685,
+        -76.537625099888,
+        30.861667418238934,
+        -21.378503499685298,
+        -75.4204010998883,
+        31.159593818239166
+      ]
+    },
+    {
+      "name": "PowerComponent39",
+      "label": "现有电源板 STEP 39",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.2732942660615758,
+      "bounds": [
+        -22.125181539644,
+        -76.724760119888,
+        30.600981818239,
+        -21.379434519685997,
+        -75.235128119889,
+        30.861667418238998
+      ]
+    },
+    {
+      "name": "PowerComponent40",
+      "label": "现有电源板 STEP 40",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295401,
+      "bounds": [
+        -12.177598171195998,
+        -84.904358648717,
+        30.600050800103,
+        -11.377598171195997,
+        -83.304358648717,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent41",
+      "label": "现有电源板 STEP 41",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295399,
+      "bounds": [
+        -18.681243078485995,
+        -85.06336296672599,
+        30.600050800103,
+        -17.881243078485998,
+        -83.463362966726,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent42",
+      "label": "现有电源板 STEP 42",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295404,
+      "bounds": [
+        -13.688926593853,
+        -88.27904495809,
+        30.600050800103,
+        -12.888926593852998,
+        -86.67904495809,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent43",
+      "label": "现有电源板 STEP 43",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295389,
+      "bounds": [
+        -18.659195834391994,
+        -102.263286766574,
+        30.600050800103,
+        -17.859195834391997,
+        -100.663286766574,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent44",
+      "label": "现有电源板 STEP 44",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295399,
+      "bounds": [
+        -12.155550927102,
+        -102.104282448565,
+        30.600050800103,
+        -11.355550927102,
+        -100.50428244856501,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent45",
+      "label": "现有电源板 STEP 45",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.9906814997295402,
+      "bounds": [
+        -13.666879349758995,
+        -105.478968757938,
+        30.600050800103,
+        -12.866879349758994,
+        -103.87896875793801,
+        31.400050800101997
+      ]
+    },
+    {
+      "name": "PowerComponent46",
+      "label": "现有电源板 STEP 46",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 588.8290729613539,
+      "bounds": [
+        -32.870002688004,
+        -72.210007620014,
+        25.00005070193,
+        -19.869902688005,
+        -65.41000762001498,
+        43.300050701929
+      ]
+    },
+    {
+      "name": "PowerComponent47",
+      "label": "现有电源板 STEP 47",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 38.460483938964515,
+      "bounds": [
+        -32.869902688005,
+        -72.21000762001404,
+        33.250050701928,
+        -19.869902688005,
+        -65.41000762001495,
+        38.300050701929
+      ]
+    },
+    {
+      "name": "PowerComponent48",
+      "label": "现有电源板 STEP 48",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003246,
+      "bounds": [
+        -15.017351650493998,
+        -83.836389312675,
+        30.600050800102,
+        -13.417143650494998,
+        -83.03628531267499,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent49",
+      "label": "现有电源板 STEP 49",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761543,
+      "bounds": [
+        -14.717312650494998,
+        -83.83638931267483,
+        31.075112550101,
+        -13.717182650494996,
+        -83.03628531267516,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent50",
+      "label": "现有电源板 STEP 50",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.542323711626794,
+      "bounds": [
+        -14.987347750493997,
+        -83.837389442674,
+        30.630054700101,
+        -13.447147550495997,
+        -83.03628531267499,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent51",
+      "label": "现有电源板 STEP 51",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -17.013032441961,
+        -85.12004557988199,
+        30.600050800102,
+        -16.212928441961,
+        -83.51983757988299,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent52",
+      "label": "现有电源板 STEP 52",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761706,
+      "bounds": [
+        -17.01303244196083,
+        -84.820006579883,
+        31.075112550101,
+        -16.212928441961168,
+        -83.81987657988299,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent53",
+      "label": "现有电源板 STEP 53",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267943,
+      "bounds": [
+        -17.013032441961,
+        -85.09004167988199,
+        30.630054700101,
+        -16.211928311961998,
+        -83.549841479884,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent54",
+      "label": "现有电源板 STEP 54",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -17.013032441961,
+        -88.26289292557699,
+        30.600050800102,
+        -16.212928441961,
+        -86.66268492557799,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent55",
+      "label": "现有电源板 STEP 55",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761706,
+      "bounds": [
+        -17.01303244196083,
+        -87.962853925578,
+        31.075112550101,
+        -16.212928441961168,
+        -86.96272392557799,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent56",
+      "label": "现有电源板 STEP 56",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.542323711626794,
+      "bounds": [
+        -17.013032441961,
+        -88.232889025577,
+        30.630054700101,
+        -16.211928311961998,
+        -86.692688825579,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent57",
+      "label": "现有电源板 STEP 57",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -15.348389312674994,
+        -88.26289292557699,
+        30.600050800102,
+        -14.548285312674993,
+        -86.66268492557799,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent58",
+      "label": "现有电源板 STEP 58",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.02765344870876171,
+      "bounds": [
+        -15.348389312674826,
+        -87.962853925578,
+        31.075112550101,
+        -14.548285312675162,
+        -86.96272392557799,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent59",
+      "label": "现有电源板 STEP 59",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267946,
+      "bounds": [
+        -15.348389312674994,
+        -88.232889025577,
+        30.630054700101,
+        -14.547285182675994,
+        -86.692688825579,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent60",
+      "label": "现有电源板 STEP 60",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003285,
+      "bounds": [
+        -18.663299142493997,
+        -88.26289292557699,
+        30.600050800102,
+        -17.863195142494,
+        -86.66268492557799,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent61",
+      "label": "现有电源板 STEP 61",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761706,
+      "bounds": [
+        -18.66329914249383,
+        -87.962853925578,
+        31.075112550101,
+        -17.863195142494167,
+        -86.96272392557799,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent62",
+      "label": "现有电源板 STEP 62",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267943,
+      "bounds": [
+        -18.663299142493997,
+        -88.232889025577,
+        30.630054700101,
+        -17.862195012494997,
+        -86.692688825579,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent63",
+      "label": "现有电源板 STEP 63",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -18.641251898399997,
+        -105.46281672542399,
+        30.600050800102,
+        -17.8411478984,
+        -103.86260872542499,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent64",
+      "label": "现有电源板 STEP 64",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761703,
+      "bounds": [
+        -18.64125189839983,
+        -105.162777725425,
+        31.075112550101,
+        -17.841147898400166,
+        -104.16264772542499,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent65",
+      "label": "现有电源板 STEP 65",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267943,
+      "bounds": [
+        -18.641251898399997,
+        -105.432812825424,
+        30.630054700101,
+        -17.840147768400996,
+        -103.892612625426,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent66",
+      "label": "现有电源板 STEP 66",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003248,
+      "bounds": [
+        -14.9953044064,
+        -101.036313112522,
+        30.600050800102,
+        -13.395096406401,
+        -100.23620911252199,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent67",
+      "label": "现有电源板 STEP 67",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761543,
+      "bounds": [
+        -14.695265406401,
+        -101.03631311252182,
+        31.075112550101,
+        -13.695135406400999,
+        -100.23620911252216,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent68",
+      "label": "现有电源板 STEP 68",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.542323711626794,
+      "bounds": [
+        -14.9653005064,
+        -101.037313242521,
+        30.630054700101,
+        -13.425100306402,
+        -100.23620911252199,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent69",
+      "label": "现有电源板 STEP 69",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -15.326342068579995,
+        -105.46281672542399,
+        30.600050800102,
+        -14.526238068579994,
+        -103.86260872542499,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent70",
+      "label": "现有电源板 STEP 70",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761703,
+      "bounds": [
+        -15.326342068579827,
+        -105.162777725425,
+        31.075112550101,
+        -14.526238068580163,
+        -104.16264772542499,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent71",
+      "label": "现有电源板 STEP 71",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267952,
+      "bounds": [
+        -15.326342068579995,
+        -105.432812825424,
+        30.630054700101,
+        -14.525237938580995,
+        -103.892612625426,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent72",
+      "label": "现有电源板 STEP 72",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003284,
+      "bounds": [
+        -16.990985197866,
+        -102.31996937973,
+        30.600050800102,
+        -16.190881197866002,
+        -100.719761379731,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent73",
+      "label": "现有电源板 STEP 73",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761703,
+      "bounds": [
+        -16.990985197865832,
+        -102.01993037973101,
+        31.075112550101,
+        -16.19088119786617,
+        -101.019800379731,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent74",
+      "label": "现有电源板 STEP 74",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267942,
+      "bounds": [
+        -16.990985197866,
+        -102.28996547973,
+        30.630054700101,
+        -16.189881067867,
+        -100.749765279732,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent75",
+      "label": "现有电源板 STEP 75",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5351700249003285,
+      "bounds": [
+        -16.990985197866,
+        -105.46281672542399,
+        30.600050800102,
+        -16.190881197866002,
+        -103.86260872542499,
+        31.100115800102
+      ]
+    },
+    {
+      "name": "PowerComponent76",
+      "label": "现有电源板 STEP 76",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.027653448708761703,
+      "bounds": [
+        -16.990985197865832,
+        -105.162777725425,
+        31.075112550101,
+        -16.19088119786617,
+        -104.16264772542499,
+        31.110117100102002
+      ]
+    },
+    {
+      "name": "PowerComponent77",
+      "label": "现有电源板 STEP 77",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.5423237116267944,
+      "bounds": [
+        -16.990985197866,
+        -105.432812825424,
+        30.630054700101,
+        -16.189881067867,
+        -103.892612625426,
+        31.070111900101
+      ]
+    },
+    {
+      "name": "PowerComponent78",
+      "label": "现有电源板 STEP 78",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 363.6253013319236,
+      "bounds": [
+        24.062038608076996,
+        -114.08408305332527,
+        27.20005084609149,
+        41.562038608076996,
+        -108.174083053325,
+        37.600050846091
+      ]
+    },
+    {
+      "name": "PowerComponent79",
+      "label": "现有电源板 STEP 79",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 363.62530133192354,
+      "bounds": [
+        4.503999491999004,
+        -114.08408305332527,
+        27.20005084609149,
+        22.003999491999004,
+        -108.174083053325,
+        37.600050846091
+      ]
+    },
+    {
+      "name": "PowerComponent80",
+      "label": "现有电源板 STEP 80",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1594.4201131130415,
+      "bounds": [
+        -49.994984505969,
+        -83.031026162052,
+        27.600050736875,
+        -34.494984505969,
+        -64.93102616204976,
+        39.105050736874006
+      ]
+    },
+    {
+      "name": "PowerComponent81",
+      "label": "现有电源板 STEP 81",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 125.75490742862935,
+      "bounds": [
+        -22.506024329184996,
+        -96.94663989433501,
+        30.600050800102,
+        -15.407160329184995,
+        -90.34769589433601,
+        33.499586800102
+      ]
+    },
+    {
+      "name": "PowerComponent82",
+      "label": "现有电源板 STEP 82",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 125.75490742862935,
+      "bounds": [
+        -22.483977085089997,
+        -114.146563694182,
+        30.600050800102,
+        -15.385113085089996,
+        -107.54761969418301,
+        33.499586800102
+      ]
+    },
+    {
+      "name": "PowerComponent83",
+      "label": "现有电源板 STEP 83",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.034912461442557094,
+      "bounds": [
+        -22.588140879934,
+        -88.42162693269,
+        30.58540953954679,
+        -21.985181585978996,
+        -88.02153093268998,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent84",
+      "label": "现有电源板 STEP 84",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255737,
+      "bounds": [
+        -22.588140879934,
+        -87.77147093269,
+        30.58540953954679,
+        -21.985181585978996,
+        -87.37137493268999,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent85",
+      "label": "现有电源板 STEP 85",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255739,
+      "bounds": [
+        -22.588140879934,
+        -87.12131493269099,
+        30.58540953954679,
+        -21.985181585978996,
+        -86.72121893269099,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent86",
+      "label": "现有电源板 STEP 86",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.0349124614425571,
+      "bounds": [
+        -20.384797585978998,
+        -88.42162693269,
+        30.58540953954679,
+        -19.781838292023995,
+        -88.02153093268998,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent87",
+      "label": "现有电源板 STEP 87",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.0349124614425574,
+      "bounds": [
+        -20.384797585978998,
+        -87.77147093269,
+        30.58540953954679,
+        -19.781838292023995,
+        -87.37137493268999,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent88",
+      "label": "现有电源板 STEP 88",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.034912461442557385,
+      "bounds": [
+        -20.384797585978998,
+        -87.12131493269099,
+        30.58540953954679,
+        -19.781838292023995,
+        -86.72121893269099,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent89",
+      "label": "现有电源板 STEP 89",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255737,
+      "bounds": [
+        -22.588140879934,
+        -86.471158932691,
+        30.58540953954679,
+        -21.985181585978996,
+        -86.07106293269099,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent90",
+      "label": "现有电源板 STEP 90",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255739,
+      "bounds": [
+        -20.384797585978998,
+        -86.471158932691,
+        30.58540953954679,
+        -19.781838292023995,
+        -86.07106293269099,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent91",
+      "label": "现有电源板 STEP 91",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4.352013685514418,
+      "bounds": [
+        -21.985546551330934,
+        -88.6970578980414,
+        30.64926778956,
+        -20.384432620627596,
+        -85.79563196733805,
+        31.650508029559
+      ]
+    },
+    {
+      "name": "PowerComponent92",
+      "label": "现有电源板 STEP 92",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.034912461442557094,
+      "bounds": [
+        -22.566093635839998,
+        -105.621550732537,
+        30.58540953954679,
+        -21.963134341884995,
+        -105.22145473253698,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent93",
+      "label": "现有电源板 STEP 93",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255737,
+      "bounds": [
+        -22.566093635839998,
+        -104.971394732537,
+        30.58540953954679,
+        -21.963134341884995,
+        -104.57129873253699,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent94",
+      "label": "现有电源板 STEP 94",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255739,
+      "bounds": [
+        -22.566093635839998,
+        -104.32123873253799,
+        30.58540953954679,
+        -21.963134341884995,
+        -103.92114273253799,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent95",
+      "label": "现有电源板 STEP 95",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255707,
+      "bounds": [
+        -20.362750341884997,
+        -105.621550732537,
+        30.58540953954679,
+        -19.759791047929994,
+        -105.22145473253698,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent96",
+      "label": "现有电源板 STEP 96",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255737,
+      "bounds": [
+        -20.362750341884997,
+        -104.971394732537,
+        30.58540953954679,
+        -19.759791047929994,
+        -104.57129873253699,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent97",
+      "label": "现有电源板 STEP 97",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.0349124614425574,
+      "bounds": [
+        -20.362750341884997,
+        -104.32123873253799,
+        30.58540953954679,
+        -19.759791047929994,
+        -103.92114273253799,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent98",
+      "label": "现有电源板 STEP 98",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255736,
+      "bounds": [
+        -22.566093635839998,
+        -103.671082732538,
+        30.58540953954679,
+        -21.963134341884995,
+        -103.27098673253799,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent99",
+      "label": "现有电源板 STEP 99",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 0.03491246144255738,
+      "bounds": [
+        -20.362750341884997,
+        -103.671082732538,
+        30.58540953954679,
+        -19.759791047929994,
+        -103.27098673253799,
+        31.220002783165114
+      ]
+    },
+    {
+      "name": "PowerComponent100",
+      "label": "现有电源板 STEP 100",
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4.352013685514418,
+      "bounds": [
+        -21.963499307236933,
+        -105.89698169788839,
+        30.64926778956,
+        -20.362385376533595,
+        -102.99555576718505,
+        31.650508029559
+      ]
+    },
+    {
+      "name": "Battery",
+      "label": "电池105×33×25包络",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 86625.0,
+      "bounds": [
+        -16.5,
+        -52.5,
+        24.0,
+        16.5,
+        52.5,
+        49.0
+      ]
+    },
+    {
+      "name": "BatteryStrap1",
+      "label": "电池绑带包络1",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1426.079999999996,
+      "bounds": [
+        -19.0,
+        -35.0,
+        24.0,
+        19.0,
+        -23.0,
+        50.099999999999994
+      ]
+    },
+    {
+      "name": "BatteryStrap2",
+      "label": "电池绑带包络2",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1426.079999999997,
+      "bounds": [
+        -19.0,
+        23.0,
+        24.0,
+        19.0,
+        35.0,
+        50.099999999999994
+      ]
+    },
+    {
+      "name": "FPGAReference",
+      "label": "FPGA V3 板面参考138.049×91.567",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 20173.700598763513,
+      "bounds": [
+        -69.0245,
+        -109.7835,
+        76.0,
+        69.0245,
+        -18.21650000000001,
+        77.6
+      ]
+    },
+    {
+      "name": "FPGAChip1",
+      "label": "FPGA器件高度参考1",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1152.000000000001,
+      "bounds": [
+        -20.0,
+        -64.0,
+        77.6,
+        -2.0,
+        -44.0,
+        80.8
+      ]
+    },
+    {
+      "name": "FPGAChip2",
+      "label": "FPGA器件高度参考2",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1209.600000000001,
+      "bounds": [
+        6.0,
+        -61.0,
+        77.6,
+        27.0,
+        -43.0,
+        80.8
+      ]
+    },
+    {
+      "name": "FPGAChip3",
+      "label": "FPGA器件高度参考3",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 537.6000000000005,
+      "bounds": [
+        49.0,
+        -33.0,
+        77.6,
+        63.0,
+        -21.0,
+        80.8
+      ]
+    },
+    {
+      "name": "FPGAConnector1",
+      "label": "FPGA连接器参考1",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2295.0,
+      "bounds": [
+        -69.0,
+        -96.0,
+        77.6,
+        -52.0,
+        -81.0,
+        86.6
+      ]
+    },
+    {
+      "name": "FPGAConnector2",
+      "label": "FPGA连接器参考2",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2295.0,
+      "bounds": [
+        -69.0,
+        -71.0,
+        77.6,
+        -52.0,
+        -56.0,
+        86.6
+      ]
+    },
+    {
+      "name": "LPi4AReference",
+      "label": "LPi4A 包络参考84.455×103.814",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 13976.706337963535,
+      "bounds": [
+        -42.2275,
+        1.0930000000000035,
+        76.0,
+        42.2275,
+        104.907,
+        77.6
+      ]
+    },
+    {
+      "name": "LPi4ACore",
+      "label": "LPi4A核心板参考",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12995.99999999999,
+      "bounds": [
+        -30.0,
+        30.0,
+        80.0,
+        30.0,
+        87.0,
+        83.8
+      ]
+    },
+    {
+      "name": "LPi4AConnector1",
+      "label": "LPi4A接口高度参考1",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6246.503909999999,
+      "bounds": [
+        -39.0,
+        86.0,
+        77.6,
+        -21.0,
+        104.5,
+        96.35826999999999
+      ]
+    },
+    {
+      "name": "LPi4AConnector2",
+      "label": "LPi4A接口高度参考2",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6246.503909999999,
+      "bounds": [
+        -19.5,
+        86.0,
+        77.6,
+        -1.5,
+        104.5,
+        96.35826999999999
+      ]
+    },
+    {
+      "name": "LPi4AConnector3",
+      "label": "LPi4A接口高度参考3",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6246.503909999999,
+      "bounds": [
+        1.0,
+        86.0,
+        77.6,
+        19.0,
+        104.5,
+        96.35826999999999
+      ]
+    },
+    {
+      "name": "LPi4AConnector4",
+      "label": "LPi4A接口高度参考4",
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6246.503909999999,
+      "bounds": [
+        21.0,
+        86.0,
+        77.6,
+        39.0,
+        104.5,
+        96.35826999999999
+      ]
+    },
+    {
+      "name": "UpperScrew1",
+      "label": "上盖M3螺钉参考1",
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 86.74565635092135,
+      "bounds": [
+        -78.8,
+        -113.8,
+        61.0,
+        -73.2,
+        -108.2,
+        68.8
+      ]
+    },
+    {
+      "name": "UpperScrew2",
+      "label": "上盖M3螺钉参考2",
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 86.74565635092135,
+      "bounds": [
+        73.2,
+        -113.8,
+        61.0,
+        78.8,
+        -108.2,
+        68.8
+      ]
+    },
+    {
+      "name": "UpperScrew3",
+      "label": "上盖M3螺钉参考3",
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 86.74565635092135,
+      "bounds": [
+        -78.8,
+        111.2,
+        61.0,
+        -73.2,
+        116.8,
+        68.8
+      ]
+    },
+    {
+      "name": "UpperScrew4",
+      "label": "上盖M3螺钉参考4",
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 86.74565635092135,
+      "bounds": [
+        73.2,
+        111.2,
+        61.0,
+        78.8,
+        116.8,
+        68.8
+      ]
+    }
+  ],
+  "power_pcb_holes_from_step": [
+    [
+      4.147,
+      -16.0809,
+      1.45
+    ],
+    [
+      4.572,
+      -45.4661,
+      1.5
+    ],
+    [
+      4.826,
+      -23.495,
+      1.5
+    ],
+    [
+      11.3468,
+      -16.0809,
+      1.45
+    ],
+    [
+      95.5042,
+      -45.8471,
+      1.5
+    ],
+    [
+      96.0122,
+      -4.064,
+      1.5
+    ]
+  ],
+  "critical_interferences": [],
+  "source_sha256": {
+    "model\\hardware\\3D_PCB1_2026-10-12.step": "d9bdbd7ca1a5f4980c56c7b067bb62969c5951291e6f8bf4bd48993aabd2d483",
+    "model\\hardware\\直流电机-MG513X（霍尔编码器）\\直流电机-MG513X（霍尔编码器）.stp": "249ce02cad33b664d2cc8d435c81f9e56115ac782d1c0efa679fdcb98cf8ef84"
+  },
+  "assembly_bounds_mm": [
+    -117.0,
+    -135.0,
+    0.0,
+    117.0,
+    130.0,
+    96.35826999999999
+  ],
+  "assembly_size_mm": [
+    234.0,
+    265.0,
+    96.35826999999999
+  ],
+  "four_wheel_ground_z": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "fcstd_reopened": true,
+  "native_objects_valid": 173,
+  "step_roundtrip": {
+    "EdgeMind_Shell.step": {
+      "valid": true,
+      "solids": 25,
+      "bounds_match": true,
+      "maximum_bound_delta_mm": 5.3717030823463574e-12,
+      "relative_volume_delta": 2.9887327184780857e-16
+    },
+    "EdgeMind_Assembly.step": {
+      "valid": true,
+      "solids": 173,
+      "bounds_match": true,
+      "maximum_bound_delta_mm": 1.4210854715202004e-14,
+      "relative_volume_delta": 3.1888570659913094e-12
+    }
+  },
+  "stl_files": {
+    "BatteryCradle.stl": {
+      "closed": true,
+      "facets": 1116
+    },
+    "FrontAxleBracketL.stl": {
+      "closed": true,
+      "facets": 788
+    },
+    "FrontAxleBracketR.stl": {
+      "closed": true,
+      "facets": 788
+    },
+    "FrontBumper.stl": {
+      "closed": true,
+      "facets": 52
+    },
+    "FrontCheekL.stl": {
+      "closed": true,
+      "facets": 12
+    },
+    "FrontCheekR.stl": {
+      "closed": true,
+      "facets": 12
+    },
+    "LowerDeck.stl": {
+      "closed": true,
+      "facets": 6732
+    },
+    "MotorBracketL.stl": {
+      "closed": true,
+      "facets": 1812
+    },
+    "MotorBracketR.stl": {
+      "closed": true,
+      "facets": 1812
+    },
+    "RearBumper.stl": {
+      "closed": true,
+      "facets": 32
+    },
+    "SidePanelL.stl": {
+      "closed": true,
+      "facets": 500
+    },
+    "SidePanelR.stl": {
+      "closed": true,
+      "facets": 500
+    },
+    "SideRailL.stl": {
+      "closed": true,
+      "facets": 132
+    },
+    "SideRailR.stl": {
+      "closed": true,
+      "facets": 132
+    },
+    "UpperDeck.stl": {
+      "closed": true,
+      "facets": 7216
+    }
+  },
+  "exported_part_count": 15
+}

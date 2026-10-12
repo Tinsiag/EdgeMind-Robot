@@ -38,6 +38,8 @@ git lfs pull
 
 ## 底盘概念
 
+已根据四轮概念图生成 [外壳与底盘 CAD 模型](chassis/README.md)，前轮按用户最终选择改为与后轮同直径的80mm固定轴承从动轮。可打开 [外壳 STEP](chassis/v1-fixed-front-wheels/EdgeMind_Shell.step)、[FreeCAD 装配](chassis/v1-fixed-front-wheels/EdgeMind_Chassis.FCStd) 或 [离线3D预览](chassis/v1-fixed-front-wheels/查看模型.html)。板卡参考、核验范围与加工前需确认的尺寸见模型说明。
+
 [四轮版本说明](../output/chassis-concept-2026-10-12/四轮版本说明.md) 包含后轮 MG513X×2、前万向轮×2 的布局、原尺寸装配参考和 AI 造型效果图。电池按用户给定 105×33×25 mm 留位，没有独立的电池 STEP。模型和概念图用于结构讨论；实际开孔、轴线、接口净空和完整干涉仍需核验。
 
 ## 原有参考图

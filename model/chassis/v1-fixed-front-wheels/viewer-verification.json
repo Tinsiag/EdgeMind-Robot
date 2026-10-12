@@ -1,0 +1,54 @@
+{
+  "file_uri_works": true,
+  "initial": {
+    "rendered": true,
+    "parts": 173,
+    "visible": 173,
+    "explode": 0,
+    "view": {
+      "theta": -0.95,
+      "phi": 1.05,
+      "distance": 620
+    }
+  },
+  "hardware_hidden": {
+    "rendered": true,
+    "parts": 173,
+    "visible": 55,
+    "explode": 0,
+    "view": {
+      "theta": -0.95,
+      "phi": 1.05,
+      "distance": 620
+    }
+  },
+  "exploded": {
+    "rendered": true,
+    "parts": 173,
+    "visible": 173,
+    "explode": 65,
+    "view": {
+      "theta": -0.95,
+      "phi": 1.05,
+      "distance": 620
+    }
+  },
+  "top": {
+    "rendered": true,
+    "parts": 173,
+    "visible": 173,
+    "explode": 65,
+    "view": {
+      "theta": -1.5707963267948966,
+      "phi": 0.001,
+      "distance": 620
+    }
+  },
+  "console_errors": [],
+  "download_targets_exist": [
+    "EdgeMind_Shell.step",
+    "EdgeMind_Assembly.step",
+    "EdgeMind_Chassis.FCStd",
+    "EdgeMind_Assembly.glb"
+  ]
+}
