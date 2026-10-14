@@ -12,6 +12,7 @@ HELLO = 0x01
 ARM = 0x02
 DISARM = 0x03
 STOP = 0x04
+HEARTBEAT = 0x05
 SET_TWIST = 0x10
 SET_WHEEL_SPEED = 0x11
 ROTATE = 0x12
@@ -69,7 +70,11 @@ class FrameParser:
         while True:
             start = self.buffer.find(SYNC)
             if start < 0:
+                # Preserve a partial sync header across serial read boundaries.
+                trailing_aa = self.buffer[-1:] == SYNC[:1]
                 self.buffer.clear()
+                if trailing_aa:
+                    self.buffer.extend(SYNC[:1])
                 break
             if start:
                 del self.buffer[:start]

@@ -42,7 +42,9 @@ module motion_status_tx #(
                 frame[31]=command_age[7:0]; frame[32]=command_age[15:8];
                 crc=16'hffff; for(i=2;i<33;i=i+1) crc=crc16_byte(crc,frame[i]);
                 frame[33]=crc[7:0]; frame[34]=crc[15:8]; total<=35; index<=1; tx_data<=8'hAA; tx_start<=1; sending<=1;
-            end else if(sending && !tx_busy) begin
+            // tx_start is registered: UART consumes it on the next edge.
+            // Wait for that acceptance before advancing to another byte.
+            end else if(sending && !tx_busy && !tx_start) begin
                 if(index<total) begin tx_data<=frame[index]; tx_start<=1; index<=index+1'b1; end
                 else sending<=0;
             end

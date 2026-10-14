@@ -6,7 +6,7 @@ module quadrature_decoder_tb;
     task phase(input reg na,input reg nb); begin @(negedge clk); a=na; b=nb; repeat(4) @(posedge clk); end endtask
     integer pos, neg, bad;
     always @(posedge clk) begin if(step==1) pos=pos+1; if(step==-1) neg=neg+1; if(invalid) bad=bad+1; end
-    initial begin pos=0;neg=0;bad=0; #20; rstn=1;
+    initial begin pos=0;neg=0;bad=0; #20; rstn=1; repeat(8) @(negedge clk);
         phase(0,1); phase(1,1); phase(1,0); phase(0,0);
         phase(1,1); phase(0,1); phase(0,0); phase(1,0);
         phase(1,1); phase(0,0);

@@ -8,15 +8,16 @@ module differential_drive(
     output reg signed [31:0] left_speed,
     output reg signed [31:0] right_speed
 );
-    reg signed [63:0] offset, l, r;
+    reg signed [63:0] offset, l, r, limit;
     always @* begin
         // 2^11 is used for a short timing-safe approximation of /2000.
-        offset = ($signed(omega_mrad_s) * wheel_base_mm) >>> 11;
+        offset = ($signed(omega_mrad_s) * $signed({1'b0,wheel_base_mm})) >>> 11;
+        limit = max_speed_mm_s > 32767 ? 64'sd32767 : $signed({1'b0,max_speed_mm_s});
         l = $signed(v_mm_s) - offset; r = $signed(v_mm_s) + offset;
-        if (l > max_speed_mm_s) l = max_speed_mm_s;
-        if (l < -$signed(max_speed_mm_s)) l = -$signed(max_speed_mm_s);
-        if (r > max_speed_mm_s) r = max_speed_mm_s;
-        if (r < -$signed(max_speed_mm_s)) r = -$signed(max_speed_mm_s);
+        if (l > limit) l = limit;
+        if (l < -limit) l = -limit;
+        if (r > limit) r = limit;
+        if (r < -limit) r = -limit;
         left_speed = l[31:0]; right_speed = r[31:0];
     end
 endmodule

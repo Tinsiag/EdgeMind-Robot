@@ -1,4 +1,8 @@
-"""Check the actual routed motor pins and STA summary before SRAM programming."""
+"""Audit routed pins/STA for wiring revision 2026-10-14.
+
+This is a software report check, not a board-voltage or electrical-safety test.
+Historical bitstreams must fail the new ball-map check.
+"""
 from pathlib import Path
 import argparse
 import hashlib
@@ -24,10 +28,10 @@ basename, user_code = {
 expected = {
     "clk": ("Y18", "in"), "stop_n": ("F15", "in"),
     "left_key_n": ("A20", "in"), "right_key_n": ("B20", "in"),
-    "left_in1": ("A13", "out"), "left_in2": ("A14", "out"),
+    "left_in1": ("A18", "out"), "left_in2": ("A19", "out"),
     "left_enc_a": ("A15", "in"), "left_enc_b": ("A16", "in"),
-    "right_in1": ("F16", "out"), "right_in2": ("E17", "out"),
-    "right_enc_a": ("D20", "in"), "right_enc_b": ("C20", "in"),
+    "right_in1": ("F13", "out"), "right_in2": ("F14", "out"),
+    "right_enc_a": ("E13", "in"), "right_enc_b": ("E14", "in"),
     "camera_reset_n": ("C14", "out"),
 }
 expected.update({f"led[{i}]": (ball, "out") for i, ball in enumerate(
@@ -88,6 +92,8 @@ elif variant == "sweep":
     sources = ["rtl/acg720_motor_sweep.v", "constraints/acg720_motor_test.cst",
                "constraints/acg720_motor_test.sdc", "acg720_motor_sweep.gprj", "build_sweep.tcl"]
 audit = {
+    "wiring_revision": "2026-10-14",
+    "electrical_safety_verified": False,
     "device": "GW5AT-LV60PG484AC1/I0 (GW5AT-60B)", "pins": pins,
     "timing_violations": violations, "fmax_mhz": float(fmax[1]),
     "variant": variant,
@@ -97,9 +103,11 @@ audit = {
                       for name in sources},
 }
 suffix = "" if variant == "20khz" else f"-{variant}"
-out = root / f".local/build-audit{suffix}-20261010.json"
+out = root / f".local/build-audit{suffix}-wiring-20261014.json"
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(json.dumps(audit, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 print(f"PASS: {len(pins)} routed ports match wiring, 50 MHz setup/hold violations=0")
 print(f"Actual Fmax={fmax[1]} MHz; User Code=0x{user_code.upper()}; variant={variant}")
 print(f"FS SHA256={audit['bitstream_sha256']}")
+
+print("Report audit only: physical IO bank voltages and repaired-board safety remain unverified.")

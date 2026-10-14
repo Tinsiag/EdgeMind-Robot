@@ -1,3 +1,5 @@
+// Wiring revision 2026-10-14: user-reported package balls, not connector pin numbers.
+// Rebuild and audit routed pins/IO banks before use; old bitstreams are incompatible.
 // ACG720 GW5AT-60B, 50 MHz, all control IO at 3.3 V.
 IO_LOC "clk" Y18;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
@@ -7,14 +9,14 @@ IO_LOC "uart_rx" J21;
 IO_PORT "uart_rx" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 IO_LOC "uart_tx" M15;
 IO_PORT "uart_tx" IO_TYPE=LVCMOS33 DRIVE=4;
-IO_LOC "left_in1" A13;
-IO_LOC "left_in2" A14;
-IO_LOC "left_enc_a" A15;
-IO_LOC "left_enc_b" A16;
-IO_LOC "right_in1" F16;
-IO_LOC "right_in2" E17;
-IO_LOC "right_enc_a" D20;
-IO_LOC "right_enc_b" C20;
+IO_LOC "left_in1" A18; // 2026-10-14: L-1 / LAIN1; header pin unverified
+IO_LOC "left_in2" A19; // 2026-10-14: L-2 / LAIN2; header pin unverified
+IO_LOC "left_enc_a" A15; // 2026-10-14: L-7 / LF_ENA; header pin unverified
+IO_LOC "left_enc_b" A16; // 2026-10-14: L-8 / LF_ENB; header pin unverified
+IO_LOC "right_in1" F13; // 2026-10-14: R-5 / RAIN1; header pin unverified
+IO_LOC "right_in2" F14; // 2026-10-14: R-6 / RAIN2; header pin unverified
+IO_LOC "right_enc_a" E13; // 2026-10-14: R-2 / RF_ENA; header pin unverified
+IO_LOC "right_enc_b" E14; // 2026-10-14: R-1 / RF_ENB; header pin unverified
 IO_PORT "left_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
 IO_PORT "left_in2" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
 IO_PORT "right_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;

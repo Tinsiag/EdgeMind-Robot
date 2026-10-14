@@ -13,7 +13,7 @@ try:
 except ImportError as exc:  # pragma: no cover
     raise SystemExit("Install pyserial first: python -m pip install pyserial") from exc
 
-from protocol import FrameParser, command_payload, decode_status, frame, GET_STATUS
+from protocol import FrameParser, command_payload, decode_status, frame, GET_STATUS, STOP, HEARTBEAT, ROTATE
 
 
 def ports() -> None:
@@ -39,6 +39,53 @@ def send_and_read(port, msg_type: int, payload: bytes, seq: int, wait_s: float =
             if packets:
                 break
     return packets
+
+
+def run_motion(port, msg_type: int, payload: bytes, seq: int, duration: float, log=None) -> None:
+    """Bounded motion with best-effort STOP while the serial port is still open.
+
+    ROTATE is submitted once. Heartbeat only renews TTL; it never restarts rotation.
+    A disconnected link cannot guarantee STOP delivery: FPGA TTL is the fallback.
+    """
+    deadline = time.monotonic() + duration
+    started = time.monotonic()
+    original_timeout = port.timeout
+    try:
+        port.timeout = 0.01
+        port.write(frame(msg_type, payload, seq))
+        while time.monotonic() < deadline:
+            time.sleep(0.05)
+            seq = (seq + 1) & 0xFF
+            port.write(frame(HEARTBEAT if msg_type == ROTATE else msg_type,
+                             b"" if msg_type == ROTATE else payload, seq))
+            seq = (seq + 1) & 0xFF
+            packets = send_and_read(port, GET_STATUS, b"", seq, 0.03)
+            if not any(kind == 0x80 and response_seq == seq for kind, response_seq, _ in packets):
+                raise RuntimeError("No matching STATUS during motion; stopping")
+            for kind, response_seq, response_payload in packets:
+                if kind != 0x80 or response_seq != seq:
+                    continue
+                status = decode_status(response_payload)
+                print(status)
+                if log:
+                    new = not log.exists()
+                    with log.open("a", newline="") as f:
+                        writer = csv.writer(f)
+                        if new: writer.writerow(status.__dataclass_fields__)
+                        writer.writerow(status.__dict__.values())
+                if status.faults or status.state == 0:
+                    raise RuntimeError("Motion rejected/disarmed or FPGA fault; stopping")
+                if msg_type == ROTATE and status.state == 1 and time.monotonic()-started > 0.1:
+                    return
+    finally:
+        try:
+            port.write(frame(STOP, b"", (seq + 1) & 0xFF))
+            port.flush()
+        except (serial.SerialException, OSError) as exc:
+            print(f"STOP delivery failed: {exc}; do not assume the motor stopped. "
+                  "FPGA TTL and physical power isolation are the fallback.", file=sys.stderr)
+        finally:
+            port.timeout = original_timeout
 
 
 def main() -> int:
@@ -75,12 +122,20 @@ def main() -> int:
         with open_serial(args.port) as port:
             seq = int(time.time()) & 0xFF
             motion = args.command in {"forward", "backward", "turn", "rotate"}
-            deadline = time.monotonic() + args.duration if motion else time.monotonic()
-            while True:
-                packets = send_and_read(port, msg_type, payload, seq, 0.15 if not motion else 0)
-                for response_type, response_seq, response_payload in packets:
-                    if response_type == 0x80:
-                        status = decode_status(response_payload)
+            if motion:
+                if args.duration <= 0:
+                    parser.error("--duration must be positive")
+                run_motion(port, msg_type, payload, seq, args.duration, args.log)
+            else:
+                packets = send_and_read(port, msg_type, payload, seq)
+                matched = [(kind, data) for kind, response_seq, data in packets
+                           if response_seq == seq]
+                if not matched:
+                    print("No matching valid reply received. Run serial_diagnose.py to inspect raw bytes.", file=sys.stderr)
+                    return 1
+                for kind, data in matched:
+                    if kind == 0x80:
+                        status = decode_status(data)
                         print(status)
                         if args.log:
                             new = not args.log.exists()
@@ -89,14 +144,11 @@ def main() -> int:
                                 if new: writer.writerow(status.__dataclass_fields__)
                                 writer.writerow(status.__dict__.values())
                     else:
-                        print(f"response type=0x{response_type:02x} seq={response_seq} payload={response_payload.hex()}")
-                if not motion or time.monotonic() >= deadline:
-                    break
-                seq = (seq + 1) & 0xFF
-                time.sleep(0.05)
-            if motion:
-                port.write(frame(0x04, b"", (seq + 1) & 0xFF))
-    except serial.SerialException as exc:
+                        print(f"response type=0x{kind:02x} payload={data.hex()}")
+    except KeyboardInterrupt:
+        print("Interrupted; best-effort STOP attempted for motion.", file=sys.stderr)
+        return 130
+    except (serial.SerialException, RuntimeError, ValueError) as exc:
         print(f"serial error: {exc}", file=sys.stderr)
         return 2
     return 0

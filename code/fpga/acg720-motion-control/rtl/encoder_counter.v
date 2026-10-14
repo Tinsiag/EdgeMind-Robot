@@ -8,6 +8,7 @@ module encoder_counter #(
     input wire signed [1:0] step,
     input wire invalid_step,
     input wire sample_tick,
+    input wire monitor_enable,
     output reg signed [31:0] count,
     output reg signed [31:0] delta,
     output reg [31:0] invalid_count,
@@ -22,10 +23,14 @@ module encoder_counter #(
             if (step == 1) count <= count + 1'b1;
             else if (step == -1) count <= count - 1'b1;
             if (invalid_step) invalid_count <= invalid_count + 1'b1;
-            if (step != 0) begin idle_samples <= 0; feedback_timeout <= 0; end
-            else if (sample_tick) begin
+            // Sample even when an edge coincides with sample_tick.
+            if (sample_tick) begin
                 delta <= count - sample_base;
                 sample_base <= count;
+            end
+            // Start a fresh feedback window only when this wheel is commanded.
+            if (!monitor_enable || step != 0) begin idle_samples <= 0; feedback_timeout <= 0; end
+            else if (sample_tick) begin
                 if (idle_samples < TIMEOUT_SAMPLES) idle_samples <= idle_samples + 1'b1;
                 if (idle_samples >= TIMEOUT_SAMPLES-1) feedback_timeout <= 1;
             end

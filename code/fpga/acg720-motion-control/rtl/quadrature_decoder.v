@@ -11,13 +11,21 @@ module quadrature_decoder(
 );
     reg [2:0] a_sync, b_sync;
     reg [1:0] previous;
-    reg [1:0] current;
+    // Fill the three-stage synchronizer before adopting the initial AB state.
+    reg [2:0] sync_ready;
+    reg initialized;
     always @(posedge clk or negedge rstn) begin
-        if (!rstn) begin a_sync <= 0; b_sync <= 0; previous <= 0; step <= 0; invalid <= 0; end
+        if (!rstn) begin a_sync <= 0; b_sync <= 0; previous <= 0; step <= 0; invalid <= 0; sync_ready <= 0; initialized <= 0; end
         else begin
             a_sync <= {a_sync[1:0], a}; b_sync <= {b_sync[1:0], b};
             step <= 0; invalid <= 0;
-            current <= {a_sync[2], b_sync[2]};
+            sync_ready <= {sync_ready[1:0], 1'b1};
+            if (!initialized) begin
+                if (&sync_ready) begin
+                    previous <= {a_sync[2], b_sync[2]};
+                    initialized <= 1;
+                end
+            end else begin
             case ({previous, {a_sync[2], b_sync[2]}})
                 4'b0001,4'b0111,4'b1110,4'b1000: step <= invert ? -2'sd1 : 2'sd1;
                 4'b0010,4'b1011,4'b1101,4'b0100: step <= invert ? 2'sd1 : -2'sd1;
@@ -25,6 +33,7 @@ module quadrature_decoder(
                 default: invalid <= 1;
             endcase
             previous <= {a_sync[2], b_sync[2]};
+            end
         end
     end
 endmodule

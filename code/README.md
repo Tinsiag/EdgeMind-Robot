@@ -1,8 +1,10 @@
 # 代码目录
 
-- [ACG720 / AT8236 电机控制](fpga/acg720-motor-test/README.md)：A712 启动和编码器活动、A713 左右持续启停已实测通过；当前 A717 为 50 kHz，占空比从 0% 到 100% 每 0.5 秒增加 5% 后循环，已下载，实物表现待反馈。S1/S2 独立启停，S0 停止，仅操作 SRAM。
+> 2026-10-14：两套电机工程已更新维修后信号球号，见 [当前接线](../doc/电机/ACG720与现有电源板接线_2026-10-14.md)。旧下载、时序与实物证据只适用于旧接线；新接线闭环已重新构建，实板电气检查仍须独立确认，3.3 V 短路根因未确认。
+
+- [ACG720 / AT8236 电机控制](fpga/acg720-motor-test/README.md)：A712 启动和编码器活动、A713 左右持续启停已实测通过；历史 A717 为 50 kHz，占空比从 0% 到 100% 每 0.5 秒增加 5% 后循环，已下载，实物表现待反馈。S1/S2 独立启停，S0 停止，仅操作 SRAM。
 - [电机启动排查与实现文档](fpga/acg720-motor-test/MOTOR-IMPLEMENTATION-2026-10-10.md)：接线、电源、三个 PWM 对照版本、通过证据及复现方法；尚未实现速度 PID 或与摄像头合并。
-- [ACG720 双轮差速运动控制](fpga/acg720-motion-control/README.md)：独立 GW5AT-60B 工程，包含编码器闭环、AT8236 PWM、差速运动、定点旋转、CH340E UART 协议和 Python 上位机；已完成仿真、P&R 和 50 MHz 时序验证，尚待实车标定与下载。
+- [ACG720 双轮差速运动控制](fpga/acg720-motion-control/README.md)：独立 GW5AT-60B 工程，包含编码器闭环、AT8236 PWM、差速运动、定点旋转、CH340E UART 协议和 Python 上位机；已完成新接线构建及串口/手转反馈确认；最新控制修复版通过 14 项 RTL、12 项 Python 回归和 P&R（50.374 MHz，setup/hold 0 违例），尚未下载或实板运动验收；机械参数和剩余边界见工程 README。
 - [ACG720 GW5AT-60 DDR3 验证工程](fpga/acg720-ddr3/README.md)：原有 800×480 静态、彩条、实景单帧验证均通过。另已合入 [实景 HDMI 交付包](fpga/acg720-ddr3/verification/verified-20261008/README.md)，包含位流、实物反馈与完整验证资料；有图像显示反馈，时序尚未闭合，包内未提供完整 RTL。许可证已解决。
 - [DDR3 帧缓存排查与实现文档](fpga/acg720-ddr3/DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)：旧诊断缺陷、时钟与缓存实现、摄像头配置、仿真/实板证据、复现步骤和断电保存边界。
 
