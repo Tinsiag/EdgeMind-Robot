@@ -12,13 +12,15 @@ import re
 root = Path(__file__).resolve().parents[1]
 pnr = root / "impl/pnr"
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "toggle", "toggle80", "toggle20k80", "toggle50k80", "sweep"], default="20khz")
+parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "diag50", "gpio_static", "toggle", "toggle80", "toggle20k80", "toggle50k80", "sweep"], default="20khz")
 args = parser.parse_args()
 variant = args.variant
 basename, user_code = {
     "20khz": ("acg720_motor_test", "0000a710"),
     "1khz": ("acg720_motor_test_1khz", "0000a711"),
     "start50": ("acg720_motor_test_start50", "0000a712"),
+    "diag50": ("acg720_motor_diag_1khz_50", "0000a718"),
+    "gpio_static": ("acg720_gpio_static", "0000a719"),
     "toggle": ("acg720_motor_toggle", "0000a713"),
     "toggle80": ("acg720_motor_toggle_80", "0000a714"),
     "toggle20k80": ("acg720_motor_toggle_20khz_80", "0000a715"),
@@ -73,6 +75,13 @@ if variant == "1khz":
     sources += ["rtl/acg720_motor_test_1khz.v", "acg720_motor_test_1khz.gprj", "build_1khz.tcl"]
 elif variant == "start50":
     sources += ["rtl/acg720_motor_test_start50.v", "acg720_motor_test_start50.gprj", "build_start50.tcl"]
+elif variant == "diag50":
+    sources = ["rtl/acg720_motor_test.v", "rtl/acg720_motor_diag_1khz_50.v",
+               "constraints/acg720_motor_test.cst", "constraints/acg720_motor_test.sdc",
+               "acg720_motor_diag_1khz_50.gprj", "build_diag50.tcl"]
+elif variant == "gpio_static":
+    sources = ["rtl/acg720_gpio_static.v", "constraints/acg720_motor_test.cst",
+               "constraints/acg720_motor_test.sdc", "acg720_gpio_static.gprj", "build_gpio_static.tcl"]
 elif variant == "toggle":
     sources = ["rtl/acg720_motor_toggle.v", "constraints/acg720_motor_test.cst",
                "constraints/acg720_motor_test.sdc", "acg720_motor_toggle.gprj", "build_toggle.tcl"]
