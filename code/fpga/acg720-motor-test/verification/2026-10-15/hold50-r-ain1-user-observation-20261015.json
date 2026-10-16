@@ -1,0 +1,13 @@
+{
+  "record_date": "2026-10-15",
+  "source": "user DC multimeter reading at R AT8236 module AIN1-to-GND",
+  "procedure_requested": "VM disconnected, FPGA logic powered; release both keys, hold only S2 once, read during D2 active interval of about 1 second.",
+  "input_net": "RAIN1, R header pin 5, FPGA F13 / P7-7",
+  "raw_reply": "1.6V",
+  "reported_volts": 1.6,
+  "comparison": "Consistent with the expected DC average of nominal 3.3V at the 50% PWM plateau; this is not a waveform measurement.",
+  "bridge_output_verified": false,
+  "motor_start_success": false,
+  "firmware_changed_this_step": false,
+  "next_measurement_requested": "VM still disconnected. R module AIN2-to-GND during one S2 hold, D2 active."
+}

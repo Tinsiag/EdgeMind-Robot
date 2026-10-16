@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-16T11:17:28.608698+08:00",
+  "user_request": "重新LAIN1输出高、LAIN2输出低",
+  "user_preprogram_confirmation": "VM已断开，FPGA及下载USB已接好",
+  "programming_operation": "SRAM Program (2)",
+  "flash_written": false,
+  "device": "GW5AT-60B",
+  "device_id": "0x0001481B",
+  "cable_location": 8740,
+  "before_user_code": "0x0000A719",
+  "independent_after_user_code": "0x0000A71D",
+  "independent_after_status": "0x70022020",
+  "bitstream_sha256": "D332925BC233FD8AFA8D8D5D8B8C8600AB53CE6A46A32487D9A2827C26A06922",
+  "source_sha256": {
+    "rtl/acg720_left_static.v": "C3F193446CD59F2BCA6EA89208322338797B1A82FBB565E98B42CDB0CF4DA182",
+    "constraints/acg720_motor_test.cst": "2B35550E9BC315F9840C3DD6A621945A9823DD8FC428E568D6CD97AC5569385B",
+    "constraints/acg720_motor_test.sdc": "16EFEC5F1BA357D3AD3E01DCA60C66475EDE2A00C9142EBE43035F0A5982C595",
+    "acg720_left_static.gprj": "142522EAF56F7E1A16BE03240916619A7E3166CC322B4C7E892BAC9D91555F87",
+    "build_left_static.tcl": "AAA509C1E816482362C57896C99D18DD037A9BEB1B82A68099C5F40B4BDC5C25"
+  },
+  "reused_previously_verified_bitstream": true,
+  "RTL_changed": false,
+  "rebuilt_this_turn": false,
+  "constant_output_buffers": {
+    "right_in1": "GND",
+    "right_in2": "GND",
+    "left_in1": "VCC",
+    "left_in2": "GND",
+    "camera_reset_n": "GND"
+  },
+  "physical_output_voltage_measured_this_turn": false,
+  "motor_start_verified_this_turn": false,
+  "VM_must_remain_disconnected": true
+}

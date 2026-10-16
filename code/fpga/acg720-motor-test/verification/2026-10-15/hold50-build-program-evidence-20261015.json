@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-15T18:55:20.424148+08:00",
+  "user_code": "0x0000A71B",
+  "device_id": "0x0001481B",
+  "bitstream_sha256": "FF7FCCFA10A9D2E70E5176C8FF019B01E92677A8C1F5610168171E8B4022F5F3",
+  "source_sha256": {
+    "rtl/acg720_bridge_probe.v": "BF84AC609F829A0DD725D5E5D3ED7AD648AD03A12DC7C3C83FAF23D0E70BD646",
+    "rtl/acg720_motor_hold_1khz_50.v": "21970B131444FDDD9060EE42ADC58F62FB7DB692DCAF81FC8EF23EA7C8372771",
+    "constraints/acg720_motor_test.cst": "2B35550E9BC315F9840C3DD6A621945A9823DD8FC428E568D6CD97AC5569385B",
+    "constraints/acg720_motor_test.sdc": "16EFEC5F1BA357D3AD3E01DCA60C66475EDE2A00C9142EBE43035F0A5982C595",
+    "acg720_motor_hold_1khz_50.gprj": "29990507080B5014F965259CFA92D8A7C65B8799962010566FEAE272FDC320D8",
+    "build_hold50.tcl": "107069E8778C9690E24FF31714DF20DF73D12BF8FD97209EA6114155B929AB15"
+  },
+  "build_time": "2026-10-15T18:50:38.431981+08:00",
+  "routed_ports_checked": 21,
+  "timing_violations": {
+    "Setup": 0,
+    "Hold": 0
+  },
+  "fmax_mhz": 151.558,
+  "simulations_passed": [
+    "acg720_motor_hold_safety_tb",
+    "acg720_motor_hold_duration_tb",
+    "acg720_bridge_probe_tb",
+    "acg720_bridge_probe_duration_tb"
+  ],
+  "static_pinmap_tests_passed": 10,
+  "interface_correction": "six-wire photo header is R, four-wire header is L; original CST matches all eight signals",
+  "programming_operation": "SRAM Program (2), no Flash write",
+  "before_user_code": "0x0000A719",
+  "after_user_code": "0x0000A71B",
+  "after_status": "0x70022020",
+  "cable_location": 8740,
+  "pre_program_user_confirmed": {
+    "VM_disconnected": true,
+    "FPGA_logic_power_on": true,
+    "wheels_raised": true,
+    "S1_S2_released": true
+  },
+  "programmer_path_note": "Initial relative fsFile rejected without programming; absolute verified path succeeded.",
+  "motor_test_requested": "S1 once, max 1 second, wheels raised, then release and disconnect VM",
+  "motor_test_result": null
+}

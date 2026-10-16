@@ -1,0 +1,13 @@
+{
+  "record_date": "2026-10-15",
+  "source": "user multimeter observation during R single-wheel A71B test",
+  "procedure_requested": "R module VM-to-GND, compare before S2 and the approximately one-second D2 active interval; release and disconnect VM afterwards.",
+  "first_reply": "没测准，再试一次",
+  "first_attempt_valid_numeric_result": false,
+  "repeat_reply": "没下降",
+  "numeric_active_minimum_provided": false,
+  "prior_idle_VM_volts": 11.2,
+  "interpretation": "No visible drop reported on the multimeter. No numeric minimum, oscilloscope waveform, or fast-transient exclusion is available.",
+  "module_failure_established": false,
+  "next_step": "Both motor plugs disconnected and VM disconnected before changing to the previously reviewed A71A two-second unloaded static measurement firmware."
+}

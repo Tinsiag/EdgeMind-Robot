@@ -1,0 +1,40 @@
+{
+  "started": "2026-10-13T15:13:33.160066+08:00",
+  "mode": "prepare",
+  "expected_id": "0x0001481b",
+  "events": [
+    {
+      "name": "usb-inventory",
+      "time": "2026-10-13T15:13:33.160066+08:00",
+      "arguments": [
+        "powershell.exe",
+        "-NoProfile",
+        "-Command",
+        "$d = @(Get-PnpDevice -PresentOnly | Where-Object { $_.InstanceId -like 'USB\\*' -or $_.Class -eq 'Ports' } | Select-Object Status,Class,FriendlyName,InstanceId); ConvertTo-Json -InputObject $d -Depth 4"
+      ],
+      "exit_code": 0,
+      "stdout": "[\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB ��������(USB 3.0)\",\r\n        \"InstanceId\":  \"USB\\\\ROOT_HUB30\\\\5\\u002636621FB9\\u00260\\u00260\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"HIDClass\",\r\n        \"FriendlyName\":  \"USB �����豸\",\r\n        \"InstanceId\":  \"USB\\\\VID_2B89\\u0026PID_0043\\u0026MI_01\\\\8\\u0026289EC1A9\\u00260\\u00260001\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"ͨ�� USB ������\",\r\n        \"InstanceId\":  \"USB\\\\VID_2109\\u0026PID_2822\\\\7\\u002634634B40\\u00260\\u00262\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"ͨ�� USB ������\",\r\n        \"InstanceId\":  \"USB\\\\VID_2109\\u0026PID_2822\\\\6\\u002617AB3C31\\u00260\\u00262\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB Composite Device\",\r\n        \"InstanceId\":  \"USB\\\\VID_2B89\\u0026PID_0043\\\\NO.161-0043-2\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"HIDClass\",\r\n        \"FriendlyName\":  \"USB �����豸\",\r\n        \"InstanceId\":  \"USB\\\\VID_2B89\\u0026PID_0043\\u0026MI_02\\\\8\\u0026289EC1A9\\u00260\\u00260002\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB ��������(USB 3.0)\",\r\n        \"InstanceId\":  \"USB\\\\ROOT_HUB30\\\\5\\u0026903434C\\u00260\\u00260\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USBDevice\",\r\n        \"FriendlyName\":  \"Camera DFU Device\",\r\n        \"InstanceId\":  \"USB\\\\VID_04F2\\u0026PID_B758\\u0026MI_04\\\\7\\u002611AB179D\\u00260\\u00260004\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB Composite Device\",\r\n        \"InstanceId\":  \"USB\\\\VID_04F2\\u0026PID_B758\\\\0001\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"Biometric\",\r\n        \"FriendlyName\":  \"Goodix fingerprint\",\r\n        \"InstanceId\":  \"USB\\\\VID_27C6\\u0026PID_550A\\\\6\\u002617AB3C31\\u00260\\u00263\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"Camera\",\r\n        \"FriendlyName\":  \"Integrated Camera\",\r\n        \"InstanceId\":  \"USB\\\\VID_04F2\\u0026PID_B758\\u0026MI_00\\\\7\\u002611AB179D\\u00260\\u00260000\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB ��������(USB 3.0)\",\r\n        \"InstanceId\":  \"USB\\\\ROOT_HUB30\\\\5\\u00262A2C7B9E\\u00260\\u00260\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"HIDClass\",\r\n        \"FriendlyName\":  \"USB �����豸\",\r\n        \"InstanceId\":  \"USB\\\\VID_2717\\u0026PID_5013\\\\7\\u002634634B40\\u00260\\u00261\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB Composite Device\",\r\n        \"InstanceId\":  \"USB\\\\VID_0489\\u0026PID_E0D8\\\\000000000\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"ͨ�� SuperSpeed USB ������\",\r\n        \"InstanceId\":  \"USB\\\\VID_2109\\u0026PID_0822\\\\7\\u00262DA5EF6\\u00260\\u00262\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"Bluetooth\",\r\n        \"FriendlyName\":  \"RZ616 Bluetooth(R) Adapter\",\r\n        \"InstanceId\":  \"USB\\\\VID_0489\\u0026PID_E0D8\\u0026MI_00\\\\7\\u002623211DF9\\u00260\\u00260000\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB ��������(USB 3.0)\",\r\n        \"InstanceId\":  \"USB\\\\ROOT_HUB30\\\\5\\u0026A18F7E\\u00260\\u00260\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"USB ��������(USB 3.0)\",\r\n        \"InstanceId\":  \"USB\\\\ROOT_HUB30\\\\5\\u00261A3EC117\\u00260\\u00260\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"USB\",\r\n        \"FriendlyName\":  \"ͨ�� SuperSpeed USB ������\",\r\n        \"InstanceId\":  \"USB\\\\VID_2109\\u0026PID_0822\\\\6\\u002617AB3C31\\u00260\\u00265\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"HIDClass\",\r\n        \"FriendlyName\":  \"USB �����豸\",\r\n        \"InstanceId\":  \"USB\\\\VID_2B89\\u0026PID_0043\\u0026MI_00\\\\8\\u0026289EC1A9\\u00260\\u00260000\"\r\n    },\r\n    {\r\n        \"Status\":  \"OK\",\r\n        \"Class\":  \"Camera\",\r\n        \"FriendlyName\":  \"Integrated IR Camera\",\r\n        \"InstanceId\":  \"USB\\\\VID_04F2\\u0026PID_B758\\u0026MI_02\\\\7\\u002611AB179D\\u00260\\u00260002\"\r\n    }\r\n]\r\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_seconds": 2.047
+    },
+    {
+      "name": "cable-inventory",
+      "time": "2026-10-13T15:13:35.194938+08:00",
+      "arguments": [
+        "C:\\Gowin\\Gowin_V1.9.12_x64\\Programmer\\bin\\programmer_cli.exe",
+        "--scan-cables"
+      ],
+      "exit_code": 48,
+      "stdout": " Cost 0.02 second(s)\r\n  \r\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_seconds": 0.25
+    }
+  ],
+  "can_switch_off_power": false,
+  "read_budget_is_not_safe_power_on_duration": true,
+  "cable_locations": [],
+  "result": "prepared_only_no_fpga_registers_read",
+  "finished": "2026-10-13T15:13:35.450866+08:00"
+}

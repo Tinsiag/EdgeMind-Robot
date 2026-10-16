@@ -12,7 +12,7 @@ import re
 root = Path(__file__).resolve().parents[1]
 pnr = root / "impl/pnr"
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "diag50", "gpio_static", "toggle", "toggle80", "toggle20k80", "toggle50k80", "sweep"], default="20khz")
+parser.add_argument("--variant", choices=["20khz", "1khz", "start50", "diag50", "gpio_static", "bridge_probe", "hold50", "right_static", "left_static", "toggle", "toggle80", "toggle20k80", "toggle50k80", "sweep"], default="20khz")
 args = parser.parse_args()
 variant = args.variant
 basename, user_code = {
@@ -21,6 +21,10 @@ basename, user_code = {
     "start50": ("acg720_motor_test_start50", "0000a712"),
     "diag50": ("acg720_motor_diag_1khz_50", "0000a718"),
     "gpio_static": ("acg720_gpio_static", "0000a719"),
+    "bridge_probe": ("acg720_bridge_probe", "0000a71a"),
+    "hold50": ("acg720_motor_hold_1khz_50", "0000a71b"),
+    "right_static": ("acg720_right_static", "0000a71c"),
+    "left_static": ("acg720_left_static", "0000a71d"),
     "toggle": ("acg720_motor_toggle", "0000a713"),
     "toggle80": ("acg720_motor_toggle_80", "0000a714"),
     "toggle20k80": ("acg720_motor_toggle_20khz_80", "0000a715"),
@@ -82,6 +86,19 @@ elif variant == "diag50":
 elif variant == "gpio_static":
     sources = ["rtl/acg720_gpio_static.v", "constraints/acg720_motor_test.cst",
                "constraints/acg720_motor_test.sdc", "acg720_gpio_static.gprj", "build_gpio_static.tcl"]
+elif variant == "bridge_probe":
+    sources = ["rtl/acg720_bridge_probe.v", "constraints/acg720_motor_test.cst",
+               "constraints/acg720_motor_test.sdc", "acg720_bridge_probe.gprj", "build_bridge_probe.tcl"]
+elif variant == "hold50":
+    sources = ["rtl/acg720_bridge_probe.v", "rtl/acg720_motor_hold_1khz_50.v",
+               "constraints/acg720_motor_test.cst", "constraints/acg720_motor_test.sdc",
+               "acg720_motor_hold_1khz_50.gprj", "build_hold50.tcl"]
+elif variant == "right_static":
+    sources = ["rtl/acg720_right_static.v", "constraints/acg720_motor_test.cst",
+               "constraints/acg720_motor_test.sdc", "acg720_right_static.gprj", "build_right_static.tcl"]
+elif variant == "left_static":
+    sources = ["rtl/acg720_left_static.v", "constraints/acg720_motor_test.cst",
+               "constraints/acg720_motor_test.sdc", "acg720_left_static.gprj", "build_left_static.tcl"]
 elif variant == "toggle":
     sources = ["rtl/acg720_motor_toggle.v", "constraints/acg720_motor_test.cst",
                "constraints/acg720_motor_test.sdc", "acg720_motor_toggle.gprj", "build_toggle.tcl"]
@@ -100,12 +117,25 @@ elif variant == "toggle50k80":
 elif variant == "sweep":
     sources = ["rtl/acg720_motor_sweep.v", "constraints/acg720_motor_test.cst",
                "constraints/acg720_motor_test.sdc", "acg720_motor_sweep.gprj", "build_sweep.tcl"]
+constant_outputs = {}
+if variant in ("right_static", "left_static"):
+    netlist = (root / f"impl/gwsynthesis/{basename}.vg").read_text(encoding="utf-8")
+    buffers = {out.strip(): inp.strip() for out, inp in re.findall(
+        r"OBUF\s+\w+\s*\(\s*\.O\(([^)]+)\),\s*\.I\(([^)]+)\)", netlist)}
+    constant_outputs = {"right_in1": "VCC", "right_in2": "GND",
+                        "left_in1": "GND", "left_in2": "GND", "camera_reset_n": "GND"}
+    if variant == "left_static":
+        constant_outputs.update(right_in1="GND", left_in1="VCC")
+    for port, constant in constant_outputs.items():
+        assert buffers.get(port) == constant, (port, buffers.get(port), constant)
+
 audit = {
     "wiring_revision": "2026-10-14",
     "electrical_safety_verified": False,
     "device": "GW5AT-LV60PG484AC1/I0 (GW5AT-60B)", "pins": pins,
     "timing_violations": violations, "fmax_mhz": float(fmax[1]),
     "variant": variant,
+    "constant_output_buffers": constant_outputs,
     "bitstream_user_code": f"0x{user_code.upper()}",
     "bitstream_sha256": hashlib.sha256(bitstream.read_bytes()).hexdigest().upper(),
     "source_sha256": {name: hashlib.sha256((root / name).read_bytes()).hexdigest().upper()

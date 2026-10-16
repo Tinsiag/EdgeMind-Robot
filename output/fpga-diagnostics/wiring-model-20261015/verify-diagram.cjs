@@ -1,0 +1,44 @@
+const {chromium}=require('C:/Users/sc/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs');
+const path=require('path');
+(async()=>{
+  const dir=__dirname;
+  const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const page=await browser.newPage({viewport:{width:900,height:1200},deviceScaleFactor:1});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('file:///'+path.join(dir,'preview.html').replaceAll('\\','/'));
+  await page.frameLocator('iframe').locator('[data-wire-id]').first().waitFor();
+  const frame=page.frames().find(f=>f.parentFrame());
+  await frame.waitForFunction(()=>document.querySelectorAll('[data-wire-id]').length===10);
+  await frame.locator('#acg720-full-wiring').screenshot({path:path.join(dir,'diagram-inline-qa.png')});
+  await frame.locator('#acg720-wire-select').selectOption('right-in1');
+  if(!await frame.locator('#acg720-selected').textContent().then(s=>s.includes('P7-7')&&s.includes('R-5')))throw Error('Wire selection did not update');
+  await frame.locator('#acg720-p7').click();
+  if(await frame.locator('svg').getAttribute('viewBox')!=='35 190 1340 950')throw Error('Zoom did not update');
+  await frame.locator('#acg720-fit').click();
+  await frame.locator('#acg720-wire-select').selectOption('all');
+  const exported=await frame.evaluate(()=>{
+    const original=document.querySelector('#acg720-board-svg');
+    const clone=original.cloneNode(true),a=[original,...original.querySelectorAll('*')],b=[clone,...clone.querySelectorAll('*')];
+    a.forEach((el,i)=>{
+      const cs=getComputedStyle(el);
+      for(const k of ['fill','stroke','stroke-width','stroke-linejoin','stroke-linecap','font-family','font-size','font-weight','paint-order','opacity'])b[i].style.setProperty(k,cs.getPropertyValue(k));
+    });
+    clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
+    clone.setAttribute('width','2800');clone.setAttribute('height','2040');
+    clone.setAttribute('viewBox','0 0 2800 2040');clone.style.width='2800px';clone.style.height='2040px';
+    return clone.outerHTML;
+  });
+  fs.writeFileSync(path.join(dir,'acg720-full-board-wiring.svg'),exported);
+  const flat=await browser.newPage({viewport:{width:2800,height:2040},deviceScaleFactor:1});
+  await flat.setContent('<style>body{margin:0;background:white}</style>'+exported);
+  await flat.locator('svg').screenshot({path:path.join(dir,'acg720-full-board-wiring.png')});
+  await page.setViewportSize({width:360,height:1100});
+  await frame.locator('#acg720-full-wiring').screenshot({path:path.join(dir,'diagram-mobile-qa.png')});
+  const overflow=await frame.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1);
+  if(overflow)throw Error('Mobile horizontal overflow');
+  fs.writeFileSync(path.join(dir,'diagram-verification.json'),JSON.stringify({errors,wire_count:10,selection:true,zoom:true,mobile_overflow:overflow},null,2));
+  await browser.close();
+  if(errors.length)throw Error(errors.join('\n'));
+  console.log('PASS: 10 wires, selection, P7 zoom, no mobile overflow or runtime errors.');
+})();

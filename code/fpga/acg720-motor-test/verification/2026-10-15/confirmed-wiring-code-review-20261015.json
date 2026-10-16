@@ -1,0 +1,126 @@
+{
+  "record_date": "2026-10-15",
+  "conclusion": "No pin assignment, direction, channel selection or missing-enable error found in reviewed A71A software artifacts.",
+  "verified_signal_paths": [
+    {
+      "port": "left_in1",
+      "net": "LAIN1",
+      "carrier_header": "L-1",
+      "P7_pin": 5,
+      "column": 3,
+      "row": "下",
+      "ball": "A18",
+      "direction": "out"
+    },
+    {
+      "port": "left_in2",
+      "net": "LAIN2",
+      "carrier_header": "L-2",
+      "P7_pin": 6,
+      "column": 3,
+      "row": "上",
+      "ball": "A19",
+      "direction": "out"
+    },
+    {
+      "port": "right_in1",
+      "net": "RAIN1",
+      "carrier_header": "R-5",
+      "P7_pin": 7,
+      "column": 4,
+      "row": "下",
+      "ball": "F13",
+      "direction": "out"
+    },
+    {
+      "port": "right_in2",
+      "net": "RAIN2",
+      "carrier_header": "R-6",
+      "P7_pin": 8,
+      "column": 4,
+      "row": "上",
+      "ball": "F14",
+      "direction": "out"
+    },
+    {
+      "port": "left_enc_a",
+      "net": "LF_ENA",
+      "carrier_header": "L-7",
+      "P7_pin": 3,
+      "column": 2,
+      "row": "下",
+      "ball": "A15",
+      "direction": "in"
+    },
+    {
+      "port": "left_enc_b",
+      "net": "LF_ENB",
+      "carrier_header": "L-8",
+      "P7_pin": 4,
+      "column": 2,
+      "row": "上",
+      "ball": "A16",
+      "direction": "in"
+    },
+    {
+      "port": "right_enc_a",
+      "net": "RF_ENA",
+      "carrier_header": "R-2",
+      "P7_pin": 9,
+      "column": 5,
+      "row": "下",
+      "ball": "E13",
+      "direction": "in"
+    },
+    {
+      "port": "right_enc_b",
+      "net": "RF_ENB",
+      "carrier_header": "R-1",
+      "P7_pin": 10,
+      "column": 5,
+      "row": "上",
+      "ball": "E14",
+      "direction": "in"
+    }
+  ],
+  "synthesized_output_buffers": {
+    "left_in1": "led_d[1]",
+    "left_in2": "GND",
+    "right_in1": "led_d[2]",
+    "right_in2": "GND",
+    "led[1]": "led_d[1]",
+    "led[2]": "led_d[2]"
+  },
+  "source_and_bitstream_hashes_match_reviewed_build": true,
+  "bitstream_sha256": "B8D3DE04C7500B1B90E066FCEBB27C489F2C10F88401ACA3A18284EBD088DD32",
+  "vendor_pdf_page_11_and_power_schematic_visually_reviewed": true,
+  "carrier_A_channel_paths_from_power_schematic": {
+    "L-1": "LAIN1 -> U3 pin 3 (AIN1)",
+    "L-2": "LAIN2 -> U3 pin 4 (AIN2)",
+    "R-5": "RAIN1 -> U6 pin 3 (AIN1)",
+    "R-6": "RAIN2 -> U6 pin 4 (AIN2)",
+    "left_motor_power": "U2 pins 2/1 (LAOUT1/2) -> left six-pin socket pins 6/1",
+    "right_motor_power": "U4 pins 2/1 (RAOUT1/2) -> right six-pin socket pins 6/1"
+  },
+  "physical_board_matches_pdf_proven": false,
+  "physical_pad_voltages_proven_by_software_audit": false,
+  "current_turn_user_code_read_attempts": {
+    "default_2_5MHz_exit": 50,
+    "retry_1_5MHz_exit": 50,
+    "successful": false
+  },
+  "last_successful_user_code_read": "0x0000A71A (previous step)",
+  "new_source_edit_build_download_reset_or_motion": false,
+  "new_regression_results": {
+    "A71A_simulations_passed": 2,
+    "static_pinmap_tests_passed": 10
+  },
+  "inputs_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\小梅哥ACG720国产高云FPGA教学开发板资料\\04_引脚功能信息\\高云 ACG720-138&60K通用管脚分配表.xlsx": "7208876BB39F5FA3B8E79D3E6B9EB88E9B1336F003BCCE33022FF81254389519",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\小梅哥ACG720国产高云FPGA教学开发板资料\\06_硬件图纸\\ACG720-138&60K通用原理图.pdf": "47E4B849EDC46AB16925AAA3D61B7BB4E766B24222A1DABF0B7EC3BF9AE3C9F4",
+    "C:\\Users\\sc\\Downloads\\2\\SCH_Schematic1_2026-10-09.pdf": "266867FA4FC8DFC7973F566E30EA1860897B5CF75BE2BDAB6F2D669ABB3F3EF4",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motor-test\\constraints\\acg720_motor_test.cst": "2B35550E9BC315F9840C3DD6A621945A9823DD8FC428E568D6CD97AC5569385B",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motor-test\\impl\\gwsynthesis\\acg720_bridge_probe.vg": "E27F38CAD3F823A2570DFE5154639FF8A133EB934F8698887BA9F541D37E968B",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motor-test\\impl\\pnr\\acg720_bridge_probe.rpt.txt": "ACA87384B01A6B3DCCEC8468CFB418FFCB0199B3A0FA6054D4D099E9A1DF8B17"
+  }
+}

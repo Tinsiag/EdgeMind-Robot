@@ -1,0 +1,12 @@
+{
+  "source": "user measurement following corrected AOUT instructions",
+  "user_report": "0V",
+  "left_module_aout1_to_aout2_reported_v": 0,
+  "prior_wrong_point_3_3v_invalid": true,
+  "firmware_last_independent_readback": "0x0000A71A",
+  "module_vm_last_reported_v": 11,
+  "ain1_to_gnd_during_s1_v": null,
+  "ain2_to_gnd_during_s1_v": null,
+  "motor_start_verified": false,
+  "next_action": "measure actual AIN1 and AIN2 to module GND during S1/D1 window, VM off before moving probes"
+}

@@ -1,0 +1,23 @@
+{
+  "record_date": "2026-10-15",
+  "purpose": "Separate the motor load and PWM averaging from R bridge output diagnosis after A71B output read 0V",
+  "user_setup_reply": "已就绪：两电机都拔下，VM断开，FPGA已供电",
+  "firmware": "A71A, existing reviewed acg720_bridge_probe",
+  "source_and_bitstream_hashes_rechecked": true,
+  "bitstream_sha256": "B8D3DE04C7500B1B90E066FCEBB27C489F2C10F88401ACA3A18284EBD088DD32",
+  "new_source_changes_or_build": false,
+  "reviewed_routed_ports": 21,
+  "reviewed_timing_violations": {"Setup": 0, "Hold": 0},
+  "device_id": "0x0001481B",
+  "cable_location": 8740,
+  "before_user_code": "0x0000A71B",
+  "operation": "SRAM Program (2)",
+  "flash_written": false,
+  "program_complete": true,
+  "independent_after_user_code": "0x0000A71A",
+  "independent_after_status": "0x70022020",
+  "both_motors_must_remain_disconnected": true,
+  "S2_behavior": "Right IN1 constant high, IN2 low; maximum 2000ms; release/S0/chord disables; held key cannot repeat",
+  "next_requested_measurement": "R module AOUT1-to-AOUT2 with both motor plugs disconnected; position probes with VM off, reconnect VM and hold S2 once; read while D2 lit, then release and disconnect VM.",
+  "measurement_reply": null
+}

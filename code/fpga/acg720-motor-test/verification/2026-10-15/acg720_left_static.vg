@@ -1,0 +1,887 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.12 (64-bit)"
+//Thu Oct 15 21:05:53 2026
+
+//Source file index table:
+//file0 "\C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/fpga/acg720-motor-test/rtl/acg720_left_static.v"
+`timescale 100 ps/100 ps
+module acg720_left_static (
+  clk,
+  stop_n,
+  left_key_n,
+  right_key_n,
+  left_enc_a,
+  left_enc_b,
+  right_enc_a,
+  right_enc_b,
+  left_in1,
+  left_in2,
+  right_in1,
+  right_in2,
+  camera_reset_n,
+  led
+)
+;
+input clk;
+input stop_n;
+input left_key_n;
+input right_key_n;
+input left_enc_a;
+input left_enc_b;
+input right_enc_a;
+input right_enc_b;
+output left_in1;
+output left_in2;
+output right_in1;
+output right_in2;
+output camera_reset_n;
+output [7:0] led;
+wire clk_d;
+wire left_key_n_d;
+wire right_key_n_d;
+wire left_enc_a_d;
+wire left_enc_b_d;
+wire right_enc_a_d;
+wire right_enc_b_d;
+wire n203_4;
+wire n203_5;
+wire n203_6;
+wire n203_7;
+wire n203_8;
+wire n203_9;
+wire n203_10;
+wire n203_11;
+wire n203_12;
+wire n203_13;
+wire n203_14;
+wire n95_10;
+wire n61_1;
+wire n61_2;
+wire n60_1;
+wire n60_2;
+wire n59_1;
+wire n59_2;
+wire n58_1;
+wire n58_2;
+wire n57_1;
+wire n57_2;
+wire n56_1;
+wire n56_2;
+wire n55_1;
+wire n55_2;
+wire n54_1;
+wire n54_2;
+wire n53_1;
+wire n53_2;
+wire n52_1;
+wire n52_2;
+wire n51_1;
+wire n51_2;
+wire n50_1;
+wire n50_2;
+wire n49_1;
+wire n49_2;
+wire n48_1;
+wire n48_2;
+wire n47_1;
+wire n47_2;
+wire n46_1;
+wire n46_2;
+wire n45_1;
+wire n45_2;
+wire n44_1;
+wire n44_2;
+wire n43_1;
+wire n43_2;
+wire n42_1;
+wire n42_2;
+wire n41_1;
+wire n41_2;
+wire n40_1;
+wire n40_2;
+wire n39_1;
+wire n39_2;
+wire n38_1;
+wire n38_2;
+wire n37_1;
+wire n37_2;
+wire n36_1;
+wire n36_2;
+wire n35_1;
+wire n35_2;
+wire n34_1;
+wire n34_2;
+wire n33_1;
+wire n33_2;
+wire n32_1;
+wire n32_2;
+wire n31_1;
+wire n31_0_COUT;
+wire led_d_6_4;
+wire led_d_5_4;
+wire n128_5;
+wire n62_6;
+wire [7:0] led_d;
+wire [31:0] heartbeat_count;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  IBUF stop_n_ibuf (
+    .O(led_d[0]),
+    .I(stop_n) 
+);
+  IBUF left_key_n_ibuf (
+    .O(left_key_n_d),
+    .I(left_key_n) 
+);
+  IBUF right_key_n_ibuf (
+    .O(right_key_n_d),
+    .I(right_key_n) 
+);
+  IBUF left_enc_a_ibuf (
+    .O(left_enc_a_d),
+    .I(left_enc_a) 
+);
+  IBUF left_enc_b_ibuf (
+    .O(left_enc_b_d),
+    .I(left_enc_b) 
+);
+  IBUF right_enc_a_ibuf (
+    .O(right_enc_a_d),
+    .I(right_enc_a) 
+);
+  IBUF right_enc_b_ibuf (
+    .O(right_enc_b_d),
+    .I(right_enc_b) 
+);
+  OBUF left_in1_obuf (
+    .O(left_in1),
+    .I(VCC) 
+);
+  OBUF left_in2_obuf (
+    .O(left_in2),
+    .I(GND) 
+);
+  OBUF right_in1_obuf (
+    .O(right_in1),
+    .I(GND) 
+);
+  OBUF right_in2_obuf (
+    .O(right_in2),
+    .I(GND) 
+);
+  OBUF camera_reset_n_obuf (
+    .O(camera_reset_n),
+    .I(GND) 
+);
+  OBUF led_0_obuf (
+    .O(led[0]),
+    .I(led_d[0]) 
+);
+  OBUF led_1_obuf (
+    .O(led[1]),
+    .I(VCC) 
+);
+  OBUF led_2_obuf (
+    .O(led[2]),
+    .I(GND) 
+);
+  OBUF led_3_obuf (
+    .O(led[3]),
+    .I(led_d[3]) 
+);
+  OBUF led_4_obuf (
+    .O(led[4]),
+    .I(led_d[4]) 
+);
+  OBUF led_5_obuf (
+    .O(led[5]),
+    .I(led_d_5_4) 
+);
+  OBUF led_6_obuf (
+    .O(led[6]),
+    .I(led_d_6_4) 
+);
+  OBUF led_7_obuf (
+    .O(led[7]),
+    .I(led_d[7]) 
+);
+  LUT3 n203_s0 (
+    .F(n203_4),
+    .I0(n203_5),
+    .I1(n203_6),
+    .I2(led_d[0]) 
+);
+defparam n203_s0.INIT=8'h8F;
+  LUT2 led_d_4_s (
+    .F(led_d[4]),
+    .I0(right_enc_a_d),
+    .I1(right_enc_b_d) 
+);
+defparam led_d_4_s.INIT=4'hE;
+  LUT2 led_d_3_s (
+    .F(led_d[3]),
+    .I0(left_enc_a_d),
+    .I1(left_enc_b_d) 
+);
+defparam led_d_3_s.INIT=4'hE;
+  LUT4 n203_s1 (
+    .F(n203_5),
+    .I0(n203_7),
+    .I1(n203_8),
+    .I2(n203_9),
+    .I3(n203_10) 
+);
+defparam n203_s1.INIT=16'h8000;
+  LUT4 n203_s2 (
+    .F(n203_6),
+    .I0(n203_11),
+    .I1(n203_12),
+    .I2(n203_13),
+    .I3(n203_14) 
+);
+defparam n203_s2.INIT=16'h8000;
+  LUT4 n203_s3 (
+    .F(n203_7),
+    .I0(heartbeat_count[6]),
+    .I1(heartbeat_count[7]),
+    .I2(heartbeat_count[4]),
+    .I3(heartbeat_count[5]) 
+);
+defparam n203_s3.INIT=16'h1000;
+  LUT4 n203_s4 (
+    .F(n203_8),
+    .I0(heartbeat_count[0]),
+    .I1(heartbeat_count[1]),
+    .I2(heartbeat_count[2]),
+    .I3(heartbeat_count[3]) 
+);
+defparam n203_s4.INIT=16'h8000;
+  LUT4 n203_s5 (
+    .F(n203_9),
+    .I0(heartbeat_count[15]),
+    .I1(heartbeat_count[13]),
+    .I2(heartbeat_count[14]),
+    .I3(heartbeat_count[12]) 
+);
+defparam n203_s5.INIT=16'h4000;
+  LUT4 n203_s6 (
+    .F(n203_10),
+    .I0(heartbeat_count[8]),
+    .I1(heartbeat_count[9]),
+    .I2(heartbeat_count[10]),
+    .I3(heartbeat_count[11]) 
+);
+defparam n203_s6.INIT=16'h0100;
+  LUT4 n203_s7 (
+    .F(n203_11),
+    .I0(heartbeat_count[23]),
+    .I1(heartbeat_count[21]),
+    .I2(heartbeat_count[22]),
+    .I3(heartbeat_count[20]) 
+);
+defparam n203_s7.INIT=16'h4000;
+  LUT4 n203_s8 (
+    .F(n203_12),
+    .I0(heartbeat_count[17]),
+    .I1(heartbeat_count[16]),
+    .I2(heartbeat_count[18]),
+    .I3(heartbeat_count[19]) 
+);
+defparam n203_s8.INIT=16'h4000;
+  LUT4 n203_s9 (
+    .F(n203_13),
+    .I0(heartbeat_count[28]),
+    .I1(heartbeat_count[29]),
+    .I2(heartbeat_count[30]),
+    .I3(heartbeat_count[31]) 
+);
+defparam n203_s9.INIT=16'h0001;
+  LUT4 n203_s10 (
+    .F(n203_14),
+    .I0(heartbeat_count[25]),
+    .I1(heartbeat_count[26]),
+    .I2(heartbeat_count[27]),
+    .I3(heartbeat_count[24]) 
+);
+defparam n203_s10.INIT=16'h0100;
+  LUT3 n95_s3 (
+    .F(n95_10),
+    .I0(n203_6),
+    .I1(n203_5),
+    .I2(led_d[7]) 
+);
+defparam n95_s3.INIT=8'h78;
+  DFFRE heartbeat_count_30_s0 (
+    .Q(heartbeat_count[30]),
+    .D(n32_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_30_s0.INIT=1'b0;
+  DFFRE heartbeat_count_29_s0 (
+    .Q(heartbeat_count[29]),
+    .D(n33_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_29_s0.INIT=1'b0;
+  DFFRE heartbeat_count_28_s0 (
+    .Q(heartbeat_count[28]),
+    .D(n34_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_28_s0.INIT=1'b0;
+  DFFRE heartbeat_count_27_s0 (
+    .Q(heartbeat_count[27]),
+    .D(n35_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_27_s0.INIT=1'b0;
+  DFFRE heartbeat_count_26_s0 (
+    .Q(heartbeat_count[26]),
+    .D(n36_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_26_s0.INIT=1'b0;
+  DFFRE heartbeat_count_25_s0 (
+    .Q(heartbeat_count[25]),
+    .D(n37_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_25_s0.INIT=1'b0;
+  DFFRE heartbeat_count_24_s0 (
+    .Q(heartbeat_count[24]),
+    .D(n38_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_24_s0.INIT=1'b0;
+  DFFRE heartbeat_count_23_s0 (
+    .Q(heartbeat_count[23]),
+    .D(n39_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_23_s0.INIT=1'b0;
+  DFFRE heartbeat_count_22_s0 (
+    .Q(heartbeat_count[22]),
+    .D(n40_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_22_s0.INIT=1'b0;
+  DFFRE heartbeat_count_21_s0 (
+    .Q(heartbeat_count[21]),
+    .D(n41_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_21_s0.INIT=1'b0;
+  DFFRE heartbeat_count_20_s0 (
+    .Q(heartbeat_count[20]),
+    .D(n42_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_20_s0.INIT=1'b0;
+  DFFRE heartbeat_count_19_s0 (
+    .Q(heartbeat_count[19]),
+    .D(n43_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_19_s0.INIT=1'b0;
+  DFFRE heartbeat_count_18_s0 (
+    .Q(heartbeat_count[18]),
+    .D(n44_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_18_s0.INIT=1'b0;
+  DFFRE heartbeat_count_17_s0 (
+    .Q(heartbeat_count[17]),
+    .D(n45_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_17_s0.INIT=1'b0;
+  DFFRE heartbeat_count_16_s0 (
+    .Q(heartbeat_count[16]),
+    .D(n46_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_16_s0.INIT=1'b0;
+  DFFRE heartbeat_count_15_s0 (
+    .Q(heartbeat_count[15]),
+    .D(n47_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_15_s0.INIT=1'b0;
+  DFFRE heartbeat_count_14_s0 (
+    .Q(heartbeat_count[14]),
+    .D(n48_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_14_s0.INIT=1'b0;
+  DFFRE heartbeat_count_13_s0 (
+    .Q(heartbeat_count[13]),
+    .D(n49_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_13_s0.INIT=1'b0;
+  DFFRE heartbeat_count_12_s0 (
+    .Q(heartbeat_count[12]),
+    .D(n50_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_12_s0.INIT=1'b0;
+  DFFRE heartbeat_count_11_s0 (
+    .Q(heartbeat_count[11]),
+    .D(n51_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_11_s0.INIT=1'b0;
+  DFFRE heartbeat_count_10_s0 (
+    .Q(heartbeat_count[10]),
+    .D(n52_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_10_s0.INIT=1'b0;
+  DFFRE heartbeat_count_9_s0 (
+    .Q(heartbeat_count[9]),
+    .D(n53_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_9_s0.INIT=1'b0;
+  DFFRE heartbeat_count_8_s0 (
+    .Q(heartbeat_count[8]),
+    .D(n54_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_8_s0.INIT=1'b0;
+  DFFRE heartbeat_count_7_s0 (
+    .Q(heartbeat_count[7]),
+    .D(n55_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_7_s0.INIT=1'b0;
+  DFFRE heartbeat_count_6_s0 (
+    .Q(heartbeat_count[6]),
+    .D(n56_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_6_s0.INIT=1'b0;
+  DFFRE heartbeat_count_5_s0 (
+    .Q(heartbeat_count[5]),
+    .D(n57_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_5_s0.INIT=1'b0;
+  DFFRE heartbeat_count_4_s0 (
+    .Q(heartbeat_count[4]),
+    .D(n58_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_4_s0.INIT=1'b0;
+  DFFRE heartbeat_count_3_s0 (
+    .Q(heartbeat_count[3]),
+    .D(n59_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_3_s0.INIT=1'b0;
+  DFFRE heartbeat_count_2_s0 (
+    .Q(heartbeat_count[2]),
+    .D(n60_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_2_s0.INIT=1'b0;
+  DFFRE heartbeat_count_1_s0 (
+    .Q(heartbeat_count[1]),
+    .D(n61_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_1_s0.INIT=1'b0;
+  DFFRE heartbeat_count_0_s0 (
+    .Q(heartbeat_count[0]),
+    .D(n62_6),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_0_s0.INIT=1'b0;
+  DFFRE heartbeat_count_31_s0 (
+    .Q(heartbeat_count[31]),
+    .D(n31_1),
+    .CLK(clk_d),
+    .RESET(n203_4),
+    .CE(VCC) 
+);
+defparam heartbeat_count_31_s0.INIT=1'b0;
+  DFFRE heartbeat_s2 (
+    .Q(led_d[7]),
+    .D(n95_10),
+    .CLK(clk_d),
+    .RESET(n128_5),
+    .CE(VCC) 
+);
+defparam heartbeat_s2.INIT=1'b0;
+  ALU n61_s (
+    .SUM(n61_1),
+    .COUT(n61_2),
+    .I0(heartbeat_count[1]),
+    .I1(heartbeat_count[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n61_s.ALU_MODE=0;
+  ALU n60_s (
+    .SUM(n60_1),
+    .COUT(n60_2),
+    .I0(heartbeat_count[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n61_2) 
+);
+defparam n60_s.ALU_MODE=0;
+  ALU n59_s (
+    .SUM(n59_1),
+    .COUT(n59_2),
+    .I0(heartbeat_count[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n60_2) 
+);
+defparam n59_s.ALU_MODE=0;
+  ALU n58_s (
+    .SUM(n58_1),
+    .COUT(n58_2),
+    .I0(heartbeat_count[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n59_2) 
+);
+defparam n58_s.ALU_MODE=0;
+  ALU n57_s (
+    .SUM(n57_1),
+    .COUT(n57_2),
+    .I0(heartbeat_count[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n58_2) 
+);
+defparam n57_s.ALU_MODE=0;
+  ALU n56_s (
+    .SUM(n56_1),
+    .COUT(n56_2),
+    .I0(heartbeat_count[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n57_2) 
+);
+defparam n56_s.ALU_MODE=0;
+  ALU n55_s (
+    .SUM(n55_1),
+    .COUT(n55_2),
+    .I0(heartbeat_count[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n56_2) 
+);
+defparam n55_s.ALU_MODE=0;
+  ALU n54_s (
+    .SUM(n54_1),
+    .COUT(n54_2),
+    .I0(heartbeat_count[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n55_2) 
+);
+defparam n54_s.ALU_MODE=0;
+  ALU n53_s (
+    .SUM(n53_1),
+    .COUT(n53_2),
+    .I0(heartbeat_count[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n54_2) 
+);
+defparam n53_s.ALU_MODE=0;
+  ALU n52_s (
+    .SUM(n52_1),
+    .COUT(n52_2),
+    .I0(heartbeat_count[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n53_2) 
+);
+defparam n52_s.ALU_MODE=0;
+  ALU n51_s (
+    .SUM(n51_1),
+    .COUT(n51_2),
+    .I0(heartbeat_count[11]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n52_2) 
+);
+defparam n51_s.ALU_MODE=0;
+  ALU n50_s (
+    .SUM(n50_1),
+    .COUT(n50_2),
+    .I0(heartbeat_count[12]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n51_2) 
+);
+defparam n50_s.ALU_MODE=0;
+  ALU n49_s (
+    .SUM(n49_1),
+    .COUT(n49_2),
+    .I0(heartbeat_count[13]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n50_2) 
+);
+defparam n49_s.ALU_MODE=0;
+  ALU n48_s (
+    .SUM(n48_1),
+    .COUT(n48_2),
+    .I0(heartbeat_count[14]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n49_2) 
+);
+defparam n48_s.ALU_MODE=0;
+  ALU n47_s (
+    .SUM(n47_1),
+    .COUT(n47_2),
+    .I0(heartbeat_count[15]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n48_2) 
+);
+defparam n47_s.ALU_MODE=0;
+  ALU n46_s (
+    .SUM(n46_1),
+    .COUT(n46_2),
+    .I0(heartbeat_count[16]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n47_2) 
+);
+defparam n46_s.ALU_MODE=0;
+  ALU n45_s (
+    .SUM(n45_1),
+    .COUT(n45_2),
+    .I0(heartbeat_count[17]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n46_2) 
+);
+defparam n45_s.ALU_MODE=0;
+  ALU n44_s (
+    .SUM(n44_1),
+    .COUT(n44_2),
+    .I0(heartbeat_count[18]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n45_2) 
+);
+defparam n44_s.ALU_MODE=0;
+  ALU n43_s (
+    .SUM(n43_1),
+    .COUT(n43_2),
+    .I0(heartbeat_count[19]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n44_2) 
+);
+defparam n43_s.ALU_MODE=0;
+  ALU n42_s (
+    .SUM(n42_1),
+    .COUT(n42_2),
+    .I0(heartbeat_count[20]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n43_2) 
+);
+defparam n42_s.ALU_MODE=0;
+  ALU n41_s (
+    .SUM(n41_1),
+    .COUT(n41_2),
+    .I0(heartbeat_count[21]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n42_2) 
+);
+defparam n41_s.ALU_MODE=0;
+  ALU n40_s (
+    .SUM(n40_1),
+    .COUT(n40_2),
+    .I0(heartbeat_count[22]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n41_2) 
+);
+defparam n40_s.ALU_MODE=0;
+  ALU n39_s (
+    .SUM(n39_1),
+    .COUT(n39_2),
+    .I0(heartbeat_count[23]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n40_2) 
+);
+defparam n39_s.ALU_MODE=0;
+  ALU n38_s (
+    .SUM(n38_1),
+    .COUT(n38_2),
+    .I0(heartbeat_count[24]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n39_2) 
+);
+defparam n38_s.ALU_MODE=0;
+  ALU n37_s (
+    .SUM(n37_1),
+    .COUT(n37_2),
+    .I0(heartbeat_count[25]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n38_2) 
+);
+defparam n37_s.ALU_MODE=0;
+  ALU n36_s (
+    .SUM(n36_1),
+    .COUT(n36_2),
+    .I0(heartbeat_count[26]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n37_2) 
+);
+defparam n36_s.ALU_MODE=0;
+  ALU n35_s (
+    .SUM(n35_1),
+    .COUT(n35_2),
+    .I0(heartbeat_count[27]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n36_2) 
+);
+defparam n35_s.ALU_MODE=0;
+  ALU n34_s (
+    .SUM(n34_1),
+    .COUT(n34_2),
+    .I0(heartbeat_count[28]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n35_2) 
+);
+defparam n34_s.ALU_MODE=0;
+  ALU n33_s (
+    .SUM(n33_1),
+    .COUT(n33_2),
+    .I0(heartbeat_count[29]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n34_2) 
+);
+defparam n33_s.ALU_MODE=0;
+  ALU n32_s (
+    .SUM(n32_1),
+    .COUT(n32_2),
+    .I0(heartbeat_count[30]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n33_2) 
+);
+defparam n32_s.ALU_MODE=0;
+  ALU n31_s (
+    .SUM(n31_1),
+    .COUT(n31_0_COUT),
+    .I0(heartbeat_count[31]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n32_2) 
+);
+defparam n31_s.ALU_MODE=0;
+  INV led_d_6_s0 (
+    .O(led_d_6_4),
+    .I(right_key_n_d) 
+);
+  INV led_d_5_s0 (
+    .O(led_d_5_4),
+    .I(left_key_n_d) 
+);
+  INV n128_s2 (
+    .O(n128_5),
+    .I(led_d[0]) 
+);
+  INV n62_s2 (
+    .O(n62_6),
+    .I(heartbeat_count[0]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* acg720_left_static */

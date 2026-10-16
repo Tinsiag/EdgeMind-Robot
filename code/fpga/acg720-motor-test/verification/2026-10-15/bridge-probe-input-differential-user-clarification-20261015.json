@@ -1,0 +1,10 @@
+{
+  "source": "user clarification",
+  "user_description": "红接AIN1、黑接AIN2，两者之间为3.3V",
+  "ain1_minus_ain2_reported_v": 3.3,
+  "ain1_to_gnd_reported_v": null,
+  "ain2_to_gnd_reported_v": null,
+  "this_is_not_aout_measurement": true,
+  "next_action": "only measure AIN2 to module GND during S1/D1 window, VM off before positioning probes",
+  "motor_start_verified": false
+}
