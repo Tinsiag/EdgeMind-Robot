@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+  <Template>FPGA</Template>
+  <Version>5</Version>
+  <Device name="GW5AT-60B" pn="GW5AT-LV60PG484AC1/I0">gw5at60b-002</Device>
+  <FileList>
+    <File path="rtl/motion_top.v" type="file.verilog" enable="1"/>
+    <File path="rtl/uart_rx.v" type="file.verilog" enable="1"/>
+    <File path="rtl/uart_tx.v" type="file.verilog" enable="1"/>
+    <File path="rtl/motion_protocol.v" type="file.verilog" enable="1"/>
+    <File path="rtl/motion_status_tx.v" type="file.verilog" enable="1"/>
+    <File path="rtl/quadrature_decoder.v" type="file.verilog" enable="1"/>
+    <File path="rtl/encoder_counter.v" type="file.verilog" enable="1"/>
+    <File path="rtl/wheel_speed_estimator.v" type="file.verilog" enable="1"/>
+    <File path="rtl/wheel_pi_controller.v" type="file.verilog" enable="1"/>
+    <File path="rtl/at8236_motor_driver.v" type="file.verilog" enable="1"/>
+    <File path="rtl/differential_drive.v" type="file.verilog" enable="1"/>
+    <File path="rtl/rotate_controller.v" type="file.verilog" enable="1"/>
+    <File path="constraints/acg720_motion_control.cst" type="file.cst" enable="1"/>
+    <File path="constraints/acg720_motion_control.sdc" type="file.sdc" enable="1"/>
+  </FileList>
+</Project>

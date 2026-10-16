@@ -1,0 +1,641 @@
+{
+  "outcome": "pulse_ended: RuntimeError: No matching STATUS seq=128",
+  "records": [
+    {
+      "event": "tx",
+      "kind": 4,
+      "seq": 101,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.330096795,
+      "raw": "aa550104006500002db2"
+    },
+    {
+      "event": "status",
+      "seq": 101,
+      "time": 95630.336004228,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 102,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.336140361,
+      "raw": "aa55012000660000cf6a"
+    },
+    {
+      "event": "status",
+      "seq": 102,
+      "time": 95630.342301204,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 103,
+      "payload": "0900000000",
+      "ttl": 0,
+      "time": 95630.34251602,
+      "raw": "aa550130056700000900000000cd34"
+    },
+    {
+      "event": "status",
+      "seq": 103,
+      "time": 95630.349046327,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 104,
+      "payload": "00bd050000",
+      "ttl": 0,
+      "time": 95630.349189965,
+      "raw": "aa5501300568000000bd050000d466"
+    },
+    {
+      "event": "status",
+      "seq": 104,
+      "time": 95630.355810206,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 105,
+      "payload": "01bf050000",
+      "ttl": 0,
+      "time": 95630.355990875,
+      "raw": "aa5501300569000001bf0500003e66"
+    },
+    {
+      "event": "status",
+      "seq": 105,
+      "time": 95630.362519079,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 106,
+      "payload": "0242000000",
+      "ttl": 0,
+      "time": 95630.362757139,
+      "raw": "aa550130056a00000242000000a20d"
+    },
+    {
+      "event": "status",
+      "seq": 106,
+      "time": 95630.369083943,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 107,
+      "payload": "0342000000",
+      "ttl": 0,
+      "time": 95630.369201811,
+      "raw": "aa550130056b0000034200000020e0"
+    },
+    {
+      "event": "status",
+      "seq": 107,
+      "time": 95630.375796513,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 108,
+      "payload": "0479000000",
+      "ttl": 0,
+      "time": 95630.376150567,
+      "raw": "aa550130056c000004790000001a72"
+    },
+    {
+      "event": "status",
+      "seq": 108,
+      "time": 95630.382444237,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 109,
+      "payload": "0532000000",
+      "ttl": 0,
+      "time": 95630.382592764,
+      "raw": "aa550130056d000005320000001bef"
+    },
+    {
+      "event": "status",
+      "seq": 109,
+      "time": 95630.389240258,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 110,
+      "payload": "06eb010000",
+      "ttl": 0,
+      "time": 95630.38951,
+      "raw": "aa550130056e000006eb010000f8a5"
+    },
+    {
+      "event": "status",
+      "seq": 110,
+      "time": 95630.395952187,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 111,
+      "payload": "0a05000000",
+      "ttl": 0,
+      "time": 95630.396228321,
+      "raw": "aa550130056f00000a050000008078"
+    },
+    {
+      "event": "status",
+      "seq": 111,
+      "time": 95630.402594581,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 112,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.402779128,
+      "raw": "aa550120007000000c9b"
+    },
+    {
+      "event": "status",
+      "seq": 112,
+      "time": 95630.408940833,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 113,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.509946473,
+      "raw": "aa550120007100003cac"
+    },
+    {
+      "event": "status",
+      "seq": 113,
+      "time": 95630.517321804,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 114,
+      "payload": "0940000000",
+      "ttl": 0,
+      "time": 95630.518536883,
+      "raw": "aa5501300572000009400000005b2f"
+    },
+    {
+      "event": "status",
+      "seq": 114,
+      "time": 95630.525131054,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 2,
+      "seq": 115,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.525343455,
+      "raw": "aa550102007300006b8e"
+    },
+    {
+      "event": "status",
+      "seq": 115,
+      "time": 95630.531470162,
+      "status": {
+        "state": 0,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 116,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.531671572,
+      "raw": "aa55012000740000cc47"
+    },
+    {
+      "event": "status",
+      "seq": 116,
+      "time": 95630.537891669,
+      "status": {
+        "state": 1,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 65535
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 17,
+      "seq": 117,
+      "payload": "1400000000000000",
+      "ttl": 150,
+      "time": 95630.538262566,
+      "raw": "aa5501110875960014000000000000002c99"
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 118,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.53835262,
+      "raw": "aa55012000760000ac29"
+    },
+    {
+      "event": "status",
+      "seq": 118,
+      "time": 95630.546101785,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 0,
+        "right_pwm": 0,
+        "command_age_ms": 1
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 119,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.556110789,
+      "raw": "aa550120007700009c1e"
+    },
+    {
+      "event": "status",
+      "seq": 119,
+      "time": 95630.562062898,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 5,
+        "right_pwm": 0,
+        "command_age_ms": 18
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 120,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.570380351,
+      "raw": "aa55012000780000ad32"
+    },
+    {
+      "event": "status",
+      "seq": 120,
+      "time": 95630.576376095,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 15,
+        "right_pwm": 0,
+        "command_age_ms": 32
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 121,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.585836839,
+      "raw": "aa550120007900009d05"
+    },
+    {
+      "event": "status",
+      "seq": 121,
+      "time": 95630.590773785,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 21,
+        "right_pwm": 0,
+        "command_age_ms": 46
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 122,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.599277117,
+      "raw": "aa550120007a0000cd5c"
+    },
+    {
+      "event": "status",
+      "seq": 122,
+      "time": 95630.605289994,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 23,
+        "right_pwm": 0,
+        "command_age_ms": 61
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 123,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.613672253,
+      "raw": "aa550120007b0000fd6b"
+    },
+    {
+      "event": "status",
+      "seq": 123,
+      "time": 95630.619639381,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 24,
+        "right_pwm": 0,
+        "command_age_ms": 75
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 124,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.627994126,
+      "raw": "aa550120007c00006dee"
+    },
+    {
+      "event": "status",
+      "seq": 124,
+      "time": 95630.633993096,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 26,
+        "right_pwm": 0,
+        "command_age_ms": 89
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 32,
+      "seq": 125,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.642325158,
+      "raw": "aa550120007d00005dd9"
+    },
+    {
+      "event": "status",
+      "seq": 125,
+      "time": 95630.648326232,
+      "status": {
+        "state": 2,
+        "faults": 0,
+        "left_count": 0,
+        "right_count": 0,
+        "left_speed": 0,
+        "right_speed": 0,
+        "left_pwm": 27,
+        "right_pwm": 0,
+        "command_age_ms": 104
+      }
+    },
+    {
+      "event": "tx",
+      "kind": 4,
+      "seq": 126,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.656623446,
+      "raw": "aa550104007e0000bf01"
+    },
+    {
+      "event": "tx",
+      "kind": 4,
+      "seq": 127,
+      "payload": "",
+      "ttl": 0,
+      "time": 95630.656827991,
+      "raw": "aa550104007f00008f36"
+    },
+    {
+      "event": "tx",
+      "kind": 48,
+      "seq": 128,
+      "payload": "0900000000",
+      "ttl": 0,
+      "time": 95630.657471435,
+      "raw": "aa550130058000000900000000ec83"
+    }
+  ]
+}

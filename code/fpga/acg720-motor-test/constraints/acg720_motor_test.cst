@@ -1,6 +1,8 @@
+// Wiring revision 2026-10-14: user-reported package balls, not connector pin numbers.
+// Rebuild and audit routed pins/IO banks before use; old bitstreams are incompatible.
 // ACG720 GW5AT-LV60PG484AC1/I0, GW5AT-60B.
-// Motor wiring: doc/电机/ACG720与现有电源板接线_2026-10-10.md.
-// All P7 control/encoder pins require physical VCCIO = 3.3 V.
+// Motor wiring: doc/电机/ACG720与现有电源板接线_2026-10-14.md.
+// Each selected IO bank must have physical VCCIO = 3.3 V; bank/header mapping requires verification.
 IO_LOC "clk" Y18;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
 // S0 stops asynchronously. S1/S2 are active-low start buttons.
@@ -11,14 +13,14 @@ IO_PORT "left_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 IO_LOC "right_key_n" B20;
 IO_PORT "right_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
-IO_LOC "left_in1" A13; // P7-1 -> L-1 / LAIN1
-IO_LOC "left_in2" A14; // P7-2 -> L-2 / LAIN2
-IO_LOC "left_enc_a" A15; // P7-3 <- L-7 / LF_ENA
-IO_LOC "left_enc_b" A16; // P7-4 <- L-8 / LF_ENB
-IO_LOC "right_in1" F16; // P7-31 -> R-5 / RAIN1
-IO_LOC "right_in2" E17; // P7-32 -> R-6 / RAIN2
-IO_LOC "right_enc_a" D20; // P7-33 <- R-2 / RF_ENA
-IO_LOC "right_enc_b" C20; // P7-34 <- R-1 / RF_ENB
+IO_LOC "left_in1" A18; // 2026-10-14: L-1 / LAIN1; header pin unverified
+IO_LOC "left_in2" A19; // 2026-10-14: L-2 / LAIN2; header pin unverified
+IO_LOC "left_enc_a" A15; // 2026-10-14: L-7 / LF_ENA; header pin unverified
+IO_LOC "left_enc_b" A16; // 2026-10-14: L-8 / LF_ENB; header pin unverified
+IO_LOC "right_in1" F13; // 2026-10-14: R-5 / RAIN1; header pin unverified
+IO_LOC "right_in2" F14; // 2026-10-14: R-6 / RAIN2; header pin unverified
+IO_LOC "right_enc_a" E13; // 2026-10-14: R-2 / RF_ENA; header pin unverified
+IO_LOC "right_enc_b" E14; // 2026-10-14: R-1 / RF_ENB; header pin unverified
 IO_PORT "left_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
 IO_PORT "left_in2" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
 IO_PORT "right_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
