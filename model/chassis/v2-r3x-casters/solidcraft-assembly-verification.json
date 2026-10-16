@@ -1,0 +1,13 @@
+{
+  "assembly_saved": false,
+  "backend": "SolidCraft 0.11.1 MCP headless",
+  "operation": "file.insert_step _assembly-input.step",
+  "observed_errors": [
+    "truck-geometry nurbs/bspcurve.rs:301: ZeroRange",
+    "memory allocation of 805306368 bytes failed"
+  ],
+  "client_result": "Server exited without an MCP response; client timed out.",
+  "fallback_deliverables": ["EdgeMind_Assembly.step", "EdgeMind_Chassis.FCStd"],
+  "editable_solidcraft_base_saved": true,
+  "details": "solidcraft-stderr.log"
+}

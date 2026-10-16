@@ -1,0 +1,6113 @@
+{
+  "units": "mm",
+  "parameters": {
+    "version": "v3-camera-closed-rails",
+    "units": "mm",
+    "body_length": 260.0,
+    "body_width": 180.0,
+    "lower_plate_thickness": 5.0,
+    "upper_plate_thickness": 5.0,
+    "lower_deck_bottom_z": 57.7811671820691,
+    "upper_deck_bottom_z": 103.7811671820691,
+    "battery_length": 85.0,
+    "battery_width": 47.0,
+    "battery_centre_y": 35.0,
+    "battery_guard_height": 3.0,
+    "battery_guard_wall": 2.0,
+    "battery_clearance_each_side": 1.0,
+    "perimeter_wall_thickness": 3.0,
+    "perimeter_wall_height": 23.0,
+    "motor_wire_hole_width": 12.0,
+    "motor_wire_hole_length": 24.0,
+    "motor_wire_hole_corner_radius": 2.0,
+    "camera_board_width": 30.0,
+    "camera_board_height": 30.0,
+    "camera_board_thickness_reference": 1.6,
+    "camera_mount_pitch": 24.0,
+    "camera_hole_offset_from_bottom_reference": 3.0,
+    "camera_hole_diameter_reference": 3.2,
+    "camera_bracket_y_front": -123.0,
+    "camera_bracket_width": 38.0,
+    "camera_bracket_height": 42.0,
+    "camera_bracket_thickness": 3.0,
+    "camera_board_bottom_above_deck": 5.0,
+    "camera_lens_diameter": 14.0,
+    "camera_lens_projection_envelope": 33.0,
+    "camera_header_pitch": 2.54,
+    "camera_header_columns": 9,
+    "camera_header_rows": 2,
+    "camera_foot_hole_xy": [
+      [
+        -10.0,
+        -114.5
+      ],
+      [
+        10.0,
+        -114.5
+      ]
+    ],
+    "camera_reference_notes": "Drawing supplies 30x30 PCB, 24 mm lower-hole pitch, phi14 lens and partial 24.60 mm axial dimension. Hole diameters, PCB thickness, lower hole offset and overall lens projection are reference assumptions; bracket uses 3.2x6.2 vertical slots and M2.5 reference fasteners.",
+    "toolchain": "Direct FreeCAD/OpenCASCADE geometry; no SolidCraft or MCP invocation"
+  },
+  "parts": [
+    {
+      "name": "LowerTray",
+      "label": "5mm下层底板 / 四周连接围栏 / 电池围栏 / 双电机过线孔",
+      "color": [
+        0.1,
+        0.13,
+        0.16
+      ],
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 278256.4693660526,
+      "bounds": [
+        -90.0,
+        -130.0,
+        57.7811671820691,
+        90.0,
+        130.0,
+        85.78116718206911
+      ],
+      "solids": 1,
+      "export_part": true,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "UpperDeck",
+      "label": "5mm上层托盘 / 摄像头支架安装孔",
+      "color": [
+        0.1,
+        0.13,
+        0.16
+      ],
+      "category": "Shell",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 224384.11073324422,
+      "bounds": [
+        -90.0,
+        -130.0,
+        103.7811671820691,
+        90.0,
+        130.0,
+        108.7811671820691
+      ],
+      "solids": 1,
+      "export_part": true,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "BoardPost1",
+      "label": "板卡支柱参考1",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618915,
+      "bounds": [
+        -69.2305,
+        -109.9895,
+        108.7811671820691,
+        -63.2305,
+        -103.9895,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost1",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost2",
+      "label": "板卡支柱参考2",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618904,
+      "bounds": [
+        -69.2305,
+        -24.0105,
+        108.7811671820691,
+        -63.2305,
+        -18.0105,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost2",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost3",
+      "label": "板卡支柱参考3",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618915,
+      "bounds": [
+        63.230500000000006,
+        -109.9895,
+        108.7811671820691,
+        69.2305,
+        -103.9895,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost3",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost4",
+      "label": "板卡支柱参考4",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618904,
+      "bounds": [
+        63.230500000000006,
+        -24.0105,
+        108.7811671820691,
+        69.2305,
+        -18.0105,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost4",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost5",
+      "label": "板卡支柱参考5",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618938,
+      "bounds": [
+        -41.2,
+        6.0,
+        108.7811671820691,
+        -35.2,
+        12.0,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost5",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost6",
+      "label": "板卡支柱参考6",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618943,
+      "bounds": [
+        -41.2,
+        94.0,
+        108.7811671820691,
+        -35.2,
+        100.0,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost6",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost7",
+      "label": "板卡支柱参考7",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618938,
+      "bounds": [
+        35.2,
+        6.0,
+        108.7811671820691,
+        41.2,
+        12.0,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost7",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "BoardPost8",
+      "label": "板卡支柱参考8",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 177.49213094618943,
+      "bounds": [
+        35.2,
+        94.0,
+        108.7811671820691,
+        41.2,
+        100.0,
+        117.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "BoardPost8",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "PowerComponent0",
+      "label": "现有电源板 STEP 0",
+      "color": [
+        0.0392156862745098,
+        0.3215686274509804,
+        0.5490196078431373
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 7829.190590774125,
+      "bounds": [
+        -49.9792999746,
+        -84.9873990347,
+        70.7811671820691,
+        49.995500635001,
+        -35.012700025399994,
+        72.3812179821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent0",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent1",
+      "label": "现有电源板 STEP 1",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999783462,
+      "bounds": [
+        -13.65192379984,
+        -43.516016006810005,
+        72.3812179819191,
+        -13.39192379984,
+        -42.716016006809994,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent1",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent2",
+      "label": "现有电源板 STEP 2",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.008640000000864002,
+      "bounds": [
+        -13.38192379984,
+        -43.516016006810005,
+        72.8212179819171,
+        -12.30192379984,
+        -42.716016006809994,
+        72.8312179819181
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent2",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent3",
+      "label": "现有电源板 STEP 3",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.00699999999978346,
+      "bounds": [
+        -12.29192379984,
+        -43.516016006810005,
+        72.3812179819191,
+        -12.03192379984,
+        -42.716016006809994,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent3",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent4",
+      "label": "现有电源板 STEP 4",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.550595145616712,
+      "bounds": [
+        -13.64192389984,
+        -43.52601610681,
+        72.3912178819181,
+        -12.04192369984,
+        -42.716016006809994,
+        72.8212180819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent4",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent5",
+      "label": "现有电源板 STEP 5",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.00699999999978345,
+      "bounds": [
+        -10.72691744983,
+        -43.516016006810005,
+        72.3812179819191,
+        -10.46691744983,
+        -42.716016006809994,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent5",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent6",
+      "label": "现有电源板 STEP 6",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.008640000000824013,
+      "bounds": [
+        -10.45691744983,
+        -43.516016006810005,
+        72.8212179819171,
+        -9.376917449835,
+        -42.716016006809994,
+        72.8312179819181
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent6",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent7",
+      "label": "现有电源板 STEP 7",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999783459,
+      "bounds": [
+        -9.366917449835,
+        -43.516016006810005,
+        72.3812179819191,
+        -9.106917449835,
+        -42.716016006809994,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent7",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent8",
+      "label": "现有电源板 STEP 8",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5505951456149887,
+      "bounds": [
+        -10.716917549829999,
+        -43.52601610681,
+        72.3912178819181,
+        -9.116917349835001,
+        -42.716016006809994,
+        72.8212180819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent8",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent9",
+      "label": "现有电源板 STEP 9",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999783343,
+      "bounds": [
+        4.123110490221,
+        -43.52401702281,
+        72.3812179819191,
+        4.383110490221,
+        -42.72401702281,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent9",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent10",
+      "label": "现有电源板 STEP 10",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.008640000000863863,
+      "bounds": [
+        4.393110490221,
+        -43.52401702281,
+        72.8212179819171,
+        5.473110490221,
+        -42.72401702281,
+        72.8312179819181
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent10",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent11",
+      "label": "现有电源板 STEP 11",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999783669,
+      "bounds": [
+        5.483110490221,
+        -43.52401702281,
+        72.3812179819191,
+        5.743110490221,
+        -42.72401702281,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent11",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent12",
+      "label": "现有电源板 STEP 12",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5505951456163656,
+      "bounds": [
+        4.133110390222,
+        -43.534017122810006,
+        72.3912178819181,
+        5.733110590221,
+        -42.72401702281,
+        72.8212180819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent12",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent13",
+      "label": "现有电源板 STEP 13",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999783413,
+      "bounds": [
+        1.1981066802129998,
+        -43.52401702281,
+        72.3812179819191,
+        1.458106680213,
+        -42.72401702281,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent13",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent14",
+      "label": "现有电源板 STEP 14",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.008640000000863861,
+      "bounds": [
+        1.468106680213,
+        -43.52401702281,
+        72.8212179819171,
+        2.5481066802130004,
+        -42.72401702281,
+        72.8312179819181
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent14",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent15",
+      "label": "现有电源板 STEP 15",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.0069999999997833445,
+      "bounds": [
+        2.558106680213,
+        -43.52401702281,
+        72.3812179819191,
+        2.818106680213,
+        -42.72401702281,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent15",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent16",
+      "label": "现有电源板 STEP 16",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5505951456163657,
+      "bounds": [
+        1.2081065802139999,
+        -43.534017122810006,
+        72.3912178819181,
+        2.808106780213,
+        -42.72401702281,
+        72.8212180819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent16",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent17",
+      "label": "现有电源板 STEP 17",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999780197,
+      "bounds": [
+        -20.48118339315,
+        -45.437195834389996,
+        72.3812179819191,
+        -19.68118339315,
+        -45.177195834390005,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent17",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent18",
+      "label": "现有电源板 STEP 18",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.008640000000863887,
+      "bounds": [
+        -20.48118339315,
+        -46.52719583439,
+        72.8212179819171,
+        -19.68118339315,
+        -45.44719583439,
+        72.8312179819181
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent18",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent19",
+      "label": "现有电源板 STEP 19",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.006999999999780201,
+      "bounds": [
+        -20.48118339315,
+        -46.797195834389996,
+        72.3812179819191,
+        -19.68118339315,
+        -46.537195834390005,
+        72.8312179819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent19",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent20",
+      "label": "现有电源板 STEP 20",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5505951456167155,
+      "bounds": [
+        -20.49118349315,
+        -46.787195934390006,
+        72.3912178819181,
+        -19.68118339315,
+        -45.187195734389995,
+        72.8212180819171
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent20",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent21",
+      "label": "现有电源板 STEP 21",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 5.22410922322594,
+      "bounds": [
+        -21.99694030988,
+        -44.409017018033666,
+        72.3812179729081,
+        -18.29694030988,
+        -42.60901691803,
+        73.49121807290841
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent21",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent22",
+      "label": "现有电源板 STEP 22",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895571227,
+      "bounds": [
+        -25.725421486840006,
+        -47.07353822707,
+        72.38121785832911,
+        -24.425421286839992,
+        -45.07353822707,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent22",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent23",
+      "label": "现有电源板 STEP 23",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895570566,
+      "bounds": [
+        -27.773770483540005,
+        -47.07353822707,
+        72.38121785832911,
+        -26.47377028353999,
+        -45.07353822707,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent23",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent24",
+      "label": "现有电源板 STEP 24",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895571245,
+      "bounds": [
+        -31.870465936930003,
+        -47.07353822707,
+        72.38121785832911,
+        -30.570465736929993,
+        -45.07353822707,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent24",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent25",
+      "label": "现有电源板 STEP 25",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.261782389557094,
+      "bounds": [
+        -29.822116940230003,
+        -47.07353822707,
+        72.38121785832911,
+        -28.522116740229993,
+        -45.07353822707,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent25",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent26",
+      "label": "现有电源板 STEP 26",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.261782389548251,
+      "bounds": [
+        -30.290603097200005,
+        -56.90601981204,
+        72.38121785832911,
+        -28.99060289719999,
+        -54.90601981204,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent26",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent27",
+      "label": "现有电源板 STEP 27",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895482556,
+      "bounds": [
+        -28.131598779190004,
+        -56.90601981204,
+        72.38121785832911,
+        -26.831598579189993,
+        -54.90601981204,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent27",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent28",
+      "label": "现有电源板 STEP 28",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895432143,
+      "bounds": [
+        -25.898985113970006,
+        -56.88134620269,
+        72.38121785832911,
+        -24.598984913969993,
+        -54.88134620269,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent28",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent29",
+      "label": "现有电源板 STEP 29",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895499907,
+      "bounds": [
+        -10.166981049960006,
+        -63.691353822699995,
+        72.38121785832911,
+        -8.866980849962,
+        -61.691353822699995,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent29",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent30",
+      "label": "现有电源板 STEP 30",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.261782389556406,
+      "bounds": [
+        -12.383592683180007,
+        -63.691353822699995,
+        72.38121785832911,
+        -11.083592483179999,
+        -61.691353822699995,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent30",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent31",
+      "label": "现有电源板 STEP 31",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895315334,
+      "bounds": [
+        -30.268555853110005,
+        -74.1059436118,
+        72.38121785832911,
+        -28.96855565310999,
+        -72.1059436118,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent31",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent32",
+      "label": "现有电源板 STEP 32",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895315343,
+      "bounds": [
+        -28.109551535100003,
+        -74.1059436118,
+        72.38121785832911,
+        -26.809551335099993,
+        -72.1059436118,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent32",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent33",
+      "label": "现有电源板 STEP 33",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823896505445,
+      "bounds": [
+        -25.876937869870005,
+        -74.0812700025,
+        72.38121785832911,
+        -24.57693766986999,
+        -72.0812700025,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent33",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent34",
+      "label": "现有电源板 STEP 34",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.261782389540529,
+      "bounds": [
+        -10.144933805860006,
+        -80.8912776225,
+        72.38121785832911,
+        -8.844933605866999,
+        -78.8912776225,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent34",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent35",
+      "label": "现有电源板 STEP 35",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3.2617823895592233,
+      "bounds": [
+        -12.361545439090007,
+        -80.8912776225,
+        72.38121785832911,
+        -11.061545239089998,
+        -78.8912776225,
+        73.6812180583291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent35",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent36",
+      "label": "现有电源板 STEP 36",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.05671989156365116,
+      "bounds": [
+        -22.07769951968,
+        -46.725691139880055,
+        72.3812179803081,
+        -21.42598551968,
+        -46.353283139880006,
+        72.6437656203071
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent36",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent37",
+      "label": "现有电源板 STEP 37",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.05671989156299969,
+      "bounds": [
+        -22.07769951968,
+        -45.60660509988,
+        72.3812179803081,
+        -21.42598551968,
+        -45.23419709988001,
+        72.6437656203071
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent37",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent38",
+      "label": "现有电源板 STEP 38",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.2343279137276021,
+      "bounds": [
+        -22.125181539682167,
+        -46.53762509988,
+        72.64283460030761,
+        -21.37850349968,
+        -45.420401099879996,
+        72.94076100030874
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent38",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent39",
+      "label": "现有电源板 STEP 39",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.27329426606194573,
+      "bounds": [
+        -22.12518163964,
+        -46.724760219880004,
+        72.3821489003081,
+        -21.37943451968,
+        -45.23512801988,
+        72.6428347003081
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent39",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent40",
+      "label": "现有电源板 STEP 40",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.9906815108509932,
+      "bounds": [
+        -12.177598271190002,
+        -54.90435864871001,
+        72.38121788217211,
+        -11.377598071189997,
+        -53.30435864870999,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent40",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent41",
+      "label": "现有电源板 STEP 41",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.9906815108544643,
+      "bounds": [
+        -18.681243178480013,
+        -55.06336296672001,
+        72.38121788217211,
+        -17.88124297848,
+        -53.46336296671999,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent41",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent42",
+      "label": "现有电源板 STEP 42",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.990681510855023,
+      "bounds": [
+        -13.688926693850005,
+        -58.279044958090005,
+        72.38121788217211,
+        -12.888926493849999,
+        -56.679044958089996,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent42",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent43",
+      "label": "现有电源板 STEP 43",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.9906815108547429,
+      "bounds": [
+        -18.659195934390013,
+        -72.2632867665,
+        72.38121788217211,
+        -17.85919573439,
+        -70.6632867665,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent43",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent44",
+      "label": "现有电源板 STEP 44",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.9906815108566805,
+      "bounds": [
+        -12.155551027100001,
+        -72.1042824485,
+        72.38121788217211,
+        -11.355550827099997,
+        -70.5042824485,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent44",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent45",
+      "label": "现有电源板 STEP 45",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.9906815108481342,
+      "bounds": [
+        -13.666879449750004,
+        -75.4789687579,
+        72.38121788217211,
+        -12.866879249750001,
+        -73.8789687579,
+        73.18121808217109
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent45",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent46",
+      "label": "现有电源板 STEP 46",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 588.829072961519,
+      "bounds": [
+        -32.870002788,
+        -42.21000762001001,
+        66.7812178839991,
+        -19.869902688,
+        -35.41000762000967,
+        85.08121788399811
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent46",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent47",
+      "label": "现有电源板 STEP 47",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 38.460483938974825,
+      "bounds": [
+        -32.869902688,
+        -42.210007620010046,
+        75.0312178839971,
+        -19.869902688,
+        -35.41000762000996,
+        80.08121788399811
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent47",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent48",
+      "label": "现有电源板 STEP 48",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011461,
+      "bounds": [
+        -15.01735165049,
+        -53.83638931266999,
+        72.3812179821711,
+        -13.41714365049,
+        -53.03628531267,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent48",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent49",
+      "label": "现有电源板 STEP 49",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708838325,
+      "bounds": [
+        -14.71731265049,
+        -53.83638931267233,
+        72.8562797321701,
+        -13.717182650487667,
+        -53.036285312669996,
+        72.8912842821731
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent49",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent50",
+      "label": "现有电源板 STEP 50",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281554,
+      "bounds": [
+        -14.98734785049,
+        -53.83738954267,
+        72.4112217821701,
+        -13.44714745049,
+        -53.03628531267,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent50",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent51",
+      "label": "现有电源板 STEP 51",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011453,
+      "bounds": [
+        -17.01303244196,
+        -55.12004557988,
+        72.3812179821711,
+        -16.21292844196,
+        -53.519837579880004,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent51",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent52",
+      "label": "现有电源板 STEP 52",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708838888,
+      "bounds": [
+        -17.013032441960004,
+        -54.82000657988,
+        72.8562797321701,
+        -16.21292844195767,
+        -53.819876579877665,
+        72.8912842821731
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent52",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent53",
+      "label": "现有电源板 STEP 53",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281777,
+      "bounds": [
+        -17.01303244196,
+        -55.09004177988,
+        72.4112217821701,
+        -16.21192821196,
+        -53.54984137988,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent53",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent54",
+      "label": "现有电源板 STEP 54",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011454,
+      "bounds": [
+        -17.01303244196,
+        -58.26289292557,
+        72.3812179821711,
+        -16.21292844196,
+        -56.662684925570005,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent54",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent55",
+      "label": "现有电源板 STEP 55",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708822234,
+      "bounds": [
+        -17.013032441960004,
+        -57.96285392557,
+        72.8562797321701,
+        -16.212928441956,
+        -56.962723925569996,
+        72.8912842821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent55",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent56",
+      "label": "现有电源板 STEP 56",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.542323711628178,
+      "bounds": [
+        -17.01303244196,
+        -58.232889125570004,
+        72.4112217821701,
+        -16.21192821196,
+        -56.69268872557,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent56",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent57",
+      "label": "现有电源板 STEP 57",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011452,
+      "bounds": [
+        -15.34838931267,
+        -58.26289292557,
+        72.3812179821711,
+        -14.54828531267,
+        -56.662684925570005,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent57",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent58",
+      "label": "现有电源板 STEP 58",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708822057,
+      "bounds": [
+        -15.348389312670001,
+        -57.96285392557,
+        72.8562797321701,
+        -14.548285312666,
+        -56.962723925569996,
+        72.8912842821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent58",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent59",
+      "label": "现有电源板 STEP 59",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.542323711628177,
+      "bounds": [
+        -15.34838931267,
+        -58.232889125570004,
+        72.4112217821701,
+        -14.547285082670001,
+        -56.69268872557,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent59",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent60",
+      "label": "现有电源板 STEP 60",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011428,
+      "bounds": [
+        -18.66329914249,
+        -58.26289292557,
+        72.3812179821711,
+        -17.86319514249,
+        -56.662684925570005,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent60",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent61",
+      "label": "现有电源板 STEP 61",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708821977,
+      "bounds": [
+        -18.663299142490004,
+        -57.96285392557,
+        72.8562797321701,
+        -17.863195142486,
+        -56.962723925569996,
+        72.8912842821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent61",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent62",
+      "label": "现有电源板 STEP 62",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281779,
+      "bounds": [
+        -18.66329914249,
+        -58.232889125570004,
+        72.4112217821701,
+        -17.86219491249,
+        -56.69268872557,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent62",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent63",
+      "label": "现有电源板 STEP 63",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.535170024901151,
+      "bounds": [
+        -18.6412518984,
+        -75.4628167254,
+        72.3812179821711,
+        -17.8411478984,
+        -73.8626087254,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent63",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent64",
+      "label": "现有电源板 STEP 64",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708587297,
+      "bounds": [
+        -18.641251898398334,
+        -75.1627777254,
+        72.8562797321701,
+        -17.841147898399996,
+        -74.16264772537266,
+        72.89128428218311
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent64",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent65",
+      "label": "现有电源板 STEP 65",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281137,
+      "bounds": [
+        -18.6412518984,
+        -75.4328129254,
+        72.4112217821701,
+        -17.8401476684,
+        -73.89261252540001,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent65",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent66",
+      "label": "现有电源板 STEP 66",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011468,
+      "bounds": [
+        -14.9953044064,
+        -71.0363131125,
+        72.3812179821711,
+        -13.3950964064,
+        -70.2362091125,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent66",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent67",
+      "label": "现有电源板 STEP 67",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708675355,
+      "bounds": [
+        -14.6952654064,
+        -71.03631311250001,
+        72.8562797321701,
+        -13.695135406386,
+        -70.23620911249999,
+        72.8912842821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent67",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent68",
+      "label": "现有电源板 STEP 68",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.542323711628188,
+      "bounds": [
+        -14.9653006064,
+        -71.0373133425,
+        72.4112217821701,
+        -13.4251002064,
+        -70.2362091125,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent68",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent69",
+      "label": "现有电源板 STEP 69",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011508,
+      "bounds": [
+        -15.32634206858,
+        -75.4628167254,
+        72.3812179821711,
+        -14.52623806858,
+        -73.8626087254,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent69",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent70",
+      "label": "现有电源板 STEP 70",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708587155,
+      "bounds": [
+        -15.326342068578334,
+        -75.1627777254,
+        72.8562797321701,
+        -14.526238068579998,
+        -74.16264772537266,
+        72.89128428218311
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent70",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent71",
+      "label": "现有电源板 STEP 71",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281138,
+      "bounds": [
+        -15.32634206858,
+        -75.4328129254,
+        72.4112217821701,
+        -14.52523783858,
+        -73.89261252540001,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent71",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent72",
+      "label": "现有电源板 STEP 72",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.535170024901145,
+      "bounds": [
+        -16.99098519786,
+        -72.3199693797,
+        72.3812179821711,
+        -16.19088119786,
+        -70.7197613797,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent72",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent73",
+      "label": "现有电源板 STEP 73",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.02765344870886512,
+      "bounds": [
+        -16.990985197860002,
+        -72.0199303797,
+        72.8562797321701,
+        -16.190881197859998,
+        -71.019800379671,
+        72.89128428217977
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent73",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent74",
+      "label": "现有电源板 STEP 74",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.542323711628184,
+      "bounds": [
+        -16.99098519786,
+        -72.2899655797,
+        72.4112217821701,
+        -16.18988096786,
+        -70.7497651797,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent74",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent75",
+      "label": "现有电源板 STEP 75",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5351700249011508,
+      "bounds": [
+        -16.99098519786,
+        -75.4628167254,
+        72.3812179821711,
+        -16.19088119786,
+        -73.8626087254,
+        72.8812829821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent75",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent76",
+      "label": "现有电源板 STEP 76",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.027653448708865123,
+      "bounds": [
+        -16.990985197860002,
+        -75.1627777254,
+        72.8562797321701,
+        -16.190881197859998,
+        -74.162647725371,
+        72.89128428217977
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent76",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent77",
+      "label": "现有电源板 STEP 77",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.5423237116281115,
+      "bounds": [
+        -16.99098519786,
+        -75.4328129254,
+        72.4112217821701,
+        -16.18988096786,
+        -73.89261252540001,
+        72.85127918217009
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent77",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent78",
+      "label": "现有电源板 STEP 78",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 363.6253013320331,
+      "bounds": [
+        24.062038508077,
+        -84.08408305330035,
+        68.98121802814308,
+        41.562038708077004,
+        -78.1740829533,
+        79.3812181281601
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent78",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent79",
+      "label": "现有电源板 STEP 79",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 363.6253013320328,
+      "bounds": [
+        4.503999391999,
+        -84.08408305330035,
+        68.98121802814308,
+        22.003999591999,
+        -78.1740829533,
+        79.3812181281601
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent79",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent80",
+      "label": "现有电源板 STEP 80",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 1594.4201110419594,
+      "bounds": [
+        -49.994984605960006,
+        -53.03102626205001,
+        69.3812179189441,
+        -34.49498440596,
+        -34.93102606204741,
+        80.48131801894309
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent80",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent81",
+      "label": "现有电源板 STEP 81",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 125.75490742865684,
+      "bounds": [
+        -22.506024429180002,
+        -66.94663999433,
+        72.3812179821711,
+        -15.40716022918,
+        -60.34769579433,
+        75.2807540821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent81",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent82",
+      "label": "现有电源板 STEP 82",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 125.75490742862358,
+      "bounds": [
+        -22.48397718509,
+        -84.14656379409999,
+        72.3812179821711,
+        -15.38511298509,
+        -77.54761959410001,
+        75.2807540821711
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent82",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent83",
+      "label": "现有电源板 STEP 83",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144286691,
+      "bounds": [
+        -22.588140879930002,
+        -58.421627032690004,
+        72.3812181651571,
+        -21.98518158597,
+        -58.02153093269,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent83",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent84",
+      "label": "现有电源板 STEP 84",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.0349124614428675,
+      "bounds": [
+        -22.588140879930002,
+        -57.77147103269001,
+        72.3812181651571,
+        -21.98518158597,
+        -57.371374932689996,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent84",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent85",
+      "label": "现有电源板 STEP 85",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442866895,
+      "bounds": [
+        -22.588140879930002,
+        -57.12131503269,
+        72.3812181651571,
+        -21.98518158597,
+        -56.72121893268999,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent85",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent86",
+      "label": "现有电源板 STEP 86",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144256877,
+      "bounds": [
+        -20.38479758597,
+        -58.42162693269,
+        72.3812181651571,
+        -19.781838292019998,
+        -58.02153083269,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent86",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent87",
+      "label": "现有电源板 STEP 87",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144256934,
+      "bounds": [
+        -20.38479758597,
+        -57.77147093269,
+        72.3812181651571,
+        -19.781838292019998,
+        -57.37137483268999,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent87",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent88",
+      "label": "现有电源板 STEP 88",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442568765,
+      "bounds": [
+        -20.38479758597,
+        -57.12131493269,
+        72.3812181651571,
+        -19.781838292019998,
+        -56.72121883268999,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent88",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent89",
+      "label": "现有电源板 STEP 89",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442866874,
+      "bounds": [
+        -22.588140879930002,
+        -56.471159032690004,
+        72.3812181651571,
+        -21.98518158597,
+        -56.07106293269,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent89",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent90",
+      "label": "现有电源板 STEP 90",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442568765,
+      "bounds": [
+        -20.38479758597,
+        -56.47115893269,
+        72.3812181651571,
+        -19.781838292019998,
+        -56.07106283269,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent90",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent91",
+      "label": "现有电源板 STEP 91",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 4.352013685501276,
+      "bounds": [
+        -21.98518168597,
+        -58.69669303269,
+        72.4304349716291,
+        -20.384797485969997,
+        -55.79599683269,
+        73.43167531162808
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent91",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent92",
+      "label": "现有电源板 STEP 92",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442456556,
+      "bounds": [
+        -22.56609363584,
+        -75.6215508325,
+        72.3812181651571,
+        -21.96313434188,
+        -75.2214546325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent92",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent93",
+      "label": "现有电源板 STEP 93",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442455966,
+      "bounds": [
+        -22.56609363584,
+        -74.9713948325,
+        72.3812181651571,
+        -21.96313434188,
+        -74.5712986325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent93",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent94",
+      "label": "现有电源板 STEP 94",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144245598,
+      "bounds": [
+        -22.56609363584,
+        -74.3212388325,
+        72.3812181651571,
+        -21.96313434188,
+        -73.92114263250001,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent94",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent95",
+      "label": "现有电源板 STEP 95",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144262837,
+      "bounds": [
+        -20.36275034188,
+        -75.6215508325,
+        72.3812181651571,
+        -19.759791047929998,
+        -75.2214546325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent95",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent96",
+      "label": "现有电源板 STEP 96",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442627774,
+      "bounds": [
+        -20.36275034188,
+        -74.9713948325,
+        72.3812181651571,
+        -19.759791047929998,
+        -74.5712986325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent96",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent97",
+      "label": "现有电源板 STEP 97",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144262777,
+      "bounds": [
+        -20.36275034188,
+        -74.3212388325,
+        72.3812181651571,
+        -19.759791047929998,
+        -73.92114263250001,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent97",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent98",
+      "label": "现有电源板 STEP 98",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.03491246144245656,
+      "bounds": [
+        -22.56609363584,
+        -73.6710828325,
+        72.3812181651571,
+        -21.96313434188,
+        -73.2709866325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent98",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent99",
+      "label": "现有电源板 STEP 99",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 0.034912461442628356,
+      "bounds": [
+        -20.36275034188,
+        -73.6710828325,
+        72.3812181651571,
+        -19.759791047929998,
+        -73.2709866325,
+        72.9805669716291
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent99",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerComponent100",
+      "label": "现有电源板 STEP 100",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 4.352013685516576,
+      "bounds": [
+        -21.96313444188,
+        -75.89661683249999,
+        72.4304349716291,
+        -20.36275024188,
+        -72.9959206325,
+        73.43167531162808
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerComponent100",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "FPGAReference",
+      "label": "FPGA V3 板面参考138.049×91.567",
+      "color": [
+        0.0392156862745098,
+        0.3215686274509804,
+        0.5490196078431373
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 20173.700598763517,
+      "bounds": [
+        -69.0245,
+        -109.7835,
+        117.7811671820691,
+        69.0245,
+        -18.216499999999996,
+        119.38116718206909
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAReference",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "FPGAChip1",
+      "label": "FPGA器件高度参考1",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 1152.000000000001,
+      "bounds": [
+        -20.0,
+        -64.0,
+        119.38116718206909,
+        -2.0,
+        -44.0,
+        122.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAChip1",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "FPGAChip2",
+      "label": "FPGA器件高度参考2",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 1209.600000000001,
+      "bounds": [
+        6.0,
+        -61.0,
+        119.38116718206909,
+        27.0,
+        -43.0,
+        122.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAChip2",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "FPGAChip3",
+      "label": "FPGA器件高度参考3",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 537.6000000000005,
+      "bounds": [
+        49.0,
+        -33.0,
+        119.38116718206909,
+        63.0,
+        -21.0,
+        122.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAChip3",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "FPGAConnector1",
+      "label": "FPGA连接器参考1",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 2295.0,
+      "bounds": [
+        -69.0,
+        -96.0,
+        119.38116718206909,
+        -52.0,
+        -81.0,
+        128.38116718206908
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAConnector1",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "FPGAConnector2",
+      "label": "FPGA连接器参考2",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 2295.0,
+      "bounds": [
+        -69.0,
+        -71.0,
+        119.38116718206909,
+        -52.0,
+        -56.0,
+        128.38116718206908
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "FPGAConnector2",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4AReference",
+      "label": "LPi4A 包络参考84.455×103.814",
+      "color": [
+        0.0392156862745098,
+        0.3215686274509804,
+        0.5490196078431373
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 13976.706337963535,
+      "bounds": [
+        -42.2275,
+        1.093,
+        117.7811671820691,
+        42.2275,
+        104.907,
+        119.38116718206909
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4AReference",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4ACore",
+      "label": "LPi4A核心板参考",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 12995.999999999989,
+      "bounds": [
+        -30.0,
+        30.0,
+        121.7811671820691,
+        30.0,
+        87.0,
+        125.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4ACore",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4AConnector1",
+      "label": "LPi4A接口高度参考1",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 6246.503910000005,
+      "bounds": [
+        -39.0,
+        86.0,
+        119.38116718206909,
+        -21.0,
+        104.5,
+        138.13943718206912
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4AConnector1",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4AConnector2",
+      "label": "LPi4A接口高度参考2",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 6246.503910000005,
+      "bounds": [
+        -19.5,
+        86.0,
+        119.38116718206909,
+        -1.5,
+        104.5,
+        138.13943718206912
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4AConnector2",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4AConnector3",
+      "label": "LPi4A接口高度参考3",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 6246.503910000005,
+      "bounds": [
+        1.0,
+        86.0,
+        119.38116718206909,
+        19.0,
+        104.5,
+        138.13943718206912
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4AConnector3",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "LPi4AConnector4",
+      "label": "LPi4A接口高度参考4",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "envelope_reference",
+      "valid": true,
+      "volume_mm3": 6246.503910000005,
+      "bounds": [
+        21.0,
+        86.0,
+        119.38116718206909,
+        39.0,
+        104.5,
+        138.13943718206912
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": "LPi4AConnector4",
+      "mesh_shift": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "UpperScrew1",
+      "label": "上盖M3螺钉参考1",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 100.8828232920754,
+      "bounds": [
+        -78.8,
+        -113.8,
+        100.7811671820691,
+        -73.2,
+        -108.2,
+        110.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "UpperScrew2",
+      "label": "上盖M3螺钉参考2",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 100.8828232920754,
+      "bounds": [
+        73.2,
+        -113.8,
+        100.7811671820691,
+        78.8,
+        -108.2,
+        110.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "UpperScrew3",
+      "label": "上盖M3螺钉参考3",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 100.8828232920754,
+      "bounds": [
+        -78.8,
+        111.2,
+        100.7811671820691,
+        -73.2,
+        116.8,
+        110.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "UpperScrew4",
+      "label": "上盖M3螺钉参考4",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 100.8828232920754,
+      "bounds": [
+        73.2,
+        111.2,
+        100.7811671820691,
+        78.8,
+        116.8,
+        110.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MainPost1",
+      "label": "上下层支柱1",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 2257.6348746675976,
+      "bounds": [
+        -80.5,
+        -115.5,
+        62.7811671820691,
+        -71.5,
+        -106.5,
+        103.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MainPost2",
+      "label": "上下层支柱2",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 2257.6348746675976,
+      "bounds": [
+        -80.5,
+        109.5,
+        62.7811671820691,
+        -71.5,
+        118.5,
+        103.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MainPost3",
+      "label": "上下层支柱3",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 2257.6348746675976,
+      "bounds": [
+        71.5,
+        -115.5,
+        62.7811671820691,
+        80.5,
+        -106.5,
+        103.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MainPost4",
+      "label": "上下层支柱4",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 2257.6348746675976,
+      "bounds": [
+        71.5,
+        109.5,
+        62.7811671820691,
+        80.5,
+        118.5,
+        103.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "PowerPost1",
+      "label": "原电源板安装支柱1",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.854853512946,
+      "bounds": [
+        -48.845,
+        -54.0809,
+        62.7811671820691,
+        -42.845,
+        -48.0809,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost1",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerPost2",
+      "label": "原电源板安装支柱2",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.85485351294614,
+      "bounds": [
+        -48.419999999999995,
+        -83.4661,
+        62.7811671820691,
+        -42.419999999999995,
+        -77.4661,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost2",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerPost3",
+      "label": "原电源板安装支柱3",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.85485351294602,
+      "bounds": [
+        -48.166,
+        -61.495000000000005,
+        62.7811671820691,
+        -42.166,
+        -55.495000000000005,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost3",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerPost4",
+      "label": "原电源板安装支柱4",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.85485351294608,
+      "bounds": [
+        -41.645199999999996,
+        -54.0809,
+        62.7811671820691,
+        -35.645199999999996,
+        -48.0809,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost4",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerPost5",
+      "label": "原电源板安装支柱5",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.85485351294608,
+      "bounds": [
+        42.5122,
+        -83.8471,
+        62.7811671820691,
+        48.5122,
+        -77.8471,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost5",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "PowerPost6",
+      "label": "原电源板安装支柱6",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 161.85485351294608,
+      "bounds": [
+        43.02020000000001,
+        -42.06399999999999,
+        62.7811671820691,
+        49.02020000000001,
+        -36.06399999999999,
+        70.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "PowerPost6",
+      "mesh_shift": [
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "MotorBracketL",
+      "label": "R3X原配电机安装支架 MotorBracketL",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Mounts",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 7179.197486238864,
+      "bounds": [
+        -88.80000010000052,
+        8.397078261322202,
+        14.281167082067237,
+        -68.12223413116803,
+        72.69707846132692,
+        57.78116728206863
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorBracketL",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "RearLWheel",
+      "label": "R3X原后轮/轮毂 RearLWheel",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 44131.1495626978,
+      "bounds": [
+        -120.10100675771062,
+        26.818834398591626,
+        -9.999997868371792e-08,
+        -94.05999989999904,
+        93.181168962729,
+        66.36233446413759
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "RearLWheel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "RearLHub",
+      "label": "R3X原后轮/轮毂 RearLHub",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 1540.593489233542,
+      "bounds": [
+        -109.3000001000004,
+        53.5409593611732,
+        26.33439885395016,
+        -91.2999998999995,
+        66.45904400014743,
+        40.027935510187596
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "RearLHub",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart14",
+      "label": "R3X原电机零件 MotorLPart14",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 48383.04112198402,
+      "bounds": [
+        -86.8000001000004,
+        8.394382281886545,
+        14.279519086333275,
+        -45.69999989999982,
+        72.69490433805143,
+        52.08099610040223
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart14",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart15",
+      "label": "R3X原电机零件 MotorLPart15",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 9.424353581270987,
+      "bounds": [
+        -49.100000100000024,
+        27.69463092143402,
+        32.18069681024905,
+        -46.099999899999794,
+        29.694631121434135,
+        34.1806970102491
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart15",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart16",
+      "label": "R3X原电机零件 MotorLPart16",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 169.63836446287618,
+      "bounds": [
+        -88.30000010000018,
+        53.99463090111143,
+        27.179568899160678,
+        -86.79999989999985,
+        65.99463110111154,
+        39.17956909916071
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart16",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart17",
+      "label": "R3X原电机零件 MotorLPart17",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 354.02692952821633,
+      "bounds": [
+        -101.30000010000018,
+        56.99463090111143,
+        30.17956889916053,
+        -88.29999989999996,
+        62.994631101111544,
+        36.179569099160695
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart17",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart18",
+      "label": "R3X原电机零件 MotorLPart18",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 585.6921605640412,
+      "bounds": [
+        -49.10000010000014,
+        21.79463092143404,
+        26.280696810249047,
+        -45.099999899999794,
+        35.59463112143411,
+        40.08069701024911
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart18",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart19",
+      "label": "R3X原电机零件 MotorLPart19",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 340.05766316446943,
+      "bounds": [
+        -50.750000000000114,
+        19.869944535996638,
+        41.88037889133034,
+        -43.700000000000045,
+        37.520214790772,
+        49.3810149130008
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart19",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorLPart20",
+      "label": "R3X原电机零件 MotorLPart20",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 571.6841990926864,
+      "bounds": [
+        -53.0,
+        13.69463092143402,
+        18.180696810249053,
+        -50.29999989999961,
+        43.69463112143402,
+        44.68104404913753
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorLPart20",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorBracketR",
+      "label": "R3X原配电机安装支架 MotorBracketR",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Mounts",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 7179.733056367216,
+      "bounds": [
+        68.12223413116826,
+        47.30292489999291,
+        14.281167082068395,
+        88.80000010000063,
+        111.60292509999775,
+        57.78116728206966
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorBracketR",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "RearRWheel",
+      "label": "R3X原后轮/轮毂 RearRWheel",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 44133.40741890537,
+      "bounds": [
+        94.05999990000018,
+        26.818834398590717,
+        -9.999977973175191e-08,
+        120.10100675771062,
+        93.18116896272878,
+        66.36233446413816
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "RearRWheel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "RearRHub",
+      "label": "R3X原后轮/轮毂 RearRHub",
+      "color": [
+        0.23921568627450981,
+        0.27058823529411763,
+        0.2980392156862745
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 1540.593490550389,
+      "bounds": [
+        91.29999989999973,
+        53.540959361172405,
+        26.334398853950404,
+        109.30000010000063,
+        66.45904400014675,
+        40.02793551018783
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "RearRHub",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart21",
+      "label": "R3X原电机零件 MotorRPart21",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 48383.04112198485,
+      "bounds": [
+        45.69999989999982,
+        47.29997730610247,
+        14.281142488170866,
+        86.80000010000029,
+        111.60000210000024,
+        52.08116728206932
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart21",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart22",
+      "label": "R3X原电机零件 MotorRPart22",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 9.424353581270836,
+      "bounds": [
+        46.099999899999794,
+        90.30000189999984,
+        32.181167082069045,
+        49.100000100000024,
+        92.30000209999994,
+        34.18116728206906
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart22",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart23",
+      "label": "R3X原电机零件 MotorRPart23",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 169.63836446287806,
+      "bounds": [
+        86.79999989999996,
+        54.00000189999988,
+        27.18116708206928,
+        88.30000010000018,
+        66.0000021000001,
+        39.181167282069296
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart23",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart24",
+      "label": "R3X原电机零件 MotorRPart24",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 354.0269295282083,
+      "bounds": [
+        88.29999989999996,
+        57.00000189999988,
+        30.181167082069273,
+        101.30000010000018,
+        63.00000210000022,
+        36.1811672820693
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart24",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart25",
+      "label": "R3X原电机零件 MotorRPart25",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 585.6921605640412,
+      "bounds": [
+        45.09999989999968,
+        84.40000189999975,
+        26.281167082069032,
+        49.100000100000024,
+        98.20000209999992,
+        40.08116728206907
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart25",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart26",
+      "label": "R3X原电机零件 MotorRPart26",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 340.0576631644658,
+      "bounds": [
+        43.69999999999993,
+        82.47500199999978,
+        41.88116718206896,
+        50.75,
+        100.125002,
+        49.38116718206915
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart26",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "MotorRPart27",
+      "label": "R3X原电机零件 MotorRPart27",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Hardware",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 571.6841990926746,
+      "bounds": [
+        50.29999989999961,
+        76.30000189999973,
+        18.181167082069067,
+        52.999999999999886,
+        106.30000209999983,
+        44.681167282069175
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "MotorRPart27",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterLAxle",
+      "label": "R3X前万向轮 CasterLAxle",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 351.03832219516835,
+      "bounds": [
+        -66.70000010000007,
+        -106.40000010000009,
+        10.099999899999967,
+        -47.29999990000007,
+        -101.59999989999997,
+        14.90000010000002
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterLAxle",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterLWheel",
+      "label": "R3X前万向轮 CasterLWheel",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 5956.460842747807,
+      "bounds": [
+        -63.20000010000016,
+        -116.5000001,
+        -1.0000002131628207e-07,
+        -50.79999989999995,
+        -91.49999989999995,
+        25.000000100000015
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterLWheel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterLSwivel",
+      "label": "R3X前万向轮 CasterLSwivel",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3948.4741418099056,
+      "bounds": [
+        -76.2500001,
+        -110.0796513854743,
+        6.999999899999659,
+        -37.7499999,
+        -73.59999989999986,
+        34.00000010000006
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterLSwivel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterRAxle",
+      "label": "R3X前万向轮 CasterRAxle",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 351.03832219516835,
+      "bounds": [
+        47.29999989999993,
+        -106.40000010000009,
+        10.099999899999967,
+        66.70000009999993,
+        -101.59999989999997,
+        14.90000010000002
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterRAxle",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterRWheel",
+      "label": "R3X前万向轮 CasterRWheel",
+      "color": [
+        0.10196078431372549,
+        0.10588235294117647,
+        0.11372549019607843
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 5956.460842747805,
+      "bounds": [
+        50.79999989999984,
+        -116.5000001,
+        -1.0000002131628207e-07,
+        63.20000010000005,
+        -91.49999989999995,
+        25.000000100000015
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterRWheel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterRSwivel",
+      "label": "R3X前万向轮 CasterRSwivel",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Wheels",
+      "role": "source_geometry",
+      "valid": true,
+      "volume_mm3": 3948.474141809905,
+      "bounds": [
+        37.7499999,
+        -110.0796513854743,
+        6.999999899999659,
+        76.2500001,
+        -73.59999989999986,
+        34.00000010000006
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterRSwivel",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer1",
+      "label": "万向轮安装隔柱 1 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922504,
+      "bounds": [
+        -75.0,
+        -105.0,
+        34.0,
+        -69.0,
+        -99.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": true,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer1",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt1",
+      "label": "万向轮M3长螺钉示意1",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        -74.8,
+        -104.8,
+        31.0,
+        -69.2,
+        -99.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer2",
+      "label": "万向轮安装隔柱 2 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922504,
+      "bounds": [
+        -75.0,
+        -81.0,
+        34.0,
+        -69.0,
+        -75.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer2",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt2",
+      "label": "万向轮M3长螺钉示意2",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        -74.8,
+        -80.8,
+        31.0,
+        -69.2,
+        -75.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer3",
+      "label": "万向轮安装隔柱 3 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922583,
+      "bounds": [
+        -45.0,
+        -105.0,
+        34.0,
+        -39.0,
+        -99.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer3",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt3",
+      "label": "万向轮M3长螺钉示意3",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        -44.8,
+        -104.8,
+        31.0,
+        -39.2,
+        -99.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer4",
+      "label": "万向轮安装隔柱 4 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922583,
+      "bounds": [
+        -45.0,
+        -81.0,
+        34.0,
+        -39.0,
+        -75.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer4",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt4",
+      "label": "万向轮M3长螺钉示意4",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        -44.8,
+        -80.8,
+        31.0,
+        -39.2,
+        -75.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer5",
+      "label": "万向轮安装隔柱 5 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922583,
+      "bounds": [
+        39.0,
+        -105.0,
+        34.0,
+        45.0,
+        -99.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer5",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt5",
+      "label": "万向轮M3长螺钉示意5",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        39.2,
+        -104.8,
+        31.0,
+        44.8,
+        -99.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer6",
+      "label": "万向轮安装隔柱 6 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922583,
+      "bounds": [
+        39.0,
+        -81.0,
+        34.0,
+        45.0,
+        -75.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer6",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt6",
+      "label": "万向轮M3长螺钉示意6",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        39.2,
+        -80.8,
+        31.0,
+        44.8,
+        -75.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer7",
+      "label": "万向轮安装隔柱 7 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922504,
+      "bounds": [
+        69.0,
+        -105.0,
+        34.0,
+        75.0,
+        -99.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer7",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt7",
+      "label": "万向轮M3长螺钉示意7",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        69.2,
+        -104.8,
+        31.0,
+        74.8,
+        -99.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterSpacer8",
+      "label": "万向轮安装隔柱 8 / 23.781mm",
+      "color": [
+        0.8588235294117647,
+        0.5686274509803921,
+        0.12941176470588237
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 468.99667105922504,
+      "bounds": [
+        69.0,
+        -81.0,
+        34.0,
+        75.0,
+        -75.0,
+        57.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": "CasterSpacer8",
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CasterBolt8",
+      "label": "万向轮M3长螺钉示意8",
+      "color": [
+        0.6196078431372549,
+        0.6705882352941176,
+        0.7215686274509804
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 268.9819885462781,
+      "bounds": [
+        69.2,
+        -80.8,
+        31.0,
+        74.8,
+        -75.2,
+        64.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": false,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraBracket",
+      "label": "摄像头立板 / 24mm孔距 / 可调槽 / 排针避让窗",
+      "color": [
+        0.62,
+        0.67,
+        0.72
+      ],
+      "category": "Mounts",
+      "role": "designed",
+      "valid": true,
+      "volume_mm3": 5308.669920227614,
+      "bounds": [
+        -19.0,
+        -123.0,
+        108.7811671820691,
+        19.0,
+        -111.0,
+        150.7811671820691
+      ],
+      "solids": 1,
+      "export_part": true,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraPCB",
+      "label": "OV5640摄像头30×30安装参考",
+      "color": [
+        0.04,
+        0.32,
+        0.55
+      ],
+      "category": "Hardware",
+      "role": "camera_reference",
+      "valid": true,
+      "volume_mm3": 1414.264072981788,
+      "bounds": [
+        -15.0,
+        -127.0,
+        113.7811671820691,
+        15.0,
+        -125.4,
+        143.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraLens",
+      "label": "镜头包络φ14 / 总前伸33mm为参考",
+      "color": [
+        0.06,
+        0.065,
+        0.075
+      ],
+      "category": "Hardware",
+      "role": "camera_reference",
+      "valid": true,
+      "volume_mm3": 4936.17383334461,
+      "bounds": [
+        -7.0,
+        -160.0,
+        116.7811671820691,
+        7.0,
+        -127.0,
+        130.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraGlass",
+      "label": "镜头前片参考",
+      "color": [
+        0.02,
+        0.16,
+        0.25
+      ],
+      "category": "Hardware",
+      "role": "camera_reference",
+      "valid": true,
+      "volume_mm3": 31.415926535898084,
+      "bounds": [
+        -5.0,
+        -159.7,
+        118.7811671820691,
+        5.0,
+        -159.29999999999998,
+        128.7811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraHeader",
+      "label": "摄像头2×9排针绝缘座参考",
+      "color": [
+        0.06,
+        0.065,
+        0.075
+      ],
+      "category": "Hardware",
+      "role": "camera_reference",
+      "valid": true,
+      "volume_mm3": 290.3220000000007,
+      "bounds": [
+        -11.43,
+        -125.4,
+        136.4711671820691,
+        11.43,
+        -122.9,
+        141.55116718206912
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraPins",
+      "label": "18根2.54mm排针参考",
+      "color": [
+        0.86,
+        0.57,
+        0.13
+      ],
+      "category": "Hardware",
+      "role": "camera_reference",
+      "valid": true,
+      "volume_mm3": 58.98239999999879,
+      "bounds": [
+        -10.48,
+        -125.7,
+        137.4211671820691,
+        10.48,
+        -117.7,
+        140.60116718206908
+      ],
+      "solids": 18,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraSpacer1",
+      "label": "摄像头2.4mm隔柱参考1",
+      "color": [
+        0.86,
+        0.57,
+        0.13
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 32.34583796136048,
+      "bounds": [
+        -14.5,
+        -125.4,
+        114.2811671820691,
+        -9.5,
+        -123.0,
+        119.2811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraScrew1",
+      "label": "摄像头M2.5螺钉参考1",
+      "color": [
+        0.62,
+        0.67,
+        0.72
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 70.76908691109045,
+      "bounds": [
+        -14.3,
+        -128.6,
+        114.4811671820691,
+        -9.7,
+        -118.0,
+        119.0811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraSpacer2",
+      "label": "摄像头2.4mm隔柱参考2",
+      "color": [
+        0.86,
+        0.57,
+        0.13
+      ],
+      "category": "Mounts",
+      "role": "mount_reference",
+      "valid": true,
+      "volume_mm3": 32.34583796136048,
+      "bounds": [
+        9.5,
+        -125.4,
+        114.2811671820691,
+        14.5,
+        -123.0,
+        119.2811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraScrew2",
+      "label": "摄像头M2.5螺钉参考2",
+      "color": [
+        0.62,
+        0.67,
+        0.72
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 70.76908691109045,
+      "bounds": [
+        9.7,
+        -128.6,
+        114.4811671820691,
+        14.3,
+        -118.0,
+        119.0811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraFootScrew1",
+      "label": "立板M3底座螺钉参考1",
+      "color": [
+        0.62,
+        0.67,
+        0.72
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 115.01999023322952,
+      "bounds": [
+        -12.8,
+        -117.3,
+        101.7811671820691,
+        -7.2,
+        -111.7,
+        113.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "CameraFootScrew2",
+      "label": "立板M3底座螺钉参考2",
+      "color": [
+        0.62,
+        0.67,
+        0.72
+      ],
+      "category": "Fasteners",
+      "role": "fastener_reference",
+      "valid": true,
+      "volume_mm3": 115.01999023322952,
+      "bounds": [
+        7.2,
+        -117.3,
+        101.7811671820691,
+        12.8,
+        -111.7,
+        113.5811671820691
+      ],
+      "solids": 1,
+      "export_part": false,
+      "upper_assembly": true,
+      "reuse_mesh": null,
+      "mesh_shift": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "assembly_bounds_mm": [
+    -120.10100675771062,
+    -160.0,
+    -1.0000002131628207e-07,
+    120.10100675771062,
+    130.0,
+    150.7811671820691
+  ],
+  "assembly_size_mm": [
+    240.20201351542124,
+    290.0,
+    150.78116728206913
+  ],
+  "four_wheel_ground_z": [
+    -9.999997868371792e-08,
+    -9.999977973175191e-08,
+    -1.0000002131628207e-07,
+    -1.0000002131628207e-07
+  ],
+  "critical_interferences": [],
+  "caster_sweep": {
+    "conservative_radius_mm": 26.830765922723717,
+    "pivot_spacing_mm": 114.0,
+    "two_casters_separation_mm": 60.338468154552565,
+    "moving_hardware_top_z": 34.0,
+    "base_bottom_z": 57.7811671820691
+  },
+  "motor_wire_holes": [
+    {
+      "connector": "MotorLPart19",
+      "center": [
+        -47.224999999999966,
+        28.695079663384433
+      ],
+      "width": 12.0,
+      "length": 24.0,
+      "radius": 2.0,
+      "connector_bounds": [
+        -50.75,
+        19.86994453599675,
+        41.88037889133033,
+        -43.69999999999993,
+        37.520214790772116,
+        49.3810149130008
+      ]
+    },
+    {
+      "connector": "MotorRPart26",
+      "center": [
+        47.22500000000008,
+        91.300002
+      ],
+      "width": 12.0,
+      "length": 24.0,
+      "radius": 2.0,
+      "connector_bounds": [
+        43.700000000000045,
+        82.47500199999989,
+        41.88116718206896,
+        50.750000000000114,
+        100.12500200000011,
+        49.38116718206914
+      ]
+    }
+  ],
+  "continuous_perimeter": {
+    "single_solid_tray": true,
+    "front_left_right_joined": true,
+    "vents_retained": true,
+    "upper_side_rails_removed": true
+  },
+  "plate_thicknesses_mm": {
+    "R3X_reference": 5,
+    "lower": 5.0,
+    "upper": 5.0
+  },
+  "battery_fence": {
+    "inner_length": 87.0,
+    "inner_width": 49.0,
+    "height": 3.0,
+    "wall": 2.0,
+    "floor_thickness_mm": 5.0,
+    "cable_tie_slots": 4,
+    "battery_height_assumed": false,
+    "recess_cut": false
+  },
+  "camera": {
+    "board_size_mm": [
+      30,
+      30
+    ],
+    "mount_pitch_mm": 24,
+    "header_clearance_window_mm": [
+      25,
+      10
+    ],
+    "bracket_slots_mm": [
+      3.2,
+      6.2
+    ],
+    "camera_board_bottom_z": 113.7811671820691,
+    "lens_axis_z": 123.7811671820691,
+    "source": "references/OV5640-mechanical-drawing.png",
+    "assumptions": "Drawing supplies 30x30 PCB, 24 mm lower-hole pitch, phi14 lens and partial 24.60 mm axial dimension. Hole diameters, PCB thickness, lower hole offset and overall lens projection are reference assumptions; bracket uses 3.2x6.2 vertical slots and M2.5 reference fasteners."
+  },
+  "reference_sha256": "a1f77a26c136f45c3877fba97cdb3e7b2d8338eea8398fa6d3eacce47359977f",
+  "power_board_reference": "Original 100x50mm STEP, not the 96x97mm AI PCB",
+  "previous_native_sha256": "87388042c1a58b99c808bbabaecebb9302061ff5275cbdb3a778b5489ac429dd",
+  "fcstd_reopened": true,
+  "native_objects_closed": 191,
+  "upper_assembly_verified": {
+    "members": 37,
+    "group_lift_mm": 65,
+    "all_members_move_together": true
+  },
+  "step_roundtrip": {
+    "EdgeMind_Assembly.step": {
+      "solids": 208,
+      "closed": true,
+      "valid": true,
+      "maximum_bound_delta_mm": 1.0615508472255897e-11
+    },
+    "EdgeMind_Shell.step": {
+      "solids": 21,
+      "closed": true,
+      "valid": true,
+      "maximum_bound_delta_mm": 9.123368727159686e-12,
+      "volume_delta_mm3": 6.490154191851616e-08
+    }
+  },
+  "source_geometry_identity": {
+    "MotorBracketL": {
+      "source_solid_index": 1,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "RearLWheel": {
+      "source_solid_index": 2,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "RearLHub": {
+      "source_solid_index": 3,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart14": {
+      "source_solid_index": 14,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart15": {
+      "source_solid_index": 15,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart16": {
+      "source_solid_index": 16,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart17": {
+      "source_solid_index": 17,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart18": {
+      "source_solid_index": 18,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart19": {
+      "source_solid_index": 19,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorLPart20": {
+      "source_solid_index": 20,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorBracketR": {
+      "source_solid_index": 4,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "RearRWheel": {
+      "source_solid_index": 5,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "RearRHub": {
+      "source_solid_index": 6,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart21": {
+      "source_solid_index": 21,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart22": {
+      "source_solid_index": 22,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart23": {
+      "source_solid_index": 23,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart24": {
+      "source_solid_index": 24,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart25": {
+      "source_solid_index": 25,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart26": {
+      "source_solid_index": 26,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "MotorRPart27": {
+      "source_solid_index": 27,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterLAxle": {
+      "source_solid_index": 11,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterLWheel": {
+      "source_solid_index": 12,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterLSwivel": {
+      "source_solid_index": 13,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterRAxle": {
+      "source_solid_index": 11,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterRWheel": {
+      "source_solid_index": 12,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    },
+    "CasterRSwivel": {
+      "source_solid_index": 13,
+      "faces_match": true,
+      "bounds_match": true,
+      "scale": 1
+    }
+  },
+  "stl_files": {
+    "CameraBracket.stl": {
+      "closed": true,
+      "facets": 1100
+    },
+    "CasterSpacer1.stl": {
+      "closed": true,
+      "facets": 504
+    },
+    "LowerTray.stl": {
+      "closed": true,
+      "facets": 7680
+    },
+    "UpperDeck.stl": {
+      "closed": true,
+      "facets": 7728
+    }
+  },
+  "exploded_native_verified": true,
+  "feature_measurements": {
+    "measured_plate_thicknesses_mm": {
+      "LowerTray": 5.0,
+      "UpperDeck": 5.0
+    },
+    "measured_motor_openings": [
+      {
+        "connector": "MotorLPart19",
+        "measured_open_area_mm2": 284.5663706143592,
+        "expected_area_mm2": 284.5663706143592
+      },
+      {
+        "connector": "MotorRPart26",
+        "measured_open_area_mm2": 284.5663706143592,
+        "expected_area_mm2": 284.5663706143592
+      }
+    ],
+    "camera_mount_slots_clear": true,
+    "camera_header_window_clear": true,
+    "camera_STEP_valid": true,
+    "camera_STEP_solids": 29
+  }
+}

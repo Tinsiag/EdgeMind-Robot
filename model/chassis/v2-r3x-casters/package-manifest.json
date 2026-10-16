@@ -1,0 +1,440 @@
+{
+  "units": "CAD mm; GLB m",
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 66,
+      "sha256": "3869b62de4c5de2f1b93522fabee889d84b9d8d511a0148d3175e77f2b147fb3"
+    },
+    {
+      "file": "build_model.py",
+      "bytes": 13655,
+      "sha256": "5aa0d58ed89926be95483848f8cd47b15a8cd78b560d7279198a0c075f38db18"
+    },
+    {
+      "file": "build_solidcraft_assembly.py",
+      "bytes": 1762,
+      "sha256": "8b74cf3b2a613149a19fa19330548d72c80669829e4cace4518868b8233fbd98"
+    },
+    {
+      "file": "EdgeMind_Assembly.glb",
+      "bytes": 18285508,
+      "sha256": "5d27febb9d460587def5feb7b90983f9ee3b10ce0575e0d352e2c0e1185a0584"
+    },
+    {
+      "file": "EdgeMind_Assembly.step",
+      "bytes": 55584792,
+      "sha256": "3ad7a9734ee8a2c1b703c8cdbfcb783f317d5f0c21ce3b2c3ec211348c087bf4"
+    },
+    {
+      "file": "EdgeMind_Base.solidcraft",
+      "bytes": 2414,
+      "sha256": "ff2d1a2c03e7ec8a1c788c1b2ea4cdd2b55a4639648af377c29a7221a6dd615a"
+    },
+    {
+      "file": "EdgeMind_Chassis.FCStd",
+      "bytes": 22355098,
+      "sha256": "87388042c1a58b99c808bbabaecebb9302061ff5275cbdb3a778b5489ac429dd"
+    },
+    {
+      "file": "EdgeMind_Exploded.FCStd",
+      "bytes": 22352096,
+      "sha256": "fb2a73a8ac843b6201661de8bd17711c425943a1c9827c72dc10acbab1f47d29"
+    },
+    {
+      "file": "EdgeMind_Shell.step",
+      "bytes": 536517,
+      "sha256": "b2b32dd4ac3d9ca422a762f6accf41500b4e6eea24a4d8653fb2ba0bc2999875"
+    },
+    {
+      "file": "export_model.py",
+      "bytes": 4547,
+      "sha256": "bf8ba5c8e39463c74837028ff9ec63ebed30942d934383038e694fb180ce9cc6"
+    },
+    {
+      "file": "extract_reference.py",
+      "bytes": 3319,
+      "sha256": "a9ceeb9f43709cc42abd4247c00f39450859b65989b2a1f8ccee38f5f1ec83be"
+    },
+    {
+      "file": "generate_viewer.py",
+      "bytes": 5505,
+      "sha256": "b88af85b6519636de1c91e7f2f5b33aa7e62efcdc2ecfca22adffdbeab8f3ce2"
+    },
+    {
+      "file": "hardware-brep/CasterLAxle.brep",
+      "bytes": 10252,
+      "sha256": "220e0ff902db41e86171fb4182c0dd79bf726fd57b343d03b712ea58289b795d"
+    },
+    {
+      "file": "hardware-brep/CasterLSwivel.brep",
+      "bytes": 110985,
+      "sha256": "6a4e6985bd5e038d7fb81df810896a4b488ce7815f8c0693a04e2b805977359b"
+    },
+    {
+      "file": "hardware-brep/CasterLWheel.brep",
+      "bytes": 31669,
+      "sha256": "e8a3685ae678d95e779ce6a5a917310a951f54e2883865a1a3f8fabd64b36056"
+    },
+    {
+      "file": "hardware-brep/CasterRAxle.brep",
+      "bytes": 10252,
+      "sha256": "bc22f88027e4e0f46074b4a0be93217f8168e5995154c7311de56c70d11a595b"
+    },
+    {
+      "file": "hardware-brep/CasterRSwivel.brep",
+      "bytes": 110985,
+      "sha256": "9bd14bb040b0f871dbfc5d5be5c7282410eaed4eb3fc83f3623ce44b7f47f16f"
+    },
+    {
+      "file": "hardware-brep/CasterRWheel.brep",
+      "bytes": 31669,
+      "sha256": "6985f8ee91e97ae5415af895b8e1194c5b5f3ac01179c06256f7c7474e4ff8ef"
+    },
+    {
+      "file": "hardware-brep/MotorBracketL.brep",
+      "bytes": 126225,
+      "sha256": "353e03f88a5dbf8953bd3dcd38f886f9dcc5e09d4a3a31743852423ebfffa441"
+    },
+    {
+      "file": "hardware-brep/MotorBracketR.brep",
+      "bytes": 126920,
+      "sha256": "cdf3fff7545ebb22665e766923a94fc532900b0587838da6dbacbde899be61c9"
+    },
+    {
+      "file": "hardware-brep/MotorLPart14.brep",
+      "bytes": 225206,
+      "sha256": "f8f547020ee16d18ffc5991c08ce1a68a119b4b74658409b3dad1ee852b10555"
+    },
+    {
+      "file": "hardware-brep/MotorLPart15.brep",
+      "bytes": 10489,
+      "sha256": "bedd0adf7a80a0379b595435be52ef50ba352d38d5ce44ab599c18cb9d8bde56"
+    },
+    {
+      "file": "hardware-brep/MotorLPart16.brep",
+      "bytes": 10748,
+      "sha256": "06140c49a6e2ff3039ecec3cf343dec596710b4d86eb44e2771b397733a42efd"
+    },
+    {
+      "file": "hardware-brep/MotorLPart17.brep",
+      "bytes": 16587,
+      "sha256": "5c236c1c54b409bb0d2974740c392dd02157fd1b4ec697fc31c729c0365496b5"
+    },
+    {
+      "file": "hardware-brep/MotorLPart18.brep",
+      "bytes": 20185,
+      "sha256": "9e2b806b6485112aef853677738eed4710f0098b184b3326648b0f48cdc33732"
+    },
+    {
+      "file": "hardware-brep/MotorLPart19.brep",
+      "bytes": 67345,
+      "sha256": "0df7bdb1fbde13da8f3f94aa1d906b4ac09cf08a7124e9ba28dde02c13ae0351"
+    },
+    {
+      "file": "hardware-brep/MotorLPart20.brep",
+      "bytes": 192793,
+      "sha256": "8d94c6d2384109861ff50d1ea2b6bdd0adf369d4d40e9a0d2bfd08664658f12a"
+    },
+    {
+      "file": "hardware-brep/MotorRPart21.brep",
+      "bytes": 225561,
+      "sha256": "ea894b89d6540c511874207336f6ed66b61b976517e10fec1820561326ffb3ef"
+    },
+    {
+      "file": "hardware-brep/MotorRPart22.brep",
+      "bytes": 10362,
+      "sha256": "8798d0be24da763e54bd7dd022157d6fa2a123a485eafd819afd826a8af4c11f"
+    },
+    {
+      "file": "hardware-brep/MotorRPart23.brep",
+      "bytes": 10570,
+      "sha256": "b93b0cb05268ac865f97d8554eeac82f9a93026a6bbfa1749733a9b0b0df7e1f"
+    },
+    {
+      "file": "hardware-brep/MotorRPart24.brep",
+      "bytes": 16294,
+      "sha256": "ade485f06d1d9f2dff77a537ded29aa6a7d5d5628038938be19ac349e2d93480"
+    },
+    {
+      "file": "hardware-brep/MotorRPart25.brep",
+      "bytes": 22683,
+      "sha256": "37ab9710a933816d4aa10e12f31f3da4960f1aab8d2dd93607b1d013f524a762"
+    },
+    {
+      "file": "hardware-brep/MotorRPart26.brep",
+      "bytes": 57626,
+      "sha256": "e1c87f5b608475a3f206e3d5194697b07426961ba205a6286465940f795f3c67"
+    },
+    {
+      "file": "hardware-brep/MotorRPart27.brep",
+      "bytes": 186363,
+      "sha256": "5dbd3d2c29ada8c4e8fad93a940d7bc225f01faedc2631cf0ef2a2c1f1f60dc9"
+    },
+    {
+      "file": "hardware-brep/RearLHub.brep",
+      "bytes": 112282,
+      "sha256": "e31b31edc72bbddd09076bd51da2d4bfb690969e0f05da7c44ca5936ce270284"
+    },
+    {
+      "file": "hardware-brep/RearLWheel.brep",
+      "bytes": 22146833,
+      "sha256": "2e6464474efa5d57769e1ca17e23263332f72480c9bfe97e439bf23caebf7aad"
+    },
+    {
+      "file": "hardware-brep/RearRHub.brep",
+      "bytes": 112126,
+      "sha256": "6f5c08bb1506dd1ba5e86e44580e4362f2cd02091475f2da40f1bebd0bec65ad"
+    },
+    {
+      "file": "hardware-brep/RearRWheel.brep",
+      "bytes": 22147036,
+      "sha256": "cbfd07056e63ca0dd02e1ed1a8e42665cd36b2bc9e3bb3024f808dceff936c4d"
+    },
+    {
+      "file": "package_model.py",
+      "bytes": 2171,
+      "sha256": "e5238a579c7326e3dc1c200987a99aa41d22710617909db79727cf668a9bc4a1"
+    },
+    {
+      "file": "parameters.json",
+      "bytes": 1184,
+      "sha256": "0310ec87c3521bd631bdeeced850d789740b82184381509f07984f20f34ce0a0"
+    },
+    {
+      "file": "parts-step/CasterSpacer1.step",
+      "bytes": 4993,
+      "sha256": "4086eff8c32365f38cdaefa93af70041962c49c094318328e588c301c8d3639f"
+    },
+    {
+      "file": "parts-step/FrontBumper.step",
+      "bytes": 17852,
+      "sha256": "353d60882040651d29e208edd0d0dd7d9d56f1175e7bbf7c0891dea633f4eaf7"
+    },
+    {
+      "file": "parts-step/FrontCheekL.step",
+      "bytes": 7660,
+      "sha256": "a4d660c2c2b6cf36b98e8235bf394d28706b7f8f605578e6a5b2ae1a2f394c5e"
+    },
+    {
+      "file": "parts-step/FrontCheekR.step",
+      "bytes": 7628,
+      "sha256": "bbf436b75ef28420d035f6219a91065365ca0a85aa6cc93aa448f040609d0e3c"
+    },
+    {
+      "file": "parts-step/LowerDeck.step",
+      "bytes": 179062,
+      "sha256": "e6b4499ca241b6893ae06749c898c556e358e446546b10106885038133a45ff2"
+    },
+    {
+      "file": "parts-step/RearBumper.step",
+      "bytes": 12523,
+      "sha256": "2cf83e5da1a8aef43498d55732ecd7735141a51f18ce320d88faec93a41d51fa"
+    },
+    {
+      "file": "parts-step/SidePanelL.step",
+      "bytes": 38828,
+      "sha256": "0f4388df8d622dc2edf15587c7a31c174c61e9f0e527f49d648737561806e7ad"
+    },
+    {
+      "file": "parts-step/SidePanelR.step",
+      "bytes": 38706,
+      "sha256": "c63509a8185338b7fec8290087be432fe3ef35153b6980de9f678a30f37d67ae"
+    },
+    {
+      "file": "parts-step/SideRailL.step",
+      "bytes": 7303,
+      "sha256": "f19d9d4be592e4bc9bbb8432d5e487f28dbd0dc2a82f5378e0e73bfc86a593ff"
+    },
+    {
+      "file": "parts-step/SideRailR.step",
+      "bytes": 7269,
+      "sha256": "bb4677d4b27fedac367a74c80e37aecafd1351347efe407df71e1b65f75656eb"
+    },
+    {
+      "file": "parts-step/UpperDeck.step",
+      "bytes": 152356,
+      "sha256": "6262c6a7b287365145618c96870f5dfa5f5c0491673ea71ab8f4d0338ae3f512"
+    },
+    {
+      "file": "parts-stl/CasterSpacer1.stl",
+      "bytes": 25284,
+      "sha256": "5f5ee3e9488acfa5a8ea04aa9d4fc1eab51dbe8fb2d9cc23dd474e6ff82dc03a"
+    },
+    {
+      "file": "parts-stl/FrontBumper.stl",
+      "bytes": 2684,
+      "sha256": "d193a70fd917c56078c128cbff1b1fdbf60cefeb64f27ad58831a773c1af3179"
+    },
+    {
+      "file": "parts-stl/FrontCheekL.stl",
+      "bytes": 684,
+      "sha256": "78ec7ebee12d54d6bc9e24487f3ed0e1f57bbfa51164a1014ff276af989e48a5"
+    },
+    {
+      "file": "parts-stl/FrontCheekR.stl",
+      "bytes": 684,
+      "sha256": "58991a55b56ab402487986a273063ab0be03b66b110313e402deff4a171e46fc"
+    },
+    {
+      "file": "parts-stl/LowerDeck.stl",
+      "bytes": 407484,
+      "sha256": "43a1a28b43d97bad4480edad530ed1105307ffe7249d11895a1a69b02a4ab1e7"
+    },
+    {
+      "file": "parts-stl/RearBumper.stl",
+      "bytes": 1684,
+      "sha256": "5136f1e9094247fc2177c7873a961e8e4a412957c8523e26c4ccc28e575a4950"
+    },
+    {
+      "file": "parts-stl/SidePanelL.stl",
+      "bytes": 6684,
+      "sha256": "87477d21a0869d07ed0057f1042426c6d4c70f1f81932746f88a6994c621ac2d"
+    },
+    {
+      "file": "parts-stl/SidePanelR.stl",
+      "bytes": 6684,
+      "sha256": "021afe34d44c66fc55f39990e4707aebaac78a1f881460d6e7aa1550f3d5acba"
+    },
+    {
+      "file": "parts-stl/SideRailL.stl",
+      "bytes": 684,
+      "sha256": "f82775c039fdd8c4c5512f3c6420ecd505470e8d304770c4faf96f38e7a587af"
+    },
+    {
+      "file": "parts-stl/SideRailR.stl",
+      "bytes": 684,
+      "sha256": "d1e6a2ac74dabdd6f4e15ecba526dec71866976194f0faef6d5160afce77a146"
+    },
+    {
+      "file": "parts-stl/UpperDeck.stl",
+      "bytes": 360884,
+      "sha256": "05cf3cb86f9d9ef59d15875a2a763551c3ce382326dca20fb19eb76550e7df84"
+    },
+    {
+      "file": "preview-assembled.png",
+      "bytes": 384196,
+      "sha256": "1ce92d06bf2c1b6327f7e611e9964cceb55e81d067bde016e66fde16f672577d"
+    },
+    {
+      "file": "preview-battery-fence.png",
+      "bytes": 453164,
+      "sha256": "e00f5a64bb3555b36993b3926d23b9bfa27703d723253368a8b72a395473bcc2"
+    },
+    {
+      "file": "preview-exploded.png",
+      "bytes": 463409,
+      "sha256": "a10f02d0c270a7fa29cdc734476dc1bc7418a9284ba5279c5d2a3fa73aca3e1d"
+    },
+    {
+      "file": "preview-shell.png",
+      "bytes": 411144,
+      "sha256": "3a6611701c2c5029e57017de13fc6d0079756868f5747ec39678f8e0921a5975"
+    },
+    {
+      "file": "preview-solidcraft-base.png",
+      "bytes": 72402,
+      "sha256": "3a185f5171913f83a36bf870f245bf558d7c5c82f82c901fe101b90b38418580"
+    },
+    {
+      "file": "preview-top.png",
+      "bytes": 244555,
+      "sha256": "88f5d428efc5e81f975a7f23f76e284fcf04bb480dedcf4e2286b8bd3df1ecce"
+    },
+    {
+      "file": "preview-underside.png",
+      "bytes": 350380,
+      "sha256": "2cdb7c94ee211d2d751013dbe28a78c5c49959825e6e3b7cd4127bc99e09825c"
+    },
+    {
+      "file": "preview-viewer.png",
+      "bytes": 454294,
+      "sha256": "e8b1407598d501c9c15eeadc4d2a8a76675378caccde867ea4f7ce5425250434"
+    },
+    {
+      "file": "README.md",
+      "bytes": 4600,
+      "sha256": "8fd94b9af669cc8ecc168d9780aec1ab6abd6b402906f50ab13d0c062629ebd0"
+    },
+    {
+      "file": "reference-extraction.json",
+      "bytes": 10822,
+      "sha256": "da70efbec1958f9b4a8764bcf7b30bd59e2e98420281c4c90ccfe599e6cfa654"
+    },
+    {
+      "file": "solidcraft-assembly-mcp-log.json",
+      "bytes": 3180,
+      "sha256": "27c76533bd4be8baf35db2f34fa4062594faa542dcc19fb07ac6dd4066600489"
+    },
+    {
+      "file": "solidcraft-assembly-verification.json",
+      "bytes": 506,
+      "sha256": "bf21d853ad67059113a1f142886a149df623b52b92988b33ad0d895ef82e88d3"
+    },
+    {
+      "file": "solidcraft-build.json",
+      "bytes": 15351,
+      "sha256": "dd3c182220497dd013aed524b10aba575dc6adde6d873a8cef1c42a3d117e3fc"
+    },
+    {
+      "file": "solidcraft-mcp-log.json",
+      "bytes": 181480,
+      "sha256": "fbec7333fd5b8c8e02aa99f52e45a2f161a4b08d8622794e62799359f2d4ca64"
+    },
+    {
+      "file": "solidcraft-stderr.log",
+      "bytes": 1786,
+      "sha256": "3392b061670d5851710c245ec003fbc6e6de3e265954563202d2209950acd2d4"
+    },
+    {
+      "file": "solidcraft-verification.json",
+      "bytes": 26246,
+      "sha256": "6feacbd1f812a3ca3a9c69412d5afdd57a53f997665431b3f4dd518edd714b73"
+    },
+    {
+      "file": "SolidCraft_LowerDeck.step",
+      "bytes": 159367,
+      "sha256": "887958a91cc4139613dbefe0b28556a301f80ca356d03123315e91bd45a2f950"
+    },
+    {
+      "file": "solidcraft_workflow.py",
+      "bytes": 8141,
+      "sha256": "0bbb06b2a33da47e259f464f6c3bfe4c6ab23cfb7b7fa7f0708bcc4737a58f7e"
+    },
+    {
+      "file": "vendor/three.LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+    },
+    {
+      "file": "vendor/three.min.js",
+      "bytes": 669884,
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+    },
+    {
+      "file": "verification.json",
+      "bytes": 115835,
+      "sha256": "579b1d9047ec6ef19445d93b1ef4f3a5fd089f109d930576da93f9098505c1b3"
+    },
+    {
+      "file": "verify_model.py",
+      "bytes": 4158,
+      "sha256": "ac8d52e6f6f52df088845c41a1480c11b80873babc8963c38d25ef7769846d65"
+    },
+    {
+      "file": "verify_viewer.cjs",
+      "bytes": 3132,
+      "sha256": "828a08089667c3b3e7e652dff75938f0420ab443c47b5ba4c99a484aa6e3e37b"
+    },
+    {
+      "file": "viewer-verification.json",
+      "bytes": 7605,
+      "sha256": "323cd00e715083025a9af604e5743f5d698301eb83db17725938a25fd9db1576"
+    },
+    {
+      "file": "查看模型.html",
+      "bytes": 32783294,
+      "sha256": "b362cfb4a297743d5a0719f2b2a1bb42a4de833164022633c718b34efd1ac368"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "EdgeMind CAD",
+          "version": "2"
+        }
+      }
+    },
+    "response": {
+      "id": 1,
+      "jsonrpc": "2.0",
+      "result": {
+        "capabilities": {
+          "resources": {
+            "listChanged": false
+          },
+          "tools": {
+            "listChanged": false
+          }
+        },
+        "instructions": "SolidCraft is a parametric 3D CAD app in the style of Autodesk Fusion. Units are millimetres and degrees in expressions (internally radians), Z is up. Model like in Fusion: `sketch.create {plane: XY}`, draw (`sketch.rectangle.two_point {p0, p1}`, `sketch.circle.center {center, radius}`, `sketch.line {points, closed}`), constrain and dimension (`sketch.dimension {entities, value}`; values may name parameters), `sketch.finish`, then features (`solid.extrude {distance, operation?: new|join|cut|intersect}`, `solid.revolve`, `solid.fillet {edges: [[x,y,z] point on edge], radius}`, `solid.chamfer`, patterns, mirror, primitives). Use `batch` for several steps at once, `list_commands` for ids and parameter docs, `inspect_design` / `measure` to verify, `body_topology` to find edge points, `set_parameter` to drive the design and `screenshot` to look at it. Backend: headless in-process SolidCraft session.",
+        "protocolVersion": "2025-06-18",
+        "serverInfo": {
+          "name": "solidcraft",
+          "title": "SolidCraft",
+          "version": "0.11.1"
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tools/call",
+      "params": {
+        "name": "inspect_design",
+        "arguments": {
+          "measure": false,
+          "sketches": false
+        }
+      }
+    },
+    "response": {
+      "id": 2,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"active_sketch\": null,\n  \"bodies\": [],\n  \"dirty\": false,\n  \"hidden_origin\": [],\n  \"marker\": 0,\n  \"name\": \"Untitled\",\n  \"params\": [],\n  \"path\": null,\n  \"redo\": 0,\n  \"revision\": 1,\n  \"selection\": [],\n  \"sketches\": [],\n  \"timeline\": [],\n  \"undo\": 0,\n  \"units\": \"mm\"\n}",
+            "type": "text"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "tools/call",
+      "params": {
+        "name": "open",
+        "arguments": {
+          "path": "D:\\dev\\EdgeMind-Robot\\model\\chassis\\v2-r3x-casters\\EdgeMind_Base.solidcraft"
+        }
+      }
+    },
+    "response": {
+      "id": 3,
+      "jsonrpc": "2.0",
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"errors\": 0,\n  \"features\": 37,\n  \"name\": \"EdgeMind_Base\",\n  \"path\": \"D:\\\\dev\\\\EdgeMind-Robot\\\\model\\\\chassis\\\\v2-r3x-casters\\\\EdgeMind_Base.solidcraft\"\n}",
+            "type": "text"
+          }
+        ]
+      }
+    }
+  }
+]

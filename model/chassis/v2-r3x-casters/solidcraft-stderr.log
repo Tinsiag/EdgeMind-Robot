@@ -1,0 +1,22 @@
+solidcraft mcp: files limited to \\?\C:\Users\Shan_\AppData\Local\SolidCraft\recovery, \\?\C:\Users\Shan_\AppData\Local\Temp\solidcraft-mcp-23816-1935dbe4, \\?\D:\dev\EdgeMind-Robot\model\chassis\v2-r3x-casters and the open design's folder (--allow-path DIR adds one, --allow-any-path lifts the limit)
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+
+thread 'main' (6592) panicked at C:\Users\runneradmin\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\truck-geometry-0.5.0\src\nurbs\bspcurve.rs:301:14:
+called `Result::unwrap()` on an `Err` value: ZeroRange
+memory allocation of 805306368 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
