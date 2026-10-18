@@ -36,7 +36,10 @@ def send_and_read(port, msg_type: int, payload: bytes, seq: int, wait_s: float =
         data = port.read(port.in_waiting or 1)
         if data:
             packets.extend(parser.feed(data))
-            if packets:
+            # A prior STOP reply may still be buffered after run_motion's
+            # finally block. Keep reading until THIS request's STATUS arrives.
+            if any(kind == 0x80 and response_seq == seq
+                   for kind, response_seq, _ in packets):
                 break
     return packets
 

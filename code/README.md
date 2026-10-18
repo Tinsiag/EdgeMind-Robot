@@ -1,5 +1,7 @@
 # 代码目录
 
+> **2026-10-18 最新交接**：更换驱动后，用户已验证带右轮驱动反向补偿的[图形上位机](fpga/acg720-motion-control/host/README.md)可用。运行 `python host/car_control_gui.py`（在motion-control目录），支持前后距离、左右转角、预设/自定义及停止。27项Python和10项接线静态检查通过。方向补偿仅主机侧，仍有固件右轮PI反馈符号限制，未量化距离/角度精度。以下A719等描述保留历史时点。
+
 > **2026-10-15 电机交接**：按用户反馈当前板上为A719静态GPIO版，**VM必须物理断开**，无电机超时/串口控制；静态IN电平0/3.2V已由用户测得，A718新接线起动仍未通过。最新结果、参数、固件哈希和下一步以[电机工程交接README](fpga/acg720-motor-test/README.md)为准，不直接使用旧接线位流。
 
 
@@ -7,7 +9,7 @@
 
 - [ACG720 / AT8236 电机控制](fpga/acg720-motor-test/README.md)：A712 启动和编码器活动、A713 左右持续启停已实测通过；历史 A717 为 50 kHz，占空比从 0% 到 100% 每 0.5 秒增加 5% 后循环，已下载，实物表现待反馈。S1/S2 独立启停，S0 停止，仅操作 SRAM。
 - [电机启动排查与实现文档](fpga/acg720-motor-test/MOTOR-IMPLEMENTATION-2026-10-10.md)：接线、电源、三个 PWM 对照版本、通过证据及复现方法；尚未实现速度 PID 或与摄像头合并。
-- [ACG720 双轮差速运动控制](fpga/acg720-motion-control/README.md)：独立 GW5AT-60B 工程，包含编码器闭环、AT8236 PWM、差速运动、定点旋转、CH340E UART 协议和 Python 上位机；已完成新接线构建及串口/手转反馈确认；最新控制修复版通过 14 项 RTL、12 项 Python 回归和 P&R（50.374 MHz，setup/hold 0 违例），尚未下载或实板运动验收；机械参数和剩余边界见工程 README。
+- [ACG720 双轮差速运动控制](fpga/acg720-motion-control/README.md)：GW5AT-60B RTL、AT8236 PWM、编码器反馈、CH340E UART、CLI与图形上位机。2026-10-18用户确认主机右轮反向补偿后可用；A721已有左轮起动遥测，A722构建资料及功能边界保留。支持自定义距离/转角，实车精度和完整闭环保护仍待验收。
 - [ACG720 GW5AT-60 DDR3 验证工程](fpga/acg720-ddr3/README.md)：原有 800×480 静态、彩条、实景单帧验证均通过。另已合入 [实景 HDMI 交付包](fpga/acg720-ddr3/verification/verified-20261008/README.md)，包含位流、实物反馈与完整验证资料；有图像显示反馈，时序尚未闭合，包内未提供完整 RTL。许可证已解决。
 - [DDR3 帧缓存排查与实现文档](fpga/acg720-ddr3/DDR3-FRAMEBUFFER-IMPLEMENTATION-2026-10-08.md)：旧诊断缺陷、时钟与缓存实现、摄像头配置、仿真/实板证据、复现步骤和断电保存边界。
 

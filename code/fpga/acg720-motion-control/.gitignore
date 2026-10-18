@@ -3,3 +3,6 @@ impl/
 *.gprj.user
 __pycache__/
 *.vvp
+/.local-build-*.log
+/release/**/*.fs
+/release/**/build-pnr.log

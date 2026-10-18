@@ -29,7 +29,7 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def check_reports(report, timing, header):
+def check_reports(report, timing, header, user_code="A720"):
     require("GW5AT-LV60PG484AC1/I0" in report and
             "<Device Version>: B" in report, "Wrong device in PnR report")
     require("7. Pinout by Port Name" in report and "8. All Package Pins" in report,
@@ -70,7 +70,7 @@ def check_reports(report, timing, header):
         require(bool(values), f"Missing {kind} path slacks")
         slacks[kind] = min(map(float, values))
         require(slacks[kind] >= 0, f"Negative {kind} slack")
-    require("//usercode: 0x0000a720" in header.lower(), "Wrong/missing bitstream User Code")
+    require(f"//usercode: 0x0000{user_code.lower()}" in header.lower(), "Wrong/missing bitstream User Code")
     require("//Part Number: GW5AT-LV60PG484AC1/I0" in header, "Wrong bitstream part")
     return {"pins": pins, "timing_violations": violations,
             "fmax_mhz": float(fmax[1]), "worst_reported_slack_ns": slacks}
@@ -80,20 +80,26 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pnr-dir", type=Path, default=ROOT / "impl/pnr")
     parser.add_argument("--output", type=Path, default=ROOT / ".local/build-audit-wiring-20261014.json")
+    parser.add_argument("--variant", choices=("default", "start50", "ready"), default="default")
     args = parser.parse_args()
+    basename, user_code, build_script = {
+        "default": (BASENAME, "A720", "build.tcl"),
+        "start50": ("acg720_motion_start50", "A721", "build_start50.tcl"),
+        "ready": ("acg720_motion_ready", "A722", "build_ready.tcl"),
+    }[args.variant]
     try:
-        bitstream = args.pnr_dir / f"{BASENAME}.fs"
+        bitstream = args.pnr_dir / f"{basename}.fs"
         with bitstream.open(encoding="ascii") as stream:
             header = stream.read(2048)
         result = check_reports(
-            (args.pnr_dir / f"{BASENAME}.rpt.txt").read_text(),
-            (args.pnr_dir / f"{BASENAME}_tr_content.html").read_text(), header)
+            (args.pnr_dir / f"{basename}.rpt.txt").read_text(),
+            (args.pnr_dir / f"{basename}_tr_content.html").read_text(), header, user_code)
         require(bitstream.stat().st_size > 2048, "Empty/truncated bitstream")
-        project = ROOT / f"{BASENAME}.gprj"
+        project = ROOT / f"{basename}.gprj"
         sources = [f.attrib["path"] for f in ET.parse(project).findall(".//File")]
-        sources += [project.name, "build.tcl"]
+        sources += [project.name, build_script]
         result.update({"wiring_revision": "2026-10-14", "electrical_safety_verified": False,
-                       "hardware_tested": False, "bitstream_user_code": "0x0000A720",
+                       "hardware_tested": False, "bitstream_user_code": f"0x0000{user_code}",
                        "bitstream_sha256": hashlib.sha256(bitstream.read_bytes()).hexdigest(),
                        "source_sha256_at_audit": {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                                                   for name in sources}})

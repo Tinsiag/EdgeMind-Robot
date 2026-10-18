@@ -2,7 +2,11 @@
 `default_nettype none
 module motion_top #(
     parameter integer CLK_HZ=50000000,
-    parameter integer PWM_HZ=20000
+    parameter integer PWM_HZ=20000,
+    parameter integer PI_LIMIT_DEFAULT=1000,
+    parameter integer RAMP_LIMIT_DEFAULT=100,
+    parameter integer CALIBRATED_DEFAULTS=0,
+    parameter integer ENCODER_FAULT_ENABLE=1
 )(
     input wire clk, input wire stop_n,
     input wire uart_rx, output wire uart_tx,
@@ -39,7 +43,10 @@ module motion_top #(
     wire rotate_active,rotate_done;
     wire stop_cmd=cmd_valid && (cmd_type==8'h03 || cmd_type==8'h04);
     wire timeout_fault=armed && (rotate_active || target_l!=0 || target_r!=0) && command_age>command_ttl;
-    wire encoder_fault=left_invalid || right_invalid || li!=0 || ri!=0;
+    // A722 explicitly masks only the illegal-AB fault. Decoder behavior remains
+    // unchanged: illegal transitions do not generate a count step.
+    wire encoder_fault=(ENCODER_FAULT_ENABLE != 0) &&
+        (left_invalid || right_invalid || li!=0 || ri!=0);
     assign monitor_l=armed && !faults && target_l!=0;
     assign monitor_r=armed && !faults && target_r!=0;
     wire feedback_fault=(monitor_l && lto) || (monitor_r && rto);
@@ -61,13 +68,24 @@ module motion_top #(
     wire status_req=(cmd_valid && (cmd_type==8'h01 || cmd_type==8'h02 || cmd_type==8'h03 || cmd_type==8'h04 || cmd_type==8'h20 || cmd_type==8'h21 || cmd_type==8'h30)); wire [7:0] status_state=state_code;
     motion_status_tx st(.clk(clk),.rstn(rstn),.request(status_req),.request_seq(cmd_seq),.state_code(status_state),.faults(faults),.left_count(left_count),.right_count(right_count),.left_speed(speed_l),.right_speed(speed_r),.left_pwm(pwm_l[15:0]),.right_pwm(pwm_r[15:0]),.command_age(command_age),.tx(uart_tx));
     always @(posedge clk or negedge rstn) begin
-        if(!rstn) begin cpr_l<=0;cpr_r<=0;diam_l<=0;diam_r<=0;wheel_base<=0;max_speed<=0;counts_deg<=0;pi_limit<=1000;ramp_limit<=100;params_valid<=0;target_l<=0;target_r<=0;pending_v<=0;pending_omega<=0;twist_pending<=0;armed<=0;state_code<=0;faults<=0;command_age<=0;command_ttl<=250;rotate_start<=0; rotate_angle<=0; rotate_speed<=0; end
+        if(!rstn) begin
+            cpr_l<=CALIBRATED_DEFAULTS ? 1469 : 0;
+            cpr_r<=CALIBRATED_DEFAULTS ? 1471 : 0;
+            diam_l<=CALIBRATED_DEFAULTS ? 66 : 0;
+            diam_r<=CALIBRATED_DEFAULTS ? 66 : 0;
+            wheel_base<=CALIBRATED_DEFAULTS ? 121 : 0;
+            max_speed<=CALIBRATED_DEFAULTS ? 400 : 0;
+            counts_deg<=CALIBRATED_DEFAULTS ? 491 : 0;
+            pi_limit<=PI_LIMIT_DEFAULT;ramp_limit<=RAMP_LIMIT_DEFAULT;
+            params_valid<=CALIBRATED_DEFAULTS ? 7'h7f : 0;
+            target_l<=0;target_r<=0;pending_v<=0;pending_omega<=0;twist_pending<=0;armed<=0;state_code<=0;faults<=0;command_age<=0;command_ttl<=250;rotate_start<=0; rotate_angle<=0; rotate_speed<=0;
+        end
         else begin
             rotate_start<=0;
             if (twist_pending && control_enable) begin target_l<=twist_l; target_r<=twist_r; twist_pending<=0; state_code<=2; end
             if(ms_tick && command_age<65535) command_age<=command_age+1'b1;
             if(armed && (rotate_active || (target_l!=0)||(target_r!=0)) && command_age>command_ttl) begin faults[0]<=1; armed<=0; state_code<=3; end
-            if(left_invalid || right_invalid || li!=0 || ri!=0) begin faults[1]<=1; armed<=0; state_code<=3; end
+            if(encoder_fault) begin faults[1]<=1; armed<=0; state_code<=3; end
             if(feedback_fault) begin faults[2]<=1; armed<=0; state_code<=3; end
             if(rotate_done) begin state_code<=1; target_l<=0; target_r<=0; end
             else if(rotate_active && control_enable) begin target_l<=rotate_l; target_r<=rotate_r; state_code<=2; end
