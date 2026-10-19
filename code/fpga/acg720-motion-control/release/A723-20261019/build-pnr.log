@@ -1,0 +1,30 @@
+Reading netlist file: "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\gwsynthesis\acg720_motion_sync.vg"
+Parsing netlist file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\gwsynthesis\acg720_motion_sync.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\constraints\acg720_motion_control.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.power.html" completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.pin.html" completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.rpt.html" completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.rpt.txt" completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.tr.html" completed
+Generate file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\impl\pnr\acg720_motion_sync.tr" completed
+Mon Oct 19 17:25:04 2026
+

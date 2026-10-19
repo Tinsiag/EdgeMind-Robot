@@ -80,12 +80,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pnr-dir", type=Path, default=ROOT / "impl/pnr")
     parser.add_argument("--output", type=Path, default=ROOT / ".local/build-audit-wiring-20261014.json")
-    parser.add_argument("--variant", choices=("default", "start50", "ready"), default="default")
+    parser.add_argument("--variant", choices=("default", "start50", "ready", "sync"), default="default")
     args = parser.parse_args()
     basename, user_code, build_script = {
         "default": (BASENAME, "A720", "build.tcl"),
         "start50": ("acg720_motion_start50", "A721", "build_start50.tcl"),
         "ready": ("acg720_motion_ready", "A722", "build_ready.tcl"),
+        "sync": ("acg720_motion_sync", "A723", "build_sync.tcl"),
     }[args.variant]
     try:
         bitstream = args.pnr_dir / f"{basename}.fs"

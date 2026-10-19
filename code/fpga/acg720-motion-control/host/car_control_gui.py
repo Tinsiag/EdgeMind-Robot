@@ -17,7 +17,7 @@ class CarApp:
         self.connected = self.busy = self.closing = False
         self.worker = None
         root.title('EdgeMind 小车控制台')
-        root.geometry('840x800')
+        root.geometry('900x980')
         root.minsize(800, 740)
         root.configure(bg='#eef3f8')
         style = ttk.Style(root)
@@ -51,10 +51,22 @@ class CarApp:
         self.speed_entry = ttk.Entry(settings, textvariable=self.speed, width=8)
         self.speed_entry.pack(side='left', padx=10)
         ttk.Label(settings, text='输出最高 50% · 每次只执行一个动作').pack(side='left')
-        self.reverse_right = tk.BooleanVar(value=True)
-        self.reverse_check = ttk.Checkbutton(body, text='右轮驱动反向补偿（当前小车默认开启，连接前设置）',
+        self.reverse_right = tk.BooleanVar(value=False)
+        self.legacy_reverse_preference = False
+        self.reverse_check = ttk.Checkbutton(body, text='旧 A722 右轮反向补偿（A723 无需勾选，连接前设置）',
                                              variable=self.reverse_right)
         self.reverse_check.pack(anchor='w', pady=(0, 3))
+        self.has_vision = False
+        self.auto_running = False
+        self.vision_buttons = []
+        vision_panel = ttk.Frame(body)
+        vision_panel.pack(fill='x', pady=5)
+        for label, task in [('启动循线', 'line'), ('切换手动', 'manual'), ('查询感知', 'sense')]:
+            button = ttk.Button(vision_panel, text=label, command=lambda t=task: self.vision_task(t))
+            button.pack(side='left', padx=4)
+            self.vision_buttons.append(button)
+        self.sensing_text = tk.StringVar(value='视觉功能：连接后自动识别固件')
+        ttk.Label(body, textvariable=self.sensing_text, wraplength=820).pack(anchor='w')
         self.distance = tk.StringVar(value='20')
         self.angle = tk.StringVar(value='90')
         self.motion_buttons = []
@@ -68,9 +80,10 @@ class CarApp:
                                      font=('Microsoft YaHei UI', 14, 'bold'), pady=9)
         self.stop_button.pack(fill='x', pady=(16, 8))
         root.bind('<space>', self.space_stop)
-        ttk.Label(body, text='距离/角度按编码器估算；滑行、打滑会影响实际位置。\n'
-                  '右轮反向补偿仅改主机目标，右轮轮速闭环未修正，可能到达50%限幅。\n'
-                  '现有编码器故障会阻止运行，不自动清故障。首次请架空核对两轮方向。',
+        self.limit_note = tk.StringVar(value='A723：自动识别右桥修正，启用双轮同步减速与遥测低速稳定检查。\n'
+                  '旧 A722 须先勾选右轮补偿；距离/角度按编码器估算，仍需实车标定。\n'
+                  '故障不会自动清除，首次请架空核对两轮方向。')
+        ttk.Label(body, textvariable=self.limit_note,
                   foreground='#775a2c').pack(anchor='w', pady=5)
         self.log = tk.Text(body, height=9, wrap='word', font=('Consolas', 10),
                            bg='#132b3a', fg='#dbeaf2', relief='flat', padx=10, pady=8)
@@ -102,7 +115,9 @@ class CarApp:
 
     def controls(self):
         for widget in self.motion_buttons:
-            widget.configure(state='normal' if self.connected and not self.busy and not self.shutdown.is_set() else 'disabled')
+            widget.configure(state='normal' if self.connected and not self.busy and not self.auto_running and not self.shutdown.is_set() else 'disabled')
+        for widget in self.vision_buttons:
+            widget.configure(state='normal' if self.connected and self.has_vision and not self.busy and not self.shutdown.is_set() else 'disabled')
         for widget in self.inputs:
             widget.configure(state='disabled' if self.busy else 'normal')
         self.connect_button.configure(state='disabled' if self.worker and self.worker.is_alive() else 'normal')
@@ -118,6 +133,7 @@ class CarApp:
         self.cancel.clear()
         self.shutdown.clear()
         self.tasks = queue.Queue()
+        self.legacy_reverse_preference = self.reverse_right.get()
         self.state.set('正在连接…')
         self.worker = threading.Thread(target=self.serial_worker,
                                        args=(name, self.reverse_right.get()), daemon=True)
@@ -131,15 +147,22 @@ class CarApp:
                 car = CarController(port, lambda value: self.events.put(('log', str(value))),
                                     right_motor_reversed=reverse_right)
                 car.stop()
+                capabilities = car.detect_capabilities()
+                self.events.put(('capabilities', capabilities))
                 self.events.put(('log', str(car.status())))
                 self.events.put(('connected', f'{name} 已连接，PWM已归零'))
-                self.events.put(('log', f'右轮驱动反向补偿：{"开启" if reverse_right else "关闭"}；'
+                self.events.put(('log', f'右轮驱动反向补偿：{"开启" if car.right_motor_reversed else "关闭"}；'
                                  '编码器目标与方向异常检查保持原约定'))
                 try:
                     while not self.shutdown.is_set():
                         try:
                             task, data = self.tasks.get(timeout=0.1)
                         except queue.Empty:
+                            if car.capabilities is not None and car.capabilities.has_vision:
+                                try:
+                                    self.events.put(('sensing', car.sensing()))
+                                except Exception as exc:
+                                    self.events.put(('log', f'感知查询失败：{exc}'))
                             continue
                         try:
                             if task == 'move':
@@ -147,9 +170,18 @@ class CarApp:
                                                  f'{"厘米" if data.action in ("forward", "backward") else "度"}，'
                                                  f'轮速：{data.speed} mm/s'))
                                 done = car.move(data, self.cancel)
-                                self.events.put(('log', '编码器目标已达到，已发送STOP' if done else '动作已取消'))
+                                message = ('行程进入容差且遥测低速稳定，已发送STOP' if car.synchronized_motion
+                                           else '编码器目标已达到，已发送STOP') if done else '动作已取消'
+                                self.events.put(('log', message))
                             elif task == 'stop':
                                 car.stop()
+                            elif task == 'line':
+                                self.events.put(('sensing', car.start_line(self.cancel)))
+                            elif task == 'manual':
+                                car.set_mode(False)
+                                self.events.put(('sensing', car.sensing()))
+                            elif task == 'sense':
+                                self.events.put(('sensing', car.sensing()))
                         except Exception as exc:
                             self.events.put(('log', str(exc)))
                         finally:
@@ -179,10 +211,17 @@ class CarApp:
 
     def stop(self):
         self.cancel.set()
-        if self.connected and not self.busy:
+        if self.connected:
             self.busy = True
             self.controls()
             self.tasks.put(('stop', None))
+
+    def vision_task(self, task):
+        if self.connected and self.has_vision and not self.busy:
+            self.cancel.clear()
+            self.busy = True
+            self.controls()
+            self.tasks.put((task, None))
 
     def space_stop(self, event):
         self.stop()
@@ -212,7 +251,31 @@ class CarApp:
                     self.state.set('动作结束 · 查看下方状态记录')
                 elif kind == 'disconnected':
                     self.connected = self.busy = False
+                    self.auto_running = False
+                    self.has_vision = False
+                    self.reverse_right.set(self.legacy_reverse_preference)
                     self.state.set('已断开')
+                elif kind == 'capabilities':
+                    self.has_vision = value is not None and value.has_vision
+                    if value is not None and value.bridge_fixed:
+                        self.reverse_right.set(False)
+                        if self.has_vision:
+                            self.speed.set('100')
+                            self.limit_note.set(f'新视觉固件：轮速最高 {value.max_speed} mm/s，右桥极性已在 FPGA 修正。\n'
+                                                '循线依赖有效摄像头、测距及显示；遇障后人工启动。STOP 为滑行停车。')
+                        else:
+                            self.speed.set('200')
+                            self.sensing_text.set('运动固件：右桥已修正 · 双轮同步减速 · 无视觉功能')
+                            self.limit_note.set('新运动固件：右桥极性已在 FPGA 的 PI 之后修正。\n'
+                                                '直线和转向使用双轮同步减速，停止后检查遥测低速稳定。STOP 为滑行停车。')
+                    else:
+                        self.sensing_text.set('旧版运动固件：保留原右轮补偿，视觉按钮不可用')
+                elif kind == 'sensing':
+                    self.auto_running = value.mode == 1 and value.armed
+                    self.sensing_text.set(f'{"循线" if value.mode else "手动"} · '
+                                          f'前沿净空 {value.clearance_mm} mm · 原始距离 {value.distance_mm} mm · '
+                                          f'黑线 {value.near_center}/{value.far_center} 有效区 {value.regions_valid} · '
+                                          f'{value.stop_reason} · 数据年龄 {value.line_age_ms}/{value.tof_age_ms} ms')
                 if kind == 'log':
                     self.log.configure(state='normal')
                     self.log.insert('end', value + '\n')

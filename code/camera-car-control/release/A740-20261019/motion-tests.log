@@ -1,0 +1,33 @@
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=3, faults=2, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+----------------------------------------------------------------------
+Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Ran 50 tests in 0.079s
+
+OK
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+right: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)

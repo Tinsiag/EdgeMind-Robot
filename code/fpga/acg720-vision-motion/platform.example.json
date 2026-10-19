@@ -1,0 +1,17 @@
+{
+  "device": "GW5AT-60B",
+  "part": "GW5AT-LV60PG484AC1/I0",
+  "top_module": "acg720_vision_motion_board",
+  "io_reviewed": false,
+  "io_review_evidence": {"path": "io-review.md", "sha256": ""},
+  "tof_pins": {"tof_sda": null, "tof_scl": null, "tof_xshut": null},
+  "files": [
+    {"role": "board_wrapper", "path": "acg720_vision_motion_board.v", "type": "file.verilog", "sha256": ""},
+    {"role": "ddr3_phy", "path": "ddr3_memory_interface.v", "type": "file.verilog", "sha256": ""},
+    {"role": "clock_pll", "path": "gowin_pll.v", "type": "file.verilog", "sha256": ""},
+    {"role": "tmds", "path": "dvi_encoder.v", "type": "file.verilog", "sha256": ""},
+    {"role": "camera_init", "path": "ov5640_init_table_rgb.v", "type": "file.verilog", "sha256": ""},
+    {"role": "constraints", "path": "board.cst", "type": "file.cst", "sha256": ""},
+    {"role": "timing", "path": "board.sdc", "type": "file.sdc", "sha256": ""}
+  ]
+}

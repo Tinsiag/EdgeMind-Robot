@@ -19,6 +19,74 @@ ROTATE = 0x12
 GET_STATUS = 0x20
 CLEAR_FAULT = 0x21
 SET_PARAM = 0x30
+GET_CAPABILITIES = 0x40
+SET_MODE = 0x41
+START_LINE = 0x42
+GET_SENSING = 0x43
+SET_LINE_PARAM = 0x44
+
+
+@dataclass(frozen=True)
+class Capabilities:
+    flags: int
+    max_speed: int
+
+    @property
+    def bridge_fixed(self):
+        return bool(self.flags & 1)
+
+    @property
+    def has_vision(self):
+        return (self.flags & 0x0e) == 0x0e
+
+
+def decode_capabilities(payload: bytes) -> Capabilities:
+    if len(payload) != 8 or payload[:4] != b'EVM1':
+        raise ValueError('Unrecognized firmware capability reply')
+    flags, max_speed = struct.unpack_from('<HH', payload, 4)
+    if not 40 <= max_speed <= 400:
+        raise ValueError('Invalid firmware speed limit')
+    return Capabilities(flags, max_speed)
+
+
+STOP_REASONS = {0: '正常', 1: '人工停止', 2: '前方障碍', 3: '黑线丢失',
+                4: '摄像头数据过期', 5: '测距无效或过期', 6: '电机反馈故障',
+                7: '手动命令超时', 8: '视频未就绪'}
+
+
+@dataclass(frozen=True)
+class Sensing:
+    mode: int
+    armed: bool
+    reason: int
+    distance_mm: int
+    clearance_mm: int
+    range_status: int
+    flags: int
+    line_age_ms: int
+    tof_age_ms: int
+    near_center: int
+    far_center: int
+    regions_valid: int
+    protocol_errors: int
+    frame_id: int
+    left_invalid: int
+    right_invalid: int
+    output_limit: int
+    base_speed: int
+
+    @property
+    def stop_reason(self):
+        return STOP_REASONS.get(self.reason, f'未知原因 {self.reason}')
+
+
+def decode_sensing(payload: bytes) -> Sensing:
+    if len(payload) != 32:
+        raise ValueError('Expected 32-byte sensing reply')
+    mode_flags, reason, distance, clearance, status, flags, line_age, tof_age, near, far, regions, errors, frame_id, li, ri, limit, base = struct.unpack('<BBHHBBHHHHBBHIIHH', payload)
+    return Sensing(mode_flags & 1, bool(mode_flags & 2), reason, distance, clearance,
+                   status, flags, line_age, tof_age, near, far, regions, errors,
+                   frame_id, li, ri, limit, base)
 
 
 def crc16_ccitt(data: bytes, initial: int = 0xFFFF) -> int:
@@ -93,6 +161,8 @@ class FrameParser:
             if crc16_ccitt(body) != received:
                 continue
             version, msg_type, _, seq, _ttl = struct.unpack_from("<BBBBH", body)
+            if version != VERSION:
+                continue
             result.append((msg_type, seq, body[6:]))
         return result
 

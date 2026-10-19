@@ -6,7 +6,9 @@ module motion_top #(
     parameter integer PI_LIMIT_DEFAULT=1000,
     parameter integer RAMP_LIMIT_DEFAULT=100,
     parameter integer CALIBRATED_DEFAULTS=0,
-    parameter integer ENCODER_FAULT_ENABLE=1
+    parameter integer ENCODER_FAULT_ENABLE=1,
+    parameter integer RIGHT_BRIDGE_INVERT=0,
+    parameter integer MOTION_CAPABILITIES=0
 )(
     input wire clk, input wire stop_n,
     input wire uart_rx, output wire uart_tx,
@@ -64,9 +66,15 @@ module motion_top #(
     wheel_pi_controller pir(.clk(clk),.rstn(rstn),.update(control_update),.enable(control_enable),.target_speed(target_r),.measured_speed(speed_r_ctrl),.output_limit(pi_limit),.ramp_limit(ramp_limit),.command(pi_r),.applied_target(applied_r));
     wire [31:0] pwm_l,pwm_r;
     at8236_motor_driver #(.CLK_HZ(CLK_HZ),.PWM_HZ(PWM_HZ)) dl(.clk(clk),.rstn(rstn),.enable(control_enable),.command(pi_l),.in1(left_in1),.in2(left_in2),.pwm_abs(pwm_l));
-    at8236_motor_driver #(.CLK_HZ(CLK_HZ),.PWM_HZ(PWM_HZ)) dr(.clk(clk),.rstn(rstn),.enable(control_enable),.command(pi_r),.in1(right_in1),.in2(right_in2),.pwm_abs(pwm_r));
-    wire status_req=(cmd_valid && (cmd_type==8'h01 || cmd_type==8'h02 || cmd_type==8'h03 || cmd_type==8'h04 || cmd_type==8'h20 || cmd_type==8'h21 || cmd_type==8'h30)); wire [7:0] status_state=state_code;
-    motion_status_tx st(.clk(clk),.rstn(rstn),.request(status_req),.request_seq(cmd_seq),.state_code(status_state),.faults(faults),.left_count(left_count),.right_count(right_count),.left_speed(speed_l),.right_speed(speed_r),.left_pwm(pwm_l[15:0]),.right_pwm(pwm_r[15:0]),.command_age(command_age),.tx(uart_tx));
+    // Change physical bridge polarity AFTER PI. Positive target and positive
+    // body-forward feedback remain in the same coordinate system.
+    wire right_bridge1,right_bridge2;
+    at8236_motor_driver #(.CLK_HZ(CLK_HZ),.PWM_HZ(PWM_HZ)) dr(.clk(clk),.rstn(rstn),.enable(control_enable),.command(pi_r),.in1(right_bridge1),.in2(right_bridge2),.pwm_abs(pwm_r));
+    assign right_in1=RIGHT_BRIDGE_INVERT ? right_bridge2 : right_bridge1;
+    assign right_in2=RIGHT_BRIDGE_INVERT ? right_bridge1 : right_bridge2;
+    wire capability_req=cmd_valid && cmd_type==8'h40 && MOTION_CAPABILITIES!=0;
+    wire status_req=capability_req || (cmd_valid && (cmd_type==8'h01 || cmd_type==8'h02 || cmd_type==8'h03 || cmd_type==8'h04 || cmd_type==8'h20 || cmd_type==8'h21 || cmd_type==8'h30)); wire [7:0] status_state=state_code;
+    motion_status_tx #(.CLK_HZ(CLK_HZ)) st(.clk(clk),.rstn(rstn),.request(status_req),.capabilities_request(capability_req),.request_seq(cmd_seq),.state_code(status_state),.faults(faults),.left_count(left_count),.right_count(right_count),.left_speed(speed_l),.right_speed(speed_r),.left_pwm(pwm_l[15:0]),.right_pwm(pwm_r[15:0]),.command_age(command_age),.tx(uart_tx));
     always @(posedge clk or negedge rstn) begin
         if(!rstn) begin
             cpr_l<=CALIBRATED_DEFAULTS ? 1469 : 0;

@@ -1,0 +1,26 @@
+{
+  "firmware": "A723",
+  "hardware_tested": false,
+  "python_tests": 45,
+  "static_pin_tests": 10,
+  "rtl_tests": 16,
+  "rtl_testbenches": [
+    "differential_signed_tb",
+    "encoder_direction_tb",
+    "encoder_startup_tb",
+    "feedback_timeout_tb",
+    "motion_status_tx_tb",
+    "motion_stop_tb",
+    "motion_sync_profile_tb",
+    "motion_top_tb",
+    "pi_signed_tb",
+    "quadrature_decoder_tb",
+    "right_bridge_polarity_tb",
+    "rotate_cancel_tb",
+    "uart_loopback_tb",
+    "uart_protocol_tb",
+    "wheel_pi_controller_tb",
+    "wheel_speed_estimator_tb"
+  ],
+  "scope": "Simulation/report checks only. No programming or physical motor commands."
+}

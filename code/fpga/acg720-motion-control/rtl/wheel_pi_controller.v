@@ -35,8 +35,15 @@ module wheel_pi_controller #(
         if (!rstn) begin command<=0; applied_target<=0; integral_q<=0; stage<=0;
             target_q<=0; measured_q<=0; applied_q<=0; next_target<=0;
             limit_q<=0; ramp_q<=0; difference<=0; error_q<=0; next_integral<=0; raw_q<=0;
-        end else if (!enable || target_speed == 0) begin
+        end else if (!enable) begin
             command<=0; applied_target<=0; integral_q<=0; stage<=0;
+        end else if (target_speed == 0) begin
+            // A commanded stop still decays the PWM over a few control ticks.
+            // The external STOP/timeout path disables enable and remains immediate.
+            applied_target<=0; integral_q<=0; stage<=0;
+            if (command > $signed({1'b0,ramp_limit})) command<=command-$signed({1'b0,ramp_limit});
+            else if (command < -$signed({1'b0,ramp_limit})) command<=command+$signed({1'b0,ramp_limit});
+            else command<=0;
         end else begin
             case(stage)
                 0: if(update) begin

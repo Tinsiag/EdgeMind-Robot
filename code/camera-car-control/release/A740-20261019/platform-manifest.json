@@ -1,0 +1,118 @@
+{
+  "part": "GW5AT-LV60PG484AC1/I0",
+  "top": "acg720_camera_car_top",
+  "files": [
+    {
+      "path": "../../rtl/acg720_camera_car_top.v",
+      "type": "file.verilog",
+      "sha256": "431eafe7eecef737b60da0c32402ba79004e75d89d5976f6f85d90e751100cca",
+      "roles": [
+        "board_top"
+      ]
+    },
+    {
+      "path": "../../rtl/ov5640_board_init.v",
+      "type": "file.verilog",
+      "sha256": "127a68201452cf768103715223f6d53e3e19ac68d83eaba78bd1ef6bb0f1009b",
+      "roles": [
+        "camera_init"
+      ]
+    },
+    {
+      "path": "../../rtl/acg720_rgmii_rx.v",
+      "type": "file.verilog",
+      "sha256": "151c0f1e3c5994402bb7f62e3f644a6e068376c40c52d2c5533046a8a9b401fe",
+      "roles": [
+        "rgmii_phy"
+      ]
+    },
+    {
+      "path": "ov5640_init_table_rgb.v",
+      "type": "file.verilog",
+      "sha256": "43347654e874c60e18589b323f82fe753a099092e0797b1297b16d6ccf0063a0",
+      "roles": [
+        "camera_init"
+      ]
+    },
+    {
+      "path": "../../../fpga/acg720-ddr3/rtl/camera_init/ov5640_ctrl.v",
+      "type": "file.verilog",
+      "sha256": "625595ff919ad9909aa23180828fad794cca673a67fefb7de7a344c7f8ad40b8",
+      "roles": [
+        "camera_init"
+      ]
+    },
+    {
+      "path": "../../../fpga/acg720-ddr3/rtl/camera_init/sccb_master.v",
+      "type": "file.verilog",
+      "sha256": "40ef46681b963f3f0293baa0bc82efa4d1c9646dd683860e0b86f67129b487be",
+      "roles": [
+        "camera_init"
+      ]
+    },
+    {
+      "path": "original/ch59/src/pll_init.v",
+      "type": "file.verilog",
+      "sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "roles": [
+        "clocking"
+      ]
+    },
+    {
+      "path": "original/ch59/src/gmii_rgmii_gmii/gmii_to_rgmii.v",
+      "type": "file.verilog",
+      "sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+      "roles": [
+        "rgmii_phy"
+      ]
+    },
+    {
+      "path": "original/ch59/src/gowin_pll/gowin_pll.v",
+      "type": "file.verilog",
+      "sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+      "roles": [
+        "clocking"
+      ]
+    },
+    {
+      "path": "original/ch59/src/gowin_pll/gowin_pll_mod.v",
+      "type": "file.verilog",
+      "sha256": "495395f7cf26ade4c10ba757b9f63753e1b000797007c2c9291e9b6c9bc23885",
+      "roles": [
+        "clocking"
+      ]
+    },
+    {
+      "path": "original/ch59/src/mdio/mdio_bit_shift.v",
+      "type": "file.verilog",
+      "sha256": "470bf1ff074072ecd9977403651b18d8df125e5c0d670d35ce06cd5139796057",
+      "roles": [
+        "rgmii_phy"
+      ]
+    },
+    {
+      "path": "original/ch59/src/mdio/phy_reg_config.v",
+      "type": "file.verilog",
+      "sha256": "2401a4a435482341b0dd78168a2ed4c5e9e91c5624a97d5dbc01176c061f2043",
+      "roles": [
+        "rgmii_phy"
+      ]
+    },
+    {
+      "path": "../../constraints/acg720_camera_car.cst",
+      "type": "file.cst",
+      "sha256": "9e06b63e950c4e50d8c7bcc106c18ed2d21cdca89cf18a794cf22d805e9ee455",
+      "roles": [
+        "pins"
+      ]
+    },
+    {
+      "path": "../../constraints/acg720_camera_car.sdc",
+      "type": "file.sdc",
+      "sha256": "d105b1c4054c773a67d24795282239826183f4a61747551b5a2d39e45fe8ff82",
+      "roles": [
+        "timing"
+      ]
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 `timescale 1ns/1ps
 module motion_status_tx_tb;
-    reg clk=0, rstn=0, request=0;
+    reg clk=0, rstn=0, request=0, capabilities_request=0;
     reg [7:0] seq=1;
     wire tx;
     wire [7:0] rx_data;
     wire rx_valid, framing_error;
     reg [7:0] expected [0:34];
-    integer received=0, i;
+    integer received=0, i, expected_total=35;
     reg [15:0] crc;
     always #5 clk=~clk;
     motion_status_tx #(.CLK_HZ(5000000),.BAUD(100000)) dut(
-        .clk(clk),.rstn(rstn),.request(request),.request_seq(seq),
+        .clk(clk),.rstn(rstn),.request(request),.capabilities_request(capabilities_request),.request_seq(seq),
         .state_code(8'h03),.faults(16'h1234),
         .left_count(32'h12345678),.right_count(-32'sd2),
         .left_speed(32'd42),.right_speed(-32'sd42),
@@ -29,7 +29,7 @@ module motion_status_tx_tb;
     always @(posedge clk) if(rstn) begin
         if(framing_error) $fatal(1,"UART framing error");
         if(rx_valid) begin
-            if(received>=35) $fatal(1,"Extra byte");
+            if(received>=expected_total) $fatal(1,"Extra byte");
             if(rx_data!==expected[received])
                 $fatal(1,"Byte %0d got %h expected %h",received,rx_data,expected[received]);
             received=received+1;
@@ -61,6 +61,14 @@ module motion_status_tx_tb;
         expected[31]=8'h67;expected[32]=8'h45;
         repeat(4) @(negedge clk);rstn=1;
         check_reply(1);check_reply(2);check_reply(3);
+        capabilities_request=1;seq=4;received=0;expected_total=18;
+        expected[3]=8'hc0;expected[4]=8;expected[5]=4;
+        expected[8]=8'h45;expected[9]=8'h56;expected[10]=8'h4d;expected[11]=8'h31;
+        expected[12]=1;expected[13]=0;expected[14]=8'h90;expected[15]=1;
+        crc=16'hffff;for(i=2;i<16;i=i+1) crc=crc_byte(crc,expected[i]);
+        expected[16]=crc[7:0];expected[17]=crc[15:8];
+        @(negedge clk);request=1;@(negedge clk);request=0;
+        wait(received==18);repeat(600) @(negedge clk);
         $display("PASS STATUS: three complete 35-byte replies, sequence/payload/CRC verified");$finish;
     end
     initial begin #1000000;$fatal(1,"STATUS watchdog received=%0d",received);end
