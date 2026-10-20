@@ -1,6 +1,12 @@
 # 代码目录
 
+- [LD06 激光雷达 GUI](ld06-radar-gui/README.md)：白色中文桌面界面，PWLINK2/USB串口230400只读接收，支持轮廓、四向距离、自动量程、旋转、暂停及CSV。用户确认旋转90°、0.5 m、保留0.2 s时纸板回波及方向正确；23项自动测试通过。启动 `ld06-radar-gui/launch.cmd`，模拟预览 `demo.cmd`。
+
+- [A741 FPGA + LD06 + 2D地图](camera-car-control/a741/README.md)：CTL H20 / DATA H14，经FPGA网口传送完整扫描和里程遥测，PC本地匹配建图及导出。21组RTL/26项Python通过，最新位流未烧录且时序未签核。串口GUI实测不能代替本分支验收；H14板载复用待核实，无ToF前向停车保护。[交付索引](camera-car-control/a741/release/README.md)。
+
 ## 当前主线
+
+新增 [A741运动+LD06实验分支](camera-car-control/a741/README.md)：CTL H20 / DATA H14，通过FPGA网口传输雷达扫描和里程遥测，电脑提供局部二维建图、轨迹、缩放/拖动及地图导出。详见 [建图操作说明](camera-car-control/a741/docs/MOTION-LIDAR-MAPPING.md)。整板时序与实车地图尚未验收，无ToF前向保护，不包含导航或全局闭环。
 
 优先使用 [A740 摄像头与小车网口融合](camera-car-control/README.md)：电脑RJ45直连，UDP控制与视频共线。用户已反馈运行成功；距离/转角精度、起停和通信稳定性仍待完善。当前有效轮距234 mm是待复测的转向补偿，见 [当前状态与标定](camera-car-control/CURRENT-STATUS.md)。A723保留为串口运动工程；其架空结果不能替代落地验收。
 

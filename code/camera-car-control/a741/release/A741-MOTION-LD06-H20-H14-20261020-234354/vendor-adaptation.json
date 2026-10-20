@@ -1,0 +1,6 @@
+{
+  "source": "C:\\Users\\Administrator\\Documents\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_checksum_gen.v",
+  "original_sha256": "1a5656276e8481fc0f82c128da36bc2a748844ad20651fdc35e7afda6de17f2d",
+  "adapted_sha256": "951c494c993e0067fda911917668c34ed0fb879b9793e3463d1ba164d6de8581",
+  "adaptation": "Explicit reset guards for header FIFO pointer next-state defaults make combinational blocks reset-sensitive on the installed Icarus frontend. Pointer FFs already reset to zero. No active-state protocol or license change."
+}

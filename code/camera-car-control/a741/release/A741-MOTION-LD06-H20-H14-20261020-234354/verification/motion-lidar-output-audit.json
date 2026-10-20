@@ -1,0 +1,37 @@
+{
+  "bitstream_sha256": "1993d3aee9757efd8d29849a9c2c44910f76f8fa1f80de1f23d78ceb1ce83a01",
+  "netlist_sha256": "ed07140bea83c1caca30b69dc521e02df3ce458638c571a459d4772042bc30c6",
+  "pin_report_sha256": "68dac7d315b119ab418e2adfc1a509b9d10c4c60745752f2b431a6ad29c88de4",
+  "dynamic_outputs": {
+    "left_in1": "OBUF left_in1_obuf (\n    .O(left_in1),\n    .I(left_in1_d)",
+    "left_in2": "OBUF left_in2_obuf (\n    .O(left_in2),\n    .I(left_in2_d)",
+    "right_in1": "OBUF right_in1_obuf (\n    .O(right_in1),\n    .I(right_in1_d)",
+    "right_in2": "OBUF right_in2_obuf (\n    .O(right_in2),\n    .I(right_in2_d)",
+    "lidar_control": "OBUF lidar_control_obuf (\n    .O(lidar_control),\n    .I(lidar_control_d)"
+  },
+  "assignments": {
+    "lidar_control": {
+      "ball_bank": "H20/5",
+      "direction": "out",
+      "io_standard": "LVCMOS33"
+    },
+    "lidar_rx": {
+      "ball_bank": "H14/4",
+      "direction": "in",
+      "io_standard": "LVCMOS33"
+    },
+    "imu_scl": {
+      "ball_bank": "L18/5",
+      "direction": "io",
+      "io_standard": "LVCMOS33"
+    },
+    "imu_sda": {
+      "ball_bank": "M20/5",
+      "direction": "io",
+      "io_standard": "LVCMOS33"
+    }
+  },
+  "tof_physical_ports": false,
+  "hardware_tested": false,
+  "timing_signed_off": false
+}

@@ -16,3 +16,9 @@
 # CAD conversion runtimes and scratch meshes used for chassis concept previews.
 /tmp/chassis-concept/
 /tmp/vision-motion-tools/
+
+# Local simulation scratch files and desktop preview logs.
+/core.hex
+/uart.hex
+/tmp/ld06-demo-error.log
+/tmp/ld06-demo-out.log

@@ -1,0 +1,96 @@
+{
+  "reference_files": {
+    "doc/模块资料/mpu6050/测试程序/51-coed/51-lcd-mpu6050.c": "0ad121f4cf86d6a3434cccec35c6307ca1cd4776a7756964c05c192ad431c972",
+    "doc/模块资料/mpu6050/测试程序/51-coed/51-串口-mpu6050.c": "8fac05a0c81f67d60661c28b20ad497b3cf3b75d5675f985ce42a29980228696",
+    "doc/模块资料/mpu6050/测试程序/Arduino-MPU6050/Examples/MPU6050_raw/MPU6050_raw.ino": "9746bed4ca74a9359792f247f076e96ba79ee7232350783ccbf5735cb779e7b5",
+    "doc/模块资料/mpu6050/测试程序/Arduino-MPU6050/I2Cdev.cpp": "a251a6e29b703590731ef36f6274e0528f5e33286d8559ac8d4008222df5ad3f",
+    "doc/模块资料/mpu6050/测试程序/Arduino-MPU6050/I2Cdev.h": "c607ef739686c4a992b5a8e9ed8625791a74f8b6175c6a8297b8b5c2060dd983",
+    "doc/模块资料/mpu6050/测试程序/Arduino-MPU6050/MPU6050.cpp": "e8fcf66acec29341062ccb103c16be6f631de2d6ac4f0547bd87dc9606c70404",
+    "doc/模块资料/mpu6050/测试程序/Arduino-MPU6050/MPU6050.h": "49bdd47bc26e25648d4ad3d217fe4f648b978ee01c6764f28bcb83a2f5a658bf"
+  },
+  "withdrawn_module_schematic": {
+    "path": "docs/images/mpu6050-module-schematic.jpg",
+    "status": "rejected_by_user",
+    "usable_as_evidence": false,
+    "sha256": "5530599dee17ffb3c2e2b248f417443fc62aa7bace9e1d8a214c6efc47245a72"
+  },
+  "pin_assignment": {
+    "path": "docs/hardware/acg720-pin-assignment.csv",
+    "sha256": "b377a9cec54e86911586abf500f4aff46a182da55743aa1e05f0a65895fe4437",
+    "signals": {
+      "scl": {
+        "ball": "L18",
+        "csv_row": 98,
+        "original_signal": "COMS_SDAT",
+        "documented_io_standard": "LVCMOS33"
+      },
+      "sda": {
+        "ball": "M20",
+        "csv_row": 99,
+        "original_signal": "COMS_SCLK",
+        "documented_io_standard": "LVCMOS33"
+      },
+      "xda": {
+        "ball": "A1",
+        "csv_row": 96,
+        "original_signal": "COMS_HREF",
+        "documented_io_standard": "LVCMOS33"
+      },
+      "xcl": {
+        "ball": "B2",
+        "csv_row": 97,
+        "original_signal": "COMS_VS",
+        "documented_io_standard": "LVCMOS33"
+      },
+      "ad0": {
+        "ball": "M17",
+        "csv_row": 94,
+        "original_signal": "COMS_XCLK",
+        "documented_io_standard": "LVCMOS33"
+      },
+      "int": {
+        "ball": "B1",
+        "csv_row": 95,
+        "original_signal": "COMS_PCLK",
+        "documented_io_standard": "LVCMOS33"
+      }
+    }
+  },
+  "product_images": {
+    "docs/images/mpu6050-product-spec.jpg": "280e09d837a59d439b7ff78269ce5c572d38d25b7e0a246045b8f92a56d33681",
+    "docs/images/mpu6050-product-pins.jpg": "20e62e782c2bb8b88987fe78b1f0bffbadab9de1e0b2e968547d27fa8e62ba61"
+  },
+  "product_supply_range_v": [
+    3,
+    5
+  ],
+  "user_supply_v": 3.3,
+  "proposed_balls": [
+    "L18",
+    "M20",
+    "A1",
+    "B2",
+    "M17",
+    "B1"
+  ],
+  "existing_cst_conflicts": {},
+  "physical_pin_order_verified": false,
+  "bank_voltage_verified": false,
+  "actual_supply_measured": true,
+  "user_voltage_measurement": {
+    "date": "2026-10-20",
+    "source": "User-reported multimeter measurements relative to module GND",
+    "vcc_v": 3.3,
+    "scl_idle_v": 3.3,
+    "sda_idle_v": 3.3,
+    "ad0_v": 3.2,
+    "expected_i2c_address_7bit": "0x69",
+    "reading_stability_confirmed": false,
+    "fpga_connected_during_measurement_confirmed": false,
+    "i2c_ack_verified": false
+  },
+  "module_schematic_reviewed": false,
+  "module_ad0_default_verified": false,
+  "module_pullups_verified": false,
+  "sensor_outputs_enabled": false
+}
