@@ -9,11 +9,13 @@ module a741_udp_control #(parameter CLK_HZ=125000000,REPLY_TIMEOUT_MS=30)(
     output reg [7:0] tx_data,output wire tx_valid,tx_first,tx_last,
     output wire [15:0] tx_length,input wire tx_ready,
     output wire motion_uart_rx,input wire motion_uart_tx,
-    output reg [31:0] rejected
+    output reg [31:0] rejected,
+    output wire [3:0] diagnostic_state
 );
     localparam RECEIVE=0,CHECK_CRC=1,VALIDATE=2,SEND=3,WAIT_BUSY=4,
         WAIT_DONE=5,REPLY=6,MAKE_CRC=7,TRANSMIT=8;
     reg [3:0] state;
+    assign diagnostic_state=state;
     reg [7:0] buffer[0:63];
     reg [6:0] count,index,packet_size,reply_count,reply_size,send_size;
     reg bad,session_valid;

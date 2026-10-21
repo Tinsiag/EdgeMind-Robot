@@ -22,6 +22,10 @@ class Diagnostics:
     timeouts: int = 0
     discarded: int = 0
     rtt_ms: float = 0
+    last_command: int = 0
+    last_received_bytes: int = 0
+    last_discard_reason: str = ""
+    retries: int = 0
 
 
 class CalibrationRejected(RuntimeError):
@@ -65,7 +69,12 @@ class Client:
         self.motion_lidar = False
 
     def command(self, kind, payload=b"", reply=0x80):
+        if getattr(self,"sensors_only",False) and kind in (2,0x11,0x42,0x45):
+            raise ValueError("传感器调试模式禁止ARM、轮速和旋转指令")
         self.diag.request_id = (self.diag.request_id+1) & 0xffffffff
+        self.diag.last_command=kind
+        self.diag.last_received_bytes=0
+        self.diag.last_discard_reason=""
         self.seq = (self.seq+1) & 255
         body = struct.pack("<4sII", b"EMC1", self.session, self.diag.request_id)
         body += frame(kind, payload, self.seq, 250)
@@ -82,15 +91,19 @@ class Client:
             while time.monotonic() < deadline:
                 self.socket.settimeout(max(.001, deadline-time.monotonic()))
                 data, source = self.socket.recvfrom(2048)
+                self.diag.last_received_bytes=len(data)
                 if source != self.peer or len(data) < 24:
+                    self.diag.last_discard_reason="回复来源或长度不匹配"
                     self.diag.discarded += 1
                     continue
                 header = struct.unpack_from("<4sII", data)
                 if header != (b"EMC1", self.session, self.diag.request_id) or crc16_ccitt(data[:-2]) != int.from_bytes(data[-2:], "little"):
+                    self.diag.last_discard_reason="EMC1会话/请求序号/CRC不匹配"
                     self.diag.discarded += 1
                     continue
                 parsed = FrameParser().feed(data[12:-2])
                 if len(parsed) != 1 or parsed[0][:2] != (reply, self.seq):
+                    self.diag.last_discard_reason="内部协议回复类型/序号/CRC不匹配"
                     self.diag.discarded += 1
                     continue
                 self.diag.replies += 1
@@ -99,10 +112,23 @@ class Client:
         except socket.timeout:
             pass
         self.diag.timeouts += 1
-        raise TimeoutError(f"UDP 控制请求 {self.diag.request_id} 超时；动作已取消")
+        detail=self.diag.last_discard_reason or "未收到控制回复"
+        raise TimeoutError(f"UDP 控制请求 {self.diag.request_id} 超时（命令0x{kind:02X}，{detail}）；动作已取消")
 
     def stop(self):
-        return decode_status(self.command(4))
+        return decode_status(self.command_idempotent(4))
+
+    def command_idempotent(self, kind, payload=b"", reply=0x80):
+        """Retry only bounded, explicitly repeatable stop/config/status requests."""
+        if kind not in (4,0x20,0x30,0x40,0x41,0x44):
+            raise ValueError("该命令不允许自动重试")
+        for attempt in range(2):
+            try:
+                return self.command(kind,payload,reply)
+            except TimeoutError:
+                if attempt:
+                    raise
+                self.diag.retries+=1
 
     def disarm(self):
         return decode_status(self.command(3))
@@ -110,30 +136,30 @@ class Client:
     def connect(self, calibration):
         # STOP is the only command allowed to establish a new EMC1 session.
         self.stop()
-        cap = self.command(0x40, reply=0xc0)
+        cap = self.command_idempotent(0x40, reply=0xc0)
         if len(cap) != 8 or cap[:4] != b"EVM1" or not struct.unpack_from("<H", cap, 4)[0] & 0x10:
             raise ValueError("需要 A741 固件能力；当前固件不支持此控制接口")
         self.sensor_pins_enabled = bool(struct.unpack_from("<H", cap, 4)[0] & 0x20)
         self.imu_test = struct.unpack_from("<H", cap, 4)[0] & 0xc0 == 0xc0
         self.motion_lidar = struct.unpack_from("<H", cap, 4)[0] & 0x300 == 0x300
-        model = self.command(0x44, struct.pack("<I", 12), reply=0xc4)
+        model = self.command_idempotent(0x44, struct.pack("<I", 12), reply=0xc4)
         if len(model) != 12 or struct.unpack_from("<I", model, 4)[0] != 6050:
             raise ValueError("当前 FPGA 不是 MPU6050 构建，不能沿用 JY901 诊断位流")
         values = calibration.values(require_track=False)
         for key, value in enumerate(values):
             if value is None:
                 continue
-            self.command(0x30, struct.pack("<BI", key, value))
-            actual = self.command(0x44, struct.pack("<I", key), reply=0xc4)
+            self.command_idempotent(0x30, struct.pack("<BI", key, value))
+            actual = self.command_idempotent(0x44, struct.pack("<I", key), reply=0xc4)
             if len(actual) != 12 or struct.unpack_from("<II", actual) != (key, value):
                 raise ValueError(f"FPGA 参数 {key} 核对失败")
         return self.status()
 
     def status(self):
-        return decode_status(self.command(0x20))
+        return decode_status(self.command_idempotent(0x20))
 
     def sensors(self):
-        p = self.command(0x41, reply=0xc1)
+        p = self.command_idempotent(0x41, reply=0xc1)
         if len(p) != 32 or p[0] != 1:
             raise ValueError("A741 sensor reply schema mismatch")
         return {"flags": p[1], "valid": p[2], "calibration": p[3],
@@ -150,7 +176,7 @@ class Client:
             raise ValueError("需要新的 MPU6050 测试固件；当前固件不提供该诊断接口")
         values = []
         for key in range(14, 21):
-            p = self.command(0x44, struct.pack("<I", key), reply=0xc4)
+            p = self.command_idempotent(0x44, struct.pack("<I", key), reply=0xc4)
             if len(p) != 12 or struct.unpack_from("<I", p)[0] != key:
                 raise ValueError("MPU6050 诊断回复不匹配")
             values.append(struct.unpack_from("<I", p, 4)[0])

@@ -1,5 +1,15 @@
 # A741 多传感器与运动控制
 
+## 2026-10-21 最新网口诊断
+
+RTL8211F-CG 初始化现按用户提供的 Rev.1.4 手册执行：PHYRSTB 低电平至少 10 ms，释放后等待 50 ms；仅读取 PHYID/BMCR/BMSR，不写未公开定义的保留位。新增 32 字节 `EMP1` 诊断包，每秒发送一次，包含 PHY ID、BMCR、启动/当前 BMSR、PHY 地址和 fault；EMS1/EML1 保持兼容。相关实现和判断规则见 [NETWORK-DIAGNOSIS.md](docs/NETWORK-DIAGNOSIS.md) 与 [协议说明](docs/PROTOCOL.md)。
+
+最新运动+LD06位流本机归档为 `release/A741-MOTION-LD06-H20-H14-20261021-223907`，SHA-256：`03fa2b87728b7d632b58cb8aa1f45867118954d3ee3a0ccb4c22fed2c8282fc8`。25 个 RTL bench、34 项 Python 测试和动态引脚审计通过，但 `timing_signed_off=false`，存在 setup/hold 违例，未完成实板验收。
+
+22:50 现场诊断没有收到控制回复、EMS1 或 EML1，Windows 以太网适配器显示 `Disconnected`、`0 bps`。这次应先检查网线、USB 网卡和 RJ45 Link 灯，关闭 Wi-Fi/VPN，确认 `192.168.0.3/24` 可 ping `192.168.0.2`，再运行 `diagnose-control.cmd`。保持电机 VM 关闭；UDP 超时本身不能证明 FPGA 控制桥已损坏。
+
+2026-10-21控制超时仍在排查。新增[网口诊断步骤](docs/NETWORK-DIAGNOSIS.md)和 `diagnose-control.cmd`，诊断构建会在EMS1中上报MAC坏FCS、有效收帧和控制桥状态。主机对明确可重复的STOP/配置/状态查询最多重试一次，运动命令不重试；不代表控制通信已修复。旧固件归档保持不变。
+
 当前增加独立 `--motion-lidar` 实验变体：MPU6050/MPU6500兼容采样、LD06 CTL=H20 / DATA=H14、解除电机硬锁、电脑二维建图。VL53L1X未接入，无前向测距停车保护，LD06不自动避障。实测机械轮距234 mm由用户提供；轮径/CPR仍需外部校验。**当前整板时序未签核，不可作运动验收版。** 见 [接线与建图](docs/MOTION-LIDAR-MAPPING.md)。
 
 保留 `--imu-test` 电机硬锁测试变体及默认P4禁用诊断变体，不能混用位流。2026-10-20现场身份0x70已有MPU6500兼容分支，用户随后报告 `fault=0, ready=True, sample_valid=True`；`flat_install=False`仍不能静止校准。未知身份继续拒绝。旧包名称含 `IMU-TEST-MOTOR-LOCKED`，不具备LD06功能。见 [IMU测试步骤](docs/IMU-TEST.md)。

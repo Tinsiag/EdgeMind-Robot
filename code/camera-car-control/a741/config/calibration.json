@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "revision": 74103,
+  "revision": 74104,
   "wheel_cpr": [1469, 1471],
   "wheel_diameter_um": [66300, 66300],
   "mechanical_track_um": 234000,
   "mechanical_track_source": "User reported measured wheel centre spacing 234 mm, 2026-10-20",
   "motion_user_authorized": true,
   "tof_enabled": false,
-  "lidar_zero_offset_deg": 0,
+  "lidar_zero_offset_deg": 270,
   "lidar_clockwise": true,
   "lidar_duty_permille": 400,
   "historical_encoder_turn_track_um": 234000,
@@ -23,5 +23,5 @@
   "speed_step_mm_s_per_10ms": 5,
   "pwm_step_per_10ms": 8,
   "hardware_verified": false,
-  "notes": "MPU6050 supply 3.3V confirmed by user. SCL L18, SDA M20, XDA A1, XCL B2, AD0 M17, INT B1. Module pull-ups, Bank voltage and physical pin numbering remain unverified. 234 mm is historical encoder compensation only."
+  "notes": "2026-10-21: LD06 front appeared left in serial GUI; user confirmed GUI rotation +90 deg makes vertical board appear ahead with correct direction. For A741 clockwise raw angles inverted on display, equivalent zero offset is 270 deg. Verify static paper target after reconnect. MPU module 3.3V user report; pullups/bank/pins and H14 USB_PA3 isolation remain unverified. User measured wheel track 234mm; wheel CPR/diameter provisional."
 }

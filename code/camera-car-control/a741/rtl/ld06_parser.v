@@ -12,7 +12,7 @@ module ld06_parser #(parameter STALE_MS=300)(
     output reg [15:0] front_mm,left_mm,right_mm
 );
     reg [375:0] window,candidate,checked_packet;
-    reg [5:0] filled;
+    reg [5:0] filled,packet_guard;
     reg [7:0] crc;
     reg checking,interpolation_ready,divide_start;
     reg [5:0] crc_index;
@@ -41,7 +41,7 @@ module ld06_parser #(parameter STALE_MS=300)(
     endfunction
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
-            window<=0;filled<=0;packet_valid<=0;valid<=0;point_valid<=0;packet<=0;
+            window<=0;filled<=0;packet_guard<=0;packet_valid<=0;valid<=0;point_valid<=0;packet<=0;
             angle_cdeg<=0;distance_mm<=0;confidence<=0;sample_time<=0;sequence_id<=0;
             errors<=0;dropped<=0;age<=65535;now_ms<=0;emitting<=0;point_index<=0;
             start_angle<=0;span<=0;scan_front<=65535;scan_left<=65535;scan_right<=65535;
@@ -105,17 +105,20 @@ module ld06_parser #(parameter STALE_MS=300)(
                         packet<=checked_packet;packet_valid<=1;valid<=1;age<=0;sample_time<=now_ms;
                         sequence_id<=sequence_id+1'b1;emitting<=1;point_index<=0;interpolation_ready<=0;divide_start<=1;
                         start_angle<=checked_packet[47:32];span<=candidate_span;
+                        packet_guard<=46;
                     end
                 end
             end
-            if(framing_error) begin filled<=0;errors<=errors+1'b1;scan_started<=0;have_last<=0;
+            if(framing_error) begin filled<=0;packet_guard<=0;errors<=errors+1'b1;scan_started<=0;have_last<=0;
                 checking<=0;emitting<=0;interpolation_ready<=0;valid<=0;
                 front_mm<=65535;left_mm<=65535;right_mm<=65535;
             end
             else if(byte_valid) begin
                 candidate={data,window[375:8]};window<=candidate;
                 if(filled<47) filled<=filled+1'b1;
-                if(filled>=46 && candidate[15:0]==16'h2c54) begin
+                // A validated packet's payload cannot start another packet.
+                if(packet_guard!=0) packet_guard<=packet_guard-1'b1;
+                else if(filled>=46 && candidate[15:0]==16'h2c54) begin
                     if(checking) dropped<=dropped+1'b1;
                     else begin checked_packet<=candidate;checking<=1;crc_index<=0;crc<=0;end
                 end

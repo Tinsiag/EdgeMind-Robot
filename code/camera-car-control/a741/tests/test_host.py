@@ -26,6 +26,37 @@ def packet(start, end, seq=1, stamp=0):
 
 
 class HostTests(unittest.TestCase):
+    def test_phy_diagnostic_layout_does_not_touch_scan(self):
+        receiver=object.__new__(TelemetryReceiver)
+        receiver.bytes=0;receiver.errors=0
+        data=bytearray(32)
+        struct.pack_into("<4sHHII",data,0,b"EMP1",1,32,123,456)
+        struct.pack_into("<IHHH",data,16,0x001cc916,0x1140,0x7949,0x796d)
+        data[26:32]=bytes((1,0,0,5,50,10))
+        receiver.ingest(data)
+        self.assertEqual(receiver.phy_diagnostic["identity"],0x001cc916)
+        self.assertEqual(receiver.phy_diagnostic["bmcr"],0x1140)
+        self.assertEqual(receiver.phy_diagnostic["bmsr_current"],0x796d)
+        self.assertEqual(receiver.phy_diagnostic["settle_ms"],50)
+        self.assertEqual(receiver.phy_diagnostic["reset_ms"],10)
+        self.assertTrue(receiver.phy_diagnostic["ready"])
+        self.assertEqual(receiver.errors,0)
+        receiver.ingest(data[:-1])
+        self.assertEqual(receiver.errors,1)
+
+    def test_sensor_debug_blocks_motor_packets_before_socket_access(self):
+        c=object.__new__(client.Client);c.sensors_only=True
+        for kind in (2,0x11,0x42,0x45):
+            with self.assertRaisesRegex(ValueError,"禁止ARM"):
+                c.command(kind)
+
+    def test_front_left_raw_rotation_maps_to_forward_for_a741(self):
+        from app import lidar_display_angle
+        calibration=Calibration.load()
+        self.assertEqual(calibration.data["lidar_zero_offset_deg"],270)
+        self.assertAlmostEqual(lidar_display_angle(27000,calibration.data),0)
+        self.assertAlmostEqual(lidar_display_angle(0,calibration.data),270)
+
     def test_mapping_pairing_rejects_stale_and_marks_packet_gaps(self):
         receiver=object.__new__(TelemetryReceiver)
         receiver.lock=threading.Lock()
@@ -42,15 +73,17 @@ class HostTests(unittest.TestCase):
         samples=receiver.mapping_samples()
         self.assertTrue(any(sample[0] is not None for sample in samples))
         receiver.ingest(packet(100,200,100,130),now=base+.1)
-        self.assertTrue(any(sample[0] is None for sample in receiver.mapping_samples()))
+        invalid=next(sample for sample in receiver.mapping_samples() if sample[0] is None)
+        self.assertIn("序号缺口",invalid[4])
         receiver.mapping_queue.clear()
         receiver.queue_mapping((9,240,((0,1000,100),),receiver.snapshot),base-1)
-        self.assertEqual(receiver.mapping_samples(),[(None,None,(),None)])
+        self.assertEqual(receiver.mapping_samples(),[(None,None,(),None,"上位机处理队列中扫描已过期")])
         receiver.mapping_queue.clear()
         for number in range(5):
             receiver.queue_mapping((number,240,((0,1000,100),),receiver.snapshot),base)
         self.assertGreater(receiver.mapping_dropped,0)
-        self.assertTrue(any(sample[0] is None for sample in receiver.mapping_samples()))
+        overflow=next(sample for sample in receiver.mapping_samples() if sample[0] is None)
+        self.assertIn("积压",overflow[4])
 
     def test_expired_visible_scan_freezes_mapping(self):
         receiver=object.__new__(TelemetryReceiver)
@@ -60,7 +93,11 @@ class HostTests(unittest.TestCase):
         receiver.scan.points=[(0,1000,100)];receiver.scan.completed_at=1;receiver.scan.received=1
         receiver.scan.last_angle=100
         self.assertEqual(receiver.read(),(None,()))
-        self.assertTrue(any(sample[0] is None for sample in receiver.mapping_samples()))
+        self.assertIn("断流",receiver.mapping_samples()[0][4])
+        discontinuities=receiver.scan.discontinuities
+        receiver.read()
+        self.assertEqual(receiver.scan.discontinuities,discontinuities)
+        self.assertFalse(receiver.mapping_samples())
 
     def test_unmeasured_track_blocks_arc(self):
         data=copy.deepcopy(Calibration.load().data);data["mechanical_track_um"]=None
@@ -130,6 +167,16 @@ class HostTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             Snapshot.parse(p[:-1])
 
+    def test_network_diagnostics_preserve_old_snapshot_schema(self):
+        p=bytearray(112)
+        struct.pack_into("<4sHHIIIHBBH",p,0,b"EMS1",1,112,1,100,74104,0,0,0,0)
+        struct.pack_into("<H",p,26,0xa6f3)
+        self.assertEqual(Snapshot.parse(p).network_diagnostics(),{"supported":False})
+        struct.pack_into("<H",p,20,0x8000)
+        self.assertEqual(Snapshot.parse(p).network_diagnostics(),
+            {"supported":True,"rx_good_mod16":3,"rx_bad_fcs_saturated15":15,
+             "bridge_state":"REPLY","rejected_mod16":10})
+
     def test_no_motion_retry(self):
         class Silent:
             sent = 0
@@ -143,6 +190,20 @@ class HostTests(unittest.TestCase):
             c.command(0x42, b"123456")
         self.assertEqual(c.socket.sent, 1)
         self.assertEqual(c.diag.timeouts, 1)
+
+    def test_idempotent_control_retry_is_bounded_and_motion_is_never_retryable(self):
+        c=object.__new__(client.Client);c.diag=client.Diagnostics()
+        c.command=Mock(side_effect=[TimeoutError("lost"),b"status"])
+        self.assertEqual(c.command_idempotent(4),b"status")
+        self.assertEqual(c.command.call_count,2)
+        self.assertEqual(c.diag.retries,1)
+        c.command=Mock(side_effect=TimeoutError("lost twice"))
+        with self.assertRaisesRegex(TimeoutError,"lost twice"):
+            c.command_idempotent(4)
+        self.assertEqual(c.command.call_count,2)
+        for kind in (2,0x11,0x42,0x43,0x45,0x46):
+            with self.assertRaisesRegex(ValueError,"不允许自动重试"):
+                c.command_idempotent(kind)
 
     def test_old_jy901_firmware_rejected_before_config_write(self):
         c = object.__new__(client.Client)

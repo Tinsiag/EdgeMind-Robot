@@ -50,6 +50,7 @@ class GuiTests(unittest.TestCase):
                 self.assertGreater(app.camera.winfo_width(), 300)
                 self.assertGreater(app.radar.winfo_width(), 150)
                 self.assertLessEqual(app.log_view.winfo_y()+app.log_view.winfo_height(), root.winfo_height())
+                self.assertLessEqual(app.diagnostic_label.winfo_rooty()+app.diagnostic_label.winfo_height(),app.camera.winfo_rooty()+app.camera.winfo_height()+30)
                 self.assertFalse(app.connected)
                 self.assertIsNone(app.client)
                 self.assertEqual(str(app.lidar_start.cget("state")),"disabled")

@@ -1,5 +1,13 @@
 # EdgeMind-Robot
 
+## 2026-10-21 网口诊断交接
+
+本次依据用户提供的 RTL8211F-CG Rev.1.4 手册核对 A741 网口初始化。PHY 复位保持低电平至少 10 ms，释放后等待 50 ms；初始化只读取 PHYID、BMCR、BMSR，不写未在公开手册中定义的保留位。新增 `EMP1` 独立 PHY 诊断包，记录真实 PHY ID、状态寄存器、ready/error/fault 和复位等待参数；EMS1/EML1 协议保持兼容。详细说明见 [A741 网口诊断](code/camera-car-control/a741/docs/NETWORK-DIAGNOSIS.md)。
+
+最新运动+LD06构建位流 SHA-256 为 `03fa2b87728b7d632b58cb8aa1f45867118954d3ee3a0ccb4c22fed2c8282fc8`，本机归档目录为 `code/camera-car-control/a741/release/A741-MOTION-LD06-H20-H14-20261021-223907`。该构建已通过 25 个 RTL bench、34 项 Python 测试和动态输出审计，但 `timing_signed_off=false`，存在 setup/hold 违例，未完成实板验收。
+
+2026-10-21 22:50 现场诊断未收到控制回复、遥测或雷达帧；Windows 以太网适配器显示 `Disconnected`、链路速率 `0 bps`。这优先指向网线/USB网卡物理链路尚未建立，而不是可以仅凭 UDP 超时判定 FPGA 控制桥故障。测试前应关闭 Wi-Fi/VPN，确认以太网链路为 Up，再 ping `192.168.0.2`，然后运行 `code/camera-car-control/a741/diagnose-control.cmd`。电机 VM 关闭期间不得 ARM 或运行运动命令。
+
 基于 ACG720 FPGA 的自主移动机器人项目。当前底盘概念采用两台 MG513X 驱动后轮、两只前万向轮支撑的四轮结构，左右后轮差速转向。目标是先完成轮速闭环、传感器感知、视频链路与安全保护，再按需要扩展 Lichee Pi 4A 视觉计算。
 
 ## 当前入口与状态（截至2026-10-21，优先阅读）

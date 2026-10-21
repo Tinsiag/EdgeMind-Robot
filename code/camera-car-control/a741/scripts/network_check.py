@@ -49,6 +49,9 @@ def verify(path):
         if dport == 6103:
             snap = Snapshot.parse(data)
             assert snap.flags & 7 == 0 and snap.state == 0
+            network=snap.network_diagnostics()
+            assert network["supported"] and network["rx_good_mod16"]==3
+            assert network["rx_bad_fcs_saturated15"]==2
             snapshots += 1
         else:
             assert sport == 5000 and dport == 5001 and data[:4] == b"EMC1"

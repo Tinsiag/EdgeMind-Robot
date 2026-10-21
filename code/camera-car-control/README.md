@@ -1,5 +1,11 @@
 # 摄像头与小车融合控制工程
 
+## 2026-10-21 最新网口交接
+
+A741 分支已依据 RTL8211F-CG Rev.1.4 手册完成只读 PHY 身份/状态初始化：硬复位 10 ms，释放后等待 50 ms，不写公开手册未定义的保留位；新增 `EMP1` PHY 诊断包，保留 EMS1/EML1 兼容。运动+LD06位流 SHA-256 为 `03fa2b87728b7d632b58cb8aa1f45867118954d3ee3a0ccb4c22fed2c8282fc8`，本机归档位于 `a741/release/A741-MOTION-LD06-H20-H14-20261021-223907`。
+
+22:50 现场记录显示控制、遥测、雷达均无数据，且电脑 Realtek USB GbE 网卡为 `Disconnected / 0 bps`。排查顺序是先确认网线和 RJ45 Link 灯、关闭 Wi-Fi/VPN、确认电脑 `192.168.0.3/24` 与 FPGA `192.168.0.2` 互通，再运行 `a741/diagnose-control.cmd`。电机 VM 必须保持关闭。构建虽已通过回归和 Gowin P&R，仍标记 `timing_signed_off=false`，不可视为实车验收版。
+
 最新实验交付入口：[A741 固件与哈希索引](a741/release/README.md)。LD06独立串口GUI的[实物回波与方向确认](../ld06-radar-gui/VALIDATION.md)不经本工程网口，不等于A741实板通过。A740以下使用方法、有效轮距和LED含义仍只适用于A740。
 
 2026-10-20 新增独立 [A741 多传感器分支](a741/README.md)，含运动、MPU6050/6500、LD06、双端视频及电脑局部二维建图。最新运动+LD06实验变体使用CTL H20 / DATA H14，支持 [地图显示和PNG/PGM/YAML/JSON导出](a741/docs/MOTION-LIDAR-MAPPING.md)；VL53L1X未接入，无前向测距保护。电气/整板时序及实车建图尚未验收；旧电机锁定IMU测试包独立保留。下文为A740入口与历史结果。

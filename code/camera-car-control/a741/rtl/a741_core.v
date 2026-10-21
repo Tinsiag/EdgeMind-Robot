@@ -1,7 +1,10 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0)(
+module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,PHY_DIAGNOSTICS=0)(
     input wire clk,rst_n,imu_int,lidar_rx,
+    input wire [7:0] mac_diagnostic,
+    input wire phy_ready,phy_error,
+    input wire [127:0] phy_diagnostic,
     inout wire imu_sda,imu_scl,
     inout wire tof_sda,tof_scl,tof_xshut,
     input wire left_a,left_b,right_a,right_b,
@@ -49,10 +52,11 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
     wire [7:0] crd,ctd;wire crv,crl,crb,crr,ctv,ctl,ctr;
     wire [15:0] ctlen;wire urx,utx;
     wire [31:0] rejected;
+    wire [3:0] bridge_state;
     a741_udp_control #(.CLK_HZ(CLK_HZ)) bridge(.clk(clk),.rst_n(rst_n),
         .rx_data(crd),.rx_valid(crv),.rx_last(crl),.rx_bad(crb),.rx_ready(crr),
         .tx_data(ctd),.tx_valid(ctv),.tx_last(ctl),.tx_length(ctlen),.tx_ready(ctr),
-        .motion_uart_rx(urx),.motion_uart_tx(utx),.rejected(rejected));
+        .motion_uart_rx(urx),.motion_uart_tx(utx),.rejected(rejected),.diagnostic_state(bridge_state));
     wire signed [31:0] lc,rc,lsp,rsp,tl,tr,relative;
     wire [15:0] lpwm,rpwm,command_age;
     wire [31:0] revision;wire [7:0] cal_result;
@@ -68,6 +72,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         .accumulated_yaw(relative),.gyro_bias(bias),.command_age(command_age),.calibration_result(cal_result));
     wire [7:0] td;wire tvld,tlast,trdy;wire [15:0] tlen;wire [31:0] dropped;
     reg [31:0] snapshot_seq;
+    wire [255:0] phy_snapshot={phy_diagnostic,now_ms,snapshot_seq,16'd32,16'd1,32'h31504d45};
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin snapshot<=0;snapshot_seq<=0;end
         else if(ms_tick) begin
@@ -75,8 +80,9 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
             snapshot<=0;
             snapshot[31:0]<=32'h31534d45;snapshot[47:32]<=1;snapshot[63:48]<=112;
             snapshot[95:64]<=snapshot_seq;snapshot[127:96]<=now_ms;snapshot[159:128]<=revision;
-            snapshot[175:160]<={3'd0,video_overflow,ddr_error,camera_error,frame_ready,ddr_ready,rotating,calibrating,armed,calibrated,lv,tv,gv,iv};
+            snapshot[175:160]<={1'b1,phy_error,phy_ready,video_overflow,ddr_error,camera_error,frame_ready,ddr_ready,rotating,calibrating,armed,calibrated,lv,tv,gv,iv};
             snapshot[183:176]<=state;snapshot[191:184]<=tof_status;snapshot[207:192]<=faults;
+            snapshot[223:208]<={rejected[3:0],bridge_state,mac_diagnostic};
             snapshot[255:224]<=tl;snapshot[287:256]<=tr;
             snapshot[319:288]<=lsp;snapshot[351:320]<=rsp;
             snapshot[383:352]<=lc;snapshot[415:384]<=rc;
@@ -88,7 +94,8 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
             snapshot[791:784]<=cal_result;snapshot[799:792]<=0;
             snapshot[831:800]<=isq;snapshot[863:832]<=tsq;snapshot[895:864]<=lsq;
         end
-    a741_telemetry telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.snapshot(snapshot),
+    a741_telemetry #(.PHY_DIAGNOSTICS(PHY_DIAGNOSTICS)) telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.snapshot(snapshot),
+        .phy_snapshot(phy_snapshot),
         .lidar_update(lpv),.lidar_packet(lpacket),.lidar_time(lt),.lidar_seq(lsq),
         .data(td),.valid(tvld),.last(tlast),.length(tlen),.ready(trdy),.dropped(dropped));
     a741_router router(.clk(clk),.rst_n(rst_n),.eth_rx_data(eth_rx_data),.eth_rx_valid(eth_rx_valid),

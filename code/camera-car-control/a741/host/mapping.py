@@ -7,6 +7,7 @@ import math
 from pathlib import Path
 import queue
 import threading
+import time
 
 from PIL import Image
 
@@ -15,6 +16,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def signed_delta(value, previous, bits):
     return ((value-previous+(1 << (bits-1))) & ((1 << bits)-1))-(1 << (bits-1))
+
+
+def map_display_point(pose, extent_mm=30000):
+    """Native +X forward, +Y left to screen forward-up, left-left."""
+    return 1-pose[1]/extent_mm, 1-pose[0]/extent_mm
+
+
+def map_display_image(raw, pixels=600):
+    return Image.frombytes("L",(pixels,pixels),raw).transpose(
+        Image.Transpose.FLIP_TOP_BOTTOM).transpose(Image.Transpose.ROTATE_90)
 
 
 class SlamEngine:
@@ -61,6 +72,7 @@ class MappingWorker:
         self.export_config = copy.deepcopy(calibration.data)
         self.latest = None
         self.pixels, self.meters = 600, 30
+        self.accepted_host = None
         self.thread = threading.Thread(target=self.run, daemon=True, name="A741-mapping")
         self.thread.start()
 
@@ -100,6 +112,8 @@ class MappingWorker:
                     try:
                         name, value = self.jobs.get(timeout=.05)
                     except queue.Empty:
+                        if self.active and self.frames and self.accepted_host is not None and time.monotonic()-self.accepted_host>.4:
+                            self.freeze("有效完整扫描中断超过400ms，地图已冻结；恢复后新建地图")
                         continue
                 try:
                     if name == "start":
@@ -109,7 +123,7 @@ class MappingWorker:
                         if self.engine:
                             self.engine.close()
                         self.engine = SlamEngine(self.pixels, self.meters)
-                        self.calibration = value;self.last=None;self.last_id=None
+                        self.calibration = value;self.last=None;self.last_id=None;self.accepted_host=None
                         with self.lock:
                             self.config_hash=value.digest;self.export_config=copy.deepcopy(value.data);self.latest=None
                             self.active=True;self.frames=0;self.image=None;self.pose=None;self.trajectory=[];self.status="等待完整扫描及已校准IMU"
@@ -128,15 +142,20 @@ class MappingWorker:
                 self.engine.close()
 
     def integrate(self, sample):
-        scan_id, stamp, points, snap = sample
+        scan_id, stamp, points, snap = sample[:4]
         if not points or not snap:
-            self.freeze("扫描/里程输入无效，地图已冻结")
+            if self.frames and self.accepted_host is not None and time.monotonic()-self.accepted_host>.4:
+                self.freeze("有效完整扫描中断超过400ms，地图已冻结；恢复后新建地图")
+                return
+            reason = sample[4] if len(sample) > 4 else "雷达扫描或配对遥测暂不可用"
+            with self.lock:
+                self.status = f"扫描短暂中断（{reason}），等待完整扫描；累计地图保留"
             return
         if scan_id == self.last_id:
             return
         if self.last_id is not None and scan_id != ((self.last_id + 1) & 0xffffffff):
-            self.freeze("完整扫描丢失，地图已冻结；开始新图恢复")
-            return
+            with self.lock:
+                self.status = "跳过丢失扫描，用连续里程/航向衔接下一完整圈"
         if abs(signed_delta(snap.ms, stamp, 32)) > 100:
             self.freeze("扫描与遥测时间不匹配，地图已冻结")
             return
@@ -148,7 +167,7 @@ class MappingWorker:
         if self.last:
             elapsed=(snap.ms-self.last.ms) & 0xffffffff
             if not 0 < elapsed <= 400:
-                self.freeze("遥测时间中断，停止积分；开始新图恢复")
+                self.freeze("遥测时间中断超过400ms，地图已冻结；恢复后新建地图")
                 return
             dt=elapsed/1000
             wheels=self.calibration.distance_mm(signed_delta(snap.left_count,self.last.left_count,32),
@@ -156,7 +175,7 @@ class MappingWorker:
             distance=sum(wheels)/2
             angle=signed_delta(snap.yaw_raw,self.last.yaw_raw,16)*360/65536*self.calibration.data["imu_yaw_sign"]
             if abs(distance)>400*dt+15 or abs(angle)>180*dt+5:
-                self.freeze("里程/航向跳变，停止积分")
+                self.freeze("里程/航向跳变，重新校验后需新建地图")
                 return
         ranges=[0]*361
         clockwise=self.calibration.data.get("lidar_clockwise",True)
@@ -178,7 +197,7 @@ class MappingWorker:
             self.freeze("扫描匹配失败或超出地图边界，停止积分")
             return
         raw,pose=self.engine.state()
-        self.last=snap;self.last_id=scan_id
+        self.last=snap;self.last_id=scan_id;self.accepted_host=time.monotonic()
         with self.lock:
             self.latest={"scan_id":scan_id,"scan_fpga_ms":stamp,"telemetry_seq":snap.seq,"telemetry_fpga_ms":snap.ms}
             self.frames+=1;self.image=raw;self.pose=pose
@@ -195,13 +214,15 @@ class MappingWorker:
             raise ValueError("还没有可保存的地图")
         path=Path(destination)
         path.parent.mkdir(parents=True,exist_ok=True)
-        image=Image.frombytes("L",(self.pixels,self.pixels),raw).transpose(Image.Transpose.FLIP_TOP_BOTTOM)
+        image=map_display_image(raw,self.pixels)
         image.save(path.with_suffix(".png"));image.save(path.with_suffix(".pgm"))
         resolution=self.meters/self.pixels
         origin=-self.meters/2
         path.with_suffix(".yaml").write_text("image: "+path.with_suffix(".pgm").name+f"\nresolution: {resolution:.6f}\norigin: [{origin:.3f}, {origin:.3f}, 0.0]\nnegate: 0\noccupied_thresh: 0.65\nfree_thresh: 0.196\n",encoding="utf-8")
         path.with_suffix(".json").write_text(json.dumps({"pose_map_mm":pose,"trajectory_map_mm":trajectory,
             "saved_utc":datetime.now(timezone.utc).isoformat(),"last_input":latest,
+            "image_axes":"initial forward up; initial left left; image world X=-native Y, Y=native X",
+            "pose_image_mm":None if pose is None else [self.meters*1000-pose[1],pose[0],pose[2]+90],
             "frames":frames,"status":status,"config":config,"config_sha256":config_hash,
             "engine":"CoreSLAM RMHC; local scan matching; no loop closure/navigation",
             "resolution_m":resolution,"size_m":self.meters,"origin_m":[origin,origin],

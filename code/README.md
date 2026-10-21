@@ -1,5 +1,11 @@
 # 代码目录
 
+## 当前 A741 网口诊断状态（2026-10-21）
+
+A741 已按 RTL8211F-CG 手册修正 PHY 启动时序，并新增 `EMP1` 只读诊断包；当前实验位流 SHA-256 为 `03fa2b87728b7d632b58cb8aa1f45867118954d3ee3a0ccb4c22fed2c8282fc8`。25 个 RTL bench、34 项 Python 测试通过，但整板时序仍未签核。
+
+现场 22:50 诊断没有收到控制、遥测或雷达数据，同时 Windows 以太网适配器为 `Disconnected / 0 bps`。先恢复物理链路、关闭 Wi-Fi/VPN、确认 `192.168.0.3/24` 到 FPGA `192.168.0.2` 可 ping，再使用 A741 诊断脚本；不要把 UDP 超时直接当成 FPGA RTL 根因。
+
 - [LD06 激光雷达 GUI](ld06-radar-gui/README.md)：白色中文桌面界面，PWLINK2/USB串口230400只读接收，支持轮廓、四向距离、自动量程、旋转、暂停及CSV。用户确认旋转90°、0.5 m、保留0.2 s时纸板回波及方向正确；23项自动测试通过。启动 `ld06-radar-gui/launch.cmd`，模拟预览 `demo.cmd`。
 
 - [A741 FPGA + LD06 + 2D地图](camera-car-control/a741/README.md)：CTL H20 / DATA H14，经FPGA网口传送完整扫描和里程遥测，PC本地匹配建图及导出。21组RTL/26项Python通过，最新位流未烧录且时序未签核。串口GUI实测不能代替本分支验收；H14板载复用待核实，无ToF前向停车保护。[交付索引](camera-car-control/a741/release/README.md)。

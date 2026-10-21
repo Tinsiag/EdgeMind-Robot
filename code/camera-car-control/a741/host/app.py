@@ -1,5 +1,6 @@
 """A741 camera, lidar and manual motion console. No board I/O until Connect."""
 from dataclasses import asdict
+import argparse
 from datetime import datetime, timezone
 import json
 import math
@@ -15,7 +16,7 @@ from calibration import Calibration, DEFAULT
 from client import Client, HoldLease, CalibrationRejected
 from telemetry import TelemetryReceiver
 from video import VideoReceiver, FrameAssembler
-from mapping import MappingWorker
+from mapping import MappingWorker, map_display_image, map_display_point
 
 
 class TrafficAssembler(FrameAssembler):
@@ -28,10 +29,17 @@ class TrafficAssembler(FrameAssembler):
         return super().feed(data, now)
 
 
+def lidar_display_angle(raw_cdeg, calibration):
+    clockwise=calibration.get("lidar_clockwise",True)
+    offset=calibration.get("lidar_zero_offset_deg",0)
+    return ((-raw_cdeg/100 if clockwise else raw_cdeg/100)+offset)%360
+
+
 class App:
-    def __init__(self, root):
+    def __init__(self, root, sensors_only=False):
         self.root = root
-        self.root.title("EdgeMind A741")
+        self.sensors_only=sensors_only
+        self.root.title("EdgeMind A741 · 传感器调试 / 禁止电机" if sensors_only else "EdgeMind A741")
         self.root.geometry("1280x850")
         self.root.minsize(1000, 720)
         self.calibration = Calibration.load()
@@ -89,6 +97,8 @@ class App:
         left = ttk.Frame(panes)
         right = ttk.Frame(panes, width=360)
         panes.add(left, weight=3);panes.add(right, weight=1)
+        sensor_status=ttk.Frame(right)
+        sensor_status.pack(side="bottom",fill="x")
         left.rowconfigure(0, weight=1);left.columnconfigure(0, weight=1)
         self.camera = tk.Canvas(left, bg="#11181b", highlightthickness=0)
         self.camera.grid(row=0, column=0, sticky="nsew")
@@ -119,11 +129,12 @@ class App:
         self.mapping_text=tk.StringVar(value="未建图")
         ttk.Label(map_page,textvariable=self.mapping_text,wraplength=330).pack(fill="x")
         self.sensors_text = tk.StringVar(value="IMU：无效\nToF：无效\n雷达：无效")
-        ttk.Label(right, textvariable=self.sensors_text, justify="left").pack(fill="x", pady=8)
+        ttk.Label(sensor_status, textvariable=self.sensors_text, justify="left").pack(fill="x", pady=8)
         self.motion_text = tk.StringVar(value="运动：未连接")
-        ttk.Label(right, textvariable=self.motion_text, justify="left").pack(fill="x")
+        ttk.Label(sensor_status, textvariable=self.motion_text, justify="left").pack(fill="x")
         self.diag_text = tk.StringVar(value="UDP：等待")
-        ttk.Label(right, textvariable=self.diag_text, justify="left").pack(fill="x", pady=8)
+        self.diagnostic_label=ttk.Label(sensor_status, textvariable=self.diag_text, justify="left")
+        self.diagnostic_label.pack(fill="x", pady=8)
         control = ttk.Frame(self.root, padding=8)
         control.grid(row=2, column=0, sticky="ew")
         self.speed = tk.IntVar(value=100)
@@ -139,10 +150,11 @@ class App:
         manual.grid(row=1, column=0, columnspan=8, sticky="w", pady=8)
         for label, direction, turn in [("前进", 1, 0), ("后退", -1, 0), ("左弧线", 1, 1), ("右弧线", 1, -1)]:
             b = ttk.Button(manual, text=label)
+            if self.sensors_only:b.configure(state="disabled")
             b.pack(side="left", padx=3)
             b.bind("<ButtonPress-1>", lambda e, d=direction, a=turn: self.hold(d, a))
-        ttk.Button(manual, text="距离运动", command=lambda: self.motion_job("distance")).pack(side="left", padx=8)
-        ttk.Button(manual, text="原地旋转", command=lambda: self.motion_job("rotate")).pack(side="left")
+        ttk.Button(manual, text="距离运动", state="disabled" if self.sensors_only else "normal",command=lambda: self.motion_job("distance")).pack(side="left", padx=8)
+        ttk.Button(manual, text="原地旋转", state="disabled" if self.sensors_only else "normal",command=lambda: self.motion_job("rotate")).pack(side="left")
         ttk.Button(manual, text="静止校准", command=lambda: self.submit("calibrate")).pack(side="left", padx=8)
         ttk.Button(manual, text="IMU诊断", command=lambda: self.submit("imu_diagnostics")).pack(side="left")
         ttk.Button(manual, text="清除故障", command=lambda: self.submit("clear")).pack(side="left")
@@ -163,6 +175,9 @@ class App:
             self.log_view.see("end");self.log_view.configure(state="disabled")
 
     def submit(self, kind, *args):
+        if getattr(self,"sensors_only",False) and kind in ("drive","distance","rotate"):
+            self.log("error","传感器调试模式禁止电机指令")
+            return False
         if self.busy or self.shutdown.is_set():
             if not self.shutdown.is_set():self.log("message", "控制任务进行中，请先停止 / 取消后再操作")
             return False
@@ -174,7 +189,11 @@ class App:
         return True
 
     def connect(self):
-        self.submit("connect", self.ip.get().strip())
+        if self.busy or self.connected:
+            return
+        if self.submit("connect", self.ip.get().strip()):
+            self.connect_button.configure(state="disabled")
+            self.connection_text.set("正在连接，请等待")
 
     def motion_job(self, kind):
         try:
@@ -239,10 +258,11 @@ class App:
                 if kind == "connect":
                     self.cleanup()
                     self.client = Client(args[0])
+                    self.client.sensors_only=getattr(self,"sensors_only",False)
+                    self.telemetry = TelemetryReceiver(args[0])
                     status = self.client.connect(self.calibration)
                     if self.cancel.is_set():
                         raise RuntimeError("连接已取消")
-                    self.telemetry = TelemetryReceiver(args[0])
                     self.video = VideoReceiver("0.0.0.0", 6102, args[0], self.frames, self.events)
                     self.video.assembler = TrafficAssembler()
                     self.video.start()
@@ -278,6 +298,13 @@ class App:
             except CalibrationRejected as exc:
                 self.events.put(("error", str(exc)))
             except Exception as exc:
+                if self.telemetry:
+                    snapshot,_=self.telemetry.read()
+                    self.events.put(("connection_diagnostics",{
+                        "control":asdict(self.client.diag) if self.client else None,
+                        "fpga_ms":snapshot.ms if snapshot else None,
+                        "fpga_network":snapshot.network_diagnostics() if snapshot else None,
+                        "flags":hex(snapshot.flags) if snapshot else None}))
                 self.events.put(("error", str(exc)))
                 self.cleanup()
             finally:
@@ -309,7 +336,7 @@ class App:
                 self.connected = False;self.connection_text.set("未连接")
             elif kind == "video_stats":
                 self.video_text.set(f"视频完成 {value[0]}  丢帧 {value[1]}  坏包 {value[2]}")
-            elif kind in ("error", "message"):
+            elif kind in ("error", "message", "connection_diagnostics"):
                 self.log(kind, value)
         changed = False
         while True:
@@ -333,8 +360,10 @@ class App:
                 self.mapper.feed(sample)
         raw,pose,trajectory,generation,status,active=self.mapper.snapshot()
         self.mapping_text.set(status)
-        if active and snap is None:
-            self.mapper.command("pause","遥测中断，地图已冻结；恢复连接后开始新图")
+        map_event=(active,status if not status.startswith("建图 ") else "正在建图")
+        if getattr(self,"last_mapping_event",None)!=map_event:
+            self.last_mapping_event=map_event
+            self.log("mapping_state",{"active":active,"status":status,"frames":generation})
         self.draw_map(raw,pose,trajectory,generation)
         self.draw_radar(points)
         if snap:
@@ -345,7 +374,7 @@ class App:
                                   f"角速度：{label(1, f'{snap.gyro_raw*2000/32768:.2f}°/s')}\n"
                                   f"ToF：{tof_text}\n雷达：{'有效' if points else '无效 / 过期'}\n"
                                   f"IMU 样本 {snap.imu_seq} · 错误 {snap.imu_errors}\n"
-                                  f"雷达包 {snap.lidar_seq} · 错误 {snap.lidar_errors}\n"
+                                  f"雷达包 {snap.lidar_seq} · 累计校验/串口错 {snap.lidar_errors}\n"
                                   f"FPGA 时间：{snap.ms} ms · 配置 {snap.revision}")
             self.motion_text.set(f"模式 {snap.state}  故障 0x{snap.faults:04x}\n"
                                  f"目标 L/R：{snap.left_target} / {snap.right_target} mm/s\n"
@@ -353,6 +382,8 @@ class App:
                                  f"DDR：{'就绪' if snap.flags & 256 else '未就绪'}")
             if time.monotonic()-self.last_log > .1:
                 traffic = {"sensors": asdict(snap), "communication": asdict(client.diag) if client else None,
+                           "fpga_network":snap.network_diagnostics(),
+                           "lidar_receiver":telemetry.diagnostics() if telemetry else None,
                            "video_payload_bytes": video.assembler.payload_bytes if video else 0,
                            "video_completed": video.assembler.completed if video else 0,
                            "video_dropped": video.assembler.dropped if video else 0}
@@ -362,11 +393,15 @@ class App:
             self.motion_text.set("运动遥测：无效 / 过期")
         if client:
             d = client.diag
+            receiver=telemetry.diagnostics() if telemetry else {}
             bandwidth = (telemetry.bytes if telemetry else 0) / max(1, time.monotonic()-self.started)
             video_bandwidth = (video.assembler.payload_bytes if video else 0) / max(1, time.monotonic()-self.started)
             self.diag_text.set(f"请求 {d.request_id} · RTT {d.rtt_ms:.1f} ms\n"
-                               f"超时 {d.timeouts} · 丢弃 {d.discarded}\n遥测 {bandwidth/1024:.1f} KiB/s · 视频 {video_bandwidth/1048576:.2f} MiB/s")
+                               f"超时 {d.timeouts} · 重试 {d.retries} · 丢弃 {d.discarded}\n"
+                               f"PC雷达校验错 {receiver.get('host_bad_packets',0)} · 缺包/断点 {receiver.get('scan_gaps',0)}\n"
+                               f"遥测 {bandwidth/1024:.1f} KiB/s · 视频 {video_bandwidth/1048576:.2f} MiB/s")
         self.lidar_start.configure(state="normal" if self.connected and client and client.motion_lidar and not self.busy else "disabled")
+        self.connect_button.configure(state="disabled" if self.connected or self.busy else "normal")
         self.root.after(50, self.refresh)
 
     def draw_radar(self, points):
@@ -381,7 +416,7 @@ class App:
         for angle, distance, confidence in points:
             if confidence < 10 or not 0 < distance <= 3000:
                 continue
-            degrees=(-angle/100 if self.calibration.data.get("lidar_clockwise",True) else angle/100)+self.calibration.data.get("lidar_zero_offset_deg",0)
+            degrees=lidar_display_angle(angle,self.calibration.data)
             rad = math.radians(degrees);r = radius*distance/3000
             x, y = cx-r*math.sin(rad), cy-r*math.cos(rad)
             c.create_rectangle(x-1, y-1, x+1, y+1, fill="#7ce3ad", outline="")
@@ -422,17 +457,19 @@ class App:
         if raw is None:
             c.create_text(w/2,h/2,text="未建图",fill="white");return
         size=max(1,round(min(w,h)*self.map_zoom));ox=w/2-self.map_center[0]*size;oy=h/2-self.map_center[1]*size
-        image=Image.frombytes("L",(600,600),raw).transpose(Image.Transpose.FLIP_TOP_BOTTOM)
+        image=map_display_image(raw)
         self.map_photo=ImageTk.PhotoImage(image.resize((size,size),Image.Resampling.NEAREST))
         c.create_image(ox,oy,anchor="nw",image=self.map_photo)
-        def xy(p):return ox+p[0]/30000*size,oy+(1-p[1]/30000)*size
+        def xy(p):
+            u,v=map_display_point(p)
+            return ox+u*size,oy+v*size
         for n in range(1,10):
             q=n*size/10;c.create_line(ox+q,oy,ox+q,oy+size,fill="#bac0c5");c.create_line(ox,oy+q,ox+size,oy+q,fill="#bac0c5")
         path=[value for p in trajectory for value in xy(p)]
         if len(path)>3:c.create_line(*path,fill="#247caf",width=2)
         if pose:
             x,y=xy(pose);a=math.radians(pose[2]);c.create_oval(x-4,y-4,x+4,y+4,fill="#d54336",outline="")
-            c.create_line(x,y,x+12*math.cos(a),y-12*math.sin(a),fill="#d54336",arrow="last",width=2)
+            c.create_line(x,y,x-12*math.sin(a),y-12*math.cos(a),fill="#d54336",arrow="last",width=2)
         length=size*2/30
         c.create_rectangle(8,h-36,20+length,h-5,fill="white",outline="#939ca1")
         c.create_line(14,h-13,14+length,h-13,fill="#20282c",width=2)
@@ -494,6 +531,9 @@ class App:
 
 
 if __name__ == "__main__":
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--sensors-only",action="store_true",help="disable all motor commands for VM-off sensor tests")
+    args=parser.parse_args()
     root = tk.Tk()
-    app = App(root)
+    app = App(root,sensors_only=args.sensors_only)
     root.mainloop()

@@ -52,7 +52,8 @@ fault bit0 超时，bit2 编码器无反馈，bit4 IMU 失效，bit5 ToF 无效/
 | --- | --- |
 | 0/4/6 | EMS1 / version:u16=1 / length:u16=112 |
 | 8/12/16 | 快照序号、FPGA ms、revision，各 u32 |
-| 20/22/23/24 | flags:u16、模式:u8、ToF 原始状态:u8、faults:u16；26～27保留 |
+| 20/22/23/24 | flags:u16、模式:u8、ToF 原始状态:u8、faults:u16 |
+| 26 | flags bit15置位时为网络诊断u16；否则保留 |
 | 28/32/36/40 | 左右目标/左右实测速度，各 i32 mm/s |
 | 44/48 | 左右编码器 i32 |
 | 52/54 | yaw/gz，i16 原始值 |
@@ -63,6 +64,10 @@ fault bit0 超时，bit2 编码器无反馈，bit4 IMU 失效，bit5 ToF 无效/
 | 100/104/108 | IMU 角度、ToF、LD06 各自采样序号，u32 |
 
 flags bit0～12：角度有效、角速度有效、ToF 有效、LD06 流有效、已校准、已 ARM、校准中、旋转中、DDR 就绪、显示帧可用、摄像头错误、DDR/显示错误、视频 FIFO 溢出。
+
+flags bit15标明当前编译包含网络诊断扩展，保持version=1/length=112兼容。偏移26的bit0～3为MAC接收有效帧计数模16，bit4～7为MAC接收坏FCS计数（饱和15），bit8～11为控制桥状态，bit12～15为控制桥拒绝计数模16。桥状态0～8依次为RECEIVE、CHECK_CRC、VALIDATE、SEND、WAIT_BUSY、WAIT_DONE、REPLY、MAKE_CRC、TRANSMIT。模计数可能回绕，必须比较连续采样；坏FCS饱和后需重启才能重新计数。有效帧包括ARP等以太网帧，不能直接等同于接受的控制请求。
+
+2026-10-21主机仅允许STOP、状态/能力/传感器/参数读取及同值参数写入在超时后重试一次，每次使用新请求序号，超时和重试次数保留。ARM、校准、速度、角度和雷达控制均不自动重试。重试不能代替网络修复。
 
 主机接收时间另存。LD06 流有效不代表已获得完整一圈。EMS1 超过 150 ms 未更新即不作当前有效遥测。
 
@@ -79,3 +84,6 @@ flags bit0～12：角度有效、角速度有效、ToF 有效、LD06 流有效�
 ## EMV1 视频
 
 保留父工程分块、完整帧提交/废弃协议及 frame_id。HDMI 800×480；网络 400×240 同帧抽样、同一 OSD。没有加入破坏旧接收器的 EMV1 私有字段。
+### EMP1 PHY diagnostics
+
+When the A741 build has PHY diagnostics enabled, UDP telemetry also carries a 32-byte `EMP1` packet once per second. The fixed layout is: magic `EMP1`, version `1`, length `32`, sequence, FPGA milliseconds, PHYID32, BMCR, initial BMSR, current BMSR, then ready/error/fault, PHY address, settle-ms and reset-ms bytes. This packet is read-only diagnostics; it never arms the motor or changes PHY registers.

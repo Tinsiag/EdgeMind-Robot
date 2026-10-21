@@ -5,6 +5,8 @@ module network_tb;
     wire rready,tvalid,tlast,tbad;wire [7:0] tx;
     wire l1,l2,r1,r2;
     a741_core #(.CLK_HZ(1152000)) dut(.clk(clk),.rst_n(rst),.imu_int(1'b0),.lidar_rx(1'b1),
+        .mac_diagnostic(8'h23),
+        .phy_ready(1'b1),.phy_error(1'b0),
         .left_a(1'b0),.left_b(1'b0),.right_a(1'b0),.right_b(1'b0),
         .left_in1(l1),.left_in2(l2),.right_in1(r1),.right_in2(r2),
         .eth_rx_data(rx),.eth_rx_valid(valid),.eth_rx_last(last),.eth_rx_bad(1'b0),.eth_rx_ready(rready),

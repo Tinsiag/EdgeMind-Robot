@@ -35,11 +35,22 @@ module a741_top(
     reset_sync nreset(.clk(pll50),.async_n(global_n),.rst_n(net_n));
     reset_sync rxreset(.clk(rgmii_rx_clk),.async_n(global_n && eth_rst_n),.rst_n(rx_n));
     reset_sync txreset(.clk(pll125),.async_n(global_n),.rst_n(tx_n));
-    wire camera_ready,camera_error,phy_ready;
+    wire camera_ready,camera_error,phy_ready,phy_error;
     ov5640_board_init camera(.clk(clk),.rst_n(control_n),.camera_reset_n(camera_reset_n),
         .scl(camera_sclk),.sda(camera_sdat),.ready(camera_ready),.error(camera_error));
-    phy_reg_config phy(.Clk(clk),.Rst_n(control_n),.Phy_rst_n(eth_rst_n),
-        .Rd_Data(),.Phy_init_done(phy_ready),.mdc(eth_mdc),.mdio(eth_mdio));
+    wire phy_go,phy_read,phy_done;wire [4:0] phy_register;
+    wire [15:0] phy_write_data,phy_read_data;
+    wire [31:0] phy_identity;
+    wire [15:0] phy_bmcr,phy_bmsr_initial,phy_bmsr_current;
+    wire [3:0] phy_fault;
+    a741_phy_init phy(.clk(clk),.rst_n(control_n),.done(phy_done),.read_data(phy_read_data),
+        .phy_reset_n(eth_rst_n),.ready(phy_ready),.error(phy_error),.go(phy_go),
+        .read_mode(phy_read),.register_address(phy_register),.write_data(phy_write_data),
+        .identity(phy_identity),.bmcr(phy_bmcr),.bmsr_initial(phy_bmsr_initial),
+        .bmsr_current(phy_bmsr_current),.fault(phy_fault));
+    mdio_bit_shift phy_mdio(.Clk(clk),.Rst_n(eth_rst_n),.Mode(phy_read),.Go(phy_go),
+        .Phy_addr(5'd5),.Reg_addr(phy_register),.Tx_Data(phy_write_data),
+        .Rx_Data(phy_read_data),.Trans_Done(phy_done),.mdc(eth_mdc),.mdio(eth_mdio));
     (* ASYNC_REG="TRUE" *) reg [1:0] camera_ready_sync;
     always @(posedge camera_pclk or negedge global_n)
         if(!global_n) camera_ready_sync<=0;
@@ -60,6 +71,10 @@ module a741_top(
         .rgmii_txd(rgmii_txd),.rgmii_txen(rgmii_tx_ctl));
     wire [7:0] rx_data,tx_data;
     wire rx_valid,rx_last,rx_bad,rx_ready,tx_valid,tx_last,tx_bad,tx_ready;
+    wire rx_bad_fcs,rx_good_frame;
+    wire [7:0] mac_diagnostic;
+    a741_net_health net_health(.clk(clk),.rst_n(control_n),.rx_good_frame(rx_good_frame),
+        .rx_bad_fcs(rx_bad_fcs),.status(mac_diagnostic));
     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
         .logic_clk(clk),.logic_rst(!control_n),
         .tx_axis_tdata(tx_data),.tx_axis_tkeep(1'b1),.tx_axis_tvalid(tx_valid),.tx_axis_tready(tx_ready),
@@ -69,7 +84,8 @@ module a741_top(
         .gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
         .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),
         .rx_clk_enable(1'b1),.tx_clk_enable(1'b1),.rx_mii_select(1'b0),.tx_mii_select(1'b0),
-        .cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1]));
+        .cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1]),
+        .rx_error_bad_fcs(rx_bad_fcs),.rx_fifo_good_frame(rx_good_frame));
     wire raw_l1,raw_l2,raw_r1,raw_r2;
 `ifdef A741_MOTION_LIDAR
     localparam SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=1;
@@ -142,7 +158,10 @@ module a741_top(
 `ifdef A741_MOTION_LIDAR
     assign lidar_control=global_n && lidar_pwm;
 `endif
-    a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR)) core(.clk(clk),.rst_n(control_n),
+    a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR),.PHY_DIAGNOSTICS(1)) core(.clk(clk),.rst_n(control_n),
+        .mac_diagnostic(mac_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
+        .phy_diagnostic({8'd10,8'd50,8'd5,{4'd0,phy_fault},{7'd0,phy_error},{7'd0,phy_ready},
+            phy_bmsr_current,phy_bmsr_initial,phy_bmcr,phy_identity}),
         .lidar_control(lidar_pwm),
         .imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),.lidar_rx(lidar_rx),
         .tof_sda(tof_sda),.tof_scl(tof_scl),.tof_xshut(tof_xshut),
