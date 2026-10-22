@@ -399,5 +399,31 @@ class Client:
         self.stop()
         raise RuntimeError("距离任务取消或超时")
 
+    def return_route(self, calibration, route, speed, cancel):
+        if len(route)<2:
+            raise ValueError("返程轨迹至少需要两个点")
+        if not 40 <= speed <= calibration.data["max_speed_mm_s"]:
+            raise ValueError("返程速度超出配置范围")
+        current_heading=float(route[0][2])
+        completed=0
+        for point in route[1:]:
+            if cancel.is_set():
+                self.stop();raise RuntimeError("返程已取消")
+            dx=float(point[0])-float(route[completed][0])
+            dy=float(point[1])-float(route[completed][1])
+            distance=math.hypot(dx,dy)
+            if distance<30:
+                completed+=1;continue
+            desired=math.degrees(math.atan2(dy,dx))
+            delta=(desired-current_heading+180)%360-180
+            sensor=self.sensors()
+            if sensor["faults"] or not sensor["flags"] & 4 or sensor["valid"] & 3 != 3:
+                self.stop();raise CalibrationRejected("返程前IMU或FPGA状态无效，已停车")
+            if abs(delta)>3:
+                self.rotate(calibration,delta,speed,cancel)
+            self.distance(calibration,distance,speed,cancel)
+            current_heading=desired;completed+=1
+        return {"return_route":"completed","segments":completed}
+
     def close(self):
         self.socket.close()
