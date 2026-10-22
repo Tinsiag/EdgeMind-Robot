@@ -36,6 +36,7 @@ def main():
             event={"utc":datetime.now(timezone.utc).isoformat(),"kind":kind,"index":index}
             before,_=receiver.read()
             event["fpga_network_before"]=before.network_diagnostics() if before else None
+            event["receiver_before"]=receiver.diagnostics()
             started=time.monotonic()
             try:
                 reply=client.command(kind,payload,reply=0x80 if index==0 else 0xc4)

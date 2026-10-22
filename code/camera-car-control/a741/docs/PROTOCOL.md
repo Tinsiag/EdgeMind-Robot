@@ -86,4 +86,8 @@ flags bit15标明当前编译包含网络诊断扩展，保持version=1/length=1
 保留父工程分块、完整帧提交/废弃协议及 frame_id。HDMI 800×480；网络 400×240 同帧抽样、同一 OSD。没有加入破坏旧接收器的 EMV1 私有字段。
 ### EMP1 PHY diagnostics
 
+### EMN1 Network Counters (2026-10-22)
+
+The current diagnostic build emits a separate 32-byte UDP 6103 packet every 50 ms. Little-endian layout: `EMN1`, uint16 version=1, uint16 length=32, uint32 sequence, uint32 FPGA milliseconds, uint32 accepted FIFO frames, uint32 MAC bad-FCS events, uint32 MAC bad-frame events, uint32 RX FIFO overflow events. Counters wrap modulo 2^32 and reset with FPGA reset. FCS and bad-frame counts may describe the same frame and must not be added as independent losses. Events come from the MAC's logic-domain synchronized outputs; the packet is captured atomically under backpressure. Existing EMS1/EML1 layouts and PHY initialization are unchanged. Updated clients expose `receiver.network_counters` and a host receive timestamp in diagnostic logs; missing or stale packets are not zero counters. EMP1 remains disabled in the board build.
+
 When the A741 build has PHY diagnostics enabled, UDP telemetry also carries a 32-byte `EMP1` packet once per second. The fixed layout is: magic `EMP1`, version `1`, length `32`, sequence, FPGA milliseconds, PHYID32, BMCR, initial BMSR, current BMSR, then ready/error/fault, PHY address, settle-ms and reset-ms bytes. This packet is read-only diagnostics; it never arms the motor or changes PHY registers.

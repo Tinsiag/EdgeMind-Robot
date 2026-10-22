@@ -10,7 +10,7 @@ module a741_phy_init #(parameter CLK_HZ=50000000,RESET_MS=10,SETTLE_MS=50,TIMEOU
     output reg [31:0] identity,output reg [15:0] bmsr_initial,bmcr,bmsr_current,
     output reg [3:0] fault
 );
-    localparam HOLD_RESET=0,SETTLE=1,ISSUE=2,WAIT_DONE=3,GAP=4,FINISHED=5,FAILED=6;
+    localparam HOLD_RESET=0,SETTLE=1,ISSUE=2,LAUNCH=3,WAIT_DONE=4,GAP=5,FINISHED=6,FAILED=7;
     reg [2:0] state;
     reg [3:0] step;
     reg [31:0] timer;
@@ -29,7 +29,10 @@ module a741_phy_init #(parameter CLK_HZ=50000000,RESET_MS=10,SETTLE_MS=50,TIMEOU
                     timer<=0;state<=ISSUE;
                 end else timer<=timer+1'b1;
                 ISSUE: begin
-                    go<=1;timer<=0;state<=WAIT_DONE;
+                    // Present the MDIO command first.  The bit engine samples
+                    // Mode/Reg_addr when Go is asserted, so launch one clock
+                    // later after these nonblocking assignments have settled.
+                    go<=0;timer<=0;state<=LAUNCH;
                     case(step)
                         0:begin read_mode<=1;register_address<=2;end // PHYID1
                         1:begin read_mode<=1;register_address<=3;end // PHYID2
@@ -38,6 +41,9 @@ module a741_phy_init #(parameter CLK_HZ=50000000,RESET_MS=10,SETTLE_MS=50,TIMEOU
                         4:begin read_mode<=1;register_address<=1;end // BMSR latch refresh
                         default:begin go<=0;error<=1;fault<=4;state<=FAILED;end
                     endcase
+                end
+                LAUNCH: begin
+                    go<=1;timer<=0;state<=WAIT_DONE;
                 end
                 WAIT_DONE: if(done) begin
                     timer<=0;state<=GAP;

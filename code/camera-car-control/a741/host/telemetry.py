@@ -184,6 +184,7 @@ class TelemetryReceiver:
         self.lock = threading.Lock()
         self.snapshot = None
         self.phy_diagnostic = None
+        self.network_counters = None
         self.updated = None
         self.scan = ScanAssembler()
         self.errors = 0
@@ -226,6 +227,13 @@ class TelemetryReceiver:
                     return
                 self.snapshot, self.updated = snap, now
                 self.history.append((snap, now))
+            elif data[:4] == b"EMN1":
+                if len(data) != 32 or struct.unpack_from("<HH", data, 4) != (1, 32):
+                    raise ValueError("Invalid EMN1 network counters")
+                values=struct.unpack_from("<6I",data,8)
+                self.network_counters=dict(zip(("seq","fpga_ms","good_frames","bad_fcs",
+                                               "bad_frames","fifo_overflows"),values))
+                self.network_counters["host_received"]=now
             elif data[:4] == b"EMP1":
                 if len(data) != 32 or struct.unpack_from("<HH", data, 4) != (1, 32):
                     raise ValueError("Invalid EMP1 PHY diagnostic")
@@ -287,4 +295,5 @@ class TelemetryReceiver:
                     "discontinuities":self.scan.discontinuities,"last_reason":self.scan.last_discontinuity,
                     "completed_scans":self.scan.completed_id,"mapping_queue_dropped":self.mapping_dropped,
                     "receive_buffer_bytes":self.socket.getsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF),
-                    "phy":getattr(self,"phy_diagnostic",None)}
+                    "phy":getattr(self,"phy_diagnostic",None),
+                    "network_counters":getattr(self,"network_counters",None)}

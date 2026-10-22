@@ -199,7 +199,9 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                         if(req_l>400 || req_l< -400 || req_r>400 || req_r< -400) begin req_l=0;req_r=0;end
                         desired_l<=req_l;desired_r<=req_r;
                         heading_hold<=kind==8'h45 && req_l==req_r && req_l!=0;
-                        if(!heading_hold) heading_origin<=yaw;
+                        // Every new straight/arc command starts from the current
+                        // IMU heading; never reuse the previous task's origin.
+                        heading_origin<=yaw;
                         imu_required<=req_l!=0 || req_r!=0;command_age<=0;
                     end
                     8'h21: if(!armed && !moving && left_speed<20 && left_speed>-20 && right_speed<20 && right_speed>-20) faults<=0;

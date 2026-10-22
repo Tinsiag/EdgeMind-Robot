@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,PHY_DIAGNOSTICS=0)(
+module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,PHY_DIAGNOSTICS=0,NETWORK_DIAGNOSTICS=0)(
     input wire clk,rst_n,imu_int,lidar_rx,
     input wire [7:0] mac_diagnostic,
     input wire phy_ready,phy_error,
@@ -72,7 +72,8 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         .accumulated_yaw(relative),.gyro_bias(bias),.command_age(command_age),.calibration_result(cal_result));
     wire [7:0] td;wire tvld,tlast,trdy;wire [15:0] tlen;wire [31:0] dropped;
     reg [31:0] snapshot_seq;
-    wire [255:0] phy_snapshot={phy_diagnostic,now_ms,snapshot_seq,16'd32,16'd1,32'h31504d45};
+    wire [255:0] phy_snapshot={phy_diagnostic,now_ms,snapshot_seq,16'd32,16'd1,
+        (NETWORK_DIAGNOSTICS!=0 ? 32'h314e4d45:32'h31504d45)};
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin snapshot<=0;snapshot_seq<=0;end
         else if(ms_tick) begin
@@ -94,7 +95,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
             snapshot[791:784]<=cal_result;snapshot[799:792]<=0;
             snapshot[831:800]<=isq;snapshot[863:832]<=tsq;snapshot[895:864]<=lsq;
         end
-    a741_telemetry #(.PHY_DIAGNOSTICS(PHY_DIAGNOSTICS)) telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.snapshot(snapshot),
+    a741_telemetry #(.PHY_DIAGNOSTICS(PHY_DIAGNOSTICS),.NETWORK_DIAGNOSTICS(NETWORK_DIAGNOSTICS)) telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.snapshot(snapshot),
         .phy_snapshot(phy_snapshot),
         .lidar_update(lpv),.lidar_packet(lpacket),.lidar_time(lt),.lidar_seq(lsq),
         .data(td),.valid(tvld),.last(tlast),.length(tlen),.ready(trdy),.dropped(dropped));

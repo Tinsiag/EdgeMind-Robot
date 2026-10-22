@@ -26,6 +26,18 @@ def packet(start, end, seq=1, stamp=0):
 
 
 class HostTests(unittest.TestCase):
+    def test_network_counter_packet_independent_of_lidar(self):
+        receiver=object.__new__(TelemetryReceiver)
+        receiver.bytes=0;receiver.errors=0
+        data=struct.pack("<4sHH6I",b"EMN1",1,32,5,1000,123456,42,43,9)
+        receiver.ingest(data,now=2)
+        self.assertEqual(receiver.network_counters["bad_fcs"],42)
+        self.assertEqual(receiver.network_counters["good_frames"],123456)
+        self.assertEqual(receiver.network_counters["fifo_overflows"],9)
+        self.assertEqual(receiver.network_counters["host_received"],2)
+        receiver.ingest(data[:-1])
+        self.assertEqual(receiver.errors,1)
+
     def test_phy_diagnostic_layout_does_not_touch_scan(self):
         receiver=object.__new__(TelemetryReceiver)
         receiver.bytes=0;receiver.errors=0

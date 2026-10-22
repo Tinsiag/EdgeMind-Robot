@@ -2,7 +2,7 @@
 `default_nettype none
 // EMS1: 112-byte sensor/motion snapshot. EML1: 64-byte CRC-checked LD06 packet.
 // Both are sent on UDP 6103; snapshots are atomic under arbitrary backpressure.
-module a741_telemetry #(parameter PHY_DIAGNOSTICS=0)(
+module a741_telemetry #(parameter PHY_DIAGNOSTICS=0,NETWORK_DIAGNOSTICS=0)(
     input wire clk,rst_n,ms_tick,input wire [895:0] snapshot,
     input wire [255:0] phy_snapshot,
     input wire lidar_update,input wire [375:0] lidar_packet,
@@ -27,6 +27,7 @@ module a741_telemetry #(parameter PHY_DIAGNOSTICS=0)(
             if(ms_tick) begin
                 if(period==49) begin
                     period<=0;snapshot_due<=1;
+                    if(NETWORK_DIAGNOSTICS) phy_due<=1;
                     if(PHY_DIAGNOSTICS) begin
                         if(phy_period==19) begin phy_period<=0;phy_due<=1;end
                         else phy_period<=phy_period+1'b1;
@@ -40,7 +41,7 @@ module a741_telemetry #(parameter PHY_DIAGNOSTICS=0)(
                 pending_valid<=1;
             end
             if(!busy) begin
-                if(PHY_DIAGNOSTICS && phy_due) begin
+                if((PHY_DIAGNOSTICS || NETWORK_DIAGNOSTICS) && phy_due) begin
                     tx_buffer<={640'd0,phy_snapshot};size<=32;index<=0;busy<=1;phy_due<=0;
                 end
                 else if(snapshot_due) begin tx_buffer<=snapshot;size<=112;index<=0;busy<=1;snapshot_due<=0;end

@@ -1,5 +1,9 @@
 # EdgeMind-Robot
 
+## 2026-10-22 项目交接摘要
+
+当前摄像头/小车/LD06/MPU6500工程入口为 `code/camera-car-control/a741-imu-motion`。GUI提供分级日志、长按前进/后退/原地左右转、定距任务、摄像头、雷达和局部2D建图；地图可导出反向轨迹供后续导航模块使用。低速编码器无反馈故障 `0x0004` 仍属于待硬件确认问题，不能通过放宽保护掩盖。
+
 ## 2026-10-21 网口诊断交接
 
 本次依据用户提供的 RTL8211F-CG Rev.1.4 手册核对 A741 网口初始化。PHY 复位保持低电平至少 10 ms，释放后等待 50 ms；初始化只读取 PHYID、BMCR、BMSR，不写未在公开手册中定义的保留位。新增 `EMP1` 独立 PHY 诊断包，记录真实 PHY ID、状态寄存器、ready/error/fault 和复位等待参数；EMS1/EML1 协议保持兼容。详细说明见 [A741 网口诊断](code/camera-car-control/a741/docs/NETWORK-DIAGNOSIS.md)。
