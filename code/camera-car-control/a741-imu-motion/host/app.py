@@ -121,7 +121,6 @@ class App:
         ttk.Button(map_bar,text="暂停",command=lambda:self.mapper.command("pause")).pack(side="left",padx=3)
         ttk.Button(map_bar,text="保存",command=self.save_map).pack(side="left")
         ttk.Button(map_bar,text="导出返程路线",command=self.save_reverse_route).pack(side="left",padx=3)
-        ttk.Button(map_bar,text="返回起点",command=self.return_home).pack(side="left",padx=3)
         ttk.Button(map_bar,text="清空",command=lambda:self.mapper.command("clear")).pack(side="left",padx=3)
         ttk.Button(map_bar,text="+",width=3,command=lambda:self.zoom_map(1.25)).pack(side="left")
         ttk.Button(map_bar,text="-",width=3,command=lambda:self.zoom_map(.8)).pack(side="left")
@@ -369,11 +368,6 @@ class App:
                     if status.faults:
                         raise CalibrationRejected(f"FPGA 故障仍未清除：0x{status.faults:04x}；检查编码器反馈及车轮状态")
                     self.events.put(("message", "FPGA 故障已清除；下一次运动仍须人工启动"))
-                elif kind == "return_home":
-                    route=args[0];speed=args[1]
-                    self.events.put(("message", {"return_start":len(route),"speed":speed}))
-                    result=self.client.return_route(self.calibration,route,speed,self.cancel)
-                    self.events.put(("message",result))
                 else:
                     self.events.put(("message", {"motion_start": kind, "parameters": args}))
                     if kind == "drive":
@@ -555,18 +549,6 @@ class App:
         if path:
             try:self.log("map",self.mapper.save_reverse_route(path))
             except Exception as exc:messagebox.showerror("导出返程路线",str(exc))
-
-    def return_home(self):
-        if not self.connected or not self.client or not self.client.motion_lidar:
-            messagebox.showinfo("返回起点","请先连接运动+LD06固件")
-            return
-        try:
-            route=self.mapper.reverse_route()
-            speed=self.motion_speed()
-            if self.submit("return_home",route,speed):
-                self.log("message",{"return_home":"开始","segments":len(route),"speed":speed})
-        except Exception as exc:
-            messagebox.showerror("返回起点",str(exc))
 
     def draw_map(self,raw,pose,trajectory,generation):
         c=self.map_canvas

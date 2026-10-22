@@ -63,15 +63,6 @@ class MappingTests(unittest.TestCase):
         self.assertEqual(image.getpixel((2,0)),0)
         self.assertEqual(image.getpixel((0,2)),255)
 
-    def test_reverse_route_returns_reversed_sparse_trajectory(self):
-        worker=object.__new__(MappingWorker)
-        worker.lock=threading.Lock()
-        worker.trajectory=[(0,0,0),(20,0,0),(100,0,0),(180,0,0)]
-        route=worker.reverse_route(50)
-        self.assertEqual(route[0],(180,0,0))
-        self.assertEqual(route[-1],(0,0,0))
-        self.assertEqual(len(route),4)
-
     def test_native_room_occupancy_and_motion(self):
         engine=SlamEngine()
         try:

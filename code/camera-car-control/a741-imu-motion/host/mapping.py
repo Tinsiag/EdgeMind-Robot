@@ -239,20 +239,5 @@ class MappingWorker:
             "config":config,"note":"反向轨迹导出；当前版本不含定位/自主导航执行器"},ensure_ascii=False,indent=2),encoding="utf-8")
         return str(path)
 
-    def reverse_route(self, minimum_spacing_mm=80.0):
-        with self.lock:
-            points=list(reversed(self.trajectory))
-        if len(points)<2:
-            raise ValueError("没有足够的轨迹点可执行返程")
-        result=[points[0]]
-        for point in points[1:]:
-            if math.hypot(point[0]-result[-1][0],point[1]-result[-1][1]) >= minimum_spacing_mm:
-                result.append(point)
-        if result[-1] != points[-1]:
-            result.append(points[-1])
-        if len(result)<2:
-            raise ValueError("返程轨迹长度不足")
-        return tuple(result)
-
     def close(self):
         self.closed.set();self.thread.join(timeout=3)
