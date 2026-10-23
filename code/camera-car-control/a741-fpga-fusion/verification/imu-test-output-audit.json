@@ -1,0 +1,66 @@
+{
+  "variant": "A741-MPU6050-6500-IMU-TEST-MOTOR-LOCKED",
+  "bitstream_sha256": "e032c4eef8fabb4c51be836faf2b0db029af256c905db66471b8404c000fbf4b",
+  "netlist_sha256": "71fdfa74a9e0deb0c2133a8aadd9f49f91bb2c2a70693a20bbc463f978657fad",
+  "pin_report_sha256": "1cc48a40c58a710c29187f4ab6d59c984f4706856e16d474c370a6dae2f3ef14",
+  "motor_outputs_constant_zero": [
+    "left_in1",
+    "left_in2",
+    "right_in1",
+    "right_in2"
+  ],
+  "i2c_open_drain_verified": true,
+  "physical_assignments": {
+    "imu_scl": {
+      "ball": "L18",
+      "bank": 5,
+      "direction": "io",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    },
+    "imu_sda": {
+      "ball": "M20",
+      "bank": 5,
+      "direction": "io",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    },
+    "imu_ad0": {
+      "ball": "M17",
+      "bank": 5,
+      "direction": "in",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    },
+    "imu_xda": {
+      "ball": "A1",
+      "bank": 11,
+      "direction": "in",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    },
+    "imu_xcl": {
+      "ball": "B2",
+      "bank": 11,
+      "direction": "in",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    },
+    "imu_int": {
+      "ball": "B1",
+      "bank": 11,
+      "direction": "in",
+      "io_standard": "LVCMOS33",
+      "pull_mode": "NONE",
+      "configured_vccio": 3.3
+    }
+  },
+  "hardware_tested": false,
+  "bank_voltages_measured": false,
+  "timing_signed_off": false
+}

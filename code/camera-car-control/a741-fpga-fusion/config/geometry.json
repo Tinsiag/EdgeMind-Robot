@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "units": "mm",
+  "source_models": {
+    "lower_stl": "EdgeMind_Lower_254mm.stl",
+    "assembly_step": "EdgeMind_Assembly.step",
+    "step_length_unit": "millimetre",
+    "user_confirmed_matches_vehicle": true,
+    "user_confirmed_ld06": "black unit at centered front end, facing forward"
+  },
+  "lower_shell_bbox_mm": {
+    "x_extent": 180.0,
+    "y_extent": 254.0,
+    "z_extent": 28.0,
+    "stl_bounds": [[-90.0, -127.0, 57.7812], [90.0, 127.0, 85.7812]]
+  },
+  "wheel_track_mm": 234.0,
+  "wheel_track_source": "user measured wheel-center spacing",
+  "vehicle_outer_footprint_mm": null,
+  "wheel_axle_center_in_model_mm": null,
+  "lidar_origin_in_axle_frame_mm": null,
+  "lidar_height_mm": null,
+  "lidar_forward_axis": "vehicle forward, centered laterally",
+  "navigation_geometry_verified": false,
+  "navigation_enabled": false,
+  "reason_locked": "Assembly STEP products have no identifying names and wheel-axis/LiDAR scan-origin datums were not confirmed. Lower-shell dimensions cannot substitute for the complete wheel/body footprint."
+}

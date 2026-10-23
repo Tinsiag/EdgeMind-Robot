@@ -1,5 +1,20 @@
 # 摄像头与小车融合控制工程
 
+## 现阶段可用：A741 130843
+
+**2026-10-23 用户明确确认：`a741-imu-motion/release/A741-MOTION-LD06-H20-H14-20261022-130843/A741-MOTION-LD06-H20-H14.fs` 及其归档源码是现阶段能用的版本，优先使用并保留。**
+
+固件完整位置：
+
+```text
+C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\release\A741-MOTION-LD06-H20-H14-20261022-130843\A741-MOTION-LD06-H20-H14.fs
+SHA-256: e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e
+```
+
+日常上位机使用 `C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\launch.cmd`。当前维护代码见 [a741-imu-motion](a741-imu-motion/README.md)；精确发布源码保存在上述 `130843` 归档的 `rtl/host/config/scripts/sources`，编译清单和哈希以归档报告为准。工作源码已有后续修改，不宣称与原发布逐文件一致。
+
+`a741-fpga-fusion` 是独立未验收开发工程，导航几何锁定、时序未签核，不能替换此可用版本。`101036` 及下面各日期记录为历史依据。“能用”为用户反馈，不表示精度、低速 `0x0004` 或时序问题全部验收通过；不覆盖原发布包。
+
 ## 2026-10-22 当前状态
 
 推荐入口为 `a741-imu-motion`。其上位机支持摄像头、LD06、IMU、2D地图、长按手动控制、定距前进/后退、原地左右转和分级日志。短时UDP超时会记录为WARNING并保持连接。

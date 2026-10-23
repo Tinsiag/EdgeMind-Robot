@@ -1,5 +1,25 @@
 # EdgeMind-Robot
 
+## 现阶段可用版本：A741 130843（优先使用）
+
+**用户于 2026-10-23 明确确认：下面的 `130843` 固件及其归档代码是现阶段能用的版本。日常联调、恢复小车运动及后续修改优先以此版本为基准，必须保留，不要被更新日期更晚的实验固件替代。**
+
+| 内容 | 位置 |
+| --- | --- |
+| **当前可用固件** | `C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\release\A741-MOTION-LD06-H20-H14-20261022-130843\A741-MOTION-LD06-H20-H14.fs` |
+| **该固件对应的归档源码** | 同一 `130843` 目录中的 `rtl/`、`host/`、`config/`、`scripts/` 和 `sources/`；精确编译输入见 `source-manifest.json`、`result.json` |
+| 当前维护代码 | [a741-imu-motion](code/camera-car-control/a741-imu-motion/README.md)；此工作目录包含归档后的上位机及控制更新，不等同于原始发布快照 |
+| **日常上位机入口** | `C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\launch.cmd` |
+| 固件 SHA-256 | `e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e` |
+
+本次已实读固件并核对哈希一致。“现阶段可用”为用户实车反馈，不代表所有精度、低速故障或时序问题均已解决；该归档仍记录 `timing_signed_off=false`。固件、原厂 IP 和完整 release 为本机归档，按仓库忽略规则不随本次源码提交上传。
+
+**`a741-fpga-fusion` 仅为感知融合/导航开发验证版，不是当前可用版本，不用于替换 `130843`。** 几何未核实、时序未签核，未发布可用于运动的融合位流。旧 `101036` 是通信历史基线；A740 及下方各日期“最新”记录属于历史，不改变此处推荐。
+
+## 2026-10-23 FPGA 感知融合实验
+
+新增独立目录 [A741 FPGA 感知融合](code/camera-car-control/a741-fpga-fusion/README.md)：纯 RTL 的编码器/IMU 位姿融合、LD06 投影与保护、128×128 栅格、局部匹配、A* 与路径跟踪，以及地图 UDP/上位机界面。**不是已验收自动驾驶固件。** 完整车体/轮轴/雷达外参尚待核对，导航硬锁；本次综合/布线和时序状态以该目录 `verification/FUSION-RESULTS.json` 为准。保留此前确认的稳定固件 [A741-LD06 基线](code/camera-car-control/a741/release/A741-MOTION-LD06-H20-H14-20261022-101036/A741-MOTION-LD06-H20-H14.fs)，新工程不会覆盖它。
+
 ## 2026-10-22 项目交接摘要
 
 当前摄像头/小车/LD06/MPU6500工程入口为 `code/camera-car-control/a741-imu-motion`。GUI提供分级日志、长按前进/后退/原地左右转、定距任务、摄像头、雷达和局部2D建图；地图可导出反向轨迹供后续导航模块使用。低速编码器无反馈故障 `0x0004` 仍属于待硬件确认问题，不能通过放宽保护掩盖。
@@ -14,7 +34,9 @@
 
 基于 ACG720 FPGA 的自主移动机器人项目。当前底盘概念采用两台 MG513X 驱动后轮、两只前万向轮支撑的四轮结构，左右后轮差速转向。目标是先完成轮速闭环、传感器感知、视频链路与安全保护，再按需要扩展 Lichee Pi 4A 视觉计算。
 
-## 当前入口与状态（截至2026-10-21，优先阅读）
+## 历史入口与状态（截至2026-10-21）
+
+以下保留当时记录；现阶段固件和代码以本文顶部明确确认的 **A741 130843** 为准。
 
 新增 [A741 多传感器与运动控制](code/camera-car-control/a741/README.md)：独立实现IMU转角闭环、LD06扫描、DDR/HDMI与网络OSD、新上位机和回归。当前运动+LD06实验变体使用CTL H20 / DATA H14，电脑端新增局部扫描匹配的 [二维地图与导出](code/camera-car-control/a741/docs/MOTION-LIDAR-MAPPING.md)。MPU6050/MPU6500兼容采样已有用户有效数据反馈；机械轮距由用户实测234 mm。**VL53L1X未接入，无前向测距保护；板级电气及整板时序仍未签核，尚未实车建图验收。** 保留先前电机硬锁的IMU诊断包；A740交付包未覆盖。
 

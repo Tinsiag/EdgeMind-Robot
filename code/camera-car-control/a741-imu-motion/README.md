@@ -1,5 +1,19 @@
 # A741 IMU 运动增强版
 
+## 当前可用固件与代码：130843
+
+**用户于 2026-10-23 再次明确确认：`A741-MOTION-LD06-H20-H14-20261022-130843` 的固件及其归档代码是现阶段能用的版本，作为优先联调、恢复与后续开发基准保留。**
+
+```text
+固件：C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\release\A741-MOTION-LD06-H20-H14-20261022-130843\A741-MOTION-LD06-H20-H14.fs
+SHA-256：e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e
+上位机：C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\launch.cmd
+```
+
+对应原始代码在同一 `130843` 归档的 `rtl/`、`host/`、`config/`、`scripts/` 与 `sources/`，完整编译输入、参数和哈希见 `source-manifest.json`、`result.json` 和 `SHA256SUMS.json`。当前本目录是持续维护的工作代码，其中 `rtl/a741_motion.v`、若干主机文件和 `config/calibration.json` 已有归档后的修改；重现原固件请使用归档快照，不能直接把当前目录称为与位流完全一致。
+
+本次实读位流哈希与归档一致。“现阶段能用”记录用户实车结论，不抹去下面的历史故障、待标定项目或 `timing_signed_off=false`。融合/导航实验位于独立 `a741-fpga-fusion`，尚未验收，不替代本版本。发布包保持原样，本地 release 不随普通 Git 提交上传。
+
 ## 2026-10-22 起动反馈保护修正
 
 用户实测 A740 可基础移动，121949 增强版出现抖动和 faults=0x0004。源码确认该位为编码器无脉冲超时：旧版在目标非零后200ms判定，而速度斜坡为5 mm/s/10ms，PWM斜坡仅8/10ms。新配置74106将PWM斜坡改为32/10ms，速度斜坡与512/1024上限保持；编码器无脉冲窗口改为500ms（启动及运行均适用），不是取消保护。此调整增加堵转检出延迟，须架空验证，异常立即断VM。STOP、250ms命令超时和IMU失效停车不延迟。
