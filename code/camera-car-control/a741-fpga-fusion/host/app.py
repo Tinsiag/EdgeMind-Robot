@@ -179,8 +179,8 @@ class App:
         log_bar=ttk.Frame(self.root);log_bar.grid(row=3,column=0,sticky="ew",padx=8,pady=(8,0))
         ttk.Label(log_bar,text="日志级别").pack(side="left")
         ttk.OptionMenu(log_bar,self.log_filter,"ALL","ALL","INFO","DEBUG","WARNING","ERROR").pack(side="left",padx=5)
-        self.log_view = tk.Text(self.root, height=7, wrap="word", state="disabled", font=("Consolas", 10))
-        self.log_view.grid(row=4, column=0, sticky="ew", padx=8, pady=8)
+        self.log_view = tk.Text(self.root, height=5, wrap="word", state="disabled", font=("Consolas", 10))
+        self.log_view.grid(row=4, column=0, sticky="ew", padx=8, pady=4)
 
     def log(self, kind, value, level=None):
         if level is None:

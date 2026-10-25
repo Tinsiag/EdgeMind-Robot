@@ -62,7 +62,10 @@ def main():
         shutil.copytree(ROOT / "third_party/coreslam", dest / "third_party/coreslam")
         shutil.copytree(ROOT / "native", dest / "native")
         (dest / ".local/mapping").mkdir(parents=True)
-        shutil.copyfile(ROOT / ".local/mapping/edgemind_slam.dll", dest / ".local/mapping/edgemind_slam.dll")
+        mapping_library = next((ROOT / ".local/mapping").glob("edgemind_slam.*"), None)
+        if mapping_library is None:
+            raise RuntimeError("Run scripts/setup_mapping.py before archiving motion+LD06")
+        shutil.copyfile(mapping_library, dest / ".local/mapping" / mapping_library.name)
         shutil.copyfile(ROOT / "requirements-mapping-build.txt", dest / "requirements-mapping-build.txt")
     shutil.copyfile(ROOT / "verification/ACCEPTANCE.md", dest / "ACCEPTANCE-PENDING.md")
     shutil.copyfile(ROOT / "verification/mpu6050-reference.json", dest / "mpu6050-reference.json")

@@ -1,12 +1,12 @@
 # 任务3/4与RGB屏验证结果
 
-记录时间：2026-10-25T09:48:26.798591+08:00
+> CURRENT CHECKPOINT: The user now requests simple autonomous obstacle avoidance. See [root handoff](../../../../HANDOFF-20261025.md). Latest saved Linux regression: **57 RTL / 61 Python passed**; routing failed at 90% with **7463 unrouted nets**, not a timeout. No current deliverable bitstream, timing sign-off or hardware acceptance. Older dated sections below remain historical records.
 
-RTL 55组、Python 61项通过；后端 `wsl:Ubuntu-26.04`；当前输入哈希一致。
+记录时间：2026-10-26T00:38:40.151148+08:00
 
-用户已于09:44:48要求暂停。另有独立连续突发障碍诊断失败，未计入这55组通过；首要接续问题、从GitHub恢复步骤及失败复现命令见仓库根`HANDOFF-20261025.md`。本报告不能作为连续绕障或实车通过证明。
+RTL 57组、Python 61项通过；后端 `linux-native`；当前输入哈希一致。
 
-本轮模式`synth`；完整工具流程：尚未完成，阶段耗时247.6秒；时序尚未签核；未发布运动固件。
+本轮模式`build`；完整工具流程：尚未完成，阶段耗时1413.4秒；时序尚未签核；未发布运动固件。
 
 时序违例：`{}`；最差裕量ns：`{}`；最小脉宽最差裕量ns：`None`。
 
@@ -26,7 +26,7 @@ RTL 55组、Python 61项通过；后端 `wsl:Ubuntu-26.04`；当前输入哈希�
 
 CAD推导前/后/半宽为221/70/131mm，旋转半径257mm，雷达前偏164mm。运动学继续采用用户实测234mm轮距；实车外廓与精确扫描高度未验收。
 
-管脚冲突0项；综合器资源原始字段：`{"name": "a741_top", "Register": "46", "Lut": "51", "T_Register": "27236(46)", "T_Alu": "5241(0)", "T_Lut": "35218(51)", "T_MULTALU27X18": "18(0)", "T_MULT12X12": "16(0)", "T_MULT27X36": "25(0)", "T_MULTADDALU12X12": "1(0)", "T_Bsram": "81(0)"}`。
+管脚冲突0项；综合器资源原始字段：`{"name": "a741_top", "Register": "46", "Lut": "53", "T_Register": "27780(46)", "T_Alu": "5554(0)", "T_Lut": "35824(53)", "T_MULTALU27X18": "18(0)", "T_MULT12X12": "16(0)", "T_MULT27X36": "30(0)", "T_MULTADDALU12X12": "1(0)", "T_Bsram": "81(0)"}`。
 
 未烧录、未ARM、未驱动电机，未验证屏幕实物或真正断电重启。原130843归档在本机缺失，未覆盖或重新冒称原基线。
 

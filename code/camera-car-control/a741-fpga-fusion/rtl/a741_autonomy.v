@@ -7,6 +7,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
     input wire travel_tick,travel_valid,input wire signed [31:0] left_travel,right_travel,manual_left,manual_right,
     input wire signed [15:0] yaw,input wire [15:0] motor_faults,
     input wire lidar_point,input wire [15:0] lidar_angle,lidar_distance,input wire [7:0] lidar_confidence,
+    input wire [15:0] lidar_front,lidar_left,lidar_right,
     input wire command,input wire [7:0] kind,input wire [255:0] payload,
     output reg reply_done,output reg [255:0] reply,
     output wire drive_enabled,force_stop,output wire signed [31:0] drive_left,drive_right,
@@ -17,6 +18,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
     ,output wire mission_busy,mission_arrived,mission_failed
 );
     reg building,committed,pose_seeded,target_set,request_nav,nav_running,allow_generated_crc,preview_only;
+    reg avoid_running,avoid_turning,avoid_turn_left;
     reg [3:0] navigation_phase;
     reg [15:0] replan_wait;reg [2:0] replans;
     reg [9:0] transfer_ms;
@@ -28,7 +30,35 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
     wire pose_valid,pose_overrun;
     wire point_done,scan_end,project_overflow;
     wire signed [31:0] ex,ey,ox,oy,bx,by;wire [15:0] body_angle,range_mm;
-    wire safe_scan,rotation_clear;wire [15:0] rear_distance,min_distance,clearance;
+    wire safe_scan,rotation_clear,nav_sensor_stop;
+    wire [9:0] nav_sensor_limit;
+    wire [15:0] nav_front_distance,rear_distance,min_distance,clearance;
+    localparam [15:0] AVOID_STOP_MM=16'd450,AVOID_SLOW_MM=16'd900,
+        AVOID_CLEAR_MM=16'd600,AVOID_SIDE_MM=16'd500;
+    localparam signed [31:0] AVOID_CRUISE=32'sd120,AVOID_SLOW=32'sd60,
+        AVOID_TURN=32'sd80;
+    wire avoid_lidar_ok=lidar_valid && lidar_front!=16'hffff &&
+        lidar_left!=16'hffff && lidar_right!=16'hffff;
+    wire avoid_left_open=avoid_lidar_ok && lidar_left>=AVOID_SIDE_MM;
+    wire avoid_right_open=avoid_lidar_ok && lidar_right>=AVOID_SIDE_MM;
+    wire avoid_turn_blocked=avoid_turning &&
+        ((avoid_turn_left && !avoid_left_open) ||
+         (!avoid_turn_left && !avoid_right_open));
+    wire avoid_sensor_stop=!avoid_lidar_ok || avoid_turn_blocked ||
+        (!avoid_turning && lidar_front<=AVOID_STOP_MM &&
+         !avoid_left_open && !avoid_right_open);
+    wire signed [31:0] avoid_left_cmd=avoid_sensor_stop ? 32'sd0 :
+        avoid_turning ? (avoid_turn_left ? -AVOID_TURN:AVOID_TURN) :
+        (lidar_front<=AVOID_STOP_MM ? 32'sd0 :
+         lidar_front<=AVOID_SLOW_MM ? AVOID_SLOW:AVOID_CRUISE);
+    wire signed [31:0] avoid_right_cmd=avoid_sensor_stop ? 32'sd0 :
+        avoid_turning ? (avoid_turn_left ? AVOID_TURN:-AVOID_TURN) :
+        (lidar_front<=AVOID_STOP_MM ? 32'sd0 :
+         lidar_front<=AVOID_SLOW_MM ? AVOID_SLOW:AVOID_CRUISE);
+    wire [9:0] avoid_limit=!avoid_lidar_ok ? 10'd0 :
+        avoid_turning ? 10'd80 :
+        lidar_front<=AVOID_STOP_MM ? 10'd0 :
+        lidar_front<=AVOID_SLOW_MM ? 10'd60:10'd120;
     // Assess the requested direction before the final pose/stop output gates.
     // Feeding gated drive outputs back here lengthens the safety feedback path
     // and loses direction information exactly when a stop gate becomes active.
@@ -44,8 +74,8 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
         .body_x(bx),.body_y(by),.body_angle_cdeg(body_angle),.range_mm(range_mm));
     a741_lidar_safety #(.BODY_COORDINATES(1),.FRONT_EXTENT(FRONT_EXTENT),.REAR_EXTENT(REAR_EXTENT),.HALF_WIDTH(HALF_WIDTH)) safety(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lidar_valid && !project_overflow),
         .point_valid(point_done),.scan_end(scan_end),.angle_cdeg(body_angle),.distance_mm(range_mm),.rotation_radius_mm(16'(RADIUS_MM)),
-        .requested_left(safety_l),.requested_right(safety_r),.point_x(bx),.point_y(by),.stop(sensor_stop),.rotation_clear(rotation_clear),.scan_valid(safe_scan),
-        .front_mm(front_distance),.rear_mm(rear_distance),.min_mm(min_distance),.clearance_mm(clearance),.speed_limit(sensor_limit));
+        .requested_left(safety_l),.requested_right(safety_r),.point_x(bx),.point_y(by),.stop(nav_sensor_stop),.rotation_clear(rotation_clear),.scan_valid(safe_scan),
+        .front_mm(nav_front_distance),.rear_mm(rear_distance),.min_mm(min_distance),.clearance_mm(clearance),.speed_limit(nav_sensor_limit));
 
     wire ray_busy,ray_update,ray_done,ray_invalid;
     wire [6:0] ray_x,ray_y;wire [1:0] ray_value;
@@ -74,11 +104,19 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
             tracking_limit<=limit;
             tracking_turn_limit<=rotation_clear ? sensor_limit:10'd0;
         end
-    assign drive_enabled=nav_running || (request_nav && !preview_only);
-    assign drive_left=request_nav ? 32'sd0:guard_search && !guard_stop ? -32'sd40:guard_active && !guard_stop ? tracker_left:32'sd0;
-    assign drive_right=request_nav ? 32'sd0:guard_search && !guard_stop ? 32'sd40:guard_active && !guard_stop ? tracker_right:32'sd0;
-    assign force_stop=nav_running && (guard_locked || tracker_fault || !safe_scan || replans==7);
-    assign mission_busy=nav_running || request_nav;
+    assign sensor_stop=avoid_running ? avoid_sensor_stop:nav_sensor_stop;
+    assign sensor_limit=avoid_running ? avoid_limit:nav_sensor_limit;
+    assign front_distance=avoid_running ? lidar_front:nav_front_distance;
+    assign drive_enabled=avoid_running || nav_running || (request_nav && !preview_only);
+    assign drive_left=avoid_running ? avoid_left_cmd:
+        request_nav ? 32'sd0:guard_search && !guard_stop ? -32'sd40:
+        guard_active && !guard_stop ? tracker_left:32'sd0;
+    assign drive_right=avoid_running ? avoid_right_cmd:
+        request_nav ? 32'sd0:guard_search && !guard_stop ? 32'sd40:
+        guard_active && !guard_stop ? tracker_right:32'sd0;
+    assign force_stop=(avoid_running && (!armed || !link_alive || motor_faults!=0)) ||
+        (nav_running && (guard_locked || tracker_fault || !safe_scan || replans==7));
+    assign mission_busy=avoid_running || nav_running || request_nav;
     assign mission_arrived=arrived && !request_nav;
     assign mission_failed=guard_locked || tracker_fault || plan_fail || replans==7;
 
@@ -133,7 +171,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
     endfunction
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
-            building<=0;committed<=0;pose_seeded<=0;target_set<=0;request_nav<=0;nav_running<=0;revision<=0;navigation_phase<=0;allow_generated_crc<=0;preview_only<=0;
+            building<=0;committed<=0;pose_seeded<=0;target_set<=0;request_nav<=0;nav_running<=0;avoid_running<=0;avoid_turning<=0;avoid_turn_left<=0;revision<=0;navigation_phase<=0;allow_generated_crc<=0;preview_only<=0;
             clear_map<=0;set_pose<=0;set_x<=0;set_y<=0;set_yaw<=0;goal_x<=0;goal_y<=0;goal_yaw<=0;
             transfer_ms<=0;replan_wait<=0;replans<=0;
             reply_done<=0;reply<=0;host_write<=0;host_read<=0;host_address<=0;host_value<=0;
@@ -158,6 +196,16 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
                 search_ms<=search_ms+1'b1;
                 if(search_delta>=5461) search_done<=1;
             end
+            if(ms_tick && avoid_running && avoid_lidar_ok) begin
+                if(avoid_turning) begin
+                    if(lidar_front>=AVOID_CLEAR_MM) avoid_turning<=0;
+                end else if(lidar_front<=AVOID_STOP_MM &&
+                             (avoid_left_open || avoid_right_open)) begin
+                    avoid_turning<=1;
+                    avoid_turn_left<=avoid_left_open && (!avoid_right_open ||
+                        lidar_left>=lidar_right);
+                end
+            end
             if(nav_running && !request_nav && guard_active && safe_scan &&
                 ((sensor_stop && (drive_left!=0 || drive_right!=0)) || tracker_blocked) && replans<7) begin
                 request_nav<=1;navigation_phase<=7;preview_only<=0;replan_wait<=0;replans<=replans+1'b1;
@@ -180,12 +228,13 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
             endcase
             // A previous leg's sticky arrived flag clears on route_begin.
             // It must not cancel the next leg in the cycle before that clear.
-            if((plan_fail && navigation_phase==5) || guard_locked || (arrived && nav_running) || tracker_fault || !link_alive || motor_faults!=0 || (nav_running && !armed)) begin
+            if(avoid_running && (!link_alive || motor_faults!=0 || !armed)) begin avoid_running<=0;avoid_turning<=0;end
+              if((plan_fail && navigation_phase==5) || guard_locked || (arrived && nav_running) || tracker_fault || !link_alive || motor_faults!=0 || (nav_running && !armed)) begin
                 request_nav<=0;nav_running<=0;navigation_phase<=0;
             end
-            if(command && (kind==3 || kind==4 || kind==8'h56)) begin nav_cancel<=1;nav_running<=0;request_nav<=0;end
+            if(command && (kind==3 || kind==4 || kind==8'h56 || (kind==8'h59 && payload[7:0]==0))) begin nav_cancel<=1;nav_running<=0;request_nav<=0;end
             if(command && kind==8'h21) nav_clear<=1;
-            if(command && kind>=8'h50 && kind<=8'h57 && op_state==0) begin
+            if(command && kind>=8'h50 && kind<=8'h59 && op_state==0) begin
                 reply<=0;reply[7:0]<=0;reply_done<=1;
                 case(kind)
                     8'h50:if(armed || nav_running || plan_busy || inflate_busy || payload[7:0]>1) reply[7:0]<=2;
@@ -224,7 +273,15 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
                         reply[191:176]<=route_remaining;reply[207:192]<=expanded;
                         reply[239:208]<=CONFIG_CRC;
                     end
-                    default:;
+                      8'h59:if(payload[7:0]>1 ||
+                              (payload[7:0]==1 && (!armed || nav_running || request_nav)))
+                              reply[7:0]<=1;
+                          else begin
+                              avoid_running<=payload[7:0]==1;
+                              avoid_turning<=0;
+                              avoid_turn_left<=0;
+                          end
+                      default:;
                 endcase
             end
             case(op_state)

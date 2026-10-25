@@ -31,8 +31,10 @@ def map_display_image(raw, pixels=600):
 class SlamEngine:
     def __init__(self, pixels=600, meters=30):
         self.pixels, self.meters = pixels, meters
-        path = ROOT / ".local/mapping/edgemind_slam.dll"
-        if not path.is_file():
+        candidates = (ROOT / ".local/mapping/edgemind_slam.dll",
+                      ROOT / ".local/mapping/edgemind_slam.so")
+        path = next((candidate for candidate in candidates if candidate.is_file()), None)
+        if path is None:
             raise RuntimeError("建图内核未安装，请运行 scripts/setup_mapping.py")
         self.lib = ct.CDLL(str(path))
         self.lib.em_create.argtypes = [ct.c_int, ct.c_double];self.lib.em_create.restype = ct.c_void_p

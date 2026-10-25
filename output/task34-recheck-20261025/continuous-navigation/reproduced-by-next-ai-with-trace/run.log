@@ -1,0 +1,55 @@
+trace synthetic map committed; waiting for localization
+trace synthetic localization quality=100
+trace synthetic preview complete
+trace synthetic tracking running
+trace match=20 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(127.0,25.0) estimated=(127,25) localized=1
+trace t=10000ms true=(176.8,25.0,0.0deg) estimated=(176,25,0) drive=(60,60) forward=100 left=0 cap=60 blocked=0 rotation_clear=1 min_mm=520 localized=1 navigation_phase=0 replans=0
+trace match=40 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(183.1,25.0) estimated=(183,25) localized=1
+trace match=60 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(193.0,25.0) estimated=(193,25) localized=1
+trace match=80 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(199.9,25.0) estimated=(199,25) localized=1
+trace match=100 accepted=1 best=36 second=22 samples=36 correction=(0,0,0) true=(205.2,25.0) estimated=(205,25) localized=1
+trace match=120 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(209.2,25.0) estimated=(209,25) localized=1
+trace match=140 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(211.8,25.0) estimated=(211,25) localized=1
+trace t=20000ms true=(212.2,25.0,0.0deg) estimated=(212,25,0) drive=(1,1) forward=113 left=0 cap=1 blocked=0 rotation_clear=1 min_mm=483 localized=1 navigation_phase=0 replans=0
+trace match=160 accepted=1 best=36 second=22 samples=36 correction=(0,0,0) true=(213.5,25.0) estimated=(213,25) localized=1
+trace match=180 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(215.2,25.0) estimated=(215,25) localized=1
+trace match=200 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(217.0,25.0) estimated=(216,25) localized=1
+trace t=30000ms true=(217.8,25.0,0.0deg) estimated=(217,25,0) drive=(0,0) forward=108 left=0 cap=0 blocked=0 rotation_clear=1 min_mm=477 localized=0 navigation_phase=5 replans=1
+trace t=40000ms true=(217.8,25.0,0.0deg) estimated=(217,25,0) drive=(0,0) forward=108 left=0 cap=0 blocked=0 rotation_clear=1 min_mm=477 localized=0 navigation_phase=5 replans=1
+trace t=50000ms true=(217.8,25.0,0.0deg) estimated=(217,25,0) drive=(0,0) forward=108 left=0 cap=0 blocked=0 rotation_clear=1 min_mm=477 localized=0 navigation_phase=5 replans=1
+trace match=220 accepted=1 best=36 second=22 samples=36 correction=(0,0,0) true=(217.8,25.0) estimated=(217,25) localized=1
+trace match=240 accepted=1 best=36 second=27 samples=36 correction=(0,0,0) true=(230.1,12.9) estimated=(230,12) localized=1
+trace match=260 accepted=1 best=36 second=25 samples=36 correction=(0,0,0) true=(257.4,-50.5) estimated=(257,-51) localized=1
+trace match=280 accepted=1 best=36 second=23 samples=36 correction=(0,0,0) true=(246.9,-153.1) estimated=(246,-154) localized=1
+trace t=60000ms true=(227.6,-245.8,-97.8deg) estimated=(227,-246,-17818) drive=(48,72) forward=79 left=9 cap=60 blocked=0 rotation_clear=1 min_mm=422 localized=1 navigation_phase=0 replans=1
+trace match=300 accepted=1 best=36 second=23 samples=36 correction=(0,0,0) true=(226.4,-254.8) estimated=(226,-255) localized=1
+trace match=320 accepted=1 best=36 second=24 samples=36 correction=(0,0,0) true=(221.2,-357.7) estimated=(221,-358) localized=1
+trace match=340 accepted=1 best=36 second=27 samples=36 correction=(0,0,0) true=(239.4,-436.8) estimated=(239,-437) localized=1
+trace match=360 accepted=1 best=36 second=23 samples=36 correction=(0,0,0) true=(287.3,-491.0) estimated=(287,-491) localized=1
+trace match=380 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(346.3,-509.8) estimated=(346,-510) localized=1
+trace match=400 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(448.2,-491.8) estimated=(448,-492) localized=1
+trace t=70000ms true=(519.3,-477.3,8.0deg) estimated=(518,-478,1469) drive=(73,47) forward=106 left=-13 cap=60 blocked=0 rotation_clear=1 min_mm=402 localized=1 navigation_phase=0 replans=1
+trace match=420 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(549.7,-473.8) estimated=(549,-474) localized=1
+trace match=440 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(653.4,-471.2) estimated=(653,-472) localized=1
+trace match=460 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(757.2,-473.6) estimated=(757,-474) localized=1
+trace match=480 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(860.9,-475.4) estimated=(861,-476) localized=1
+trace match=500 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(964.7,-475.7) estimated=(964,-476) localized=1
+trace match=520 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(1067.9,-475.7) estimated=(1068,-476) localized=1
+trace t=80000ms true=(1118.9,-474.9,5.5deg) estimated=(1118,-475,965) drive=(20,100) forward=62 left=44 cap=60 blocked=0 rotation_clear=1 min_mm=456 localized=1 navigation_phase=0 replans=1
+trace match=540 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(1146.7,-469.9) estimated=(1146,-470) localized=1
+trace match=560 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(1195.8,-424.2) estimated=(1195,-424) localized=1
+trace match=580 accepted=1 best=36 second=23 samples=36 correction=(0,0,0) true=(1215.6,-364.1) estimated=(1215,-364) localized=1
+trace match=600 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(1228.1,-266.9) estimated=(1228,-267) localized=1
+trace match=620 accepted=1 best=36 second=21 samples=36 correction=(0,0,0) true=(1287.2,-183.6) estimated=(1287,-184) localized=1
+trace match=640 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(1345.8,-136.2) estimated=(1345,-136) localized=1
+trace t=90000ms true=(1358.7,-126.6,36.6deg) estimated=(1358,-127,6671) drive=(33,33) forward=84 left=1 cap=33 blocked=0 rotation_clear=1 min_mm=421 localized=1 navigation_phase=0 replans=1
+trace match=660 accepted=1 best=36 second=22 samples=36 correction=(0,0,0) true=(1388.0,-104.6) estimated=(1388,-105) localized=1
+trace match=680 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(1420.8,-77.4) estimated=(1420,-78) localized=1
+trace match=700 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(1446.7,-53.9) estimated=(1446,-54) localized=1
+trace match=720 accepted=1 best=36 second=22 samples=36 correction=(0,0,0) true=(1466.8,-34.6) estimated=(1466,-35) localized=1
+trace match=740 accepted=1 best=36 second=23 samples=36 correction=(0,0,0) true=(1476.1,-25.5) estimated=(1476,-26) localized=1
+PASS continuous ideal plant bypasses unexpected obstacle and reaches 1500mm goal true=(1476.08,-25.49) ticks=9898 moves=6454
+- /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:115: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 495ms; walltime 29.444 s; speed 16.820 ms/s
+- Verilator: cpu 29.423 s on 1 threads; alloced 57 MB

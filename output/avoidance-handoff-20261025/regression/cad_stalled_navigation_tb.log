@@ -1,0 +1,17 @@
+trace synthetic map committed; waiting for localization
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic localization quality=100
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic preview complete
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace synthetic tracking running
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=254 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=254 rear=920 overflow=0
+PASS CAD rounded-zero obstacle triggers replan, persistent obstacle permits only checked escape turn, link loss stops
+- /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v:84: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 197ms; walltime 13.283 s; speed 14.853 ms/s
+- Verilator: cpu 13.273 s on 1 threads; alloced 57 MB

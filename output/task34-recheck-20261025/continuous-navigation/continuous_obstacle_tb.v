@@ -52,8 +52,8 @@ module continuous_obstacle_tb;
             if(true_x>=175.0) obstacle_present=1;
             if(vl!=0.0 || vr!=0.0) move_ticks=move_ticks+1;
             if(robot_ticks%1000==0) begin
-                $display("trace t=%0dms true=(%0.1f,%0.1f,%0.1fdeg) estimated=(%0d,%0d,%0d) drive=(%0d,%0d) phase=%0d state=%0d loc=%0d quality=%0d front=%0d replans=%0d",robot_ticks*10,true_x,true_y,true_theta*180.0/3.141592653589793,pose_x,pose_y,pose_heading,drive_left,drive_right,dut.navigation_phase,nav_state,dut.localized,localization_quality,front_distance,dut.replans);$fflush();
-            end
+            $display("trace t=%0dms true=(%0.1f,%0.1f,%0.1fdeg) estimated=(%0d,%0d,%0d) drive=(%0d,%0d) forward=%0d left=%0d cap=%0d blocked=%0d rotation_clear=%0d min_mm=%0d localized=%0d navigation_phase=%0d replans=%0d", robot_ticks*10,true_x,true_y,true_theta*180.0/3.141592653589793,pose_x,pose_y,pose_heading,drive_left,drive_right,dut.tracker.forward,dut.tracker.left,dut.tracker.cap,dut.tracker_blocked,dut.rotation_clear,dut.min_distance,dut.localized,dut.navigation_phase,dut.replans);$fflush();
+        end
         end
     end
     integer n=0;real a,c,s,dx,dy,d,origin_x,origin_y,bx,by,projected,discriminant,obstacle_range;

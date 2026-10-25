@@ -79,7 +79,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
     wire [7:0] mrd,mtd,mkind;wire mrv,mrl,mrb,mrr,mtv,mtl,mtr,mcommand,mwaiting;
     wire [15:0] mlen;wire [255:0] mpayload;
     reg map_owner,pending_control;reg [7:0] pending_kind;reg [255:0] pending_payload;
-    wire control_is_nav=fkind>=8'h50 && fkind<=8'h58;
+    wire control_is_nav=fkind>=8'h50 && fkind<=8'h59;
     wire deferred=pending_control && !mwaiting && !map_owner;
     wire acmd=mcommand || deferred || (fcommand && (!control_is_nav || !map_owner));
     wire [7:0] akind=mcommand ? mkind:deferred ? pending_kind:fkind;
@@ -103,7 +103,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         wire [31:0] mission_progress;
         wire nav_busy,nav_arrived,nav_failed;
         reg mission_reply_owner,rejected_nav_reply,mission_session;
-        wire rejected_nav=acmd && akind>=8'h50 && akind<=8'h57 && akind!=8'h56 &&
+        wire rejected_nav=acmd && ((akind>=8'h50 && akind<=8'h57 && akind!=8'h56) || akind==8'h59) &&
             ((cpu_owns && akind<=8'h55) || mission_reply_owner || cpu_command);
         wire external_nav=acmd && akind!=8'h58 && !rejected_nav;
         a741_mission_cpu mission(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),
@@ -133,12 +133,13 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
             .armed(armed),.link_alive(flink),.travel_tick(travel_tick),.travel_valid(travel_valid),.left_travel(left_travel),.right_travel(right_travel),
             .manual_left(manual_l),.manual_right(manual_r),.yaw(heading_positive ? yaw:-yaw),.motor_faults(faults),
             .lidar_point(lidar_point),.lidar_angle(lidar_angle),.lidar_distance(lidar_distance),.lidar_confidence(lidar_confidence),
+              .lidar_front(front),.lidar_left(lside),.lidar_right(rside),
             .command(external_nav || cpu_command),.kind(cpu_command ? cpu_kind:akind),.payload(cpu_command ? cpu_payload:apayload),
             .reply_done(autonomy_reply_done),.reply(autonomy_reply),.drive_enabled(autonomy_owns),.force_stop(autonomy_stop),
             .mission_busy(nav_busy),.mission_arrived(nav_arrived),.mission_failed(nav_failed),
             .drive_left(fl),.drive_right(fr),.sensor_stop(fobstacle),.sensor_limit(flimit),.pose_x(pose_x),.pose_y(pose_y),.pose_heading(pose_heading),
             .nav_state(nav_state),.nav_fault(nav_fault),.localization_quality(quality),.front_distance(ffront),.map_revision(map_revision));
-        assign mission_alive=cpu_owns && cpu_alive;
+        assign mission_alive=autonomy_owns || (cpu_owns && cpu_alive);
         assign mission_display={5'd0,cpu_fault,cpu_alive,cpu_owns,mission_progress};
     end else begin
         assign freply_valid=0;assign freply=0;assign fowns=0;assign fstop=0;assign fobstacle=0;assign flimit=400;

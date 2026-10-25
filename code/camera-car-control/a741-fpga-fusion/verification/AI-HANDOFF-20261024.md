@@ -1,5 +1,23 @@
 # 给下一位 AI 的交接说明
 
+> CURRENT CHECKPOINT: The user now requests simple autonomous obstacle avoidance. See [root handoff](../../../../HANDOFF-20261025.md). Latest saved Linux regression: **57 RTL / 61 Python passed**; routing failed at 90% with **7463 unrouted nets**, not a timeout. No current deliverable bitstream, timing sign-off or hardware acceptance. Older dated sections below remain historical records.
+
+## 本轮最终检查点（2026-10-25，Linux 虚拟机）
+
+本轮已经完成并重新核对：
+
+- Git 基线为 `6a32a56`，项目位于 `/home/smallcoral/Dev/EdgeMind-Robot-main`；当前工作区保留未提交修改和连续导航诊断产物，禁止用 `git reset` 或覆盖这些文件。
+- RTL 回归 **56 组通过**，Python/主机回归 **61 项通过**；Flash 工具离线测试 **9 项通过**，GUI 布局检查通过。
+- 连续障碍导航夹具通过：最终位置约 `(1476.08, -25.49)`，`replans=1`、`rotation_clear=1`、`blocked=0`，完成定位恢复并到达目标。证据位于 `output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/result.json` 和同目录 `run.log`。这是合成理想运动模型验证，不是实车几何、制动或运动验收。
+- 已按用户指定的算法一运行整板 PNR：`route_option=1`、`place_option=1`，并保留时序驱动、hold 修复和时钟检查。综合阶段完成，`clk` 综合估算约 `50.540 MHz / 50 MHz`；PNR 在 `3600.0716 s` 超时，日志停在 `Routing Phase 0 completed`。
+- 当前没有可交付 `.fs`、没有最终 `.tr`，`timing_signed_off=false`、`compile_passed=false`、`hardware_programmed=false`；未烧录、未上电、未 ARM、未驱动电机，也没有运行实车。
+- PNR 结果见 `.local/gowin-fusion-tft480/result.json`，日志见 `.local/gowin-fusion-tft480/impl/pnr/a741.log`；输入哈希已与当前源码核对一致。
+- Linux Gowin IDE/Programmer 已安装在 `/home/smallcoral/tools/IDE` 和 `/home/smallcoral/tools/Programmer`，许可证已配置；Linux CoreSLAM 库为 `code/camera-car-control/a741-fpga-fusion/.local/mapping/edgemind_slam.so`。这些工具就绪不等于位流已经生成或硬件已验证。
+- `physical_geometry_verified=false`；原始 `A741-MOTION-LD06-H20-H14-20261022-130843` 位流归档仍缺失，不能把重编译结果冒称原基线。
+
+下一步若继续，只能在用户明确要求后重跑算法一 PNR或先做针对性时序/布线优化；不要用算法二掩盖本轮超时，不要复用未核对输入的旧网表，也不要烧录任何旧 `.fs`。如需给小车上电，必须先提醒用户并确认电机 VM 已关闭。
+
+
 记录时间：2026-10-24，北京时间。工作区为 `C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot`。
 
 **接续更新（2026-10-24 23:40）：用户已恢复开发。本轮50组RTL/61项主机测试通过，整板综合估算50.153MHz；PNR达到1800秒超时上限，没有位流或最终时序报告。现场与本轮改动保存在仓库`output/task34-resume-20261024/`，当前结果见[TASK3-4-REPORT.md](TASK3-4-REPORT.md)。未烧录、Reprogram、ARM或驱动电机，尚未达到用户要求的上电验收阶段。下方保留原交接时状态。**

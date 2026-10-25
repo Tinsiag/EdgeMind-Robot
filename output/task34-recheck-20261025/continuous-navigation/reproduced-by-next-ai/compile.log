@@ -1,0 +1,1431 @@
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v:64:40: Cell has missing pin: 'tx_first'
+   64 |     a741_udp_direct #(.CLK_HZ(CLK_HZ)) bridge(.clk(clk),.rst_n(rst_n),
+      |                                        ^~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_direct.v:8:51: ... Location of port declaration
+    8 |     output reg [7:0] tx_data,output wire tx_valid,tx_first,tx_last,
+      |                                                   ^~~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.032
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'mem_la_read'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:103:20: ... Location of port declaration
+  103 |  output            mem_la_read,
+      |                    ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'mem_la_write'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:104:20: ... Location of port declaration
+  104 |  output            mem_la_write,
+      |                    ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'mem_la_addr'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:105:20: ... Location of port declaration
+  105 |  output     [31:0] mem_la_addr,
+      |                    ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'mem_la_wdata'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:106:20: ... Location of port declaration
+  106 |  output reg [31:0] mem_la_wdata,
+      |                    ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'mem_la_wstrb'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:107:20: ... Location of port declaration
+  107 |  output reg [ 3:0] mem_la_wstrb,
+      |                    ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'pcpi_valid'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:110:20: ... Location of port declaration
+  110 |  output reg        pcpi_valid,
+      |                    ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'pcpi_insn'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:111:20: ... Location of port declaration
+  111 |  output reg [31:0] pcpi_insn,
+      |                    ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'pcpi_rs1'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:112:20: ... Location of port declaration
+  112 |  output     [31:0] pcpi_rs1,
+      |                    ^~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'pcpi_rs2'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:113:20: ... Location of port declaration
+  113 |  output     [31:0] pcpi_rs2,
+      |                    ^~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'eoi'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:121:20: ... Location of port declaration
+  121 |  output reg [31:0] eoi,
+      |                    ^~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'trace_valid'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:158:20: ... Location of port declaration
+  158 |  output reg        trace_valid,
+      |                    ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v:19:61: Cell has missing pin: 'trace_data'
+   19 |         .ENABLE_IRQ(0),.PROGADDR_RESET(0),.STACKADDR(8192)) cpu(
+      |                                                             ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v:159:20: ... Location of port declaration
+  159 |  output reg [35:0] trace_data
+      |                    ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:30:17: Cell has missing pin: 'm_eth_payload_axis_tkeep'
+   30 |     eth_axis_rx ingress(.clk(clk),.rst(rst),.s_axis_tdata(eth_rx_data),.s_axis_tkeep(1'b1),
+      |                 ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v:67:34: ... Location of port declaration
+   67 |     output wire [KEEP_WIDTH-1:0] m_eth_payload_axis_tkeep,
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:30:17: Cell has missing pin: 'busy'
+   30 |     eth_axis_rx ingress(.clk(clk),.rst(rst),.s_axis_tdata(eth_rx_data),.s_axis_tkeep(1'b1),
+      |                 ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v:76:34: ... Location of port declaration
+   76 |     output wire                  busy,
+      |                                  ^~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:30:17: Cell has missing pin: 'error_header_early_termination'
+   30 |     eth_axis_rx ingress(.clk(clk),.rst(rst),.s_axis_tdata(eth_rx_data),.s_axis_tkeep(1'b1),
+      |                 ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v:77:34: ... Location of port declaration
+   77 |     output wire                  error_header_early_termination
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:35:17: Cell has missing pin: 'm_axis_tkeep'
+   35 |     eth_axis_tx egress(.clk(clk),.rst(rst),.s_eth_hdr_valid(thv),.s_eth_hdr_ready(thr),
+      |                 ^~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_tx.v:67:34: ... Location of port declaration
+   67 |     output wire [KEEP_WIDTH-1:0] m_axis_tkeep,
+      |                                  ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:35:17: Cell has missing pin: 'busy'
+   35 |     eth_axis_tx egress(.clk(clk),.rst(rst),.s_eth_hdr_valid(thv),.s_eth_hdr_ready(thr),
+      |                 ^~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_tx.v:76:34: ... Location of port declaration
+   76 |     output wire                  busy
+      |                                  ^~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 's_ip_hdr_ready'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:79:24: ... Location of port declaration
+   79 |     output wire        s_ip_hdr_ready,
+      |                        ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 's_ip_payload_axis_tready'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:89:24: ... Location of port declaration
+   89 |     output wire        s_ip_payload_axis_tready,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_hdr_valid'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:96:24: ... Location of port declaration
+   96 |     output wire        m_ip_hdr_valid,
+      |                        ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_eth_dest_mac'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:98:24: ... Location of port declaration
+   98 |     output wire [47:0] m_ip_eth_dest_mac,
+      |                        ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_eth_src_mac'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:99:24: ... Location of port declaration
+   99 |     output wire [47:0] m_ip_eth_src_mac,
+      |                        ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_eth_type'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:100:24: ... Location of port declaration
+  100 |     output wire [15:0] m_ip_eth_type,
+      |                        ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_version'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:101:24: ... Location of port declaration
+  101 |     output wire [3:0]  m_ip_version,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_ihl'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:102:24: ... Location of port declaration
+  102 |     output wire [3:0]  m_ip_ihl,
+      |                        ^~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_dscp'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:103:24: ... Location of port declaration
+  103 |     output wire [5:0]  m_ip_dscp,
+      |                        ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_ecn'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:104:24: ... Location of port declaration
+  104 |     output wire [1:0]  m_ip_ecn,
+      |                        ^~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_length'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:105:24: ... Location of port declaration
+  105 |     output wire [15:0] m_ip_length,
+      |                        ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_identification'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:106:24: ... Location of port declaration
+  106 |     output wire [15:0] m_ip_identification,
+      |                        ^~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_flags'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:107:24: ... Location of port declaration
+  107 |     output wire [2:0]  m_ip_flags,
+      |                        ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_fragment_offset'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:108:24: ... Location of port declaration
+  108 |     output wire [12:0] m_ip_fragment_offset,
+      |                        ^~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_ttl'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:109:24: ... Location of port declaration
+  109 |     output wire [7:0]  m_ip_ttl,
+      |                        ^~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_protocol'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:110:24: ... Location of port declaration
+  110 |     output wire [7:0]  m_ip_protocol,
+      |                        ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_header_checksum'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:111:24: ... Location of port declaration
+  111 |     output wire [15:0] m_ip_header_checksum,
+      |                        ^~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_source_ip'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:112:24: ... Location of port declaration
+  112 |     output wire [31:0] m_ip_source_ip,
+      |                        ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_dest_ip'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:113:24: ... Location of port declaration
+  113 |     output wire [31:0] m_ip_dest_ip,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_payload_axis_tdata'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:114:24: ... Location of port declaration
+  114 |     output wire [7:0]  m_ip_payload_axis_tdata,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_payload_axis_tvalid'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:115:24: ... Location of port declaration
+  115 |     output wire        m_ip_payload_axis_tvalid,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_payload_axis_tlast'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:117:24: ... Location of port declaration
+  117 |     output wire        m_ip_payload_axis_tlast,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_ip_payload_axis_tuser'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:118:24: ... Location of port declaration
+  118 |     output wire        m_ip_payload_axis_tuser,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_eth_dest_mac'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:145:24: ... Location of port declaration
+  145 |     output wire [47:0] m_udp_eth_dest_mac,
+      |                        ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_eth_src_mac'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:146:24: ... Location of port declaration
+  146 |     output wire [47:0] m_udp_eth_src_mac,
+      |                        ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_eth_type'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:147:24: ... Location of port declaration
+  147 |     output wire [15:0] m_udp_eth_type,
+      |                        ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_version'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:148:24: ... Location of port declaration
+  148 |     output wire [3:0]  m_udp_ip_version,
+      |                        ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_ihl'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:149:24: ... Location of port declaration
+  149 |     output wire [3:0]  m_udp_ip_ihl,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_dscp'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:150:24: ... Location of port declaration
+  150 |     output wire [5:0]  m_udp_ip_dscp,
+      |                        ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_ecn'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:151:24: ... Location of port declaration
+  151 |     output wire [1:0]  m_udp_ip_ecn,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_length'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:152:24: ... Location of port declaration
+  152 |     output wire [15:0] m_udp_ip_length,
+      |                        ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_identification'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:153:24: ... Location of port declaration
+  153 |     output wire [15:0] m_udp_ip_identification,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_ttl'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:156:24: ... Location of port declaration
+  156 |     output wire [7:0]  m_udp_ip_ttl,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_protocol'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:157:24: ... Location of port declaration
+  157 |     output wire [7:0]  m_udp_ip_protocol,
+      |                        ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_ip_header_checksum'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:158:24: ... Location of port declaration
+  158 |     output wire [15:0] m_udp_ip_header_checksum,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_length'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:163:24: ... Location of port declaration
+  163 |     output wire [15:0] m_udp_length,
+      |                        ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'm_udp_checksum'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:164:24: ... Location of port declaration
+  164 |     output wire [15:0] m_udp_checksum,
+      |                        ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_rx_busy'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:174:24: ... Location of port declaration
+  174 |     output wire        ip_rx_busy,
+      |                        ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_tx_busy'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:175:24: ... Location of port declaration
+  175 |     output wire        ip_tx_busy,
+      |                        ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'udp_rx_busy'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:176:24: ... Location of port declaration
+  176 |     output wire        udp_rx_busy,
+      |                        ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'udp_tx_busy'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:177:24: ... Location of port declaration
+  177 |     output wire        udp_tx_busy,
+      |                        ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_rx_error_header_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:178:24: ... Location of port declaration
+  178 |     output wire        ip_rx_error_header_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_rx_error_payload_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:179:24: ... Location of port declaration
+  179 |     output wire        ip_rx_error_payload_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_rx_error_invalid_header'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:180:24: ... Location of port declaration
+  180 |     output wire        ip_rx_error_invalid_header,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_rx_error_invalid_checksum'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:181:24: ... Location of port declaration
+  181 |     output wire        ip_rx_error_invalid_checksum,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_tx_error_payload_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:182:24: ... Location of port declaration
+  182 |     output wire        ip_tx_error_payload_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'ip_tx_error_arp_failed'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:183:24: ... Location of port declaration
+  183 |     output wire        ip_tx_error_arp_failed,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'udp_rx_error_header_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:184:24: ... Location of port declaration
+  184 |     output wire        udp_rx_error_header_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'udp_rx_error_payload_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:185:24: ... Location of port declaration
+  185 |     output wire        udp_rx_error_payload_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v:88:49: Cell has missing pin: 'udp_tx_error_payload_early_termination'
+   88 |         .UDP_CHECKSUM_PAYLOAD_FIFO_DEPTH(2048)) stack(
+      |                                                 ^~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v:186:24: ... Location of port declaration
+  186 |     output wire        udp_tx_error_payload_early_termination,
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'rx_axis_tkeep'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:76:39: ... Location of port declaration
+   76 |     output wire [AXIS_KEEP_WIDTH-1:0] rx_axis_tkeep,
+      |                                       ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'tx_error_underflow'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:103:39: ... Location of port declaration
+  103 |     output wire                       tx_error_underflow,
+      |                                       ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'tx_fifo_overflow'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:104:39: ... Location of port declaration
+  104 |     output wire                       tx_fifo_overflow,
+      |                                       ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'tx_fifo_bad_frame'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:105:39: ... Location of port declaration
+  105 |     output wire                       tx_fifo_bad_frame,
+      |                                       ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'tx_fifo_good_frame'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:106:39: ... Location of port declaration
+  106 |     output wire                       tx_fifo_good_frame,
+      |                                       ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'rx_error_bad_frame'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:107:39: ... Location of port declaration
+  107 |     output wire                       rx_error_bad_frame,
+      |                                       ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'rx_fifo_overflow'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:109:39: ... Location of port declaration
+  109 |     output wire                       rx_fifo_overflow,
+      |                                       ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v:69:21: Cell has missing pin: 'rx_fifo_bad_frame'
+   69 |     eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      |                     ^~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:110:39: ... Location of port declaration
+  110 |     output wire                       rx_fifo_bad_frame,
+      |                                       ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v:28:87: Cell has missing pin: 'pixel_x'
+   28 |     dvp_capture_continuous #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.SKIP_FRAMES(SKIP_FRAMES)) capture(.pclk(cam_clk),.rst_n(cam_rst),.enable(cam_ready),.vsync(cam_vsync),.href(cam_href),.data(cam_data),
+      |                                                                                       ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/dvp_capture_continuous.v:9:23: ... Location of port declaration
+    9 |     output reg [10:0] pixel_x,pixel_y,
+      |                       ^~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v:28:87: Cell has missing pin: 'pixel_y'
+   28 |     dvp_capture_continuous #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.SKIP_FRAMES(SKIP_FRAMES)) capture(.pclk(cam_clk),.rst_n(cam_rst),.enable(cam_ready),.vsync(cam_vsync),.href(cam_href),.data(cam_data),
+      |                                                                                       ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/dvp_capture_continuous.v:9:31: ... Location of port declaration
+    9 |     output reg [10:0] pixel_x,pixel_y,
+      |                               ^~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v:46:54: Cell has missing pin: 'read_bank'
+   46 |     ddr_framebuffer #(.WIDTH(WIDTH),.HEIGHT(HEIGHT)) framebuffer(.clk(ui_clk),.rst_n(ui_rst_n),.calibrated(calibrated),.source_data(tq),.source_empty(te),.source_pop(tr),
+      |                                                      ^~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/ddr_framebuffer.v:17:16: ... Location of port declaration
+   17 |     output reg read_bank,write_bank
+      |                ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v:46:54: Cell has missing pin: 'write_bank'
+   46 |     ddr_framebuffer #(.WIDTH(WIDTH),.HEIGHT(HEIGHT)) framebuffer(.clk(ui_clk),.rst_n(ui_rst_n),.calibrated(calibrated),.source_data(tq),.source_empty(te),.source_pop(tr),
+      |                                                      ^~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/ddr_framebuffer.v:17:26: ... Location of port declaration
+   17 |     output reg read_bank,write_bank
+      |                          ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v:83:63: Cell has missing pin: 'udp_start'
+   83 |     video_udp_packetizer #(.WIDTH(WIDTH/2),.HEIGHT(HEIGHT/2)) packetizer(.clk(clk),.rst_n(rst_n),.token_data(nq),.token_empty(nempty),.token_read(nread),
+      |                                                               ^~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/rtl/video_udp_packetizer.v:13:27: ... Location of port declaration
+   13 |     output wire udp_valid,udp_start,udp_last,
+      |                           ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_ptp_ts'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:86:41: ... Location of port declaration
+   86 |     input  wire [PTP_TS_WIDTH-1:0]      tx_ptp_ts,
+      |                                         ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_ptp_ts'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:87:41: ... Location of port declaration
+   87 |     input  wire [PTP_TS_WIDTH-1:0]      rx_ptp_ts,
+      |                                         ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_axis_ptp_ts'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:88:41: ... Location of port declaration
+   88 |     output wire [PTP_TS_WIDTH-1:0]      tx_axis_ptp_ts,
+      |                                         ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_axis_ptp_ts_tag'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:89:41: ... Location of port declaration
+   89 |     output wire [TX_PTP_TAG_WIDTH-1:0]  tx_axis_ptp_ts_tag,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_axis_ptp_ts_valid'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:90:41: ... Location of port declaration
+   90 |     output wire                         tx_axis_ptp_ts_valid,
+      |                                         ^~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_lfc_req'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:95:41: ... Location of port declaration
+   95 |     input  wire                         tx_lfc_req,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_lfc_resend'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:96:41: ... Location of port declaration
+   96 |     input  wire                         tx_lfc_resend,
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_lfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:97:41: ... Location of port declaration
+   97 |     input  wire                         rx_lfc_en,
+      |                                         ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_lfc_req'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:98:41: ... Location of port declaration
+   98 |     output wire                         rx_lfc_req,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_lfc_ack'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:99:41: ... Location of port declaration
+   99 |     input  wire                         rx_lfc_ack,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_pfc_req'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:104:41: ... Location of port declaration
+  104 |     input  wire [7:0]                   tx_pfc_req,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_pfc_resend'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:105:41: ... Location of port declaration
+  105 |     input  wire                         tx_pfc_resend,
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_pfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:106:41: ... Location of port declaration
+  106 |     input  wire [7:0]                   rx_pfc_en,
+      |                                         ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_pfc_req'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:107:41: ... Location of port declaration
+  107 |     output wire [7:0]                   rx_pfc_req,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_pfc_ack'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:108:41: ... Location of port declaration
+  108 |     input  wire [7:0]                   rx_pfc_ack,
+      |                                         ^~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_lfc_pause_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:113:41: ... Location of port declaration
+  113 |     input  wire                         tx_lfc_pause_en,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_pause_req'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:114:41: ... Location of port declaration
+  114 |     input  wire                         tx_pause_req,
+      |                                         ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_pause_ack'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:115:41: ... Location of port declaration
+  115 |     output wire                         tx_pause_ack,
+      |                                         ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'tx_start_packet'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:128:41: ... Location of port declaration
+  128 |     output wire                         tx_start_packet,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'rx_start_packet'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:130:41: ... Location of port declaration
+  130 |     output wire                         rx_start_packet,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_mcf'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:133:41: ... Location of port declaration
+  133 |     output wire                         stat_tx_mcf,
+      |                                         ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_mcf'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:134:41: ... Location of port declaration
+  134 |     output wire                         stat_rx_mcf,
+      |                                         ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_lfc_pkt'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:135:41: ... Location of port declaration
+  135 |     output wire                         stat_tx_lfc_pkt,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_lfc_xon'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:136:41: ... Location of port declaration
+  136 |     output wire                         stat_tx_lfc_xon,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_lfc_xoff'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:137:41: ... Location of port declaration
+  137 |     output wire                         stat_tx_lfc_xoff,
+      |                                         ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_lfc_paused'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:138:41: ... Location of port declaration
+  138 |     output wire                         stat_tx_lfc_paused,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_pfc_pkt'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:139:41: ... Location of port declaration
+  139 |     output wire                         stat_tx_pfc_pkt,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_pfc_xon'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:140:41: ... Location of port declaration
+  140 |     output wire [7:0]                   stat_tx_pfc_xon,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_pfc_xoff'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:141:41: ... Location of port declaration
+  141 |     output wire [7:0]                   stat_tx_pfc_xoff,
+      |                                         ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_tx_pfc_paused'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:142:41: ... Location of port declaration
+  142 |     output wire [7:0]                   stat_tx_pfc_paused,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_lfc_pkt'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:143:41: ... Location of port declaration
+  143 |     output wire                         stat_rx_lfc_pkt,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_lfc_xon'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:144:41: ... Location of port declaration
+  144 |     output wire                         stat_rx_lfc_xon,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_lfc_xoff'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:145:41: ... Location of port declaration
+  145 |     output wire                         stat_rx_lfc_xoff,
+      |                                         ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_lfc_paused'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:146:41: ... Location of port declaration
+  146 |     output wire                         stat_rx_lfc_paused,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_pfc_pkt'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:147:41: ... Location of port declaration
+  147 |     output wire                         stat_rx_pfc_pkt,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_pfc_xon'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:148:41: ... Location of port declaration
+  148 |     output wire [7:0]                   stat_rx_pfc_xon,
+      |                                         ^~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_pfc_xoff'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:149:41: ... Location of port declaration
+  149 |     output wire [7:0]                   stat_rx_pfc_xoff,
+      |                                         ^~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'stat_rx_pfc_paused'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:150:41: ... Location of port declaration
+  150 |     output wire [7:0]                   stat_rx_pfc_paused,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_eth_dst_mcast'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:158:41: ... Location of port declaration
+  158 |     input  wire [47:0]                  cfg_mcf_rx_eth_dst_mcast,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_check_eth_dst_mcast'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:159:41: ... Location of port declaration
+  159 |     input  wire                         cfg_mcf_rx_check_eth_dst_mcast,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_eth_dst_ucast'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:160:41: ... Location of port declaration
+  160 |     input  wire [47:0]                  cfg_mcf_rx_eth_dst_ucast,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_check_eth_dst_ucast'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:161:41: ... Location of port declaration
+  161 |     input  wire                         cfg_mcf_rx_check_eth_dst_ucast,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_eth_src'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:162:41: ... Location of port declaration
+  162 |     input  wire [47:0]                  cfg_mcf_rx_eth_src,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_check_eth_src'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:163:41: ... Location of port declaration
+  163 |     input  wire                         cfg_mcf_rx_check_eth_src,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_eth_type'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:164:41: ... Location of port declaration
+  164 |     input  wire [15:0]                  cfg_mcf_rx_eth_type,
+      |                                         ^~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_opcode_lfc'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:165:41: ... Location of port declaration
+  165 |     input  wire [15:0]                  cfg_mcf_rx_opcode_lfc,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_check_opcode_lfc'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:166:41: ... Location of port declaration
+  166 |     input  wire                         cfg_mcf_rx_check_opcode_lfc,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_opcode_pfc'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:167:41: ... Location of port declaration
+  167 |     input  wire [15:0]                  cfg_mcf_rx_opcode_pfc,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_check_opcode_pfc'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:168:41: ... Location of port declaration
+  168 |     input  wire                         cfg_mcf_rx_check_opcode_pfc,
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_forward'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:169:41: ... Location of port declaration
+  169 |     input  wire                         cfg_mcf_rx_forward,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_mcf_rx_enable'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:170:41: ... Location of port declaration
+  170 |     input  wire                         cfg_mcf_rx_enable,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_eth_dst'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:171:41: ... Location of port declaration
+  171 |     input  wire [47:0]                  cfg_tx_lfc_eth_dst,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_eth_src'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:172:41: ... Location of port declaration
+  172 |     input  wire [47:0]                  cfg_tx_lfc_eth_src,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_eth_type'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:173:41: ... Location of port declaration
+  173 |     input  wire [15:0]                  cfg_tx_lfc_eth_type,
+      |                                         ^~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_opcode'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:174:41: ... Location of port declaration
+  174 |     input  wire [15:0]                  cfg_tx_lfc_opcode,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:175:41: ... Location of port declaration
+  175 |     input  wire                         cfg_tx_lfc_en,
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_quanta'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:176:41: ... Location of port declaration
+  176 |     input  wire [15:0]                  cfg_tx_lfc_quanta,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_lfc_refresh'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:177:41: ... Location of port declaration
+  177 |     input  wire [15:0]                  cfg_tx_lfc_refresh,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_eth_dst'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:178:41: ... Location of port declaration
+  178 |     input  wire [47:0]                  cfg_tx_pfc_eth_dst,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_eth_src'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:179:41: ... Location of port declaration
+  179 |     input  wire [47:0]                  cfg_tx_pfc_eth_src,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_eth_type'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:180:41: ... Location of port declaration
+  180 |     input  wire [15:0]                  cfg_tx_pfc_eth_type,
+      |                                         ^~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_opcode'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:181:41: ... Location of port declaration
+  181 |     input  wire [15:0]                  cfg_tx_pfc_opcode,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:182:41: ... Location of port declaration
+  182 |     input  wire                         cfg_tx_pfc_en,
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_quanta'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:183:41: ... Location of port declaration
+  183 |     input  wire [8*16-1:0]              cfg_tx_pfc_quanta,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_tx_pfc_refresh'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:184:41: ... Location of port declaration
+  184 |     input  wire [8*16-1:0]              cfg_tx_pfc_refresh,
+      |                                         ^~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_rx_lfc_opcode'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:185:41: ... Location of port declaration
+  185 |     input  wire [15:0]                  cfg_rx_lfc_opcode,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_rx_lfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:186:41: ... Location of port declaration
+  186 |     input  wire                         cfg_rx_lfc_en,
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_rx_pfc_opcode'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:187:41: ... Location of port declaration
+  187 |     input  wire [15:0]                  cfg_rx_pfc_opcode,
+      |                                         ^~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:197:1: Cell has missing pin: 'cfg_rx_pfc_en'
+  197 | eth_mac_1g_inst (
+      | ^~~~~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v:188:41: ... Location of port declaration
+  188 |     input  wire                         cfg_rx_pfc_en
+      |                                         ^~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 's_pause_req'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:130:37: ... Location of port declaration
+  130 |     input  wire                     s_pause_req,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 's_pause_ack'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:131:37: ... Location of port declaration
+  131 |     output wire                     s_pause_ack,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 'm_pause_req'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:132:37: ... Location of port declaration
+  132 |     input  wire                     m_pause_req,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 'm_pause_ack'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:133:37: ... Location of port declaration
+  133 |     output wire                     m_pause_ack,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 's_status_depth'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:138:37: ... Location of port declaration
+  138 |     output wire [$clog2(DEPTH):0]   s_status_depth,
+      |                                     ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 's_status_depth_commit'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:139:37: ... Location of port declaration
+  139 |     output wire [$clog2(DEPTH):0]   s_status_depth_commit,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 'm_status_depth'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:143:37: ... Location of port declaration
+  143 |     output wire [$clog2(DEPTH):0]   m_status_depth,
+      |                                     ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:248:1: Cell has missing pin: 'm_status_depth_commit'
+  248 | tx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:144:37: ... Location of port declaration
+  144 |     output wire [$clog2(DEPTH):0]   m_status_depth_commit,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 's_pause_req'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:130:37: ... Location of port declaration
+  130 |     input  wire                     s_pause_req,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 's_pause_ack'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:131:37: ... Location of port declaration
+  131 |     output wire                     s_pause_ack,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 'm_pause_req'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:132:37: ... Location of port declaration
+  132 |     input  wire                     m_pause_req,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 'm_pause_ack'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:133:37: ... Location of port declaration
+  133 |     output wire                     m_pause_ack,
+      |                                     ^~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 's_status_depth'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:138:37: ... Location of port declaration
+  138 |     output wire [$clog2(DEPTH):0]   s_status_depth,
+      |                                     ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 's_status_depth_commit'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:139:37: ... Location of port declaration
+  139 |     output wire [$clog2(DEPTH):0]   s_status_depth_commit,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 'm_status_depth'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:143:37: ... Location of port declaration
+  143 |     output wire [$clog2(DEPTH):0]   m_status_depth,
+      |                                     ^~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v:299:1: Cell has missing pin: 'm_status_depth_commit'
+  299 | rx_fifo (
+      | ^~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v:144:37: ... Location of port declaration
+  144 |     output wire [$clog2(DEPTH):0]   m_status_depth_commit,
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/ip_complete.v:401:1: Cell has missing pin: 's_eth_payload_axis_tkeep'
+  401 | arp_inst (
+      | ^~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/arp.v:65:35: ... Location of port declaration
+   65 |     input  wire [KEEP_WIDTH-1:0]  s_eth_payload_axis_tkeep,
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/ip_complete.v:401:1: Cell has missing pin: 'm_eth_payload_axis_tkeep'
+  401 | arp_inst (
+      | ^~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/arp.v:80:35: ... Location of port declaration
+   80 |     output wire [KEEP_WIDTH-1:0]  m_eth_payload_axis_tkeep,
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v:214:1: Cell has missing pin: 'pause_req'
+  214 | payload_fifo (
+      | ^~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v:124:35: ... Location of port declaration
+  124 |     input  wire                   pause_req,
+      |                                   ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v:214:1: Cell has missing pin: 'pause_ack'
+  214 | payload_fifo (
+      | ^~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v:125:35: ... Location of port declaration
+  125 |     output wire                   pause_ack,
+      |                                   ^~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v:214:1: Cell has missing pin: 'status_depth'
+  214 | payload_fifo (
+      | ^~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v:130:35: ... Location of port declaration
+  130 |     output wire [$clog2(DEPTH):0] status_depth,
+      |                                   ^~~~~~~~~~~~
+%Warning-PINMISSING: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v:214:1: Cell has missing pin: 'status_depth_commit'
+  214 | payload_fifo (
+      | ^~~~~~~~~~~~
+                     /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v:131:35: ... Location of port declaration
+  131 |     output wire [$clog2(DEPTH):0] status_depth_commit,
+      |                                   ^~~~~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_sincos.v:26:29: Operator ASSIGNDLY expects 17 bits on the Assign RHS, but Assign RHS's SIGNED generates 16 bits.
+                                                                                                                               : ... note: In instance 'continuous_obstacle_tb.dut.tracker.trig'
+   26 |                 else begin z<=$signed(angle);negative<=0;end
+      |                             ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:40:41: Operator COND expects 32 bits on the Conditional False, but Conditional False's SIGNED generates 11 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+   40 |             maximum=requested_limit>100 ? 100:$signed({1'b0,requested_limit});
+      |                                         ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:54:23: Operator ASSIGNDLY expects 7 bits on the Assign RHS, but Assign RHS's DIV generates 9 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+   54 |             cap_cached<=cap_scaled/9'd5;
+      |                       ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:83:82: Operator NEGATE expects 64 bits on the LHS, but LHS's SIGNED generates 32 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+   83 |                 1:if(done) begin dot<=$signed(dx)*c+$signed(dy)*s;cross_product<=-$signed(dx)*s+$signed(dy)*c;state<=2;end
+      |                                                                                  ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:85:28: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's SHIFTRS generates 64 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+   85 |                     forward<=dot>>>15;left<=cross_product>>>15;
+      |                            ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:85:43: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's SHIFTRS generates 64 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+   85 |                     forward<=dot>>>15;left<=cross_product>>>15;
+      |                                           ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v:132:71: Operator COND expects 32 bits on the Conditional False, but Conditional False's VARREF 'cap' generates 10 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.tracker'
+  132 |                     linear<=forward<=0 || abs_left>$unsigned(forward) ? 0:cap;
+      |                                                                       ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v:48:25: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's DIV generates 12 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.safety'
+   48 |             speed_cached<=scaled_gap/12'd7;
+      |                         ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v:71:50: Bit extraction of var[11:0] requires 4 bit index, not 16 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.safety'
+   71 |                     if(angle_cdeg<36000) coverage[angle_cdeg/16'd3000]<=1;
+      |                                                  ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:20:16: Operator ASSIGNW expects 32 bits on the Assign RHS, but Assign RHS's SHIFTRS generates 64 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   20 |     assign x_mm=x_q>>>16;assign y_mm=y_q>>>16;
+      |                ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:20:37: Operator ASSIGNW expects 32 bits on the Assign RHS, but Assign RHS's SHIFTRS generates 64 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   20 |     assign x_mm=x_q>>>16;assign y_mm=y_q>>>16;
+      |                                     ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:40:70: Operator SHIFTL expects 64 bits on the LHS, but LHS's SIGNED generates 51 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   40 |                     if(FRACTION_BITS==0) begin dx<=$signed(product_x)<<<1;dy<=$signed(product_y)<<<1;end
+      |                                                                      ^~~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:40:97: Operator SHIFTL expects 64 bits on the LHS, but LHS's SIGNED generates 51 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   40 |                     if(FRACTION_BITS==0) begin dx<=$signed(product_x)<<<1;dy<=$signed(product_y)<<<1;end
+      |                                                                                                 ^~~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:41:54: Operator SHIFTRS expects 64 bits on the LHS, but LHS's SIGNED generates 51 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   41 |                     else begin dx<=$signed(product_x)>>>(FRACTION_BITS-1);dy<=$signed(product_y)>>>(FRACTION_BITS-1);end
+      |                                                      ^~~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v:41:97: Operator SHIFTRS expects 64 bits on the LHS, but LHS's SIGNED generates 51 bits.
+                                                                                                                                    : ... note: In instance 'continuous_obstacle_tb.dut.pose'
+   41 |                     else begin dx<=$signed(product_x)>>>(FRACTION_BITS-1);dy<=$signed(product_y)>>>(FRACTION_BITS-1);end
+      |                                                                                                 ^~~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:34:33: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's SUB generates 32 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   34 |             points_x[count[5:0]]<=endpoint_x-pose_x;
+      |                                 ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:35:33: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's SUB generates 32 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   35 |             points_y[count[5:0]]<=endpoint_y-pose_y;
+      |                                 ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:63:62: Operator SUB expects 32 or 16 bits on the LHS, but LHS's SIGNED generates 6 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   63 |                     offset_x<=($signed({1'b0,candidate%5'd3})-1)*50;
+      |                                                              ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:64:69: Operator SUB expects 32 or 16 bits on the LHS, but LHS's SIGNED generates 6 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   64 |                     offset_y<=($signed({1'b0,(candidate/5'd3)%5'd3})-1)*50;
+      |                                                                     ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:65:64: Operator SUB expects 32 or 16 bits on the LHS, but LHS's SIGNED generates 6 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   65 |                     offset_yaw<=($signed({1'b0,candidate/5'd9})-1)*546;
+      |                                                                ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:37: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'origin_x' generates 32 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                                     ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:37: Operator ADD expects 48 bits on the RHS, but RHS's VARREF 'offset_x' generates 16 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                                     ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:27: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                           ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:74: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'origin_y' generates 32 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                                                                          ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:74: Operator ADD expects 48 bits on the RHS, but RHS's VARREF 'offset_y' generates 16 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                                                                          ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v:75:64: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut.matcher'
+   75 |                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+      |                                                                ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:15:22: Operator LTS expects 11 bits on the RHS, but RHS's SIGNED generates 10 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   15 |     wire advance_y=e2<$signed(dx);
+      |                      ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:28:22: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's REPLICATE generates 9 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   28 |                     x<={2'b0,origin_x};y<={2'b0,origin_y};x1<=endpoint_x;y1<=endpoint_y;
+      |                      ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:28:41: Operator ASSIGNDLY expects 10 bits on the Assign RHS, but Assign RHS's REPLICATE generates 9 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   28 |                     x<={2'b0,origin_x};y<={2'b0,origin_y};x1<=endpoint_x;y1<=endpoint_y;
+      |                                         ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:26:28: Operator GTE expects 32 or 8 bits on the LHS, but LHS's VARREF 'origin_x' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   26 |                 if(origin_x>=128 || origin_y>=128 || endpoint_x>=128 || endpoint_y>=128) invalid<=1;
+      |                            ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:26:45: Operator GTE expects 32 or 8 bits on the LHS, but LHS's VARREF 'origin_y' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   26 |                 if(origin_x>=128 || origin_y>=128 || endpoint_x>=128 || endpoint_y>=128) invalid<=1;
+      |                                             ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:26:64: Operator GTE expects 32 or 8 bits on the LHS, but LHS's VARREF 'endpoint_x' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   26 |                 if(origin_x>=128 || origin_y>=128 || endpoint_x>=128 || endpoint_y>=128) invalid<=1;
+      |                                                                ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:26:83: Operator GTE expects 32 or 8 bits on the LHS, but LHS's VARREF 'endpoint_y' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   26 |                 if(origin_x>=128 || origin_y>=128 || endpoint_x>=128 || endpoint_y>=128) invalid<=1;
+      |                                                                                   ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:34:39: Operator SUB expects 10 bits on the LHS, but LHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   34 |                 dx<=x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0];
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:34:39: Operator SUB expects 10 bits on the RHS, but RHS's VARREF 'x1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   34 |                 dx<=x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0];
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:34:45: Operator SUB expects 10 bits on the LHS, but LHS's VARREF 'x1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   34 |                 dx<=x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0];
+      |                                             ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:34:45: Operator SUB expects 10 bits on the RHS, but RHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   34 |                 dx<=x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0];
+      |                                             ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:35:39: Operator SUB expects 10 bits on the LHS, but LHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   35 |                 dy<=y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0];
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:35:39: Operator SUB expects 10 bits on the RHS, but RHS's VARREF 'y1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   35 |                 dy<=y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0];
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:35:45: Operator SUB expects 10 bits on the LHS, but LHS's VARREF 'y1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   35 |                 dy<=y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0];
+      |                                             ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:35:45: Operator SUB expects 10 bits on the RHS, but RHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   35 |                 dy<=y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0];
+      |                                             ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:37:41: Operator SUB expects 10 bits on the LHS, but LHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   37 |                 err<=(x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0])-
+      |                                         ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:37:41: Operator SUB expects 10 bits on the RHS, but RHS's VARREF 'x1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   37 |                 err<=(x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0])-
+      |                                         ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:37:47: Operator SUB expects 10 bits on the LHS, but LHS's VARREF 'x1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   37 |                 err<=(x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0])-
+      |                                               ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:37:47: Operator SUB expects 10 bits on the RHS, but RHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   37 |                 err<=(x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0])-
+      |                                               ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:38:41: Operator SUB expects 10 bits on the LHS, but LHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   38 |                      (y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0]);
+      |                                         ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:38:41: Operator SUB expects 10 bits on the RHS, but RHS's VARREF 'y1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   38 |                      (y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0]);
+      |                                         ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:38:47: Operator SUB expects 10 bits on the LHS, but LHS's VARREF 'y1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   38 |                      (y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0]);
+      |                                               ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:38:47: Operator SUB expects 10 bits on the RHS, but RHS's SEL generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   38 |                      (y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0]);
+      |                                               ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:47:39: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'sx' generates 2 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   47 |                     if(advance_x) x<=x+sx;
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:48:39: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'sy' generates 2 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   48 |                     if(advance_y) y<=y+sy;
+      |                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:42:21: Operator EQ expects 10 bits on the RHS, but RHS's VARREF 'x1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   42 |                 if(x==x1 && y==y1) begin
+      |                     ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v:42:30: Operator EQ expects 10 bits on the RHS, but RHS's VARREF 'y1' generates 7 bits.
+                                                                                                                                   : ... note: In instance 'continuous_obstacle_tb.dut.rasterizer'
+   42 |                 if(x==x1 && y==y1) begin
+      |                              ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:37:65: Operator ADD expects 9 bits on the RHS, but RHS's SIGNED generates 2 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+   37 |     wire signed [8:0] parent_x=$signed({1'b0,current_node[6:0]})+$signed(parent_q[1:0]);
+      |                                                                 ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:38:66: Operator ADD expects 9 bits on the RHS, but RHS's SIGNED generates 2 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+   38 |     wire signed [8:0] parent_y=$signed({1'b0,current_node[13:7]})+$signed(parent_q[3:2]);
+      |                                                                  ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:53:65: Operator SUB expects 32 or 18 bits on the LHS, but LHS's VARREF 'hi' generates 8 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+   53 |             lo=ax<ay ? ax:ay;hi=ax>ay ? ax:ay;estimate=lo*14+(hi-lo)*10;
+      |                                                                 ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:53:65: Operator SUB expects 32 or 18 bits on the RHS, but RHS's VARREF 'lo' generates 8 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+   53 |             lo=ax<ay ? ax:ay;hi=ax>ay ? ax:ay;estimate=lo*14+(hi-lo)*10;
+      |                                                                 ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:131:70: Operator ADD expects 9 bits on the RHS, but RHS's FUNCREF 'delta_x' generates 2 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+  131 |                         neighbor_x<=$signed({1'b0,current_node[6:0]})+delta_x(neighbor_index[2:0]);
+      |                                                                      ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v:132:71: Operator ADD expects 9 bits on the RHS, but RHS's FUNCREF 'delta_y' generates 2 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.planner'
+  132 |                         neighbor_y<=$signed({1'b0,current_node[13:7]})+delta_y(neighbor_index[2:0]);state<=COORD_CHECK;
+      |                                                                       ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:53:31: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'px' generates 32 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   53 |                         ox<=px+(mx>>>15);oy<=py+(my>>>15);
+      |                               ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:53:27: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   53 |                         ox<=px+(mx>>>15);oy<=py+(my>>>15);
+      |                           ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:53:48: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'py' generates 32 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   53 |                         ox<=px+(mx>>>15);oy<=py+(my>>>15);
+      |                                                ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:53:44: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   53 |                         ox<=px+(mx>>>15);oy<=py+(my>>>15);
+      |                                            ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:54:58: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'zero_cdeg' generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   54 |                         normalized<=clockwise ? zero_cdeg+36000-angle:zero_cdeg+angle;
+      |                                                          ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:54:64: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'angle' generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   54 |                         normalized<=clockwise ? zero_cdeg+36000-angle:zero_cdeg+angle;
+      |                                                                ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:54:80: Operator ADD expects 32 bits on the LHS, but LHS's VARREF 'zero_cdeg' generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   54 |                         normalized<=clockwise ? zero_cdeg+36000-angle:zero_cdeg+angle;
+      |                                                                                ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:54:80: Operator ADD expects 32 bits on the RHS, but RHS's VARREF 'angle' generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   54 |                         normalized<=clockwise ? zero_cdeg+36000-angle:zero_cdeg+angle;
+      |                                                                                ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:66:39: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'ox' generates 32 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   66 |                         endpoint_x<=ox+(mx>>>15);endpoint_y<=oy+(my>>>15);origin_x<=ox;origin_y<=oy;
+      |                                       ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:66:35: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   66 |                         endpoint_x<=ox+(mx>>>15);endpoint_y<=oy+(my>>>15);origin_x<=ox;origin_y<=oy;
+      |                                   ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:66:64: Operator ADD expects 48 bits on the LHS, but LHS's VARREF 'oy' generates 32 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   66 |                         endpoint_x<=ox+(mx>>>15);endpoint_y<=oy+(my>>>15);origin_x<=ox;origin_y<=oy;
+      |                                                                ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:66:60: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   66 |                         endpoint_x<=ox+(mx>>>15);endpoint_y<=oy+(my>>>15);origin_x<=ox;origin_y<=oy;
+      |                                                            ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:74:44: Operator ADD expects 48 bits on the LHS, but LHS's SIGNED generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   74 |                         body_x<=$signed(ex)+(mx>>>15);body_y<=$signed(ey)+(my>>>15);
+      |                                            ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:74:31: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   74 |                         body_x<=$signed(ex)+(mx>>>15);body_y<=$signed(ey)+(my>>>15);
+      |                               ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:74:74: Operator ADD expects 48 bits on the LHS, but LHS's SIGNED generates 16 bits.
+                                                                                                                                      : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   74 |                         body_x<=$signed(ex)+(mx>>>15);body_y<=$signed(ey)+(my>>>15);
+      |                                                                          ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v:74:61: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's ADD generates 48 bits.
+                                                                                                                                     : ... note: In instance 'continuous_obstacle_tb.dut.projector'
+   74 |                         body_x<=$signed(ex)+(mx>>>15);body_y<=$signed(ey)+(my>>>15);
+      |                                                             ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_inflate.v:14:52: Operator ADD expects 9 bits on the RHS, but RHS's VARREF 'dx' generates 7 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut.inflate'
+   14 |     wire signed [8:0] tx=$signed({1'b0,index[6:0]})+dx;
+      |                                                    ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_inflate.v:15:53: Operator ADD expects 9 bits on the RHS, but RHS's VARREF 'dy' generates 7 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut.inflate'
+   15 |     wire signed [8:0] ty=$signed({1'b0,index[13:7]})+dy;
+      |                                                     ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:53:22: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut'
+   53 |     wire [7:0] cell_x=ex_grid/13'd50,cell_y=ey_grid/13'd50,origin_cx=ox_grid/13'd50,origin_cy=oy_grid/13'd50;
+      |                      ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:53:44: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut'
+   53 |     wire [7:0] cell_x=ex_grid/13'd50,cell_y=ey_grid/13'd50,origin_cx=ox_grid/13'd50,origin_cy=oy_grid/13'd50;
+      |                                            ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:53:69: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut'
+   53 |     wire [7:0] cell_x=ex_grid/13'd50,cell_y=ey_grid/13'd50,origin_cx=ox_grid/13'd50,origin_cy=oy_grid/13'd50;
+      |                                                                     ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:53:94: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                : ... note: In instance 'continuous_obstacle_tb.dut'
+   53 |     wire [7:0] cell_x=ex_grid/13'd50,cell_y=ey_grid/13'd50,origin_cx=ox_grid/13'd50,origin_cy=oy_grid/13'd50;
+      |                                                                                              ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:107:19: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb.dut'
+  107 |     wire [7:0] pcx=pose_grid_x/13'd50,pcy=pose_grid_y/13'd50;
+      |                   ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:107:42: Operator ASSIGNW expects 8 bits on the Assign RHS, but Assign RHS's DIV generates 13 bits.
+                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb.dut'
+  107 |     wire [7:0] pcx=pose_grid_x/13'd50,pcy=pose_grid_y/13'd50;
+      |                                          ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:132:43: Operator XOR expects 32 bits on the RHS, but RHS's VARREF 'data' generates 8 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  132 |         reg [31:0] v;integer n;begin v=old^data;for(n=0;n<8;n=n+1) v=v[0] ? (v>>1)^32'hedb88320:v>>1;crc_byte=v;end
+      |                                           ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:154:30: Operator ADD expects 32 bits on the RHS, but RHS's VARREF 'correction_x' generates 16 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  154 |                 set_x<=pose_x+correction_x;set_y<=pose_y+correction_y;set_yaw<=pose_heading+correction_yaw;set_pose<=1;
+      |                              ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:154:57: Operator ADD expects 32 bits on the RHS, but RHS's VARREF 'correction_y' generates 16 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  154 |                 set_x<=pose_x+correction_x;set_y<=pose_y+correction_y;set_yaw<=pose_heading+correction_yaw;set_pose<=1;
+      |                                                         ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:199:100: Operator ASSIGNDLY expects 5 bits on the Assign RHS, but Assign RHS's SEL generates 8 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  199 |                             reply_done<=0;op<=payload[7:0];packed_address<=payload[19:8];byte_count<=payload[31:24];
+      |                                                                                                    ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:197:80: Operator ADD expects 32 or 16 bits on the RHS, but RHS's SEL generates 8 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  197 |                         payload[31:24]==0 || payload[31:24]>24 || payload[23:8]+payload[31:24]>4096 || payload[7:0]>1) reply[7:0]<=2;
+      |                                                                                ^
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:224:39: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's VARREF 'route_remaining' generates 15 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  224 |                         reply[191:176]<=route_remaining;reply[207:192]<=expanded;
+      |                                       ^~
+%Warning-WIDTHEXPAND: /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v:224:71: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's VARREF 'expanded' generates 14 bits.
+                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb.dut'
+  224 |                         reply[191:176]<=route_remaining;reply[207:192]<=expanded;
+      |                                                                       ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:75:24: Operator ASSIGN expects 16 bits on the Assign RHS, but Assign RHS's MULS generates 32 bits.
+                                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb'
+   75 |             lidar_angle=n*100;lidar_distance=$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
+      |                        ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:75:45: Operator ASSIGN expects 16 bits on the Assign RHS, but Assign RHS's RTOIS generates 32 bits.
+                                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb'
+   75 |             lidar_angle=n*100;lidar_distance=$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
+      |                                             ^
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:99:27: Logical operator LOGOR expects 1 bit on the RHS, but RHS's VARREF 'drive_left' generates 32 bits.
+                                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb'
+   99 |         if(!drive_enabled || drive_left || drive_right) $fatal(1,"planning did not own zero wheel targets");
+      |                           ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:99:41: Logical operator LOGOR expects 1 bit on the RHS, but RHS's VARREF 'drive_right' generates 32 bits.
+                                                                                                                                                 : ... note: In instance 'continuous_obstacle_tb'
+   99 |         if(!drive_enabled || drive_left || drive_right) $fatal(1,"planning did not own zero wheel targets");
+      |                                         ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:114:26: Logical operator LOGOR expects 1 bit on the RHS, but RHS's VARREF 'drive_left' generates 32 bits.
+                                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb'
+  114 |         if(drive_enabled || drive_left || drive_right) $fatal(1,"arrival did not release motor ownership");
+      |                          ^~
+%Warning-WIDTHTRUNC: /home/smallcoral/Dev/EdgeMind-Robot-main/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v:114:40: Logical operator LOGOR expects 1 bit on the RHS, but RHS's VARREF 'drive_right' generates 32 bits.
+                                                                                                                                                  : ... note: In instance 'continuous_obstacle_tb'
+  114 |         if(drive_enabled || drive_left || drive_right) $fatal(1,"arrival did not release motor ownership");
+      |                                        ^~
+make: 进入目录“/var/tmp/edgemind-continuous-efb079485852”
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vcontinuous_obstacle_tb.cpp Vcontinuous_obstacle_tb___024root__DepSet_h29419dac__0.cpp Vcontinuous_obstacle_tb___024root__DepSet_h5d3f8b2f__0.cpp Vcontinuous_obstacle_tb__main.cpp Vcontinuous_obstacle_tb__ConstPool_0.cpp Vcontinuous_obstacle_tb___024root__Slow.cpp Vcontinuous_obstacle_tb___024root__DepSet_h29419dac__0__Slow.cpp Vcontinuous_obstacle_tb___024root__DepSet_h5d3f8b2f__0__Slow.cpp Vcontinuous_obstacle_tb__Syms.cpp > Vcontinuous_obstacle_tb__ALL.cpp
+echo "" > Vcontinuous_obstacle_tb__ALL.verilator_deplist.tmp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -DVL_TIME_CONTEXT   -fcoroutines -c -o Vcontinuous_obstacle_tb__ALL.o Vcontinuous_obstacle_tb__ALL.cpp
+g++    verilated.o verilated_timing.o verilated_threads.o Vcontinuous_obstacle_tb__ALL.a    -pthread -lpthread -latomic   -o Vcontinuous_obstacle_tb
+rm Vcontinuous_obstacle_tb__ALL.verilator_deplist.tmp
+make: 离开目录“/var/tmp/edgemind-continuous-efb079485852”
+- V e r i l a t i o n   R e p o r t: Verilator 5.032 2025-01-01 rev (Debian 5.032-1)
+- Verilator: Built from 49.745 MB sources in 116 modules, into 0.659 MB in 9 C++ files needing 0.001 MB
+- Verilator: Walltime 3.201 s (elab=0.050, cvt=0.083, bld=2.943); cpu 0.268 s on 4 threads; alloced 52.500 MB
