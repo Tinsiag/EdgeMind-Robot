@@ -11,6 +11,7 @@ module autonomy_tb;
     wire [9:0] sensor_limit;wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,localization_quality;
     wire [15:0] front_distance;wire [31:0] map_revision;
     a741_autonomy dut(.*);
+    wire mission_busy,mission_arrived,mission_failed;
     task cmd(input [7:0] k,input [255:0] p);
         integer age;
         begin

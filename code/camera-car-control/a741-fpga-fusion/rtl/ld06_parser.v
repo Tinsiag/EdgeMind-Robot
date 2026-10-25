@@ -33,6 +33,7 @@ module ld06_parser #(parameter STALE_MS=300)(
     reg [15:0] scan_front,scan_left,scan_right,last_angle;
     reg scan_started;
     reg have_last;
+    reg emitted_first;
     reg [15:0] last_step,gap_angle;
     integer k;
     function [7:0] crc_byte;
@@ -46,7 +47,7 @@ module ld06_parser #(parameter STALE_MS=300)(
             errors<=0;dropped<=0;age<=65535;now_ms<=0;emitting<=0;point_index<=0;
             start_angle<=0;span<=0;scan_front<=65535;scan_left<=65535;scan_right<=65535;
             checked_packet<=0;checking<=0;crc_index<=0;crc<=0;interpolation_ready<=0;divide_start<=0;
-            point_step<=0;point_remainder<=0;point_offset<=0;residue<=0;
+            point_step<=0;point_remainder<=0;point_offset<=0;residue<=0;emitted_first<=0;
             front_mm<=65535;left_mm<=65535;right_mm<=65535;last_angle<=0;scan_started<=0;have_last<=0;last_step<=0;
         end else begin
             packet_valid<=0;point_valid<=0;divide_start<=0;
@@ -67,20 +68,7 @@ module ld06_parser #(parameter STALE_MS=300)(
                 p_angle=angle_sum>=36000 ? angle_sum-36000:angle_sum;
                 k=6+point_index*3;p_dist=packet[k*8+:16];p_conf=packet[(k+2)*8+:8];
                 angle_cdeg<=p_angle;distance_mm<=p_dist;confidence<=p_conf;point_valid<=1;
-                gap_angle=p_angle>=last_angle ? p_angle-last_angle:p_angle+36000-last_angle;
-                if(point_index==0 && have_last && gap_angle>(last_step*3>100 ? last_step*3:100)) begin
-                    front_mm<=65535;left_mm<=65535;right_mm<=65535;scan_started<=0;
-                    scan_front<=65535;scan_left<=65535;scan_right<=65535;dropped<=dropped+1'b1;
-                end else if(have_last && p_angle+18000<last_angle) begin
-                    if(scan_started) begin front_mm<=scan_front;left_mm<=scan_left;right_mm<=scan_right;end
-                    scan_front<=p_conf>=10 && p_dist>0 ? p_dist:65535;
-                    scan_left<=65535;scan_right<=65535;scan_started<=1;
-                end else if(p_conf>=10 && p_dist>0) begin
-                    if((p_angle<=3000 || p_angle>=33000) && p_dist<scan_front) scan_front<=p_dist;
-                    if(p_angle>=4500 && p_angle<=13500 && p_dist<scan_left) scan_left<=p_dist;
-                    if(p_angle>=22500 && p_angle<=31500 && p_dist<scan_right) scan_right<=p_dist;
-                end
-                last_angle<=p_angle;have_last<=1;
+                emitted_first<=point_index==0;
                 if(point_index==11) begin emitting<=0;interpolation_ready<=0;end
                 else begin
                     point_index<=point_index+1'b1;
@@ -88,6 +76,26 @@ module ld06_parser #(parameter STALE_MS=300)(
                         point_offset<=point_offset+point_step+1'b1;residue<=residue+point_remainder-11;
                     end else begin point_offset<=point_offset+point_step;residue<=residue+point_remainder;end
                 end
+            end
+            // Sector telemetry consumes the already registered point. The
+            // navigation point output keeps its original latency; avoid a RAM
+            // byte selection + angle/gap calculation + min comparison in one
+            // cycle. Invalidating the stream must also discard this stage.
+            if(point_valid && valid && !framing_error && !(ms_tick && age>=STALE_MS-1)) begin
+                gap_angle=angle_cdeg>=last_angle ? angle_cdeg-last_angle:angle_cdeg+36000-last_angle;
+                if(emitted_first && have_last && gap_angle>(last_step*3>100 ? last_step*3:100)) begin
+                    front_mm<=65535;left_mm<=65535;right_mm<=65535;scan_started<=0;
+                    scan_front<=65535;scan_left<=65535;scan_right<=65535;dropped<=dropped+1'b1;
+                end else if(have_last && angle_cdeg+18000<last_angle) begin
+                    if(scan_started) begin front_mm<=scan_front;left_mm<=scan_left;right_mm<=scan_right;end
+                    scan_front<=confidence>=10 && distance_mm>0 ? distance_mm:65535;
+                    scan_left<=65535;scan_right<=65535;scan_started<=1;
+                end else if(confidence>=10 && distance_mm>0) begin
+                    if((angle_cdeg<=3000 || angle_cdeg>=33000) && distance_mm<scan_front) scan_front<=distance_mm;
+                    if(angle_cdeg>=4500 && angle_cdeg<=13500 && distance_mm<scan_left) scan_left<=distance_mm;
+                    if(angle_cdeg>=22500 && angle_cdeg<=31500 && distance_mm<scan_right) scan_right<=distance_mm;
+                end
+                last_angle<=angle_cdeg;have_last<=1;
             end
             // UART bytes are thousands of clocks apart. Check one CRC byte per
             // clock instead of cascading all 46 bytes into one combinational path.
@@ -110,7 +118,7 @@ module ld06_parser #(parameter STALE_MS=300)(
                 end
             end
             if(framing_error) begin filled<=0;packet_guard<=0;errors<=errors+1'b1;scan_started<=0;have_last<=0;
-                checking<=0;emitting<=0;interpolation_ready<=0;valid<=0;
+                checking<=0;emitting<=0;interpolation_ready<=0;valid<=0;point_valid<=0;
                 front_mm<=65535;left_mm<=65535;right_mm<=65535;
             end
             else if(byte_valid) begin

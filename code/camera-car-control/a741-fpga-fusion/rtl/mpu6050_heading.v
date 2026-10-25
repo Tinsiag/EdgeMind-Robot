@@ -11,7 +11,7 @@ module mpu6050_heading(
     output reg angle_update,gyro_update,
     output wire valid,stationary
 );
-    localparam IDLE=0,NORMALIZE=1,CORRECT=2,MULTIPLY=3,PREPARE=4,INTEGRATE=5,COMMIT=6;
+    localparam IDLE=0,NORMALIZE=1,CORRECT=2,MULTIPLY=3,PREPARE=4,INTEGRATE=5,COMMIT=6,SIGN=7;
     reg [2:0] state;
     reg have_previous,was_calibrated,gap_error;
     reg [31:0] previous_time;
@@ -31,7 +31,7 @@ module mpu6050_heading(
     wire [11:0] reduced=trial-{1'b0,divisor};
     wire [37:0] next_work={work[36:0],subtract};
     wire signed [47:0] magnitude={10'd0,work};
-    wire signed [47:0] increment=increment_negative ? -magnitude:magnitude;
+    reg signed [47:0] increment;
     wire signed [47:0] next_phase=phase+increment;
     assign stationary=ax> -4096 && ax<4096 && ay> -4096 && ay<4096 &&
         ((az>13926 && az<18842)||(az< -13926 && az> -18842));
@@ -41,7 +41,7 @@ module mpu6050_heading(
             was_calibrated<=0;previous_time<=0;phase<=0;gap_error<=0;state<=IDLE;
             raw_negative<=0;increment_negative<=0;pending_integrate<=0;pending_uncalibrated<=0;
             pending_dt<=0;pending_bias<=0;converted<=0;corrected<=0;product<=0;
-            work<=0;divisor<=1;remainder<=0;count<=0;end
+            work<=0;divisor<=1;remainder<=0;count<=0;increment<=0;end
         else begin
             angle_update<=0;gyro_update<=0;was_calibrated<=calibrated;
             if(!sample_valid) begin
@@ -69,7 +69,7 @@ module mpu6050_heading(
                         if(state==NORMALIZE) begin
                             converted<=raw_negative ? -$signed(next_work[15:0]):$signed(next_work[15:0]);
                             state<=CORRECT;
-                        end else state<=COMMIT;
+                        end else state<=SIGN;
                     end else count<=count+1'b1;
                 end
                 CORRECT: begin
@@ -86,6 +86,11 @@ module mpu6050_heading(
                     work<=product[21] ? {(-product),16'd0}:{product,16'd0};
                     increment_negative<=product[21];divisor<=11'd90;remainder<=0;count<=0;
                     state<=INTEGRATE;
+                end
+                SIGN: begin
+                    // Separate signed quotient negation from phase addition.
+                    increment<=increment_negative ? -magnitude:magnitude;
+                    state<=COMMIT;
                 end
                 COMMIT: begin
                     gz<=converted;gyro_update<=1;

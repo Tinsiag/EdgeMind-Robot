@@ -160,6 +160,15 @@ class Client:
     def status(self):
         return decode_status(self.command_idempotent(0x20))
 
+    def motion_status(self, telemetry=None):
+        if telemetry is None:
+            return self.status()
+        snapshot, _ = telemetry.read()
+        if snapshot is None:
+            self.stop()
+            raise CalibrationRejected("运动遥测断流超过150ms；已停止")
+        return snapshot
+
     def sensors(self):
         p = self.command_idempotent(0x41, reply=0xc1)
         if len(p) != 32 or p[0] != 1:
@@ -221,6 +230,10 @@ class Client:
                 raise CalibrationRejected(
                     "FPGA 已锁存编码器无反馈故障（0x0004），本次运动未启动；请检查编码器接线/反馈并手动清除故障，勿自动重试"
                 )
+            if s.faults & 0x0001:
+                raise CalibrationRejected(
+                    "FPGA 已锁存通信超时故障（0x0001），本次运动未启动；确认通信恢复后按“清除故障”，勿连续重试运动"
+                )
             if s.state == 0 and not s.faults:
                 sensor = self.sensors()
                 if not sensor["flags"] & 4:
@@ -267,7 +280,7 @@ class Client:
         return {"requested_permille": word & 1023, "effective_permille": (word >> 10) & 1023,
                 "acquiring": bool(word & (1 << 20)), "expired": bool(word & (1 << 21))}
 
-    def settle(self, cancel=None):
+    def settle(self, cancel=None, *, telemetry=None):
         self.wheels(0, 0)
         deadline = time.monotonic()+2
         quiet = None
@@ -275,7 +288,7 @@ class Client:
             if cancel is not None and cancel.is_set():
                 return self.stop()
             self.heartbeat()
-            s = self.status()
+            s = self.motion_status(telemetry)
             if s.faults:
                 raise CalibrationRejected(f"停车故障 0x{s.faults:04x}；FPGA已停车，连接保持")
             if abs(s.left_speed) < 20 and abs(s.right_speed) < 20:
@@ -287,13 +300,16 @@ class Client:
             time.sleep(.02)
         raise RuntimeError("停车稳定检查超时")
 
-    def drive(self, calibration, linear, angular, held, cancel):
+    def drive(self, calibration, linear, angular, held, cancel, *, telemetry=None):
         if not held.is_set() or cancel.is_set():
             return None
         wheels = calibration.arc(linear, angular)
         if angular and not getattr(self,"imu_motion",False):
             raise ValueError("需要 IMU 运动增强固件（能力位0x400）")
-        origin = self.sensors()["yaw"] if angular else 0
+        initial = self.motion_status(telemetry) if telemetry is not None else None
+        if initial is not None and initial.faults:
+            raise CalibrationRejected(f"驾驶被FPGA停止：state={initial.state}, faults=0x{initial.faults:04x}；连接保持")
+        origin = (initial.yaw_raw if initial is not None else self.sensors()["yaw"]) if angular else 0
         self.arm(calibration)
         if not held.is_set() or cancel.is_set():
             return self.stop()
@@ -310,8 +326,11 @@ class Client:
                 reference = (reference+32768)%65536-32768
                 self.command(0x47,struct.pack("<iih",*wheels,reference),reply=None)
             self.heartbeat()
-            s = self.status()
-            if s.faults or s.state == 0:
+            s = self.motion_status(telemetry)
+            # ARM's reply can precede the next 50 ms EMS1 snapshot. Only the
+            # initial telemetry state may lag; stale data still stops at 150 ms.
+            stopped = s.state == 0 and (telemetry is None or time.monotonic()-started >= .15)
+            if s.faults or stopped:
                 raise CalibrationRejected(f"驾驶被FPGA停止：state={s.state}, faults=0x{s.faults:04x}；连接保持")
             time.sleep(.02)
         duration = time.monotonic()-started
@@ -320,7 +339,7 @@ class Client:
             reason = "cancelled"
         elif isinstance(held, HoldLease) and held.event.is_set():
             reason = "ui_lease_expired"
-        status = self.stop() if cancel.is_set() else self.settle(cancel)
+        status = self.stop() if cancel.is_set() else self.settle(cancel, telemetry=telemetry)
         return {"drive_seconds": round(duration, 3), "stop_reason": reason,
                 "final_status": status}
 
@@ -352,14 +371,28 @@ class Client:
         self.stop()
         raise RuntimeError("旋转取消或超时")
 
-    def distance(self, calibration, mm, speed, cancel):
+    def distance(self, calibration, mm, speed, cancel, *, telemetry=None):
         if cancel.is_set():
             raise RuntimeError("距离任务已取消")
         if not math.isfinite(mm) or not 20 <= abs(mm) <= 10000 or not 40 <= speed <= calibration.data["max_speed_mm_s"]:
             raise ValueError(f"距离须为 ±20~10000 mm，速度须为40～{calibration.data['max_speed_mm_s']} mm/s")
+
+        def sample():
+            if telemetry is None:
+                return self.status(), self.sensors()
+            # EMS1 supplies encoder counts and heading in one atomic snapshot.
+            # Avoid serial UDP queries (and their retries) inside the PD loop.
+            snapshot, _ = telemetry.read()
+            if snapshot is None:
+                self.stop()
+                raise CalibrationRejected("直线任务遥测断流超过150ms；已停止")
+            sensor = {"ms": snapshot.ms, "yaw": snapshot.yaw_raw, "gyro": snapshot.gyro_raw,
+                      "valid": snapshot.flags & 3, "flags": 4 if snapshot.flags & 16 else 0,
+                      "faults": snapshot.faults}
+            return snapshot, sensor
+
         self.arm(calibration)
-        first = self.status()
-        initial = self.sensors()
+        first, initial = sample()
         if initial["valid"] & 3 != 3 or not initial["flags"] & 4 or initial["faults"]:
             self.stop()
             raise CalibrationRejected("直线任务要求有效且已校准的IMU")
@@ -368,7 +401,7 @@ class Client:
         sign = 1 if mm > 0 else -1
         while time.monotonic() < deadline and not cancel.is_set():
             self.heartbeat()
-            s = self.status()
+            s, sensor = sample()
             if s.faults:
                 raise CalibrationRejected(f"距离任务被FPGA停止：faults=0x{s.faults:04x}；连接保持")
             distances = calibration.distance_mm(s.left_count-first.left_count, s.right_count-first.right_count)
@@ -377,14 +410,13 @@ class Client:
             accel = calibration.data["speed_step_mm_s_per_10ms"] * 100
             stop_margin = max(5, speed*.04)
             if remaining <= stop_margin:
-                last = self.settle(cancel)
+                last = self.settle(cancel, telemetry=telemetry)
                 actual = calibration.distance_mm(last.left_count-first.left_count, last.right_count-first.right_count)
                 error = sum(actual)/2-mm
                 if abs(error) > 20:
                     raise RuntimeError(f"编码器行程超差 {error:.1f} mm；不会自动补进")
                 return {"encoder_mm": actual, "encoder_error_mm": error, "external_mm": None}
             value = sign*round(max(40, min(speed, math.sqrt(2*accel*max(0, remaining-stop_margin)))))
-            sensor = self.sensors()
             if sensor["valid"] & 3 != 3 or not sensor["flags"] & 4 or sensor["faults"]:
                 self.stop()
                 raise CalibrationRejected("直线任务IMU失效或FPGA故障；已停止")

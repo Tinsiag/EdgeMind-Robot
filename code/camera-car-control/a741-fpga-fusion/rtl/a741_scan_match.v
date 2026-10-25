@@ -12,6 +12,7 @@ module a741_scan_match(
     output reg [7:0] quality
 );
     reg signed [15:0] points_x[0:63],points_y[0:63];
+    reg signed [15:0] point_x_q,point_y_q;
     reg [6:0] count,index,samples;reg [2:0] decimate;
     reg [4:0] candidate;reg [3:0] state;
     reg signed [31:0] origin_x,origin_y,tx,ty,gx,gy;
@@ -25,6 +26,15 @@ module a741_scan_match(
     a741_divider quality_divider(.clk(clk),.rst_n(rst_n),.cancel(cancel || !enable),.start(quality_start),
         .numerator({24'd0,best_score}*32'd100),.denominator({9'd0,samples}),.busy(quality_busy),.done(quality_done),.quotient(quality_value));
     a741_sincos trig(.clk(clk),.rst_n(rst_n),.start(launch),.angle(offset_yaw),.busy(trig_busy),.done(trig_done),.cosine(c),.sine(s));
+    // Registered reads map the scan cache to RAM instead of 2048 flip-flops
+    // and large combinational multiplexers feeding the multipliers.
+    always @(posedge clk) begin
+        point_x_q<=points_x[index[5:0]];point_y_q<=points_y[index[5:0]];
+        if(rst_n && !cancel && enable && state==0 && point_valid && !scan_end && decimate==0 && count<64) begin
+            points_x[count[5:0]]<=endpoint_x-pose_x;
+            points_y[count[5:0]]<=endpoint_y-pose_y;
+        end
+    end
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
             busy<=0;map_read<=0;map_address<=0;result_valid<=0;accepted<=0;localized<=0;
@@ -46,7 +56,7 @@ module a741_scan_match(
                             origin_x<=pose_x;origin_y<=pose_y;busy<=1;state<=1;
                         end else count<=0;
                     end else if(decimate==0 && count<64) begin
-                        points_x[count[5:0]]<=endpoint_x-pose_x;points_y[count[5:0]]<=endpoint_y-pose_y;count<=count+1'b1;
+                        count<=count+1'b1;
                     end
                 end
                 1:begin
@@ -57,9 +67,10 @@ module a741_scan_match(
                 end
                 2:begin launch<=1;state<=3;end
                 3:if(trig_done) state<=4;
-                4:begin
-                    px<=$signed(points_x[index[5:0]])*c-$signed(points_y[index[5:0]])*s;
-                    py<=$signed(points_x[index[5:0]])*s+$signed(points_y[index[5:0]])*c;state<=5;
+                4:state<=13;
+                13:begin
+                    px<=$signed(point_x_q)*c-$signed(point_y_q)*s;
+                    py<=$signed(point_x_q)*s+$signed(point_y_q)*c;state<=5;
                 end
                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
                 6:begin gx<={24'd0,8'(tx_grid/13'd50)};gy<={24'd0,8'(ty_grid/13'd50)};state<=7;end

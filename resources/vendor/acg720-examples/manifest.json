@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "description": "Vendor chapter 38/47/59 sources already supplied with the project; chapter47 locally repacked from original src.",
+  "archives": [
+    {
+      "path": "第38章 基于DDR3的串口传图帧缓存系统设计实现/ch38_uart_ddr3_tft_hdmi.zip",
+      "bytes": 5629747,
+      "sha256": "7539193cf056a9fdd0600bdfab897db64ed1adacb2dca1f9d8f8ef8d93cd2836",
+      "repacked_locally": false
+    },
+    {
+      "path": "第47章 OV5640摄像头采集HDMI显示屏显示/ch47-local-source.zip",
+      "bytes": 3041464,
+      "sha256": "e0902ff484ec3fec90fdb75fbe8fccaef4a7c133d8834292fb20bf2300f88759",
+      "repacked_locally": true
+    },
+    {
+      "path": "第59章 基于OV5640的以太网RGMII图像传输系统设计/ch59_ov5640_udp_rgmii.zip",
+      "bytes": 662741,
+      "sha256": "5c9ab29ed8d9c6bec6dccbde8caf8886a64ce88147592427b2a33c69adf164d4",
+      "repacked_locally": false
+    }
+  ]
+}

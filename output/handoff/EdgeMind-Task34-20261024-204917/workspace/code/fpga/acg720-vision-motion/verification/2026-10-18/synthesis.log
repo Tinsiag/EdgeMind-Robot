@@ -1,0 +1,93 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project C:/Users/Administrator/Documents/EdgeMind-Robot/code/fpga/acg720-vision-motion/.local/synthesis/portable.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\async_fifo.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\capture_tokens.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\cdc_mailbox.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\ddr_framebuffer.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\dvp_capture_continuous.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\i2c_reg_master.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\line_features.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\line_pd.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\motion_core.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\motor_pwm_safe.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\reset_sync.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\safety_supervisor.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\unsigned_divider.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_osd.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_pixels.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_timing.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_motion_control.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_motion_top.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_packet_tx.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_protocol.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vl53l1x_config_rom.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vl53l1x_driver.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\quadrature_decoder.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\encoder_counter.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\wheel_speed_estimator.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\wheel_pi_controller.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\differential_drive.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\rotate_controller.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\uart_rx.v'
+Analyzing Verilog file 'C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\uart_tx.v'
+Compiling module 'vision_motion_top'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_motion_top.v":5)
+Compiling module 'reset_sync'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\reset_sync.v":3)
+Compiling module 'dvp_capture_continuous'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\dvp_capture_continuous.v":4)
+Compiling module 'cdc_mailbox(WIDTH=52)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\cdc_mailbox.v":5)
+Compiling module 'line_features'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\line_features.v":3)
+Compiling module 'unsigned_divider'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\unsigned_divider.v":3)
+Compiling module 'cdc_mailbox(WIDTH=40)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\cdc_mailbox.v":5)
+Compiling module 'capture_tokens'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\capture_tokens.v":3)
+Compiling module 'async_fifo(WIDTH=18,ADDR_BITS=12)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\async_fifo.v":5)
+Extracting RAM for identifier 'mem'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\async_fifo.v":10)
+Compiling module 'video_timing'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_timing.v":4)
+Compiling module 'cdc_mailbox(WIDTH=1)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\cdc_mailbox.v":5)
+Compiling module 'ddr_framebuffer'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\ddr_framebuffer.v":6)
+Compiling module 'async_fifo(WIDTH=128,ADDR_BITS=6)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\async_fifo.v":5)
+Extracting RAM for identifier 'mem'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\async_fifo.v":10)
+Compiling module 'video_pixels'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_pixels.v":3)
+Compiling module 'i2c_reg_master'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\i2c_reg_master.v":5)
+Compiling module 'vl53l1x_driver'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vl53l1x_driver.v":5)
+Compiling module 'vl53l1x_config_rom'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vl53l1x_config_rom.v":3)
+Compiling module 'vision_motion_control'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_motion_control.v":3)
+Compiling module 'uart_rx'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\uart_rx.v":3)
+Compiling module 'vision_protocol'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_protocol.v":3)
+Extracting RAM for identifier 'payload'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_protocol.v":23)
+Compiling module 'differential_drive'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\differential_drive.v":3)
+Compiling module 'rotate_controller'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\rotate_controller.v":3)
+Compiling module 'line_pd'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\line_pd.v":3)
+Compiling module 'safety_supervisor'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\safety_supervisor.v":3)
+Compiling module 'motion_core'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\motion_core.v":4)
+Compiling module 'quadrature_decoder'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\quadrature_decoder.v":3)
+Compiling module 'encoder_counter'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\encoder_counter.v":3)
+Compiling module 'wheel_speed_estimator'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\wheel_speed_estimator.v":6)
+Compiling module 'wheel_pi_controller'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\wheel_pi_controller.v":3)
+Compiling module 'motor_pwm_safe'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\motor_pwm_safe.v":3)
+Compiling module 'motor_pwm_safe(INVERT=1)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\motor_pwm_safe.v":3)
+Compiling module 'vision_packet_tx'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vision_packet_tx.v":3)
+Compiling module 'uart_tx'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-motion-control\rtl\uart_tx.v":3)
+Compiling module 'cdc_mailbox(WIDTH=192)'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\cdc_mailbox.v":5)
+Compiling module 'video_osd'("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\video_osd.v":4)
+NOTE  (EX0101) : Current top module is "vision_motion_top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "vl53l1x_config_rom" instantiated to "rom" is swept in optimizing("C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\rtl\vl53l1x_driver.v":20)
+[95%] Generate netlist file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\.local\synthesis\impl\gwsynthesis\portable.vg" completed
+[100%] Generate report file "C:\Users\Administrator\Documents\EdgeMind-Robot\code\fpga\acg720-vision-motion\.local\synthesis\impl\gwsynthesis\portable_syn.rpt.html" completed
+GowinSynthesis finish

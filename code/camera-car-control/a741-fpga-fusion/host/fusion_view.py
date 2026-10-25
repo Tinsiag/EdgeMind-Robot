@@ -13,7 +13,7 @@ from fusion import load_map, map_record, NavigationStatus
 
 class FusionView:
     def __init__(self, app, notebook):
-        self.app=app;self.raw=None;self.status=None;self.initial=None;self.target=None;self.photo=None
+        self.app=app;self.raw=None;self.status=None;self.initial=None;self.target=None;self.photo=None;self.waypoints=[]
         self.updated=0;self.last_live_sequence=None
         self.geometry=json.loads((Path(__file__).resolve().parents[1]/"config/geometry.json").read_text(encoding="utf-8"))
         self.frame=ttk.Frame(notebook);notebook.add(self.frame,text="FPGA地图 / 导航")
@@ -31,6 +31,11 @@ class FusionView:
         ttk.Button(position,text="开始导航",command=lambda:self.action("navigate")).grid(row=1,column=0,sticky="ew",padx=2,pady=3)
         ttk.Button(position,text="返回起点",command=lambda:self.action("return")).grid(row=1,column=1,sticky="ew",padx=2,pady=3)
         ttk.Button(position,text="取消 / 停止",command=app.stop).grid(row=1,column=2,columnspan=2,sticky="ew",padx=2,pady=3)
+        ttk.Radiobutton(position,text="添加路径点",variable=self.mode,value="waypoint").grid(row=2,column=0,sticky="w")
+        ttk.Button(position,text="执行路径点",command=lambda:self.action("mission")).grid(row=2,column=1,sticky="ew")
+        ttk.Button(position,text="清空路径点",command=lambda:self.action("clear_waypoints")).grid(row=2,column=2,sticky="ew")
+        self.mission_text=tk.StringVar(value="路径点 0/16")
+        ttk.Label(position,textvariable=self.mission_text).grid(row=3,column=0,columnspan=4,sticky="w")
         for i in range(4):position.columnconfigure(i,weight=1)
         self.canvas=tk.Canvas(self.frame,width=320,height=260,background="#edf0f2",highlightthickness=0)
         self.canvas.grid(row=2,column=0,sticky="nsew");self.canvas.bind("<Button-1>",self.select);self.canvas.bind("<Configure>",lambda _:self.draw())
@@ -38,6 +43,13 @@ class FusionView:
         ttk.Label(self.frame,textvariable=self.summary,wraplength=320).grid(row=3,column=0,sticky="ew")
 
     def action(self, kind):
+        if kind=="clear_waypoints":
+            if getattr(self.app,"busy",False):return
+            self.waypoints.clear();self.mission_text.set("路径点 0/16");self.draw();return
+        if kind=="mission":
+            if not self.waypoints:
+                messagebox.showerror("路径点","请先在地图上添加路径点");return
+            self.app.submit("fusion","mission",tuple(self.waypoints));return
         if kind=="save":
             if self.raw is None:
                 messagebox.showerror("地图","请先下载FPGA地图");return
@@ -71,9 +83,18 @@ class FusionView:
             angle=float(self.degrees.get())
             if not math.isfinite(angle):raise ValueError()
         except Exception:messagebox.showerror("朝向","请输入有效角度");return
+        if self.mode.get()=="waypoint":
+            if getattr(self.app,"busy",False):return
+            if len(self.waypoints)>=16:
+                messagebox.showerror("路径点","最多16个路径点");return
+            if not (-3100<=x<=3100 and -3100<=y<=3100):return
+            self.waypoints.append((x,y,angle));self.mission_text.set(f"路径点 {len(self.waypoints)}/16");self.draw();return
         self.app.submit("fusion",self.mode.get(),x,y,angle)
 
     def update(self,value):
+        if "mission" in value:
+            m=value["mission"]
+            self.mission_text.set(f"路径点 {min(m.index+int(m.active),m.count)}/{m.count}  {'运行' if m.active else '停止'}  原因 {m.error}")
         if "raw" in value:self.raw=value["raw"]
         if "status" in value:self.status=value["status"];self.updated=time.monotonic()
         if "initial" in value:self.initial=value["initial"]
@@ -112,6 +133,10 @@ class FusionView:
             if item:
                 x,y,_=item;sx=ox+(3200-y)*size/6400;sy=oy+(3200-x)*size/6400
                 self.canvas.create_oval(sx-4,sy-4,sx+4,sy+4,fill=color,outline=color)
+        for number,(x,y,_) in enumerate(self.waypoints,1):
+            sx=ox+(3200-y)*size/6400;sy=oy+(3200-x)*size/6400
+            self.canvas.create_oval(sx-6,sy-6,sx+6,sy+6,fill="#6846ad",outline="white")
+            self.canvas.create_text(sx,sy,text=str(number),fill="white",font=("TkDefaultFont",8))
         if self.status:
             s=self.status;sx=ox+(3200-s.y_mm)*size/6400;sy=oy+(3200-s.x_mm)*size/6400;a=s.yaw_raw*2*math.pi/65536
             self.canvas.create_line(sx,sy,sx-math.sin(a)*18,sy-math.cos(a)*18,fill="#1b68ae",width=3,arrow="last")
@@ -132,9 +157,14 @@ def execute_fusion(app, action, args):
     elif action=="pose":
         client.set_initial_pose(*args);app.events.put(("fusion",{"initial":args}));client.prepare_lidar(app.calibration,app.cancel);app.lidar_requested=True
     elif action=="goal":client.goal(*args);app.events.put(("fusion",{"target":args}))
+    elif action=="mission":
+        result=client.run_waypoints(app.calibration,args[0],app.cancel,lambda value:app.events.put(("fusion",{"mission":value})))
+        app.events.put(("message",{"waypoint_mission_finished":vars(result)}));app.lidar_requested=False
     elif action in ("navigate","return"):
-        if action=="return":client.goal(*args);app.events.put(("fusion",{"target":args}))
-        result=client.navigate(app.calibration,app.cancel,lambda:time.monotonic()-app.ui_alive<.3,
-            lambda status:app.events.put(("fusion",{"status":status})))
+        target=tuple(args) if action=="return" else app.fusion_view.target
+        if target is None:raise ValueError("请先在地图中选择目标点")
+        if action=="return":app.events.put(("fusion",{"target":target}))
+        result=client.run_waypoints(app.calibration,[target],app.cancel,
+            lambda value:app.events.put(("fusion",{"mission":value})))
         app.events.put(("message",{"navigation_finished":vars(result)}));app.lidar_requested=False
     app.events.put(("fusion",{"status":client.navigation_status()}))

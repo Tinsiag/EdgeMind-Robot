@@ -31,7 +31,7 @@ module a741_udp_control #(parameter CLK_HZ=125000000,REPLY_TIMEOUT_MS=30)(
     wire same_session=session_valid && incoming_session==session;
     wire expects_reply=buffer[15]==8'h01 || buffer[15]==8'h02 || buffer[15]==8'h03 ||
         buffer[15]==8'h04 || buffer[15]==8'h20 || buffer[15]==8'h21 || buffer[15]==8'h30 || buffer[15]==8'h40 || buffer[15]==8'h41 || buffer[15]==8'h42 || buffer[15]==8'h43 || buffer[15]==8'h44 || buffer[15]==8'h46 ||
-        (buffer[15]>=8'h50 && buffer[15]<=8'h57);
+        (buffer[15]>=8'h50 && buffer[15]<=8'h58);
     wire known=expects_reply || buffer[15]==8'h05 || buffer[15]==8'h11 || buffer[15]==8'h45 || buffer[15]==8'h47;
     uart_tx #(.CLK_HZ(CLK_HZ)) sender(.clk(clk),.rstn(rst_n),.start(uart_start),
         .data(buffer[index]),.tx(motion_uart_rx),.busy(uart_busy));

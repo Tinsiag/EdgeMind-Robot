@@ -5,7 +5,7 @@ module path_planner_tb;
     reg [6:0] start_x=64,start_y=64,goal_x=65,goal_y=65;
     wire map_read_valid;wire [13:0] map_read_address;reg [1:0] map_read_value=1;reg map_read_done=0;
     wire busy,path_valid,no_path,path_cell_valid,path_cell_last;wire [6:0] path_cell_x,path_cell_y;wire [13:0] expanded_nodes;
-    reg block_goal=0,corner_block=0;integer count=0;
+    reg block_goal=0,corner_block=0,detour_block=0,detour_seen=0;integer count=0;
     integer previous_x,previous_y;
     a741_path_planner dut(.clk(clk),.rst_n(rst_n),.start(start),.cancel(cancel),.map_valid(map_valid),
         .start_x(start_x),.start_y(start_y),.goal_x(goal_x),.goal_y(goal_y),
@@ -14,10 +14,12 @@ module path_planner_tb;
         .path_cell_x(path_cell_x),.path_cell_y(path_cell_y),.path_cell_last(path_cell_last),.expanded_nodes(expanded_nodes));
     always @(posedge clk) begin
         map_read_done<=map_read_valid;
-        if(map_read_valid) map_read_value<=block_goal && map_read_address=={goal_y,goal_x} ? 2'b10:
+        if(map_read_valid) map_read_value<=detour_block && map_read_address=={7'd64,7'd66} ? 2'b10:block_goal && map_read_address=={goal_y,goal_x} ? 2'b10:
             corner_block && map_read_address!={start_y,start_x} && map_read_address!={goal_y,goal_x} ? 2'b10:2'b01;
     end
     always @(negedge clk) if(path_cell_valid && !block_goal && !corner_block) begin
+        if(detour_block && path_cell_x==66 && path_cell_y==64) $fatal(1,"detour crossed obstacle");
+        if(detour_block && path_cell_y!=64) detour_seen=1;
         if(count==0 && {path_cell_x,path_cell_y}!=={goal_x,goal_y}) $fatal(1,"path must stream goal first");
         if(path_cell_last && {path_cell_x,path_cell_y}!=={start_x,start_y}) $fatal(1,"path must end at start");
         if(count>0 && (path_cell_x>previous_x+1 || path_cell_x+1<previous_x || path_cell_y>previous_y+1 || path_cell_y+1<previous_y))
@@ -38,7 +40,10 @@ module path_planner_tb;
         corner_block=0;goal_x=70;goal_y=69;count=0;@(negedge clk);start=1;@(negedge clk);start=0;
         wait(path_valid);@(negedge clk);#1;
         if(count!=7 || dut.records[{goal_y,goal_x}][17:0]!=80) $fatal(1,"multi-edge path cost/length count=%0d",count);
-        $display("PASS weighted A* known-free path, blocked goal and diagonal corner-cutting rejection");$finish;
+        detour_block=1;goal_x=68;goal_y=64;count=0;@(negedge clk);start=1;@(negedge clk);start=0;
+        wait(path_valid);@(negedge clk);#1;
+        if(!detour_seen || count<5 || no_path) $fatal(1,"planner did not route around obstacle");
+        $display("PASS weighted A* known-free path, obstacle detour, blocked goal and diagonal corner-cutting rejection");$finish;
     end
-    initial begin #12000000;$fatal(1,"watchdog");end
+    initial begin #18000000;$fatal(1,"watchdog");end
 endmodule

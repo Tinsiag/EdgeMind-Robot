@@ -38,7 +38,7 @@ git lfs pull
 
 ## 底盘概念
 
-**2026-10-15 当前版本为 [V3 摄像头底盘](chassis/v3-camera-closed-rails/README.md)**：上下层均为5mm，增加前置摄像头立板与两处电机XH2.54接口过线孔；删除上方侧护栏，下层四周围栏连为一体并保留通风孔。R3X轮组及85×47mm电池围栏保留。打开 [V3完整装配STEP](chassis/v3-camera-closed-rails/EdgeMind_Assembly.step)、[V3 FreeCAD装配](chassis/v3-camera-closed-rails/EdgeMind_Chassis.FCStd) 或 [V3离线预览](chassis/v3-camera-closed-rails/查看模型.html)。摄像头随上层总成整体抬升。[V2版本](chassis/v2-r3x-casters/README.md) 保留。
+**2026-10-20 当前版本为 [V4 第三层传感器平台](chassis/v4-lidar-imu/README.md)**：第三层板厚5mm，45mm支柱架起，LD06位于正前中央、MPU6050位于前侧靠边且双孔朝外，用户洞洞板居中放在雷达后方。打开 [V4完整装配STEP](chassis/v4-lidar-imu/EdgeMind_Assembly.step)、[V4 FreeCAD装配](chassis/v4-lidar-imu/EdgeMind_Chassis.FCStd)、[V4离线预览](chassis/v4-lidar-imu/查看模型.html) 或 [第三层板STEP](chassis/v4-lidar-imu/ThirdDeck.step)。R3X轮组、原V3摄像头、连续围栏与85×47mm电池位保留。[V3](chassis/v3-camera-closed-rails/README.md) 和 [V2](chassis/v2-r3x-casters/README.md) 保留。
 
 以下为保留的V1与最初概念参考。
 

@@ -1,13 +1,13 @@
 `timescale 1ns/1ps
 module ld06_recovery_tb;
     reg clk=0;always #10 clk=~clk;
-    reg rst_n=0,ms_tick=0,byte_valid=0;
+    reg rst_n=0,ms_tick=0,byte_valid=0,framing_error=0;
     reg [7:0] data=0;
     wire valid,packet_valid;
     wire [31:0] errors,sequence_id;
     wire [15:0] front_mm,left_mm,right_mm;
     ld06_parser #(.STALE_MS(5)) dut(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),
-        .byte_valid(byte_valid),.framing_error(1'b0),.data(data),.valid(valid),
+        .byte_valid(byte_valid),.framing_error(framing_error),.data(data),.valid(valid),
         .packet_valid(packet_valid),.errors(errors),.sequence_id(sequence_id),
         .front_mm(front_mm),.left_mm(left_mm),.right_mm(right_mm));
 
@@ -77,6 +77,19 @@ module ld06_recovery_tb;
             if(front_mm!=1200 || left_mm!=800 || right_mm!=900)
                 $fatal(1,"recovered full scan sectors F/L/R=%0d/%0d/%0d",front_mm,left_mm,right_mm);
         end
+        // A framing error while a registered point awaits the sector stage
+        // must discard that stage instead of restoring angular continuity.
+        fork
+            send_frame(35100,0);
+            begin
+                wait(dut.point_valid);
+                @(negedge clk);framing_error=1;
+                @(negedge clk);framing_error=0;
+                repeat(3) @(negedge clk);
+                if(valid || dut.have_last || dut.point_valid) $fatal(1,"queued point survived framing error");
+                no_complete_scan;
+            end
+        join
         $display("PASS LD06 bad-packet/stale recovery rejects false wrap and publishes only a complete continuous scan");
         $finish;
     end

@@ -1,0 +1,40 @@
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 9=0
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 0=1469
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 1=1471
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 2=66
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 3=66
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 4=121
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 5=50
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 6=491
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM 10=10
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Set output limit 128/1024; ARM with zero targets
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=21, right_pwm=0, command_age_ms=15)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=32, right_pwm=0, command_age_ms=30)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=44, right_pwm=0, command_age_ms=44)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=60, right_pwm=0, command_age_ms=59)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=63, right_pwm=0, command_age_ms=73)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=69, right_pwm=0, command_age_ms=88)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=72, right_pwm=0, command_age_ms=102)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=78, right_pwm=0, command_age_ms=116)
+STOP transmitted after 0.1322s; no further motion
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=182)
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=208)
+FINAL confirmed DISARMED, faults=0, PWM=0. Output limit 0 command acknowledged.
+OUTCOME: pulse_ended; inspect encoder feedback and user observation, not a closed-loop acceptance.

@@ -141,7 +141,6 @@ class App:
         control = ttk.Frame(self.root, padding=8)
         control.grid(row=2, column=0, sticky="ew")
         self.speed = tk.IntVar(value=100)
-        self.angular = tk.DoubleVar(value=30)
         self.distance = tk.DoubleVar(value=20)
         self.degrees = tk.DoubleVar(value=90)
         for col, (label, var, start, end) in enumerate([
@@ -271,7 +270,14 @@ class App:
         if self.busy or not self.connected:
             return
         try:
-            speed, angular = direction*self.motion_speed(), turn*self.angular.get()
+            selected_speed = self.motion_speed()
+            angular = 0.0
+            if turn:
+                self.calibration.values()
+                # A pivot uses the displayed wheel speed on both wheels.
+                # Convert it to the angular velocity expected by drive().
+                angular = turn*math.degrees(2000*selected_speed/self.calibration.data["mechanical_track_um"])
+            speed = direction*selected_speed
         except (ValueError, tk.TclError) as exc:
             messagebox.showerror("参数", str(exc))
             return
@@ -371,7 +377,11 @@ class App:
                 else:
                     self.events.put(("message", {"motion_start": kind, "parameters": args}))
                     if kind == "drive":
-                        result = self.client.drive(self.calibration, *args, self.held, self.cancel)
+                        result = self.client.drive(self.calibration, *args, self.held, self.cancel,
+                                                   telemetry=self.telemetry)
+                    elif kind == "distance":
+                        result = self.client.distance(self.calibration, *args, self.cancel,
+                                                      telemetry=self.telemetry)
                     else:
                         result = getattr(self.client, kind)(self.calibration, *args, self.cancel)
                     self.events.put(("message", result))

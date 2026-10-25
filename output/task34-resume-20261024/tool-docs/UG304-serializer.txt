@@ -1,0 +1,1044 @@
+PAGE 6
+      Contents 
+ 
+UG304-1.3.8E iii 
+ 
+4.2.14 OSIDES64 ................................................................................................................... 83 
+4.3 DDR Mode Output Logic .................................................................................................. 90 
+4.3.1 ODDR ............................................................................................................................ 90 
+4.3.2 ODDRC .......................................................................................................................... 93 
+4.3.3 OSER4 ........................................................................................................................... 96 
+4.3.4 OSER8 ........................................................................................................................... 99 
+4.3.5 OSER10 ....................................................................................................................... 103 
+4.3.6 OVIDEO ....................................................................................................................... 106 
+4.3.7 OSER14 ....................................................................................................................... 108 
+4.3.8 OSER16 ........................................................................................................................ 111 
+4.3.9 ODDR_MEM ................................................................................................................ 114 
+4.3.10 OSER4_MEM ............................................................................................................ 117 
+4.3.11 OSER8_MEM ............................................................................................................ 121 
+4.4 Delay Module .................................................................................................................. 125 
+4.4.1 IODELAY ..................................................................................................................... 125 
+5 IP Generation ............................................................................................... 128 
+5.1 IP Configuration .............................................................................................................. 128 
+5.2 IP Generation Files ......................................................................................................... 130 
+PAGE 8
+      List of Figures  
+ 
+UG304-1.3.8E v 
+ 
+Figure 4-13 CALIB Timing Diagram ................................................................................................... 49 
+Figure 4-14 IDES4 Port Diagram ....................................................................................................... 50 
+Figure 4-15 IDES8 Port Diagram ....................................................................................................... 52 
+Figure 4-16 IDES10 Port Diagram ..................................................................................................... 54 
+Figure 4-17 IVIDEO Port Diagram ..................................................................................................... 57 
+Figure 4-18 IDES16 Port Diagram ..................................................................................................... 59 
+Figure 4-19 IDDR_MEM Port Diagram .............................................................................................. 63 
+Figure 4-20 IDES4_MEM Port Diagram ............................................................................................ 65 
+Figure 4-21 IDES8_MEM Port Diagram ............................................................................................ 68 
+Figure 4-22 IDES14 Port Diagram ..................................................................................................... 71 
+Figure 4-23 IDES32 Port Diagram ..................................................................................................... 74 
+Figure 4-24 OSIDES32 Port Diagram ................................................................................................ 79 
+Figure 4-25 OSIDES64 Port Diagram ................................................................................................ 84 
+Figure 4-26 ODDR Logic Diagram ..................................................................................................... 91 
+Figure 4-27 ODDR Timing Diagram ................................................................................................... 91 
+Figure 4-28 ODDR Port Diagram ....................................................................................................... 91 
+Figure 4-29 ODDRC Logic Diagram .................................................................................................. 94 
+Figure 4-30 ODDRC Port Diagram .................................................................................................... 94 
+Figure 4-31 OSER4 Logic Diagram ................................................................................................... 96 
+Figure 4-32 OSER4 Port Diagram ..................................................................................................... 97 
+Figure 4-33 OSER8 Logic Diagram ................................................................................................... 100 
+Figure 4-34 OSER8 Port Diagram ..................................................................................................... 100 
+Figure 4-35 OSER10 Port Diagram ................................................................................................... 104 
+Figure 4-36 OVIDEO Port Diagram ................................................................................................... 106 
+Figure 4-37 OSER14 Port Diagram ................................................................................................... 108 
+Figure 4-37 OSER16 Port Diagram ................................................................................................... 111 
+Figure 4-38 ODDR_MEM Logic Diagram .......................................................................................... 114 
+Figure 4-39 ODDR_MEM Port Diagram ............................................................................................ 114 
+Figure 4-40 OSER4_MEM Logic Diagram ......................................................................................... 117 
+Figure 4-41 OSER4_MEM Diagram .................................................................................................. 118 
+Figure 4-42 OSER8_MEM Logic Diagram ......................................................................................... 121 
+Figure 4-43 OSER8_MEM Port Diagram ........................................................................................... 122 
+Figure 4-44 IODELAY Port Diagram .................................................................................................. 126 
+Figure 5-1 DDR IP Customization ...................................................................................................... 128 
+PAGE 10
+      List of Tables  
+ 
+UG304-1.3.8E vii 
+ 
+Table 4-14 IDDRC Port Description ................................................................................................... 48 
+Table 4-15 IDES4 Port Description .................................................................................................... 50 
+Table 4-16 IDES8 Port Description .................................................................................................... 52 
+Table 4-17 IDES10 Port Description .................................................................................................. 54 
+Table 4-18 IVIDEO Port Description .................................................................................................. 57 
+Table 4-19 IDES16 Port Description .................................................................................................. 60 
+Table 4-20 IDDR_MEM Port Description ........................................................................................... 63 
+Table 4-21 IDES4_MEM Port Description .......................................................................................... 65 
+Table 4-22 IDES8_MEM Port Description .......................................................................................... 68 
+Table 4-23 IDES14 Port Description .................................................................................................. 71 
+Table 4-24 IDES32 Port Description .................................................................................................. 75 
+Table 4-25 OSIDES32 Port Description ............................................................................................. 80 
+Table 4-26 OSIDES32 Parameter Description ................................................................................... 80 
+Table 4-27 OSIDES64 Port Description ............................................................................................. 84 
+Table4-28 OSIDES64 Parameter Description .................................................................................... 86 
+Table 4-29 ODDR Port Description .................................................................................................... 92 
+Table 4-30 ODDR Parameter Description .......................................................................................... 92 
+Table 4-31 ODDRC Port Description ................................................................................................. 94 
+Table 4-32 ODDRC Parameter Description ....................................................................................... 94 
+Table 4-33 OSER4 Port Description .................................................................................................. 97 
+Table 4-34 IDES4 Parameter Description .......................................................................................... 97 
+Table 4-35 OSER8 Port Description .................................................................................................. 100 
+Table 4-36 OSER8 Parameter Description ........................................................................................ 101 
+Table 4-37 OSER10 Port Description ................................................................................................ 104 
+Table 4-38 OVIDEO Port Description ................................................................................................ 106 
+Table 4-39 OSER14 Port Description ................................................................................................ 108 
+Table 4-39 OSER16 Port Description ................................................................................................ 111 
+Table 4-40 ODDR_MEM Port Description ......................................................................................... 115 
+Table 4-41 ODDR_MEM Parameter Description ............................................................................... 115 
+Table 4-42 OSER4_MEM Port Description ........................................................................................ 118 
+Table 4-43 OSER4_MEM Parameter Description .............................................................................. 118 
+Table 4-44 OSER8_MEM Port Description ........................................................................................ 122 
+Table 4-45 OSER8_MEM Parameter Description .............................................................................. 122 
+Table 4-47 IODELAY Port Description ............................................................................................... 126 
+Table 4-47 IODELAY Parameter Description ..................................................................................... 126 
+PAGE 61
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 51(130) 
+ 
+); 
+Vhdl Instantiation： 
+COMPONENT IDES4 
+   PORT( 
+    Q0:OUT std_logic; 
+    Q1:OUT std_logic; 
+    Q2:OUT std_logic; 
+                        Q3:OUT std_logic;  
+    D:IN std_logic; 
+                        FCLK:IN std_logic; 
+                        PCLK:IN std_logic; 
+                        CALIB:IN std_logic; 
+    RESET:IN std_logic 
+  ); 
+END COMPONENT; 
+uut:IDES4 
+ PORT MAP ( 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          Q2=>Q2, 
+          Q3=>Q3,   
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+   ); 
+4.2.4 IDES8 
+Primitive Introduction 
+The 1 to 8 Deserializer (IDES8) is a deserializer of 1 bit serial input 
+and 8 bits parallel output. 
+Functional Description 
+IDES8 mode realizes 1:8 serial parallel conversion and output data is 
+provided to FPGA logic at the same clock edge. CALIB is supported to 
+adjust the sequence of output data. The data is shifted by one bit per 
+pulse. After four shifts, the data output will be the same as the data before 
+PAGE 64
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 54(130) 
+ 
+          Q7=>Q7, 
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+    ); 
+4.2.5 IDES10 
+Primitive Introduction 
+The 1 to 10 Deserializer (IDES10) is a deserializer of 1 bit serial input 
+and 10 bits parallel output. 
+Functional Description 
+IDES10 mode realizes 1:10 serial parallel conversion and output data 
+is provided to FPGA logic at the same clock edge. CALIB is supported to 
+adjust the sequence of output data. The data is shifted by one bit per 
+pulse. After ten shifts, the data output will be the same as the data before 
+the shift. 
+PCLK is usually obtained by FCLK frequency division： 
+15PCLK FCLKff 
+. 
+Port Diagram 
+Figure 4-16 IDES10 Port Diagram 
+IDES10PCLK
+FCLK
+RESET
+Q5CALIB
+D Q1
+Q3
+Q7
+Q2
+Q4
+Q6
+Q8
+Q0
+Q9
+ 
+ 
+Port Description 
+Table 4-17 IDES10 Port Description 
+Port I/O Description 
+D Input IDES10 data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+PAGE 66
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 56(130) 
+ 
+             Q4:OUT std_logic; 
+             Q5:OUT std_logic; 
+             Q6:OUT std_logic; 
+             Q7:OUT std_logic; 
+             Q8:OUT std_logic; 
+             Q9:OUT std_logic;   
+    D:IN std_logic; 
+             FCLK:IN std_logic; 
+             PCLK:IN std_logic; 
+             CALIB:IN std_logic; 
+    RESET:IN std_logic 
+  ); 
+END COMPONENT; 
+uut:IDES10 
+  PORT MAP ( 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          Q2=>Q2, 
+          Q3=>Q3, 
+          Q4=>Q4,  
+          Q5=>Q5,  
+          Q6=>Q6, 
+          Q7=>Q7, 
+          Q8=>Q8, 
+          Q9=>Q9,  
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+    ); 
+4.2.6 IVIDEO 
+Primitive Introduction 
+The 1 to 7 Deserializer ( IVIDEO ) is a deserializer of 1 bit serial input 
+and 7 bits parallel output. 
+PAGE 67
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 57(130) 
+ 
+Functional Description 
+IVIDEO mode realizes 1:7 serial parallel conversion and output data 
+is provided to FPGA logic at the same clock edge. CALIB is supported to 
+adjust the sequence of output data. The data is shifted by two bits per 
+pulse. After seven shifts, the data output will be the same as the data 
+before the shift. 
+PCLK is usually obtained by FCLK frequency division： 
+1 3.5PCLK FCLKff 
+. 
+Port Diagram 
+Figure 4-17 IVIDEO Port Diagram 
+IVIDEOPCLK
+FCLK
+RESET
+Q2
+CALIB
+D
+Q4
+Q1
+Q3
+Q5
+Q0
+Q6
+ 
+ 
+Port Description 
+Table 4-18 IVIDEO Port Description 
+Port I/O Description 
+D Input IVIDEO data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+CALIB Input CALIB signal, used to adjust the sequence of output data, active-high. 
+RESET Input Asynchronous reset input signal, active-high. 
+Q6~Q0 Output IVIDEO data output signal 
+ 
+Connection Rule 
+Data input D of IVIDEO can be directly from IBUF or from DO in 
+IODELAY module. 
+Primitive Instantiation 
+The primitive can be instantiated directly. 
+Verilog Instantiation: 
+IVIDEO uut( 
+PAGE 69
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 59(130) 
+ 
+          Q3=>Q3, 
+          Q4=>Q4,  
+          Q5=>Q5,  
+          Q6=>Q6, 
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+     ); 
+4.2.7 IDES16 
+Primitive Introduction 
+The 1 to 16 Deserializer (IDES16) is a deserializer of 1 bit serial input 
+and 16 bits parallel output. 
+Functional Description 
+IDES16 mode realizes 1:16 serial parallel conversion and output data 
+is provided to FPGA logic at the same clock edge. CALIB is supported to 
+adjust the sequence of output data. Each pulse data is shifted by one bit. 
+After sixteen shifts, the data output will be the same as the data before the 
+shift. 
+PCLK is usually obtained by FCLK frequency division： 
+18PCLK FCLKff 
+. 
+Port Diagram 
+Figure 4-18 IDES16 Port Diagram 
+PCLK
+FCLK
+RESET
+CALIB
+D
+IDES16
+Q9
+Q8
+Q7
+Q6
+Q5
+Q4
+Q3
+Q2
+Q1
+Q0
+Q15
+Q14
+Q13
+Q12
+Q11
+Q10
+ 
+ 
+PAGE 74
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 64(130) 
+ 
+.WADDR(waddr[2:0]), 
+.RADDR(raddr[2:0]), 
+.RESET(reset) 
+); 
+Vhdl Instantiation: 
+COMPONENT IDDR_MEM 
+   PORT( 
+      Q0:OUT std_logic; 
+             Q1:OUT std_logic;  
+    D:IN std_logic; 
+             ICLK:IN std_logic; 
+             PCLK:IN std_logic; 
+             WADDR:IN std_logic_vector(2 downto 0); 
+             RADDR:IN std_logic_vector(2 downto 0); 
+     RESET:IN std_logic 
+  ); 
+END COMPONENT; 
+uut:IDDR_MEM 
+  PORT MAP ( 
+          Q0=>q0, 
+          Q1=>q1, 
+          D=>d, 
+          ICLK=>iclk, 
+          PCLK=>pclk, 
+          WADDR=>waddr, 
+          RADDR=>raddr, 
+          RESET=>reset 
+    ); 
+4.2.9 IDES4_MEM 
+Primitive Introduction 
+The 1 to 4 Deserializer with Memory (IDES4_MEM) realizes 1:4 
+serial-parallel with memory. 
+Functional Description 
+IDES4_MEM realizes 1:4 serial parallel conversion and the output 
+data is provided to FPGA logic at the same clock edge. CALIB is 
+supported to adjust the sequence of output data. Each pulse data is 
+PAGE 77
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 67(130) 
+ 
+             CALIB:IN std_logic; 
+          RESET:IN std_logic 
+  ); 
+END COMPONENT; 
+uut:IDES4_MEM 
+  PORT MAP ( 
+          Q0=>q0, 
+          Q1=>q1, 
+          Q2=>q2, 
+          Q3=>q3, 
+          D=>d, 
+          ICLK=>iclk, 
+          FCLK=>fclk, 
+          PCLK=>pclk, 
+          WADDR=>waddr, 
+          RADDR=>raddr, 
+          CALIB=>calib, 
+          RESET=>reset 
+   ); 
+4.2.10 IDES8_MEM 
+Primitive Introduction 
+The 1 to 8 Deserializer with Memory (IDES8_MEM) realizes 1:8 serial 
+parallel with memory. 
+Functional Description 
+IDES8_MEM realizes 1:8 serial parallel conversion and output data is 
+provided to FPGA logic at the same clock edge. CALIB is supported to 
+adjust the sequence of output data. The data is shifted by one bit per 
+pulse. After eight shifts, the data output will be the same as the data 
+before the shift. The ICLK connects the output signal DQSR90 of DQS 
+and sends data to IDES8_MEM according to the ICLK clock edge. 
+WADDR[2:0] connects the output signal WPOINT of DQS; RADDR[2:0] 
+connects output signal RPOINT of DQS. 
+The frequency relation between PCLK, FCLK and ICLK is
+1 4 1 4PCLK FCLK ICLKfff 
+. 
+You can determine the phase relationship between PCLK and ICLK 
+according to the DLLSTEP value of DQS. 
+PAGE 80
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 70(130) 
+ 
+END COMPONENT; 
+uut:IDES8_MEM 
+  PORT MAP ( 
+          Q0=>q0, 
+          Q1=>q1, 
+          Q2=>q2, 
+          Q3=>q3, 
+          Q4=>q4, 
+Q5=>q5, 
+Q6=>q6, 
+Q7=>q7, 
+          D=>d, 
+          ICLK=>iclk, 
+          FCLK=>fclk, 
+          PCLK=>pclk, 
+          WADDR=>waddr, 
+          RADDR=>raddr, 
+          CALIB=>calib, 
+          RESET=>reset 
+    ); 
+4.2.11 IDES14 
+Primitive Introduction 
+The 1 to 14 Deserializer (IDES14) is a deserializer of 1 bit serial input 
+and 14 bits parallel output. 
+Functional Description 
+IDES14 mode realizes 1:14 serial parallel conversion and the output 
+data is provided to FPGA logic at the same clock edge. CALIB is 
+supported to adjust the sequence of output data. The data is shifted by 
+one bit per pulse. After fourteen shifts, the data output will be the same as 
+the data before the shift. 
+PCLK is usually obtained by FCLK frequency division: 
+FCLKPCLK ff 71 
+ 
+PAGE 83
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 73(130) 
+ 
+             CALIB:IN std_logic; 
+   RESET:IN std_logic 
+   ); 
+END COMPONENT; 
+uut:IDES14 
+ PORT MAP ( 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          Q2=>Q2, 
+          Q3=>Q3, 
+          Q4=>Q4,  
+          Q5=>Q5,  
+          Q6=>Q6, 
+          Q7=>Q7, 
+          Q8=>Q8, 
+          Q9=>Q9, 
+          Q10=>Q10, 
+          Q11=>Q11, 
+          Q12=>Q12, 
+          Q13=>Q13, 
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+     ); 
+4.2.12 IDES32 
+Primitive Introduction 
+The 1 to 32 Deserializer (IDES32) is a deserializer of 1 bit serial input 
+and 32 bits parallel output. 
+Functional Description 
+IDES32 mode realizes 1:32 serial parallel conversion and the output 
+data is provided to FPGA logic at the same clock edge. CALIB is 
+supported to adjust the sequence of output data. The data is shifted by 
+one bit per pulse. After thirty-two shifts, the data output will be the same as 
+the data before the shift. 
+PAGE 88
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 78(130) 
+ 
+          Q6=>Q6, 
+          Q7=>Q7, 
+          Q8=>Q8, 
+          Q9=>Q9, 
+          Q10=>Q10, 
+          Q11=>Q11, 
+          Q12=>Q12, 
+          Q13=>Q13, 
+          Q14=>Q14, 
+          Q15=>Q15, 
+          Q16=>Q16, 
+          Q17=>Q17, 
+          Q18=>Q18,  
+          Q19=>Q19,  
+          Q20=>Q20, 
+          Q21=>Q21, 
+          Q22=>Q22, 
+          Q23=>Q23, 
+          Q24=>Q24, 
+          Q25=>Q25, 
+          Q26=>Q26, 
+          Q27=>Q27, 
+          Q28=>Q28, 
+          Q29=>Q29, 
+          Q30=>Q30, 
+          Q31=>Q31, 
+          D=>D, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          CALIB=>CALIB, 
+          RESET=>RESET 
+     ); 
+4.2.13 OSIDES32 
+Primitive Introduction 
+OSIDES32 is a deserializer of 1 bit serial input and 32 bits parallel 
+PAGE 89
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 79(130) 
+ 
+output to implement oversampling serial-to-parallel function. 
+Functional Description 
+Using two IOLs can achieve 1:32 oversampling serial to parallel, and 
+asynchronous reset is supported; but the function of adjusting the output 
+data sequence by CALIB is not supported. 
+The major difference between oversampling and normal serial-to-
+parallel mode is that oversampling is performed 4 times in one fclk, while 
+the normal serial-to-parallel is performed only twice in one fclk, that is, 
+rising and falling edge samplings.  
+The frequency relationship between PCLK and FCLKP, FCLKN, 
+FCLKQP, FCLKQN is 
+𝑓𝑃𝐶𝐿𝐾 = 1/4𝑓𝐹𝐶𝐿𝐾𝑃 = 1/4𝑓𝐹𝐶𝐿𝐾𝑁 = 1/4𝑓𝐹𝐶𝐿𝐾𝑄𝑃 = 1/4𝑓𝐹𝐶𝐿𝐾𝑄𝑁 
+The relationship of the four FCLK phases are P 0°, QP 90°, N 180°, 
+and QN 270°. 
+Port Diagram 
+Figure 4-24 OSIDES32 Port Diagram 
+FCLKQP
+FCLKP
+FCLKN
+FCLKQN
+D
+OSIDES32
+Q
+VALUE0
+PCLK
+SDTAP0
+DLYSTEP0
+RESET
+/
+8
+/
+32
+DF0
+DF1
+VALUE1
+SDTAP1
+DLYSTEP1 /8
+ 
+ 
+PAGE 93
+4 Input/output Logic 4.2 DDR Mode Input Logic 
+ 
+UG304-1.3.8E 83(130) 
+ 
+          PCLK=>PCLK, 
+          SDTAP0=>SDTAP0, 
+          VALUE0=>VALUE0, 
+      SDTAP1=>SDTAP1, 
+          VALUE1=>VALUE1, 
+          RESET=>RESET, 
+          DLYSTEP0=>DLYSTEP0, 
+DLYSTEP1=>DLYSTEP1, 
+          DF0=>DF0, 
+          DF1=>DF1 
+     ); 
+ 
+4.2.14 OSIDES64 
+Primitive Introduction 
+OSIDES64 performs 1-bit serial input to 64-bit parallel output 
+oversampling serial-to-parallel conversion. 
+Functional Description 
+Using two IOLs, 1:64 oversampling serial-to-parallel conversion with 
+asynchronous reset functionality can be achieved. The CALIB function to 
+adjust the order of output data is not supported. 
+The biggest difference between oversampling and normal serial-to-
+parallel mode is that oversampling performs four samples in the same fclk 
+cycle, while normal serial-to-parallel performs only two samples on the 
+rising and falling edges of fclk in one fclk cycle.  
+The frequency relation between PCLK, FCLKP, FCLKN,FCLKQP, and 
+FCLKQN is: 
+𝑓𝑃𝐶𝐿𝐾 = 1/4𝑓𝐹𝐶𝐿𝐾𝑃 = 1/4𝑓𝐹𝐶𝐿𝐾𝑁 = 1/4𝑓𝐹𝐶𝐿𝐾𝑄𝑃 = 1/4𝑓𝐹𝐶𝐿𝐾𝑄𝑁 
+The four FCLK phase relationships are P 0°, QP 90°, N 180°, and QN 
+270°. 
+PAGE 106
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 96(130) 
+ 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          D0=>D0, 
+          D1=>D1, 
+          TX=>TX, 
+          CLK=>CLK, 
+          CLEAR=>CLEAR 
+    );  
+4.3.3 OSER4 
+Primitive Introduction 
+The 4 to 1 Serializer (OSER4) is a serializer of 4 bits parallel input 
+and 1 bit serial output. 
+Functional Description 
+OSER4 mode realizes 4:1 parallel to serial conversion, and Q0 is the 
+serial output, Q1 is used for the OEN signal of IOBUF/TBUF connected to 
+Q0. TX0/TX1 is the OEN input control signal of IOBUF/TBUF, and 
+TX0/TX1 can be synchronized with the data D0~D3 through DDR. 
+TX0/TX1 through TRI-DDRX2 is output as Q1 connected to the OEN 
+signal of IOBUF/TBUF; D0~D3 through ODDRX2 is output as Q0 
+connected to the data input I of IOBUF/TBUF, and the sequence is D0, D1, 
+D2, D3 in order. Its logic diagram is as shown in Figure 4-31. 
+Figure 4-31 OSER4 Logic Diagram 
+ODDRX2
+TRI-DDRX2
+2
+4
+TX
+TX0,TX1
+D0~D3
+D
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+Q1
+Q0
+OEN
+I O
+TBUF
+OSER4
+DO
+ 
+ 
+PCLK is usually obtained by FCLK frequency division： 
+12PCLK FCLKff 
+. 
+PAGE 109
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 99(130) 
+ 
+  ); 
+END COMPONENT; 
+uut:OSER4 
+  GENERIC MAP (HWL=>"false", 
+TXCLK_POL=>'0' 
+        ) 
+  PORT MAP ( 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          D0=>D0, 
+          D1=>D1, 
+          D2=>D2, 
+          D3=>D3, 
+          TX0=>TX0, 
+          TX1=>TX1, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          RESET=>RESET 
+    ); 
+4.3.4 OSER8 
+Primitive Introduction 
+The 8 to 1 Serializer (OSER8) is a serializer of 8 bits parallel input 
+and 1 bit serial output. 
+Functional Description 
+OSER8 mode realizes 8:1 parallel to serial. Where Q0 is the serial 
+output, Q1 is used for the OEN signal of IOBUF/TBUF connected to Q0. 
+Its logic diagram is as shown in Figure 4-33. 
+PAGE 113
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 103(130) 
+ 
+TXCLK_POL=>'0' 
+        ) 
+  PORT MAP ( 
+          Q0=>Q0, 
+          Q1=>Q1, 
+          D0=>D0, 
+          D1=>D1, 
+          D2=>D2,  
+          D3=>D3, 
+          D4=>D4, 
+          D5=>D5, 
+          D6=>D6, 
+          D7=>D7, 
+          TX0=>TX0, 
+          TX1=>TX1, 
+          TX2=>TX2, 
+          TX3=>TX3, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          RESET=>RESET 
+    ); 
+4.3.5 OSER10 
+Primitive Introduction 
+The 10 to 1 Serializer (OSER10) is a serializer of 10 bits parallel input 
+and 1 bit serial output. 
+Functional Description 
+OSER10 mode realizes 10:1 parallel to serial conversion. PCLK is 
+usually obtained by FCLK frequency division, 
+15PCLK FCLKff  . 
+PAGE 114
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 104(130) 
+ 
+Port Diagram 
+Figure 4-35 OSER10 Port Diagram 
+OSER10
+FCLK
+RESET
+PCLK
+D9~D0
+Q
+ 
+ 
+Port Description 
+Table 4-37 OSER10 Port Description 
+Port I/O Description 
+D9~D0 Input OSER10 data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+RESET Input Asynchronous reset input signal, active-high. 
+Q Output OSER10 data output signal 
+ 
+Connection Rule 
+Q can directly connect to OBUF, or connect to input port DI in 
+IODELAY module. 
+Primitive Instantiation 
+The primitive can be instantiated directly. 
+Verilog Instantiation: 
+OSER10 uut( 
+    .Q(Q),  
+    .D0(D0),  
+    .D1(D1), 
+    .D2(D2),  
+.D3(D3),  
+    .D4(D4),  
+    .D5(D5), 
+    .D6(D6),  
+.D7(D7),  
+    .D8(D8),  
+.D9(D9),  
+PAGE 115
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 105(130) 
+ 
+    .PCLK(PCLK),  
+    .FCLK(FCLK), 
+    .RESET(RESET) 
+); 
+Vhdl Instantiation: 
+COMPONENT OSER10 
+    PORT( 
+    Q:OUT std_logic; 
+    D0:IN std_logic; 
+        D1:IN std_logic; 
+        D2:IN std_logic; 
+        D3:IN std_logic; 
+        D4:IN std_logic; 
+        D5:IN std_logic; 
+        D6:IN std_logic; 
+        D7:IN std_logic; 
+        D8:IN std_logic; 
+        D9:IN std_logic; 
+        FCLK:IN std_logic; 
+        PCLK:IN std_logic; 
+     RESET:IN std_logic 
+   ); 
+END COMPONENT; 
+uut:OSER10 
+      PORT MAP ( 
+          Q=>Q, 
+          D0=>D0, 
+          D1=>D1, 
+          D2=>D2,  
+          D3=>D3, 
+          D4=>D4, 
+          D5=>D5, 
+          D6=>D6, 
+          D7=>D7, 
+          D8=>D8, 
+PAGE 116
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 106(130) 
+ 
+          D9=>D9,  
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          RESET=>RESET 
+    ); 
+4.3.6 OVIDEO 
+Primitive Introduction 
+The 7 to 1 Serializer (OVIDEO) is a serializer of 7 bits parallel input 
+and 1 bit serial output, 
+Functional Description 
+OVIDEO mode realizes 7:1 parallel to serial conversion. PCLK is 
+usually obtained by FCLK frequency division: 
+1 3.5PCLK FCLKff  . 
+Port Diagram 
+Figure 4-36 OVIDEO Port Diagram 
+OVIDEO
+FCLK
+RESET
+PCLK
+D6~D0
+Q
+ 
+Port Description 
+Table 4-38 OVIDEO Port Description 
+Port I/O Description 
+D6~D0 Input OVIDEO data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+RESET Input Asynchronous reset input signal, active-high. 
+Q Output OVIDEO data output signal 
+ 
+Connection Rule 
+Q can directly connect to OBUF, or connect to input port DI in 
+IODELAY module; 
+Primitive Instantiation 
+The primitive can be instantiated directly. 
+PAGE 118
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 108(130) 
+ 
+          D2=>D2,  
+          D3=>D3, 
+          D4=>D4, 
+          D5=>D5, 
+          D6=>D6, 
+          FCLK=>FCLK, 
+          PCLK=>PCLK, 
+          RESET=>RESET 
+    ); 
+4.3.7 OSER14 
+Primitive Introduction 
+The 14 to 1 Serializer (OSER14) is a serializer of 14 bits parallel input 
+and 1 bit serial output. 
+Functional Description 
+OSER14 mode realizes 14:1 parallel to serial conversion. The output 
+sequence of OSER14 is D0,D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, 
+D11, D12, D13. PCLK is usually obtained by FCLK frequency division:  
+f𝑃𝐶𝐿𝐾 = 1 7⁄ 𝑓𝐹𝐶𝐿𝐾 
+Port Diagram 
+Figure 4-37 OSER14 Port Diagram 
+OSER14
+FCLK
+RESET
+PCLK
+D13~D0
+Q
+ 
+Table 4-39 OSER14 Port Description 
+Port I/O Description 
+D13~D0 Input OSER14 data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+RESET Input Asynchronous reset input signal, active-high. 
+Q Output OSER14 data output signal 
+ 
+PAGE 121
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 111(130) 
+ 
+4.3.8 OSER16 
+Primitive Introduction 
+The 16 to 1 Serializer (OSER16) is a serializer of 16 bits parallel input 
+and 1 bit serial output. 
+Functional Description 
+OSER16 mode realizes 16:1 parallel to serial conversion. PCLK is 
+usually obtained by FCLK frequency division：  
+18PCLK FCLKff 
+ 
+Port Diagram 
+Figure 4-38 OSER16 Port Diagram 
+OSER16
+FCLK
+RESET
+PCLK
+D15~D0
+Q
+ 
+ 
+Port Description 
+Table 4-40 OSER16 Port Description 
+Port I/O Description 
+D15~D0 Input OSER16 data input signal 
+FCLK Input High speed clock input signal 
+PCLK Input Primary clock input signal 
+RESET Input Asynchronous reset input signal, active-high. 
+Q Output OSER16_MEM data output signal 
+ 
+Connection Rule 
+Q can directly connect to OBUF, or connect to input port DI in 
+IODELAY module; 
+Primitive Instantiation 
+The primitive can be instantiated directly. 
+Verilog Instantiation: 
+OSER16 uut( 
+    .Q(Q), 
+PAGE 127
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 117(130) 
+ 
+          RESET=>reset 
+    ); 
+4.3.10 OSER4_MEM 
+Primitive Introduction 
+The 4 to 1 Serializer with Memory (OSER4_MEM) realizes 4:1 parallel 
+serial conversion with memory. 
+Functional Description 
+OSER4_MEM realizes 4:1 parallel serial conversion. Unlike OSER4, 
+OSER4_MEM needs to be used with DQS. The TCLK connects to the 
+output signal DQSW0 or DQSW270 of DQS, and outputs data from the 
+OSER4_MEM according to the TCLK clock edge, and Q0 is the serial 
+output, Q1 is used for the OEN signal of IOBUF/TBUF connected to Q0. 
+Its logic diagram is as shown in Figure 4-41. 
+Figure 4-41 OSER4_MEM Logic Diagram 
+ODDRX2
+TRI-MDDRX2
+2
+4
+TX
+TX0,TX1
+D0~D3
+D
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+Q1
+Q0
+OEN
+I O
+TBUF
+OSER4_MEM
+DO
+TCLK
+TCLK TCLK
+ 
+ 
+The frequency relation among PCLK, FCLK and TCLK is
+1 2 1 2PCLK FCLK TCLKfff 
+. 
+You can determine the phase realationship between FCLK and TCLK 
+according to the DLLSTEP and WSTEP values of DQS. 
+PAGE 131
+4 Input/output Logic 4.3 DDR Mode Output Logic 
+ 
+UG304-1.3.8E 121(130) 
+ 
+          TCLK=>tclk, 
+          FCLK=>fclk,  
+          PCLK=>pclk, 
+          RESET=>reset 
+    ); 
+4.3.11 OSER8_MEM 
+Primitive Introduction 
+The 8 to 1 Serializer with Memory (OSER8_MEM) realizes 8:1 parallel 
+serial with memory. 
+Functional Description 
+OSER8_MEM mode realizes 8:1 parallel serial conversion. The TCLK 
+connects the output signal DQSW0 or DQSW270 of DQS, and outputs 
+data from the OSER8_MEM according to the TCLK clock edge, and Q0 is 
+the serial output, Q1 is used for the OEN signal of IOBUF/TBUF 
+connected to Q0. Its logic diagram is as shown in Figure 4-43. 
+Figure 4-43 OSER8_MEM Logic Diagram 
+ODDRX4
+TRI-MDDRX4
+4
+8
+TX
+TX0~TX3
+D0~D7
+D
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+PCLK
+FCLK
+RESET
+Q1
+Q0
+OEN
+I O
+TBUF
+OSER8_MEM
+DO
+TCLK
+TCLK TCLK
+ 
+ 
+The frequency relation between PCLK, FCLK and TCLK is 
+1 4 1 4PCLK FCLK TCLKfff 
+. 
+You can determine the phase realationship between FCLK and TCLK 
+according to DLLSTEP and WSTEP values of DQS. 

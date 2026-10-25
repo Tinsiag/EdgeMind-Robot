@@ -1,0 +1,2228 @@
+{
+  "report": "/home/tinsiag/Documents/cam/build/ddr3_timing_audit/generated-clock-model/impl/pnr/ddr3_live_hdmi.tr",
+  "sha256": "1cc0a4fea21e03afa1fac2447f2ca4c78a7acfbf33dd83fddb99b5ef3f1b03e9",
+  "headline": {
+    "setup": 143,
+    "hold": 60,
+    "falling": 66
+  },
+  "modes": {
+    "setup": {
+      "printed_negative_paths": 33,
+      "by_category": {
+        "ddr_dll_step_capture": 8,
+        "ddr_dqs_control": 2,
+        "single_bit_first_sync_stage": 3,
+        "fifo_reset_or_other": 20
+      },
+      "by_clock_pair": {
+        "memory400:[R] -> ui100:[R]": 8,
+        "ui100:[R] -> memory400:[F]": 2,
+        "pixel33:[R] -> ui100:[R]": 12,
+        "ui100:[R] -> pixel33:[R]": 11
+      },
+      "worst_slack_ns": -2.189,
+      "paths": [
+        {
+          "slack_ns": -2.189,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_3_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.189,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_4_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.135,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -2.123,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_1_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.123,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_5_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.955,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_2_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.952,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_7_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.84,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_6_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.752,
+          "source": "video/v_1_s0",
+          "destination": "engine/blank_s_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -1.636,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_0_s0",
+          "launch_clock": "memory400:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -0.967,
+          "source": "reader/fifo_inst/Small.wptr_5_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_5_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.955,
+          "source": "engine/display_valid_s0",
+          "destination": "video/ready_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.918,
+          "source": "video/frame_tick_s2",
+          "destination": "engine/tick_s_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.905,
+          "source": "reader/fifo_inst/Small.wptr_8_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_8_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.898,
+          "source": "reader/fifo_inst/rbin_num_12_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_9_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.714,
+          "source": "reader/fifo_inst/Small.rptr_2_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.705,
+          "source": "reader/fifo_inst/Small.wptr_4_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_4_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.674,
+          "source": "reader/fifo_inst/Small.rptr_6_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_6_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.673,
+          "source": "reader/fifo_inst/Small.rptr_7_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_7_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.673,
+          "source": "reader/fifo_inst/Small.rptr_8_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_8_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.556,
+          "source": "reader/fifo_inst/Small.wptr_9_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_9_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.552,
+          "source": "reader/fifo_inst/Small.rptr_1_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.534,
+          "source": "reader/fifo_inst/Small.wptr_0_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.522,
+          "source": "reader/fifo_inst/Small.rptr_4_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.522,
+          "source": "reader/fifo_inst/Small.wptr_6_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_6_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.52,
+          "source": "reader/fifo_inst/Small.rptr_3_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.512,
+          "source": "reader/fifo_inst/Small.wptr_3_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_3_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.503,
+          "source": "reader/fifo_inst/Small.rptr_5_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_5_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.503,
+          "source": "reader/fifo_inst/Small.wptr_1_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.495,
+          "source": "reader/fifo_inst/Small.rptr_0_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.485,
+          "source": "reader/fifo_inst/Small.wptr_2_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_2_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.485,
+          "source": "reader/fifo_inst/Small.wptr_7_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_7_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.421,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_dqs_control"
+        }
+      ]
+    },
+    "hold": {
+      "printed_negative_paths": 60,
+      "by_category": {
+        "ddr_phy_other": 18,
+        "fifo_reset_or_other": 10,
+        "single_bit_first_sync_stage": 2,
+        "unclassified": 30
+      },
+      "by_clock_pair": {
+        "ui100:[R] -> reference50:[R]": 2,
+        "ui100:[R] -> camera100:[R]": 11,
+        "pixel33:[R] -> serial165:[R]": 30,
+        "ui100:[R] -> memory400:[R]": 16,
+        "ui100:[R] -> board50:[R]": 1
+      },
+      "worst_slack_ns": -1.21,
+      "paths": [
+        {
+          "slack_ns": -1.21,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_init_rmove_mod/sys_reset_ch_1_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/ddr_sync/recalib_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "reference50:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_0_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_3_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_3_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_5_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_5_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_7_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_7_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.894,
+          "source": "writer/fifo_inst/Big.rptr_6_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_6_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.889,
+          "source": "writer/fifo_inst/Big.rptr_4_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_4_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.886,
+          "source": "writer/fifo_inst/Big.rptr_2_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_2_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.882,
+          "source": "writer/fifo_inst/Big.rptr_8_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_8_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.874,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/wloadn_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "reference50:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.834,
+          "source": "engine/capture_request_s0",
+          "destination": "capture/req_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.796,
+          "source": "writer/fifo_inst/Big.rptr_1_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.778,
+          "source": "encoder/encb/dout_9_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0l_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.776,
+          "source": "encoder/encb/dout_8_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0h_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.748,
+          "source": "encoder/encr/dout_5_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2l_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.731,
+          "source": "encoder/encb/dout_4_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0h_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.725,
+          "source": "encoder/encg/dout_9_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1l_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.683,
+          "source": "writer/fifo_inst/rbin_num_9_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_9_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.683,
+          "source": "encoder/encb/dout_3_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0l_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.664,
+          "source": "encoder/encb/dout_1_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0l_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.653,
+          "source": "encoder/encg/dout_6_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1h_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.647,
+          "source": "encoder/encr/dout_8_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2h_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.641,
+          "source": "encoder/encb/dout_7_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0l_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.641,
+          "source": "encoder/encb/dout_6_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0h_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.636,
+          "source": "encoder/encr/dout_6_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2h_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.634,
+          "source": "encoder/encr/dout_7_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2l_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.632,
+          "source": "encoder/encg/dout_1_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1l_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.629,
+          "source": "encoder/encg/dout_8_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1h_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.623,
+          "source": "encoder/encb/dout_2_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0h_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.605,
+          "source": "encoder/encg/dout_0_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1h_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.601,
+          "source": "encoder/encb/dout_5_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0l_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.599,
+          "source": "encoder/encr/dout_9_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2l_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.582,
+          "source": "encoder/encr/dout_0_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2h_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.571,
+          "source": "encoder/encg/dout_4_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1h_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.561,
+          "source": "encoder/encg/dout_7_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1l_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.55,
+          "source": "encoder/encg/dout_5_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1l_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.523,
+          "source": "encoder/encg/dout_2_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1h_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.51,
+          "source": "encoder/encr/dout_4_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2h_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.508,
+          "source": "encoder/encr/dout_1_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2l_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.488,
+          "source": "encoder/encr/dout_2_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2h_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.462,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.46,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.46,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.458,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.458,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.456,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.456,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.436,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.436,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.428,
+          "source": "encoder/encg/dout_3_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_1l_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.418,
+          "source": "encoder/encr/dout_3_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_2l_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.357,
+          "source": "encoder/encb/dout_0_s0",
+          "destination": "encoder/serdes_4b_10to1_inst/TMDS_shift_0h_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "unclassified"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.164,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.164,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.077,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.077,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.058,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0",
+          "destination": "cal_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "board50:[R]",
+          "category": "single_bit_first_sync_stage"
+        }
+      ]
+    },
+    "recovery": {
+      "printed_negative_paths": 176,
+      "by_category": {
+        "ddr_dqs_control": 4,
+        "local_reset_release": 2,
+        "ddr_phy_other": 168,
+        "fifo_reset_or_other": 2
+      },
+      "by_clock_pair": {
+        "reference50:[R] -> memory400:[F]": 46,
+        "board50:[R] -> pixel33:[R]": 2,
+        "reference50:[R] -> memory400:[R]": 82,
+        "ui100:[R] -> pixel33:[F]": 2,
+        "reference50:[R] -> ui100:[F]": 4,
+        "reference50:[R] -> ui100:[R]": 40
+      },
+      "worst_slack_ns": -5.022,
+      "paths": [
+        {
+          "slack_ns": -5.022,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -5.022,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -4.892,
+          "source": "sys_pll/u_pll_init/rLockOut_s0",
+          "destination": "pix_rst_s_0_s0",
+          "launch_clock": "board50:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "local_reset_release"
+        },
+        {
+          "slack_ns": -4.892,
+          "source": "sys_pll/u_pll_init/rLockOut_s0",
+          "destination": "pix_rst_s_1_s0",
+          "launch_clock": "board50:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "local_reset_release"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[22].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[17].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[15].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[10].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[4].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.736,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[1].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[21].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[20].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[19].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[18].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[16].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[12].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[9].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[8].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[7].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[5].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[3].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.728,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[0].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/u_ck_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[14].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[13].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[11].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[6].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.719,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[2].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.377,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.377,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.377,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.377,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.377,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.368,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.36,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.36,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.36,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.36,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.305,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -4.305,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.773,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -3.773,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -3.59,
+          "source": "ui_rst_s_1_s0",
+          "destination": "reader/fifo_inst/reset_r_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[F]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -3.59,
+          "source": "ui_rst_s_1_s0",
+          "destination": "reader/fifo_inst/reset_r_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[F]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[1].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[4].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[10].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[15].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[17].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[22].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.488,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[0].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[3].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[5].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[7].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[8].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[9].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[12].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[16].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[18].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[19].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[20].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.479,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[21].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[2].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[6].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[11].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[13].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[14].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.471,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/u_ck_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.455,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.455,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.455,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.455,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.455,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.447,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.439,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.439,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.439,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.138,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.138,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.138,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.138,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.138,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.129,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.121,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.121,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.121,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.121,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.067,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -3.067,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory400:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -2.394,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[0].rburst_neg_r_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -2.394,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[0].rburst_neg_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -2.388,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[1].rburst_neg_r_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -2.388,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[1].rburst_neg_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.483,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_Empty_reg_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.246,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq1_wptr_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.246,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wbin_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.246,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.246,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rbin_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.246,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq1_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.237,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rbin_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.237,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq2_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.237,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq2_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.237,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq2_wptr_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.237,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq1_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.947,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rbin_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.859,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wbin_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.859,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.859,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.859,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq2_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.859,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rq1_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.694,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wbin_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.694,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_wbin_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.694,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/if_rbin_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rbin_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rbin_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rbin_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rbin_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq2_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq2_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq1_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.085,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq1_wptr_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.068,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_Empty_reg_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.068,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wptr_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.068,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.068,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq2_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.068,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq1_wptr_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq1_wptr_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wbin_0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wbin_1_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wbin_2_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_wbin_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.051,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/if_rq2_wptr_3_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_phy_other"
+        }
+      ]
+    },
+    "removal": {
+      "printed_negative_paths": 0,
+      "by_category": {},
+      "by_clock_pair": {},
+      "worst_slack_ns": null,
+      "paths": []
+    }
+  },
+  "note": "Printed paths are representatives, not a replacement for aggregate endpoint counters or a sign-off report."
+}

@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS MPU6050 8-bit register, 14-byte burst, repeated START, ACK/NACK, stuck bus
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/mpu_i2c_tb.v:41: $finish called at 1066500000 (1ps)

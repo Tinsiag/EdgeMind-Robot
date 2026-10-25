@@ -12,7 +12,7 @@ module ddr_framebuffer_tb;
     ddr_framebuffer #(.WIDTH(16),.HEIGHT(2)) dut(.*);
     reg [127:0] memory[0:15],saved_data;reg [27:0] saved_address;reg cmd_seen=0,data_seen=0;
     integer cycle=0,committed=0,returned=0,latency=0;reg [27:0] read_address;
-    integer bank_index,word_index,i;reg [127:0] expected;
+    integer bank_index,word_index,i;reg [127:0] expected;reg contiguous=0;
     always @(negedge clk) begin
         cycle=cycle+1;app_rdy=cycle%3!=0;app_wdf_rdy=cycle%5==0;
     end
@@ -44,12 +44,13 @@ module ddr_framebuffer_tb;
     task token;input [17:0] t;begin
         @(negedge clk);source_empty=0;source_data=t;
         do @(posedge clk);while(!source_pop);
-        @(negedge clk);source_empty=1;
+        if(!contiguous) begin @(negedge clk);source_empty=1;end
     end endtask
     task frame;input integer good;begin
         token({2'b01,16'd0});
         for(i=0;i<32;i=i+1)token({2'b00,16'(i)});
         token({good?2'b10:2'b11,16'd0});
+        @(negedge clk);source_empty=1;
     end endtask
     task blank;begin
         @(negedge clk);display_blank=1;@(negedge clk);display_blank=0;
@@ -61,12 +62,16 @@ module ddr_framebuffer_tb;
         frame(1);if(committed!=4 || frame_available)$fatal(1,"Frame published before blank or before write completion");
         blank;wait(returned==4);repeat(3)@(negedge clk);
         if(!frame_available || error || !read_bank || write_bank)$fatal(1,"Bank initialization incorrect");
+        // A real FWFT FIFO may already contain a complete frame. Its next
+        // token follows immediately, including END behind the final pixel.
+        // Keep command/data stalls independent while exercising that case.
+        contiguous=1;
         frame(0);if(dut.pending_frame)$fatal(1,"Bad frame published");
         frame(1);if(!dut.pending_frame)$fatal(1,"Good next frame not published");
         display_full=1;frame(1);if(dropped_frames==0)$fatal(1,"Pending bank wasn't protected");
         returned=0;display_full=0;blank;wait(returned==4);
         if(read_bank || !write_bank || error)$fatal(1,"Second swap failed");
-        $display("PASS: independent DDR command/data stalls, complete writes, ordered pixels, bad-frame drop and bank protection");$finish;
+        $display("PASS: independent DDR command/data stalls, sparse/continuous tokens, complete writes before END, ordered pixels, bad-frame drop and bank protection");$finish;
     end
     initial begin #2000000;$fatal(1,"Watchdog");end
 endmodule

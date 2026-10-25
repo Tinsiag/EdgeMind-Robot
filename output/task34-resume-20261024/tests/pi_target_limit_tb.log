@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS PI tick-atomic target/cap, signed clamp, zero target/cap and immediate disable
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/pi_target_limit_tb.v:26: $finish called at 1130000 (1ps)

@@ -1,0 +1,53 @@
+{
+  "archives": {
+    "38": {
+      "path": "/home/tinsiag/Documents/cam/doc/02_\u4f8b\u7a0b\u6e90\u7801/GW5AT60K/\u7b2c38\u7ae0 \u57fa\u4e8eDDR3\u7684\u4e32\u53e3\u4f20\u56fe\u5e27\u7f13\u5b58\u7cfb\u7edf\u8bbe\u8ba1\u5b9e\u73b0/ch38_uart_ddr3_tft_hdmi.zip",
+      "sha256": "7539193cf056a9fdd0600bdfab897db64ed1adacb2dca1f9d8f8ef8d93cd2836"
+    },
+    "47": {
+      "path": "/home/tinsiag/Documents/cam/doc/02_\u4f8b\u7a0b\u6e90\u7801/GW5AT60K/\u7b2c47\u7ae0 OV5640\u6444\u50cf\u5934\u91c7\u96c6HDMI\u663e\u793a\u5c4f\u663e\u793a/ch47_ov5640_ddr3_hdmi.zip",
+      "sha256": "5c8900530f7427ecd6c9876259d19b3388142d70c9c6b0dff91dc887724e94ea"
+    }
+  },
+  "fifo_compatibility": {
+    "rd_data_fifo/rd_data_fifo.ipc": true,
+    "rd_data_fifo/fifo_parameter.v": true,
+    "rd_data_fifo/fifo_define.v": true,
+    "wr_data_fifo/wr_data_fifo.ipc": true,
+    "wr_data_fifo/fifo_parameter.v": true,
+    "wr_data_fifo/fifo_define.v": true
+  },
+  "source_sha256": {
+    "src/ddr3_memory_interface/ddr3_memory_interface.v": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+    "src/ddr_pll/ddr_pll.v": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+    "src/ddr_pll/ddr_pll_mod.v": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+    "src/gowin_pll/gowin_pll.v": "9a830b1d73e06d0fd218fd4128d70b4547e9dce357f7fcaf18371e9d0770b3a3",
+    "src/gowin_pll/gowin_pll_mod.v": "51b3509c848aa4e80e76a1bdf990e9d432b00bf68617259ae52dbdbf140ed63b",
+    "src/pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+    "src/pll_mDRP_intf.v": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+    "src/dvi_encoder.v": "4b24ffb4773973a819530f733f61840d7cdddfca4847ff110a3e052f341252c1",
+    "src/gowin_ddr/gowin_ddr.v": "0f39fa3186fa66db418992ea20e2fc26169860eefbac560352b847f2744612a3",
+    "src/rd_data_fifo/rd_data_fifo.v": "2b658838ee4364cf9cede67fbb9a231390435867e9ef4569301e00c1b361e3d8",
+    "src/wr_data_fifo/wr_data_fifo.v": "f549135c87877ed5cf274114002713c24ad4600eb05fa12d2aa5c6867b61ee11",
+    "src/live_capture.v": "da4d0c588328c6aded6df6e5667af77264411b6e698c0f0e06f1c3ad549613d2",
+    "src/live_ddr_engine.v": "0a6c95a4655f9cf05fe0042015cf0f51742a5bdb19a931808fdc9f1bf5bd45df",
+    "src/live_video.v": "d6e022ec1156e445e15b11fb2c0a9baca04772cd2cb2e3b00ee2262ab258a1b6",
+    "src/top_ddr3_live_hdmi.v": "b0de2e2ecaa8ade72a501454784041d7338cfc8df64b97cb99fb2602a5f5cdde",
+    "src/dvi_encoder_color_tests.v": "c12a46842fef37f91b8dc009528fb80f9420bd336eba39c2dc014b0cccfccfff",
+    "src/ov5640_live_scale_ctrl.v": "47d33bc3f3dd9fb00b59ba8071694b80ee8aaa087162c193669eb47c2797a8b8",
+    "src/ov5640_init_table_rgb.v": "3b85dee8a88a1ec4df3f3fc3ade75219144ac6e6ef35d1ddcb2659ab589ce836",
+    "src/sccb_master.v": "29fa2f27d2fe234453fd294e8ae762b062d17f9938cd6a0406ca54d24dc4c0ef"
+  },
+  "build_script_sha256": {
+    "build_ddr3_live_hdmi.py": "812e44cfcc6a3b0bf4ed1a15c72e4efcd7a86f127f2e39ef4bbba4808c50f1c5",
+    "build_ddr3_live_hdmi.tcl": "fb6226800236317a088febff1bb2cac3b0cac21ccad7eeae02d5a20c8cb74cdd"
+  },
+  "hardware_verified": false,
+  "timing_closed": false,
+  "device": {
+    "name": "GW5AT-60B",
+    "pn": "GW5AT-LV60PG484AC1/I0"
+  },
+  "reset": "S0/F15 active low",
+  "camera_oscillator_frequency": "not measured; external module clock, no FPGA XCLK"
+}

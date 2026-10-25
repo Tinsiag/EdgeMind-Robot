@@ -1,0 +1,39 @@
+{
+  "build_status": "passed",
+  "build_completed_china_time": "2026-10-15 16:55:25 +08:00",
+  "tool": "Gowin V1.9.12 Windows x64",
+  "variant": "bridge_probe",
+  "bitstream_user_code": "0x0000A71A",
+  "bitstream_sha256": "B8D3DE04C7500B1B90E066FCEBB27C489F2C10F88401ACA3A18284EBD088DD32",
+  "source_sha256": {
+    "rtl/acg720_bridge_probe.v": "BF84AC609F829A0DD725D5E5D3ED7AD648AD03A12DC7C3C83FAF23D0E70BD646",
+    "constraints/acg720_motor_test.cst": "2B35550E9BC315F9840C3DD6A621945A9823DD8FC428E568D6CD97AC5569385B",
+    "constraints/acg720_motor_test.sdc": "16EFEC5F1BA357D3AD3E01DCA60C66475EDE2A00C9142EBE43035F0A5982C595",
+    "acg720_bridge_probe.gprj": "2CDF816D9BE96FBADA914DF28C369EB7AAB31B262A28633231301F69DF3F34EE",
+    "build_bridge_probe.tcl": "451415D8E4BAB589E44EBCACE1727E1BA62ED03E1F57CC04994B66CC4F76A961"
+  },
+  "routed_port_count": 21,
+  "fmax_mhz": 182.731,
+  "timing_violations": {
+    "Setup": 0,
+    "Hold": 0
+  },
+  "worst_reported_slack_ns": {
+    "Setup": 14.528,
+    "Hold": 0.275
+  },
+  "downloaded": true,
+  "programming_operation": "SRAM Program (2)",
+  "flash_written": false,
+  "independent_readback_user_code": "0x0000A71A",
+  "independent_readback_status": "0x70022020",
+  "device_id": "0x0001481B",
+  "vm_user_report": "disconnected",
+  "both_motor_plugs_user_report": "disconnected",
+  "bridge_voltage_measured": false,
+  "motor_start_verified": false,
+  "physical_timeout_verified": false,
+  "smart_app_control_state_at_build": 0,
+  "realtime_antivirus_state_at_build": false,
+  "security_settings_changed_by_agent": false
+}

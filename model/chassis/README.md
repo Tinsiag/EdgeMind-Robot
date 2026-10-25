@@ -1,6 +1,6 @@
 # EdgeMind 四轮外壳与底盘 CAD
 
-**当前版本：[2026-10-15 V3 摄像头立板与连续围栏](v3-camera-closed-rails/README.md)**。上下层均为5mm，增加摄像头立板及两处电机过线孔；删除上方侧护栏，下层围栏连成一体并保留通风孔。[完整装配STEP](v3-camera-closed-rails/EdgeMind_Assembly.step)、[FreeCAD源文件](v3-camera-closed-rails/EdgeMind_Chassis.FCStd)、[离线预览](v3-camera-closed-rails/查看模型.html)。[V2](v2-r3x-casters/README.md) 与以下V1记录保留。
+**当前版本：[2026-10-20 V4 第三层传感器平台](v4-lidar-imu/README.md)**。在 V3 上增加 5mm 第三层，LD06 位于正前中央、MPU6050 位于左前侧且双孔朝外，用户洞洞板居中放在雷达后方。[完整装配STEP](v4-lidar-imu/EdgeMind_Assembly.step)、[FreeCAD源文件](v4-lidar-imu/EdgeMind_Chassis.FCStd)、[离线预览](v4-lidar-imu/查看模型.html)、[第三层板STEP](v4-lidar-imu/ThirdDeck.step)。[V3](v3-camera-closed-rails/README.md)、[V2](v2-r3x-casters/README.md) 与以下 V1 记录保留。
 
 2026-10-12。按项目第二版四轮概念图建模，并采纳用户最终选择：四轮均为直径 80mm 的普通轮，后轮由两台 MG513X 驱动，前轮固定朝前、独立轴承从动，无前轮电机。
 

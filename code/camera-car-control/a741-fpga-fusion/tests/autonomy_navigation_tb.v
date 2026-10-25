@@ -18,6 +18,7 @@ module autonomy_navigation_tb;
     wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,localization_quality;
     wire [15:0] front_distance;wire [31:0] map_revision;
     a741_autonomy #(.GEOMETRY_VERIFIED(1),.RADIUS_MM(100)) dut(.*);
+    wire mission_busy,mission_arrived,mission_failed;
     task cmd(input [7:0] k,input [255:0] p);
         integer age;
         begin
@@ -26,7 +27,7 @@ module autonomy_navigation_tb;
             if(!reply_done || reply[7:0]!=0) $fatal(1,"synthetic navigation command %h failed reply=%h",k,reply[7:0]);
         end
     endtask
-    integer n=0;real a,c,s,dx,dy,d;
+    integer n=0;reg inject_obstacle=0;real a,c,s,dx,dy,d;
     // A full room revolution every 86.4 simulated milliseconds.
     initial forever begin
         @(negedge clk);lidar_point=0;
@@ -34,7 +35,7 @@ module autonomy_navigation_tb;
             a=(270-n)*3.141592653589793/180.0;c=$cos(a);s=$sin(a);
             dx=c>0.00001 ? 1010/c:c< -0.00001 ? -990/c:1000000;
             dy=s>0.00001 ? 1210/s:s< -0.00001 ? -1190/s:1000000;d=dx<dy ? dx:dy;
-            lidar_angle=n*100;lidar_distance=$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
+            lidar_angle=n*100;lidar_distance=inject_obstacle && n>=268 && n<=272 ? 450:$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
         end
         @(negedge clk);lidar_point=0;
         repeat(118) @(negedge clk);
@@ -63,11 +64,18 @@ module autonomy_navigation_tb;
         $display("trace synthetic tracking running");$fflush();
         wait(drive_left>0 && drive_right>0);
         if(drive_left>100 || drive_right>100) $fatal(1,"navigation wheel speed cap");
+        inject_obstacle=1;
+        wait(dut.request_nav && dut.navigation_phase==7);@(negedge clk);#1;
+        if(drive_left || drive_right || !drive_enabled || force_stop) $fatal(1,"obstacle did not pause for bounded replan");
+        inject_obstacle=0;
+        wait(!dut.request_nav && dut.nav_running && nav_state==1);
+        wait(drive_left>0 && drive_right>0);
+        if(dut.replans!=1) $fatal(1,"unexpected replan attempts");
         link_alive=0;@(negedge clk);#1;
         if(drive_left || drive_right) $fatal(1,"link loss retained navigation wheel targets");
         repeat(3) @(negedge clk);link_alive=1;repeat(30) @(negedge clk);
         if(drive_enabled || drive_left || drive_right || !dut.guard_locked) $fatal(1,"link restoration auto-restarted navigation");
-        $display("PASS synthetic room localization, preview, compressed path, stationary planning, navigation and link-loss latch");$finish;
+        $display("PASS synthetic room localization, preview, stationary planning, obstacle pause/replan/resume and link-loss latch");$finish;
     end
-    initial begin #40000000;$fatal(1,"synthetic navigation watchdog phase=%0d localized=%0d quality=%0d state=%0d",dut.navigation_phase,dut.localized,localization_quality,nav_state);end
+    initial begin #80000000;$fatal(1,"synthetic navigation watchdog phase=%0d localized=%0d quality=%0d state=%0d",dut.navigation_phase,dut.localized,localization_quality,nav_state);end
 endmodule

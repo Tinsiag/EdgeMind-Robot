@@ -1,0 +1,70 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/task34-lightweight-20261025/timing-fix/hdmi-clock-audit/serial-local/clock_audit.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\gowin_pll.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\gowin_pll_mod.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\dvi_encoder.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\a741_hdmi.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\reset_sync.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\pll_init.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\clock_audit.v'
+Compiling module 'clock_audit'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\clock_audit.v":2)
+Compiling module 'A741_Video_PLL'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\gowin_pll.v":1)
+Compiling module 'A741_Video_PLL_MOD'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\gowin_pll_mod.v":10)
+Compiling module 'PLL_INIT(MULTI_FAC=33)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\pll_init.v":4)
+Compiling module 'a741_hdmi'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\a741_hdmi.v":5)
+Compiling module 'reset_sync'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\reset_sync.v":3)
+Compiling module 'a741_tmds_encode'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\dvi_encoder.v":1)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\dvi_encoder.v":94)
+NOTE  (EX0101) : Current top module is "clock_audit"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\gwsynthesis\clock_audit.vg" completed
+[100%] Generate report file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\gwsynthesis\clock_audit_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\gwsynthesis\clock_audit.vg"
+Parsing netlist file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\gwsynthesis\clock_audit.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\clock_audit.cst"
+WARN  (CT1018) : Constrained resource local clock not available for 'serial_clk'
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.power.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.pin.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.rpt.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.rpt.txt" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.tr.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\timing-fix\hdmi-clock-audit\serial-local\impl\pnr\clock_audit.tr" completed
+Sun Oct 25 02:51:43 2026
+

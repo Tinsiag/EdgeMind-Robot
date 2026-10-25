@@ -47,6 +47,33 @@ class NavigationStatus:
         return bool(self.flags & 8)
 
 
+@dataclass(frozen=True)
+class MissionStatus:
+    active: bool
+    cpu_alive: bool
+    cpu_fault: bool
+    index: int
+    count: int
+    phase: int
+    error: int
+
+    @classmethod
+    def parse(cls, data):
+        if len(data)!=32 or data[0]:
+            raise ValueError("路径点任务回复无效")
+        flags=data[1]
+        return cls(bool(flags&1),bool(flags&2),bool(flags&4),*data[4:8])
+
+
+def waypoint_payload(point):
+    if len(point)!=3 or not all(math.isfinite(v) for v in point):
+        raise ValueError("路径点需要有效的X、Y和朝向")
+    x,y,degrees=point
+    if not (-3100<=x<=3100 and -3100<=y<=3100):
+        raise ValueError("路径点超出地图内部范围")
+    return struct.pack("<BBH",int((x+3200)//50),int((y+3200)//50),round(degrees*65536/360)&65535)
+
+
 class MapTransport:
     def __init__(self, ip):
         self.peer=(ip,6104)
@@ -139,6 +166,46 @@ class FusionClient(Client):
 
     def navigation_status(self):
         return NavigationStatus.parse(self.fusion_command(0x57))
+
+    def mission_command(self, operation, payload=b""):
+        if operation not in range(5) or len(payload)!=(4 if operation==1 else 0):
+            raise ValueError("路径点任务操作或载荷错误")
+        return MissionStatus.parse(self.fusion_command(0x58,bytes([operation])+payload))
+
+    def run_waypoints(self, calibration, points, cancel, callback):
+        if not 1<=len(points)<=16:
+            raise ValueError("请选择1～16个路径点")
+        encoded=[waypoint_payload(p) for p in points]
+        status=self.navigation_status()
+        if not status.geometry_verified or not status.localized:
+            raise CalibrationRejected("请先设置起点并等待有效雷达定位")
+        if status.flags&0x40:
+            raise CalibrationRejected("请等待当前路径预览完成")
+        try:
+            self.disarm()
+            self.mission_command(0)
+            for point in encoded:
+                if cancel.is_set():raise CalibrationRejected("任务已取消，未启动")
+                self.mission_command(1,point)
+            self.arm(calibration)
+            if cancel.is_set():raise CalibrationRejected("任务已取消，未启动")
+            result=self.mission_command(2)
+            # After explicit start, the onboard CPU supplies the control lease.
+            # Polling displays progress only; navigation does not run in Python.
+            seen_active=False
+            deadline=time.monotonic()+len(points)*125+5
+            while time.monotonic()<deadline and not cancel.is_set():
+                result=self.mission_command(4);callback(result)
+                if result.cpu_fault or result.error:
+                    raise CalibrationRejected(f"路径点任务停止：原因{result.error}，软核故障={result.cpu_fault}")
+                if result.active:seen_active=True
+                elif seen_active and result.index==len(points):return result
+                elif not result.active and result.phase==0 and result.index==len(points):return result
+                elif not result.cpu_alive:raise CalibrationRejected("软核心跳无效，任务已停止")
+                time.sleep(.05)
+            raise CalibrationRejected("路径点任务取消或超时")
+        finally:
+            self.stop()
 
     def prepare_lidar(self, calibration, cancel=None):
         self.lidar(calibration.data.get("lidar_duty_permille",400))

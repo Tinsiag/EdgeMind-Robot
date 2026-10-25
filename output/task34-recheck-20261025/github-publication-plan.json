@@ -1,0 +1,27 @@
+{
+  "candidate_untracked_count": 3074,
+  "candidate_bytes": 1031491717,
+  "lfs_files_added": [
+    "model/chassis/EdgeMind_Chassis_v4_Sensors.zip",
+    "model/chassis/v4-lidar-imu/EdgeMind_Assembly.glb",
+    "model/chassis/v4-lidar-imu/EdgeMind_Assembly.step",
+    "model/chassis/v4-lidar-imu/EdgeMind_Chassis.FCStd",
+    "model/chassis/v4-lidar-imu/EdgeMind_Exploded.FCStd",
+    "model/chassis/v4-lidar-imu/preview-meshes.json",
+    "model/chassis/v4-lidar-imu/查看模型.html",
+    "model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.glb",
+    "model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step",
+    "model/chassis/v5-rgb-touch-display/EdgeMind_Chassis.FCStd",
+    "model/chassis/v5-rgb-touch-display/EdgeMind_Exploded.FCStd",
+    "model/chassis/v5-rgb-touch-display/preview-meshes.json",
+    "model/chassis/v5-rgb-touch-display/查看模型.html",
+    "output/handoff/EdgeMind-Task34-20261024-204917-updated.zip",
+    "output/handoff/EdgeMind-Task34-20261024-204917.zip",
+    "output/handoff/EdgeMind-Task34-20261024-204917/workspace/model/chassis/v4-lidar-imu/EdgeMind_Assembly.step",
+    "output/handoff/EdgeMind-Task34-20261024-204917/workspace/model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step",
+    "output/task34-resume-20261024/tool-docs/DDR3-RefDesign-5.8E.zip"
+  ],
+  "secret_scan_checked_text_files": 2416,
+  "secret_scan_findings": [],
+  "excluded": "Rebuildable output implementation databases, netlists, bitstreams and simulation executables; local runtimes and credentials remain ignored."
+}

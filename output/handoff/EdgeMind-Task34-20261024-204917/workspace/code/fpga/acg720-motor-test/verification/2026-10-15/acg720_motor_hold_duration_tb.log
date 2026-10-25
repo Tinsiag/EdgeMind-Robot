@@ -1,0 +1,2 @@
+PASS A71B: both wheels, every 1kHz period exact 10/25/40/50% duty, 1000ms cap despite RUN_MS=1500, held-key no repeat
+tests/acg720_motor_hold_duration_tb.v:44: $finish called at 4441026000 (1ps)

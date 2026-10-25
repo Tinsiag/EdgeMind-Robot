@@ -1,0 +1,7 @@
+trial=0 time=489000 relative_phase_ns=6
+trial=1 time=795000 relative_phase_ns=12
+trial=2 time=1101000 relative_phase_ns=18
+trial=3 time=1407000 relative_phase_ns=24
+trial=4 time=1713000 relative_phase_ns=0
+PASS: asynchronous CLKDIV release permits all five pixel-clock phases
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/task34-lightweight-20261025/timing-fix/hdmi-clock-audit/clkdiv_phase_tb.v:28: $finish called at 1714000 (1ps)

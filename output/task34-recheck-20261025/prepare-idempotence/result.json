@@ -1,0 +1,79 @@
+{
+  "identical_bytes_and_timestamps": true,
+  "changed_files": [],
+  "generated_files_checked": 18,
+  "after": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\a741.cst": {
+      "sha256": "1af06e1b2afcf07d5b966ef662e9343ba44a26949ce80e54d91ec8d0fc77fc43",
+      "mtime_ns": 1792892438060053800
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\a741.sdc": {
+      "sha256": "2bad53b7d6a631dbecdfb4967cc003f9cbe5819207306021d4501f7c413bf938",
+      "mtime_ns": 1792892438070101500
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\a741_top.v": {
+      "sha256": "d93c4f62cd111ab335557350144c7a6362f1b81113ce3ab05e8cbf62fe2441aa",
+      "mtime_ns": 1792892438080113400
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\ddr3_memory_interface.v": {
+      "sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+      "mtime_ns": 1792890941585310500
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\ddr_pll.v": {
+      "sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\ddr_pll_mod.v": {
+      "sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\dvi_encoder.v": {
+      "sha256": "d096ff2557f8bb77199a107c5bae2174869f64077000e17d678640b0caa8f89b",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\fusion-parameters.json": {
+      "sha256": "c553ae3ef96b03af85b8d9922641b145da6922b384f5bf50c1c01d7e5aa87169",
+      "mtime_ns": 1792892438080113400
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\gowin_pll.v": {
+      "sha256": "37040df237d814100983d77ab000278ba35438dcecda1daf4db575319f433757",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\gowin_pll_mod.v": {
+      "sha256": "7480591af591b593b2c5666ffcaaaec798e9cfc875ff0317973da8f2846dc189",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\pll_mDRP_intf.v": {
+      "sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\provenance.json": {
+      "sha256": "3580ea7315135a2fd72ceada0bec578e4c216d73f2453bc9221562b2856b3a3b",
+      "mtime_ns": 1792892438077541000
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\original\\dvi_encoder.v": {
+      "sha256": "4b24ffb4773973a819530f733f61840d7cdddfca4847ff110a3e052f341252c1",
+      "mtime_ns": 1792890941587855100
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\link.ld": {
+      "sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+      "mtime_ns": 1792823897996590600
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\manifest.json": {
+      "sha256": "4e338711a577409319c9ca1952fcdba42cdd65984ab4287a2f328189c2b81e03",
+      "mtime_ns": 1792892419089889000
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\mission.c": {
+      "sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+      "mtime_ns": 1792823897997666000
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\mission.hex": {
+      "sha256": "3b9d8f2fafbd662da0011d1abb72b8559b714b49b8a6c97289fc70590d8dce18",
+      "mtime_ns": 1792890941547227600
+    },
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\start.S": {
+      "sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+      "mtime_ns": 1792823897995532200
+    }
+  }
+}

@@ -22,6 +22,9 @@ def vectors(path):
     # No motion packet is ever accepted by the map endpoint.
     add(map_packet(103,0x55,b""))
     add(udp(envelope(0x57,5)))
+    # Exercise the real Ethernet -> validated EMC1 -> RV32I command path.
+    for number,payload in enumerate((b"\0",b"\1"+struct.pack("<BBH",64,65,0),b"\4",b"\2",b"\3"),6):
+        add(udp(envelope(0x58,number,payload)))
     path.write_text("\n".join(f"{v:04x}" for v in values)+"\n",encoding="ascii")
     return len(values)
 
@@ -51,10 +54,15 @@ def verify(path):
         else:
             assert sport==dport==6104 and data[:4]==b"EMM1" and len(data)==44
             mapping[int.from_bytes(data[4:8],"little")]=data[10:42]
-    assert set(control)=={1,2,3,4,5},control.keys()
+    assert set(control)==set(range(1,11)),control.keys()
     assert control[2][0]==0xc0 and int.from_bytes(control[2][2][4:6],"little")&0x800
     assert control[3][0]==control[4][0]==control[5][0]==0xd0
     assert control[4][2][0]==1
+    for number in range(6,11):
+        assert control[number][0]==0xd0 and len(control[number][2])==32
+        assert control[number][2][0]==(1 if number==9 else 0)
+        assert not control[number][2][1]&1  # never active on an unarmed board
+    assert control[8][2][5]==1  # the appended waypoint reached the CPU
     assert set(mapping)=={100,101,102} and all(v[0]==0 for v in mapping.values())
     assert mapping[102][4]==0x55 and fusion
-    print("PASS Ethernet EMC1 navigation lock, EMM1 map roundtrip and EMF1 under backpressure; motor outputs stay zero")
+    print("PASS Ethernet EMC1 navigation/CPU waypoints, unarmed start rejection, EMM1 map roundtrip and EMF1 under backpressure; motors stay zero")

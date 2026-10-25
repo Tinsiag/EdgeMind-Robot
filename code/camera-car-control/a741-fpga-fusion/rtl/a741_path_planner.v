@@ -14,7 +14,7 @@ module a741_path_planner(
     localparam IDLE=0,INIT=1,READ_REQ=2,READ_WAIT=3,START_CHECK=4,GOAL_CHECK=5,
         SCAN_BEGIN=6,SCAN_REQ=7,SCAN_EVAL=8,SELECT=9,NEIGHBOR=10,
         COORD_CHECK=11,SIDE1_CHECK=12,SIDE2_CHECK=13,TARGET_CHECK=14,
-        PATH_REQ=15,PATH_EMIT=16,FAILED=17;
+        PATH_REQ=15,PATH_EMIT=16,FAILED=17,SCAN_COST=18,TARGET_EVAL=19,TARGET_WRITE=20;
     reg [4:0] state,after_read;
     // [19:18]: 00 unseen, 01 open, 10 closed; [17:0]: accumulated path cost.
     reg [19:0] records[0:16383];reg [3:0] parents[0:16383];
@@ -26,6 +26,9 @@ module a741_path_planner(
     reg [6:0] gx,gy;
     reg signed [1:0] step_x,step_y;
     reg best_found;
+    reg [17:0] heuristic_q,score_q,scan_g;
+    reg scan_open;
+    reg update_neighbor;reg [17:0] candidate_q;
     reg [14:0] route_steps,expanded;
     reg [15:0] wait_age;
     wire diagonal=step_x!=0 && step_y!=0;
@@ -50,7 +53,6 @@ module a741_path_planner(
             lo=ax<ay ? ax:ay;hi=ax>ay ? ax:ay;estimate=lo*14+(hi-lo)*10;
         end
     endfunction
-    wire [17:0] score=record_q[17:0]+estimate(scan_index,gx,gy);
     // A single write port and registered read on each table, no asynchronous reset.
     always @(posedge clk) begin
         record_q<=records[ram_address];parent_q<=parents[current_node];
@@ -59,9 +61,8 @@ module a741_path_planner(
             else if(state==READ_WAIT && map_read_done && after_read==GOAL_CHECK && map_read_value==2'b01) begin
                 records[start_node]<={2'b01,18'd0};parents[start_node]<=0;
             end else if(state==SELECT && best_found && expanded<16384) records[best_node]<={2'b10,best_g};
-            else if(state==READ_WAIT && map_read_done && after_read==TARGET_CHECK && map_read_value==2'b01 &&
-                    record_q[19:18]!=2'b10 && candidate_g<record_q[17:0]) begin
-                records[neighbor_node]<={2'b01,candidate_g};parents[neighbor_node]<={back_y,back_x};
+            else if(state==TARGET_WRITE && update_neighbor) begin
+                records[neighbor_node]<={2'b01,candidate_q};parents[neighbor_node]<={back_y,back_x};
             end
         end
     end
@@ -72,6 +73,7 @@ module a741_path_planner(
             map_read_valid<=0;map_read_address<=0;current_g<=0;best_f<=0;best_g<=0;best_found<=0;
             busy<=0;path_valid<=0;no_path<=0;path_cell_valid<=0;path_cell_x<=0;path_cell_y<=0;path_cell_last<=0;
             expanded_nodes<=0;expanded<=0;gx<=0;gy<=0;step_x<=0;step_y<=0;route_steps<=0;wait_age<=0;
+            heuristic_q<=0;score_q<=0;scan_g<=0;scan_open<=0;update_neighbor<=0;candidate_q<=0;
         end else begin
             map_read_valid<=0;path_cell_valid<=0;path_cell_last<=0;
             if(cancel || (busy && !map_valid)) begin state<=IDLE;busy<=0;path_valid<=0;no_path<=!cancel;end
@@ -95,15 +97,24 @@ module a741_path_planner(
                         end else begin neighbor_index<=neighbor_index+1'b1;state<=NEIGHBOR;end
                         SIDE2_CHECK:if(map_read_value==2'b01) begin request_address<=neighbor_node;after_read<=TARGET_CHECK;state<=READ_REQ;end
                             else begin neighbor_index<=neighbor_index+1'b1;state<=NEIGHBOR;end
-                        TARGET_CHECK:begin neighbor_index<=neighbor_index+1'b1;state<=NEIGHBOR;end
+                        TARGET_CHECK:if(map_read_value==2'b01) state<=TARGET_EVAL;
+                            else begin neighbor_index<=neighbor_index+1'b1;state<=NEIGHBOR;end
                         default:state<=FAILED;
                     endcase
                 end
+                // Break block-RAM output -> cost compare -> block-RAM write
+                // enable across cycles. Coordinates stay fixed until commit.
+                TARGET_EVAL:begin
+                    update_neighbor<=record_q[19:18]!=2'b10 && candidate_g<record_q[17:0];
+                    candidate_q<=candidate_g;state<=TARGET_WRITE;
+                end
+                TARGET_WRITE:begin neighbor_index<=neighbor_index+1'b1;state<=NEIGHBOR;end
                 SCAN_BEGIN:begin scan_index<=0;best_f<=18'h3ffff;best_g<=18'h3ffff;best_found<=0;state<=SCAN_REQ;end
-                SCAN_REQ:state<=SCAN_EVAL;
+                SCAN_REQ:begin heuristic_q<=estimate(scan_index,gx,gy);state<=SCAN_COST;end
+                SCAN_COST:begin score_q<=record_q[17:0]+heuristic_q;scan_g<=record_q[17:0];scan_open<=record_q[19:18]==2'b01;state<=SCAN_EVAL;end
                 SCAN_EVAL:begin
-                    if(record_q[19:18]==2'b01 && (!best_found || score<best_f || (score==best_f && record_q[17:0]<best_g))) begin
-                        best_f<=score;best_g<=record_q[17:0];best_node<=scan_index;best_found<=1;
+                    if(scan_open && (!best_found || score_q<best_f || (score_q==best_f && scan_g<best_g))) begin
+                        best_f<=score_q;best_g<=scan_g;best_node<=scan_index;best_found<=1;
                     end
                     if(scan_index==16383) state<=SELECT;else begin scan_index<=scan_index+1'b1;state<=SCAN_REQ;end
                 end

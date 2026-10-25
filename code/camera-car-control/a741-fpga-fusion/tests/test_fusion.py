@@ -86,11 +86,13 @@ class FusionTests(unittest.TestCase):
         geometry=json.loads((Path(__file__).resolve().parents[1]/"config/geometry.json").read_text(encoding="utf-8"))
         calibration=dict(Calibration.load().data)
         values,crc=compiled_parameters(geometry,calibration)
-        self.assertEqual(values["GEOMETRY_VERIFIED"],0)
-        self.assertEqual(values["RADIUS_MM"],0)
+        self.assertEqual(values["GEOMETRY_VERIFIED"],1)
+        self.assertGreaterEqual(values["RADIUS_MM"],250)
+        self.assertEqual(values["LIDAR_X"],164)
+        self.assertGreaterEqual(values["HALF_WIDTH"],131)
         calibration["lidar_zero_offset_deg"]+=1
         self.assertNotEqual(compiled_parameters(geometry,calibration)[1],crc)
-        geometry["navigation_geometry_verified"]=True
+        geometry["vehicle_outer_footprint_mm"]=None
         with self.assertRaises(ValueError):compiled_parameters(geometry,calibration)
 
     def test_configuration_mismatch_never_prepares_lidar_or_arms(self):

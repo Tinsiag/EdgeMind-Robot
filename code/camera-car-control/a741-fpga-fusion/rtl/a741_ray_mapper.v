@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 `default_nettype none
 // Bresenham ray rasterizer. Emits free cells up to the endpoint and marks the
-// endpoint occupied. One cell update is produced per clock.
+// endpoint occupied. Two setup clocks precede one cell update per clock.
 module a741_ray_mapper(
     input wire clk,rst_n,start,cancel,
     input wire [6:0] origin_x,origin_y,endpoint_x,endpoint_y,
@@ -14,24 +14,29 @@ module a741_ray_mapper(
     wire advance_x=e2> -$signed(dy);
     wire advance_y=e2<$signed(dx);
     reg signed [1:0] sx,sy;
+    reg initialize;
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
             x1<=0;y1<=0;x<=0;y<=0;dx<=0;dy<=0;err<=0;sx<=0;sy<=0;
-            busy<=0;update_valid<=0;update_x<=0;update_y<=0;update_value<=0;done<=0;invalid<=0;
+            busy<=0;initialize<=0;update_valid<=0;update_x<=0;update_y<=0;update_value<=0;done<=0;invalid<=0;
         end else begin
             update_valid<=0;done<=0;invalid<=0;
-            if(cancel) busy<=0;
+            if(cancel) begin busy<=0;initialize<=0;end
             else if(start && !busy) begin
                 if(origin_x>=128 || origin_y>=128 || endpoint_x>=128 || endpoint_y>=128) invalid<=1;
                 else begin
                     x<={2'b0,origin_x};y<={2'b0,origin_y};x1<=endpoint_x;y1<=endpoint_y;
-                    dx<=origin_x>endpoint_x ? origin_x-endpoint_x:endpoint_x-origin_x;
-                    dy<=origin_y>endpoint_y ? origin_y-endpoint_y:endpoint_y-origin_y;
-                    sx<=origin_x<endpoint_x ? 1:-1;sy<=origin_y<endpoint_y ? 1:-1;
-                    err<=(origin_x>endpoint_x ? origin_x-endpoint_x:endpoint_x-origin_x)-
-                         (origin_y>endpoint_y ? origin_y-endpoint_y:endpoint_y-origin_y);
-                    busy<=1;
+                    busy<=1;initialize<=1;
                 end
+            end else if(busy && initialize) begin
+                // Coordinates are now local registers. Upstream mm-to-cell
+                // division no longer feeds subtraction and error initialization.
+                dx<=x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0];
+                dy<=y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0];
+                sx<=x[6:0]<x1 ? 1:-1;sy<=y[6:0]<y1 ? 1:-1;
+                err<=(x[6:0]>x1 ? x[6:0]-x1:x1-x[6:0])-
+                     (y[6:0]>y1 ? y[6:0]-y1:y1-y[6:0]);
+                initialize<=0;
             end else if(busy) begin
                 update_valid<=1;update_x<=x[6:0];update_y<=y[6:0];
                 if(x==x1 && y==y1) begin

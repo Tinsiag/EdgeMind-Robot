@@ -9,6 +9,7 @@ module a741_lidar_project(
     input wire signed [15:0] offset_x,offset_y,input wire [15:0] zero_cdeg,input wire clockwise,
     output reg point_done,scan_end,overflow,
     output reg signed [31:0] endpoint_x,endpoint_y,origin_x,origin_y,
+    output reg signed [31:0] body_x,body_y,
     output reg [15:0] body_angle_cdeg,range_mm
 );
     reg [39:0] fifo[0:63];reg [5:0] wr,rd;reg [6:0] count;
@@ -17,18 +18,19 @@ module a741_lidar_project(
     reg signed [15:0] h,ex,ey;wire busy,done;wire signed [17:0] c,s;
     reg signed [47:0] mx,my;
     reg [31:0] normalized;
+    reg [15:0] body_raw;
     reg convert_start;wire convert_busy,convert_done;wire [31:0] angle_raw;
     a741_divider angle_converter(.clk(clk),.rst_n(rst_n),.cancel(!valid),.start(convert_start),
         .numerator({normalized[15:0],16'd0}),.denominator(16'd36000),.busy(convert_busy),.done(convert_done),.quotient(angle_raw));
     wire push=valid && point_valid && confidence>=10 && distance_mm>=60 && distance_mm<=12000 && count<64;
-    wire pop=valid && state==0 && count!=0;
+    wire pop=valid && state==0 && count!=0 && !busy;
     a741_sincos trig(.clk(clk),.rst_n(rst_n),.start(launch),.angle(trig_angle),.busy(busy),.done(done),.cosine(c),.sine(s));
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
             wr<=0;rd<=0;count<=0;state<=0;launch<=0;trig_angle<=0;angle<=0;range_q<=0;previous_angle<=0;
             have_previous<=0;px<=0;py<=0;ox<=0;oy<=0;h<=0;ex<=0;ey<=0;mx<=0;my<=0;
             normalized<=0;convert_start<=0;point_done<=0;scan_end<=0;overflow<=0;endpoint_x<=0;endpoint_y<=0;
-            origin_x<=0;origin_y<=0;body_angle_cdeg<=0;range_mm<=0;
+            origin_x<=0;origin_y<=0;body_angle_cdeg<=0;range_mm<=0;body_x<=0;body_y<=0;body_raw<=0;
         end else begin
             launch<=0;convert_start<=0;point_done<=0;scan_end<=0;
             if(!valid) begin wr<=0;rd<=0;count<=0;state<=0;have_previous<=0;end
@@ -66,7 +68,12 @@ module a741_lidar_project(
                         scan_end<=have_previous && angle<previous_angle && previous_angle-angle>18000;
                         previous_angle<=angle;have_previous<=1;state<=0;
                     end
-                    6:if(convert_done) begin trig_angle<=h+angle_raw[15:0];launch<=1;state<=4;end
+                    6:if(convert_done) begin body_raw<=angle_raw[15:0];trig_angle<=angle_raw[15:0];launch<=1;state<=7;end
+                    7:if(done) begin mx<=$signed({1'b0,range_q})*c;my<=$signed({1'b0,range_q})*s;state<=8;end
+                    8:begin
+                        body_x<=$signed(ex)+(mx>>>15);body_y<=$signed(ey)+(my>>>15);
+                        trig_angle<=h+body_raw;launch<=1;state<=4;
+                    end
                     default:state<=0;
                 endcase
             end

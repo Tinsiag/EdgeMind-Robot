@@ -1,0 +1,43 @@
+PAGE 1
+1 2 3 4 5 6 7 8
+接口
+TFT
+J2 B A J F 1 PC_4 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 0 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 2 1 3 4 5 6 7 8 9 2 1 3 4 5 6 7 8 9 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 C1 104 VC G C N 5. D 0 1 C 0 V 2 6 C 1 C 0 5 u . f 0 1 C 0 3 4 GND L T T T L L L L L L L L L L L L C P P P C C C C C C C C C C C C _ _ _ D D D D D D D D D D D D D C P M _ _ _ _ _ _ _ _ _ _ _ _ _ E S D H G G G G R R R R B B B I N S 7 3 4 6 3 5 7 E S 2 3 4 6 O YNC R1 P H 1 e 2 4 6 8 1 1 1 1 1 2 2 2 2 2 3 3 3 1 a 0 2 4 6 8 0 2 4 6 8 0 2 4 0 d K er 1 1 1 1 1 2 2 2 2 2 3 3 1 3 5 7 9 1 3 5 7 9 1 3 1 3 5 7 9 17X2 R T T L L L L L L L L L P P C C C C C C C C C E _ _ S D D D D D D D D D S M E _ _ _ _ _ _ _ _ _ C T V G G B C R R B B O K L L 5 7 4 6 S 5 7 S G Y K I N N V D C CC5.0 L L L L L L L L L L L L L L L L L L L L L L L L L L L L C C C C C C C C C C C C C C C C C C C C C C C C C C C C D D D D D D D D D D D D D D D D D D D D D D D D D D D D _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ G G G G G G G G H V D R R R R R R R R B B B B B B B B C 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 L 0 1 2 3 4 5 6 7 S S E Y Y K N N C C 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4 R R R R R R R N N N N N N N 1 2 3 4 5 6 7 3 3 3 3 3 3 3 3 3 3 3 3 3 3 5 6 7 8 5 6 7 8 5 6 7 8 5 6 7 8 5 6 7 8 5 6 7 8 5 6 7 8 R R R R R R R T T T T T T T T T T T T T T T T T T T T T T T T T T T T F F F F F F F F F F F F F F F F F F F F F F F F F F F F T T T T T T T T T T T T T T T T T T T T T T T T T T T T _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ G G G G G G G G D V H R R R R R R R R B B B B B B B B C 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 L 0 1 2 3 4 5 6 7 E S S K V G D N D D 3. 1 C 3 0 4 4 V G G D N N D D D 3 1 C .3 0 5 6 GN Y X Y X T T T T T T T T T T T T T T T T T T T T T T T T B B T T T T D F F F F F F F F F F F F F F F F F F F F F F F F F F F F L L + + - - T T T T T T T T T T T T T T T T T T T T T T T T T T T T _ _ G V _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ G G G G G G G G D H V R R R R R R R R B B B B B B B B C N C 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 L 0 1 2 3 4 5 6 7 E S S C D K 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 2 1 3 4 5 6 7 8 9 h_ 2 1 3 4 5 6 7 8 9 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 0 B A
+LCD_G7 R2 10K GND 触摸屏控制器 VDD3.3 LCD_B7 R3 10K
+GND
+R9 15R
+CT_INT VDD3.3 CT_SDA R7 4.7K C 背光电路 1 R 0 1 0 2 K R R R T R P T T T T _ _ _ _ _ M C C P M E L S I O S N K S O I 1 1 1 1 1 1 6 5 4 2 1 3 8 7 U2 D c D D P B A B s E U A C I O U N N L S T U X I Y K T RQ IO V V G V R D N C X Y E X Y D D C F + + - - 1 1 9 2 3 4 5 6 0 X Y X Y + + - - GN 1 C D 0 8 6 1 C 0 9 4 1 C 0 1 4 0 C C T T _ _R S G C S N T L D 1 C 0 1 4 1 GND 1 C R 0 1 1 1 R 6 2 0 5 1 R 1 4.7K C
+XPT2046
+GND GND
+VCC5.0 L1 D1 BL_VCC
+CDRH3D16-220
+C6 22uH MBR0520 C7
+106 105
+LCD_BL 1 R 0 5 K GND 4 5 U1 S V H IN DNG S N F W D B 1 3 2 1 R K 4 GN B D L_GND M3 安装孔 R R T T _ _ C C L S K 1 2 RN8 33 7 8 R T T P P_ _ C SC S K 1 2 RN9 33 7 8 R C C T T _ _R SC ST L
+R6 cat4139 RT_MOSI 3 6 TP_MOSI 3 6 CT_SDA
+100K R8 RT_PEN 4 5 TP_PEN 4 5 CT_INT
+D 15R 3 Vin D
+GND C15
+GND 104
+GND Title
+Size Number Revision
+GND EARTH EARTH EARTH EARTH A3
+Date: 2017/2/8 星期三 Sheet of
+File: D:\XiaoMeige_fpga_System\..\TFT_prj_ODKr.aSwchnD Boyc:
+1 2 3 4 5 6 7 8
+1
+用户接口 用户接口
+1 2 匹配排阻
+（ 表贴式双排针） 2.54 （ 排线座） FPC GND RESET TP_PEN TP_SCK TP_MISO TP_MOSI TP_CS LCD_BL LCD_DE LCD_VSYNC LCD_HSYNC LCD_CLK LCD_B7 GND LCD_B6 本接口上所有信号位置在实际布线时可任意调换 LCD_B5 LCD_B4 使用2.54表贴式排针，非通孔式 LCD_B3 LCD_B2 LCD_B1 LCD_B0 LCD_G7 GND LCD_G6 LCD_G5 LCD_G4 LCD_G3 LCD_G2 LCD_G1 LCD_G0 LCD_R7 GND L L C C D D _ _ R R 5 6 LCD 分辨率识别码设置 LCD_R4 LCD_R3 LCD_R2 L L C C D D _ _ R R 0 1 TFT 屏排线接口，抽屉式，上接 40p，0.5mm
+C17 电容触摸屏接口 1 12 10 2 6 10uf
+对用户目标板排线接口，翻盖式，下接 40p，0.5mm J3
+在 0 就 ， 初 可 说 始 以 明 化 和 L 的 其 CD 时 他 ID 候 R 是 G ， B 0 屏 x 程 43 区 序 42 分 读 ， 开 取 也 ， L 就 C 以 D 是 兼 _ 4 R . 容 3 7 寸 /G 不 7 的 / 通 B 4 7 分 8 的 0* 辨 状 27 率 态 2 R 的 ， G R 如 B G 屏 果 B 。 屏 全 这 为 样 G G G V S S R I D N N N C N C S D D D A C T L T 1 2 3 4 5 6 7 8 Header 8 GND
+电容触摸排线接口，抽屉式，上接 6p，0.5mm
+触摸模式选择配置
+转 降压电路 5V 3.3 TP1 200mV
+VCC5.0 U3 VDD3.3
+Vout 2
+C13 C14
+C16 104
+105 AMS1117-3.3 106
+GND

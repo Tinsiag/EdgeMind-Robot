@@ -1,0 +1,1481 @@
+{
+  "report": "/home/tinsiag/Documents/cam/build/ddr3_timing_audit/expanded-baseline/impl/pnr/ddr3_live_hdmi.tr",
+  "sha256": "434e35af1c57c321fc4a6418a5e7e1f72fbbea5c7c93f04b4e352eafd42294d7",
+  "headline": {
+    "setup": 101,
+    "hold": 29,
+    "falling": 66
+  },
+  "modes": {
+    "setup": {
+      "printed_negative_paths": 33,
+      "by_category": {
+        "ddr_dll_step_capture": 8,
+        "ddr_dqs_control": 2,
+        "single_bit_first_sync_stage": 3,
+        "fifo_reset_or_other": 20
+      },
+      "by_clock_pair": {
+        "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R] -> ui100:[R]": 8,
+        "ui100:[R] -> memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]": 2,
+        "pixel33:[R] -> ui100:[R]": 12,
+        "ui100:[R] -> pixel33:[R]": 11
+      },
+      "worst_slack_ns": -2.189,
+      "paths": [
+        {
+          "slack_ns": -2.189,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_3_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.189,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_4_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.135,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -2.123,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_1_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.123,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_5_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -2.053,
+          "source": "video/v_1_s0",
+          "destination": "engine/blank_s_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -1.955,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_2_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.952,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_7_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.84,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_6_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.636,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+          "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_0_s0",
+          "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "ddr_dll_step_capture"
+        },
+        {
+          "slack_ns": -1.22,
+          "source": "video/frame_tick_s2",
+          "destination": "engine/tick_s_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -1.199,
+          "source": "reader/fifo_inst/rbin_num_12_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_9_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -1.015,
+          "source": "reader/fifo_inst/Small.rptr_2_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_2_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.976,
+          "source": "reader/fifo_inst/Small.rptr_6_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_6_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.975,
+          "source": "reader/fifo_inst/Small.rptr_7_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_7_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.975,
+          "source": "reader/fifo_inst/Small.rptr_8_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_8_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.973,
+          "source": "reader/fifo_inst/Small.wptr_5_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_5_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.962,
+          "source": "engine/display_valid_s0",
+          "destination": "video/ready_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.912,
+          "source": "reader/fifo_inst/Small.wptr_8_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_8_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.853,
+          "source": "reader/fifo_inst/Small.rptr_1_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_1_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.824,
+          "source": "reader/fifo_inst/Small.rptr_4_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_4_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.822,
+          "source": "reader/fifo_inst/Small.rptr_3_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_3_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.805,
+          "source": "reader/fifo_inst/Small.rptr_5_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_5_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.796,
+          "source": "reader/fifo_inst/Small.rptr_0_s0",
+          "destination": "reader/fifo_inst/Small.wq1_rptr_0_s0",
+          "launch_clock": "pixel33:[R]",
+          "capture_clock": "ui100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.711,
+          "source": "reader/fifo_inst/Small.wptr_4_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_4_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.562,
+          "source": "reader/fifo_inst/Small.wptr_9_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_9_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.54,
+          "source": "reader/fifo_inst/Small.wptr_0_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.529,
+          "source": "reader/fifo_inst/Small.wptr_6_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_6_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.518,
+          "source": "reader/fifo_inst/Small.wptr_3_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_3_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.51,
+          "source": "reader/fifo_inst/Small.wptr_1_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.492,
+          "source": "reader/fifo_inst/Small.wptr_2_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_2_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.492,
+          "source": "reader/fifo_inst/Small.wptr_7_s0",
+          "destination": "reader/fifo_inst/Small.rq1_wptr_7_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.421,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_dqs_control"
+        }
+      ]
+    },
+    "hold": {
+      "printed_negative_paths": 29,
+      "by_category": {
+        "fifo_reset_or_other": 10,
+        "single_bit_first_sync_stage": 3,
+        "ddr_phy_other": 16
+      },
+      "by_clock_pair": {
+        "ui100:[R] -> camera100:[R]": 11,
+        "ui100:[R] -> memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]": 16,
+        "ui100:[R] -> board50:[R]": 1,
+        "reference50:[R] -> board50:[R]": 1
+      },
+      "worst_slack_ns": -0.961,
+      "paths": [
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_0_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_3_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_3_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_5_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_5_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.961,
+          "source": "writer/fifo_inst/Big.rptr_7_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_7_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.894,
+          "source": "writer/fifo_inst/Big.rptr_6_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_6_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.889,
+          "source": "writer/fifo_inst/Big.rptr_4_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_4_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.886,
+          "source": "writer/fifo_inst/Big.rptr_2_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_2_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.882,
+          "source": "writer/fifo_inst/Big.rptr_8_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_8_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.834,
+          "source": "engine/capture_request_s0",
+          "destination": "capture/req_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.796,
+          "source": "writer/fifo_inst/Big.rptr_1_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.683,
+          "source": "writer/fifo_inst/rbin_num_9_s0",
+          "destination": "writer/fifo_inst/Big.wq1_rptr_9_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "camera100:[R]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -0.462,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.46,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.46,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.458,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.458,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.456,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.456,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.436,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.436,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.164,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.164,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.077,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.077,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.058,
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0",
+          "destination": "cal_s_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "board50:[R]",
+          "category": "single_bit_first_sync_stage"
+        },
+        {
+          "slack_ns": -0.029,
+          "source": "memory/gw3_top/u_ddr_phy_top/stop_reg_2_s0",
+          "destination": "stop_s0_s0",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "board50:[R]",
+          "category": "single_bit_first_sync_stage"
+        }
+      ]
+    },
+    "recovery": {
+      "printed_negative_paths": 114,
+      "by_category": {
+        "local_reset_release": 3,
+        "fifo_reset_or_other": 2,
+        "ddr_dqs_control": 4,
+        "ddr_phy_other": 105
+      },
+      "by_clock_pair": {
+        "board50:[R] -> serial165:[R]": 1,
+        "board50:[R] -> pixel33:[R]": 2,
+        "ui100:[R] -> pixel33:[F]": 2,
+        "reference50:[R] -> memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]": 46,
+        "reference50:[R] -> memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]": 63
+      },
+      "worst_slack_ns": -6.392,
+      "paths": [
+        {
+          "slack_ns": -6.392,
+          "source": "sys_pll/u_pll_init/rLockOut_s0",
+          "destination": "pixel_div",
+          "launch_clock": "board50:[R]",
+          "capture_clock": "serial165:[R]",
+          "category": "local_reset_release"
+        },
+        {
+          "slack_ns": -4.898,
+          "source": "sys_pll/u_pll_init/rLockOut_s0",
+          "destination": "pix_rst_s_0_s0",
+          "launch_clock": "board50:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "local_reset_release"
+        },
+        {
+          "slack_ns": -4.898,
+          "source": "sys_pll/u_pll_init/rLockOut_s0",
+          "destination": "pix_rst_s_1_s0",
+          "launch_clock": "board50:[R]",
+          "capture_clock": "pixel33:[R]",
+          "category": "local_reset_release"
+        },
+        {
+          "slack_ns": -3.596,
+          "source": "ui_rst_s_1_s0",
+          "destination": "reader/fifo_inst/reset_r_1_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[F]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -3.596,
+          "source": "ui_rst_s_1_s0",
+          "destination": "reader/fifo_inst/reset_r_0_s0",
+          "launch_clock": "ui100:[R]",
+          "capture_clock": "pixel33:[F]",
+          "category": "fifo_reset_or_other"
+        },
+        {
+          "slack_ns": -1.835,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -1.835,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[22].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[17].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[15].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[10].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[4].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.55,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[1].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[21].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[20].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[19].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[18].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[16].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[12].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[9].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[8].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[7].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[5].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[3].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.541,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[0].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/u_ck_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[14].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[13].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[11].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[6].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.533,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[2].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.191,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.191,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.191,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.191,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.191,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.182,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.174,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.174,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.174,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.174,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.119,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -1.119,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[F]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.919,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/fclkdiv",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.587,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -0.587,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_dqs_control"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[1].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[4].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[10].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[15].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[17].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.302,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[22].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[0].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[3].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[5].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[7].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[8].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[9].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[12].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[16].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[18].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[19].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[20].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.293,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[21].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[2].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[6].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[11].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[13].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[14].u_cmd_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.285,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/u_ck_gen",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.269,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.269,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.269,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.269,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.269,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.261,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        },
+        {
+          "slack_ns": -0.252,
+          "source": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem",
+          "launch_clock": "reference50:[R]",
+          "capture_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk:[R]",
+          "category": "ddr_phy_other"
+        }
+      ]
+    },
+    "removal": {
+      "printed_negative_paths": 0,
+      "by_category": {},
+      "by_clock_pair": {},
+      "worst_slack_ns": null,
+      "paths": []
+    }
+  },
+  "note": "Printed paths are representatives, not a replacement for aggregate endpoint counters or a sign-off report."
+}

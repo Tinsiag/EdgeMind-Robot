@@ -1,0 +1,2646 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+RTL8211F-CG     RTL8211FD-CG 
+RTL8211FI-CG    RTL8211FDI-CG 
+ 
+ 
+ 
+INTEGRATED 10/100/1000M ETHERNET 
+TRANSCEIVER 
+ 
+ 
+DATASHEET 
+ (CONFIDENTIAL: Development Partners Only) 
+ 
+ 
+Rev. 1.1 
+21 February 2014 
+Track ID: JATR-8275-15 
+ 
+ 
+ 
+Realtek Semiconductor Corp. 
+No. 2, Innovation Road II, Hsinchu Science Park, Hsinchu 300, Taiwan 
+Tel.: +886-3-578-0211   Fax: +886-3-577-6047 
+www.realtek.com 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver ii Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+COPYRIGHT 
+©2014 Realtek Semiconductor Corp. All rights reserve d. No part of this document may be reproduced, 
+transmitted, transcribed, stored in a retrieval system, or translated into any language in any form or by any 
+means without the written permission of Realtek Semiconductor Corp. 
+DISCLAIMER 
+Realtek provides this document ‘as is’, without wa rranty of any kind. Realtek may make improvements 
+and/or changes in this document or in the product de scribed in this document at any time. This document 
+could include technical inaccuracies or typographical errors. 
+TRADEMARKS 
+Realtek is a trademark of Realtek Semiconductor Corporation. Other names mentioned in this document are 
+trademarks/registered trademarks of their respective owners. 
+LICENSE 
+This product is covered by one or more of the following patents: US5,307,459, US5,434,872, US5,732,094, 
+US6,570,884, US6,115,776, and US6,327,625. 
+USING THIS DOCUMENT 
+This document is intended for the software engi neer’s reference and provides detailed programming 
+information. 
+Though every effort has been made to ensure that this document is current and accurate, more information 
+may have become available subsequent to the production of this guide. 
+REVISION HISTORY 
+Revision Release Date Summary 
+1.0 2013/05/20 First release. 
+1.1 2014/02/21 Added RTL8211FD-CG , RTL 8211FI-CG , and RTL8211FDI-CG data. 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver iii Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Table of Contents 
+1. GENERAL DESCRIPTION............................................................................................................ ..................................1 
+2. FEATURES....................................................................................................................... ..................................................2 
+3. SYSTEM APPLICATIONS............................................................................................................ ...................................3 
+3.1. APPLICATION DIAGRAM - RTL8211F(I) ......................................................................................................................3 
+3.2. APPLICATION DIAGRAM - RTL8211FD(I) ................................................................................................................... 4 
+4. BLOCK DIAGRAM...........................................................................................................................................................5  
+5. PIN ASSIGNMENTS .........................................................................................................................................................6 
+5.1. PACKAGE IDENTIFICATION...........................................................................................................................................6  
+6. PIN DESCRIPTIONS ............................................................................................................... .........................................7 
+6.1. TRANSCEIVER INTERFACE............................................................................................................................................7  
+6.2. CLOCK .........................................................................................................................................................................7  
+6.3. RGMII.......................................................................................................................... ...............................................8 
+6.4. MANAGEMENT INTERFACE...........................................................................................................................................8  
+6.5. RESET ..........................................................................................................................................................................9  
+6.6. MODE SELECTION ........................................................................................................................................................9  
+6.7. LED DEFAULT SETTINGS............................................................................................................................... ............10 
+6.8. REGULATOR AND REFERENCE............................................................................................................................... .....10 
+6.9. POWER AND GROUND ............................................................................................................................... .................10 
+7. FUNCTION DESCRIPTION ..........................................................................................................................................11 
+7.1. TRANSMITTER............................................................................................................................................................11  
+7.1.1. 1000Mbps Mode.................................................................................................................. .................................11 
+7.1.2. 100Mbps Mode.....................................................................................................................................................11  
+7.1.3. 10Mbps Mode.......................................................................................................................................................11  
+7.2. RECEIVER...................................................................................................................................................................11  
+7.2.1. 1000Mbps Mode.................................................................................................................. .................................11 
+7.2.2. 100Mbps Mode.....................................................................................................................................................11  
+7.2.3. 10Mbps Mode.......................................................................................................................................................12  
+7.3. ENERGY EFFICIENT ETHERNET (EEE)........................................................................................................................12  
+7.4. WAKE-ON-LAN (WOL).......................................................................................................................... ..................12 
+7.5. INTERRUPT.................................................................................................................................................................13  
+7.6. INTB/PMEB PIN USAGE ............................................................................................................................... ............13 
+7.7. MDI INTERFACE ........................................................................................................................................................14  
+7.8. HARDWARE CONFIGURATION ............................................................................................................................... .....15 
+7.9. LED AND PHY ADDRESS CONFIGURATION ...............................................................................................................16  
+7.10. GREEN ETHERNET (1000/100MBPS MODE ONLY) .....................................................................................................17 
+7.10.1. Cable Length Power Saving ............................................................................................................................17 
+7.10.2. Register Setting............................................................................................................... .................................17 
+7.11. MAC/PHY INTERFACE............................................................................................................................... ...............18 
+7.11.1. RGMII..............................................................................................................................................................18  
+7.11.2. Management Interface........................................................................................................... ..........................18 
+7.11.3. Change Page ...................................................................................................................................................19  
+7.11.4. Access to MDIO Manageable Device (MMD)......................................................................................... ........20 
+7.12. AUTO-NEGOTIATION..................................................................................................................................................20  
+7.12.1. Auto-Negotiation Priority Resolution........................................................................................... ...................23 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver iv Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.12.2. Auto-Negotiation Master/Slave Resolution .....................................................................................................23 
+7.12.3. Auto-Negotiation PAUSE/ASYMMETRIC PAUSE Resolution........................................................................24  
+7.13. CROSSOVER DETECTION AND AUTO-CORRECTION ....................................................................................................24  
+7.14. LED CONFIGURATION............................................................................................................................... .................26 
+7.14.1. Customized LED Function........................................................................................................ .......................26 
+7.14.2. EEE LED Function............................................................................................................... ...........................27 
+7.15. POLARITY CORRECTION............................................................................................................................... ..............28 
+7.16. POWER .......................................................................................................................................................................28  
+7.17. PHY RESET (HARDWARE RESET) .............................................................................................................................. 28 
+8. REGISTER DESCRIPTIONS.......................................................................................................... ...............................29 
+8.1. REGISTER MAPPING AND DEFINITIONS.......................................................................................................................29  
+8.2. MMD REGISTER MAPPING AND DEFINITIONS............................................................................................................30  
+8.3. OTHER PAGE REGISTER MAPPING AND DEFINITIONS .................................................................................................30  
+8.4. REGISTER TABLES......................................................................................................................................................30  
+8.4.1. BMCR (Basic Mode Control Register, Address 0x00) .........................................................................................30 
+8.4.2. BMSR (Basic Mode Status Register, Address 0x01)................................................................................ .............32 
+8.4.3. PHYID1 (PHY Identifier Register 1, Address 0x02) ............................................................................................33 
+8.4.4. PHYID2 (PHY Identifier Register 2, Address 0x03) ............................................................................................33 
+8.4.5. ANAR (Auto-Negotiation Advertising Register, Address 0x04) ...........................................................................33 
+8.4.6. ANLPAR (Auto-Negotiation Link Partner Ability Register, Address 0x05) .........................................................34 
+8.4.7. ANER (Auto-Negotiation Expansion Register, Address 0x06)....................................................................... ......35 
+8.4.8. ANNPTR (Auto-Negotiation Next Page Transmit Register, Address 0x07) .........................................................36 
+8.4.9. ANNPRR (Auto-Negotiation Next Page Receive Register, Address 0x08)...........................................................36  
+8.4.10. GBCR (1000Base-T Control Register, Address 0x09)............................................................................... ......37 
+8.4.11. GBSR (1000Base-T Status Register, Address 0x0A) .......................................................................................37 
+8.4.12. MACR (MMD Access Control Register, Address 0x0D) .................................................................................38 
+8.4.13. MAADR (MMD Access Address Data Register, Address 0x0E)......................................................................38  
+8.4.14. GBESR (1000Base-T Extended Status Register, Address 0x0F) .....................................................................39 
+8.4.15. INER (Interrupt Enable Register, Address 0x12) ............................................................................................39 
+8.4.16. PHYCR1 (PHY Specific Control Register 1, Address 0x18)......................................................................... ...40 
+8.4.17. PHYCR2 (PHY Specific Control Register 2, Address 0x19)......................................................................... ...41 
+8.4.18. PHYSR (PHY Specific Status Register, Address 0x1A) ...................................................................................41 
+8.4.19. INSR (Interrupt Status Register, Address 0x13) ..............................................................................................42 
+8.4.20. EPAGSR (Extension Page Select Register, Address 0x1F) .............................................................................43 
+8.4.21. PC1R (PCS Control 1 Register, MMD Device 3, Address 0x00) ....................................................................43 
+8.4.22. PS1R (PCS Status1 Register, MMD Device 3, Address 0x01) ........................................................................ 43 
+8.4.23. EEECR (EEE Capability Register, MMD Device 3, Address 0x14)................................................................44  
+8.4.24. EEEWER (EEE Wake Error Register, MMD Device 3, Address 0x16) ..........................................................44 
+8.4.25. EEEAR (EEE Advertisement Register, MMD Device 7, Address 0x3c) ..........................................................44 
+8.4.26. EEELPAR (EEE Link Partner Ability Register, MMD Device 7, Address 0x3d)............................................45  
+8.4.27. LCR (LED Control Register, ExtPage 0xd04, Address 0x10) .........................................................................45 
+8.4.28. EEELCR (EEE LED Control Register, ExtPage 0xd04, Address 0x11)..........................................................45  
+9. REGULATORS AND POWER SEQUENCE.................................................................................................. ..............46 
+9.1. SWITCHING REGULATOR (RTL8211F(I)).................................................................................................................. .46 
+9.1.1. PCB Layout ..........................................................................................................................................................46  
+9.1.2. Inductor and Capacitor Parts List .............................................................................................. .........................47 
+9.1.3. Measurement Criteria ..........................................................................................................................................48  
+9.1.4. Efficiency Measurement .......................................................................................................................................54  
+9.2. LOW-DROPOUT REGULATOR (RTL8211FD(I)) ..........................................................................................................55 
+9.3. POWER SEQUENCE .....................................................................................................................................................56  
+10. CHARACTERISTICS................................................................................................................ .................................57 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver v Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10.1. ABSOLUTE MAXIMUM RATINGS............................................................................................................................... ..57 
+10.2. RECOMMENDED OPERATING CONDITIONS .................................................................................................................57  
+10.3. CRYSTAL REQUIREMENTS............................................................................................................................... ...........58 
+10.4. OSCILLATOR/EXTERNAL CLOCK REQUIREMENTS ......................................................................................................58  
+10.5. DC CHARACTERISTICS............................................................................................................................... ................59 
+10.6. AC CHARACTERISTICS............................................................................................................................... ................60 
+10.6.1. MDC/MDIO Timing ................................................................................................................ ........................60 
+10.6.2. RGMII Timing Modes......................................................................................................................................61  
+11. MECHANICAL DIMENSIONS.......................................................................................................... .......................64 
+11.1. MECHANICAL DIMENSIONS NOTES ............................................................................................................................64  
+12. ORDERING INFORMATION........................................................................................................... ........................65 
+ 
+ 
+ 
+List of Tables 
+TABLE 1.   TRANSCEIVER INTERFACE..............................................................................................................................................7  
+TABLE 2.   CLOCK............................................................................................................................................................................7  
+TABLE 3.   RGMII ...........................................................................................................................................................................8 
+TABLE 4.   MANAGEMENT INTERFACE.............................................................................................................................................8  
+TABLE 5.   RESET.............................................................................................................................................................................9  
+TABLE 6.   MODE SELECTION ..........................................................................................................................................................9  
+TABLE 7.   LED DEFAULT SETTINGS ............................................................................................................................... ..............10 
+TABLE 8.   REGULATOR AND REFERENCE ............................................................................................................................... .......10 
+TABLE 9.   POWER AND GROUND...................................................................................................................................................10  
+TABLE 10. CONFIG PINS VS. CONFIGURATION REGISTER............................................................................................................15  
+TABLE 11. CONFIGURATION REGISTER DEFINITIONS ....................................................................................................................15  
+TABLE 12. MANAGEMENT FRAME FORMAT ............................................................................................................................... ...18 
+TABLE 13. MANAGEMENT FRAME DESCRIPTION...........................................................................................................................18  
+TABLE 14. 1000BASE-T BASE AND NEXT PAGE BIT ASSIGNMENTS..............................................................................................21  
+TABLE 15. LED DEFAULT DEFINITIONS............................................................................................................................... .........26 
+TABLE 16. LED REGISTER TABLE............................................................................................................................... ..................26 
+TABLE 17. LED CONFIGURATION TABLE............................................................................................................................... .......27 
+TABLE 18. REGISTER ACCESS TYPES ............................................................................................................................... .............29 
+TABLE 19. REGISTER MAPPING AND DEFINITIONS ........................................................................................................................29  
+TABLE 20. MMD REGISTER MAPPING AND DEFINITIONS..............................................................................................................30  
+TABLE 21. OTHER PAGE REGISTER MAPPING AND DEFINITIONS...................................................................................................30  
+TABLE 22. BMCR (BASIC MODE CONTROL REGISTER, ADDRESS 0X00) ......................................................................................30 
+TABLE 23. BMSR (BASIC MODE STATUS REGISTER, ADDRESS 0X01)..........................................................................................32  
+TABLE 24. PHYID1 (PHY IDENTIFIER REGISTER 1, ADDRESS 0X02) ...........................................................................................33 
+TABLE 25. PHYID2 (PHY IDENTIFIER REGISTER 2, ADDRESS 0X03) ...........................................................................................33 
+TABLE 26. ANAR (AUTO-NEGOTIATION ADVERTISING REGISTER, ADDRESS 0X04)....................................................................33  
+TABLE 27. ANLPAR (AUTO-NEGOTIATION LINK PARTNER ABILITY REGISTER, ADDRESS 0X05) ...............................................34 
+TABLE 28. ANER (AUTO-NEGOTIATION EXPANSION REGISTER, ADDRESS 0X06)........................................................................35  
+TABLE 29. ANNPTR (AUTO-NEGOTIATION NEXT PAGE TRANSMIT REGISTER, ADDRESS 0X07).................................................36  
+TABLE 30. ANNPRR (AUTO-NEGOTIATION NEXT PAGE RECEIVE REGISTER, ADDRESS 0X08) ...................................................36 
+TABLE 31. GBCR (1000BASE-T CONTROL REGISTER, ADDRESS 0X09) .......................................................................................37 
+TABLE 32. GBSR (1000BASE-T STATUS REGISTER, ADDRESS 0X0A)..........................................................................................37  
+TABLE 33. MACR (MMD ACCESS CONTROL REGISTER, ADDRESS 0X0D) ..................................................................................38  
+TABLE 34. MAADR (MMD ACCESS ADDRESS DATA REGISTER, ADDRESS 0X0E) ......................................................................38 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver vi Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+TABLE 35. GBESR (1000BASE-T EXTENDED STATUS REGISTER, ADDRESS 0X0F)......................................................................39  
+TABLE 36. INER (INTERRUPT ENABLE REGISTER, ADDRESS 0X12)..............................................................................................39  
+TABLE 37. PHYCR1 (PHY SPECIFIC CONTROL REGISTER 1, ADDRESS 0X18)..............................................................................40  
+TABLE 38. PHYCR2 (PHY SPECIFIC CONTROL REGISTER 2, ADDRESS 0X19)..............................................................................41  
+TABLE 39. PHYSR (PHY SPECIFIC STATUS REGISTER, ADDRESS 0X1A).....................................................................................41  
+TABLE 40. INSR (INTERRUPT STATUS REGISTER, ADDRESS 0X13)...............................................................................................42  
+TABLE 41. EPAGSR (EXTENSION PAGE SELECT REGISTER, ADDRESS 0X1F)...............................................................................43  
+TABLE 42. PC1R (PCS CONTROL 1 REGISTER, MMD DEVICE 3, ADDRESS 0X00)........................................................................43  
+TABLE 43. PS1R (PCS STATUS 1 REGISTER, MMD DEVICE 3, ADDRESS 0X01) ...........................................................................43 
+TABLE 44. EEECR (EEE CAPABILITY REGISTER, MMD DEVICE 3, ADDRESS 0X14) ...................................................................44 
+TABLE 45. EEEWER (EEE WAKE ERROR REGISTER, MMD DEVICE 3, ADDRESS 0X16).............................................................44  
+TABLE 46. EEEAR (EEE ADVERTISEMENT REGISTER, MMD DEVICE 7, ADDRESS 0X3C) ...........................................................44 
+TABLE 47. EEELPAR (EEE LINK PARTNER ABILITY REGISTER, MMD DEVICE 7, ADDRESS 0X3D)............................................45 
+TABLE 48. LCR (LED CONTROL REGISTER, EXTPAGE 0XD04, ADDRESS 0X10) ..........................................................................45 
+TABLE 49. EEELCR (EEE LED CONTROL REGISTER, EXTPAGE 0XD04, ADDRESS 0X11)...........................................................45  
+TABLE 50. INDUCTOR AND CAPACITOR PARTS LIST......................................................................................................................47  
+TABLE 51. POWER SEQUENCE PARAMETERS............................................................................................................................... ..56 
+TABLE 52. ABSOLUTE MAXIMUM RATINGS ............................................................................................................................... ...57 
+TABLE 53. RECOMMENDED OPERATING CONDITIONS ...................................................................................................................57  
+TABLE 54. CRYSTAL REQUIREMENTS............................................................................................................................... .............58 
+TABLE 55. OSCILLATOR/EXTERNAL CLOCK REQUIREMENTS........................................................................................................58  
+TABLE 56. DC CHARACTERISTICS............................................................................................................................... ..................59 
+TABLE 57. MDC/MDIO MANAGEMENT TIMING PARAMETERS ....................................................................................................60  
+TABLE 58. RGMII TIMING PARAMETERS............................................................................................................................... .......63 
+TABLE 59. ORDERING INFORMATION ............................................................................................................................... .............65 
+ 
+ 
+ 
+
+RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver vii Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+List of Figures 
+FIGURE 1.   APPLICATION DIAGRAM – RTL8211F(I) ......................................................................................................................3  
+FIGURE 2.   APPLICATION DIAGRAM - RTL8211FD(I) ................................................................................................................... .4 
+FIGURE 3.   BLOCK DIAGRAM..........................................................................................................................................................5  
+FIGURE 4.   PIN ASSIGNMENTS (40-PIN QFN) .................................................................................................................................6  
+FIGURE 5.   LED AND PHY ADDRESS CONFIGURATION ................................................................................................................16  
+FIGURE 6.   MDC/MDIO READ TIMING ............................................................................................................................... .........19 
+FIGURE 7.   MDC/MDIO WRITE TIMING............................................................................................................................... ........19 
+FIGURE 8.   EEE LED BEHAVIOR ..................................................................................................................................................27  
+FIGURE 9.   PHY RESET TIMING....................................................................................................................................................28  
+FIGURE 10. SWITCHING REGULATOR............................................................................................................................... ..............46 
+FIGURE 11. INPUT VOLTAGE OVERSHOOT <4V (GOOD)................................................................................................................48  
+FIGURE 12. INPUT VOLTAGE OVERSHOOT >4V (BAD) ..................................................................................................................48 
+FIGURE 13. CERAMIC 10µF 0603 (X5R) (GOOD) ..........................................................................................................................49  
+FIGURE 14. L=GLK2510P-2R2M, C=CERAMIC 4.7µF 0805 X5R TDK (RIPPLE 12.4MV) ...........................................................49 
+FIGURE 15. L=GLK2510P-2R2M, C=CERAMIC 10µF 0603 X5R YAGEO (RIPPLE 13.2MV) ......................................................50 
+FIGURE 16. L=GLK2510P-4R7M, C=CERAMIC 4.7µF 0805 X5R TDK (RIPPLE 12MV) ..............................................................50 
+FIGURE 17. L=GLK2510P-4R7M, C=CERAMIC 10µF 0603 X5R YAGEO (RIPPLE 11.2MV) ......................................................51 
+FIGURE 18. L=GTSD32P-2R2M, C=CERAMIC 4.7µF 0805 X5R TDK (RIPPLE 9.2MV)...............................................................51  
+FIGURE 19. CERAMIC 10µF (Y5V) (BAD).............................................................................................................................. ........52 
+FIGURE 20. ELECTROLYTIC 100µF (RIPPLE TOO HIGH).................................................................................................................52  
+FIGURE 21. GTSD32P-2R2M (GOOD).............................................................................................................................. ............53 
+FIGURE 22. 1µH BEAD (BAD)........................................................................................................................................................53  
+FIGURE 23. SWITCHING REGULATOR EFFICIENCY MEASUREMENT CHECKPOINT..........................................................................54  
+FIGURE 24. POWER SEQUENCE......................................................................................................................................................56  
+FIGURE 25. MDC/MDIO SETUP, HOLD TIME, AND VALID FROM MDC RISING EDGE TIME DEFINITIONS ....................................60 
+FIGURE 26. MDC/MDIO MANAGEMENT TIMING PARAMETERS ...................................................................................................60  
+FIGURE 27. RGMII TIMING MODES (FOR TXC) ........................................................................................................................... 61 
+FIGURE 28. RGMII TIMING MODES (FOR RXC) ........................................................................................................................... 62 
+ 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 1 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+1. General Description 
+The Realtek RTL8211F-CG/RTL8211FD-CG/RTL8211FI-C G/RTL8211FDI-CG is a highly integrated 
+Ethernet transceiver that complies with 10Base-T, 100Base-TX, and 1000Base-T IEEE 802.3 standards. It 
+provides all the necessary physical layer functions to  transmit and receive Ethernet packets over CAT.5 
+UTP cable. The RTL8211FI and RTL8211FDI are manufactured to industrial grade standards. 
+The RTL8211F(I)/RTL8211FD(I) uses state-of-the-art DSP technology and an Analog Front End (AFE) to 
+enable high-speed data transmission and reception over UTP cable. Functions such as Crossover Detection 
+& Auto-Correction, polarity correction, adaptive e qualization, cross-talk cancellation, echo cancellation, 
+timing recovery, and error correction are implem ented in the RTL8211F(I)/RTL8211FD(I) to provide 
+robust transmission and reception capabilities at 10Mbps, 100Mbps, or 1000Mbps. 
+Data transfer between MAC and PHY is via the Reduced Gigabit Media Independent Interface (RGMII) for 
+1000Base-T, 10Base-T, and 100Base-TX. The R TL8211F(I)/RTL8211FD(I) supports various RGMII 
+signaling voltages, including 3.3, 2.5, 1.8, and 1.5V. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 2 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+2. Features 
+ 1000Base-T IEEE 802.3ab Compliant 
+ 100Base-TX IEEE 802.3u Compliant 
+ 10Base-T IEEE 802.3 Compliant 
+ Supports RGMII 
+ Supports IEEE 802.3az-2010 (Energy 
+Efficient Ethernet) 
+ Built-in Wake-on-LAN (WOL) 
+ Supports Interrupt function 
+ Supports Parallel Detection 
+ Crossover Detection & Auto-Correction 
+ Automatic polarity correction 
+ Supports PHYRSTB core power Turn-Off 
+ Baseline Wander Correction 
+ Supports 120m for CAT.5 cable in 
+1000Base-T 
+ Selectable 3.3/2.5/1.8/1.5V signaling for 
+RGMII 
+ Supports 25MHz external crystal or OSC 
+ Provides 125MHz clock source for MAC 
+ Provides 3 network status LEDs 
+ Supports Link Down power saving 
+ Green Ethernet (1000/100Mbps mode only) 
+ Built-in Switching Regulator and LDO 
+ 40-pin QFN Green Package 
+ 55 nm process with ultra-low power 
+consumption 
+ Industrial grade manufacturing process 
+(RTL8211FI/RTL8211FDI) 
+ 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 3 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+3. System Applications 
+ DTV (Digital TV) 
+ MAU (Media Access Unit) 
+ CNR (Communication and Network Riser) 
+ Game Console 
+ Printer and Office Machine 
+ DVD Player and Recorder 
+ Ethernet Hub 
+ Ethernet Switch 
+In addition, the RTL8211F(I)/RTL8211FD(I) can be used in any embedded system with an Ethernet MAC 
+that needs a UTP physical connection. 
+ 
+3.1. Application Diagram - RTL8211F(I) 
+ 
+*Note: 3.3/2.5/1.8/1.5V power here means I/O pad power sourced from external power, not from the 
+internal LDO. 
+Figure 1.   Application Diagram – RTL8211F(I) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 4 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+3.2. Application Diagram - RTL8211FD(I) 
+ 
+ 
+*Note: 3.3/2.5/1.8/1.5V power here means I/O pad power sourced from external power, not from the 
+internal LDO. 
+Figure 2.   Application Diagram - RTL8211FD(I) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 5 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+4. Block Diagram 
+ 
+ 
+Figure 3.   Block Diagram 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 6 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+5. Pin Assignments 
+ 
+Figure 4.   Pin Assignments (40-Pin QFN) 
+ 
+5.1. Package Identification 
+Green package is indicated by the ‘G’ in GXXXV (Figure 4).  
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 7 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+6. Pin Descriptions 
+Some pins have multiple functions. Refer to the Pin Assignments figure on page 6 for a graphical 
+representation. 
+I: Input LI: Latched Input During Power up or Reset 
+O: Output IO: Bi-Directional Input and Output 
+P: Power PD: Internal Pull Down During Power On Reset 
+PU: Internal Pull Up During Power On Reset OD: Open Drain 
+G: Ground  
+6.1. Transceiver Interface 
+Table 1.   Transceiver Interface 
+Pin No. Pin Name Type Description 
+1 MDIP0 IO 
+2 MDIN0 IO 
+In MDI mode, this is the first pair in 1000Base-T, i.e., the BI_DA+/- pair, and is the 
+transmit pair in 10Base-T and 100Base-TX. 
+In MDI crossover mode, this pair acts as the BI_DB+/- pair, and is the receive pair in 
+10Base-T and 100Base-TX. 
+4 MDIP1 IO 
+5 MDIN1 IO 
+In MDI mode, this is the second pair in 1000Base-T, i.e., the BI_DB+/- pair, and is 
+the receive pair in 10Base-T and 100Base-TX. 
+In MDI crossover mode, this pair acts as the BI_DA+/- pair, and is the transmit pair 
+in 10Base-T and 100Base-TX. 
+6 MDIP2 IO 
+7 MDIN2 IO 
+In MDI mode, this is the third pair in 1000Base-T, i.e., the BI_DC+/- pair. 
+In MDI crossover mode, this pair acts as the BI_DD+/- pair. 
+9 MDIP3 IO 
+10 MDIN3 IO 
+In MDI mode, this is the fourth pair in 1000Base-T, i.e., the BI_DD+/- pair. 
+In MDI crossover mode, this pair acts as the BI_DC+/- pair. 
+ 
+6.2. Clock 
+Table 2.   Clock 
+Pin No. Pin Name Type Description 
+36 XTAL_IN I 25MHz Crystal Input. 
+Connect to GND if an external 25MHz oscillator drives XTAL_OUT/EXT_CLK. 
+37 XTAL_OUT/E
+XT_CLK 
+O 25MHz Crystal Output. 
+If a 25MHz oscillator is used, connect XTAL_OUT/EXT_CLK to the oscillator’s 
+output (see section 10.3, page 58 for clock source specifications). 
+35 CLKOUT O 125/25MHz Reference Clock Generated from Internal PLL. 
+This pin should be kept floating if this clock is not used by MAC. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 8 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+6.3. RGMII 
+Table 3.   RGMII 
+Pin No. Pin Name Type Description 
+20 TXC I The transmit reference clock w ill be 125MHz, 25MHz, or 2.5MHz depending 
+on speed. 
+18 TXD0 I 
+17 TXD1 I 
+16 TXD2 I 
+15 TXD3 I 
+Transmit Data. 
+Data is transmitted from MAC to PHY via TXD[3:0]. 
+19 TXCTL I Receive Control Signal from the MAC. 
+27 RXC O/LI/PD The continuous receive refere nce clock will be 125MHz, 25MHz, or 2.5MHz, 
+and is derived from the received data stream. 
+25 RXD0 O/LI/PU 
+24 RXD1 O/LI/PD 
+23 RXD2 O/LI/PD 
+22 RXD3 O/LI/PU 
+Receive Data. 
+Data is transmitted from PHY to MAC via RXD[3:0]. 
+26 RXCTL O/LI/PD Transmit Control Signal to the MAC. 
+ 
+6.4. Management Interface 
+Table 4.   Management Interface 
+Pin No. Pin Name Type Description 
+13 MDC I Management Data Clock. 
+14 MDIO IO/PU Input/Output of Management Data. 
+Pull up 3.3/2.5/1.8/1.5V for 3.3/2.5/1.8/1.5V RGMII, respectively. 
+31 INTB/PMEB O/OD 1. Interrupt (supports 3.3V pull up). 
+Set low if status changed; active low. 
+2. Power Management Event (supports 3.3V pull up). 
+Set low if received a magic packet or wake up frame; active low. 
+Keep this pin floating if either of the functions is not used. 
+Note 1: The behavior of this pin is level-triggered. 
+Note 2: The function of this pin (INTB/PMEB) can be assigned by Page 0xd40, 
+Reg.22, bit[5]: 
+1: Pin 31 functions as PMEB. 
+0: Pin 31 functions as INTB (default) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 9 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+6.5. Reset 
+Table 5.   Reset 
+Pin No. Pin Name Type Description 
+12 PHYRSTB I Hardware Reset. Active low. 
+For a complete PHY reset, this pin must be asserted low for at least 10ms. 
+All registers will be cleared after a hardware reset. 
+ 
+6.6. Mode Selection 
+Table 6.   Mode Selection 
+Pin No. Pin Name Type Description 
+22 PHYAD0 O/LI/PU 
+27 PHYAD1 O/LI/PD 
+26 PHYAD2 O/LI/PD 
+PHYAD[2:0]. PHY Address Configuration. 
+23 PLLOFF O/LI/PD ALDPS Mode PLL Off Configuration. 
+Pull up to stop PLL when entering ALDPS mode. 
+Note:  
+Whole system power consumption in typical ALDPS mode is 39.6mW for the 
+RTL8211F(I), and 69.3mW for the RTL8211FD(I). 
+Whole system power consumption in ALDPS low power mode (with PLL turned 
+off) is 10.3mW for the RTL8211F(I), and 23.1 mW for the RTL8211FD(I). 
+All with 1.8V RGMII. 
+24 TXDLY O/LI/PD RGMII Transmit Clock Timing Control. 
+Pull up to add 2ns delay to TXC for TXD latching 
+25 RXDLY O/LI/PU RGMII Receiver Clock Timing Control. 
+Pull up to add 2ns delay to RXC for RXD latching 
+32 CFG_EXT  O/LI/PD IO Pad External Power Source Mode Configuration. 
+Pull up to use the external power source for the IO pad. 
+Pull down to use the integrated LDO to transform the desired voltage for the IO 
+pad. 
+33 CFG_LDO0 O/LI/PU 
+34 CFG_LDO1 O/LI/PD 
+LDO Output V oltage Selection for I/O Pad/ 
+External Power Source V oltage Selection for I/O Pad. 
+When pulling down CFG_EXT pin, CFG_LDO[1:0] represent LDO output 
+voltage setting for IO pad: 
+2’b00: Reserved. 
+2’b01: 2.5V . 
+2’b10: 1.8V . 
+2’b11: 1.5V . 
+When pulling up CFG_EXT pin, CFG_LDO[1:0] stand for input voltage 
+selection of the external power for IO pad: 
+2’b00: 3.3V . 
+2’b01: 2.5V . 
+2’b10: 1.8V . 
+2’b11: 1.5V . 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 10 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+6.7. LED Default Settings 
+Table 7.   LED Default Settings 
+Pin No. Pin Name Type Description 
+32 LED0 O/LI/PD High=Link Up at 10Mbps 
+Blinking=Transmitting or Receiving. 
+33 LED1 O/LI/PU Low=Link Up at 100Mbps 
+Blinking=Transmitting or Receiving.  
+34 LED2 O/LI/PD High=Link Up at 1000Mbps 
+Blinking=Transmitting or Receiving. 
+Note: High/Low active depends on hardware configuration setting. See section 7.14 LED Configuration, page 26 for 
+details. 
+ 
+6.8. Regulator and Reference 
+Table 8.   Regulator and Reference 
+Pin No. Pin Name Type Description 
+39 RSET O Reference. 
+External Resistor Reference. 
+30 REG_OUT O For RTL8211F(I): 
+Switching Regulator 1.0V Output. Connect to a 2.2µH or 4.7µH inductor. 
+For RTL8211FD(I): 
+Low-dropout Regulator 1.0V Output. 
+ 
+6.9. Power and Ground 
+Table 9.   Power and Ground 
+Pin No. Pin Name Type Description 
+29 DVDD33 P Digital Power. 3.3V . 
+28 DVDD_RG P Digital I/O Pad Power. 
+When pulling high CFG_EXT pin during Hardware Configuration (External 
+Power mode), connect this pin to the external power source for 
+3.3/2.5/1.8/1.5V RGMII I/O. 
+21 DVDD10 P Digital Core Power. 1.0V . 
+11, 40 A VDD33 P Analog Power. 3.3V . 
+3, 8, 38 A VDD10 P Analog Power. 1.0V . 
+41 GND G Ground. 
+Exposed Pad (E-Pad) is Analog and Digital Ground (see section 11 
+Mechanical Dimensions, page 64). 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 11 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7. Function Description 
+7.1. Transmitter 
+7.1.1. 1000Mbps Mode 
+The RTL8211F(I)/RTL8211FD(I)’s PCS layer receives data bytes from the MAC through the RGMII 
+interface and performs generation of continuous code-groups through 4D-PAM5 coding technology. These 
+code groups are passed through a waveform-shaping filter to minimize EMI effect, and are transmitted onto 
+the 4-pair CAT.5 cable at 125MBaud/s through a D/A converter. 
+7.1.2. 100Mbps Mode 
+The transmitted 4-bit nibbles (TXD[3:0]) from the MAC, clocked at 25MHz (TXCLK), are converted into 
+5B symbol code through 4B/5B coding technology, then through scrambling and serializing, are converted 
+to 125MHz NRZ and NRZI signals. The NRZI signals ar e passed to the MLT3 encoder, then to the D/A 
+converter and transmitted onto the media. 
+7.1.3. 10Mbps Mode 
+The transmit 4-bit nibbles (TXD[3:0] ) from the MAC, clocked at 2.5MHz (TXCLK), are serialized into 
+10Mbps serial data. The 10Mbps serial data is convert ed into a Manchester-encoded data stream and is 
+transmitted onto the media by the D/A converter. 
+ 
+7.2. Receiver 
+7.2.1. 1000Mbps Mode 
+Input signals from the media first pass through the on-chip sophisticated hybrid circuit to subtract the 
+transmitted signal from the input signal for effectiv e reduction of near-end echo. The received signal is 
+processed with state-of-the-art technology, such  as adaptive equalization, BLW (Baseline Wander) 
+correction, cross-talk cancellation, echo cancellation, timing recovery, error correction, and 4D-PAM5 
+decoding. The 8-bit-wide data is recovered and is sent to the RGMII interface at a clock speed of 125MHz. 
+The Rx MAC retrieves the packet data from the r eceive RGMII interface and sends it to the Rx Buffer 
+Manager. 
+7.2.2. 100Mbps Mode 
+The MLT3 signal is processed with an ADC, equalizer, BLW (Baseline Wander) correction, timing 
+recovery, MLT3 and NRZI decoder, descrambler, 4B /5B decoder, and is then presented to the RGMII 
+interface in 4-bit-wide nibbles at a clock speed of 25MHz. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 12 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.2.3. 10Mbps Mode 
+The received differential signal is converted into a Ma nchester-encoded stream first. Next, the stream is 
+processed with a Manchester decoder, and is de-seria lized into 4-bit-wide nibbles. The 4-bit nibbles are 
+presented to the RGMII interface at a clock speed of 2.5MHz. 
+ 
+7.3. Energy Efficient Ethernet (EEE) 
+The RTL8211F(I)/RTL8211FD(I) supports IEEE 802.3az-2010, also known as Energy Efficient Ethernet 
+(EEE), at 10Mbps, 100Mbps, and 1000Mbps. It provides a protocol to coordinate transitions to/from a 
+lower power consumption level (Low Power Idle mode) based on link utilization. When no packets are 
+being transmitted, the system goes to Low Power Idle mode to save power. Once packets need to be 
+transmitted, the system returns to normal mode, and does this without changing the link status and without 
+dropping/corrupting frames. 
+To save power, when the system is in Low Power Idle mode, most of the circuits are disabled, however, the 
+transition time to/from Low Power Idle mode is kept small enough to be transparent to upper layer 
+protocols and applications. 
+EEE also specifies a negotiation method to enable link partners to determine whether EEE is supported. 
+Refer to http://www.ieee802.org/3/az/index.html for more details. 
+ 
+7.4. Wake-On-LAN (WOL) 
+The RTL8211F(I)/RTL8211FD(I) can mon itor the network for a Wakeup Frame or a Magic Packet, and 
+notify the system via the PMEB (Power Management Event; ‘B’ means low active) pin when such a packet 
+or event occurs1. The system can then be restored to a normal state to process incoming jobs. The PMEB 
+pin needs to be connected with a 4.7k-ohm resistor  and pulled up to 3.3V. When the Wakeup Frame or a 
+Magic Packet is sent to the PHY, the PMEB pin will be set low to notify the system to wake up. Refer to the 
+WOL application note for details. 
+Magic Packet Wakeup occurs only when the following conditions are met: 
+• The destination address of the received Magic Packet is acceptable to the RTL8211F(I)/RTL8211FD(I), 
+e.g., a broadcast, multicast, or unicast packet addressed to the current RTL8211F(I)/RTL8211FD(I). 
+• The received Magic Packet does not contain a CRC error. 
+• The Magic Packet pattern matches; i.e., 6 * FFh + MISC (can be none) + 16 * DID (Destination ID) in 
+any part of a valid Ethernet packet. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 13 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+A Wakeup Frame event occurs only when the following conditions are met: 
+• The destination address of the received Wakeup Frame is acceptable to the 
+RTL8211F(I)/RTL8211FD(I), e.g., a broadcast, multicast, or unicast address to the current 
+RTL8211F(I)/RTL8211FD(I). 
+• The received Wakeup Frame does not contain a CRC error. 
+• The 16-bit CRC2 of the received Wakeup Frame matches the 16-bit CRC of the sample Wakeup Frame 
+pattern given by the local machine’s OS. Or, the RTL8211F(I)/RTL8211FD(I) is configured to allow 
+direct packet wakeup, e.g., a broadcast, multicast, or unicast network packet. 
+Note 1: The INTB and PMEB functions share the same pin (pin 31), and can be determined by Page 0xd40, 
+Reg.22, bit[5]. 
+Note 2: 16-bit CRC: The RTL8211F(I)/RTL8211FD( I) supports eight long wakeup frames (covering 128 
+mask bytes from offset 0 to 127 of any incoming network packet). CRC16 polynomial=x16+x12+x5+1. 
+ 
+7.5. Interrupt 
+Whenever there is a status change on the medi a detected by the RTL8211F (I)/RTL8211FD(I), they will 
+drive the interrupt pin (INTB) low to issue an interr upt event. The MAC senses the status change and 
+accesses the registers (Page 0, Register 19) through the MDC/MDIO interface in response. 
+Once these status registers (Page 0, Register 19) have been read by the MAC through the MDC/MDIO, the 
+INTB is de-asserted. The RTL8211F(I) /RTL8211FD(I) interrupt function removes the need for continuous 
+polling through the MDC/MDIO management interface. 
+Note 1: The interrupt of the RTL8211F(I)/RTL8211FD(I) is a level-triggered mechanism. 
+Note 2: The INTB and PMEB functions share the same pin (pin 31), and can be determined by Page 0xd40, 
+Reg.22, bit[5]. 
+ 
+7.6. INTB/PMEB Pin Usage 
+The INTB/PMEB pin (pin 31) of the RTL8211F(I)/RTL8211FD(I) is designed to notify in cases of both 
+interrupt and WOL events. The default mode of th is pin is INTB (Page 0xd40, Reg.22, bit[5] = 0). For 
+general use, indication of a WOL event is also integrated into one of the interrupt events (Page 0, Reg 18, 
+bit[7] which is triggered when any specified WOL event occurs. However, the ‘Low Pulse’ waveform 
+format is not supported during this mode; only the active low, level-triggered waveform is provided. 
+If PMEB mode is selected (Page 0xd40, Reg.22, bit[5] = 1), pin 31 becomes a fully functional PMEB pin. 
+Note that the interrupt function is disabled in this mode. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 14 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.7. MDI Interface 
+This interface consists of four signal pairs; MDI0, MDI1, MDI2, and MDI3. Each signal pair consists of 
+two bi-directional pins that can transmit and receive  at the same time. The MDI interface has internal 
+termination resistors to reduce BOM cost and PCB complexity. For 1000Base-T, all four pairs are used in 
+both directions at the same time. For 10/100 links and during auto-negotiation, only pairs A and B are used. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 15 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.8. Hardware Configuration 
+The I/O pad voltage, interface mode, and PHY addre ss can be set by the CONF IG pins. The respective 
+value mapping of CONFIG with the configurable vector is listed in Table 10. To set the CONFIG pins, an 
+external pull-high or pull-low via resistor is required. 
+Table 10. CONFIG Pins vs. Configuration Register 
+CONFIG Pin Configuration 
+RXD3 PHYAD[0] 
+RXC PHYAD[1] 
+RXCTL PHYAD[2] 
+RXD2 PLLOFF 
+RXD1 TXDLY 
+RXD0 RXDLY 
+LED0 CFG_EXT 
+LED1 CFG_LDO[0] 
+LED2 CFG_LDO[1] 
+ 
+Table 11. Configuration Register Definitions 
+Configuration Description 
+PHYAD[2:0] PHY Address. 
+PHYAD sets the PHY address for the device. The RTL8211F(I)/ RTL8211FD(I)  supports PHY 
+addresses from 00001 to 00111.  
+Note 1: An MDIO command with PHY address=0 is a broadcast from the MAC; each PHY 
+device should respond. This function can be disabled by setting Reg24.13=0 (See Table 37). 
+Note 2: The RTL8211F(I)/ RTL8211FD(I)  with PHYAD[2:0]=000 can automatically 
+remember the first non-zero PHY address. This function can be enabled by setting Reg24.6 = 1 
+(See Table 37). 
+PLLOFF ALDPS Mode PLL Off Configuration. 
+1: Stop PLL when entering ALDPS mode (via 4.7k-ohm to DVDD_RG) 
+0: PLL continue toggling when entering ALDPS mode (via 4.7k-ohm to GND) 
+TXDLY RGMII Transmit Clock Timing Control. 
+1: Add 2ns delay to RXC for RXD latching (via 4.7k-ohm to DVDD_RG) 
+0: No delay (via 4.7k-ohm to GND) 
+RXDLY RGMII Receive Cl ock Timing Control. 
+1: Add 2ns delay to RXC for RXD latching (via 4.7k-ohm to DVDD_RG) 
+0: No delay (via 4.7k-ohm to GND) 
+CFG_EXT I/O Pad External Power Source Mode Configuration. 
+1: Use the external power source for the IO pad (via 4.7k-ohm to 3.3V) 
+0: Use the integrated LDO to transform the desired voltage for the IO pad (via 4.7k-ohm to 
+GND) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 16 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Configuration Description 
+CFG_LDO[1:0] LDO Output V oltage Selection for I/O pad/ 
+External Power Source V oltage Selection for I/O pad. 
+When pulling down CFG_EXT pin, CFG_LDO[1:0] represent LDO output voltage setting for 
+IO pad: (via 4.7k-ohm to GND) 
+00: Reserved. 
+01: 2.5V 
+10: 1.8V 
+11: 1.5V 
+When pulling up CFG_EXT pin, CFG_LDO[1:0] stand for external power voltage selection for 
+IO pad: (via 4.7k-ohm to 3.3V) 
+00: 3.3V 
+01: 2.5V 
+10: 1.8V 
+11: 1.5V 
+ 
+7.9. LED and PHY Address Configuration 
+In order to reduce the pin count on the RTL8211F(I)/ RTL8211FD(I), the LED pins are duplexed with the 
+CFG_EXT and CFG_LDO pins. As the Hardware Confi guration shares the LED output pins, the external 
+combinations required for strapping and LED usage mu st be considered in order to avoid contention. 
+Specifically, when the LED outputs are used to drive LEDs directly, the active state of each output driver is 
+dependent on the logic level sampled by the corresponding CFG_EXT/CFG_LDO inputs upon 
+power-on/reset.  
+For example, as Figure 5 (left-si de) shows, if a given CFG_EXT/CF G_LDO inputs are resistively pulled 
+high then the corresponding LED outputs will be configured as an active low driver. On the right side, we 
+can see that if a given CFG_EXT/CFG_LDO inputs are resistively pulled low then the corresponding 
+output will be configured as an active high driver . The Hardware Configuration pins should not be 
+connected to GND or VCC directly, but must be pulled high or low through a resistor (e.g., 4.7K Ω). If no 
+LED indications are needed, the components of the LED path (LED+510Ω) can be removed. 
+ 
+CFG_LDO[1:0] = Logical 1 CFG_LDO[1:0] = Logical 0 
+CFG_EXT = Logical 1 CFG_EXT = Logical 0 
+LED Indication=Active low LED Indication=Active High 
+Figure 5.   LED and PHY Address Configuration 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 17 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.10. Green Ethernet (1000/100Mbps Mode Only) 
+7.10.1. Cable Length Power Saving 
+In 1000/100Mbps mode the RTL8211F(I)/RTL8211FD(I) provides dynamic detection of cable length and 
+dynamic adjustment of power required for the detected  cable length. This feature provides intermediate 
+performance with minimum power consumption. 
+7.10.2. Register Setting  
+Follow the register settings below to DISABLE Green Ethernet (Default is ‘Enabled’) 
+Write Reg27, Data=0x8011 
+Write Reg28, Data=0x573f 
+Follow the register settings below to ENABLE Green Ethernet (Default is ‘Enabled’) 
+Write Reg27, Data=0x8011 
+Write Reg16, Data=0xd73f 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 18 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.11. MAC/PHY Interface 
+The RTL8211F(I)/RTL8211FD(I) supports industry standards and is suitable for most off-the-shelf MACs 
+with an RGMII interface. 
+7.11.1. RGMII 
+Among the RGMII interface in 100Base-TX and 10Base-T modes, TXC and RXC sources are 25MHz and 
+2.5MHz respectively; while in 1000Base-T mode, TX C and RXC sources are 125MHz. TXC will always 
+be generated by the MAC and RXC will always be generated by the PHY. TXD[3:0] and RXD[3:0] signals 
+are used for data transitions on the rising and falling edge of the clock. 
+7.11.2. Management Interface 
+The management interface provides access to the intern al registers through the MDC and MDIO pins as 
+described in IEEE 802.3u section 22. The MDC signal, provided by the MAC, is the management data 
+clock reference to the MDIO signal. The MDIO is the management data input/output and is a bi-directional 
+signal that runs synchronously to MDC. The MDIO pin needs a 1.5k Ohm pull-up resistor to maintain the 
+MDIO high during idle and turnaround. 
+The RTL8211F(I)/RTL8211FD(I) can share the same MDIO line. In switch/router applications, each port 
+should be assigned a unique address during the hardware  reset sequence, and it can only be addressed via 
+that unique PHY address. For detailed information on the management registers, see section 8 Register 
+Descriptions, page 29. 
+Table 12. Management Frame Format 
+ Management Frame Fields 
+ Preamble ST OP PHYAD REGAD TA DATA IDLE
+Read 1…1 01 10 AAAAA RRRRR Z0  DDDDDDDDDDDDDDDD Z 
+Write 1…1 01 01 AAAAA RRRRR 10 DDDDDDDDDDDDDDDD Z 
+ 
+Table 13. Management Frame Description 
+Name Description 
+Preamble 32 Contiguous Logical 1’s Sent by the MAC on MDIO, along with 32 Corresponding Cycles on MDC. 
+This provides synchronization for the PHY . 
+ST Start of Frame. 
+Indicated by a 01 pattern. 
+OP Operation Code. 
+Read: 10 
+Write: 01 
+PHYAD PHY Address. 
+Up to eight PHYs can be connected to one MAC. This 3-bit field selects which PHY the frame is directed to.
+REGAD Register Address. 
+This is a 5-bit field that sets which of the 32 registers of the PHY this operation refers to. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 19 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Name Description 
+TA Turnaround. 
+This is a 2-bit-time spacing between the register address and the data field of a frame to avoid contention 
+during a read transaction. For a read transaction, both the STA and the PHY remain in a high-impedance state 
+for the first bit time of the turnaround. The PHY drives a zero bit during the second bit time of the turnaround 
+of a read transaction. 
+DATA Data. These are the 16 bits of data. 
+IDLE Idle Condition. 
+Not truly part of the management frame. This is a high impedance state. Electrically, the PHY’s pull-up 
+resistor will pull the MDIO line to a logical ‘1’. 
+ 
+ 
+Figure 6.   MDC/MDIO Read Timing 
+ 
+0 1 0 0000 00000 0000 00 0 000001 1 111 z
+Write
+OP 
+(Code)
+PHY Address
+0x01
+Reg. Address
+0x00(BMCR)
+Turn
+Around
+Reg. Data
+0x1340 Idle
+1 1
+z
+0
+Start
+MDC
+MDIO(MAC)
+Pre
+1...1
+ 
+Figure 7.   MDC/MDIO Write Timing 
+ 
+7.11.3. Change Page 
+Set MDIO commands as shown below to switch to the other Page 0xXY (in Hex). 
+1. Write Register 31 Data=0x00XY (Page XY) 
+2. Read/Write the target Register Data 
+3. Write Register 31 Data=0x0000 (switch to Page 0) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 20 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.11.4. Access to MDIO Manageable Device (MMD) 
+The MDIO Manageable Device (MMD) is an extensi on to the management interface that provides the 
+ability to access more device registers while still retain ing logical compatibility with the MDIO interface, 
+defined in section 8.1 Register Mapping and Definitions, page 29. Access to MMD configuration is 
+provided via Registers 13 and 14. 
+MMD Read/Write Operation 
+1. Write Function field to 00 (address mode) and DEVAD field to the device address value for the desired 
+MMD (Register 13). 
+2. Write the desired address value to the MMD’s address register (Register 14). 
+3. Write Function field to 01 (data mode; no post increment) and DEVAD field to the same device address 
+for the desired MMD (Register 13). 
+4. Read: Go to step 5. Write: Go to step 6. 
+5. Read the content of the selected register in MMD (Register 14). 
+6. Write the content of the selected register in MMD (Register 14). 
+ 
+7.12. Auto-Negotiation 
+Auto-Negotiation is a mechanism to determine the fastest connection between two link partners. For copper 
+media applications, it was introduced in IEEE 802.3u fo r Ethernet and Fast Ethernet, and then in 
+IEEE 802.3ab to address extended functions for Gigabit Ethernet. It performs the following: 
+• Auto-Negotiation Priority Resolution 
+• Auto-Negotiation Master/Slave Resolution 
+• Auto-Negotiation PAUSE/ASYMMETRIC PAUSE Resolution 
+• Crossover Detection & Auto-Correction Resolution 
+Upon de-assertion of a hardware reset, the R TL8211F(I)/RTL8211FD(I) can be configured to have 
+auto-negotiation enabled, or be set to operate in  10Base-T, 100Base-TX, or 1000Base-T mode via the 
+ANAR and GBCR register (register 4 and 9). 
+The auto-negotiation process is initiated automatically upon any of the following: 
+• Power-up 
+• Hardware reset 
+• Software reset (register 0.15) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 21 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+• Restart auto-negotiation (register 0.9) 
+• Transition from power down to power up (register 0.11) 
+• Entering the link fail state 
+Table 14. 1000Base-T Base and Next Page Bit Assignments 
+Bit Name Bit Description Register Location 
+Base Page 
+D15 NP Next Page. 
+1: Indicates that Next Pages follow 
+0: Indicates that no Next Pages follow 
+- 
+D14 Ack Acknowledge. 
+1: Indicates that a device has successfully received its link 
+partner’s Link Code Word (LCW) 
+- 
+D13 RF Remote Fault. 
+1: Indicates to its link partner that a device has encountered a fault 
+condition 
+- 
+D[12:5] A[7:0] Tec hnology Ability Field. 
+Indicates to its link partner the supported technologies specific to 
+the selector field value. 
+Register 4.[12:5] 
+Table 26, page 33. 
+D[4:0] S[4:0] Selector Field. 
+Always 00001. 
+Indicates to its link partner that it is an IEEE 802.3 device. 
+Register 4.[4:0] 
+Table 26, page 33. 
+PAGE 0 (Message Next Page) 
+M15 NP Next Page. 
+1: Indicates that Next Pages follow 
+0: Indicates that no Next Pages follow 
+- 
+M14 Ack Acknowledge. 
+1: Indicates that a device has successfully received its link 
+partner’s Link Code Word (LCW) 
+- 
+M13 MP Message Page. 
+1: Indicates to its link partner that this is a message page, not an 
+unformatted page. 
+- 
+M12 Ack2 Acknowledge 2. 
+1: Indicates to its link partner that the device has the ability to 
+comply with the message. 
+- 
+M11 T Toggle. 
+Used by the NWay arbitration function to ensure synchronization 
+with its link partner during Next Page exchange. 
+- 
+M[10:0] - 1000Base-T Message Code (Always 8). - 
+PAGE 1 (Unformatted Next Page) 
+U15 NP Next Page. 
+1: Indicates that Next Pages follow 
+0: Indicates that no Next Pages follow 
+- 
+U14 Ack Acknowledge. 
+1: Indicates that a device has successfully received its link 
+partner’s Link Code Word (LCW) 
+- 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 22 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Bit Description Register Location 
+U13 MP Message Page. 
+1: Indicates to its link partner that this is a message page, not an 
+unformatted page. 
+- 
+U12 Ack2 Acknowledge 2. 
+1: Indicates to its link partner that the device has the ability to 
+comply with the message. 
+- 
+U11 T Toggle. 
+Used by the NWay arbitration function to ensure synchronization 
+with its link partner during Next Page exchange. 
+- 
+U[10:5] - Reserved. Transmit as 0 - 
+U4 - 1000Base-T Half Duplex. 
+1: Half duplex 0: No half duplex 
+- 
+U3 - 1000Base-T Full Duplex. 
+1: Full duplex 0: No full duplex 
+- 
+U2 - 1000Base-T Port Type Bit. 
+1: Multi-port device 0: Single-port device 
+Register 9.10 (GBCR) 
+Table 31, page 37. 
+U1 - 1000Base-T Master-Slave Manual Configuration Value. 
+1: Master 0: Slave 
+This bit is ignored if bit 9.12=0 
+Register 9.11 (GBCR) 
+Table 31, page 37. 
+U0 - 1000Base-T Master-Slave Manual Configuration Enable. 
+1: Manual Configuration Enable 
+This bit is intended to be used for manual selection in 
+Master-Slave mode, and is to be used in conjunction with bit 9.11
+Register 9.12 (GBCR) 
+Table 31, page 37. 
+PAGE 2 (Unformatted Next Page) 
+U15 NP Next Page. 
+1: Indicates that Next Pages follow 
+0: Indicates that no Next Pages follow 
+- 
+U14 Ack Acknowledge. 
+1: Indicates that a device has successfully received its link 
+partner’s Link Code Word (LCW) 
+- 
+U13 MP Message Page. 
+1: Indicates to its link partner that this is a message page, not an 
+unformatted page 
+- 
+U12 Ack2 Acknowledge 2. 
+1: Indicates to its link partner that the device has the ability to 
+comply with the message 
+- 
+U11 T Toggle. 
+Used by the NWay arbitration function to ensure synchronization 
+with its link partner during Next Page exchange. 
+- 
+U[10:0] - 1000Base-T Master-Slave Seed Bit[10:0] Master-Slave 
+Seed Value SB[10:0] 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 23 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.12.1. Auto-Negotiation Priority Resolution 
+Upon the start of auto-negotiation, to advertise its capabilities each station transmits a 16-bit packet called 
+a Link Code Word (LCW), within a burst of 17 to  33 Fast Link Pulses (FLP). A device capable of 
+auto-negotiation transmits and receives the FLPs. The receiver must identify three identical LCWs before 
+the information is authenticated and used in the arbitration process. The devices decode the base LCW and 
+select capabilities with the highest common denominator supported by both devices. 
+To advertise 1000Base-T capability, both link partners, sharing the same link medium, should engage in 
+Next Page (1000Base-T Message Page, Unformatted Page 1, and Unformatted Page 2) exchange.  
+Auto-negotiation ensures that the highest priority prot ocol will be selected as the link speed based on the 
+following priorities advertised through the Link Code Word (LCW) exchange. Refer to IEEE 802.3 Clause 
+28 for detailed information. 
+1. 1000Base-T Full Duplex (highest priority) 
+2. 1000Base-T Half Duplex 
+3. 100Base-TX Full Duplex 
+4. 100Base-TX Half Duplex 
+5. 10Base-T Full Duplex 
+6. 10Base-T Half Duplex (lowest priority) 
+7.12.2. Auto-Negotiation Master/Slave Resolution 
+To establish a valid 1000Base-T link, the Master/Slave  mode of both link partners should be resolved 
+through the auto-negotiation process: 
+• Master Priority 
+ Multi-port > Single-port 
+ Manual > Non-manual 
+• Determination of Master/Slave configuration from LCW 
+ Manual_MASTER=U0*U1 
+ Manual_SLAVE=U0*!U1 
+ Single-port device=!U0*!U2 
+ Multi-port device=!U0*U2 
+ Where: U0 is bit 0 of the Unformatted Page 1 
+ U1 is bit 1 of the Unformatted Page 1 
+ U2 is bit 2 of the Unformatted Page 1 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 24 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+• Where there are two stations with the same configuration, the one with higher Master-Slave seed 
+SB[10:0] in the unformatted page 2 shall become Master. 
+• Master-Slave configuration process resolution: 
+ Successful: Bit 10.15 Master-Slave Configuration Fault is set to logical 0, and bit 10.14 is set to 
+logical 1 for Master resolution, or set to logical 0 for Slave resolution. 
+ Unsuccessful: Auto-Negotiation restarts. 
+ Fault Detect: Bit 10.15 is set to logical 1 to indicate that a configuration fault has been detected. 
+Auto-Negotiation restarts automatically. This happens when both stations are set to manual 
+Master mode or manual Slave mode, or after seven attempts to configure the Master-Slave 
+relationship through the seed method has failed. 
+7.12.3. Auto-Negotiation PAUSE/ASYMMETRIC PAUSE Resolution 
+Auto-negotiation is also used to determine the flow control capability between link partners. Flow control 
+is a mechanism that can force a busy transmitting link partner to stop transmitting in a full duplex 
+environment by sending special MAC control frames. In IEEE 802.3u, a PAUSE control frame had already 
+been defined. However, in IEEE 802.3ab, a new ASY-PAUSE control frame was defined; if the MAC can 
+only generate PAUSE frames but is not able to re spond to PAUSE frames generated by the link partner, 
+then it is called ASYMMETRIC PAUSE. 
+PAUSE/ASYMMETRIC PAUSE capability can be configured by setting the ANAR bits 10 and 11 (Table 
+26, page 33). Link partner PAUSE capabilities can be determined from ANLPAR bits 10 and 11 (Table 27, 
+page 34). A PHY layer device such as the RTL8211F(I)/RTL8211FD(I) is not directly involved in PAUSE 
+resolution, but simply advertises and reports PAUSE capabilities during the Auto-Negotiation process. The 
+MAC is responsible for final PAUSE/ASYMMETRIC PAUSE resolution after a link is established, and is 
+responsible for correct flow control actions thereafter. 
+7.13. Crossover Detection and Auto-Correction 
+Ethernet needs a crossover mechanism between both link partners to cross the transmit signal to the 
+receiver when the medium is twisted-pair cable. Cr ossover Detection & Auto-Correction Configuration 
+eliminates the need for crossover cables between devi ces, such as two computers connected to each other 
+with a CAT.5 Ethernet cable. The ba sic concept is to assume the initial default setting is MDI mode, and 
+then check the link status. If no link is established after a certain time, change to MDI Crossover mode and 
+repeat the process until a link is established. An 11-bit pseudo-random timer is applied to decide the mode 
+change time interval.  
+Crossover Detection & Auto-Correction is not a part of the Auto-Negotiation process, but it utilizes the 
+process to exchange the MDI/MDI Crossover configuration. If the RTL8211F(I)/RTL8211FD(I) is 
+configured to only operate in 100Base-TX or only in  10Base-T mode, then Auto-Negotiation is disabled 
+only if the Crossover Detection & Auto-Correction f unction is also disabled. If Crossover Detection & 
+Auto-Correction are enabled, then Auto-Nego tiation is enabled and the RTL8211F(I)/RTL8211FD(I) 
+advertises only 100Base-TX mode or 10Base-T mode. If the speed of operation is configured manually and 
+Auto-Negotiation is still enabled because the Crossover Detection & Auto-Correction function is enabled, 
+then the duplex advertised is as follows: 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 25 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+1. If it is set to half duplex, then only half duplex is advertised. 
+2. If it is set to full duplex, then both full and half duplex are advertised. 
+If the user wishes to advertise only full duplex at a particular speed with the Crossover Detection & 
+Auto-Correction function enabled, then Auto-Nego tiation should be enabled (register 0.12) with the 
+appropriate advertising capabilities set in registers 4 or 9. The Crossover Detection & Auto-Correction 
+function may be enabled/disable by setting (register 24.[9:8]) manually. 
+After initial configuration following a hardware reset,  Auto-Negotiation can be enabled and disabled via 
+register 0.12, speed via registers 0.13, 0.6, and duplex via register 0.8. The abilities that are advertised can 
+be changed via registers 4 and 9. Changes to regi sters 0.12, 0.13, 0.6, and 0.8 do not take effect unless at 
+least one of the following events occurs: 
+• Software reset (register 0.15) 
+• Restart of Auto-Negotiation (register 0.9) 
+• Transition from power-down to power-up (register 0.11) 
+Registers 4 and 9 are internally latched once each  time Auto-Negotiation enters the ABILITY DETECT 
+state in the arbitration state machine (IEEE 802.3). Hence a write into register 4 or 9 has no effect once the 
+RTL8211F(I)/RTL8211FD(I) begins to transmit Fast Link Pulses.  
+Register 7 is treated in a similar manner as 4 and 9 during additional Next Page exchanges. Once the 
+RTL8211F(I)/RTL8211FD(I) completes Auto-Negotiation, it updates the various statuses in registers 1, 5, 
+6, and 10. The speed, duplex, page received, and Auto-Negotiation completed statuses are also available in 
+registers 26 and 29. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 26 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.14. LED Configuration 
+7.14.1. Customized LED Function 
+ 
+The RTL8211F(I)/RTL8211FD(I) supports three LED pins, suitable for multiple types of applications that 
+can directly drive the LEDs. The output of these pi ns is determined by setting the corresponding bits in 
+Page 0xd04 Register 16. The functionality of the RTL8211F(I)/RTL8211FD(I) LEDs is shown in Table 15. 
+Table 15. LED Default Definitions 
+Pin Description 
+LED0 10M Link and Active (T ransmitting or Receiving) 
+LED1 100M Link and Active (T ransmitting or Receiving) 
+LED2 1000M Link and Active (T ransmitting or Receiving) 
+ 
+The LED pins can be customized from Page 0xd04 Re gister 16. To change the register page, see note 
+(below) and Table 16 LED Register Table. Ther e are 16 configuration types (see Table 17 LED 
+Configuration Table, page 27). 
+Note: To switch to Page 0xd04, set Register 31 Data=0x0d04 (set page). After LED setting, switch to PHY`s 
+Page 0 (Register 31 Data=0x0000). 
+Table 16. LED Register Table 
+ LINK Speed Active (Tx/Rx) 
+ 10Mbps 100Mbps 1000Mbps  
+LED0 Reg16 Bit0 Reg16 Bit1 Reg16 Bit3 Reg16 Bit4 
+LED1 Reg16 Bit5 Reg16 Bit6 Reg16 Bit8 Reg16 Bit9 
+LED2 Reg16 Bit10 Reg16 Bit11 Reg16 Bit13 Reg16 Bit14 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 27 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Table 17. LED Configuration Table 
+Pin LINK Bit Active (TX/RX) Bit Description 
+ 10Mbps 100 Mbps 1000 Mbps   
+0 0 0 0 N/A 
+0 0 0 1 N/A 
+0 0 1 0 Link 1000 
+0 0 1 1 Link 1000+Active 
+0 1 0 0 Link 100 
+0 1 0 1 Link 100+Active 
+0 1 1 0 Link 100/1000 
+0 1 1 1 Link 100/1000+Active 
+1 0 0 0 Link 10 
+1 0 0 1 Link 10+Active 
+1 0 1 0 Link 10/1000 
+1 0 1 1 Link 10/1000+Active 
+1 1 0 0 Link 10/100 
+1 1 0 1 Link 10/100+Active 
+1 1 1 0 Link 10/100/1000 
+LED 
+1 1 1 1 Link 10/100/1000+Active 
+ 
+7.14.2. EEE LED Function 
+EEE Idle mode: LED continuous slow blinking. 
+EEE Active mode: LED fast and slow blinking (on packet transmitting and receiving). 
+Refer to Table 49, page 45 for EEE LED enable setting. 
+ 
+Figure 8.   EEE LED Behavior 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 28 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+7.15. Polarity Correction 
+The RTL8211F(I)/RTL8211FD(I) automatically corrects polarity errors on the receive pairs in 1000Base-T 
+and 10Base-T modes. In 100Base-TX mode polarity is  irrelevant. In 1000Base-T mode, receive polarity 
+errors are automatically corrected based on the sequence of idle symbols. Once the descrambler is locked, 
+the polarity is also locked on all pairs. The polarity becomes unlocked only when the receiver loses lock.  
+In 10Base-T mode, polarity errors are corrected base d on the detection of validly spaced link pulses. The 
+detection begins during the MDI crossover detecti on phase and locks when the 10Base-T link is up. The 
+polarity becomes unlocked when the link is down. 
+ 
+7.16. Power 
+A voltage regulator is implemented to generate operating power (switching regulator for the RTL8211F(I); 
+LDO for the RTL8211FD(I)). The system vendor needs to supply a 3.3V, 1A steady power source. The 
+RTL8211F(I)/RTL8211FD(I) converts the 3.3V stea dy power source to 1.0V via a switching 
+regulator/LDO. 
+Another possible implementation is to use an external regulator to generate 1.0V. Be sure that the regulator 
+meets the required current rate (0.95V~1.05V). 
+The RTL8211F(I)/RTL8211FD(I) implements an option for the RGMII power pins. The standard I/O 
+voltage of the RGMII interface is 3.3V, with support for 2.5/1.8/1.5V to lower EMI. The 2.5/1.8/1.5V 
+power source for RGMII is supplied from an internal LDO or from an external power source. 
+ 
+7.17. PHY Reset (Hardware Reset) 
+The RTL8211F(I)/RTL8211FD(I) has a PHYRSTB pin to reset the chip. For a complete PHY reset, this pin 
+must be asserted low for at least 10ms (Tgap in Figure 9) for the internal regulator. Wait for a further 30ms 
+(for internal circuits settling time) before accessing th e PHY register. All registers will return to default 
+values after a hardware reset. Refer to the RTL8211xx-xx_Power_Sequence_App_Note for more detailed 
+information. 
+ 
+Figure 9.   PHY Reset Timing 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 29 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8. Register Descriptions 
+8.1. Register Mapping and Definitions 
+Table 18. Register Access Types 
+Type Description 
+LH Latch high. If the status is high, this field is set to ‘1’ and remains set. 
+RC Read-cleared. The register fi eld is cleared after read.  
+RO Read only. 
+RW Read and Write 
+SC Self-cleared. Writing a ‘1’  to this register field causes the function to be activated immediately, and then the 
+field will be automatically cleared to’0’ . 
+ 
+Table 19. Register Mapping and Definitions 
+Offset Access Name Description 
+0 RW BMCR Basic Mode Control Register. 
+1 RO BMSR Basic Mode Status Register. 
+2 RO PHYID1 PHY Identifier Register 1. 
+3 RO PHYID2 PHY Identifier Register 2. 
+4 RW ANAR Auto-Negotiati on Advertising Register. 
+5 RO ANLPAR Auto-Negotiation Link Partner Ability Register. 
+6 RO ANER Auto-Negotiation Expansion Register. 
+7 RW ANNPTR Auto-Negotiation Next Page Transmit Register. 
+8 RO ANNPRR Auto-Negotiation Next Page Receive Register. 
+9 RW GBCR 1000Base-T Control Register. 
+10 RO GBSR 1000Base-T Status Register. 
+11~12 RO RSVD Reserved. 
+13 WO MACR MMD Access Control Register. 
+14 RW MAADR MMD Access Address Data Register. 
+15 RO GBESR 1000Base-T Extended Status Register. 
+16~17 RO RSVD Reserved. 
+18 RW INER Interrupt Enable Register. 
+19~23 RO RSVD Reserved. 
+24 RW PHYCR1 PHY Specific Control Register 1. 
+25 RW PHYCR2 PHY Specific Control Register 2. 
+26 RO PHYSR PHY Specific Status Register. 
+27~28 RO RSVD Reserved. 
+29 RO INSR Interrupt Status Register. 
+30 RO RSVD Reserved. 
+31 RW PAGSR Page Select Register. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 30 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.2. MMD Register Mapping and Definitions 
+Table 20. MMD Register Mapping and Definitions 
+Device Offset Access Name Description 
+3 0 RW PC1R PCS Control 1 Register. 
+3 1 RW PS1R PCS Status 1 Register. 
+3 20 RO EEECR EEE Capability Register. 
+3 22 RC EEEWER EEE Wake Error Register. 
+7 60 RW EEEAR EEE Advertisement Register. 
+7 61 RO EEELPAR EEE Link Pa rtner Ability Register. 
+ 
+8.3. Other Page Register Mapping and Definitions 
+Table 21. Other Page Register Mapping and Definitions 
+Page Offset Access Name Description 
+d04 16 RW LCR LED Control Register. 
+d04 17 RW EEELCR EEE LED Control Register. 
+Note: To switch to Page 0xd04, set Register 31 Data=0x0d04 (change to Page 0xd04). After LED setting, switch to the 
+PHY’ s Page 0 (Register 31 Data=0000). 
+ 
+8.4. Register Tables 
+8.4.1. BMCR (Basic Mode Control Register, Address 0x00) 
+Table 22. BMCR (Basic Mode Control Register, Address 0x00) 
+Bit Name Type Default Description 
+0.15 Reset RW, SC 0 Reset. 
+1: PHY reset 
+0: Normal operation 
+Register 0 (BMCR) and register 1 (BMSR) will return to default 
+values after a software reset (set Bit15 to 1). 
+This action may change the internal PHY state and the state of the 
+physical link associated with the PHY . 
+0.14 Loopback RW 0 Loopback Mode. 
+1: Enable PCS loopback mode 
+0: Disable PCS loopback mode 
+The loopback function enables RGMII transmit data to be routed to the 
+RGMII receive data path. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 31 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+0.13 Speed[0] RW 0 Speed Select Bit 0. 
+In forced mode, i.e., when Auto-Negotiation is disabled, bits 6 and 13 
+determine device speed selection. 
+Speed[1] Speed[0] Speed Enabled 
+1 1 Reserved 
+1 0 1000Mbps 
+0 1 100Mbps 
+0 0 10Mbps  
+0.12 ANE RW 1 Auto-Negotiation Enable. 
+1: Enable Auto-Negotiation 
+0: Disable Auto-Negotiation 
+0.11 PWD RW 0 Power Down. 
+1: Power down (only Management Interface and logic are active; link 
+is down) 
+0: Normal operation 
+0.10 Isolate RW 0 Isolate. 
+1: RGMII interface is isolated; the serial management interface (MDC, 
+MDIO) is still active. When this bit is asserted, the 
+RTL8211F(I)/RTL8211FD(I) ignores TXD[3:0], and TXCTL inputs, 
+and presents a high impedance on TXC, RXC, RXCTL, RXD[3:0]. 
+0: Normal operation 
+0.9 Restart_AN RW, SC 0 Restart Auto-Negotiation. 
+1: Restart Auto-Negotiation 
+0: Normal operation 
+0.8 Duplex RW 1 Duplex Mode. 
+1: Full Duplex operation 
+0: Half Duplex operation 
+This bit is valid only in force mode, i.e., NWay is disabled. 
+0.7 Collision Test RW 0 Collision Test. 
+1: Collision test enabled 
+0: Normal operation 
+0.6 Speed[1] RW 1 Speed Select Bit 1. 
+Refer to bit 0.13. 
+0.5 Uni-directional 
+enable 
+RW 0 Uni-Directional Enable 
+1: Enable packet transmit without respect to linkok status 
+0: Packet transmit permitted when link is established 
+0.4:0 RSVD RO 00000 Reserved. 
+Note 1: When the RTL8211F(I)/RTL8211FD(I) is switched from power down to normal operation, a software reset and 
+restart auto-negotiation is performed, even if bits Reset (0.15) and Restart_AN (0.9) are not set by the user. 
+Note 2: Auto-Negotiation is enabled when speed is set to 1000Base-T. Crossover Detection & Auto-Correction takes 
+precedence over Auto-Negotiation disable (0.12=0). If ANE is disabled, speed and duplex capabilities are advertised by 
+0.13, 0.6, and 0.8. Otherwise, register 4.8:5 and 9.9:8 take effect. 
+Note 3: Auto-Negotiation automatically restarts after hardware or software reset regardless of whether or not the restart bit 
+(0.9) is set. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 32 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.2. BMSR (Basic Mode Status Register, Address 0x01) 
+Table 23. BMSR (Basic Mode Status Register, Address 0x01) 
+Bit Name Type Default Description 
+1.15 100Base-T4 RO 0 100Base-T4 Capability. 
+The RTL8211F(I)/RTL8211FD(I) does not support 100Base-T4 
+mode. This bit should always be 0. 
+1.14 100Base-TX (full) RO 1 100Bas e-TX Full Duplex Capability. 
+1: Device is able to perform 100Base-TX in full duplex mode 
+0: Device is not able to perform 100Base-TX in full duplex mode 
+1.13 100Base-TX (half) RO 1 100Base-TX Half Duplex Capability. 
+1: Device is able to perform 100Base-TX in half duplex mode 
+0: Device is not able to perform 100Base-TX in half duplex mode
+1.12 10Base-T (full) RO 1 10Base-T Full Duplex Capability. 
+1: Device is able to perform 10Base-T in full duplex mode. 
+0: Device is not able to perform 10Base-T in full duplex mode. 
+1.11 10Base-T (half) RO 1 10Base-T Half Duplex Capability. 
+1: Device is able to perform 10Base-T in half duplex mode 
+0: Device is not able to perform 10Base-T in half duplex mode 
+1.10 10Base-T2 (full) RO 0 10Base-T2 Full Duplex Capability. 
+The RTL8211F(I)/RTL8211FD(I) does not support 10Base-T2 
+mode and this bit should always be 0. 
+1.9 10Base-T2 (half) RO 0 10Base-T2 Half Duplex Capability. 
+The RTL8211F(I)/RTL8211FD(I) does not support 10Base-T2 
+mode. This bit should always be 0. 
+1.8 1000Base-T 
+Extended Status 
+RO 1 1000Base-T Extended Status Register. 
+1: Device supports Extended Status Register 0x0F (15) 
+0: Device does not support Extended Status Register 0x0F 
+This register is read-only and is always set to 1. 
+1.7 Uni-directional 
+ability 
+RO 1 Uni-directional ability. 
+1: PHY able to transmit from RGMII without linkok 
+0: PHY not able to transmit from RGMII without linkok 
+1.6 Preamble 
+Suppression 
+RO 1 Preamble Suppression Capability (Permanently On). 
+The RTL8211F(I)/RTL8211FD(I) always accepts transactions 
+with preamble suppressed. 
+1.5 Auto-Negotiation 
+Complete 
+RO 0 Auto-Negotiation Complete. 
+1: Auto-Negotiation process complete, and contents of registers 
+5, 6, 8, and 10 are valid 
+0: Auto-Negotiation process not complete 
+1.4 Remote Fault RC, LH 0 Remote Fault. 
+1: Remote fault condition detected (cleared on read or by reset). 
+Indication or notification of remote fault from Link Partner 
+0: No remote fault condition detected 
+1.3 Auto-Negotiation 
+Ability 
+RO 1 Auto Configured Link. 
+1: Device is able to perform Auto-Negotiation 
+0: Device is not able to perform Auto-Negotiation 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 33 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+1.2 Link Status RO 0 Link Status. 
+1: Linked 
+0: Not Linked 
+This register indicates whether the link was lost since the last read. 
+For the current link status, either read this register twice or read 
+register bit 17.10 Link Real Time. 
+1.1 Jabber Detect RC, LH 0 Jabber Detect. 
+1: Jabber condition detected 
+0: No Jabber occurred 
+1.0 Extended Capability RO 1 1: Extended register capabilities, always 1 
+ 
+8.4.3. PHYID1 (PHY Identifier Register 1, Address 0x02) 
+Table 24. PHYID1 (PHY Identifier Register 1, Address 0x02) 
+Bit Name Type Default Description 
+2.15:0 OUI_MSB RO 0000000000011100 Organizationally Unique Identifier Bit 3:18. 
+Always 0000000000011100. 
+Note: Realtek OUI is 0x000732. 
+ 
+8.4.4. PHYID2 (PHY Identifier Register 2, Address 0x03) 
+Table 25. PHYID2 (PHY Identifier Register 2, Address 0x03) 
+Bit Name Type Default Description 
+3.15:10 OUI_LSB RO 110010 Organizationally Unique Identifier Bit 19:24. 
+Always 110010. 
+3.9:4 Model Number RO 010001 Manufacture’s Model Number 
+3.3:0 Revision Number RO 0110 Revision Number 
+ 
+8.4.5. ANAR (Auto-Negotiation Advertising Register, Address 0x04) 
+Table 26. ANAR (Auto-Negotiation Advertising Register, Address 0x04) 
+Bit Name Type Default Description 
+4.15 NextPage RW 0 1: Additiona l next pages exchange desired 
+0: No additional next pages exchange desired 
+4.14 RSVD RO 0 Reserved. 
+4.13 Remote Fault RW 0 1: Set Remote Fault bit 
+0: No remote fault detected 
+4.12 RSVD RO 0 Reserved. 
+4.11 Asymmetric PAUSE RW 0 1: Advertise support of asymmetric pause 
+0: No support of asymmetric pause 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 34 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+4.10 PAUSE RW 0 1: Advertise support of pause frames 
+0: No support of pause frames 
+4.9 100Base-T4 RO 0 1: 100Base-T4 support 
+0: 100Base-T4 not supported 
+4.8 100Base-TX (Full) RW 1 1: Advertise support of 100Base-TX full-duplex mode 
+0: Not advertised 
+4.7 100Base-TX (Half) RW 1 1: Advertise support of 100Base-TX half-duplex mode 
+0: Not advertised 
+4.6 10Base-T (Full) RW 1 1: Advertise support of 10Base-TX full-duplex mode 
+0: Not advertised 
+4.5 10Base-T (Half) RW 1 1: Advertise support of 10Base-TX half-duplex mode 
+0: Not advertised 
+4.4:0 Selector Field RO 00001 Indicates the RTL8211F(I)/RTL8211FD(I) supports IEEE 802.3 
+Note 1: The setting of Register 4 has no effect unless NWay is restarted or the link goes down, i.e., software reset (0.15) is 
+asserted, Restart_AN (0.9) is asserted, or PWD (0.11) transitions from power down to normal operation. 
+Note 2: If 1000Base-T is advertised, then the required next pages are automatically transmitted. Register 4.15 should be set 
+to 0 if no additional next pages are needed. 
+ 
+8.4.6. ANLPAR (Auto-Negotiation Link Partner Ability Register, 
+Address 0x05) 
+Table 27. ANLPAR (Auto-Negotiation Link Partner Ability Register, Address 0x05) 
+Bit Name Type Default Description 
+5.15 Next Page RO 0 Next Page Indication. 
+Received Code Word Bit 15. 
+5.14 ACK RO 0 Acknowledge. 
+Received Code Word Bit 14. 
+5.13 Remote Fault RO 0 Remote Fault indicated by Link Partner. 
+Received Code Word Bit 13. 
+5.12 RSVD RO 0 Reserved. 
+5.11:5 Technology Ability Field RO 00000000 Received Code Word Bit 12:5. 
+5.4:0 Selector Field RO 00000 R eceived Code Word Bit 4:0. 
+Note: Register 5 is not valid until the Auto-Negotiation complete bit 1.5 indicates completed. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 35 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.7. ANER (Auto-Negotiation Expansion Register, Address 0x06) 
+Table 28. ANER (Auto-Negotiation Expansion Register, Address 0x06) 
+Bit Name Type Default Description 
+6.15:5 RSVD RO 0x000 Reserved. 
+6.6 RX NP location ability RO 1 Received next page storage location ability. 
+1: Received next page storage location is specified by  
+    bit 6.5 
+0: Received next page storage location is not specified by 
+bit 6.5 
+6.5 RX NP location RO 1 Receive d next page storage location. 
+1: Link partner next pages are stored in Register 8 
+0: Link partner next pages are stored in Register 5 
+6.4 Parallel Detection Fault RC, LH 0 1: A fault has been detected via the Parallel Detection 
+function 
+0: A fault has not been detected via the Parallel Detection 
+function 
+6.3 Link Partner Next Page Able RO 0 1: Link Partner supports Next Page exchange 
+0: Link Partner does not support Next Page exchange 
+6.2 Local Next Page Able RO 1 1: Local Device is able to send Next Page 
+Always 1. 
+6.1 Page Received RC, LH 0 1: A New Page (new LCW) has been received 
+0: A New Page has not been received 
+6.0 Link Partner 
+Auto-Negotiation capable 
+RO 0 1: Link Partner supports Auto-Negotiation 
+0: Link Partner does not support Auto-Negotiation 
+Note: Register 6 is not valid until the Auto-Negotiation complete bit 1.5 indicates completed. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 36 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.8. ANNPTR (Auto-Negotiation Next Page Transmit Register, 
+Address 0x07) 
+Table 29. ANNPTR (Auto-Negotiation Next Page Transmit Register, Address 0x07) 
+Bit Name Type Default Description 
+7.15 Next Page RW 0 Next Page Indication. 
+0: No more next pages to send 
+1: More next pages to send 
+Transmit Code Word Bit 15. 
+7.14 RSVD RO 0 Transmit Code Word Bit 14. 
+7.13 Message Page RW 1 Message Page. 
+0: Unformatted Page 
+1: Message Page 
+Transmit Code Word Bit 13. 
+7.12 Acknowledge 2 RW 0 Acknowledge2. 
+0: Local device has no ability to comply with the 
+message received 
+1: Local device has the ability to comply with the 
+message received 
+Transmit Code Word Bit 12. 
+7.11 Toggle RO 0 Toggle Bit. 
+Transmit Code Word Bit 11. 
+7.10:0 Message/Unformatted Field RW 0x001 Content of Message/Unformatted Page. 
+Transmit Code Word Bit 10:0. 
+ 
+8.4.9. ANNPRR (Auto-Negotiation Next Page Receive Register, 
+Address 0x08) 
+Table 30. ANNPRR (Auto-Negotiation Next Page Receive Register, Address 0x08) 
+Bit Name Type Default Description 
+8.15 Next Page RO 0 Receive d Link Code Word Bit 15. 
+8.14 Acknowledge  RO 0 Receive d Link Code Word Bit 14. 
+8.13 Message Page RO 0 Recei ved Link Code Word Bit 13. 
+8.12 Acknowledge 2 RO 0 Receive d Link Code Word Bit 12. 
+8.11 Toggle RO 0 Received Link Code Word Bit 11. 
+8.10:0 Message/Unformatted Field RO 0x00 Received Link Code Word Bit 10:0. 
+Note: Register 8 is not valid until the Auto-Negotiation complete bit 1.5 indicates completed. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 37 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.10. GBCR (1000Base-T Control Register, Address 0x09) 
+Table 31. GBCR (1000Base-T Control Register, Address 0x09) 
+Bit Name Type Default Description 
+9.15:13 Test Mode RW 0 Test Mode Select. 
+000: Normal Mode 
+001: Test Mode 1 – Transmit Jitter Test 
+010: Test Mode 2 – Transmit Jitter Test (MASTER mode) 
+011: Test Mode 3 – Transmit Jitter Test (SLA VE mode) 
+100: Test Mode 4 – Transmit Distortion Test 
+101, 110, 111: Reserved 
+9.12 MASTER/SLA VE Manual 
+Configuration Enable 
+RW 0 Enable Manual Master/Slave Configuration. 
+1: Manual MASTER/SLA VE configuration 
+0: Automatic MASTER/SLA VE 
+9.11 MASTER/SLA VE 
+Configuration Value 
+RW 0 Advertise Master/Slave Configuration Value. 
+1: Manual configure as MASTER 
+0: Manual configure as SLA VE 
+9.10 Port Type RW 0 Advertise Device Type Preference. 
+1: Prefer multi-port device (MASTER) 
+0: Prefer single port device (SLA VE) 
+9.9 1000Base-T Full Duplex RW 1 Adver tise 1000Base-T Full-Duplex Capability. 
+1: Advertise 
+0: Do not advertise 
+9.8 RSVD RW 0 Reserved. 
+9.7:0 RSVD RO 0 Reserved. 
+Note 1: Values set in register 9.12:9 have no effect unless Auto-Negotiation is restarted (Reg0.9) or the link goes down. 
+Note 2: Bits 9.11 and 9.10 are ignored when bit 9.12=0. 
+ 
+8.4.11. GBSR (1000Base-T Status Register, Address 0x0A) 
+Table 32. GBSR (1000Base-T Status Register, Address 0x0A) 
+Bit Name Type Default Description 
+10.15 MASTER/SLA VE 
+Configuration Fault 
+RO, RC, 
+LH 
+0 Master/Slave Manual Configuration Fault Detected. 
+1: MASTER/SLA VE configuration fault detected 
+0: No MASTER/SLA VE configuration fault detected 
+10.14 MASTER/SLA VE 
+Configuration Resolution 
+RO 0 Master/Slave Configuration Result. 
+1: Local PHY configuration resolved to MASTER 
+0: Local PHY configuration resolved to SLA VE 
+10.13 Local Receiver Status RO  0 Local Receiver Status. 
+1: Local Receiver OK 
+0: Local Receiver Not OK 
+10.12 Remote Receiver Status RO  0 Remote Receiver Status. 
+1: Remote Receiver OK 
+0: Remote Receiver Not OK 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 38 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+10.11 Link Partner 1000Base-T 
+Full Duplex Capability 
+RO 0 Link Partner 1000Base-T Full Duplex Capability. 
+1: Link Partner is capable of 1000Base-T full duplex 
+0: Link Partner is not capable of 1000Base-T full duplex 
+10.10 Link Partner 1000Base-T 
+Half Duplex Capability 
+RO 0 Link Partner 1000Base-T Half Duplex Capability. 
+1: Link Partner is capable of 1000Base-T half duplex 
+0: Link Partner is not capable of 1000Base-T half duplex 
+10.9:8 RSVD RO 00 Reserved. 
+10.7:0 Idle Error Count RO, RC 0x00 MSB of Idle Error Counter. 
+The counter stops automatically when it reaches 0xff. 
+Note 1: Values set in register 10.11:10 are not valid until register 6.1 is set to 1. 
+Note 2: Register 10 is not valid until the Auto-Negotiation complete bit 1.5 indicates completed. 
+ 
+8.4.12. MACR (MMD Access Control Register, Address 0x0D) 
+Table 33. MACR (MMD Access Control Register, Address 0x0D) 
+Bit Name Type Default Description 
+13.15:14 Function WO  0 00: Address 
+01: Data with no post increment 
+10: Data with post increment on reads and writes 
+11: Data with post increment on writes only 
+13.13:5 RSVD RO 000000000 Reserved. 
+13.4:0 DEV AD WO 0 Device Address. 
+Note 1: This register is used in conjunction with the MAADR (Register 14) to provide access to the MMD address space. 
+Note 2: If the MAADR accesses for address (Function=00), then it is directed to the address register within the MMD 
+associated with the value in the DEVAD field. 
+Note 3: If the MAADR accesses for data (Function≠00), both the DEVAD field and MMD’ s address register direct the 
+MAADR data accesses to the appropriate registers within the MMD. 
+ 
+8.4.13. MAADR (MMD Access Address Data Register, Address 0x0E) 
+Table 34. MAADR (MMD Access Address Data Register, Address 0x0E) 
+Bit Name Type Default Description 
+14.15:0 Address Data RW  0x0000 13.15:14 = 00 
+Æ MMD DEV AD’s address register 
+13.15:14 = 01, 10, or 11 
+Æ MMD DEV AD’s data register as indicated by the contents of its 
+address register 
+Note: This register is used in conjunction with the MACR (Register 13; Table 33) to provide access to the MMD address 
+space. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 39 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.14. GBESR (1000Base-T Extended Status Register, Address 0x0F) 
+Table 35. GBESR (1000Base-T Extended Status Register, Address 0x0F) 
+Bit Name Type Default Description 
+15.15 1000Base-X FD RO 0 0: Not 1000Base-X full duplex capable 
+15.14 1000Base-X HD RO 0 0: Not 1000Base-X half duplex capable 
+15.13 1000Base-T FD RO 1 1: 1000Base-T full duplex capable 
+15.12 1000Base-T HD RO 0 1: 1000Base-T half duplex capable 
+15.11:0 RSVD RO 0x000 Reserved. 
+ 
+8.4.15. INER (Interrupt Enable Register, Address 0x12) 
+Table 36. INER (Interrupt Enable Register, Address 0x12) 
+Bit Name Type Default Description 
+18.15:12 RSVD RW 00000 Reserved. 
+18.10 Jabber Interrupt RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks a jabber interrupt 
+event in the INT interface. 
+Reg29 Bit10 always reflects the jabber interrupt 
+behavior. 
+18.9 ALDPS State Change Interrupt RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks an ALDPS state 
+change interrupt event in the INT interface. 
+Reg29 Bit9 always reflects the ALDPS state change 
+interrupt behavior. 
+18.8 RSVD RW 0 Reserved. 
+18.7 PME (Power Management Event 
+of WOL) 
+RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks a PME interrupt 
+event in the INT interface. 
+Reg29 Bit7 always reflects the PME interrupt 
+behavior. 
+18.6 RSVD RW 0 Reserved. 
+18.5 PHY Register Access Interrupt RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks a PHY register 
+access interrupt event in the INT interface. 
+Reg29 Bit12 always reflects the PHY register access 
+interrupt behavior. 
+18.4 Link Status Change Interrupt RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks a link status change 
+interrupt event in the INT interface. 
+Reg29 Bit4 always reflects the link change interrupt 
+behavior. 
+18.3 Auto-Negotiation Completed 
+Interrupt 
+RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks an auto-negotiation 
+completed interrupt event in the INT interface. 
+Reg29 Bit3 always reflects the auto-negotiation 
+completed interrupt behavior. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 40 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+18.2 Page Received Interrupt  RW 0 1: Interrupt Enab le 0: Interrupt Disable 
+Setting this bit to 0 only masks a page received 
+interrupt event in the INT interface. 
+Reg29 Bit2 always reflects the page received 
+interrupt behavior. 
+18.1 RSVD RW 0 Reserved. 
+18.0 Auto-Negotiation Error Interrupt RW 0 1: Interrupt Enable 0: Interrupt Disable 
+Setting this bit to 0 only masks an auto-negotiation 
+error interrupt event in the INT interface. 
+Reg29 Bit0 always reflects the auto-negotiation 
+error interrupt behavior. 
+ 
+8.4.16. PHYCR1 (PHY Specific Control Register 1, Address 0x18) 
+Table 37. PHYCR1 (PHY Specific Control Register 1, Address 0x18) 
+Bit Name Type Default Description 
+24.15:14 RSVD RO 00 Reserved. 
+24.13 PHYAD_0 Enable RW 1 1: A broadcast from MAC (A command with PHY 
+address = 0) is valid. MDC/MDIO will respond to this 
+command. 
+24.12:10 RSVD RO 000 Reserved. 
+24.9 MDI Mode Manual Configuration 
+Enable 
+RW 0 1: Enable Manual Configuration of MDI mode 
+24.8 MDI Mode RW 1 Set the MDI/MDIX mode.  
+1: MDI 0: MDIX 
+This bit will take effect only when Reg 24.9 = 1.  
+24.7 TX CRS Enable RW 0 1: Assert CRS on transmit 
+0: Never assert CRS on transmit 
+24.6 PHYAD Non-zero Detect RW 0 1:  The RTL8211F(I)/RTL8211FD(I) with 
+PHYAD[2:0] = 000 will latch the first non-zero PHY 
+address as its own PHY address 
+24.5 RSVD RO 0 Reserved. 
+24.4 Preamble Check Enable RW 1 1: Check  preamble when receiving an MDC/MDIO 
+command 
+24.3 Jabber Detection Enable RW 1 1: Enable Jabber Detection 
+24.2 ALDPS Enable RO 0 1: Enable Link Down Power Saving Mode 
+24.1:0 RSVD RO 00 Reserved. 
+Note: The method to disable auto-crossover and force MDI or MDIX mode is as follows: 
+Step 1: Set Reg24 bit[9]=1 (Manual Configuration of MDI mode) and set Reg24 bit[8]=1 (MDI) or 0 (MDIX). 
+Step 2: Perform a PHY reset, i.e., set Reg0 bit[15]=1. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 41 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.17. PHYCR2 (PHY Specific Control Register 2, Address 0x19) 
+Table 38. PHYCR2 (PHY Specific Control Register 2, Address 0x19) 
+Bit Name Type Default Description 
+25.15:12 RSVD RO 0000 Reserved. 
+25.11 CLKOUT Frequency Select RW 1 Freque ncy select of the CLKOUT pin clock output.
+0: 25MHz 
+1: 125MHz 
+25.10:8 RSVD RO 000 Reserved. 
+25.7 CLKOUT SSC Enable RW 0 1: Enab le Spread-Spectrum Clocking (SSC) on 
+CLKOUT output clock. 
+25.6:4 RSVD RO 000 Reserved. 
+25.3 RXC SSC Enable RW 0 1: Enable Spread-Spectrum Clocking (SSC) on 
+RXC clock output. 
+25.2 RSVD RO 0 Reserved. 
+25.1 RXC Enable RO 0 1: RXC clock output enabled. 
+25.0 CLKOUT Enable RW 1 1: CLKOUT clock output enabled. 
+ 
+8.4.18. PHYSR (PHY Specific Status Register, Address 0x1A) 
+Table 39. PHYSR (PHY Specific Status Register, Address 0x1A) 
+Bit Name Type Default Description 
+26.15 RSVD RO 0 Reserved. 
+26.14 ALDPS State RO 0 Link Down Power Saving Mode. 
+1: Reflects local device entered Link Down Power Saving Mode, 
+i.e., cable not plugged in (reflected after 3 sec). 
+0: With cable plugged in 
+26.13 MDI Plug RO 0 MDI Status. 
+1: Plugged 0: Unplugged  
+26.12 NWay Enable RO 1 Auto-Negotiation (NWay) Status. 
+1: Enable 0: Disable 
+26.11 Master Mode RO 0 Device is in Master/Slave Mode. 
+1: Master mode 0: Slave mode 
+26.10:9 RSVD RO 00 Reserved. 
+26.8 EEE capability RO 0 1: Both local and li nk-partner have EEE capability of current speed
+26.7 Rxflow Enable RO 0 Rx Flow Control. 
+1: Enable 0: Disable 
+26.6 Txflow Enable RO 0 Tx Flow Control. 
+1: Enable 0: Disable  
+26.5:4 Speed RO 00 Link Speed. 
+11: Reserved 10: 1000Mbps 
+01: 100Mbps 00: 10Mbps 
+26.3 Duplex RO 0 Full/Half Duplex Mode. 
+1: Full duplex 0: Half duplex 
+26.2 Link (Real Time) RO 0 Real Time Link Status. 
+1: Link OK 0: Link not OK 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 42 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Bit Name Type Default Description 
+26.1 MDI Crossover 
+Status 
+RO 1 MDI/MDI Crossover Status. 
+1: MDI 0: MDI Crossover 
+26.0 Jabber (Real Time) RO 0 Real Time Jabber Indication. 
+1: Jabber Indication 0: No Jabber Indication 
+Note 1: Bit 26.11 valid only when in Giga mode. 
+Note 2: Bit 26.8 assert at 10M speed when local device is EEE capable. 
+ 
+8.4.19. INSR (Interrupt Status Register, Address 0x13) 
+Table 40. INSR (Interrupt Status Register, Address 0x13) 
+Bit Name Type Default Description 
+29.15:11 RSVD RO, RC 00000 Reserved. 
+29.10 Jabber RO, RC 0 1: Jabber detected 0: No jabber detected 
+29.9 ALDPS State Change  RO, RC 0 1: ALDPS state changed 0: ALDPS state not 
+changed 
+29.8 RSVD RO, RC 0 Reserved. 
+29.7 PME (Power Management 
+Event of WOL) 
+RO, RC 0 1: WOL event occurred 0: WOL event did not occur
+29.6 RSVD RO, RC 0 Reserved. 
+29.5 PHY Register Access RO, RC 0 1: Ca n access PHY Register through MDC/MDIO  
+0: Cannot access PHY Register through MDC/MDIO 
+29.4 Link Status Change RO, RC 0 1: Link status changed 0: Link status not changed 
+29.3 Auto-Negotiation Completed RO, RC 0 1: Auto-Negotiation completed 
+0: Auto-Negotiation not completed 
+29.2 Page Received RO, RC 0 1: Page (a new LCW) received 
+0: Page not received 
+29.1 RSVD RO, RC 0 Reserved. 
+29.0 Auto-Negotiation Error RO, RC 0 1: Auto-Negotiation Error 0: No Auto-Negotiation Error 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 43 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.20. EPAGSR (Extension Page Select Register, Address 0x1F) 
+Table 41. EPAGSR (Extension Page Select Register, Address 0x1F) 
+Bit Name Type Default Description 
+31.15:12 RSVD RW 0 Reserved. 
+31.11:0 ExtPageSel RW 0x000 Page Select (in HEX). 
+0x000: Page 0 (default page) 
+ 
+8.4.21. PC1R (PCS Control 1 Register, MMD Device 3, Address 0x00) 
+Table 42. PC1R (PCS Control 1 Register, MMD Device 3, Address 0x00) 
+Bit Name Type Default Description 
+3.0.15:11 RSVD RW 0 Reserved. 
+3.0.10 Clock Stop Enable RW 0 1: PHY stops RXC in LPI 
+0: RXC not stoppable 
+3.0.9:0 RSVD RW 0 Reserved. 
+ 
+8.4.22. PS1R (PCS Status1 Register, MMD Device 3, Address 0x01) 
+Table 43. PS1R (PCS Status 1 Register, MMD Device 3, Address 0x01) 
+Bit Name Type Default Description 
+3.1.15:12 RSVD RO 0 Reserved. 
+3.1.11 TX LPI Received RO, LH 0 1: TX PCS has received LPI 
+0: LPI not received 
+3.1.10 RX LPI Received RO, LH 0 1: RX PCS has received LPI 
+0: LPI not received 
+3.19 TX LPI Indication RO 0 1: TX  PCS is currently receiving LPI 
+0: TX PCS is not currently receiving LPI 
+3.1.8 RX LPI Indication RO 0 1: RX PCS is currently receiving LPI 
+0: RX PCS is not currently receiving LPI 
+3.1.7 RSVD RO 0 Reserved. 
+3.1.6 Clock Stop Capable RO 1 1: MAC stops TXC in LPI 
+0: TXC not stoppable 
+3.1.5:0 RSVD RO 0 Reserved. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 44 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.23. EEECR (EEE Capability Register, MMD Device 3, Address 0x14) 
+Table 44. EEECR (EEE Capability Register, MMD Device 3, Address 0x14) 
+Bit Name Type Default Description 
+3.20.15:3 RSVD RO 0 Reserved. 
+3.20.2 1000BASE-T EEE RO 1 1: EEE is supported for 1000Base-T EEE 
+0: EEE is not supported for 1000Base-T EEE 
+3.20.1 100BASE-TX EEE RO 1 1: EEE is supported for 100Base-TX EEE 
+0: EEE is not supported for 100Base-TX EEE 
+3.20.0 RSVD RO 0 Reserved. 
+ 
+8.4.24. EEEWER (EEE Wake Error Register, MMD Device 3, 
+Address 0x16) 
+Table 45. EEEWER (EEE Wake Error Register, MMD Device 3, Address 0x16) 
+Bit Name Type Default Description 
+3.22.15:0 EEE Wake Error 
+Counter 
+RC 0 Used by PHY types that support EEE to count wake time faults 
+where the PHY fails to complete its normal wake sequence within 
+the time required for the specific PHY type. 
+ 
+8.4.25. EEEAR (EEE Advertisement Register, MMD Device 7, 
+Address 0x3c) 
+Table 46. EEEAR (EEE Advertisement Register, MMD Device 7, Address 0x3c) 
+Bit Name Type Default Description 
+7.60.15:3 RSVD RW 0 Reserved. 
+7.60.2 1000BASE-T EEE RW 1 Advertise 1000Base-T EEE Capability. 
+1: Advertise 0: Do not advertise 
+7.60.1 100BASE-TX EEE RW 1 Advertise 100Base-TX EEE Capability. 
+1: Advertise 0: Do not advertise 
+7.60.0 RSVD RW 0 Reserved. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 45 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+8.4.26. EEELPAR (EEE Link Partner Ability Register, MMD Device 7, 
+Address 0x3d) 
+Table 47. EEELPAR (EEE Link Partner Ability Register, MMD Device 7, Address 0x3d) 
+Bit Name Type Default Description 
+7.61.15:3 RSVD RO 0 Reserved. 
+7.61.2 LP 1000BASE-T EEE RO 0 1: Link Partner is capable of 1000Base-T EEE 
+0: Link Partner is not capable of 1000Base-T EEE 
+7.61.1 LP 100BASE-TX EEE RO 0 1: Link Partner is capable of 100Base-TX EEE 
+0: Link Partner is not capable of 100Base-TX EEE 
+7.61.0 RSVD RO 0 Reserved. 
+ 
+8.4.27. LCR (LED Control Register, ExtPage 0xd04, Address 0x10) 
+Table 48. LCR (LED Control Register, ExtPage 0xd04, Address 0x10) 
+Bit Name Type Default Description 
+16.15 RSVD RO 0 Reserved. 
+16.14 LED2_ACT RW 1 LED2 Active (Tra nsmitting or Receiving) Indication 
+16.13 LED2_LINK_1000 RW 1 LED2 Link Indication: 1000Mbps  
+16.12 RSVD RO 0 Reserved. 
+16.11 LED2_LINK_100 RW 0 LED2 Link Indication: 100Mbps 
+16.10 LED2_LINK_10 RW 0 LED2 Link Indication: 10Mbps 
+16.9 LED2_ACT RW 1 LED1 Active (Transmitting or Receiving) Indication 
+16.8 LED1_LINK_1000 RW 0 LED1 Link Indication: 1000Mbps  
+16.7 RSVD RO 0 Reserved. 
+16.6 LED1_LINK_100 RW 1 LED1 Link Indication: 100Mbps 
+16.5 LED1_LINK_10 RW 0 LED1 Link Indication: 10Mbps 
+16.4 LED0_ACT RW 1 LED0 Active (Transmitting or Receiving) Indication 
+16.3 LED0_LINK_1000 RW 0 LED0 Link Indication: 1000Mbps  
+16.2 RSVD RO 0 Reserved. 
+16.1 LED0_LINK_100 RW 0 LED0 Link Indication: 100Mbps 
+16.0 LED0_LINK_10 RW 1 LED0 Link Indication: 10Mbps 
+ 
+8.4.28. EEELCR (EEE LED Control Register, ExtPage 0xd04, 
+Address 0x11) 
+Table 49. EEELCR (EEE LED Control Register, ExtPage 0xd04, Address 0x11) 
+Bit Name Type Default Description 
+17.15:4 RSVD RO 0 Reserved. 
+17.3 LED2 EEE Enable RW 1 1: Enable EEE LED indication of LED2. 
+17.2 LED1 EEE Enable RW 1 1: Enable EEE LED indication of LED1. 
+17.1 LED0 EEE Enable RW 1 1: Enable EEE LED indication of LED0. 
+17.0 RSVD RO 0 Reserved. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 46 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9. Regulators and Power Sequence 
+9.1. Switching Regulator (RTL8211F(I)) 
+The RTL8211F(I) incorporates a state-of-the-art sw itching regulator that requires a well-designed PCB 
+layout in order to achieve good power efficiency a nd lower the output voltage ripple and input overshoot. 
+The switching regulator 1.0V output pin (REG_OUT) should be connected only to DVDD10 and AVDD10 
+(do not provide this power source to other devices). 
+ 
+9.1.1. PCB Layout 
+• The input 3.3V power trace connected to DVDD33 must be wider than 40mils 
+• The bulk de-coupling capacitors (Cin1 and Cin2) must be placed within 200mils (0.5cm) of DVDD33 
+to prevent input voltage overshoot 
+• The output power trace out of REG_OUT must be wider than 60mils 
+• Lx (2.2µH/4.7µH) must be kept within 200mils (0.5cm) of REG_OUT 
+• Cout1 and Cout2 must be kept within 200mils (0.5cm) of Lx to ensure stable output power and better 
+power efficiency 
+• For switching regulator stability, the capacitor Cout1 and Cout2 must be a ceramic (X5R) capacitor. 
+Cin1 and Cin2 are recommended to be ceramic capacitors 
+• Place Lx and Cin1 on the same layer as the RTL8211F(I). Do not use vias on DVDD33 and REG_OUT 
+traces 
+Note: Violation of the above rules will damage the IC. 
+ 
+Figure 10. Switching Regulator 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 47 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9.1.2. Inductor and Capacitor Parts List 
+Table 50. Inductor and Capacitor Parts List 
+Inductor Type Inductance Max IDC (mA) Variation Output Ripple (mV) 
+GLK2510P-2R2M 2.2µH 1000 ≤ 20% (See Figure 14, page 49, and 
+Figure 15, page 50) 
+GLK2510P-4R7M 4.7µH 750 ≤ 20% (See Figure 16, page 50, and 
+Figure 17, page 51) 
+GTSD32P-2R2M 2.2µH 1500 ≤ 20% (See Figure 18, page 51) 
+Note 1: The ESR is equivalent to RDC or DCR. Lower ESR inductor values will promote a higher-efficiency switching 
+regulator. 
+Note 2: The power inductor used by the switching regulator must be able to withstand 600mA of current. 
+Note 3: Typically, if the power inductor’ s ESR at 1MHz is below 0.8Ω, the switching regulator efficiency will be above 75%. 
+However the actual switching regulator efficiency should be measured according to the method described in section 9.1.4 
+Efficiency Measurement, page 54. 
+Note 4: If the inductor does not meet this requirement, it may damage the switching regulator. 
+ 
+Capacitor Type Capacitance ESR at 1MHz (mΩ) Output Ripple (mV) 
+4.7µF 0805 X5R TDK 4.838 40.28 (See Figure 14, Figure 16) 
+10µF 0603 X5R YAGEO 11.956 58.29 (See Figure 15, Figure 17) 
+Note: Capacitors (Cin1 & Cin2) must be ceramic due to their low ESR value. Lower ESR values will yield lower output 
+voltage ripple. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 48 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9.1.3. Measurement Criteria 
+In order for the switching regulator to operate properly, the input and output voltage measurement criteria 
+must be met. From the input side, the voltage ove rshoot cannot exceed 4V; otherwise the chip may be 
+damaged. Note that the voltage signal must be measured directly at the DVDD33 pin, not at the capacitor. 
+In order to reduce the input voltage overshoot, the Cin1 and Cin2 must be placed close to the DVDD33 pin. 
+The following figures show what a good input voltage and a bad one look like. 
+ 
+Figure 11. Input Voltage Overshoot <4V (Good) 
+ 
+ 
+Figure 12. Input Voltage Overshoot >4V (Bad) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 49 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+From the output side measured at the REG_ OUT pin, the voltage ripple must be within 
+100mV peak-to-peak. Choosing different types and va lues of input and output capacitor (Cin1, Cin2; 
+Cout1, Cout2) and power inductor (Lx) will seriously affect the efficiency and output voltage ripple of 
+switching regulators. The following figures show the effects of different types of capacitors on the 
+switching regulator’s output voltage. 
+The blue square wave signal (top row) is measured at the output of the REG_OUT pin before the power 
+inductor (Lx). The yellow signal (second row) is measured after the power inductor (Lx), and shows there is 
+a voltage ripple. The green signal (lower row) is the current. Data in the following figures was measured at 
+gigabit speed. 
+ 
+Figure 13. Ceramic 10µF 0603 (X5R) (Good) 
+ 
+ 
+Figure 14. L=GLK2510P-2R2M, C=Ceramic 4.7µF 0805 X5R TDK (Ripple 12.4mV) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 50 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+ 
+Figure 15. L=GLK2510P-2R2M, C=Ceramic 10µF 0603 X5R YAGEO (Ripple 13.2mV) 
+ 
+ 
+Figure 16. L=GLK2510P-4R7M, C=Ceramic 4.7µF 0805 X5R TDK (Ripple 12mV) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 51 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+ 
+Figure 17. L=GLK2510P-4R7M, C=Ceramic 10µF 0603 X5R YAGEO (Ripple 11.2mV) 
+ 
+ 
+Figure 18. L=GTSD32P-2R2M, C=Ceramic 4.7µF 0805 X5R TDK (Ripple 9.2mV) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 52 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+ 
+Figure 19. Ceramic 10µF (Y5V) (Bad) 
+ 
+A ceramic 10µF (X5R) will have a lower voltage rippl e compared to an electrolytic 100µF. The key to 
+choosing a proper output capacitor is to choose the lowest ESR to reduce the output voltage ripple. 
+Choosing a ceramic 10µF (Y5V) in this case will cause malfunction of the switching regulator. Placing 
+several Electrolytic capacitors in parallel will help lower the output voltage ripple. 
+ 
+Figure 20. Electrolytic 100µF (Ripple Too High) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 53 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+The following figures show how different inductors affect the REG_OUT output waveform. The typical 
+waveform should look like Figure 21, which has a square waveform with a dip at the falling edge and the 
+rising edge. If the inductor is not carefully chos en, the waveform may look like Figure 22, where the 
+waveform looks like a distorted square. This will cause insufficient current supply and will undermine the 
+stability of the system at gigabit speed. Data in the following figures was measured at gigabit speed 
+ 
+Figure 21. GTSD32P-2R2M (Good) 
+ 
+ 
+Figure 22. 1µH Bead (Bad) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 54 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9.1.4. Efficiency Measurement 
+The efficiency of the switching regulator is designed to  be above 75% in gigabit traffic mode. It is very 
+important to choose a suitable inductor before Gerber certification, as the Inductor ESR value will affect the 
+efficiency of the switching regulator. An inductor with a lower ESR value will result in a higher-efficiency 
+switching regulator. 
+The efficiency of the switching regulator is easily measured using the following method. 
+Figure 23 shows two checkpoints, checkpoint A (C P_A) and checkpoint B (CP_B). The switching 
+regulator input current (Icpa) should be measured at CP_A, and the switching regulator output current 
+(Icpb) should be measured at CP_B. 
+To determine efficiency, apply the following formula: 
+Efficiency = Vcpb*Icpb/Vcpa*Icpa 
+Where Vcpb is 1.05V; Vcpa is 3.3V. The measurements should be performed in gigabit traffic mode. 
+For example: The inductor used in the evaluation board is a GOTREND GTSD32-4R7M: 
+• The ESR value @ 1MHz is approximately 0.712ohm 
+• The measured Icpa is 101mA at CP_A 
+• The measured Icpb is 263mA at CP_B 
+These values are measured in gigabit traffic mode, so the efficiency of the GOTREND GTSD32-4R7M can 
+be calculated as follows: 
+Efficiency = (1.05V*263mA)/(3.3V*101mA) = 0.823 = 82.3%. 
+We strongly recommend that when choosing an inductor for the switching regulator, the efficiency should 
+be measured, and that the inductor should yield an efficiency rating higher than 75%. If the efficiency does 
+not meet this requirement, there may be risk to the switching regulator reliability in the long run. 
+ 
+Figure 23. Switching Regulator Efficiency Measurement Checkpoint 
+CP_B 
+CP_A 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 55 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9.2. Low-dropout Regulator (RTL8211FD(I)) 
+The RTL8211FD(I) incorporates a state-of-the-art low-dropout regulator (LDO). The regulator 1.0V 
+output pin (LDO_OUT) should be connected only to DVDD10 and AVDD10 pins (do not provide this 
+power source to other devices). 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 56 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+9.3. Power Sequence 
+ 
+ 
+Figure 24. Power Sequence 
+ 
+Table 51. Power Sequence Parameters 
+Symbol Description Min Typical Max Units 
+Rt1 3.3V Rise Time 0.5* - 100 ms 
+Rt1 2.5/1.8/1.5V RGMII Rise Time - - 100 ms 
+Rt2 3.3V Off Time 100 - - ms 
+Rt3 Core Logic Ready Time 20 - - ms 
+Rt4 LDO Ready time 1.5 - - ms 
+Note 1: The RTL8211F(I)/RTL8211FD(I) does not support fast 3.3V rising. The 3.3V rise time should be controlled over 
+0.5ms.  
+* A 3.3V rise time between 0.1ms to 0.5ms is conditionally permitted only if the system 3.3V power budget is sufficient to 
+ensure that 3.3V Overcurrent Protection (OCP) will NOT be triggered during the power-on procedure. If the rise time is less 
+than 0.1ms, it will induce a peak voltage in DVDD33 which may cause permanent damage to the regulator. 
+Note 2: If there is any action that involves consecutive ON/OFF toggling of the switching-regulator source (3.3V), the 
+design must make sure the OFF state of both the switching-regulator source (3.3V) and output (1.05V) reach 0V , and the 
+time period between the consecutive ON/OFF toggling action must be longer than 100ms. 
+Note 3: When using an external oscillator or clock source, on stopping the clock source the RTL8211F(I)/RTL8211FD(I) 
+must also be powered off. 
+Note 4: The RTL8211F(I)/ RTL8211FD(I) use the integrated LDO to generate the 2.5V , 1.8V/1.5V voltages for the I/O pad, 
+the I/O pad voltage can be selected by using the CONFIG pins CFG_LDO[1:0]. Moreover, external power source for the 
+I/O pad is also supported, please refer to the setting of CFG_EXT and CFG_LDO[1:0] pins (section 7.8 Hardware 
+Configuration, page 15). 
+Note 5: When using an external power source for the I/O pad , 2.5V (or 1.8/1.5V) RGMII power should rise  simultaneously 
+or slightly earlier than 3.3V power. Rising 2.5V (or 1.8/1.5V) power later than 3.3V power may lead to errors. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 57 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10. Characteristics 
+10.1. Absolute Maximum Ratings 
+WARNING: Absolute maximum ratings are limits beyond which permanent damage may be caused to the 
+device, or device reliability will be affected. All voltages are specified reference to GND unless otherwise 
+specified. 
+Table 52. Absolute Maximum Ratings 
+Symbol Description Minimum Maximum Unit 
+VDD33, A VDD33 Supply V oltage 3.3V -0.3 3.6 V 
+A VDD10, DVDD10 Supply V oltage 1.0V -0.3 1.2 V 
+2.5V RGMII/GMII Supply V oltage 2.5V -0.2 2.8 V 
+1.8V RGMII Supply V oltage 1.8V -0.2 2.3 V 
+1.5V RGMII Supply V oltage 1.5V -0.2 2.0 V 
+3.3V DCinput 
+3.3V DCoutput 
+Input V oltage 
+Output V oltage -0.3 3.6 V 
+1.0V DCinput 
+1.0V DCoutput 
+Input V oltage 
+Output V oltage -0.3 1.2 V 
+NA Storage Temperature -55 +125 °C 
+Note: Refer to the most updated schematic circuit for correct configuration. 
+ 
+10.2. Recommended Operating Conditions 
+Table 53. Recommended Operating Conditions 
+Description Pins Minimum Typical Maximum Unit 
+DVDD33, A VDD33 2.97 3.3 3.63 V 
+A VDD10, DVDD10 0.95 1.0 1.05 V 
+2.5V RGMII/GMII 2.25 2.5 2.75 V 
+1.8V RGMII 1.62 1.8 1.98 V 
+Supply V oltage VDD 
+1.5V RGMII 1.5 1.55 1.6 V 
+Ambient Operating Temperature TA 
+(RTL8211F/RTL8211FD) 
+- 0 - 70 °C 
+Ambient Operating Temperature TA 
+(RTL8211FI/RTL8211FDI) 
+- -40 - 85 °C 
+Maximum Junction Temperature - - - 125 °C 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 58 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10.3. Crystal Requirements 
+Table 54. Crystal Requirements 
+Symbol Description/Condition Minimum Typical Maximum Unit 
+Fref Parallel Resonant Crystal Reference Frequency, 
+Fundamental Mode, AT-Cut Type. 
+- 25 - MHz 
+Fref Tolerance Parallel Resonant Crystal Frequency Tolerance, 
+Fundamental Mode, AT-Cut Type. Ta=0°C~70°C. 
+-50 - +50 ppm 
+Fref Duty Cycle Reference Clock Input Duty Cycle. 40 - 60 % 
+ESR Equivalent Series Resistance. - - 50 Ω 
+DL Drive Level. - - 0.5 mW 
+Jitter Broadband Peak-to-Peak Jitter1, 2 - - 200 ps 
+Vih_CKXTAL Crystal Output High Level 1.4 - - V 
+Vil_CKXTAL Crystal Output Low Level - - 0.4 V 
+Note 1: 25kHz  to 25MHz RMS < 3ps. 
+Note 2: Broadband RMS < 9ps. 
+Note3: Fref Tolerance +/- 50ppm including effects of aging of the first year, external crystal capacitors, and PCB layout. 
+ 
+10.4. Oscillator/External Clock Requirements 
+Table 55. Oscillator/External Clock Requirements 
+Parameter Condition Minimum Typical Maximum Unit 
+Frequency - - 25/50 - MHz 
+Frequency Tolerance (RTL8211F/RTL8211FD) Ta=0°C~70°C -50 - 50 ppm 
+Frequency Tolerance (RTL8211FI/RTL8211FDI) Ta=-40°C~85°C -50 - 50 ppm 
+Duty Cycle - 40 - 60 % 
+Broadband Peak-to-Peak Jitter 1, 2 - - - 200 ps 
+Vpeak-to-peak - 3.15 3.3 3.45 V 
+Rise Time (10%~90%) - - - 10 ns 
+Fall Time (10%~90%) - - - 10 ns 
+Operating Temperature Range - -40 - 85 °C 
+Note 1: 25kHz to 25MHz RMS < 3ps. 
+Note 2: Broadband RMS < 9ps. 
+Note3: Frequency Tolerance +/- 50ppm including effects of aging of the first year, external crystal capacitors, and PCB 
+layout. 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 59 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10.5. DC Characteristics 
+Table 56. DC Characteristics 
+Symbol Parameter Conditions Minimum Typical Maximum Units
+VDD33, A VDD33 3.3V Supply V oltage - 2.97 3.3 3.63 V 
+1. MDIO (Table 4, 
+page 8) 
+2. RGMII I/O 
+(Table 3, page 8) 
+2.5V RGMII Supply V oltage - 2.25 2.5 2.75 V 
+1. MDIO (Table 4, 
+page 8) 
+2. RGMII I/O 
+(Table 3, page 8) 
+1.8V RGMII Supply V oltage - 1.62V 1.8V 1.98V V 
+1. MDIO (Table 4, 
+page 8) 
+2. RGMII I/O 
+(Table 3, page 8) 
+1.5V RGMII Supply V oltage - 1.5V 1.55V 1.6V V 
+DVDD10, 
+A VDD10 1.0V Supply V oltage - 0.95 1.0 1.05 V 
+V oh (3.3V) Minimum High Level Output V oltage - 2.4 - VDD33 + 0.3 V 
+V oh (2.5V) Minimum High Level Output V oltage - 2.0 - VDD25 + 0.3 V 
+V oh (1.8V) Minimum High Level Out put V oltage - 0.9*VDD18 - VDD18 + 0.3 V 
+V oh (1.5V) Minimum High Level Out put V oltage - 0.9*VDD15 - VDD15 + 0.3 V 
+V ol (3.3V) Maximum Low Level Output V oltage - -0.3 - 0.4 V 
+V ol (2.5V) Maximum Low Level Output V oltage - -0.3 - 0.4 V 
+V ol (1.8V) Maximum Low Level Output V oltage - -0.3 - 0.1*VDD18 V 
+V ol (1.5V) Maximum Low Level Output V oltage - -0.3 - 0.1*VDD15 V 
+Vih (3.3V) Minimum High Level Input V oltage - 2.0 - - V 
+Vil (3.3V) Maximum Low Level Input V oltage - - - 0.8 V 
+Vih (2.5V) Minimum High Level Input V oltage - 1.7 - - V 
+Vil (2.5V) Maximum Low Level Input V oltage - - - 0.7 V 
+Vih (1.8V) Minimum High Level Input V oltage - 1.2 - - V 
+Vil (1.8V) Maximum Low Level Input V oltage - - - 0.5 V 
+Vih (1.5V) Minimum High Level Input V oltage - 1.0 - - V 
+Vil (1.5V) Maximum Low Level Input V oltage - - - 0.3 V 
+Iin Input Current Vin=VDD33or GND 0 - 0.5 µA 
+Note: Pins not mentioned above remain at 3.3V . 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 60 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10.6. AC Characteristics 
+10.6.1. MDC/MDIO Timing 
+ 
+Figure 25. MDC/MDIO Setup, Hold Time, and Valid from MDC Rising Edge Time Definitions 
+ 
+MDC/MDIO Timing – Management Port 
+ 
+Figure 26. MDC/MDIO Management Timing Parameters 
+ 
+Table 57. MDC/MDIO Management Timing Parameters 
+Symbol Description Minimum Maximum Unit 
+t1 MDC High Pulse Width 32 - ns 
+t2 MDC Low Pulse Width 32 - ns 
+t3 MDC Period 80 - ns 
+t4 MDIO Setup to MDC Rising Edge 10 - ns 
+t5 MDIO Hold Time from MDC Rising Edge 10 - ns 
+t6 MDIO Valid from MDC Rising Edge 0 300 ns 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 61 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+10.6.2. RGMII Timing Modes 
+Timing for this interface will be such that the clock and data are generated simultaneously by the source of 
+the signals and therefore skew between the clock and data is critical to proper operation. 
+Figure 27 shows the effect of adding an internal delay to TXC when in RGMII mode. 
+ 
+ 
+ 
+Figure 27. RGMII Timing Modes (For TXC) 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 62 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Figure 28 shows the effect of adding an internal delay to the RXC flow when in RGMII mode. 
+ 
+ 
+ 
+Figure 28. RGMII Timing Modes (For RXC) 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 63 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+Table 58. RGMII Timing Parameters 
+Symbol Description Min Typical Max Units 
+TGCC Clock Cycle Duration (1000Mbps) 7.2 8 8.8 ns 
+ Clock Cycle Duration (100Mbps) 36 40 44 ns 
+ Clock Cycle Duration (10Mbps) 360 400 440 ns 
+Duty_G Duty Cycle for 1000 45 50 55 % 
+Duty_T Duty Cycle for 10/100 40 50 60 % 
+tR TXC/RXC Rise Time (20%~80%) - - 0.75 ns 
+tF TXC/RXC Fall Time (20%~80%) - - 0.75 ns 
+TsetupT Data to Clock Output Setup (at transmitter 
+integrated delay) 
+1.2 2 - ns 
+TholdT Data to Clock Output Hold (at transmitter 
+integrated delay) 
+1.2 2 - ns 
+TsetupR Data to Clock Input Setup (at receiver integrated 
+delay) 
+1.0 2 - ns 
+TholdR Data to Clock Input Hold (at receiver integrated 
+delay) 
+1.0 2 - ns 
+TskewT Data to Clock Output Skew (at transmitter) -0.5 0 0.5 ns 
+TskewR Data to Clock Input Skew (at receiver) 
+This implies that PC board design will require 
+clocks to be routed such that an additional trace 
+delay of greater than 1.5ns and less than 2.0ns 
+will be added to the associated clock signal. 
+1 1.8 2.6 ns 
+ 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 64 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+11. Mechanical Dimensions 
+ 
+11.1. Mechanical Dimensions Notes 
+Symbol Dimension in mm Dimension in inch 
+ Min Nom Max Min Nom Max 
+A 0.80 0.85 0.90 0.031 0.033 0.035  
+A1 0.00 0.02 0.05 0.000  0.001 0.002 
+A3 0.20REF 0.008REF 
+b 0.15  0.20  0.25  0.006 0.008 0.010  
+D/E 5.00 BSC 0.197 BSC 
+D2/E2 3.45 3.70 3.95 0.136 0.146 0.156 
+e 0.40 BSC 0.016 BSC 
+L 0.30  0.40  0.50  0.012  0.016  0.020  
+Note 1: CONTROLLING DIMENSION: MILLIMETER (mm). 
+Note 2: REFERENCE DOCUMENT: JEDEC MO-220. 
+ 
+
+ RTL8211F(I)/RTL8211FD(I) 
+Datasheet 
+Integrated 10/100/1000M Ethernet Transceiver 65 Track ID: JATR-8275-15   Rev. 1.1
+ 
+ 
+12. Ordering Information 
+Table 59. Ordering Information 
+Part Number Package Status 
+RTL8211F-CG 40-Pin QFN with ‘Green’ Package (Switching Regulator model) ES ready  
+MP in Mar/2014 
+RTL8211FD-CG 40-Pin QFN with ‘Green’ Package (LDO model) ES ready  
+MP in Mar/2014 
+RTL8211FI-CG 40-Pin QFN with ‘Green’ Package (Switching Regulator model)  
+Industrial grade. 
+- 
+RTL8211FDI-CG 40-Pin QFN with ‘Green’ Package (LDO model). Industrial grade. - 
+Note: See page 6  for package identification. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Realtek Semiconductor Corp. 
+Headquarters 
+No. 2, Innovation Road II 
+Hsinchu Science Park, Hsinchu 300, Taiwan 
+Tel.: +886-3-578-0211   Fax: +886-3-577-6047 
+www.realtek.com 
+ 

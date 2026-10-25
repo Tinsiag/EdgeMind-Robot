@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "fresh_bitstream_generated": true,
+    "firmware_hash_matches": true,
+    "target_60B": true,
+    "local_sources_match_compiled_inputs": true,
+    "regenerated_fifo_configuration_matches_reference": true,
+    "final_fifo_hashes_match": true,
+    "board_pins_match": true,
+    "pclk_primary_clock": true,
+    "no_ssram": true,
+    "mdrp_adapter_retained": true,
+    "timing_not_hidden": true,
+    "all_regressions_pass": true
+  },
+  "pins": {
+    "clk_50m": "Y18/8",
+    "rst_n": "F15/1",
+    "camera_pclk": "B18/1",
+    "camera_d[0]": "C15/1",
+    "camera_d[7]": "B17/1",
+    "camera_reset_n": "C14/1",
+    "hdmi_oe": "H5/11",
+    "tmds_clk_p": "K4/10"
+  },
+  "timing_violated_endpoints": {
+    "setup": 101,
+    "hold": 29
+  },
+  "tests": {
+    "ddr3_live_bank_guard_tb": true,
+    "ddr3_live_capture_fault_tb": true,
+    "ddr3_live_video_fault_tb": true,
+    "ddr3_live_pipeline_tb": true,
+    "sccb": true
+  },
+  "hardware_verified": false,
+  "timing_closed": false,
+  "passed": true
+}

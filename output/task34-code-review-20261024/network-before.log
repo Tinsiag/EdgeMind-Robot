@@ -1,0 +1,13 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS integrated fusion Ethernet control/map/telemetry and zero motor outputs
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/fusion_network_tb.v:33: $finish called at 7301680000 (1ps)
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 146, in <module>
+    main()
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 122, in main
+    network.verify(out / (bench.stem+"-output.hex"))
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\fusion_network_check.py", line 57, in verify
+    assert set(control)==set(range(1,11)),control.keys()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: dict_keys([1, 2, 3, 4, 5])

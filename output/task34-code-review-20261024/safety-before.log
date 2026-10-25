@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 146, in <module>
+    main()
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 119, in main
+    raise RuntimeError(run_log)
+RuntimeError: wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+FATAL: /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v:33: wrap obstacle disappeared at next revolution front=1000 valid=1
+       Time: 4491000  Scope: lidar_safety_tb
+

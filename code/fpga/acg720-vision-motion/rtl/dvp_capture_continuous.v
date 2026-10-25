@@ -12,7 +12,10 @@ module dvp_capture_continuous #(
     reg prev_vs,prev_href,active,half_byte,bad;
     reg [7:0] first_byte;
     reg [11:0] column,row;
-    reg [31:0] pixels,skipped;
+    localparam PIXEL_BITS=$clog2(WIDTH*HEIGHT+2)>0 ? $clog2(WIDTH*HEIGHT+2):1;
+    localparam SKIP_BITS=$clog2(SKIP_FRAMES+1)>0 ? $clog2(SKIP_FRAMES+1):1;
+    reg [PIXEL_BITS-1:0] pixels;
+    reg [SKIP_BITS-1:0] skipped;
     always @(posedge pclk or negedge rst_n)
         if(!rst_n) begin
             prev_vs<=1;prev_href<=0;active<=0;half_byte<=0;bad<=0;first_byte<=0;
@@ -43,7 +46,10 @@ module dvp_capture_continuous #(
                             pixel<={first_byte,data};pixel_x<=column[10:0];pixel_y<=row[10:0];pixel_valid<=1;
                         end else bad<=1;
                         if(column<4095) column<=column+1'b1; else bad<=1;
-                        pixels<=pixels+1'b1;
+                        // Retain an invalid overflow count instead of wrapping
+                        // a malformed long frame back to a valid pixel total.
+                        if(pixels<WIDTH*HEIGHT+1) pixels<=pixels+1'b1;
+                        else bad<=1;
                     end
                 end
             end

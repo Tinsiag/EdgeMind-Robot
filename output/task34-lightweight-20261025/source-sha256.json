@@ -1,0 +1,15 @@
+{
+  "rtl/a741_core.v": "0da0056093eb931a0cf8522d5853ae7ce5c99271f1aba212e2bbe7697efb2003",
+  "rtl/a741_motion.v": "45a972e2485f454d1a08a58a88d3f883c3f737668ea1d2b5dc6b589de7858261",
+  "rtl/a741_udp_direct.v": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+  "rtl/a741_map_udp.v": "317041c1962eaede153fe4797750cd89e4395790392fb2a7fb846166d19f92ec",
+  "rtl/a741_sincos.v": "bcd387f10ed10800f7b192cf77d20b416cff40dd253093de64da342e9e9cf1a5",
+  "display/rtl/a741_tft480_panel.v": "840dc270752b1af204304948384f053b1bf69d4e54f2e7d9c10578af2acf6d6e",
+  "tests/udp_direct_tb.v": "2cff3307b4f0d7139fc1b14e7053bd424e1ad1c1eb6ab637a22a29a345ce23c8",
+  "tests/sincos_equivalence_tb.v": "663492d89e4afa0cb59c318ed67ee97a001c01add5e60b7b9630c3428c7f254f",
+  "tests/map_udp_tb.v": "d7a48d53b8cce12f775ef9f1b56de2ab591e0ffc4da4a83b5fa8b9651b8f08d5",
+  "tests/network_tb.v": "cc5a567a5a091fa0c9d4ebca7ac61a52eb4b92a53b1e62c35e1690837f149bda",
+  "display/tests/tft480_panel_tb.v": "b001dd2b550e31ca97f35c713639f1cc3f5033f95996e2cd66f136fd4e581faa",
+  "scripts/fusion_network_check.py": "67af04f9ded150f9c7385b32a2614c37ee75f4f24991c8b9318ee5765259cf14",
+  "docs/FUSION-ARCHITECTURE.md": "6bfb2970059ab5ac49f52298e3f63f8b4f6ecbe90a7aeeddc9d18a7e18ed3422"
+}

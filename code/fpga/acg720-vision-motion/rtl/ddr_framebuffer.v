@@ -20,19 +20,23 @@ module ddr_framebuffer #(parameter WIDTH=800,HEIGHT=480)(
     // 1 Mi x16 words per bank (2 MiB), enough for 800x480 RGB565.
     localparam [27:0] BANK_STRIDE=28'h0100000;
     reg capturing,pending_frame,pending_bank,first_frame;
-    reg [31:0] pixels,write_blocks,read_blocks;
+    localparam PIXEL_BITS=$clog2(PIXELS+2)>0 ? $clog2(PIXELS+2):1;
+    localparam BLOCK_BITS=$clog2(BLOCKS+2)>0 ? $clog2(BLOCKS+2):1;
+    reg [PIXEL_BITS-1:0] pixels;
+    reg [BLOCK_BITS-1:0] write_blocks,read_blocks;
     reg [2:0] packed_pixels;
     reg [127:0] packed_data,write_data;
     reg write_pending,cmd_sent,data_sent,read_pending;
     reg [27:0] write_addr,read_addr;
     reg read_stream,blank_wait,flush_wait,prefer_read;
-    reg [31:0] read_outstanding;
+    reg read_outstanding;
+    reg blocks_remaining;
     wire write_complete=write_pending && (cmd_sent || (app_en && app_cmd==0 && app_rdy)) &&
         (data_sent || (app_wdf_wren && app_wdf_rdy));
-    wire can_read=frame_available && read_stream && !display_blank && !blank_wait && !flush_wait && read_blocks<BLOCKS && !read_pending &&
+    wire can_read=frame_available && read_stream && !display_blank && !blank_wait && !flush_wait && blocks_remaining && !read_pending &&
         read_outstanding==0 && !display_full;
-    wire [27:0] read_offset={read_blocks[24:0],3'b000};
-    wire [27:0] write_offset={write_blocks[24:0],3'b000};
+    wire [27:0] read_offset=28'(read_blocks)<<3;
+    wire [27:0] write_offset=28'(write_blocks)<<3;
     // One DDR read outstanding: reserve its entire return slot before issue.
     wire select_read=read_pending || (!write_pending && can_read && (source_empty || prefer_read));
     assign app_en=calibrated && (select_read ? (read_pending || can_read):write_pending && !cmd_sent);
@@ -43,6 +47,11 @@ module ddr_framebuffer #(parameter WIDTH=800,HEIGHT=480)(
     assign app_wdf_end=app_wdf_wren;
     assign display_data=app_rd_data;
     assign display_push=app_rd_data_valid && read_outstanding!=0 && !display_flush;
+    // Consume FWFT tokens only when arbitration accepts them. The FIFO
+    // compares lookahead pointers before selecting by enable, keeping this
+    // handshake out of its carry chain. A registered pop would consume an
+    // extra token after write_pending rises and could drop the end marker
+    // before the last command/data beat has completed under backpressure.
     assign source_pop=calibrated && !source_empty && !write_pending && !read_pending && !blank_wait && !flush_wait && !select_read;
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
@@ -51,9 +60,13 @@ module ddr_framebuffer #(parameter WIDTH=800,HEIGHT=480)(
             write_data<=0;write_pending<=0;cmd_sent<=0;data_sent<=0;read_pending<=0;
             write_addr<=0;read_addr<=0;read_stream<=0;blank_wait<=0;flush_wait<=0;prefer_read<=1;
             read_outstanding<=0;display_flush<=0;frame_available<=0;error<=0;
-            dropped_frames<=0;read_bank<=0;write_bank<=1;
+            dropped_frames<=0;read_bank<=0;write_bank<=1;blocks_remaining<=1;
         end else begin
             display_flush<=0;
+            // The accepted last read holds read_outstanding until its return,
+            // so this registered bound is current before any next read issue.
+            // It breaks the block-counter -> arbitration -> FIFO-empty chain.
+            blocks_remaining<=read_blocks<BLOCKS;
             if(!calibrated) begin
                 capturing<=0;pending_frame<=0;write_pending<=0;read_pending<=0;
                 frame_available<=0;read_stream<=0;read_outstanding<=0;
@@ -70,7 +83,7 @@ module ddr_framebuffer #(parameter WIDTH=800,HEIGHT=480)(
                     if(read_outstanding==0 || display_full) error<=1;
                     read_outstanding<=0;
                 end
-                if(source_pop) begin
+                if(source_pop && !source_empty) begin
                     prefer_read<=1;
                     case(source_data[17:16])
                         2'b01: begin

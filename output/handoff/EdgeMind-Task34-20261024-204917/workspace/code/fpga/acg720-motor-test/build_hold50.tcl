@@ -1,0 +1,8 @@
+cd [file dirname [file normalize [info script]]]
+open_project acg720_motor_hold_1khz_50.gprj
+set_option -top_module acg720_motor_hold_1khz_50
+set_option -output_base_name acg720_motor_hold_1khz_50
+set_option -use_sspi_as_gpio 1
+set_option -user_code 0000A71B
+set_option -bit_security 0
+run all

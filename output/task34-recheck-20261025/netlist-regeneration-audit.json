@@ -1,0 +1,12 @@
+{
+  "old_netlist_sha256": "dfd49b5c788e030cb6336054a9812f6cfd498a68ad15060d1e45d67871ddfea1",
+  "actual_new_netlist_sha256": "e310f55535616457d0b618f1798000dc905f9ef0496bd9e090a60181de0accff",
+  "identical_after_removing_generation_time": false,
+  "old_header": "//Sun Oct 25 03:59:27 2026",
+  "new_header": "//Sun Oct 25 08:44:24 2026",
+  "route_option": 1,
+  "place_option": 1,
+  "current_stage": "placement",
+  "timing_signed_off": false,
+  "notes": "Gowin auto-resynthesized unchanged source inputs; differences include generated time, internal net names and re-emitted protected IP blocks. This is a newly generated netlist, not byte-identical cache reuse. Preserve the actual new hash and re-evaluate the final tool result independently of the stale cache expectation."
+}

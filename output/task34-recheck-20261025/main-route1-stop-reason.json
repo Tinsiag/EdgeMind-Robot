@@ -1,0 +1,8 @@
+{
+  "stopped_beijing": "2026-10-25T09:38:08.845404+08:00",
+  "reason": "Continuous ideal-plant regression reproduced fractional odometry loss caused by repeated zero scan-match absolute pose reset. Isolated no-op guard fixes the same test. Stop known-defective image before editing frozen inputs.",
+  "last_stage": "Routing Phase 0 completed",
+  "route_option": 1,
+  "place_option": 1,
+  "hardware_programmed": false
+}

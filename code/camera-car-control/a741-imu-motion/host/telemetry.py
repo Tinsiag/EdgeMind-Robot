@@ -179,6 +179,8 @@ class TelemetryReceiver:
         self.peer = peer
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 1024 * 1024)
+        # The UI can still read diagnostics while disconnect closes the socket.
+        self.receive_buffer_bytes = self.socket.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)
         self.socket.bind(("", port))
         self.socket.settimeout(.1)
         self.lock = threading.Lock()
@@ -286,5 +288,5 @@ class TelemetryReceiver:
             return {"host_bad_packets":self.scan.errors,"scan_gaps":self.scan.gaps,
                     "discontinuities":self.scan.discontinuities,"last_reason":self.scan.last_discontinuity,
                     "completed_scans":self.scan.completed_id,"mapping_queue_dropped":self.mapping_dropped,
-                    "receive_buffer_bytes":self.socket.getsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF),
+                    "receive_buffer_bytes":self.receive_buffer_bytes,
                     "phy":getattr(self,"phy_diagnostic",None)}

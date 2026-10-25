@@ -22,3 +22,16 @@
 /uart.hex
 /tmp/ld06-demo-error.log
 /tmp/ld06-demo-out.log
+
+# Rebuildable diagnostic implementation databases and simulation executables.
+# Keep source snapshots, CAD, constraints, reports and failure logs in Git.
+/output/**/*.pr
+/output/**/*.p
+/output/**/*.vg
+/output/**/*.fs
+/output/**/*.bin
+/output/**/*.binx
+/output/**/*.db
+/output/**/*.vvp
+/output/**/__pycache__/
+/tmp/cad-preview-v4/.local/

@@ -1,5 +1,7 @@
 # A741 感知输入与 FPGA 核心融合
 
+2026-10-24：按用户任务图片新增 [任务3/4实现说明](docs/TASK3-4.md)，使用完整 V4/V5 装配提取 XY 几何，加入 PicoRV32 裸机路径点任务、车体净空及有限停车重规划，保留现有摄像头实例和接线。本轮验证以 `verification/TASK3-4-REPORT.md` 为准；下方关于“几何尚未核实、纯RTL”的内容是此前版本记录。CAD 核对与实车验收分别记录，未经签核不替换稳定固件。
+
 **现阶段可用固件和代码是用户确认的 `a741-imu-motion/release/A741-MOTION-LD06-H20-H14-20261022-130843`，固件 SHA-256 为 `e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e`。日常上位机从 `a741-imu-motion/launch.cmd` 启动，详见 [可用版本说明](../a741-imu-motion/README.md)。本融合目录仅为未验收开发版，不替代该固件和代码。**
 
 独立工程 `a741-fpga-fusion`。保留原 `a741`、`a741-imu-motion` 与历史发布包。采集、位姿、栅格、定位、规划、跟踪和停车由 Verilog 执行；摄像头仅用于 HDMI / UDP 画面与记录，无视觉识别或边缘 AI。
@@ -74,12 +76,12 @@ launch.cmd --sensors-only
 在本目录执行，使用既有 Python、Icarus 与 Gowin V1.9.12.04：
 
 ```powershell
-& ..\.venv\Scripts\python.exe scripts/build.py prepare --fusion
+& ..\.venv\Scripts\python.exe scripts/build.py prepare --fusion --tft480 --route-option 1 --place-option 1
 & ..\.venv\Scripts\python.exe -u scripts/check.py
-& ..\.venv\Scripts\python.exe scripts/build.py build --fusion
-& ..\.venv\Scripts\python.exe scripts/report_fusion.py
+& ..\.venv\Scripts\python.exe scripts/build.py build --fusion --tft480 --route-option 1 --place-option 1
+& ..\.venv\Scripts\python.exe scripts/report_task34.py
 ```
 
-原厂 IP 从本机例程 ZIP 按哈希恢复，网络 MIT 许可保留。结果在本目录 `.local/gowin-fusion`。继承的 `scripts/archive.py` 不用于融合发布；`scripts/report_fusion.py` 归档本版证据，时序不通过时不归档运动位流。
+原厂 IP 从本机例程 ZIP 按哈希恢复，网络 MIT 许可保留。含参数屏的结果在本目录 `.local/gowin-fusion-tft480`；当前使用布线选项1、布局选项1。继承的 `scripts/archive.py` 不用于融合发布；任务3/4证据由 `scripts/report_task34.py` 记录，时序不通过时不发布运动位流。
 
 次序见 `verification/FUSION-ACCEPTANCE.md`。软件仿真仅证明覆盖的模型行为；没有完整录制数据回放、几何核对、实板/实车验收的项目保持待验证。首版仅限室内平整静态环境，不覆盖动态人群、低矮或透明障碍及边缘 AI。

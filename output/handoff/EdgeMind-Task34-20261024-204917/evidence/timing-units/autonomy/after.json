@@ -1,0 +1,213 @@
+{
+  "synthesis_estimate_only": true,
+  "clocks": [
+    {
+      "clock": "clk",
+      "requested_mhz": 100.0,
+      "estimated_fmax_mhz": 64.637,
+      "logic_levels": 22
+    }
+  ],
+  "paths": [
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_9_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.471,
+      "logic_levels": 22
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_8_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.462,
+      "logic_levels": 22
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_7_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.426,
+      "logic_levels": 22
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_6_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.381,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_5_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.336,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_4_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.291,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_3_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.246,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_2_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.201,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/planner/goal_node_7_s0",
+      "destination": "dut/planner/n879_s",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.194,
+      "logic_levels": 17
+    },
+    {
+      "source": "dut/planner/goal_node_7_s0",
+      "destination": "dut/planner/n879_s",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.182,
+      "logic_levels": 17
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_1_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.139,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/planner/goal_node_7_s0",
+      "destination": "dut/planner/n879_s",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.097,
+      "logic_levels": 17
+    },
+    {
+      "source": "dut/projector/origin_x_7_s0",
+      "destination": "dut/rasterizer/err_0_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -5.07,
+      "logic_levels": 19
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/right_target_6_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.937,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/planner/goal_node_7_s0",
+      "destination": "dut/planner/n879_s",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.826,
+      "logic_levels": 17
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/right_target_3_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.82,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/left_target_5_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.748,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/left_target_3_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.739,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/right_target_4_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.721,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/tracker/correction_8_s0",
+      "destination": "dut/tracker/left_target_4_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.689,
+      "logic_levels": 20
+    },
+    {
+      "source": "dut/tracker/left_9_s48",
+      "destination": "dut/tracker/linear_0_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.685,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/tracker/left_9_s48",
+      "destination": "dut/tracker/linear_1_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.685,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/tracker/left_9_s48",
+      "destination": "dut/tracker/linear_2_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.685,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/tracker/left_9_s48",
+      "destination": "dut/tracker/linear_3_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.685,
+      "logic_levels": 21
+    },
+    {
+      "source": "dut/tracker/left_9_s48",
+      "destination": "dut/tracker/linear_4_s0",
+      "launch_clock": "clk[R]",
+      "latch_clock": "clk[R]",
+      "slack_ns": -4.685,
+      "logic_levels": 21
+    }
+  ]
+}

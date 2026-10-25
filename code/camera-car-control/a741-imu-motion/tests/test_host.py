@@ -1,5 +1,7 @@
 import copy
+from dataclasses import replace
 import json
+import math
 from pathlib import Path
 import struct
 import sys
@@ -26,6 +28,152 @@ def packet(start, end, seq=1, stamp=0):
 
 
 class HostTests(unittest.TestCase):
+    def test_held_drive_keeps_heartbeats_without_udp_status_polls(self):
+        pivot = math.degrees(2000*200/Calibration.load().data["mechanical_track_um"])
+        for linear, angular in ((200, 0), (-200, 0), (150, 30), (0, pivot), (0, -pivot)):
+            clock = [0.0]
+            beats = []
+            c = object.__new__(client.Client);c.imu_motion = True
+            c.arm = Mock();c.wheels = Mock();c.command = Mock();c.stop = Mock()
+            c.status = Mock(side_effect=AssertionError("blocking status poll"))
+            c.sensors = Mock(side_effect=AssertionError("blocking IMU poll"))
+            c.settle = Mock(return_value="stopped")
+            receiver = Mock()
+            receiver.read.side_effect = lambda: (self.distance_snapshot(1000+round(clock[0]*1000)), ())
+            def heartbeat():
+                beats.append(clock[0])
+                if clock[0] >= 1:
+                    held.clear()
+            def sleep(seconds):
+                clock[0] += seconds
+                held.renew()
+            c.heartbeat = Mock(side_effect=heartbeat)
+            with patch.object(client.time, "monotonic", side_effect=lambda: clock[0]), patch.object(client.time, "sleep", side_effect=sleep):
+                held = client.HoldLease();held.set()
+                result = c.drive(Calibration.load(), linear, angular, held, threading.Event(), telemetry=receiver)
+            self.assertGreaterEqual(result["drive_seconds"], 1)
+            self.assertGreater(len(beats), 20)
+            self.assertLess(max(b-a for a, b in zip(beats, beats[1:])), .05)
+            c.status.assert_not_called();c.sensors.assert_not_called()
+            c.arm.assert_called_once();c.settle.assert_called_once()
+            if linear == 0:
+                self.assertGreater(c.command.call_count, 20)
+                for call in c.command.call_args_list:
+                    self.assertEqual(call.args[0], 0x47)
+                    left, right, _ = struct.unpack("<iih", call.args[1])
+                    self.assertEqual((left, right), (-200, 200) if angular > 0 else (200, -200))
+                    self.assertIsNone(call.kwargs["reply"])
+
+    def test_held_drive_stale_telemetry_stops_before_or_during_motion(self):
+        for samples in ([None], [self.distance_snapshot(1000), None]):
+            c = object.__new__(client.Client)
+            c.arm = Mock();c.wheels = Mock();c.stop = Mock();c.heartbeat = Mock()
+            receiver = Mock();receiver.read.side_effect = [(sample, ()) for sample in samples]
+            held = threading.Event();held.set()
+            with self.assertRaisesRegex(client.CalibrationRejected, "遥测.*150ms"):
+                c.drive(Calibration.load(), 200, 0, held, threading.Event(), telemetry=receiver)
+            c.stop.assert_called_once()
+            self.assertEqual(c.arm.call_count, len(samples)-1)
+            self.assertEqual(c.wheels.call_count, len(samples)-1)
+
+    def test_held_drive_retains_latched_fault_without_retry_or_clear(self):
+        c = object.__new__(client.Client)
+        c.arm = Mock();c.wheels = Mock();c.stop = Mock();c.heartbeat = Mock();c.command = Mock()
+        snapshot = self.distance_snapshot(1000)
+        receiver = Mock();receiver.read.side_effect = [(snapshot, ()), (replace(snapshot, state=3, faults=1), ())]
+        held = threading.Event();held.set()
+        with self.assertRaisesRegex(client.CalibrationRejected, "0x0001"):
+            c.drive(Calibration.load(), 200, 0, held, threading.Event(), telemetry=receiver)
+        c.arm.assert_called_once();c.wheels.assert_called_once();c.command.assert_not_called()
+
+    def test_held_drive_tolerates_only_initial_telemetry_state_delay(self):
+        c = object.__new__(client.Client)
+        c.arm = Mock();c.wheels = Mock();c.stop = Mock();c.heartbeat = Mock();c.settle = Mock(return_value="stopped")
+        idle = replace(self.distance_snapshot(1000), state=0)
+        held = threading.Event();held.set()
+        receiver = Mock();receiver.read.side_effect = [(idle, ()), (idle, ())]
+        def released(_):
+            held.clear()
+        with patch.object(client.time, "sleep", side_effect=released):
+            result = c.drive(Calibration.load(), 200, 0, held, threading.Event(), telemetry=receiver)
+        self.assertEqual(result["final_status"], "stopped")
+        receiver.read.side_effect = None;receiver.read.return_value = (idle, ())
+        held.set()
+        with patch.object(client.time, "monotonic", side_effect=[10, 10, 10.151]):
+            with self.assertRaisesRegex(client.CalibrationRejected, "state=0"):
+                c.drive(Calibration.load(), 200, 0, held, threading.Event(), telemetry=receiver)
+
+    def test_settle_uses_live_telemetry_while_renewing_lease(self):
+        clock = [0.0]
+        c = object.__new__(client.Client)
+        c.wheels = Mock();c.heartbeat = Mock();c.disarm = Mock(return_value="stopped")
+        c.status = Mock(side_effect=AssertionError("blocking stop status poll"))
+        receiver = Mock();receiver.read.return_value = (replace(self.distance_snapshot(1000), state=1), ())
+        def sleep(seconds):
+            clock[0] += seconds
+        with patch.object(client.time, "monotonic", side_effect=lambda: clock[0]), patch.object(client.time, "sleep", side_effect=sleep):
+            result = c.settle(telemetry=receiver)
+        self.assertEqual(result, "stopped")
+        c.wheels.assert_called_once_with(0, 0);c.disarm.assert_called_once();c.status.assert_not_called()
+        self.assertGreaterEqual(c.heartbeat.call_count, 10)
+
+    @staticmethod
+    def distance_snapshot(ms, count=0):
+        data = bytearray(112)
+        struct.pack_into("<4sHHIIIHBBH", data, 0, b"EMS1", 1, 112,
+                         ms, ms, 74106, 0x13, 2, 0, 0)
+        struct.pack_into("<iiiiii", data, 28, 100, 100, 0, 0, count, count)
+        return Snapshot.parse(data)
+
+    def test_distance_uses_atomic_telemetry_in_both_directions_without_control_polls(self):
+        from types import SimpleNamespace
+        for sign in (1, -1):
+            c = object.__new__(client.Client)
+            c.arm = Mock();c.heartbeat = Mock();c.wheels = Mock();c.stop = Mock()
+            c.status = Mock(side_effect=AssertionError("status poll delays the heading loop"))
+            c.sensors = Mock(side_effect=AssertionError("sensor poll delays the heading loop"))
+            c.settle = Mock(return_value=SimpleNamespace(left_count=sign*350, right_count=sign*350))
+            receiver = Mock()
+            receiver.read.side_effect = [(self.distance_snapshot(1000), ()),
+                                        (self.distance_snapshot(1050), ()),
+                                        (self.distance_snapshot(1100, sign*350), ())]
+            with patch.object(client.time, "sleep"):
+                result = c.distance(Calibration.load(), sign*50, 100, threading.Event(), telemetry=receiver)
+            c.wheels.assert_called_once_with(sign*100, sign*100, hold=False)
+            c.status.assert_not_called();c.sensors.assert_not_called()
+            self.assertLess(abs(result["encoder_error_mm"]), 1)
+
+    def test_distance_stale_telemetry_stops_without_wheel_command(self):
+        c = object.__new__(client.Client)
+        c.arm = Mock();c.stop = Mock();c.wheels = Mock()
+        receiver = Mock();receiver.read.return_value = (None, ())
+        with self.assertRaisesRegex(client.CalibrationRejected, "遥测.*150ms"):
+            c.distance(Calibration.load(), 50, 100, threading.Event(), telemetry=receiver)
+        c.stop.assert_called_once();c.wheels.assert_not_called()
+
+    def test_distance_telemetry_keeps_heading_gap_protection(self):
+        c = object.__new__(client.Client)
+        c.arm = Mock();c.stop = Mock();c.wheels = Mock();c.heartbeat = Mock()
+        receiver = Mock()
+        receiver.read.side_effect = [(self.distance_snapshot(1000), ()),
+                                    (self.distance_snapshot(1050), ()),
+                                    (self.distance_snapshot(1251), ())]
+        with patch.object(client.time, "sleep"):
+            with self.assertRaisesRegex(client.CalibrationRejected, "150ms"):
+                c.distance(Calibration.load(), 50, 100, threading.Event(), telemetry=receiver)
+        c.stop.assert_called_once();c.wheels.assert_called_once()
+
+    def test_telemetry_diagnostics_remain_available_after_disconnect(self):
+        receiver = TelemetryReceiver(peer="127.0.0.1", port=0)
+        try:
+            before = receiver.diagnostics()
+        finally:
+            receiver.close()
+        after = receiver.diagnostics()
+        self.assertGreater(before["receive_buffer_bytes"], 0)
+        self.assertEqual(after, before)
+        self.assertFalse(receiver.thread.is_alive())
+
     def test_uncalibrated_arm_rejection_explains_calibration_without_retry(self):
         c=object.__new__(client.Client)
         c.imu_test=False;c.motion_lidar=True;c.sensor_pins_enabled=False
@@ -36,14 +184,16 @@ class HostTests(unittest.TestCase):
                 c.arm(Calibration.load())
         c.command.assert_called_once_with(2)
 
-    def test_encoder_fault_arm_rejection_is_recoverable_and_never_clears_fault(self):
+    def test_latched_fault_arm_rejection_is_recoverable_and_never_clears_fault(self):
         c=object.__new__(client.Client)
         c.imu_test=False;c.motion_lidar=True;c.sensor_pins_enabled=False
         c.command=Mock(return_value=b"status")
-        with patch.object(client,"decode_status",return_value=Mock(state=3,faults=4)):
-            with self.assertRaisesRegex(client.CalibrationRejected,"编码器无反馈故障"):
-                c.arm(Calibration.load())
-        c.command.assert_called_once_with(2)
+        for faults, message in ((4, "编码器无反馈故障"), (1, "通信超时故障.*清除故障")):
+            c.command.reset_mock()
+            with patch.object(client,"decode_status",return_value=Mock(state=3,faults=faults)):
+                with self.assertRaisesRegex(client.CalibrationRejected,message):
+                    c.arm(Calibration.load())
+            c.command.assert_called_once_with(2)
 
     def test_arc_reference_scaled_signed_and_wrapped(self):
         calibration=Calibration.load()

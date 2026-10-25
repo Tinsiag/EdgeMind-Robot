@@ -1,0 +1,152 @@
+{
+  "created": "2026-10-08",
+  "hardware_function_verified": true,
+  "timing_closed": false,
+  "files": [
+    {
+      "path": "FINAL_VALIDATION_AND_PROBLEM_SOLVING_REPORT.md",
+      "size": 6991,
+      "sha256": "d7fe95d7d4f7ad91549e5546a7e2fd837e2eb31f004ffe71716f97dc582eebb2"
+    },
+    {
+      "path": "SHA256SUMS",
+      "size": 160,
+      "sha256": "2ce8e33ecce60c878d3bee982da2f63a2fcb6f408aef4cf6670c2209cbb889a9"
+    },
+    {
+      "path": "firmware/build-inputs.json",
+      "size": 3354,
+      "sha256": "435e10f9aa091e3cf053b77e3d847e4def9544bc3f82f58e736ae4dbd139715d"
+    },
+    {
+      "path": "firmware/build-result.json",
+      "size": 647,
+      "sha256": "f625a07ab35e8617c721fc188ac3aa318f7dee9b10944bcffaac484b225661ef"
+    },
+    {
+      "path": "firmware/build-validation.json",
+      "size": 1009,
+      "sha256": "af7e634ae5c4796008ec49f1444dc0130a5988ad19dc94be52acba6e5e88f032"
+    },
+    {
+      "path": "firmware/ddr3_live_hdmi.fs",
+      "size": 18662663,
+      "sha256": "b6e3967afc4785ff42cb147c1060a8a3d5e2ad39c560904a4f1e8b8b3d8fd6f8"
+    },
+    {
+      "path": "git-history/commit-052e0f1.txt",
+      "size": 302,
+      "sha256": "9fbd30cd0e7f91b8fc306a7727c35182763b61cca6c5c6ca22da17949778432c"
+    },
+    {
+      "path": "git-history/commit-a1c4aa2.txt",
+      "size": 1295,
+      "sha256": "b15859e3c4b752f669296a0398a1b84b78ce51f2c89b614c024025903dcf829e"
+    },
+    {
+      "path": "git-history/commit-b5fbaf5.txt",
+      "size": 234,
+      "sha256": "1d919555e70662f61ed270ec78983ccf6f293f3b63709e67bd3a92d64126a781"
+    },
+    {
+      "path": "git-history/git-log-last-20.txt",
+      "size": 3799,
+      "sha256": "0b0e5dd369eacf662e98875908edf6e7ce0d3a90138f02cb59a0312c2484aa22"
+    },
+    {
+      "path": "git-history/git-status-at-packaging.txt",
+      "size": 238,
+      "sha256": "b8ccea1d90933b0e7c9322efb479dc13ea824fb9c42166f2f0c6d2df0bca66ca"
+    },
+    {
+      "path": "hardware-evidence/hdmi_scene.png",
+      "size": 1418986,
+      "sha256": "cb71bae3ad3594d063493a0d990c1eecc6da8ee966d9f1276722ba12602c57f7"
+    },
+    {
+      "path": "hardware-evidence/user-verification.md",
+      "size": 1080,
+      "sha256": "342ac18888fa4ffa48b0d204d3fe50487381668cfa11ceb19544c2c98eab629c"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.pin.html",
+      "size": 128480,
+      "sha256": "185f4050e7d162d727a59c0dc0bd0ccf1f72366acf7afcb3d9a21722b5f65f81"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.rpt.html",
+      "size": 134748,
+      "sha256": "194c318c12dcb3e12039745f6c9bf0906dbb5755ffb5fc24a0314aadd4f88606"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.rpt.txt",
+      "size": 118502,
+      "sha256": "8b9d8c583fed8a2d36c186fc1ce8fd61c03b952dca1bf18cc61dddc4d0138c92"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.timing_paths",
+      "size": 8461,
+      "sha256": "dd69d490391d869a25b37796cfcbf2828508e283038e9a3ad2a40e4e03637902"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.tr",
+      "size": 386877,
+      "sha256": "20100f33148ae5ba01dcab2758f4238d95b44ffb735649e47782cc901a663dca"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi.tr.html",
+      "size": 353,
+      "sha256": "2d375919148cca9fba649e8b25fb18b7cc12e12eb4070c18a4af2f1e7a6ed828"
+    },
+    {
+      "path": "pnr-report/ddr3_live_hdmi_tr_content.html",
+      "size": 439249,
+      "sha256": "85d67bbdb0d79925519ca8f625c2d9bb433150ebda76636de9edce4bb20abe03"
+    },
+    {
+      "path": "pnr-report/timing-async-groups-experiment.json",
+      "size": 62199,
+      "sha256": "790ba70b6907287f881de5fabbb747e66823327a02a33edaac7df9ddc3a97db3"
+    },
+    {
+      "path": "pnr-report/timing-expanded-baseline.json",
+      "size": 73042,
+      "sha256": "844b0700578f397b40aa5d10db67ea98525a091ffe93beab843a42746b312029"
+    },
+    {
+      "path": "pnr-report/timing-generated-clock-experiment.json",
+      "size": 99732,
+      "sha256": "5fbe04f289984ac8bb06a95a7ffd6b603c0c976ce5fcb1b9ec51380e88ff34d5"
+    },
+    {
+      "path": "pnr-report/timing-research.md",
+      "size": 5632,
+      "sha256": "29961eda980431ce8226fa58cb4f7d633e7fcdf8a543f5dfb89be67ebf1a3f21"
+    },
+    {
+      "path": "tests/ddr3_live_bank_guard_tb.log",
+      "size": 133,
+      "sha256": "e9b9d42015cc88bc8b88de4dcb0e8c5b6c4662a4bd7fe9c2dc0c9708d3758639"
+    },
+    {
+      "path": "tests/ddr3_live_capture_fault_tb.log",
+      "size": 145,
+      "sha256": "d1d097d02b92e0aa896963ee61f7e4d697c30fa86c32e2fcee222dbac6f2821f"
+    },
+    {
+      "path": "tests/ddr3_live_pipeline_tb.log",
+      "size": 478,
+      "sha256": "f66104a1a4ee8d4f13e91e56dc38717e2e4290a33387137e542d3fb6d8ff23e2"
+    },
+    {
+      "path": "tests/ddr3_live_video_fault_tb.log",
+      "size": 147,
+      "sha256": "67c925bfd8c45fca34be864a1f2fb68dac3ab27a410ef9a138bf73561db570ba"
+    },
+    {
+      "path": "tests/sccb.log",
+      "size": 168,
+      "sha256": "8e88607d6e19fcc4c45757a792eb53bdd319a335d2ad95ec1a13babad5ad3a5a"
+    }
+  ]
+}

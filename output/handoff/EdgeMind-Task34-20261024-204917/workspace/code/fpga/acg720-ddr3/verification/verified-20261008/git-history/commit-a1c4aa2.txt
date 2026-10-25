@@ -1,0 +1,19 @@
+a1c4aa2 feat: add DDR3 dual-frame live HDMI firmware and board feedback
+ DDR3_LIVE_HDMI_2026-10-08.md                       | 119 ++++++++++++++++++++
+ .../hdmi_scene.png                                 | Bin 0 -> 1418986 bytes
+ .../verification.md                                |  17 +++
+ rtl/ddr3_live/live_capture.v                       |  52 +++++++++
+ rtl/ddr3_live/live_ddr_engine.v                    | 109 +++++++++++++++++++
+ rtl/ddr3_live/live_video.v                         |  23 ++++
+ rtl/ddr3_live/top_ddr3_live_hdmi.v                 |  91 ++++++++++++++++
+ scripts/build_ddr3_live_hdmi.py                    |  91 ++++++++++++++++
+ scripts/build_ddr3_live_hdmi.tcl                   |  23 ++++
+ scripts/check_ddr3_live_hdmi.py                    |  45 ++++++++
+ scripts/package_ddr3_live_hdmi.py                  |  50 +++++++++
+ scripts/test_ddr3_live_hdmi.sh                     |  17 +++
+ tb/ddr3_live_bank_guard_tb.v                       |  19 ++++
+ tb/ddr3_live_capture_fault_tb.v                    |  41 +++++++
+ tb/ddr3_live_control_tb.v                          | 107 ++++++++++++++++++
+ tb/ddr3_live_pipeline_tb.v                         | 120 +++++++++++++++++++++
+ tb/ddr3_live_video_fault_tb.v                      |  22 ++++
+ 17 files changed, 946 insertions(+)

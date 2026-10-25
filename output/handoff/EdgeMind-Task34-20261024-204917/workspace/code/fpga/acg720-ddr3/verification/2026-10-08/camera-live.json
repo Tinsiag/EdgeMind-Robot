@@ -1,0 +1,21 @@
+{
+  "user_code": "0x0000AF89",
+  "status_code": "0x70026020",
+  "sha256": "A718EFC364FEB9A6B47AD333686F0518D76A56DAD1955ABBA607262CAE790553",
+  "leds": "D0-D5 on, D6 off, D7 blinking",
+  "user_confirmed": true,
+  "source": "OV5640 live scene, internal color bars disabled with verified register readback",
+  "frame_pixels": 384000,
+  "frame_bytes": 768000,
+  "camera_register_readback": true,
+  "frame_geometry_verified": true,
+  "ddr_roundtrip_crc_match": true,
+  "crc_value_retrieved": false,
+  "single_frame_test": true,
+  "continuous_video_verified": false,
+  "hdmi_verified": false,
+  "programming_target": "FPGA SRAM",
+  "configuration_flash_written": false,
+  "power_cycle_persistence": false,
+  "timing_signed_off": false
+}

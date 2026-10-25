@@ -93,17 +93,21 @@ module a741_top(
     wire imu_int=1'b0,lidar_rx=1'b1;
     wire imu_sda,imu_scl,tof_sda,tof_scl,tof_xshut;
 `endif
-    wire serial_clk,pixel_clk,video_lock,video_n;
-    A741_Video_PLL video_pll(.clkin(clk),.clkout0(),.clkout1(serial_clk),
+    wire serial_clk,pixel_clk,hdmi_reset_clk,video_lock,video_n;
+    A741_Video_PLL video_pll(.clkin(clk),.clkout0(hdmi_reset_clk),.clkout1(serial_clk),
         .lock(video_lock),.mdclk(clk),.reset(!stop_n));
     CLKDIV pixel_divider(.HCLKIN(serial_clk),.RESETN(video_lock),.CLKOUT(pixel_clk),.CALIB(1'b1));
     defparam pixel_divider.DIV_MODE="5";
     assign video_n=global_n && video_lock;
     wire memory_clk,ddr_lock,pll_stop,ui_clk,ui_rst,calibrated;
+    // IPUG281 4.4.3: release the IP reset synchronously to its reference clk.
+    // Keep PLL reset independent of LOCK so startup cannot depend on itself.
+    wire ddr_control_n;
+    reset_sync ddr_reset(.clk(clk),.async_n(stop_n),.rst_n(ddr_control_n));
     wire [7:0] mdrp_data,mdrp_read;wire [1:0] mdrp_op;wire mdrp_inc;
     reg [15:0] ddr_lock_sync;reg pll_stop_d,mdrp_write;
-    always @(posedge clk or negedge stop_n)
-        if(!stop_n) begin ddr_lock_sync<=0;pll_stop_d<=0;mdrp_write<=0;end
+    always @(posedge clk or negedge ddr_control_n)
+        if(!ddr_control_n) begin ddr_lock_sync<=0;pll_stop_d<=0;mdrp_write<=0;end
         else begin
             ddr_lock_sync<={ddr_lock_sync[14:0],ddr_lock};
             pll_stop_d<=pll_stop;mdrp_write<=ddr_lock_sync[15] && (pll_stop_d!=pll_stop);
@@ -111,11 +115,11 @@ module a741_top(
     ddr_pll memory_pll(.clkin(clk),.clkout0(),.clkout1(),.clkout2(memory_clk),.lock(ddr_lock),
         .mdopc(mdrp_op),.mdainc(mdrp_inc),.mdwdi(mdrp_data),.mdrdo(mdrp_read),
         .pll_init_bypass(ddr_lock_sync[15]),.mdclk(clk),.reset(!stop_n));
-    pll_mDRP_intf mdrp(.clk(clk),.rst_n(stop_n),.pll_lock(ddr_lock_sync[15]),.wr(mdrp_write),
+    pll_mDRP_intf mdrp(.clk(clk),.rst_n(ddr_control_n),.pll_lock(ddr_lock_sync[15]),.wr(mdrp_write),
         .mdrp_inc(mdrp_inc),.mdrp_op(mdrp_op),.mdrp_wdata(mdrp_data),.mdrp_rdata(mdrp_read));
     wire [27:0] app_addr;wire [2:0] app_cmd;wire app_en,app_rdy;
     wire [127:0] app_wdata,app_rdata;wire app_wen,app_wend,app_wrdy,app_rvalid;
-    DDR3_Memory_Interface_Top memory(.clk(clk),.memory_clk(memory_clk),.pll_lock(ddr_lock),.rst_n(stop_n),
+    DDR3_Memory_Interface_Top memory(.clk(clk),.memory_clk(memory_clk),.pll_lock(ddr_lock),.rst_n(ddr_control_n),
         .pll_stop(pll_stop),.cmd_ready(app_rdy),.cmd(app_cmd),.cmd_en(app_en),.addr(app_addr),
         .wr_data_rdy(app_wrdy),.wr_data(app_wdata),.wr_data_en(app_wen),.wr_data_end(app_wend),.wr_data_mask(16'd0),
         .rd_data(app_rdata),.rd_data_valid(app_rvalid),.rd_data_end(),
@@ -139,7 +143,7 @@ module a741_top(
         .app_rd_data(app_rdata),.app_rd_valid(app_rvalid),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),
         .rgb(rgb),.de(de),.hsync(hs),.vsync(vs),.video_data(vd),.video_valid(vv),.video_last(vl),.video_length(vlen),.video_ready(vr),
         .frame_available(frame_ready),.camera_error(camera_bad),.ddr_error(ddr_bad),.overflow(overflow),.frames(frames));
-    a741_hdmi hdmi(.pixel_clk(pixel_clk),.serial_clk(serial_clk),.rst_n(video_n),.rgb(rgb),
+    a741_hdmi hdmi(.pixel_clk(pixel_clk),.serial_clk(serial_clk),.reset_clk(hdmi_reset_clk),.rst_n(video_n),.rgb(rgb),
         .hsync(hs),.vsync(vs),.de(de),.tmds_clk_p(tmds_clk_p),.tmds_clk_n(tmds_clk_n),
         .tmds_data_p(tmds_data_p),.tmds_data_n(tmds_data_n));
     (* ASYNC_REG="TRUE" *) reg [1:0] ddr_ready_sync;

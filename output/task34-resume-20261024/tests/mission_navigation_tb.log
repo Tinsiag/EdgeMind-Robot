@@ -1,0 +1,14 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+trace integrated room map ready
+trace integrated room localized
+trace core CPU nav command=54 progress=00000300
+trace core CPU nav command=55 progress=00020300
+trace core CPU nav command=54 progress=00010301
+trace core CPU nav command=55 progress=00020301
+trace core CPU nav command=54 progress=00010302
+trace core CPU nav command=55 progress=00020302
+PASS real core RV32I to room-localized A*/tracker, three nearby waypoints, expired host TTL, active map rejection and concurrent camera/DDR/HDMI pixels/Ethernet/TFT
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/mission_navigation_tb.v:145: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 13ms; walltime 2.775 s; speed 4.759 ms/s
+- Verilator: cpu 2.760 s on 1 threads; alloced 123 MB

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GOWIN Semiconductor Corp.</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="GOWIN Semiconductor Corp." />
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="GOWIN Semiconductor Corp., FPGA" />
+<meta name="viewport" content="width=device-width" />
+	<link rel="canonical" href="https://www.gowinsemi.com/en/document/main/?kwd=DDR3" /> 
+		<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="apple-touch-icon" href="img/iphone-icon.png" />
+	<link rel="apple-touch-icon-precomposed" href="img/iphone-icon.png" />
+	<link rel="stylesheet" type="text/css" href="css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="css/editor.css" />
+	<link rel="stylesheet" type="text/css" href="css/colorbox.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/document/main?l=en" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/colorbox.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.ellipsis.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script> 
+	<script type="text/javascript" src="js/validator.class.js"></script>
+	<script type="text/javascript" src="js/jquery.table.js"></script>
+	<script type="text/javascript" src="js/lang.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+	<!--[if lte IE 9]>
+	<script type="text/javascript" src="js/html5izer_placeholder.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]>
+	<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<script type="text/javascript">
+	$(document).ready(function() {
+		top.$(window).resize(function() {
+			var documents = $('.documents');
+			top.$('#document_iframe').css('height', documents.height());
+			var table = documents.find('table');
+			if(top.$('#content').hasClass('mobile')) {
+				table.find('.input_checkbox').addClass('mobile');
+							}
+			else {
+				table.find('.input_checkbox').removeClass('mobile');
+				table.not(".inbox").css('width', '100%');
+			}
+		}).resize();
+		
+		$('body').css('min-width', 396);
+		
+		$('#select_all').click(function(e) {
+			e.preventDefault();
+			if($('.inbox').css('display') != 'none') {
+				$(".input_checkbox").each(function() {
+					if(!$(this).hasClass('checked')) {
+						$(this).trigger('click');
+					}
+				});
+			}
+			else {
+				$(".inbox_responsive > .input_checkbox").each(function() {
+					if(!$(this).hasClass('checked')) {
+						$(this).trigger('click');
+					}
+				});
+			}
+		});
+			
+		$('#deselect_all').click(function(e) {
+			e.preventDefault();
+			$(".input_checkbox").each(function() {
+				if($(this).hasClass('checked')) {
+					$(this).trigger('click');
+				}
+			});
+		});
+		
+						$('.download_selected, td > a[data-click="yes"]').click(function(e) {
+					e.preventDefault();
+					top.$.colorbox({
+							html:'<section id="colorbox_content"><div class="login-first">Please login to download the document.</div></section>',
+							innerWidth: '100%',
+							maxWidth: 500,
+							overlayClose: false
+						});
+				});
+					
+				
+		var form = 'form[name="download-form"]';
+		$(form).validate({
+			autoScroll: false,
+			setting: [
+				[ 'document', {
+					method: [
+						[ 'selone_chk' ]
+					]
+				} ]
+			]
+		});
+	});
+</script>
+		<div class="no-doc">No Document Found</div>

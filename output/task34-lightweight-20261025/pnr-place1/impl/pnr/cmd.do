@@ -1,0 +1,20 @@
+-d C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\pnr-place1\impl\gwsynthesis\a741.vg
+-p GW5AT-60B-PBGA484A-1
+-pn GW5AT-LV60PG484AC1/I0
+-cst C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\platform-tft480\a741.cst
+-cfg C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\task34-lightweight-20261025\pnr-place1\impl\pnr\device.cfg
+-sdc C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\platform-tft480\a741.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 1
+-route_option 2
+-retiming_resource none
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000
+-enable_dsrm 0

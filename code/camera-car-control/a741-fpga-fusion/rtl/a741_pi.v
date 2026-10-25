@@ -1,15 +1,16 @@
 `timescale 1ns/1ps
 `default_nettype none
 // Every speed and PWM ramp step is gated by the 100 Hz update, not clk.
-module a741_pi(
+module a741_pi #(parameter TARGET_LIMIT_ENABLED=0)(
     input wire clk,rst_n,tick,enable,
     input wire signed [31:0] target,measured,
+    input wire [9:0] target_limit,
     input wire [15:0] speed_step,pwm_step,limit,
     output reg signed [31:0] applied,command
 );
     localparam IDLE=0,PREPARE=1,RAMP=2,ERROR=3,MAGNITUDE=4,QUOTIENT=5,
         ADD_I=6,CLAMP_I=7,DESIRED=8,CLAMP=9,POLARITY=10,PWM_DIFF=11,
-        PWM_RAMP=12,FINAL_CAP=13,COMMIT=14;
+        PWM_RAMP=12,FINAL_CAP=13,COMMIT=14,LIMIT_TARGET=15;
     reg [3:0] state;
     reg signed [31:0] target_q,measured_q,next_applied,applied_up,applied_down;
     reg signed [32:0] target_difference,error;
@@ -19,6 +20,7 @@ module a741_pi(
     reg signed [33:0] desired_raw;
     reg signed [10:0] integral,next_i,cap,negative_cap,desired_capped,desired_polarity,final_command;
     reg signed [16:0] ss,negative_ss;
+    reg signed [10:0] target_cap;
     reg signed [11:0] ps,negative_ps,command_up,command_down,pwm_difference,desired_step;
     reg unwind,write_integral;
     wire [9:0] cap_input=limit>512 ? 10'd512:limit[9:0];
@@ -32,14 +34,21 @@ module a741_pi(
             error_magnitude<=0;integral_delta<=0;integral_sum<=0;desired_raw<=0;next_i<=0;
             cap<=0;negative_cap<=0;desired_capped<=0;desired_polarity<=0;final_command<=0;
             ss<=0;negative_ss<=0;ps<=0;negative_ps<=0;command_up<=0;command_down<=0;
-            pwm_difference<=0;desired_step<=0;unwind<=0;write_integral<=0;
+            pwm_difference<=0;desired_step<=0;unwind<=0;write_integral<=0;target_cap<=0;
         end else if(!enable) begin
             applied<=0;command<=0;integral<=0;state<=IDLE;
         end else case(state)
             IDLE: if(tick) begin
                 target_q<=target;measured_q<=measured;cap<=$signed({1'b0,cap_input});
                 negative_cap<=-$signed({1'b0,cap_input});ss<=$signed(ss_input);negative_ss<=-$signed(ss_input);
-                ps<=$signed(ps_input);negative_ps<=-$signed(ps_input);state<=PREPARE;
+                ps<=$signed(ps_input);negative_ps<=-$signed(ps_input);
+                target_cap<=$signed({1'b0,target_limit});state<=TARGET_LIMIT_ENABLED!=0 ? LIMIT_TARGET:PREPARE;
+            end
+            LIMIT_TARGET:begin
+                // Clamp the raw target and cap sampled together on this tick.
+                // No previous-cycle target cache can reintroduce a drive pulse.
+                target_q<=target_q>target_cap ? target_cap:target_q< -target_cap ? -target_cap:target_q;
+                state<=PREPARE;
             end
             PREPARE: begin
                 // Capture this tick before selecting ramps; no arithmetic chain spans stages.

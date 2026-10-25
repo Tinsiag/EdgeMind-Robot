@@ -1,0 +1,256 @@
+{
+  "report": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-fusion-tft480-synth\\impl\\gwsynthesis\\a741_syn.rpt.html",
+  "synthesis_estimate_only": true,
+  "clocks": [
+    {
+      "clock": "clk",
+      "requested_mhz": 50.0,
+      "estimated_fmax_mhz": 30.733,
+      "levels": 42
+    },
+    {
+      "clock": "rgmii_rx_clk",
+      "requested_mhz": 100.0,
+      "estimated_fmax_mhz": 143.973,
+      "levels": 9
+    },
+    {
+      "clock": "camera_pclk",
+      "requested_mhz": 100.0,
+      "estimated_fmax_mhz": 57.559,
+      "levels": 22
+    },
+    {
+      "clock": "clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk",
+      "requested_mhz": 125.0,
+      "estimated_fmax_mhz": 126.155,
+      "levels": 10
+    },
+    {
+      "clock": "video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk",
+      "requested_mhz": 165.0,
+      "estimated_fmax_mhz": 1352.952,
+      "levels": 1
+    },
+    {
+      "clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk",
+      "requested_mhz": 400.0,
+      "estimated_fmax_mhz": 1293.494,
+      "levels": 1
+    },
+    {
+      "clock": "pixel_divider/CLKOUT.default_gen_clk",
+      "requested_mhz": 33.0,
+      "estimated_fmax_mhz": 43.966,
+      "levels": 27
+    },
+    {
+      "clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk",
+      "requested_mhz": 100.0,
+      "estimated_fmax_mhz": 61.596,
+      "levels": 21
+    }
+  ],
+  "paths": [
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_31_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -12.538,
+      "levels": 42
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_29_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -12.529,
+      "levels": 42
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_30_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -12.529,
+      "levels": 42
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_28_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -11.727,
+      "levels": 41
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_27_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -10.925,
+      "levels": 40
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_26_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -10.123,
+      "levels": 39
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_25_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -9.321,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/tracker/left_1_s48",
+      "destination": "core/fusion_enabled.autonomy/tracker/numerator_24_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.519,
+      "levels": 37
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_5_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.33,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_10_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_11_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_12_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_13_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_14_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_15_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_16_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_17_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_18_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_19_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_20_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_21_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_22_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_23_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_24_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    },
+    {
+      "source": "core/fusion_enabled.autonomy/pose/y_q_25_s0",
+      "destination": "core/fusion_enabled.autonomy/tracker/right_target_25_s0",
+      "launch": "clk[R]",
+      "latch": "clk[R]",
+      "slack_ns": -8.191,
+      "levels": 38
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Preserve the exact bytes covered by the recorded source/artifact hashes.
+rtl/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+constraints/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.gprj -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.tcl -text whitespace=trailing-space,space-before-tab,cr-at-eol
+release/** -text -whitespace
+release/**/*.fs binary

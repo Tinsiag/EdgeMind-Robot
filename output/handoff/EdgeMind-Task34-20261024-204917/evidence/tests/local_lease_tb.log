@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS motor-stage local lease, normal release without false timeout, release priority over ARM, unconditional STOP and local lease loss shutdown
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/local_lease_tb.v:46: $finish called at 59740000 (1ps)

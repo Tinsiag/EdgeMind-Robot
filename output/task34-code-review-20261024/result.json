@@ -1,0 +1,22 @@
+{
+  "rtl_passed": 50,
+  "host_passed": 61,
+  "test_record_sha256": "e0a1b7ad753de8fa9c7023e00fa5c93536ba1884b863fe37a2d528818af568f9",
+  "hardware_programmed": false,
+  "synthesis": {
+    "before_lut": 41758,
+    "after_lut": 40491,
+    "before_register": 30267,
+    "after_register": 28214,
+    "before_bsram": 80,
+    "after_bsram": 81,
+    "sys_estimate_mhz": 50.153
+  },
+  "pnr": "running",
+  "timing_signed_off": false,
+  "new_bitstream_generated": false,
+  "cold_boot_verified": false,
+  "resumed_local": "2026-10-25T01:01:55.296228+08:00",
+  "requested_programming_mode": "SRAM temporary download, per latest user instruction; not Flash persistence",
+  "previous_pnr_evidence": "pnr-stopped-by-user-20261025-0051"
+}

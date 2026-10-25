@@ -1,6 +1,7 @@
 """Run isolated A741 RTL regression and host tests without board I/O."""
 from pathlib import Path
 import argparse
+import os
 import json
 import subprocess
 import sys
@@ -56,8 +57,12 @@ def main():
         command = [str(bins / "iverilog.exe"), "-g2012", "-Wall", "-s", bench.stem,
                    "-o", str(product), *map(str, sources()), str(bench)]
         if bench.stem == "hdmi_tb":
-            command += [str(ROOT / ".local/platform/dvi_encoder.v"),
-                        "C:/Gowin/Gowin_V1.9.12.04_x64/IDE/simlib/gw5a/prim_sim.v"]
+            encoder = ROOT / ".local/platform-motion-lidar/dvi_encoder.v"
+            if not encoder.is_file():
+                encoder = ROOT / ".local/platform/dvi_encoder.v"
+            command += [str(encoder),
+                        str(Path(os.environ.get("GOWIN_HOME", "C:/Gowin/Gowin_V1.9.12.04_x64")) /
+                            "IDE/simlib/gw5a/prim_sim.v")]
         compile_result = subprocess.run(command, capture_output=True, text=True)
         if compile_result.returncode:
             raise RuntimeError(compile_result.stdout + compile_result.stderr)

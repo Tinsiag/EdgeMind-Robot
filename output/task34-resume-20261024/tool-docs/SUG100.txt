@@ -1,0 +1,3096 @@
+PAGE 1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Gowin Software 
+ User Guide 
+  
+ 
+SUG100-4.4.7E, 09/22/2026 
+ 
+ 
+ 
+
+PAGE 2
+ 
+ 
+Copyright © 2026 Guangdong Gowin Semiconductor Corporation. All Rights Reserved. 
+, GOWIN, and LittleBee are trademarks of Guangdong Gowin Semiconductor 
+Corporation and are registered in China, the U.S. Patent and Trademark Office, and other 
+countries. All other words and logos identified as trademarks or service marks are the 
+property of their respective holders. No part of this document may be reproduced or 
+transmitted in any form or by any means, electronic, mechanical, photocopying, recording 
+or otherwise, without the prior written consent of GOWINSEMI. 
+Disclaimer 
+GOWINSEMI assumes no liability and provides no warranty (either expressed or implied) 
+and is not responsible for any damage incurred to your hardware, software, data, or 
+property resulting from usage of the materials or intellectual property except as outlined in 
+the GOWINSEMI Terms and Conditions of Sale. GOWINSEMI may make changes to this 
+document at any time without prior notice. Anyone relying on this documentation should 
+contact GOWINSEMI for the current documentation and errata. 
+
+PAGE 3
+ 
+ 
+Revision History 
+Date Version Description 
+06/17/2021 2.5E  Screenshots and their descriptions updated.  Synplify Pro removed. 
+11/02/2021 2.6E 
+ SSPI and MSPI dual-purpose pins updated. 
+ The descriptions of -ireg_in_iob/-oreg_in_iob/-ioreg_in_iob updated. 
+ MODE dual-purpose configuration removed. 
+ Place & Route BitStream: Power On Reset added. 
+ The description of simulation files added. 
+05/20/2022 2.7E The description of Loading Rate updated. 
+07/28/2022 2.8E  Route Maxfan option added in Place & Route.  The use of Library added. 
+10/28/2022 2.9E 
+ power_on_reset name updated. 
+ Turn Off Bandgap option added in Bitstream. 
+ DSim added. 
+ Chapter 8 Appendix added. 
+12/16/2022 3.0E 
+ Device Version information added. 
+ TclPre added in Synthesize. 
+ The value Internal of Background Programming modified to 
+GoConfig/UserLogic. 
+ Generate Post-PnR VHDL Simulation Model File added in Place & 
+Route. 
+03/31/2023 3.1E 
+ The value GoConfig/UserLogic of Background Programming divided 
+into GoConfig and UserLogic, and the related descriptions updated. 
+ FloorPlanner and Timing Constraints Editor added to the toolbar. 
+ The Tcl command -clock_route_order added. 
+04/20/2023 3.2E  Place & Route and Bitstream configurations updated.  Multi Boot and MSPI JUMP added in Bitstream configuration. 
+05/25/2023 3.3E 
+ Enable External Master Config Clock and Enable CMSER added in 
+Bitstream configuration. 
+ Global configuration added to set the VCCX value. 
+06/30/2023 3.4E The default value of Ram R/W Check option in Synthesis Configuration updated to unchecked. 
+08/18/2023 3.5E 
+ For GW5A-25-MBGA121N, Use SSPI as regular IO option is checked 
+and cannot be modified. 
+ For GW5AT-138/GW5AST-138/GW5A-138 devices, the default values 
+of Place input register to IOB, Place output register to IOB and Place 
+inout register to IOB are modified to False. 
+ For GW5AT-138/GW5AST-138/GW5A-138 devices, Replicate 
+Resources option added to Place & Route configuration.  
+09/28/2023 3.6E 
+ The Loading Rate values of GW5A(S)(T)-138 and GW5A(R)-25 
+updated. 
+ The configuration option CMSER updated. 
+ The MSPI JUMP option under the configuration option Feature 
+sysControl updated. 
+10/31/2023 3.7E  Figure 4-17 File Properties Dialog Box updated.  Tcl commands create_project and import_files added. 
+PAGE 4
+ 
+ 
+Date Version Description 
+11/30/2023 3.8E 
+ Program Device updated to Programmer. 
+ A value of 2 added in Place option for Place & Route configuration. 
+ Loading Rate for LittleBee and Arora devices updated. 
+ Tcl command run close added. 
+ Output Base Name option added. 
+02/02/2024 3.9E 
+ GW2AN-9X and GW2AN-18X Loading Rate updated. 
+ "Enable CMSER" updated to "Enable SEU Handler". 
+ "Constraints" option added for configuring Frequency. 
+03/29/2024 4.0E  GW5AT-60 Loading Rate values added.  Configuration option "Enable CTP" for Bitstream added. 
+06/28/2024 4.1E 
+ Tcl command open_project added. 
+ Configuration option "VCC" added in Place & Route. 
+ Virtual input/output debugging tool added. 
+08/09/2024 4.1.1E 
+ The configuration option Place Option in Place & Route now includes a 
+new value of 3. 
+ Descriptions of the open_project command updated. 
+10/25/2024 4.2E 
+ The configuration option Place Option in Place & Route now includes a 
+new value of 4. 
+ A new value "GoConfig Mode1" added to the Background 
+Programming configuration option for the devices Version C 
+GW1N-2/GW1NR-2/GW1N-1P5. 
+ A new configuration option "Incremental PnR" added to Place & Route. 
+12/31/2024 4.3E  A search function added to the Hierarchy window.  GoBert eye diagram analysis tool supported. 
+03/07/2025 4.4E  The SPI Flash address access mode "Normal" updated to "Single" in BitStream configuration option. 
+04/30/2025 4.4.1E  The interface dark mode added.   The search function added in the device selection window. 
+06/27/2025 4.4.2E A new configuration option and Tcl command added to specify the CSR file. 
+08/29/2025 4.4.3E 
+ The right-click menu options for modules in the Hierarchy window 
+updated in section 3.6.1 Right-click Menu. 
+ A new configuration option "SerDes Retiming" added under Place & 
+Route in section 4.4.3 Synthesize. 
+ Tcl command chapter removed. 
+12/31/2025 4.4.4E 
+ Updated sections 7.1 Functional Simulation Files and 7.2 Timing 
+Simulation Files. 
+ Updated the "Print BSRAM Initial Value" function for 
+GW5A(S)(T)-138/GW5AT-75 devices. 
+ Updated the batch data filling function of the Memory Initialization File 
+Editor and the User Flash Initialization File Editor. 
+ Added the "Co-Place IO Registers" configuration option to "Place & 
+Route". 
+03/09/2026 4.4.5E 
+ Updated the description in Section 7.1 Functional Simulation Files, 
+adding prim_syn.vhd and prim_syn_a.vhd. 
+ Added Table 4-2 Conditions for IBIS Generation Supported by Each 
+Device in Section 4.3.3 Edit Project Configuration. 
+ Added support for GW3A-20 devices. 
+PAGE 5
+ 
+ 
+Date Version Description 
+06/17/2026 4.4.6E 
+ Added file encryption description in Section 4.3.2 Edit a Project File. 
+ Updated "Background Programming" settings. 
+ Updated the list of devices supporting IBIS files. 
+ Updated the description of "Synthesize" configuration options. 
+09/22/2026 4.4.7E 
+ Removed the DSim simulation interface for simulation verification on 
+the cloud platform. 
+ Added the "Retiming Resource" option to "Place & Route". 
+ Added the "Tie Unused Routing Resources to VCC" option to "Place & 
+Route". 
+PAGE 6
+ Contents 
+ 
+SUG100-4.4.7E i 
+ 
+Contents 
+Contents ............................................................................................................... i 
+List of Figures .................................................................................................... iv 
+List of Tables ..................................................................................................... vii 
+1 About This Guide .......................................................................................... 1 
+1.1 Purpose ............................................................................................................................. 1 
+1.2 Related Documents ........................................................................................................... 1 
+1.3 Terminology and Abbreviations ......................................................................................... 2 
+1.4 Support and Feedback ...................................................................................................... 2 
+2 Overview ........................................................................................................ 3 
+2.1 Introduction ........................................................................................................................ 3 
+2.2 Supported Devices ............................................................................................................ 4 
+2.3 Install and Start .................................................................................................................. 4 
+3 Gowin Software GUI ...................................................................................... 6 
+3.1 Title Bar ............................................................................................................................. 7 
+3.2 Menu Bar ........................................................................................................................... 7 
+3.2.1 File Bar ........................................................................................................................... 7 
+3.2.2 Edit Bar .......................................................................................................................... 7 
+3.2.3 Project Bar ..................................................................................................................... 8 
+3.2.4 Tools Bar ........................................................................................................................ 8 
+3.2.5 Window Bar .................................................................................................................... 9 
+3.2.6 Help Bar ......................................................................................................................... 9 
+3.3 Tool Bar ............................................................................................................................. 9 
+3.4 Project Area (Design) ...................................................................................................... 10 
+3.5 Process Area (Process) ................................................................................................... 10 
+3.6 Hierarchy Area (Hierarchy) .............................................................................................. 10 
+3.6.1 Right-click Menu .......................................................................................................... 11 
+3.6.2 Resources Display ....................................................................................................... 12 
+3.6.3 Pack File ...................................................................................................................... 12 
+3.6.4 Search Function ........................................................................................................... 15 
+3.7 Source File Editing Area .................................................................................................. 15 
+PAGE 7
+ Contents 
+ 
+SUG100-4.4.7E ii 
+ 
+3.8 Information Output Area .................................................................................................. 16 
+4 Gowin Software Usage ............................................................................... 19 
+4.1 Create a New Project ...................................................................................................... 19 
+4.2 Open an Existing Project ................................................................................................. 21 
+4.3 Edit a Project ................................................................................................................... 22 
+4.3.1 Edit a Project Device.................................................................................................... 23 
+4.3.2 Edit a Project File ......................................................................................................... 24 
+4.3.3 Edit Project Configuration ............................................................................................ 31 
+4.4 Manage a Project ............................................................................................................ 53 
+4.4.1 Design Summary ......................................................................................................... 54 
+4.4.2 User Constraints .......................................................................................................... 54 
+4.4.3 Synthesize ................................................................................................................... 55 
+4.4.4 Place & Route .............................................................................................................. 56 
+4.4.5 Programmer ................................................................................................................. 57 
+4.5 Archive and Restore a Project ......................................................................................... 58 
+4.5.1 Archive a Project .......................................................................................................... 58 
+4.5.2 Restore Archived Project ............................................................................................. 59 
+4.6 Exit Software ................................................................................................................... 59 
+5 Tools Integrated in Gowin Software .......................................................... 61 
+5.1 Physical Constraints Editor ............................................................................................. 61 
+5.2 Timing Constraint Editor .................................................................................................. 63 
+5.3 IP Core Generator ........................................................................................................... 63 
+5.4 Gowin Analyzer Oscilloscope .......................................................................................... 65 
+5.5 Gowin Power Analyzer .................................................................................................... 66 
+5.6 Memory Initialization File Editor ...................................................................................... 67 
+5.7 User Flash Initialization File Editor .................................................................................. 70 
+5.7.1 Bin File ......................................................................................................................... 70 
+5.7.2 Hex File ........................................................................................................................ 71 
+5.8 Schematic Viewer ............................................................................................................ 73 
+5.9 Virtual Input/Output Debugging Tool ............................................................................... 74 
+5.10 Eye Diagram Analysis Tool GoBert ................................................................................. 75 
+6 Output Files ................................................................................................. 77 
+6.1 Synthesis Report ............................................................................................................. 77 
+6.2 Place & Route Report ...................................................................................................... 78 
+6.3 Ports and Pins Report ..................................................................................................... 79 
+6.4 Timing Report .................................................................................................................. 80 
+6.5 Power Analysis Report .................................................................................................... 80 
+7 Simulation Files ........................................................................................... 82 
+PAGE 8
+ Contents 
+ 
+SUG100-4.4.7E iii 
+ 
+7.1 Functional Simulation Files ............................................................................................. 82 
+7.2 Timing Simulation Files ................................................................................................... 83 
+8 Appendix ...................................................................................................... 85 
+8.1 File Description ................................................................................................................ 85 
+8.2 File and Folder Naming Rules ......................................................................................... 87 
+8.3 Security Declaration ........................................................................................................ 87 
+ 
+PAGE 9
+ List of Figures 
+ 
+SUG100-4.4.7E iv 
+ 
+List of Figures 
+Figure 3-1 GUI ................................................................................................................................... 6 
+Figure 3-2 Right-click Menu of Hierarchy .......................................................................................... 12 
+Figure 3-3 Resources Display in Hierarchy View .............................................................................. 12 
+Figure 3-4 Pack User Design Dialog Box .......................................................................................... 13 
+Figure 3-5 Output Information in Pack User Design View ................................................................. 14 
+Figure 3-6 Error Prompt ..................................................................................................................... 14 
+Figure 3-7 Search Function ............................................................................................................... 15 
+Figure 3-8 Find & Replace Dialog Box .............................................................................................. 16 
+Figure 3-9 Search Result View .......................................................................................................... 16 
+Figure 3-10 Information Output Area ................................................................................................. 17 
+Figure 3-11 Tcl Commit Window ........................................................................................................ 18 
+Figure 4-1 Create a New Project ....................................................................................................... 19 
+Figure 4-2 Project Wizard .................................................................................................................. 20 
+Figure 4-3 Select Device .................................................................................................................... 21 
+Figure 4-4 Project Information Summary ........................................................................................... 21 
+Figure 4-5 Open an Existing Project .................................................................................................. 22 
+Figure 4-6 Project Design Area .......................................................................................................... 23 
+Figure 4-7 Project Device Info. .......................................................................................................... 24 
+Figure 4-8 Data Code Display ............................................................................................................ 24 
+Figure 4-9 Create a New File Dialog Box .......................................................................................... 25 
+Figure 4-10 Create Verilog File Dialog Box ....................................................................................... 25 
+Figure 4-11 New GPA Config File Dialog Box .................................................................................... 26 
+Figure 4-12 GPA Config File Window ................................................................................................ 26 
+Figure 4-13 Right-click in Design View .............................................................................................. 27 
+Figure 4-14 Project Files Editing Options .......................................................................................... 27 
+Figure 4-15 External Editor ................................................................................................................ 28 
+Figure 4-16 Save Modified Files Dialog Box ...................................................................................... 28 
+Figure 4-17 File Properties Dialog Box .............................................................................................. 29 
+Figure 4-18 Project File Encryption Dialog ........................................................................................ 30 
+Figure 4-19 Project Configuration Dialog Box ................................................................................... 31 
+Figure 4-20 General Configuration Option ......................................................................................... 32 
+Figure 4-21 Frequency(MHz) Configuration Option ........................................................................... 32 
+PAGE 10
+ List of Figures 
+ 
+SUG100-4.4.7E v 
+ 
+Figure 4-22 GowinSynthesis General Configuration Option .............................................................. 33 
+Figure 4-23 GowinSynthesis Optimization Options Settings ............................................................. 34 
+Figure 4-24 Place & Route Configuration .......................................................................................... 36 
+Figure 4-25 Voltage Configuration ..................................................................................................... 38 
+Figure 4-26 Place Configuration ........................................................................................................ 38 
+Figure 4-27 Route Configuration........................................................................................................ 40 
+Figure 4-28 Dual-Purpose Pin Configuration ..................................................................................... 41 
+Figure 4-29 Unused Pin Configuration .............................................................................................. 42 
+Figure 4-30 Incremental PnR Configuration ...................................................................................... 42 
+Figure 4-31 BitStream General Configuration ................................................................................... 44 
+Figure 4-32 sysControl Configuration ................................................................................................ 46 
+Figure 4-33 Set Background Programming to I2C ............................................................................. 49 
+Figure 4-34 HOTBOOT Option .......................................................................................................... 49 
+Figure 4-35 Frequency Divider Option ............................................................................................... 50 
+Figure 4-36 Enable SEU Handler Option ........................................................................................... 51 
+Figure 4-37 Enable Error Injection Option ......................................................................................... 51 
+Figure 4-38 Feature sysControl Configuration for LittleBee/Arora I/Arora II  Devices  ..................... 52 
+Figure 4-39 Feature sysControl Configuration for Arora V and Arora III Devices .............................. 52 
+Figure 4-40 Project Process View ...................................................................................................... 54 
+Figure 4-41 Project Summary ............................................................................................................ 54 
+Figure 4-42 Right-click Synthesize .................................................................................................... 56 
+Figure 4-43 Gowin Programmer ........................................................................................................ 57 
+Figure 4-44 Archive Project Dialog Box ............................................................................................. 59 
+Figure 4-45 Restore Archived Project Dialog Box ............................................................................. 59 
+Figure 5-1 Chip Array View ................................................................................................................ 62 
+Figure 5-2 Package View ................................................................................................................... 62 
+Figure 5-3 Create Timing Constraints ................................................................................................ 63 
+Figure 5-4 IP Core Generator ............................................................................................................ 64 
+Figure 5-5 GAO Config File View ....................................................................................................... 65 
+Figure 5-6 GAO View ......................................................................................................................... 66 
+Figure 5-7 GPA Config File View ....................................................................................................... 67 
+Figure 5-8 New Dialog Box ................................................................................................................ 68 
+Figure 5-9 New File Dialog Box ......................................................................................................... 69 
+Figure 5-10 Initialization File Configuration View ............................................................................... 69 
+Figure 5-11 Column Setting ............................................................................................................... 69 
+Figure 5-12 Batch Setting .................................................................................................................. 69 
+Figure 5-13 Batch Filling of Repeated Sequence or Incrementing/Decrementing Data  .................... 70 
+Figure 5-14 New Dialog Box .............................................................................................................. 71 
+Figure 5-15 New File Dialog Box ....................................................................................................... 72 
+Figure 5-16 Initialization File Configuration View ............................................................................... 72 
+PAGE 11
+ List of Figures 
+ 
+SUG100-4.4.7E vi 
+ 
+Figure 5-17 Batch Setting .................................................................................................................. 73 
+Figure 5-18 RTL Design Viewer ......................................................................................................... 73 
+Figure 5-19 Post-Synthesis Netlist Viewer......................................................................................... 74 
+Figure 5-20 GVIO Configuration File Window ................................................................................... 75 
+Figure 5-21 GoBert Window .............................................................................................................. 76 
+Figure 6-1 GowinSynthesis Report .................................................................................................... 77 
+Figure 6-2 Place & Route Report ....................................................................................................... 78 
+Figure 6-3 Ports & Pins Report .......................................................................................................... 79 
+Figure 6-4 Timing Report ................................................................................................................... 80 
+Figure 6-5 Power Analysis Report ..................................................................................................... 81 
+PAGE 12
+ List of Tables 
+ 
+SUG100-4.4.7E vii 
+ 
+List of Tables 
+Table 1-1 Terminology and Abbreviations .......................................................................................... 2 
+Table 3-1 Common Warnings and Errors ........................................................................................... 17 
+Table 4-1 PnR Configuration Options ................................................................................................ 35 
+Table 4-2 Conditions for IBIS Generation Supported by Each Device .............................................. 36 
+Table 4-3 BitStream Configuration Options ....................................................................................... 43 
+Table 4-4 Loading Rate Values .......................................................................................................... 47 
+Table 4-5 Background Programming Value ....................................................................................... 49 
+Table 4-6 Multi Boot Sub-configurations ............................................................................................ 53 
+Table 4-7 MSPI JUMP Sub-configurations......................................................................................... 53 
+Table 7-1 Installation Directories of Primitive Simulation Library Files .............................................. 83 
+Table 8-1 Source Files ....................................................................................................................... 85 
+Table 8-2 Execution Files ................................................................................................................... 86 
+PAGE 13
+1 About This Guide  1.1 Purpose 
+ 
+SUG100-4.4.7E 1(87) 
+ 
+1 About This Guide 
+1.1 Purpose 
+This manual describes Gowin Software installation and operation, and 
+it aims to help you to be familiar with the using flow and improve design 
+efficiency. The software screenshots in this manual are based on 
+V1.9.12.04. As the software is subject to change without notice, some 
+information may not remain relevant and may need to be adjusted 
+according to the software that is in use. 
+1.2 Related Documents 
+The latest user guides are available on GOWINSEMI Website. You 
+can find the related documents at www.gowinsemi.com: 
+ SUG940, Gowin Design Timing Constraints Guide 
+ SUG1541, Gowin Software Physical Constraints User Guide 
+ SUG114, Gowin Analyzer Oscilloscope User Guide 
+ SUG282, Gowin Power Analyzer User Guide 
+ SUG502, Gowin Programmer User Guide 
+ UG285, Gowin BSRAM & SSRAM User Guide 
+ SUG283, Gowin Primitives User Guide 
+ UG286, Gowin Clock User Guide  
+ UG287, Gowin Digital Signal Processing (DSP) User Guide 
+ UG289, Gowin Programmable IO (GPIO) User Guide 
+ UG295, Gowin User Flash User Guide 
+ UG299, Arora V Series Analog to Digital Converter (ADC) User Guide 
+ UG300, Arora V BSRAM & SSRAM User Guide 
+ UG304, Arora Ⅴ Programmable IO (GPIO) User Guide 
+ UG305, Arora V Digital Signal Processing (DSP) User Guide 
+ UG306, Arora V Clock User Guide 
+ SUG1189, Gowin Virtual Input Output User Guide 
+PAGE 14
+1 About This Guide  1.3 Terminology and Abbreviations 
+ 
+SUG100-4.4.7E 2(87) 
+ 
+ SUG1198, Gowin GoBert User Guide 
+1.3 Terminology and Abbreviations 
+Table 1-1 shows the abbreviations and terminology used in this 
+manual. 
+Table 1-1 Terminology and Abbreviations 
+Terminology and Abbreviations Meaning 
+CRC Cyclic Redundancy Check 
+FloorPlanner Physical Constraints Editor 
+FPGA Field Programmable Gate Array 
+GAO Gowin Analyzer Oscilloscope 
+GowinSynthesis GowinSynthesis 
+GPA Gowin Power Analyzer 
+GVIO Gowin Virtual Input/Output 
+IP Core Intellectual Property Core 
+PCIe Peripheral Component Interconnect Express 
+PnR Place & Route 
+Schematic Viewer HDL Schematic Viewer 
+SEU Handler Single-Event Upsets Handler 
+Tcl Tool Command Language 
+1.4 Support and Feedback 
+Gowin Semiconductor provides customers with comprehensive 
+technical support. If you have any questions, comments, or suggestions, 
+please feel free to contact us directly by the following ways. 
+Website: www.gowinsemi.com 
+E-mail: support@gowinsemi.com 
+PAGE 15
+2 Overview  2.1 Introduction 
+ 
+SUG100-4.4.7E 3(87) 
+ 
+2 Overview  
+2.1 Introduction 
+Gowin design system is an integrated circuit design and 
+implementation tool specifically for GOWIN FPGA chips, and it has 
+superior performance and easy to use. Gowin design system provides a 
+comprehensive and optimized design for Gowin FPGA chips with the 
+low-power and low-cost architecture, and it integrates the flow from RTL 
+description to FPGA bitstream file generation, including design optimization, 
+automatic design, and graphical interaction, etc. 
+Functions 
+ The software system supports all functions of Gowin FPGA chips, 
+covering the complete design flow from the functional description of the 
+RTL circuit to the generation of FPGA bitstream file 
+ GowinSynthesis supports high-performance logic design and synthesis 
+ Supports automatic design and interactive graphical design in parallel 
+ Supports Centos6.8/7.0/7.3/7.5/8.2 (64 bits), Ubuntu18.04/20.04LTS, 
+Win7/8/10/11 (32 bits/64 bits), Win XP (32 bits) systems 
+ Supports VHDL, Verilog HDL and System Verilog languages 
+ Supports optimized architecture of Gowin products 
+ Supports original and high-performance algorithm PnR 
+ Precise timing analysis and timing report 
+ Clock analysis and control to ensure better timing performance 
+ Supports various timing and physical constraints 
+ Supports real-time monitoring of hardware circuit signals and storing 
+them, along with timing waveform diagrams display  
+ Resource sharing can improve chip utilization and reduce cost 
+Features  
+ Integrated design 
+- The design can be completed in stages or automatically as a 
+PAGE 16
+2 Overview  2.2 Supported Devices 
+ 
+SUG100-4.4.7E 4(87) 
+ 
+package 
+- Supports command line mode or GUI mode 
+- You can use scripted design, and design any single module flexibly 
+without affecting the integrated design throughout 
+ Can optimize design 
+- Netlist optimization 
+- Quick timing optimization analysis and design 
+- Resource analysis and optimization 
+ Hierarchy design and analysis 
+- Supports hierarchical netlist input and output 
+- Supports flattened netlist input and output 
+- Can hierarchically display, trace, and analyze netlist 
+ Flexible interactive graphic design 
+- Simple and clear user interface 
+- Displays projects, modules, tools and output 
+- Design constraint input, selection and update 
+- Fast timing analysis and report 
+- Visual design of key logic  
+2.2 Supported Devices 
+Gowin Software supports the LittleBee family and Arora family chips. 
+For the details of chip types, resources and packages, etc., you can visit 
+Gowin official website. 
+ LittleBee family  
+ Arora II products 
+ Arora III products  
+ Arora Ⅴ products 
+Note! 
+The supported devices may vary according to the software version in use. Please 
+refer to the software you use for more detailed device information. 
+2.3 Install and Start 
+The installation method in Windows system is the same; double-click 
+the Gowin Software installation package and install according to the 
+prompt. After installation, the shortcut will be created on the PC desktop by 
+default. The installation method in the Linux system is to decompress the 
+installation file. 
+You need to configure the license when you start Gowin Software for 
+the first time after installation. The software license is a format contract 
+PAGE 17
+2 Overview  2.3 Install and Start 
+ 
+SUG100-4.4.7E 5(87) 
+ 
+between the users and GOWINSEMI to define and limit the rights of users 
+and the obligations of GOWINSEMI. 
+Note! 
+The installation path of Gowin Software does not support paths containing Chinese. 
+For the details, see SUG501, Gowin Software Quick Installation Guide. 
+PAGE 18
+3 Gowin Software GUI  
+ 
+SUG100-4.4.7E 6(87) 
+ 
+3 Gowin Software GUI 
+Gowin Software GUI is as shown in Figure 3-1. It consists of the title 
+bar, menu bar, tool bar, project area (Design), process area (Process), 
+source file editing area, design hierarchy (Hierarchy), information output 
+area and Tcl command editing area. 
+Figure 3-1 GUI 
+ 
+
+PAGE 19
+3 Gowin Software GUI  3.1 Title Bar 
+ 
+SUG100-4.4.7E 7(87) 
+ 
+① Title Bar ② Menu Bar 
+③ Tool Bar ④ Project Area 
+⑤ Source File Editing Area ⑥ Process Area 
+⑦ Design Hierarchy Area  ⑧ Information Output Area 
+⑨ Tcl Command Editing Area  
+3.1 Title Bar 
+Title bar shows the name of Gowin Software and the name of the 
+currently opened file. 
+3.2 Menu Bar 
+The menu bar contains links to the tools and functionality that are 
+commonly used in projects, including the File, Edit, Project, Tools, Window, 
+and Help options. See the following for details. 
+3.2.1 File Bar 
+ Open Example Project…: Open an example project 
+ New… (Ctrl+N): Newly create  
+ Open… (Ctrl+O): Open an item 
+ Save ( Ctrl+S): Save the currently active item 
+ Save As…: Save the active item using a different file name 
+ Save All (Ctrl+Shift+S): Save all changed documents 
+ Close: Close an item 
+ Close All: Close all changed documents 
+ Close Project: Close current project 
+ Print Preview…: Print preview 
+ Print… (Ctrl+P): Print  
+ Recent Files: Show the files opened. You can click on the names of 
+these files to re-open. 
+ Recent Projects: Show the projects opened. You can click on the 
+names of these projects to re-open. 
+ Exit: Exit and close Gowin Software 
+3.2.2 Edit Bar 
+ Undo (Ctrl+Z): Undo your last operation 
+ Redo (Ctrl+Y): Redo your last operation 
+ Cut (Ctrl+X): Cut 
+ Copy (Ctrl+C): Copy 
+ Paste (Ctrl+V): Paste  
+ Select All (Ctrl+A): Select all 
+PAGE 20
+3 Gowin Software GUI  3.2 Menu Bar 
+ 
+SUG100-4.4.7E 8(87) 
+ 
+ Find & Replace (Ctrl+F): Find or replace key words 
+ Toggle Comment Selection (Ctrl+/): Add comments to the selected 
+ Increase Indent (Tab): Increase indent 
+ Decrease Indent (Shift+Tab): Decrease indent 
+ Macros 
+- Start Record: Click Start Record, and the editing operations 
+performed on editable files in the IDE will be recorded. 
+- Stop Recording: Stop recording 
+- Play Macro (Alt+R): Click Play Macro, and it will perform the 
+recorded operations on the editable files. 
+3.2.3 Project Bar 
+ Archive Project: Archive project 
+ Restore Archived Project: Restore archived project 
+ Set Device: Set the device information of current project 
+ Configuration: Open configuration window 
+ Design Summary: Show details of current project 
+3.2.4 Tools Bar 
+ Start Page: Include Recent Projects, Quick Start, Tools, and User 
+Manuals. 
+- Recent Projects: Shows the recently opened projects, and up to 10 
+projects will be kept. 
+- Quick Start: Include New Project…, Open Project…, and Open 
+Example Project… 
+- Tools: Include FloorPlanner, Timing Constraints Editor, and 
+Programmer. 
+- User Manuals: Manual for LittleBee, Manual for Arora, and Manual 
+for Arora V. 
+ Gowin Analyzer Oscilloscope: Gowin analyzer oscilloscope 
+ Schematic Viewer: HDL design schematic viewer 
+ IP Core Generator: IP core generator 
+ Programmer: Programmer 
+ FloorPlanner: Physical constraints editor 
+ Timing Constraints Editor: Timing constraints editor 
+ GoBert: SerDes analysis tool 
+ Options: Includes Environment, Text Editor, and External Editor. 
+- Environment: Used to set IDE parameters, including Theme, 
+Language, Toolbar Icon Size, and the default path of new project. 
+PAGE 21
+3 Gowin Software GUI  3.3 Tool Bar 
+ 
+SUG100-4.4.7E 9(87) 
+ 
+here are two options for the theme: Classic and Dark. After setting 
+the theme and language, you need to restart the IDE, then the 
+settings will take effect. 
+- Text Editor: Used to set the text editor attributes, including font, font 
+size, color, line numbers display, blank characters visualization, the 
+current line and matching parentheses highlight. 
+- External Editor: Used to set the third-party text editor, and you can 
+choose whether to always use the third-party editor to open the 
+design file. 
+3.2.5 Window Bar 
+ Full Screen (F11): Display the IDE GUI in full screen 
+ Tile: Tile display 
+ Cascade: Cascade display 
+ Reset Layout: Used to restore initial settings 
+ Panels: Used to select whether to display the five panels, there are five 
+sub-options available under this menu when a project is opened: 
+Design, Hierarchy, Process, Message, and Console 
+ Start Page: Display start page in source file editing 
+ Design Summary: Display Design Summary page in source file editing 
+area, including General and Target Device. 
+- General: Project information, including project path and the 
+synthesis tool used. 
+- Target Device: Engineering device information, including version, 
+package, speed grade, and core voltage. 
+3.2.6 Help Bar 
+ View Help: View help documents of output information during 
+compilation. 
+ Contact Us: Click to contact us 
+ Manage License…: Manage license, and you can refer to SUG501, 
+Gowin Software Quick Installation Guide. 
+ About…: Show software version and copyright information 
+3.3 Tool Bar 
+It provides quick access to some commonly used functions, and from 
+left to right are: 
+ " " (Ctrl+N): Create a new file or project 
+ " "(Ctrl+O) : Open a file or project 
+ " "(Ctrl+S) : Save a file or project 
+
+PAGE 22
+3 Gowin Software GUI  3.4 Project Area (Design) 
+ 
+SUG100-4.4.7E 10(87) 
+ 
+ " " (Ctrl+Shift+S): Save all files or projects 
+ " " (Ctrl+P): Print 
+ " " (Ctrl+Z): Undo your last operation 
+ " " (Ctrl+Y): Redo your last operation 
+ " " (Ctrl+X): Cut 
+ " " (Ctrl+C): Copy 
+ " " (Ctrl+V): Paste 
+ " " (Ctrl+F) : Find 
+ " ": Start Gowin Analyzer Oscilloscope; for the details, you can see 
+SUG114, Gowin Analyzer Oscilloscope User Guide. 
+ " ": Launch IP core Generator 
+ " ": Start Programmer; for the details, you can see SUG502, Gowin 
+Programmer User Guide. 
+ " ": Launch Eye Diagram analysis tool 
+ " ": Launch FloorPlanner; for the details, you can see SUG1541, 
+Gowin Software Physical Constraints User Guide. 
+ " ": Launch Timing Constraints Editor; for the details, you can see 
+SUG940, Gowin Design Timing Constraints Guide. 
+ " ": Run Synthesis 
+ " ": Run Place & Route 
+ " ": Run Synthesis and Place & Route 
+3.4 Project Area (Design) 
+The project area shows projects and the related files. You can check or 
+edit the project device information, user design files, user constraints files, 
+and configuration files, etc. 
+3.5 Process Area (Process) 
+The process area provides FPGA design flow, including synthesis, 
+place & route, and Programmer. You can also double-click timing 
+constraints editor and physical constraints editor to edit the constraints 
+files. 
+3.6 Hierarchy Area (Hierarchy) 
+After loading the design files, software will parse the design files first. 
+The hierarchy view shows the hierarchy of current project. In Hierarchy 
+
+PAGE 23
+3 Gowin Software GUI  3.6 Hierarchy Area (Hierarchy) 
+ 
+SUG100-4.4.7E 11(87) 
+ 
+view, you can locate the definition and instance of a module in a design file. 
+You can also set a module to top module. The Unit column shows module 
+hierarchy of the design files, and the Files column shows the file where the 
+module definition is. Additionally, the Hierarchy window allows you to 
+search project design files by module name or file name. Currently, the 
+Hierarchy supports parsing Verilog, VHDL, and System Verilog languages. 
+3.6.1 Right-click Menu 
+Functions supported in the right-click menu in the Hierarchy view are 
+as follows: 
+ Goto Module Instantiation: Go to the module instance in the source file 
+and open it with the editor built in Gowin Software. If you configure a 
+third-party editor in "Tools > Options > External Editor" and "Always 
+Use External Editor" is checked, you can open the source with a 
+third-party editor by default via Goto Module Instantiation. 
+ Goto Module Instantiation With…: Go to the module instance in the 
+source file. As shown in Figure 3-2, you can choose the "notepad" or 
+"Add External Editor". If you select "Add External Editor", "External 
+Editor" dialog box pops up for setting. 
+ Goto Module Definition: Go to the module in the source file and open it 
+with the editor built in Gowin Software. If you configure a third-party 
+editor in "Tools > Options > External Editor" and "Always Use External 
+Editor" is checked, you can open the source with a third-party editor by 
+default via Goto Module Instantiation. 
+ Goto Module Definition With…: Go to the module in the source file. As 
+shown in Figure 3-2, you can choose the set editor or "Add External 
+Editor". If you select "Add External Editor", "External Editor" dialog box 
+pops up. 
+ Open Terminal Here: Open a command-line window. 
+ Open Containing Folder: Open the folder containing the file. 
+ Enable: Enable the project file. 
+ Disable: Disable the project file. 
+ Pack User Design: Pack the module and its sub-module. 
+ Set As Top Module: Set the module as top module; the module set as 
+the top will be marked " " to indicate that the current module is the top 
+module, and the original hierarchy remains. 
+ Clear Top Module: Clear the top module setting. 
+
+PAGE 24
+3 Gowin Software GUI  3.6 Hierarchy Area (Hierarchy) 
+ 
+SUG100-4.4.7E 12(87) 
+ 
+Figure 3-2 Right-click Menu of Hierarchy 
+ 
+ 
+If there is an error during hierarchy parse of the project files, the 
+prompt " RTL Analysis Error" marked in red will pop up at the top right of 
+the hierarchy view. 
+3.6.2 Resources Display 
+The Hierarchy view will automatically display the resources of the 
+current project after synthesis, as shown in Figure 3-3. If a module is 
+defined as a pack module in the design, its resource is not displayed, and 
+its resource will be counted in its upper module. The resources used by 
+each module will be displayed with two data. As shown in Figure 3-3, the 
+LUT resource for module alttop is 2827 (6), where 6 represents the number 
+of LUTs used by the module itself, and 2827 represents the total number of 
+LUTs used by the module and its submodules. 
+Figure 3-3 Resources Display in Hierarchy View 
+ 
+3.6.3 Pack File 
+When you open a project, if you need to pack all/some source files, you 
+can right-click the module to be packed in the Hierarchy view, and choose 
+"Pack User Design" to generate a post-synthesis pack file. "Pack User 
+Design" dialog box is as shown in Figure 3-4. 
+
+PAGE 25
+3 Gowin Software GUI  3.6 Hierarchy Area (Hierarchy) 
+ 
+SUG100-4.4.7E 13(87) 
+ 
+Figure 3-4 Pack User Design Dialog Box  
+ 
+ 
+The Pack User Design configurations are as follows: 
+ Create In: The path of the generated pack files, it supports absolute 
+path only, and the default path is \src\<topmodule_name>_pack. 
+ Synthesis Tool: Select the synthesis tool; only GowinSynthesis is 
+supported. 
+ Language: Select Verilog or VHDL, and the default is Verilog. 
+ Target Top Module: Top module to be packed. The default is the 
+module selected in the Hierarchy view. You can change it. 
+ Source Files: List the source files of module and sub module selected 
+in the Hierarchy view. 
+ Add File: Used to add a file to be packed 
+ Remove File: Used to remove a file that do not need to be packed 
+ Output window: Output information 
+ Pack: Run Pack 
+ Stop: Stop Pack 
+Information will be printed in the Output view, as shown in Figure 3-5. 
+When pack starts, if there is an error, the error will be reported in the Output 
+view, and the information of pack failure will be printed, as shown in Figure 
+3-6. 
+
+PAGE 26
+3 Gowin Software GUI  3.6 Hierarchy Area (Hierarchy) 
+ 
+SUG100-4.4.7E 14(87) 
+ 
+Figure 3-5 Output Information in Pack User Design View 
+ 
+     
+Figure 3-6 Error Prompt 
+ 
+ 
+After pack, two files are generated under the target path. If Verilog 
+selected, the two files are <topmodule_name>_gowin.vp and 
+<topmodule_name>_sim.v. If VHDL selected, the two files are 
+
+PAGE 27
+3 Gowin Software GUI  3.7 Source File Editing Area 
+ 
+SUG100-4.4.7E 15(87) 
+ 
+<topmodule_name>_gowin.vhdp and <topmodule_name>_sim.v.  
+<topmodule_name>_gowin.vp and <topmodule_name>_gowin.vhdp are 
+pack file and can be used by others. <topmodule_name>_sim.v is a 
+flattened plain netlist that can be used for internal simulation. 
+<topmodule_name>_sim.v is a flattened plain netlist that can be used for 
+internal simulation. 
+Note! 
+In the project, if there are multiple modules that instantiate the same sub module, the 
+files generated after packing these modules separately will have the definition of the 
+sub module. If the generated files are used in the same project, it reports an error that 
+the sub module is repeatedly defined, which needs to be avoided. 
+3.6.4 Search Function 
+When a project is open and contains many design files, you can click 
+the search icon in the Hierarchy window to search by module name or file 
+name. Various options are available during the search, such as "Use wild 
+cards" or "Match exactly". The dialog box is as shown in Figure 3-7. 
+Figure 3-7 Search Function  
+ 
+3.7 Source File Editing Area 
+You can view, edit and highlight source files in the source file edit area. 
+The source file editing area shows different files, including new files or 
+opened files, the generated files after synthesis or Place & Route, and it 
+also shows "Start Page" and "Design Summary". 
+If the file is displayed in the editing area and a modification is 
+performed on the file externally, "File Changed" will pop up in the file editing 
+area. Select "Reload" to reload the file. 
+Click "File > Close", or click the icon " " in the file editing area to 
+close current files. 
+Click "File > Close All" to close all the files in the file editing area. 
+Open a file, and you can open "Find & Replace" dialog box by shortcut 
+Ctrl+F or clicking "Find & Replace" in the toolbar. There are three options in 
+"Find All": Current File, Open Files, and Current Project, as shown in Figure 
+3-8. After clicking "Find All", "Search Result" view will pop up and the 
+
+PAGE 28
+3 Gowin Software GUI  3.8 Information Output Area 
+ 
+SUG100-4.4.7E 16(87) 
+ 
+search content will be highlighted, and the total number of matches is 
+displayed at the end of the first line, as shown in Figure 3-9. 
+Figure 3-8 Find & Replace Dialog Box 
+ 
+ 
+Figure 3-9 Search Result View 
+ 
+3.8 Information Output Area 
+The information output area displays the processing information when 
+the software is running. You can view different outputs by manually 
+switching between the tabs: 
+ Console page includes Tcl commands, warnings, errors, etc. 
+ Message page includes note, warning, error. 
+In Console page, right-click and select "Clear" to clear all the 
+information in the tab. You can configure the message page to display note 
+only, warning only or error only. The number of notes, warnings and errors 
+will be recorded and shown on each of the corresponding tabs, as shown in 
+Figure 3-10. Right-click and select "Clear" on "Message" page to clear the 
+page information. 
+
+PAGE 29
+3 Gowin Software GUI  3.8 Information Output Area 
+ 
+SUG100-4.4.7E 17(87) 
+ 
+Figure 3-10 Information Output Area 
+ 
+ 
+After selecting an Error or Warning message reported by PnR, 
+right-click and select "Help" or press the shortcut key "F1", the "GOWIN 
+Help" of this error or warning will pop up, and the help information of this 
+error or message will be described in details in the document. Some 
+common warnings or errors are shown in Table 3-1, and help documents 
+can be viewed by clicking "Help > View Help", which supports Chinese and 
+English versions. 
+Table 3-1 Common Warnings and Errors 
+Name Code Description 
+Warning 
+WARN (PA1002): <file>:<line> | Invalid 
+parameterized value <value>(<parameter>) 
+specified for instance <instanceName> 
+The specified instance 
+sets invalid parameters. 
+WARN (PA1008): <file>:<line> | Object 
+<name> is already defined 
+The net or port has 
+already been defined. 
+WARN (PA1001) : Dangling net 
+<netName>(source:<instanceName>) in 
+module <moduleName> has no destination  
+The net in the specified 
+module has no 
+destination. 
+WARN (CT1098) : <file>:<line> | Group name 
+<name> is already defined 
+The constraints group 
+name has alredy been 
+defined. 
+WARN (CT1101) : <file>:<line> | Location 
+column <number> is out of chip 
+range(<maxColumn>) 
+The location column is 
+out of chip range. 
+Error 
+ERROR (PA2000): <file>:<line> | Syntax error 
+near token <name> 
+There is an error near 
+token. 
+ERROR (PA2001): <file>:<line> | Module 
+<moduleName> is already defined 
+The module name has 
+already been defined. 
+ERROR (PA2017): The number(<value>) of 
+<instType> in the design exceeds the resource 
+limit(<maxValue>) of current device 
+The number of the 
+devices in the design file 
+exceeds the resource 
+limit. 
+ERROR (PA2025): No <instType> resource in 
+current device 
+There are resources that 
+are not supported by the 
+chip in the design. 
+ERROR (PA2054): <file>:<line> | <name> is 
+already declared 
+The name has already 
+been declared. 
+  
+The Tcl editing window locates at the bottom of the Console page. You 
+
+PAGE 30
+3 Gowin Software GUI  3.8 Information Output Area 
+ 
+SUG100-4.4.7E 18(87) 
+ 
+can enter Tcl commands in the window and press the Enter key to execute, 
+as shown in Figure 3-11. For the details of Tcl, please refer to SUG1220, 
+Gowin Software Tcl Commands User Guide. 
+Figure 3-11 Tcl Commit Window 
+ 
+
+PAGE 31
+4 Gowin Software Usage  4.1 Create a New Project 
+ 
+SUG100-4.4.7E 19(87) 
+ 
+4 Gowin Software Usage 
+Gowin Software supports interface mode and command line mode. 
+For command line mode, please refer to SUG1220, Gowin Software Tcl 
+Commands User Guide.  
+Take Gowin Software in Windows10 as an example to introduce how 
+to use the software. 
+4.1 Create a New Project 
+1. From the File menu, choose "File> New…" to open the "New" dialog, 
+as shown in Figure 4-1. 
+Figure 4-1 Create a New Project 
+ 
+Note!  
+There are three ways to open a "New" dialog: 
+ Use the "Ctrl+N" shortcut. 
+ Click the "New File or Project" icon in the toolbar. 
+ Click "Quick Start > New Project" on the Start Page. 
+2. Select "FPGA Design Project", and then click "OK" to open "Project 
+Wizard", as shown in Figure 4-2. 
+
+PAGE 32
+4 Gowin Software Usage  4.1 Create a New Project 
+ 
+SUG100-4.4.7E 20(87) 
+ 
+Figure 4-2 Project Wizard                                                                                                      
+ 
+ 
+3. Create the project "Name" and "Create in", as shown in Figure 4-2. 
+a) Type the project name in the "Name" text box. 
+b) Click the " " icon to choose the project path. 
+If you select "Use as default project location", the project location will 
+be set as the default, and all later projects you create will be saved to 
+this location. 
+Note! 
+ The file path length is limited in Windows and Linux, with a limit of 260 characters 
+in Windows and 4096 characters in Linux. If beyond the limit, you cannot delete 
+or copy the file path. 
+ The path separator is "\" in Windows; for example, E:\Gowin\ide. 
+4. Click "Next" to set the device, including Series, Device, Package, 
+Speed, and Device Version. You can also search for devices using the 
+"Search" button. 
+ You can select series in Series. 
+ You can select device in Device. 
+ You can select package in Package. 
+ You can select speed in Speed. 
+ You can select device version in Device Version. 
+ You can select part number in Part Number, and it displays the 
+detailed information; for devices without version, the version 
+information column is blank, and the version of the same device is 
+displayed in reverse order, as shown in Figure 4-3. 
+
+PAGE 33
+4 Gowin Software Usage  4.2 Open an Existing Project 
+ 
+SUG100-4.4.7E 21(87) 
+ 
+Figure 4-3 Select Device 
+ 
+ 
+5. Click "Next" to open the project information Summary window, as 
+shown in Figure 4-4 . 
+Figure 4-4 Project Information Summary 
+ 
+ 
+6. Click "Finish", and the project now is created. 
+4.2 Open an Existing Project 
+Use one of the following five methods to open an existing project. 
+Open from Tool Bar 
+1. You can click the " " icon in the tool bar to open the "Open File" dialog 
+box, as shown in Figure 4-5. 
+
+PAGE 34
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 22(87) 
+ 
+2. Choose the project file (*.gprj) and click "Open" to open it. 
+Figure 4-5 Open an Existing Project 
+ 
+ 
+Open from Menu Bar 
+1. In the menu bar, select "File > Open …" to open the "Open File" dialog 
+box, as shown in Figure 4-5. 
+2. Choose the project file (*.gprj) and click "Open" to open it. 
+Open from Start Page 
+1. On the start page, click " " to open "Open Project" dialog box. 
+2. Choose the project file (*.gprj) and click "Open" to open it. 
+Open from Recent Projects 
+In the menu bar, click "File > Recent Projects" to open your required 
+project. 
+Note! 
+ You can also open the project in the "Start Page > Recent Projects" list. 
+ The "Recent Projects" list shows the recently opened projects. 
+  If the project has been deleted, the "Open Project" dialog box will pop up. 
+Open from Project File 
+Find the *.gprj file, and double-click on *.gprj file to open the project 
+automatically. 
+4.3 Edit a Project 
+After creating or opening a project, you can edit the device information 
+and the related files in the project design area, as shown in Figure 4-6. 
+The Project Design Area contains the following: 
+ The project path 
+
+PAGE 35
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 23(87) 
+ 
+ Part number 
+ The current project files, including user design files (Source Files), 
+physical constraints files (.cst), timing constraints files (.sdc), GAO 
+config files (.gao, .rao), GPA config files (.gpa), and virtual input and 
+output configuration files (.gvio), etc. 
+Figure 4-6 Project Design Area 
+ 
+4.3.1 Edit a Project Device 
+The chip information used in the current FPGA project can be edited in 
+the project design view. 
+1. As shown in Figure 4-6, double-click "GW1N-LV4LQ144C6/I5" to open 
+the "Select Device" dialog box, or choose "Set Device" from Project 
+pull-down list, as shown in Figure 4-7. 
+2. In the "Select Device" dialog box, select part number from the "Part 
+Number", then you can edit the device. The "Part Number" column 
+displays detailed information about the selected chip, including device, 
+device version, package, speed, voltage, and the resources such as 
+IO/LUT/FF/ROM16/SSRAM/BSRAM/User Flash/DSP/PLL in the chip. 
+Note! 
+If the Device Version is empty, it means it is the initial version; the device version 
+information will be marked after the date code on the chip, and date code is printed on 
+the chip surface, as shown in Figure 4-8; the device selected in the "Part Number" 
+column needs to be consistent with the device version used.  
+
+PAGE 36
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 24(87) 
+ 
+Figure 4-7 Project Device Info.   
+ 
+ 
+Figure 4-8 Data Code Display 
+ 
+4.3.2 Edit a Project File 
+Files that need to be added in projects include RTL design files (Source 
+Files), constraints files, and configuration files. Refer to the following 
+descriptions to edit the project files. 
+Create Design and Constraints Files 
+1. Click " " in the tool bar, or select "File > New File…" in the menu bar 
+to open the "New..." dialog box. 
+2. As shown in Figure 4-9, select a file. 
+
+PAGE 37
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 25(87) 
+ 
+Figure 4-9 Create a New File Dialog Box  
+ 
+① User Verilog File ② User VHDL File 
+③ Physical Constraints File ④ Timing Constraints File 
+⑤ GowinSynthesis Constraints 
+File 
+⑥ User Flash 
+Initialization file 
+⑦ GAO Config File ⑧ Virtual Input/Output 
+Config File 
+⑨ Power Analysis Config File ⑩ Memory Initialization 
+File 
+⑪ File Description  
+ 
+3. Take creating a Verilog File for an instance. Select "Verilog File" to 
+open the Verilog File dialog box, as shown in Figure 4-10. Check "Add 
+to current project" by default, i.e. the new design file will be added to 
+the current project by default. 
+Figure 4-10 Create Verilog File Dialog Box  
+ 
+ 
+4. Type the file name and click "OK". 
+
+PAGE 38
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 26(87) 
+ 
+Create a Configuration File 
+1. Click " " in the tool bar, or select "File > New File…" in the menu bar 
+to open the "New..." dialog box, as shown in Figure 4-9. 
+2. As shown in Figure 4-9, select a file. Take creating a GPA Config File 
+for an instance. Select "GPA Config File" and to open New GPA Config 
+File dialog box; type the file name, click "OK", and the new GPA profile 
+will be automatically added to the project design area, as shown in 
+Figure 4-11.  
+3. Double click on this configuration file in the project design area to open 
+a window for editing, as shown in Figure 4-12. 
+Figure 4-11 New GPA Config File Dialog Box 
+ 
+ 
+Figure 4-12 GPA Config File Window 
+ 
+ 
+Add Project Files 
+1. As shown in Figure 4-13, right-click in the blank of the project design 
+area, select "Add Files…" to open the "Select Files" dialog box. 
+
+PAGE 39
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 27(87) 
+ 
+2. Select single or multiple project files to add. Gowin Software will 
+automatically classify the files in the project design area. If the added 
+files are not RTL design files, netlist files, constraints files, GPA 
+configuration files, GAO configuration files or GVIO configuration files, 
+"Other Files" will be added in the project design area. 
+Figure 4-13 Right-click in Design View 
+  
+ 
+Modify Project Files 
+Use the following two methods to open the project files, as shown in 
+Figure 4-14. 
+1. Double-click any file in the project design area; the file will open in the 
+source file editing area. 
+2. Right-click on the file that is to be modified and click "Open". 
+Figure 4-14 Project Files Editing Options 
+ 
+ 
+
+PAGE 40
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 28(87) 
+ 
+If you have configured a third-party text editor by clicking "Tools > 
+Options", select "Open With…" to open the design file with the third-party 
+text editor. If you select "Add External Editor", you can add other external 
+editor, as shown in Figure 4-15. If you check "Always Use External Editor", 
+the external editor will always be used to open files. If you select "Open 
+Containing Folder", you can open the folder. If you select "Open Terminal 
+Here", you can use command line mode. 
+If you modify and save a file by an external editor, Gowin Software will 
+generate a reload prompt. 
+If you close the unsaved file after editing, Gowin Software will pop up a 
+warning. 
+Figure 4-15 External Editor 
+ 
+ 
+After project files are modified, if you run Synthesize or Place & Route 
+before saving these files, the "Save Modified Files" dialog box will pop up, 
+as shown in Figure 4-16. 
+Figure 4-16 Save Modified Files Dialog Box 
+ 
+ 
+Click "OK"; the files will be saved and then perform previous operations 
+automatically. Click "Cancel"; the files will not be saved and Synthesize or 
+
+PAGE 41
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 29(87) 
+ 
+Place & Route will not be performed. 
+Delete Project Files 
+1. Select the file in the project design area. 
+2. Right-click and select "Remove…", or directly press the Delete key to 
+open the "Remove Files" dialog box. If you select the "Remove 
+Permanently on Disk", the file is deleted from the current project and on 
+disk. Otherwise, the file is deleted only from the current project. 
+Edit Project File Attributes 
+Right-click any file in the project design area, select File Properties 
+from the right-click list, and "File Properties" dialog box pops up, as shown 
+in Figure 4-17. The Path, Modified time, Type, and Library information are 
+displayed in the dialog box. The file type can be modified in the Type 
+drop-down list. After clicking "OK", the file will automatically move to the 
+selected type in the Design view. Library is used to specify the library used 
+by VHDL files synthesis, and the default is work. If there are multiple 
+libraries, you need to separate them with semicolon. 
+Figure 4-17 File Properties Dialog Box 
+ 
+ 
+If more than one Verilog file or VHDL file is selected, the "File 
+Properties" dialog box does not display the path and modified time. If both 
+Verilog and VHDL files are selected, the "File Properties" dialog box does 
+not display the path, modified time, or Type. 
+The use of Library is as follows.  
+ If the top-level (or upper-level) entity in the design has the component 
+of bottom entity, it does not need to care which library the bottom entity 
+belongs to and it can use the default value work. 
+ If the top-level (or upper-level) entity in the design use "uut1:entity 
+library name. bottom name", such as uut1:entity mb.sub1 to call the 
+bottom entity, then the attribute library of the vhdl file where the bottom 
+entity is located should be the library name (e.g. mb). 
+ If the package has a component of the bottom entity, the top-level (or 
+upper-level) entity does not need to care which library the bottom entity 
+belongs to when the bottom entity is called through the package, and it 
+can use the default value work. 
+ If the package has a component of the bottom entity, the top-level (or 
+
+PAGE 42
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 30(87) 
+ 
+upper-level) entity uses "uut: package library name. package name. 
+bottom entity name, such as uut1: work.pack.sub1 to call bottom entity, 
+it does not need to care which library the bottom entity belongs to, and 
+it can use the default value work. 
+Enable Project Files 
+You can see the "Enable" and "Disable" options by righting-click on any 
+files in the project design area, as shown in Figure 4-14. The files are in the 
+project compilation process when it is enabled, and out of project 
+compilation process when it is disabled. 
+1. Set Enable/Disable by right-clicking, including single/batch files setting. 
+2. For constraints files or configuration files of the same type, only one file 
+can be enabled; when you create or add a new file of the same type, 
+the previous one will be disabled. 
+Encryption of HDL Project Files 
+For HDL files in the project management area, right-click and select 
+"Encrypt Design Sources..." to open the file encryption dialog, as shown in 
+Figure 4-18. The dialog includes information about the output path of the 
+encrypted files and the list of files to be encrypted. 
+ The "Add" and "Remove" options allow users to manually add or 
+remove files to be encrypted. 
+ By default, the output path of encrypted files is located at the same 
+directory level as the project file, and the output folder is named 
+encrypted_sources. 
+ By default, encrypted file names are identical to the original plaintext 
+file names, with the letter “p” appended after the original file extension 
+(e.g., *.vp / *.vhdp / *.vgp). 
+ Relative paths are supported, and the reference path is the project 
+directory/src folder. 
+Figure 4-18 Project File Encryption Dialog 
+ 
+
+PAGE 43
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 31(87) 
+ 
+Note! 
+This encryption function performs full encryption of HDL project file contents and does 
+not change the module hierarchy or the content of the design files. 
+4.3.3 Edit Project Configuration  
+Right click "Synthesize" or "Place & Route" in the Project Design area 
+to open the project configuration dialog box, as shown in Figure 4-19. 
+Figure 4-19 Project Configuration Dialog Box 
+ 
+ 
+As shown in Figure 4-19, the configurable project options include 
+"Global", "Synthesize", "Place & Route", and "BitStream". The details of the 
+options are as follows.  
+Global 
+Global configuration option includes General and Constraints.  
+General 
+The General configuration is as shown in Figure 4-20; it used to specify 
+the base name of the output file, which defaults to the name of the current 
+project. 
+
+PAGE 44
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 32(87) 
+ 
+Figure 4-20 General Configuration Option 
+ 
+ 
+Constraints 
+The "Constraints" configuration is shown in Figure 4-21. This option 
+allows users to set global frequency; if the frequency is specified in the 
+timing constraint file, you can override the global frequency with timing 
+constraint. The default is set to "Default" (50 MHz for LittleBee family and 
+Arora I devices; 100 MHz for Arora II, Arora III, and Arora V devices). 
+Figure 4-21 Frequency(MHz) Configuration Option 
+ 
+ 
+Synthesize 
+The Synthesize options include "General" and "Optimization Options". 
+General 
+General configuration option is as shown in Figure 4-22. When the 
+Synthesis Tool is set to GowinSynthesis, the General synthesis options can 
+be configured. Hovering the mouse pointer over certain options displays 
+
+PAGE 45
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 33(87) 
+ 
+their descriptions. 
+Figure 4-22 GowinSynthesis General Configuration Option 
+ 
+ 
+The detailed descriptions are shown below. 
+ Optimization Goal: Specify the synthesis optimization goal. Supported 
+options are Auto, Area, and Timing. The default setting is Auto. 
+ Top Module/Entity: Specify top module/entity. 
+ Include Path: Specify include path. 
+ TclPre: Management file that specifies the software version; when 
+synthesizing, it automatically changes the version number and date, so 
+the running design version can be easily found. 
+ Verilog Language: System Verilog 2017, Verilog 2001 and Verilog 95, 
+and the default is Verilog 2001. This option is displayed on the interface 
+only when a design file in VHDL format is detected in the current 
+project. 
+ VHDL Language: VHDL 1993, VHDL 2008, and VHDL 2019; and the 
+default is VHDL1993. The option is displayed in the interface only when 
+VHDL format design files are detected in the current project. 
+ Looplimit: Set the loop limit value of the default editor in RTL, and the 
+default Value is 2000. 
+ Show All Warnings: All warnings will be printed during synthesis if this 
+option is checked, which is not checked by default. 
+ Disable Insert Pad: Whether to insert I/O buffer to the post-synthesis 
+netlist, not checked by default. 
+ Netlist Hierarchy: Specify whether the generated netlist uses a 
+hierarchical or flattened structure. This option is enabled by default, 
+and a hierarchical structure is used. 
+ Ram R/W Check: If there is a read or write conflict in RAM, check this 
+
+PAGE 46
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 34(87) 
+ 
+option and bypass logic will be inserted around RAM to prevent 
+simulation mismatches. If this option is disabled, bypass logic will not 
+be generated, unchecked by default. 
+Optimization Options 
+The Optimization Options settings under Synthesize are shown in 
+Figure 4-23. Users can configure the synthesis optimization options. 
+Descriptions of the options are displayed when the mouse pointer is 
+hovered over them. 
+Figure 4-23 GowinSynthesis Optimization Options Settings 
+ 
+ 
+The parameters shown in Figure 4-23 are described below: 
+ DSP Style: Specify the implementation style of DSP modules. 
+Supported options are Auto, Logic, and DSP. The default setting is 
+Auto. For the configuration values, you can see Section 5.6 
+syn_dspstyle in the SUG550, GowinSynthesis User Guide. 
+ RAM Style: Specify the implementation style of RAM modules. 
+Supported options are Auto, Block_ram, Distributed_ram, and 
+Registers. The default setting is Auto. For the configuration values, you 
+can see Section 5.16 syn_ramstyle in the SUG550, GowinSynthesis 
+User Guide. 
+ ROM Style: Specify the implementation style of ROM modules. 
+Supported options are Auto, Block_rom, Distributed_rom, and Logic. 
+The default setting is Auto. For the configuration values, you can see 
+Section 5.17 syn_romstyle in the SUG550, GowinSynthesis User 
+Guide. 
+ Max Fanout: Specify the maximum fanout value. The default value is 
+1000. For the configuration values, you can see Section 5.11 
+syn_maxfan in the SUG550, GowinSynthesis User Guide. 
+ Shift Registers Style: Specify the implementation style of shift registers. 
+Supported options are Auto, Block_ram, Distributed_ram, and 
+Registers. The default setting is Auto. For the configuration values, you 
+
+PAGE 47
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 35(87) 
+ 
+can see Section 5.18 syn_srlstyle in the SUG550, GowinSynthesis 
+User Guide. 
+ Map Options: Specify the LUT mapping optimization mode. Supported 
+options are 1, 2, 3, and 4. The default setting is 1. 
+- 1: Default mapping mode. 
+- 2: LUT5-driven mapping optimization mode that does not increase 
+LUT resource utilization. 
+- 3: LUT5-driven mapping mode that may increase LUT resource 
+utilization to improve timing performance. 
+- 4: LUT5/LUT6-driven mapping mode that may increase LUT 
+resource utilization to achieve the best timing performance. 
+Place & Route 
+Place & Route includes General, Voltage, Place, Route, Unused Pin，
+Dual-purpose Pin, and Incremental PnR. The detailed descriptions are 
+shown in Table 4-1. 
+Table 4-1 PnR Configuration Options 
+Option Description 
+General Set PnR parameters 
+Voltage Set the voltage VCC and VCCX 
+Place Set placement parameters 
+Route Set route parameters 
+Unused Pin  Used to set different IO attributes for unused GPIOs 
+Dual-Purpose Pin Used to configure the I/O properties of all unused GPIO pins in the current device package, excluding multiplexed pins. 
+Incremental PnR Used to enable incremental compilation 
+ 
+General 
+The General configuration is as shown in Figure 4-24. 
+PAGE 48
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 36(87) 
+ 
+Figure 4-24 Place & Route Configuration 
+ 
+ 
+The descriptions of options in Figure 4-24 are as follows. 
+ Generate SDF File: Generate a standard delay format file with the 
+extension .sdf for netlist timing simulation after PnR, and the default 
+value is False. For the usage, see chapter 7Simulation Files. 
+ Generate IBIS File: Generate an I/O buffer information specification  
+file with the .ibs extension. The default value is False. 
+The conditions for IBIS generation for each device are shown in the 
+table below. 
+Table 4-2 Conditions for IBIS Generation Supported by Each Device 
+Device  I/O Type Drive VCCX I/O 
+LittleBee Family, 
+Arora I 
+LVCMOS12, LVCMOS12D 2, 4, 6, 8 NA NA 
+LVCMOS15, LVCMOS15D 4, 8 NA NA 
+LVCMOS18, LVCMOS18D 4, 8, 12 NA NA 
+LVCMOS25, LVCMOS25D 4, 8, 12, 16 NA NA 
+LVCMOS33, LVCMOS33D 4, 8, 12, 16, 24  NA NA 
+Arora II 
+LVCMOS12, LVCMOS12D, 
+LVCMOS15, LVCMOS15D, 
+LVCMOS18, LVCMOS18D, 
+LVCMOS25, LVCMOS25D, 
+LVCMOS33, LVCMOS33D, 
+LVDS25 
+NA NA NA 
+GW5A(S)(T)-138、
+GW5AT-75 
+devices (package: 
+UBGA324A) 
+LPDDR  8, 12, 16, 24 NA NA 
+SSTL135, SSTL135D 8 NA NA 
+
+PAGE 49
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 37(87) 
+ 
+Device  I/O Type Drive VCCX I/O 
+GW5A(S)(T)-138、
+GW5AT-75 
+devices(package:
+PBGA676A, 
+FCPBGA676A 
+LPDDR 8, 12, 16, 24 NA NA 
+GW5A(S)(R)-25 LVCMOS33  4, 6, 8, 12 3.3 NA LVDS25 NA 3.3 Input 
+GW5A(T)-60 LVDS25 2.5, 3.5, 4.5, 6 3.3 Output 
+ 
+ Generate Post-Place File: Generate a file containing only BSRAM 
+placement information, with the extension .posp, and the default value 
+is False. 
+ Generate Post-PNR Verilog Simulation Model File: Generate a timing 
+simulation model file in Verilog for timing simulation with .vo extension, 
+and the default value is False. 
+ Generate Post-PNR VHDL Simulation Model File: Generate a timing 
+simulation model file in VHDL language with .vho extension, and the 
+default value is False. 
+ Promote Physical Constraint Warning to Error: Promote the physical 
+constraint warning to an error, and the default value is True. 
+ Show All Warnings: Output all the Warning information when PNR is 
+running, and the default value is False. 
+ Report Auto-Placed IO Information: Report the location information of 
+auto-placed IO, and the default value is False. 
+ Convert SDP32/36 to SDP16/18: Convert 32/36-bit-wide primitives 
+SDPB/SDPX9B/pROM/pROMX9 to16/18-bit-wide 
+SDPB/SDPX9B/pROM/pROMX9 primitives. This option is supported 
+only for Arora V devices. The default value is False. 
+ Reset all to default: Restore all settings on the current configuration 
+page to their default values. 
+Voltage 
+The Voltage configuration is shown in Figure 4-26. Through this option, 
+you can set the VCC and VCCX. Different devices may have different VCC 
+and VCCX settings.  
+Note! 
+ The VCC configuration affects the delay data of devices. 
+ The VCCX configuration affects the results of power consumption calculations. 
+PAGE 50
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 38(87) 
+ 
+Figure 4-25 Voltage Configuration 
+ 
+ 
+Place 
+The Place configuration is as shown in Figure 4-26. 
+Figure 4-26 Place Configuration 
+ 
+ 
+The descriptions of options in Figure 4-26 are as follows. 
+ Place input register to IOB: Place registers driven by input Buffer to 
+IOB; for GW5A(S)(T)-138/GW5AT-75 devices, the default is False; for 
+the other devices, the default value is True. 
+
+PAGE 51
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 39(87) 
+ 
+ Place output register to IOB: Place registers driven by output Buffer to 
+IOB; for GW5A(S)(T)-138/GW5AT-75 devices, the default is False; for 
+the other devices, the default value is True. 
+ Place inout register to IOB: Place registers driven by in/out Buffer to 
+IOB; for GW5A(S)(T)-138 devices, the default is False; for the other 
+devices, the default value is True. 
+ Place Option: Placement algorithm option. The available options are 0, 
+1, 2, 3, and 4. The default value is 3 for GW5A(S)(T)-138/GW5AT-75 
+and Arora III devices; 0 for all other devices. 
+- 0: Uses the default placement algorithm, with compilation speed 
+prioritized. 
+- 1: Prioritizes routability. 
+- 2: Prioritizes timing. 
+- 3: Attempts to achieve a better placement result. 
+- 4: Attempts to achieve a better placement result. 
+ Replicate Resources: Replicate resources with high fanout to reduce 
+fanout and get better timing results, and the default value is False. Only 
+Arora V and Arora III devices support this option. 
+ SerDes Retiming: Perform retiming optimization on SerDes-related 
+logic.. This configuration option is supported only by Arora V devices 
+that contain SerDes resources, and the default value is False. 
+ Co-Place IO Registers: A placement algorithm for co-placing input and 
+output registers. The default value is False. 
+ Retiming Resource: Specify the target resources for retiming 
+optimization. The available options are None, All, BSRAM, and DSP . 
+The default value is None. 
+- None: No target is specified for retiming optimization. 
+- All: Performs retiming optimization on all supported types of related 
+logic. 
+- BSRAM: Performs retiming optimization on BSRAM-related logic. 
+- DSP: Performs retiming optimization on DSP-related logic. 
+Route  
+The Route configuration is as shown in Figure 4-27. 
+PAGE 52
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 40(87) 
+ 
+Figure 4-27 Route Configuration 
+ 
+ 
+The descriptions of options in Figure 4-27 are as follows. 
+ Clock Route Order: Specify the route order for clock lines other than 
+those generated by the clock primitive, and the values include 0 and 1, 
+and the default is 0. 
+- when it is 0, the order is based on the number of fanouts of net 
+from highest to lowest. 
+- when it is 1, the order is based on the frequency from highest to 
+lowest. 
+ Run Timing Driven: Optimize route by Timing Driven, and the default 
+value is True. 
+ Route Option: Route algorithm with the value of 0, 1 and 2. The default 
+value is 2 for GW5A(S)(T)-138/GW5AT-75 and Arora III devices, and 0 
+for all other devices. 
+- When it is 0, the default route algorithm is used. 
+- When it is 1, the compilation speed is sacrificed to try to find a 
+better route. 
+- When it is 2, the route speed will be improved. 
+ Route Maxfan: Based on the route optimization, set the maximum 
+fanout resources of route. The value should be an integer greater than 
+0 and less than or equal to 100, and a smaller value may cause route 
+failure. This option does not control long wire and clk route. For 
+GW1NZ-1/GW1N-2/GW1NR-2/GW1N-1P5, the default value of Route 
+Maxfan is 10, and 23 for other devices. 
+ Correct Hold Violation: Automatic repair of timing Hold problems via 
+routing, and the default is True. 
+
+PAGE 53
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 41(87) 
+ 
+ Tie Unused Routing Resources to VCC: Ties unused routing resources 
+to VCC. The default value is True. This option is supported for all 
+devices except GW1AN-5 and GW1AN-3 devices. 
+Dual-Purpose Pin 
+The Dual-purpose Pin is used to configure multiplexed pins. When the 
+mouse pointer hovers over this option, a description of the corresponding 
+option is displayed. The configuration items are shown in Figure 4-28. 
+Figure 4-28 Dual-Purpose Pin Configuration 
+  
+ 
+The dual-purpose pins are described as follows. 
+ Use JTAG as regular IO: Use relevant pins of JTAG as regular IO pins.  
+ Use SSPI as regular IO: Use relevant pins of SSPI as regular IO pins. 
+For GW5A-25 MBGA121N, this option is checked by default and 
+cannot be changed. 
+ Use MSPI as regular IO: Use relevant pins of MSPI as regular IO pins.  
+ Use READY as regular IO: Use the READY pin as regular IO pin. 
+ Use DONE as regular IO: Use the DONE pin as regular IO pin. 
+ Use RECONFIG_N as regular IO: Use the RECONFIG_N pin as 
+regular IO pin. 
+ Use I2C as regular IO: Use relevant pins of I2C as regular IO.  
+ Use CPU as regular IO: Only Arora V and Arora III devices support this 
+option. Use relevant pins of CPU as regular IO. 
+Unused Pin 
+The Unused Pin option is used to configure the I/O properties of all 
+unused GPIO pins in the current device package, excluding multiplexed 
+pins. There are two options: "As input tri-stated with pull-up (default)" and 
+"As open drain driving ground", as shown in Figure 4-29. 
+
+PAGE 54
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 42(87) 
+ 
+Figure 4-29 Unused Pin Configuration 
+ 
+ 
+ As input tri-stated with pull-up (default): Default option; all unused 
+GPIOs will be configured as input tri-stated with weak pull-up. 
+ As open drain driving ground: All unused GPIOs are configured to 
+output with OPEN_DRAIN ON. 
+Incremental PnR 
+The Incremental PnR option is used to implement incremental 
+compilation. It reduces the workload of placement and routing and 
+improves compilation efficiency by reusing the placement or placement and 
+routing results from the previous compilation. The option configuration is 
+shown in Figure 4-30. 
+Figure 4-30 Incremental PnR Configuration 
+ 
+ 
+
+PAGE 55
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 43(87) 
+ 
+The descriptions for the options in Figure 4-30 are as follows: 
+Incremental Placement Only: Only increments placement information. 
+By default, this option is unchecked. When it is checked, the following 
+sub-options are displayed:  
+ Auto: Automatically select the existing incremental placement file (*.p) 
+in the project directory when redoing the placement. If no *.p file exists 
+in the project directory, a prompt will pop up.  
+ Specify the previous placement file: Manually specify the incremental 
+placement file (*.p).  
+Incremental Placement and Routing: Increments placement and 
+routing information. By default, this option is unchecked. When it is 
+checked, the following sub-options are displayed, and the "Incremental 
+Placement Only" option becomes unavailable.  
+ Auto: Automatically select the existing incremental placement and 
+routing file (*.pr) in the project directory when redoing placement and 
+routing. If no *.pr file exists in the project directory, a prompt will pop up. 
+ Specify the previous placement and routing file: Manually specify the 
+incremental placement and routing file (*.pr).  
+Note! 
+Only Arora V and Arora III devices support the incremental compilation. 
+BitStream 
+The BitStream option is used to configure bitstream parameters 
+related to device programming, including the bitstream file format and 
+programming frequency. This option includes three sub-options: General, 
+SysControl, and Feature SysControl. When the mouse pointer hovers over 
+an option, a description of the corresponding option is displayed. The 
+meanings of the options are shown in Table 4-3. 
+Table 4-3 BitStream Configuration Options 
+Option Description 
+General Set BitStream parameters 
+sysControl Set BitStream system control parameters 
+Featrue sysControl Set BitStream functional system control parameters 
+ 
+General 
+The General configuration is as shown in Figure 4-31. 
+PAGE 56
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 44(87) 
+ 
+Figure 4-31 BitStream General Configuration 
+  
+ 
+The description for each parameter in Figure 4-31 is as follows.  
+ Enable CRC Check: Enable CRC Check, checked by default. 
+ Enable Compress: Enable bitstream file compress, not checked by 
+default. 
+ Enable Encryption: Encrypt the bitstream file, and only Arora II/Arora 
+III/Arora V devices support this option, not checked by default. 
+ Key (Hex): Key (Hex) can be configured only when "Enable Encryption" 
+is checked, and users can customize the secret key; only Arora II/Arora 
+III/Arora V devices support this option. The key is 0 by default. When 
+you check this option and run Place & Route, a key file with the 
+extension .ekey will be generated. 
+ Enable Security Bit: Enable security bit, and add security bit to the 
+bitstream file; after adding, the bitstream cannot be read back again, 
+checked by default. 
+ Secure Mode: Enable secure mode. Use JTAG pin as GPIO, and 
+device can be programmed only once. This function is only supported 
+by GW1NSER-4C, unchecked by default. 
+ Power On Reset Monitor: Power on reset monitoring, checked by 
+default. When this option is checked, it will continuously monitor any 
+possible voltage drop in the power rails. If the power rail voltage falls 
+below the POR threshold, all RAM bits will be cleared and the used 
+I/Os will be set to tri-state through internal weak pull-up resistors, and 
+then the configuration and initialization will be completed in turn. 
+ Turn Off Bandgap: Turn off Bandgap, unchecked by default. Bandgap 
+is used to provide constant voltage and current for some modules in 
+
+PAGE 57
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 45(87) 
+ 
+the chip; turning off Bandgap can reduce device power. Only GW1N-1 
+devices support this option. 
+ Print BSRAM Initial Value: Print the initial values of BSRAMs into the 
+bitstream file and is enabled by default.  
+- For LittleBee and Arora I/Arora II devices, enabling this option will 
+allow the initial values of all BSRAM locations to be printed into the 
+bitstream file, with unused BSRAM locations printed as 0.  
+- For Arora V and Arora III devices, enabling this option will allow the 
+initial values of all BSRAMs in the columns containing used 
+BSRAM locations to be printed into the bitstream file, with unused 
+BSRAM locations in those columns printed as 0.  
+- For GW5A(S)(T)-138/GW5AT-75 devices, when "MSPI JUMP 
+Mode" or "Multi Boot Mode" is set to "Quad", selecting "Print 
+BSRAM Initial Value" displays a drop-down menu containing two 
+options: "Default Mode" and "BSRAM Partial Print Mode". Default 
+Mode is selected by default. 
+ Default Mode: Writes the initial values of all BSRAM locations 
+to the bitstream file. The initial values of unused BSRAM 
+locations are written as 0. 
+ BSRAM Partial Print Mode: Writes the initial values of all 
+BSRAM locations in the columns containing used BSRAMs to 
+the bitstream file. The initial values of unused BSRAM 
+locations in these columns are written as 0. 
+ Bitstream Format: Used to specify the bitstream file format, including 
+Text and Binary, and Binary by default.  
+- Text: The *.fs file in plain text format is generated. 
+- Binary: A bitstream file in *.fs, *.bin, or *.binx format is generated. 
+*.bin and *.binx are bitstream files in binary format, *.binx file 
+contains header annotation information, and *.bin does not have 
+header annotation information. 
+sysControl 
+The sysControl configuration is as shown in Figure 4-32. 
+PAGE 58
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 46(87) 
+ 
+Figure 4-32 sysControl Configuration 
+  
+ 
+The description for each parameter in Figure 4-32 is as follows. 
+ Program Done Bypass: When the Done Final signal is active, the 
+external Done signal keeps low, so that the new bitstream can be 
+forwarded after the bitstream is loaded. 
+ Wake Up Mode: Enable wake up mode, with the value of 0 and 1, and 
+the default is 0. 
+- When wake up mode is 0, DONE pin can be pulled up or down.  
+- When wake up is 1,  
+a) If DONE pin is pulled up, download and run normally. 
+b) If DONE pin is pulled down, download normally; and DONE pin 
+needs to be pulled up and keep TCK connected to the pulse 
+signal to wake up chip. 
+ User Code: Users can customize User Code, and the defined value will 
+be reflected in the generated bitstream file, and the User Code will be 
+checked when the bitstream file is downloaded through the 
+Programmer. The default value is Default (00000000). 
+ Loading Rate: In AutoBoot mode and MSPI mode, the rate of loading 
+bitstream from Flash to SRAM. For details about AutoBoot and MSPI 
+configuration modes, see UG290, Gowin FPGA Products Programming 
+and Configuration Guide; UG714, Arora Ⅴ 25K FPGA Product 
+Programming and Configuration Guide; UG704, Arora Ⅴ 138K FPGA 
+Product Programming and Configuration Guide.  
+The default loading rates for each device are listed below. 
+- For GW1N-4/GW1NRF-4B/GW1NR-4, the default is 2.100MHz. 
+- For GW1NS-4/GW1NSR-4/GW1NSER-4C with speed grade C7/I6, 
+the default is 2.6MHz. 
+
+PAGE 59
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 47(87) 
+ 
+- For GW5A(S)(T)-138/GW5A(R)-25, the default is 35.000MHz. 
+- For the other devices, the default is 2.500MHz. 
+The available Loading Rate values for different devices are listed in 
+Table 4-4. 
+Table 4-4 Loading Rate Values 
+Device Loading Rate (MHz) 
+ GW1N-2 Version A: 
+- LQFP100X, LQFP144X, MBGA132X, 
+WLCSP42H, MBGA49 
+ GW1N-2 Version B: 
+- LQFP100X, LQFP144X, MBGA132X, 
+MBGA121X 
+ GW1N-2 Version C: 
+- LQFP100X, LQFP144X, MBGA132X, 
+MBGA121X, MBGA49, QFN32X 
+ GW1NR-2 Version A:  
+- MBGA49P, MBGA49PG, MBGA49G 
+ GW1N-1P5 Version A: 
+- LQFP100X, QFN48X 
+2.500 
+ GW1NZ-1 
+ GW1N-2, GW1N-1P5, GW1NR-2 (All packages 
+except those supporting only 2.500 MHz) 
+ GW1NSER-4C, GW1NS-4, GW1NSR-4, 
+GW1NS-4C, GW1NSR-4C (All PNs with speed 
+grades other than C7/I6) 
+ GW1N-9, GW1NR-9  
+ GW2A-18, GW2AR-18 
+ GW2ANR-18 Version C 
+ GW2A-55 
+ GW2AN-55 Version C 
+2.500, 5.435, 5.68, 7.812, 
+8.333, 8.929, 9.615, 10.417, 
+11.364, 12.500, 13.889, 
+15.625, 17.857, 20.833, 
+25.000, 31.250, 
+41.667, 62.500 
+GW1N-1, GW1N-1S, GW1NR-1 
+2.500, 2.553, 2.609、2.667、 
+2.727, 2.791, 2.857, 2.927,  
+3.000, 3.077, 3.158, 3.243, 
+3.333, 3.429, 3.529, 3.636, 
+3.750, 3.871, 4.000, 4.138, 
+4.286, 4.444, 4.615, 4.800, 
+5.000, 5.217, 5.455, 5.714, 
+6.000, 6.316, 6.667, 7.059, 
+7.500, 8.000, 8.571, 9.231, 
+10.000, 10.909, 12.000, 
+13.333, 15.000, 17.143,  
+20.000, 24.000, 30.000, 
+40.000, 60.000 
+GW2AN-9X, GW2AN-18X 2.500, 1.562, 1.587, 1.613,  
+PAGE 60
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 48(87) 
+ 
+Device Loading Rate (MHz) 
+1.639, 1.667, 1.695, 1.724,  
+1.754, 1.786, 1.818, 1.852,  
+1.887, 1.923, 1.961, 2.000,  
+2.041, 2.083, 2.128, 2.174,  
+2.222, 2.273, 2.326, 2.381,  
+2.439, 2.564, 2.632, 2.703,  
+2.778, 2.857, 2.941, 3.030,  
+3.125, 3.226, 3.333, 3.448,  
+3.571, 3.704, 3.846,  
+4.000, 4.167, 4.348, 4.545,  
+4.762, 5.000, 5.263, 5.556,  
+5.882, 6.250, 6.667, 7.143,  
+7.692, 8.333, 9.091, 10.000,  
+11.111, 12.500, 14.286, 
+16.667, 20.000, 25.000, 
+33.333, 50.000, 100.000 
+GW1N-4, GW1NRF-4B, GW1NR-4 
+2.100, 4.565, 4.773, 5.000,  
+5.250, 5.526, 5.833, 6.176,  
+6.563, 7.000, 7.500, 8.077,   
+8.750, 9.545, 10.500, 11.667,  
+13.125, 15.000, 17.500,  
+21.000, 26.250, 35.000, 
+52.500 
+GW1NSER-4C, GW1NS-4,  
+GW1NSR-4, GW1NS-4C, 
+GW1NSR-4C (All PNs with speed grades C7/I6) 
+2.600, 5.652, 5.909, 6.190,  
+6.500, 6.842, 7.222, 7.647,   
+8.125, 8.667, 9.286, 10.000,  
+10.833, 11.818, 13.000, 
+14.444, 16.250, 18.571,   
+21.667, 26.000, 32.500,   
+43.333, 65.000 
+GW5A(S)(T)-138, GW5A(R)-25, GW5AT-75 35.000, 52.500, 70.000, 105.000 
+GW5AT-60, GW5A(R)T-15, Arora III 
+2.500, 1.667, 1.694, 1.721,  
+1.750, 1.780, 1.810, 1.842,  
+1.875, 1.909, 1.944, 1.981,  
+2.019, 2.059, 2.100, 2.143,  
+2.188, 2.234, 2.283, 2.333,  
+2.386, 2.442, 2.561, 2.625,  
+2.692, 2.763, 2.838, 2.917,  
+3.000, 3.088, 3.182, 3.281,  
+3.387, 3.500, 3.621, 3.750,  
+3.889, 4.038, 4.200, 4.375,  
+4.565, 4.773, 5.000, 5.250,   
+5.526, 5.833, 6.176, 6.563,   
+7.000, 7.500, 8.077, 8.750,  
+9.545, 10.500, 11.667,  
+13.125, 15.000, 17.500,   
+21.000, 26.250, 35.000,   
+PAGE 61
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 49(87) 
+ 
+Device Loading Rate (MHz) 
+52.500, 70.000, 105.000 
+   
+ Background Programming: You can re-program Flash without 
+interrupting the current FPGA running. If the device does not support 
+background programming, the configuration option will not be 
+displayed on the configuration interface. 
+Figure 4-33 Set Background Programming to I2C 
+ 
+ 
+Figure 4-34 HOTBOOT Option 
+ 
+ 
+The devices that support background programming and their values 
+are shown in Table 4-5. 
+Table 4-5 Background Programming Value 
+Device  Background Programming Value 
+ Version non-C: 
+GW1N-1P5/GW1N-2/GW1NR-2  
+ Version B: GW1NZ-2, 
+GW1N-4/GW1NR-4  
+ Version D: GW1N-4/GW1NR-4  
+ GW1NS-4/GW1NSR-4 
+ GW1N-9/GW1NR-9 
+ GW1NZ-1 
+ GW1NRF-4B 
+JTAG 
+Version C: GW1N-2/GW1NR-2/ 
+GW1NZ-2/GW1N-1P5  GoConfig, GoConfig Mode1, JTAG, I2C 
+GW2AN-18X/GW2AN-9X GoConfig, I2C/JTAG, SSPI/QSSPI 
+ 
+Background Programming values and using considerations are 
+described as follows. 
+- JTAG: Use JTAG mode for background programming 
+- I2C: Use I2C mode for background programming. "I2C Slave 
+Address (Hex)" is used to set the address of the I2C device, with 
+
+PAGE 62
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 50(87) 
+ 
+the value range of 00~7F, as shown in Figure 4-33. For 
+GW1N-2/GW1N-1P5/GW1NR-2 version C devices, when using 
+I2C mode for background programming, there is no option "I2C 
+Slave Address (Hex)" in the configuration dialog box; and "Use 
+RECONFIG_N as regular IO" is unchecked and non-configurable 
+in the "Dual-Purpose Pin" dialog box. 
+- GoConfig: Use goConfig IP for background programming. 
+- I2C/JTAG: Use I2C/JTAG mode for background programming.  
+- SSPI/QSSPI: Use SSPI/QSSPI mode for background 
+programming. 
+- For GW2AN-18X/GW2AN-9X devices, when "Enable Background 
+Programming" is selected, the "HOTBOOT" option appears in the 
+dialog box as shown in Figure 4-34. This option is optional and is 
+not selected by default. 
+- For GW2AN-18X/GW2AN-9X devices, when switching between 
+GoConfig and I2C/JTAG modes, or between GoConfig and the 
+"Enable Background Programming" option (unchecked), both 
+Synthesize and Place & Route will be marked as outdated. When 
+switching between I2C/JTAG, SSPI/QSSPI modes and the "Enable 
+Background Programming" option (unchecked), only the Place & 
+Route will be marked as outdated. 
+ Enable External Master Config Clock: Enable the external master 
+config clock, only Arora V and Arora III devices support this option, 
+unchecked by default. When this option is checked, the configuration 
+option "Frequency Divider" will appear in the dialog box, as shown in 
+Figure 4-35. For GW5A(S)(T)-138/GW5AT-75 devices, the values are 
+1, 2, 4, 8, and the default is 1. For GW5A(S) 
+(R)-25/GW5AT-60/GW5A(N)(R)T-15/Arora III devices, the values are 1 
+and even numbers from 2 to 1022; and there are totally 512 values, 
+and the default is 1. 
+Figure 4-35 Frequency Divider Option 
+ 
+ 
+ Enable SEU Handler: Enable Single-Event Upsets Handler (SEU 
+Handler). Only Arora V and Arora III devices support this function, 
+unchecked by default. When this option is checked, the configuration 
+sub-options "Enable SEU Handler CheckSum", "Enable Error 
+Detection only", "Enable Error Detection and Correction", "Stop SEU 
+Handler when detected uncorrectable ECC error or CRC checksum 
+mismatch error", "Mode", and "Enable Error Injection". Among them, 
+"Enable Error Detection only" and "Enable Error Detection and 
+Correction" cannot be checked at the same time, as shown in Figure 
+4-36. 
+
+PAGE 63
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 51(87) 
+ 
+Figure 4-36 Enable SEU Handler Option 
+ 
+ 
+Figure 4-37 Enable Error Injection Option 
+ 
+ 
+- Enable SEU Handler CheckSum: Enable Single-Event Upsets 
+Handler, detection, calculation and comparison, unchecked by 
+default. 
+- Enable Error Detection only: Enable error detection only, 
+unchecked by default. 
+- Enable Error Detection and Correction: Enable error detection and 
+correction, unchecked by default. 
+- Stop SEU Handler when detected uncorrectable ECC error or CRC 
+checksum mismatch error: Stop SEU Handler when uncorrectable 
+ECC error or CRC checksum mismatch error is detected, 
+unchecked by default. 
+- Mode: Select SEU Handler start or stop mode; the values are Auto 
+and UserLogic, and the default is Auto. 
+- Enable Error Injection: The option Enable Error Injection appears 
+when UserLogic mode is selected, unchecked by default, as shown 
+in Figure 4-37. 
+- CSR File: Used to specify the CSR file. 
+Feature sysControl 
+For LittleBee/Arora I/Arora II devices, the Feature sysControl 
+configuration is as shown in Figure 4-38. 
+
+PAGE 64
+4 Gowin Software Usage  4.3 Edit a Project 
+ 
+SUG100-4.4.7E 52(87) 
+ 
+Figure 4-38 Feature sysControl Configuration for LittleBee/Arora I/Arora II  
+Devices 
+  
+ 
+Multi Boot is checked by default, and the sub-configuration SPI Flash 
+Address will appear.  
+ SPI Flash Address: Specify SPI Flash address. The SPI Flash address 
+refers to the initial address to which the bitstream will be loaded for the 
+next multiboot. For GW2AN-18X and GW2AN-9X, the default is 
+000000; for the other LittleBee/Arora I/Arora II devices, the default 
+value is 00000000. For further details, see SUG502, Gowin 
+Programmer User Guide.  
+For Arora V and Arora III devices, the Feature sysControl configuration 
+is as shown in Figure 4-39. 
+Figure 4-39 Feature sysControl Configuration for Arora V and Arora III Devices 
+  
+
+PAGE 65
+4 Gowin Software Usage  4.4 Manage a Project 
+ 
+SUG100-4.4.7E 53(87) 
+ 
+Multi Boot is unchecked by default, and the following 
+sub-configurations will be displayed when it is checked. 
+Table 4-6 Multi Boot Sub-configurations 
+Name  Description  
+Address Width Configure SPI Flash address width; the values are 24 and 
+32, and the default is 24. 
+SPI Flash Address Specify SPI Flash address. The SPI Flash address refers to 
+the initial address to which the bitstream will be loaded for 
+the next multiboot. The default is 000000; for further details, 
+see SUG502, Gowin Programmer User Guide. 
+Mode Configure SPI Flash address access mode; the values are 
+Single, Fast, Dual and Quad, and the default is Single. 
+ 
+MSPI JUMP is unchecked by default, and the following 
+sub-configurations will be displayed when it is checked. 
+Table 4-7 MSPI JUMP Sub-configurations 
+Name  Description  
+Enable Merge Mode Using this option will merge the MSPI JUMP bitstream file 
+into a general bitstream file, unchecked by default. 
+Address Width Configure SPI Flash address width; the values are 24 and 
+32, and the default is 24. 
+SPI Flash Address Specify SPI Flash address, and the default is 000000. 
+Mode Configure SPI Flash address access mode; the values are 
+Single, Fast, Dual and Quad, and the default is Single. 
+4.4 Manage a Project  
+The Process view provides the process of FGPA design flow, as 
+shown in Figure 4-40. The Process View includes following operations. 
+ View design summary 
+ Start physical constraints editor 
+ Start timing constraints editor 
+ Run Synthesis 
+ View Synthesis report 
+ Run Place & Route 
+ View reports generated after Place & Route 
+ Start Programmer 
+PAGE 66
+4 Gowin Software Usage  4.4 Manage a Project 
+ 
+SUG100-4.4.7E 54(87) 
+ 
+Figure 4-40 Project Process View 
+ 
+4.4.1 Design Summary 
+A new project created, the software will analyze the project and 
+provide a report of Design Summary, which will include the project file path, 
+synthesis information and device information, as shown in Figure 4-41. 
+There are three following ways to open the Design Summary: 
+ From the menu bar, select "Window > Design Summary". 
+ In the Process View, double-click "Design Summary". 
+ In the Process View, right-click "Design Summary", and select "Open". 
+Figure 4-41 Project Summary 
+ 
+Note! 
+For devices without version, the Device Version will not be displayed in the table. 
+4.4.2 User Constraints 
+User constraints provide quick access to open and create constraints 
+files. User constraints include physical and timing constraints.  
+For the details, please refer to SUG940, Gowin Design Timing 
+Constraint User Guide, and SUG935, Gowin Design Physical Constraints 
+
+PAGE 67
+4 Gowin Software Usage  4.4 Manage a Project 
+ 
+SUG100-4.4.7E 55(87) 
+ 
+User Guide; SUG1018, Arora Ⅴ Design Physical Constraints User Guide. 
+4.4.3 Synthesize 
+GowinSynthesis is the synthesis tool developed by Gowin. It supports 
+GOWINSEMI library files and their implementations. It supports System 
+Verilog 2017, Verilog 2001, Verilog 95, VHDL 1993, VHDL 2008, and VHDL 
+2019. 
+Right-click "Synthesize" and select "Configuration" in the Project 
+Design area to open the configuration dialog box, as shown in Figure 4-22.  
+Synthesize provides functions of running synthesis, setting synthesis 
+parameters, and managing Netlist File and Synthesis Report. For the 
+Synthesis Report, see 6.1 Synthesis Report. 
+Refer to the following steps to run Synthesize. 
+1. Configure synthesis, and you can refer to 4.3.3 Edit Project 
+Configuration. 
+2. Run Synthesize 
+3. In the Process pane, double click "Synthesize" or right-click 
+"Synthesize" and select "Run" to start synthesis of source files. If the 
+synthesis is successful, the icon " " appears before Synthesize; if not, 
+the icon " " appears. 
+4. After synthesis completed successfully, double click "Netlist Report", 
+"Synthesis Report" or right-click and select "Open" to view the Netlist 
+Report and synthesis report. The post-synthesis generated netlist file is 
+*.vg, and synthesis report file is *_syn.rpt.html. 
+If the Synthesize icon is " " before synthesis, double click "Netlist 
+File", "Synthesis Report" or right click to select "Open" to synthesize first, 
+and the netlist file or synthesis report can be opened after successful 
+synthesis. 
+  The right-click operations of Synthesize is as shown in Figure 4-42. 
+ Run: Only when the icon before Synthesize is " " (Initial Status), " " 
+(Failure Status), or " " (Expired Status), you can select Run to start 
+synthesis of source files. 
+ Rerun: No matter what Synthesize status is, you can select Rerun to 
+restart synthesis of source files. 
+ Rerun All: If this option selected, regardless of the status of "Place & 
+Route" and "Synthesize", the source file will be synthesized and placed 
+& routed again 
+ Clean & Rerun All: Clean the gwsynthesis and pnr folders under the 
+project folder impl, and synthesize and place & route the source files 
+again. 
+ Stop: Stop Synthesize 
+ Clean: Clean the generated folder after synthesis (a folder generated 
+
+PAGE 68
+4 Gowin Software Usage  4.4 Manage a Project 
+ 
+SUG100-4.4.7E 56(87) 
+ 
+by GowinSynthesis is gwsynthesis). Click it and a prompt will pop up. 
+ Configuration: Configure Synthesis parameters 
+Figure 4-42 Right-click Synthesize 
+ 
+4.4.4 Place & Route 
+Place and route provides the functions of running PnR, setting 
+parameters, and managing the generated files. 
+Note! 
+Place & Route will be implemented after running Synthesize. 
+Refer to the following steps to run Place & Route. 
+1. Configure Place & Route, please refer to 4.3.3 Edit Project 
+Configuration. 
+2. Run Place & Route, double-click "Place & Route", or right-click and 
+select "Place & Route > Run" to generate bitstream files and related 
+reports. If running successfully, the " " icon will appear before Place & 
+Route. Otherwise, the " " will appear; 
+3. After Place & Route has been run successfully, double-click on "View 
+Post PnR Report" or right-click and select "Open" to view the report. 
+4. You can view four kinds of reports: Place & Route Report, Timing 
+Analysis Report, Ports & Pins Report, and Power Analysis Report. 
+These reports can not be edited. See 6.2 Place & Route Report, 6.3 
+Ports and Pins Report, 6.4 Timing Report, 6.5 Power Analysis Report 
+for the details. 
+Note! 
+ If the report is already opened and it is regenerated by running Place & Route 
+again, a update prompt will pop up. 
+ Before running Place & Route, if the status icon before Place & Route is " ", 
+double click the report or right-click and select "Open" to run Place & Route first. 
+The report will be opened after Place & Route runs successfully. 
+Right-click operations of Place & Route are as follows. 
+
+PAGE 69
+4 Gowin Software Usage  4.4 Manage a Project 
+ 
+SUG100-4.4.7E 57(87) 
+ 
+ Run: You can select "Run" to start Place & Route only when the icon 
+before Place & Route is " ", " ", or " ". 
+ Rerun: Regardless of the Place & Route status, you can select Rerun 
+to rerun Place & Route. 
+ Rerun All: If this option selected, regardless of the status of "Place & 
+Route" and "Synthesize", the source file will be Synthesize and placed 
+& routed again. 
+ Clean & Rerun All: Clean the gwsynthesis and pnr folders under the 
+project folder impl, and synthesize and place & route the source files 
+again. 
+ Stop: Stop Place & Route 
+ Clean: Clean all the generated files after PnR; a prompt will pop up 
+when you click this option. A Warning message will be reported if the 
+deletion of a folder fails. 
+ Configuration: Configure Place & Route parameters. 
+4.4.5 Programmer 
+Bitstream files will be generated after Gowin Software has run 
+placement and routing. Start Gowin FPGA programmer to download the 
+bitstream files to the chip to realize user-required functions. 
+Note! 
+Programmer will be implemented after running Synthesize and Place & Route. If you 
+do not run synthesize and Place & Route first, warnings will appear. 
+Double-click "Programmer" or right click and select "Run" to open 
+Gowin FPGA Programmer, as shown in Figure 4-43. 
+Note! 
+The Programmer in the Linux installation package does not work with Linux Red Hat 
+5.10, only works with Red Hat 6 and above, and the Linux core version needs to be 
+2.18 and above. 
+Figure 4-43 Gowin Programmer 
+  
+  
+For the usage, please refer to SUG502, Gowin Programmer User 
+Guide. 
+
+PAGE 70
+4 Gowin Software Usage  4.5 Archive and Restore a Project 
+ 
+SUG100-4.4.7E 58(87) 
+ 
+4.5 Archive and Restore a Project 
+Gowin Software can archive project and restore archived project. Use 
+"Archive Project" and "Restore Archived Project" under "Project" in the 
+menu bar to archive or restore archived project. 
+4.5.1 Archive a Project 
+A dialog box will pop up when you click "Project > Archive Project", as 
+shown in Figure 4-44; an explanation is displayed when your mouse hover 
+over an option. 
+ Archive File Name is the archived file name. The default name is the 
+same as the current archived project name with extension .gar. 
+ Create In is the path for the archived file, and the default is the current 
+project path. 
+ The File Types include Project source files (checked by default), 
+GowinSynthesis files, PnR files and Programming files. 
+- Project source files: Includes all the files under the path /src where 
+the project is located. 
+- GowinSynthesis files: Includes project files (*.prj), netlist files (*.vg), 
+synthesis reports (*_syn.rpt.html), resource statistics files 
+(*_syn_rsc.xml) generated synthesis under the path 
+/impl/gwsynthesis where the project is located. 
+- PnR files: Includes the files generated by PnR under the path 
+/impl/pnr where the project is located. 
+- Programming files: Includes the bitstream file *.fs, *.bin and *.binx 
+generated by PnR under the path /impl/pnr where the project is 
+located. 
+ When a file type is checked, the source file, path and size of the current 
+project are displayed below. 
+ Add and Remove can be used to add and remove archived files. 
+ After clicking Archive, a prompt box will pop up if the files in the project 
+are not saved. 
+ After archiving, a prompt will pop up, indicating the success or failure of 
+the archiving. 
+ When the archiving is completed, two files will be generated under the 
+"Create In" path: the archived project *.gar and the archived file 
+*.garlog. The file with .gar suffix compresses and stores all the archived 
+files. The log file with *.garlog suffix is used for checking which files are 
+archived and whether the archiving is successful. 
+PAGE 71
+4 Gowin Software Usage  4.6 Exit Software 
+ 
+SUG100-4.4.7E 59(87) 
+ 
+Figure 4-44 Archive Project Dialog Box 
+ 
+4.5.2 Restore Archived Project 
+Restore Archived Project dialog will pop up when you clicks Project in 
+the menu bar, as shown in Figure 4-45 .   
+Figure 4-45 Restore Archived Project Dialog Box 
+ 
+ 
+Click the button on the right side of Archived File to select the archived 
+file to restore. After selecting, "Destination Folder" is automatically updated 
+to the path where the archive file is. Click "OK" and a dialog box will pop 
+up. 
+4.6 Exit Software 
+There are two ways to exit Gowin Software. 
+1. Select "File > Exit" from the File menu. 
+2. Click the " " icon on the upper right of the IDE. 
+Note! 
+
+PAGE 72
+4 Gowin Software Usage  4.6 Exit Software 
+ 
+SUG100-4.4.7E 60(87) 
+ 
+ If files are not saved, IDE will prompt you to save the files first. 
+ Save, Save All, and Save As…are only available for text editing. 
+ Project configuration modification and project files addition and deletion will not 
+be saved to project configuration files in time; they will be saved automatically 
+when you close the software. 
+ If a synthesis, place & route, or other design flow is currently running, the 
+software cannot be closed by clicking the exit button. 
+PAGE 73
+5 Tools Integrated in Gowin Software  5.1 Physical Constraints Editor 
+ 
+SUG100-4.4.7E 61(87) 
+ 
+5 Tools Integrated in Gowin Software 
+5.1 Physical Constraints Editor 
+Gowin FloorPlanner is designed in-house by Gowin, and it supports 
+reading and editing the attributes and locations of I/O, Primitive, Block 
+(BSRAM and DSP), and Group, etc. It also supports the generation of new 
+placement and constraints files according to your configuration. These files 
+define the I/O attributes, primitives and locations, etc. Gowin FloorPlanner, 
+supporting Gowin all FPGA products, provides an editing way to improve 
+design efficiency, and it also supports timing optimization. 
+FloorPlanner can be started using two methods. 
+1. If no FPGA project is created, you can select "Tools > FloorPlanner" 
+directly from the menu bar. You will need to add netlist files and devices 
+information by selecting "File > New". 
+2. If an FPGA project is already created, run "Synthesize", and then 
+double-click "FloorPlanner" directly in the Process View. The 
+Floorplanner will then load the project files directly. The FloorPlanner 
+includes Summary, Netlist, Chip Array, Package View, as shown in 
+Figure 5-1 and Figure 5-2. 
+Note! 
+For more details, see SUG1541, Gowin Software Physical Constraints User Guide. 
+PAGE 74
+5 Tools Integrated in Gowin Software  5.1 Physical Constraints Editor 
+ 
+SUG100-4.4.7E 62(87) 
+ 
+Figure 5-1 Chip Array View 
+ 
+ 
+Figure 5-2 Package View 
+  
+
+PAGE 75
+5 Tools Integrated in Gowin Software  5.2 Timing Constraint Editor 
+ 
+SUG100-4.4.7E 63(87) 
+ 
+5.2 Timing Constraint Editor 
+The Gowin Timing Constraints Editor is designed in-house by Gowin, 
+and supports multiple timing constraints commands, including clock 
+constraints, I/O constraints, path constraints, and clock report editing. The 
+Timing Constraints Editor allows an easy and quick timing constraint 
+editing for Gowin all FPGA products. 
+Timing Constraints Editor can be started using two methods: 
+1. If no FPGA project is created, you can select "Tools > Timing 
+Constraints Editor" from the menu bar. Add netlist files by selecting 
+"File > New". 
+2. If an FPGA project is already created, Run "Synthesize", double-click 
+"Timing Constraints Editor", and the Timing Constraints Editor will load 
+project files directly, as shown in Figure 5-3. 
+Note! 
+For the details, see SUG940, Gowin Design Timing Constraint User Guide. 
+Figure 5-3 Create Timing Constraints 
+  
+5.3 IP Core Generator 
+The IP Core Generator in Gowin Software is mainly used to generate 
+hard and soft IPs, which you can call to implement the required functions. 
+As shown in Figure 5-4, its main functions are as follows. 
+ Supports Soft IP core, Hard module information preview 
+ Supports customized Soft IP core and Hard module. 
+ Supports Hard module instance generation. 
+ Can save configuration automatically. 
+ Supports IP generation code language selection. 
+
+PAGE 76
+5 Tools Integrated in Gowin Software  5.3 IP Core Generator 
+ 
+SUG100-4.4.7E 64(87) 
+ 
+ Some Soft IP can generate incentive file automatically. 
+ Can display available IPs by selecting device. 
+Figure 5-4 IP Core Generator 
+ 
+ 
+Start the IP Core Generator by selecting "IP Core Generator" from the 
+Tools menu. For the details, you can see following manuals. 
+ For the details of ADC, BANDGAP, I3C and SPMI, you can see 
+SUG283, Gowin Primitives User Guide; UG299, Arora V Series Analog 
+to Digital Converter (ADC) User Guide. 
+ For the details of CLOCK, you can see UG286, Gowin Clock User 
+Guide; UG306, Arora V Clock User Guide. 
+ For the details of DSP, you can see UG287, Gowin Digital Signal 
+Processing User Guide; UG305, Arora V Digital Signal Processing 
+(DSP) User Guide. 
+ For the details of IO Logic, you can see UG289, Gowin Programmable 
+IO (GPIO) User Guide; UG300, Arora V BSRAM & SSRAM User 
+Guide. 
+ For the details of BSRAM & SSRAM, you can see UG285, Gowin 
+BSRAM & SSRAM User Guide; UG300, Arora V BSRAM & SSRAM 
+User Guide. 
+ For the details of User Flash, you can see UG295, Gowin User Flash 
+User Guide. 
+ For the soft IPs reference design, you can click this link. 
+Note! 
+The grayed out Hard Module or Soft IP Core is not supported by the current device. 
+
+PAGE 77
+5 Tools Integrated in Gowin Software  5.4 Gowin Analyzer Oscilloscope 
+ 
+SUG100-4.4.7E 65(87) 
+ 
+5.4 Gowin Analyzer Oscilloscope 
+The Gowin Analyzer Oscilloscope (GAO) is a digital signal analyzer 
+that is designed in-house by Gowin. It helps you to analyze signal timing in 
+design more easily, and quickly perform system analysis and fault locating, 
+thereby improving design efficiency. 
+GAO supports RTL-level signal capture and netlist-level signal capture 
+after synthesis, and provides standard version (Standard) and simplified 
+version (Lite). Standard GAO can support up to 16 AOs, each of which can 
+be configured with one or more trigger ports, supporting multi-level static or 
+dynamic trigger expressions. Lite GAO is easy to configure, and you do not 
+need to set trigger conditions, and it also can capture the initial value of the 
+signal, which is convenient for you to analyze the state of power-on. After 
+signal capture, the waveform can be exported, supporting *.csv, *.vcd and 
+*.prn file formats. *.csv and *.prn files can be directly used in matlab and 
+other third-party simulation tools, and the standard *.vcd file can be directly 
+used in ModelSim and Verdi. 
+Note! 
+Matlab and ModelSim tools require a third-party license. 
+The GAO includes Gowin GAO configuration and the Gowin Analyzer 
+Oscilloscope. Gowin GAO configuration is mainly used to insert position 
+information into the design, which is predominantly based on the sampling 
+clock, trigger unit, and trigger expression; Gowin Analyzer Oscilloscope 
+connects software and target hardware through the JTAG interface, and 
+visually displays the data of the sampled signal set by GAO Config File with 
+the waveform. 
+Before starting GAO configuration, create the GAO config file in the 
+Project Area to open the GAO configuration view, taking standard version 
+as an example, as shown in Figure 5-5. 
+Figure 5-5 GAO Config File View 
+ 
+ 
+
+PAGE 78
+5 Tools Integrated in Gowin Software  5.5 Gowin Power Analyzer 
+ 
+SUG100-4.4.7E 66(87) 
+ 
+After the configuration file is created, select "Tools > Gowin Analyzer 
+Oscilloscope" from the menu bar to open the Gowin Analyzer Oscilloscope, 
+as shown in Figure 5-6. 
+Note! 
+For the details, see SUG114, Gowin Analyzer Oscilloscope User Guide. 
+Figure 5-6 GAO View 
+ 
+5.5 Gowin Power Analyzer 
+Gowin Power Analyzer (GPA) helps to analyze the power consumption 
+of your design and provides many configuration options. You can configure 
+the parameters according to the actual design. GPA automatically 
+estimates the power consumption and generates a power consumption 
+analysis report according to the parameters. 
+Based on the new configuration file (.gpa), follow the below steps to 
+start the GPA. 
+1. In the Design area, select "File> New…" to open a "New" dialog box. 
+2. Select "GPA Config File" and type a Name in the pop-up dialog box. 
+3. Click "OK", and the new GPA config file will be displayed in the Project 
+Design View. 
+4. Double click on the file name to open the GPA Config view, as shown in 
+Figure 5-7. 
+Note! 
+For the details, see SUG282, Gowin Power Analysis User Guide. 
+
+PAGE 79
+5 Tools Integrated in Gowin Software  5.6 Memory Initialization File Editor 
+ 
+SUG100-4.4.7E 67(87) 
+ 
+Figure 5-7 GPA Config File View 
+ 
+5.6 Memory Initialization File Editor  
+The Memory Initialization File is an ASCII file with an .mi suffix. You 
+can generate the corresponding Initialization File according to your design 
+to specify the initial value for the memory of each address. The Memory 
+Initialization File editor can be used to open and edit the existed .mi file. 
+Each line in the Memory Initialization File correlates with one memory. 
+The number of lines is the number of memories and also the memory 
+address depth. The number of columns represents each memory bit; that is, 
+the memory data width. The address decreases from top to bottom with the 
+most significant bit first for each line. 
+Gowin memory initialization file is based on .mi file. For the details, see 
+UG285, Gowin BSRAM & SSRAM User Guide. The steps are as follows: 
+1. In the Design area, select "File> New…" to open a "New" dialog box. 
+2. Select "Memory Initialization File", as shown in Figure 5-8. Click "OK" 
+and type the initialization file name in the pop-up "New File" dialog box, 
+and then click "OK". The Initialization File Configuration View is as 
+shown in Figure 5-9. 
+
+PAGE 80
+5 Tools Integrated in Gowin Software  5.6 Memory Initialization File Editor 
+ 
+SUG100-4.4.7E 68(87) 
+ 
+3. Start the file initialization view as shown in Figure 5-10. Type the initial 
+value on the left side and configure the initialization file format and 
+depth/width and view on the right side. 
+4. On the right side, configure the depth and width for the initialization file 
+and the format for the address and initial values in the left table. 
+ The depth and width values should be same as the Block Memory 
+or Shadow Memory address depth and data width set in the IP 
+Core Generator. If the address depth and data width in the 
+initialization file are greater than the values set in the IP Core 
+Generator, the IP Core Generator will prompt an error message. If 
+the depth and width values are less than the address depth and 
+data width set in the IP Core Generator, the value of the 
+unassigned address will be initialized to 0 by default. Click 
+"Update" after configuration. 
+ The display format of the addresses and values on the left in the 
+table can be configured as binary, hexadecimal, and address- 
+hexadecimal, etc. 
+5. Type the initial value and set the view in the left table. 
+ Right-click the table header to configure the number of columns, 
+which can be configured as 1, 8, or 16, as shown in Figure 5-11. 
+ The initial values in the table can be entered manually by 
+double-clicking a cell or configured by right-clicking. Right-click the 
+target cell and select "Fill with 0", which sets all bits of the initial 
+value to 0; "Fill with 1", which sets all bits of the initial value to 1; or 
+"Custom Fill", which allows the user to enter values as required, as 
+shown in Figure 5-12. Selecting "Custom Fill" enables batch filling 
+of repeated sequence or incrementing/decrementing data, as 
+shown in Figure 5-13. 
+6. Save the file. 
+Figure 5-8 New Dialog Box 
+ 
+ 
+
+PAGE 81
+5 Tools Integrated in Gowin Software  5.6 Memory Initialization File Editor 
+ 
+SUG100-4.4.7E 69(87) 
+ 
+Figure 5-9 New File Dialog Box 
+ 
+ 
+Figure 5-10 Initialization File Configuration View  
+  
+  
+Figure 5-11 Column Setting 
+ 
+ 
+Figure 5-12 Batch Setting 
+ 
+
+PAGE 82
+5 Tools Integrated in Gowin Software  5.7 User Flash Initialization File Editor 
+ 
+SUG100-4.4.7E 70(87) 
+ 
+Figure 5-13 Batch Filling of Repeated Sequence or Incrementing/Decrementing 
+Data 
+ 
+5.7 User Flash Initialization File Editor  
+User Flash Initialization file is an ASCII file with an .fi suffix. You can 
+generate the corresponding Initialization File according to your design to 
+specify the initial value for the User Flash of each address. The User Flash 
+Initialization File editor can be used to open and edit the existed. fi file. 
+The name of User Flash initialization file is *.fi(file_name.fi). Each line 
+in the Memory Initialization File correlates with one memory. The number of 
+lines is the number of memories that needs to be initialized. The contents in 
+the header bracket represent the ordinate address and the abscissa 
+address respectively, separated by a semicolon. The contents after the 
+brackets in each line represent the data initialized by the memory, and the 
+data supports binary and hexadecimal, MSB first. The following are 
+examples of the .fi file format. 
+5.7.1 Bin File 
+ Bin file is a text file that consists of the 0 and 1. 
+//Copyright (C)2014-2024 Gowin Semiconductor Corporation. 
+//All rights reserved. 
+//File Title: User Flash Initialization File 
+//Tool Version: V1.9.10(64-bit) 
+//Part Number: GW1N-LV4PG256C6/I5 
+//Device-package: GW1N-4-PBGA256 
+//Device Version: D 
+//Flash Type: FLASH256K 
+//File Format: Bin 
+//Created Time: 2024-06-28 14:31:12 
+[0:0] 00000000000100000001000100010000 
+[1:1] 00000000000100010001000000000001 
+
+PAGE 83
+5 Tools Integrated in Gowin Software  5.7 User Flash Initialization File Editor 
+ 
+SUG100-4.4.7E 71(87) 
+ 
+5.7.2 Hex File 
+ The Hex file is similar to the Bin file. It consists of hexadecimal 
+numbers 0~F. 
+//Copyright (C)2014-2024 Gowin Semiconductor Corporation. 
+//All rights reserved. 
+//File Title: User Flash Initialization File 
+//Tool Version: V1.9.10(64-bit) 
+//Part Number: GW1N-LV4PG256C6/I5 
+//Device-package: GW1N-4-PBGA256 
+//Device Version: D 
+//Flash Type: FLASH256K 
+//File Format: Hex 
+//Created Time: 2024-06-28 14:41:24 
+[0:0] 00101110 
+[1:1] 00111001 
+Based on the new configuration file (. fi), and you can follow the below 
+steps to use the initialization file editor. 
+1. In the Design area, select "File> New…" to open a "New" dialog box. 
+2. Select "User Flash Initialization File", as shown in Figure 5-14. Click 
+"OK" and type the initialization file name in the pop-up "New File" 
+dialog box, and then click "OK", as shown in Figure 5-15. The devices 
+supported by User Flash Initialization File Editor are the same as the 
+devices supported by User Flash Primitives. If the device you selected 
+does not support User Flash, "Current device do not support flash" will 
+pop up at the bottom of "New File" Dialog box after you click "OK". 
+Figure 5-14 New Dialog Box 
+ 
+ 
+
+PAGE 84
+5 Tools Integrated in Gowin Software  5.7 User Flash Initialization File Editor 
+ 
+SUG100-4.4.7E 72(87) 
+ 
+Figure 5-15 New File Dialog Box 
+ 
+ 
+3. Start the file initialization view as shown in Figure 5-16. Enter the initial 
+value on the left side and configure the initialization file format and view 
+on the right side; Part Number and User Flash are also displayed on 
+the right. 
+Figure 5-16 Initialization File Configuration View 
+ 
+ 
+4. On the right side, configure Part Number, file format, address and 
+value. 
+ Click "Part Number", then "Select Device" dialog box will pop up; 
+you can select the other part number. 
+ The format of address and value can be configured as binary, octal, 
+decimal, hexadecimal, etc. 
+
+PAGE 85
+5 Tools Integrated in Gowin Software  5.8 Schematic Viewer 
+ 
+SUG100-4.4.7E 73(87) 
+ 
+5. Enter the initial values in the table on the left side of the configuration 
+window. In addition, the table view format can be configured in the left 
+table. The initial values in the table can be entered manually by 
+double-clicking a cell or configured by right-clicking. Right-click the 
+target cell and select "Fill with 0", which sets all bits of the initial value 
+to 0; "Fill with 1", which sets all bits of the initial value to 1; or "Fill 
+Custom", which allows the user to enter values as required, as shown 
+in Figure 5-17. Selecting "Custom Fill" enables batch filling of repeated 
+sequence or incrementing/decrementing data, as shown in Figure 
+5-13. 
+Figure 5-17 Batch Setting 
+ 
+ 
+6. Save the file. 
+5.8 Schematic Viewer 
+You can understand the design logic by Schematic Viewer, which is 
+helpful to the later modification. Schematic Viewer includes RTL Design 
+Viewer, Post-Synthesis Netlist Viewer. Schematic Viewer uses common 
+component symbols to build circuits, including adders, multipliers, registers, 
+and gates, non-gates, and inverters, etc. 
+You can click "Tools > Schematic Viewer > RTL Design Viewer/ 
+Post-Synthesis Netlist Viewer to open GUI, as shown in Figure 5-18 and 
+Figure 5-19. 
+Figure 5-18 RTL Design Viewer 
+ 
+ 
+
+PAGE 86
+5 Tools Integrated in Gowin Software  5.9 Virtual Input/Output Debugging Tool 
+ 
+SUG100-4.4.7E 74(87) 
+ 
+Figure 5-19 Post-Synthesis Netlist Viewer 
+ 
+ 
+Schematic Viewer displays backward " ", forward " ", zoom in " ", 
+zoom out " ", zoom " ", top view " ", upper level view " ",  reload " ", 
+and search " ". The design hierarchy is displayed on the left side, 
+including Modules, Ports, Nets, Primitives, and Black Boxes. 
+Note! 
+For the details, you can see SUG755, Gowin HDL Schematic Viewer User Guide.  
+5.9 Virtual Input/Output Debugging Tool 
+Gowin Virtual Input/Output Core (GVIO) is a customizable core that 
+can monitor and drive internal FPGA signals in real time. Its input ports are 
+used to monitor FPGA signals, functioning like virtual LEDs, while its output 
+ports are used to drive FPGA signals, functioning like virtual switches. 
+Before launching the GVIO configuration file window, you need to 
+create a new GVIO configuration file in the project area and then open the 
+configuration file window, as shown in Figure 5-20. 
+
+PAGE 87
+5 Tools Integrated in Gowin Software  5.10 Eye Diagram Analysis Tool GoBert 
+ 
+SUG100-4.4.7E 75(87) 
+ 
+Figure 5-20 GVIO Configuration File Window 
+ 
+Note! 
+For configuration and usage instructions of the Virtual Input/Output Core, see 
+SUG1189, Gowin Virtual Input Output User Guide. 
+5.10 Eye Diagram Analysis Tool GoBert 
+GoBert is a tool designed in-house by Gowin Semiconductor for 
+analyzing the eye diagrams of SerDes RX signals. It helps users evaluate 
+SerDes reception quality, thereby enhancing the performance and 
+reliability of their designs. When using GoBert to test signal reception 
+quality, users need to load the user design into the development board. 
+Once the functional application is operating normally, the eye diagram 
+testing can be initiated. 
+Click the "Tools" option on the menu bar or the " " button on the 
+toolbar of Gowin Software to launch the GoBert window, as shown in 
+Figure 5-21. 
+
+PAGE 88
+5 Tools Integrated in Gowin Software  5.10 Eye Diagram Analysis Tool GoBert 
+ 
+SUG100-4.4.7E 76(87) 
+ 
+Figure 5-21 GoBert Window 
+ 
+Note! 
+For the configuration and usage of the eye diagram analysis tool GoBert, you can see 
+SUG1198, Gowin GoBert User Guide. 
+
+PAGE 89
+6 Output Files  6.1 Synthesis Report 
+ 
+SUG100-4.4.7E 77(87) 
+ 
+6 Output Files 
+In the process of FPGA design, in addition to bitstream file, Gowin 
+Software can also generate multiple reports for reference by different 
+operating parameters. They are synthesis, place & route, ports, timing and 
+power reports. In addition, you can right-click Place & Route to modify the 
+configuration to generate pins constraints, timing simulation files, etc. 
+6.1 Synthesis Report 
+GowinSynthesis will generate synthesis reports and netlist files after 
+synthesis. 
+The report named *_syn.rpt.html is generated, including Synthesis 
+Message, Synthesis Details, Resource, and Timing, as shown in Figure 
+6-1. 
+Figure 6-1 GowinSynthesis Report 
+  
+ 
+The details are as follows. 
+ Synthesis Message: Includes design file, constraint file, software 
+version, device, report creation time and legal statement, etc. 
+
+PAGE 90
+6 Output Files  6.2 Place & Route Report 
+ 
+SUG100-4.4.7E 78(87) 
+ 
+ Synthesis Details: Includes top module of the design file, the synthesis 
+running time and CPU running time, as well as the memory peak at 
+each stage, and total CPU running time as well as memory peak. 
+ Resource: Includes resource statistics and device utilization statistics. 
+ Timing: Includes Clock Summary, Max Frequency Summary, Detail 
+Timing Paths Informations. 
+6.2 Place & Route Report 
+The Place & Route Report describes the resource, memory 
+consumption, time consumption, etc. occupied by the user design, with the 
+suffix .rpt.html, and you can check *.rpt.html file for further details. 
+Double-click "Place & Route Report" in the Process View to open the 
+Place & Route report, as shown in Figure 6-2. 
+Figure 6-2 Place & Route Report 
+  
+ 
+The details are as follows. 
+ PnR Messages: Includes report name, path and name of design, 
+physical constraints file, timing constraints file, software version, device 
+information, report creation time and declaration. 
+ PnR Details: 
+- The time used in each stage of place and the total time of place, 
+including the time of GAO place if there is GAO in the project. 
+- The time used in each stage of route and the total time of route, 
+including the time of GAO route if there is GAO in the project. 
+- The time used to generate the output file. 
+ Resource: 
+- Resource Usage Summary: Device resources utilization in user 
+design. 
+
+PAGE 91
+6 Output Files  6.3 Ports and Pins Report 
+ 
+SUG100-4.4.7E 79(87) 
+ 
+- I/O BANK0 Usage Summary: I/O BANK0 in user design 
+- Global Clock Usage Summary: Global clock used 
+- Global Clock Signals: Clock signals used in the user design 
+- Pinout by Port Name: Pinout in the user design 
+- All Package Pins: Details of all the pins in the device package 
+If the project has a GAO, it also includes the GAO Resource 
+Usage Summary. 
+6.3 Ports and Pins Report 
+The Ports and Pins Report is the ports and pins files after placement. It 
+includes ports type, attributes, and locations, etc. The generated file is 
+saved with .pin.html suffix, and you can view .html file for details. 
+Double-click "Ports & Pins Report" in the Process View to open the 
+report, as shown in Figure 6-3. 
+Figure 6-3 Ports & Pins Report 
+  
+ 
+The details are as follows: 
+ Pin Messages: Includes report name, path and name of design, 
+physical constraints file, timing constraints file, software version, device 
+information, report creation time and declaration. 
+ Pin Details: 
+- Pinout by Port Name: Pinout in the user design 
+- All Package Pins: Details of all the pins in the device package 
+Note! 
+
+PAGE 92
+6 Output Files  6.4 Timing Report 
+ 
+SUG100-4.4.7E 80(87) 
+ 
+For devices other than GW1N-1P5/GW1N-2/GW1NR-2 and GW2AN-18X/GW2AN-9X, 
+if no Bank VCCIO constraint is added, the voltage values corresponding to some 
+single-ended input port IO Type may not match the value of Bank VCCIO in the ports 
+report, which is normal. For example, the IO Type in the report is LVCMOS18, which 
+corresponds to a voltage value of 1.8, but the Bank VCCIO is 1.2 
+6.4 Timing Report 
+The timing report performs a thorough analysis of the timing model in 
+the circuit netlist, calculates the timing path delays in the circuit, and 
+determines whether they are met the requirements. The Timing report 
+includes setup check, holdup check, restoring and removal time check, Min. 
+clock pulse check, max. fanout path, Place & Route congestion report, etc. 
+by default, and provides the Max. frequency report. 
+Double-click "Timing Analysis Report" in the Process View to open the 
+timing analysis report for the project, as shown in Figure 6-4. 
+Note! 
+For the details, see SUG940, Gowin Design Timing Constraints User Guide.  
+Figure 6-4 Timing Report 
+  
+6.5 Power Analysis Report 
+The Power Analysis Report mainly includes the power consumption 
+estimation for your design. It is designed to help you evaluate the basic 
+power consumption of your design. 
+Double-click "Power Analysis Report" in the Process View to open the 
+analysis report, as shown in Figure 6-5. 
+Note! 
+For the details, see SUG282, Gowin Power Analyzer User Guide 
+
+PAGE 93
+6 Output Files  6.5 Power Analysis Report 
+ 
+SUG100-4.4.7E 81(87) 
+ 
+Figure 6-5 Power Analysis Report 
+ 
+
+PAGE 94
+7 Simulation Files  7.1 Functional Simulation Files 
+ 
+SUG100-4.4.7E 82(87) 
+ 
+7 Simulation Files 
+Gowin Software provides input files for simulation. Simulation includes 
+functional simulation and timing simulation. Functional simulation, also 
+known as pre simulation, is to verify whether the circuit meets the design 
+requirements, and it is characterized by not considering the circuit gate 
+delay and net delay. 
+Timing simulation, also known as post simulation or post PnR 
+simulation, is the process of verifying whether a circuit can meet the design 
+under certain timing conditions and whether there are timing violations, 
+taking into account the effects of the circuit path delay and gate delay after 
+the circuit has been mapped to a specific process environment. 
+7.1 Functional Simulation Files 
+Functional simulation includes functional simulation of the user RTL 
+design before synthesis and functional simulation of the synthesized logic 
+netlist. The required simulation files are described below using a design 
+written in Verilog as an example. 
+For RTL design functional simulation, the required files include the user 
+RTL design files before synthesis, the stimulus file (testbench) *tb.v, and 
+the functional simulation library file prim_sim.v. If the RTL design contains 
+soft IP cores, since soft IP cores are provided in encrypted form, 
+the .vo/.vho files generated by the soft IP cores must be used for functional 
+simulation. These .vo / .vho files are generated in the soft IP directory 
+src\ipName under the src directory of the current project. 
+For post-synthesis netlist functional simulation, the required files 
+include the synthesized netlist file (*.vg), the stimulus file (testbench) *tb.v, 
+and the functional simulation library file prim_sim.v. If the .vg file contains 
+encrypted content, the configuration option "Generate Post-PNR Verilog 
+Simulation Model File" on the "Configuration > Place & Route > General" 
+page must be enabled to generate a plaintext .vo file, which is then used to 
+replace the .vg file for functional simulation. 
+The installation directories of the primitive simulation library files are 
+listed in the table below. 
+PAGE 95
+7 Simulation Files  7.2 Timing Simulation Files 
+ 
+SUG100-4.4.7E 83(87) 
+ 
+Table 7-1 Installation Directories of Primitive Simulation Library Files 
+Supported Devices Simulation Library Directory Simulation Library File Name File Description 
+Arora V Devices 
+IDE/simlib/gw5a prim_sim.v Verilog-based functional simulation library file 
+IDE/simlib/gw5a prim_sim.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw5a prim_syn.vhd 
+IDE/simlib/gw5a prim_tsim.v Verilog-based timing simulation library file 
+Arora III Devices 
+IDE/simlib/gw3a prim_sim.v Verilog-based functional simulation library file 
+IDE/simlib/gw3a prim_sim.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw3a prim_syn.vhd 
+GW1AN-5, GW1AN-3 
+IDE/simlib/gw1a prim_sim.v Verilog-based functional simulation library file 
+IDE/simlib/gw1a prim_sim.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw1a prim_syn.vhd 
+GW1A(N)-1S, 
+GW1A(N)-1 
+IDE/simlib/gw1a prim_sim_a.v Verilog-based functional simulation library file 
+IDE/simlib/gw1a prim_sim_a.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw1a prim_syn_a.vhd 
+GW1N Family  
+IDE/simlib/gw1n prim_sim.v Verilog-based functional simulation library file 
+IDE/simlib/gw1n prim_sim.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw1n prim_syn.vhd 
+IDE/simlib/gw1n prim_tsim.v Verilog-based timing simulation library file 
+GW2A Family 
+IDE/simlib/gw2a prim_sim.v Verilog-based functional simulation library file 
+IDE/simlib/gw2a prim_sim.vhd VHDL-based functional simulation 
+library file IDE/simlib/gw2a prim_syn.vhd 
+IDE/simlib/gw2a prim_tsim.v Verilog-based timing simulation library file 
+7.2 Timing Simulation Files 
+Taking timing simulation of a design described in Verilog as an example, 
+the files required for timing simulation include: the Verilog simulation logic 
+netlist file (*.vo) generated by the software, the corresponding delay file 
+(*.sdf), the corresponding stimulus file (*tb.v), and the timing simulation 
+library file prim_tsim.v. 
+ The .vo file is generated by enabling the "Generate Post-PNR Verilog 
+Simulation Model File" option on the "Configuration > Place & Route > 
+General" page and then running Place & Route. The file is located in 
+the impl/pnr/ directory under the project path. 
+PAGE 96
+7 Simulation Files  7.2 Timing Simulation Files 
+ 
+SUG100-4.4.7E 84(87) 
+ 
+ The .sdf file is generated by enabling the "Generate SDF File" option 
+on the "Configuration > Place & Route > General" page and then 
+running Place & Route. The file is also located in the impl/pnr/ directory 
+under the project path. 
+For detailed configuration settings, refer to the General in section 4.3.3 
+Edit Project Configuration. 
+Note! 
+The time precision of the delay data in the SDF file is 1 ps. 
+PAGE 97
+8 Appendix  8.1 File Description 
+ 
+SUG100-4.4.7E 85(87) 
+ 
+8 Appendix 
+8.1 File Description 
+Gowin Software supports adding physical constraints, timing 
+constraints, and other files during the project design, and a variety of 
+execution files are generated in the overall design; this section will 
+introduce these files supported by Gowin Software as shown below. 
+Table 8-1 Source Files 
+File Type Definition Function 
+.gsc Synthesis constraints file Constraint files for the GowinSynthesis 
+.ipc IP configuration file 
+IP Core Generator can load an .ipc file to 
+recreate the IP after modifying the 
+configuration 
+.cst Physical constraints file Used to add physical constraints to the design 
+.sdc Timing constraints file Used to add timing constraints to the design 
+.fi User Flash initialization file Initialization assignment to User Flash; you can select to load it when downloading the bitstream through the Programmer. 
+.rao RTL-level GAO configuration file Capture the RTL signal before synthesis 
+.gao Post-synthesis GAO configuration file Capture the Netlist signal after synthesis 
+.gvio Virtual Input/Output Configuration File Used to real-time monitor and drive internal FPGA signals 
+.gpa Power analysis configuration file Used to analyze the power analysis of the design 
+.mi Memory initialization file 
+Initialization assignment of memory; you can 
+use this initialization file when generating the 
+memory through IP Core Generator. 
+.v Verilog source file Verilog description file containing circuit structure and function 
+.sv System Verilog source file System Verilog description file containing circuit structure and function 
+.vhd VHDL source file VHDL description file containing circuit 
+PAGE 98
+8 Appendix  8.1 File Description 
+ 
+SUG100-4.4.7E 86(87) 
+ 
+File Type Definition Function 
+structure and function 
+ 
+Table 8-2 Execution Files 
+File Type Definition Function 
+.vg Post-synthesis netlist file The post-synthesis netlist file using GowinSynthesis 
+_syn.rpt.html Synthesis report file 
+Used to view information such as 
+resource utilization and timing 
+analysis after synthesis 
+.fs Bitstream file Used by Gowin Programmer to download 
+.bin Bitstream files in bin format Used by Gowin Programmer to download 
+.ekey key file 
+Used to decrypt the encrypted 
+BitStream files during download 
+using Gowin Programmer 
+.vo Timing simulation model file in verilog post PnR Used for Verilog model file with the flatten structure for timing simulation 
+.vho Timing simulation model file in vhdl post PnR Used for VHDL model file with the flatten structure for timing simulation 
+.sdf Standard delay format file Used for netlist timing simulation after PnR 
+.ibs Input/output buffer information specification file – 
+.tr Timing report in text format – 
+.rpt.txt PnR report in text format – 
+.rpt.html PnR report in html format – 
+.tr.html Timing analysis report in html format – 
+.pin.html Port attributes report in html format – 
+.power.html Power analysis report in html format – 
+.p Incremental placement file Used for incremental placement 
+.pr Incremental placement and routing file Used for incremental placement and routing 
+.vp Encrypted .v file – 
+.vhdp Encrypted .vhd file – 
+.vgp Encrypted .vg file – 
+PAGE 99
+8 Appendix  8.2 File and Folder Naming Rules 
+ 
+SUG100-4.4.7E 87(87) 
+ 
+8.2 File and Folder Naming Rules 
+Gowin folders and files naming rules: The names cannot contain ? " / \ 
+< > * | : characters; folder names can not contain spaces, file names can 
+contain spaces but spaces cannot appear at the beginning and end of the 
+name. 
+For the file path filling in the dialog box of each component of Gowin 
+Software, it will be judged according to the above rules, and a pop-up 
+window will be displayed if it does not comply with the rules. 
+8.3 Security Declaration 
+During installation and use, Gowin Software does not collect any 
+information from users or access network ports in the background; all data 
+and information are kept locally, and no automatic updates are made to the 
+software. 
+PAGE 100
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

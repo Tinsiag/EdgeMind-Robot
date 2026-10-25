@@ -1,0 +1,52 @@
+// Wiring revision 2026-10-14: user-reported package balls, not connector pin numbers.
+// Rebuild and audit routed pins/IO banks before use; old bitstreams are incompatible.
+// ACG720 GW5AT-LV60PG484AC1/I0, GW5AT-60B.
+// Motor wiring: doc/电机/ACG720与现有电源板接线_2026-10-14.md.
+// Each selected IO bank must have physical VCCIO = 3.3 V; bank/header mapping requires verification.
+IO_LOC "clk" Y18;
+IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// S0 stops asynchronously. S1/S2 are active-low start buttons.
+IO_LOC "stop_n" F15;
+IO_PORT "stop_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "left_key_n" A20;
+IO_PORT "left_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_LOC "right_key_n" B20;
+IO_PORT "right_key_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+
+IO_LOC "left_in1" A18; // 2026-10-14: L-1 / LAIN1; header pin unverified
+IO_LOC "left_in2" A19; // 2026-10-14: L-2 / LAIN2; header pin unverified
+IO_LOC "left_enc_a" A15; // 2026-10-14: L-7 / LF_ENA; header pin unverified
+IO_LOC "left_enc_b" A16; // 2026-10-14: L-8 / LF_ENB; header pin unverified
+IO_LOC "right_in1" F13; // 2026-10-14: R-5 / RAIN1; header pin unverified
+IO_LOC "right_in2" F14; // 2026-10-14: R-6 / RAIN2; header pin unverified
+IO_LOC "right_enc_a" E13; // 2026-10-14: R-2 / RF_ENA; header pin unverified
+IO_LOC "right_enc_b" E14; // 2026-10-14: R-1 / RF_ENB; header pin unverified
+IO_PORT "left_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
+IO_PORT "left_in2" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
+IO_PORT "right_in1" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
+IO_PORT "right_in2" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
+IO_PORT "left_enc_a" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_PORT "left_enc_b" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_PORT "right_enc_a" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_PORT "right_enc_b" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+// Hold the currently connected camera in reset during this standalone test.
+IO_LOC "camera_reset_n" C14; // P7-17, existing TY-OV5640 reset wire.
+IO_PORT "camera_reset_n" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;
+
+IO_LOC "led[0]" M22;
+IO_LOC "led[1]" N22;
+IO_LOC "led[2]" L21;
+IO_LOC "led[3]" K21;
+IO_LOC "led[4]" K22;
+IO_LOC "led[5]" J22;
+IO_LOC "led[6]" H22;
+IO_LOC "led[7]" M21;
+IO_PORT "led[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[4]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[5]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[6]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;
+IO_PORT "led[7]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;

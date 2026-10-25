@@ -1,5 +1,11 @@
 # EdgeMind-Robot
 
+2026-10-25 09:44（北京时间）用户要求暂停并交接。当前任务3/4开发源码55组RTL、61项主机回归通过；连续突发障碍绕行诊断仍失败，整板时序和实车均未验收。本轮未烧录、未ARM或运动。暂停状态见[任务3/4进度](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md)，最新证据见[回归报告](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md)。本机未找回原130843位流归档，不能将下面的历史路径理解为新克隆已包含该固件。
+
+2026-10-24 当前实施：[任务3实时避障与任务4自主导航](code/camera-car-control/a741-fpga-fusion/docs/TASK3-4.md)，采用现有 FPGA＋内部 PicoRV32 裸机软核，保留摄像头实例和接线，使用完整3D装配提取导航几何。实现、离线验证与实车/Flash验收分别记录，稳定固件仍按下方 `130843` 保留。
+
+2026-10-24：[自主导航方案调研与现有功能核对](doc/自主导航方案调研_2026-10-24.md)；[FPGA 完整 Flash 固化工具](scripts/fpga/README.md)。本次未编写导航功能或替换板上程序，后续交付要求断电保留，见 [维护约定](AGENTS.md)。
+
 ## 现阶段可用版本：A741 130843（优先使用）
 
 **用户于 2026-10-23 明确确认：下面的 `130843` 固件及其归档代码是现阶段能用的版本。日常联调、恢复小车运动及后续修改优先以此版本为基准，必须保留，不要被更新日期更晚的实验固件替代。**
@@ -9,6 +15,7 @@
 | **当前可用固件** | `C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\release\A741-MOTION-LD06-H20-H14-20261022-130843\A741-MOTION-LD06-H20-H14.fs` |
 | **该固件对应的归档源码** | 同一 `130843` 目录中的 `rtl/`、`host/`、`config/`、`scripts/` 和 `sources/`；精确编译输入见 `source-manifest.json`、`result.json` |
 | 当前维护代码 | [a741-imu-motion](code/camera-car-control/a741-imu-motion/README.md)；此工作目录包含归档后的上位机及控制更新，不等同于原始发布快照 |
+| Windows 开发环境 | [本机复现说明](code/camera-car-control/DEVELOPMENT-WINDOWS.md)，含运动主线与融合工程的依赖、回归和构建入口 |
 | **日常上位机入口** | `C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741-imu-motion\launch.cmd` |
 | 固件 SHA-256 | `e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e` |
 

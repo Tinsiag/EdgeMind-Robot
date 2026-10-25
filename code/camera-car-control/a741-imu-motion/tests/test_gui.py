@@ -18,6 +18,75 @@ spec.loader.exec_module(app_module)
 
 
 class GuiTests(unittest.TestCase):
+    def test_pivot_buttons_use_selected_wheel_speed_in_both_directions(self):
+        from calibration import Calibration
+        for speed in (100, 200, 400):
+            for turn in (1, -1):
+                with self.subTest(speed=speed, turn=turn):
+                    app = object.__new__(app_module.App)
+                    app.busy = False;app.connected = True
+                    app.calibration = Calibration.load();app.speed = Mock()
+                    app.speed.get.return_value = speed
+                    app.angular = Mock();app.angular.get.return_value = 30
+                    app.held = app_module.HoldLease();app.submit = Mock()
+                    app.hold(0, turn)
+                    app.submit.assert_called_once()
+                    kind, linear, angular = app.submit.call_args.args
+                    self.assertEqual(kind, "drive")
+                    self.assertEqual(linear, 0)
+                    self.assertEqual(app.calibration.arc(linear, angular), (-turn*speed, turn*speed))
+                    self.assertTrue(app.held.is_set())
+
+    def test_pivot_rejects_invalid_speed_or_unmeasured_track_without_starting(self):
+        from calibration import Calibration
+        for speed, track in ((401, 234000), (200, None)):
+            app = object.__new__(app_module.App)
+            app.busy = False;app.connected = True
+            app.calibration = Calibration(dict(Calibration.load().data, mechanical_track_um=track))
+            app.speed = Mock();app.speed.get.return_value = speed
+            app.angular = Mock();app.angular.get.return_value = 30
+            app.held = app_module.HoldLease();app.submit = Mock()
+            with patch.object(app_module.messagebox, "showerror") as error:
+                app.hold(0, 1)
+                error.assert_called_once()
+            app.submit.assert_not_called()
+            self.assertFalse(app.held.is_set())
+
+    def test_held_drive_worker_uses_live_telemetry_receiver(self):
+        import queue
+        app = object.__new__(app_module.App)
+        app.shutdown = threading.Event();app.cancel = threading.Event()
+        app.jobs = queue.Queue();app.events = queue.Queue()
+        app.client = Mock();app.telemetry = Mock();app.calibration = Mock();app.held = Mock()
+        app.cleanup = Mock();app.lidar_requested = False
+        app.jobs.put(("drive", (200, 0)))
+        worker = threading.Thread(target=app.worker, daemon=True);worker.start()
+        try:
+            while app.events.get(timeout=2)[0] != "idle":
+                pass
+            app.client.drive.assert_called_once_with(app.calibration, 200, 0, app.held, app.cancel,
+                                                    telemetry=app.telemetry)
+        finally:
+            app.shutdown.set();worker.join(timeout=2)
+
+    def test_distance_worker_uses_live_telemetry_receiver(self):
+        import queue
+        app = object.__new__(app_module.App)
+        app.shutdown = threading.Event();app.cancel = threading.Event()
+        app.jobs = queue.Queue();app.events = queue.Queue()
+        app.client = Mock();app.telemetry = Mock();app.calibration = Mock()
+        app.cleanup = Mock();app.lidar_requested = False
+        app.client.distance.return_value = {"encoder_error_mm": 0}
+        app.jobs.put(("distance", (50, 100)))
+        worker = threading.Thread(target=app.worker, daemon=True);worker.start()
+        try:
+            while app.events.get(timeout=2)[0] != "idle":
+                pass
+            app.client.distance.assert_called_once_with(app.calibration, 50, 100, app.cancel,
+                                                       telemetry=app.telemetry)
+        finally:
+            app.shutdown.set();worker.join(timeout=2)
+
     def test_connect_calibrates_once_without_arming_and_preserves_rejected_connection(self):
         import queue
         from dataclasses import dataclass

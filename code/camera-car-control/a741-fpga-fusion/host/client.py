@@ -70,7 +70,7 @@ class Client:
         self.motion_lidar = False
 
     def command(self, kind, payload=b"", reply=0x80):
-        if getattr(self,"sensors_only",False) and kind in (2,0x11,0x42,0x45,0x47,0x55):
+        if getattr(self,"sensors_only",False) and (kind in (2,0x11,0x42,0x45,0x47,0x55) or (kind==0x58 and payload[:1]==b"\x02")):
             raise ValueError("传感器调试模式禁止ARM、轮速和旋转指令")
         self.diag.request_id = (self.diag.request_id+1) & 0xffffffff
         self.diag.last_command=kind

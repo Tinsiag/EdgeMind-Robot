@@ -44,7 +44,7 @@ def main():
         with urllib.request.urlopen(request, timeout=45) as response:
             license_file.write_bytes(base64.b64decode(json.load(response)["content"]))
     manifest_file.write_text(json.dumps({"repository": REPOSITORY, "commit": commit,
-        "license": "LGPL-3.0-or-later", "sha256": hashes}, indent=2)+"\n", encoding="utf-8")
+        "license": "LGPL-3.0-or-later", "sha256": hashes}, indent=2)+"\n", encoding="utf-8", newline="\n")
     destination = ROOT / ".local/mapping"
     destination.mkdir(parents=True, exist_ok=True)
     import ziglang

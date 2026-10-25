@@ -1,0 +1,72 @@
+Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=3, faults=2, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Status(state=2, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+right: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+ARM check: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+left: target 400 mm/s, PWM cap 512/1024, duration 1 s
+Final: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=0)
+test_fault_or_disarmed_exit (test_host_motion.MotionTests.test_fault_or_disarmed_exit) ... ok
+test_keyboard_interrupt (test_host_motion.MotionTests.test_keyboard_interrupt) ... ok
+test_missing_status_stops (test_host_motion.MotionTests.test_missing_status_stops) ... ok
+test_normal_exit (test_host_motion.MotionTests.test_normal_exit) ... ok
+test_old_reply_alone_does_not_count_as_current_reply (test_host_motion.MotionTests.test_old_reply_alone_does_not_count_as_current_reply) ... ok
+test_old_stop_reply_does_not_hide_current_status (test_host_motion.MotionTests.test_old_stop_reply_does_not_hide_current_status) ... ok
+test_rotate_once_and_heartbeat (test_host_motion.MotionTests.test_rotate_once_and_heartbeat) ... ok
+test_serial_exception (test_host_motion.MotionTests.test_serial_exception) ... ok
+test_stop_delivery_failure_is_reported (test_host_motion.MotionTests.test_stop_delivery_failure_is_reported) ... ok
+test_all_directions_complete_and_cleanup (test_host_motion.RelativeMoveTests.test_all_directions_complete_and_cleanup) ... ok
+test_bad_input_never_writes (test_host_motion.RelativeMoveTests.test_bad_input_never_writes) ... ok
+test_cancel_before_arm_and_during_motion (test_host_motion.RelativeMoveTests.test_cancel_before_arm_and_during_motion) ... ok
+test_compensation_keeps_wrong_direction_check (test_host_motion.RelativeMoveTests.test_compensation_keeps_wrong_direction_check) ... ok
+test_counter_wrap (test_host_motion.RelativeMoveTests.test_counter_wrap) ... ok
+test_fault_disconnect_direction_timeout_stop (test_host_motion.RelativeMoveTests.test_fault_disconnect_direction_timeout_stop) ... ok
+test_one_wheel_reached_is_not_restarted (test_host_motion.RelativeMoveTests.test_one_wheel_reached_is_not_restarted) ... ok
+test_reversed_right_bridge_all_actions_and_stop (test_host_motion.RelativeMoveTests.test_reversed_right_bridge_all_actions_and_stop) ... ok
+test_units_and_turn_signs (test_host_motion.RelativeMoveTests.test_units_and_turn_signs) ... ok
+test_bytewise (test_host_protocol.ParserTests.test_bytewise) ... ok
+test_crc_rejected_then_recovery (test_host_protocol.ParserTests.test_crc_rejected_then_recovery) ... ok
+test_every_split (test_host_protocol.ParserTests.test_every_split) ... ok
+test_noise_then_partial_sync (test_host_protocol.ParserTests.test_noise_then_partial_sync) ... ok
+test_two_frames (test_host_protocol.ParserTests.test_two_frames) ... ok
+test_arm_rejected_never_moves (test_startup_profile.StartupTests.test_arm_rejected_never_moves) ... ok
+test_each_wheel_only_and_cleanup (test_startup_profile.StartupTests.test_each_wheel_only_and_cleanup) ... ok
+test_motion_error_or_interrupt_cleans_up (test_startup_profile.StartupTests.test_motion_error_or_interrupt_cleans_up) ... ok
+test_stop_reply_loss_still_zeros_limit (test_startup_profile.StartupTests.test_stop_reply_loss_still_zeros_limit) ... ok
+test_bad_signature_rejected (test_vision_host.VisionHostTests.test_bad_signature_rejected) ... ok
+test_cancel_after_mode_switch_never_sends_start (test_vision_host.VisionHostTests.test_cancel_after_mode_switch_never_sends_start) ... ok
+test_cancelled_start_never_sends_start (test_vision_host.VisionHostTests.test_cancelled_start_never_sends_start) ... ok
+test_capabilities_disable_compensation (test_vision_host.VisionHostTests.test_capabilities_disable_compensation) ... ok
+test_new_firmware_speed_checked_before_io (test_vision_host.VisionHostTests.test_new_firmware_speed_checked_before_io) ... ok
+test_old_firmware_keeps_compensation (test_vision_host.VisionHostTests.test_old_firmware_keeps_compensation) ... ok
+test_sensing_wire_format (test_vision_host.VisionHostTests.test_sensing_wire_format) ... ok
+test_uncertain_start_attempts_stop (test_vision_host.VisionHostTests.test_uncertain_start_attempts_stop) ... ok
+test_version_is_validated (test_vision_host.VisionHostTests.test_version_is_validated) ... ok
+test_vision_error_does_not_fallback_to_legacy_sign (test_vision_host.VisionHostTests.test_vision_error_does_not_fallback_to_legacy_sign) ... ok
+test_wrong_seq_does_not_disable_compensation (test_vision_host.VisionHostTests.test_wrong_seq_does_not_disable_compensation) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.016s
+
+OK

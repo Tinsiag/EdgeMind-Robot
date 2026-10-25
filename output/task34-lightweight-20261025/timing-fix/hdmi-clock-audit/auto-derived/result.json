@@ -1,0 +1,20 @@
+{
+  "diagnostic_only": true,
+  "hardware_programmed": false,
+  "mode": "auto-derived",
+  "returncode": 0,
+  "seconds": 24.609163522720337,
+  "source_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\gowin_pll.v": "37040df237d814100983d77ab000278ba35438dcecda1daf4db575319f433757",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\gowin_pll_mod.v": "4b23f9bd485d1401be40933f3a9950dfec66d5399505dd76c76850afbef97059",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-tft480\\dvi_encoder.v": "d096ff2557f8bb77199a107c5bae2174869f64077000e17d678640b0caa8f89b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_hdmi.v": "1c18e135a2ea047e12a8499aadd887a0920c0cfc6a00fe13012a84c89bbbeafb",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\reset_sync.v": "60e6e8bfc0e234d148b3ad61eb99d6f17de93ce52666eb6e5f0773d92709cd97",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258"
+  },
+  "violations": {
+    "Setup": "0",
+    "Hold": "0"
+  },
+  "mpw_section": "Report Command:report_min_pulse_width -nworst 10 -detail\n  Number   Slack    Actual Width   Required Width         Type                               Clock                                           Objects                     \n ======== ======== ============== ================ ================== =================================================== ============================================== \n  1        -0.996   -0.771         0.225            Low Pulse Width    video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_1_s0                   \n  2        -0.996   -0.771         0.225            Low Pulse Width    video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_0_s0                   \n  3        -0.996   -0.771         0.225            Low Pulse Width    video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_2_s0                   \n  4        -0.994   -0.769         0.225            High Pulse Width   video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_1_s0                   \n  5        -0.994   -0.769         0.225            High Pulse Width   video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_0_s0                   \n  6        -0.994   -0.769         0.225            High Pulse Width   video_pll/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   hdmi/serial_reset/pipe_2_s0                   \n  7        6.672    7.572          0.900            Low Pulse Width    sys_clk                                             video_pll/u_pll_init/rRomDReg_0_s4            \n  8        6.677    7.577          0.900            Low Pulse Width    sys_clk                                             video_pll/u_pll_init/gowin_add_rRomDReg_0_s4  \n  9        6.826    7.726          0.900            High Pulse Width   sys_clk                                             video_pll/u_pll_init/rRomDReg_0_s4            \n  10       6.831    7.731          0.900            High Pulse Width   sys_clk                                             video_pll/u_pll_init/gowin_add_rRomDReg_0_s4  \n"
+}

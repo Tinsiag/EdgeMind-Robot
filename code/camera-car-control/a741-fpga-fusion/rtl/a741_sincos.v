@@ -4,11 +4,14 @@ module a741_sincos(
     input wire clk,rst_n,start,input wire [15:0] angle,
     output reg busy,done,output reg signed [17:0] cosine,sine
 );
-    reg signed [31:0] x,y,z;
-    reg negative;reg [4:0] index;
-    reg signed [31:0] a;
-    wire signed [31:0] nx=z>=0 ? x-(y>>>index):x+(y>>>index);
-    wire signed [31:0] ny=z>=0 ? y+(x>>>index):y-(x>>>index);
+    // Q15 vectors need guard bits, not 32-bit variable shifters. Keep the
+    // same 15 CORDIC steps and rounding as the original implementation.
+    reg signed [17:0] x,y;
+    reg signed [16:0] z;
+    reg negative;reg [3:0] index;
+    reg signed [16:0] a;
+    wire signed [17:0] nx=z>=0 ? x-(y>>>index):x+(y>>>index);
+    wire signed [17:0] ny=z>=0 ? y+(x>>>index):y-(x>>>index);
     always @* case(index)
         0:a=8192;1:a=4836;2:a=2555;3:a=1297;4:a=651;5:a=326;
         6:a=163;7:a=81;8:a=41;9:a=20;10:a=10;11:a=5;12:a=3;13:a=1;default:a=1;

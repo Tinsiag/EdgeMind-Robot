@@ -1,0 +1,15 @@
+{
+  "recorded_date": "2026-10-08",
+  "user_code": "0x000041A4",
+  "status": "0x70026020",
+  "sha256": "DD7959D0C266BD507D50DE8FBCF6DE9F9487E5F3B2076F643A168929D81A6222",
+  "operation": "SRAM Program",
+  "observed_leds": "D0-D5 on, D6 off, D7 blinking",
+  "pixels": 384000,
+  "bytes": 768000,
+  "source": "official chapter 38 DISP_MODE=0 column byte pattern",
+  "HDMI_verified": false,
+  "camera_source": false,
+  "timing_signoff": false,
+  "result": "User confirmed complete fixed-pattern FIFO-DDR-FIFO comparison passed"
+}

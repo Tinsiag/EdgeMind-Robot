@@ -45,6 +45,7 @@ module a741_protocol(
                 8'h53:valid_length=size==10;
                 8'h54:valid_length=size==4;
                 8'h55,8'h56,8'h57:valid_length=size==0;
+                8'h58:valid_length=cmd_payload[7:0]<=4 && size==(cmd_payload[7:0]==1 ? 5:1);
                 default:valid_length=0;
             endcase
         end

@@ -1,0 +1,142 @@
+{
+  "video_frame": 123,
+  "host_receive_monotonic": 55799.078,
+  "snapshot": null,
+  "lidar_points": [],
+  "config": {
+    "schema": 1,
+    "revision": 74106,
+    "wheel_cpr": [
+      1469,
+      1471
+    ],
+    "wheel_diameter_um": [
+      66300,
+      66300
+    ],
+    "mechanical_track_um": 234000,
+    "mechanical_track_source": "User reported measured wheel centre spacing 234 mm, 2026-10-20",
+    "motion_user_authorized": true,
+    "tof_enabled": false,
+    "lidar_zero_offset_deg": 270,
+    "lidar_clockwise": true,
+    "lidar_duty_permille": 400,
+    "historical_encoder_turn_track_um": 234000,
+    "max_speed_mm_s": 400,
+    "heading_kp_mm_s_per_deg": 1.0,
+    "heading_kd_mm_s_per_deg_s": 0.5,
+    "heading_correction_limit_mm_s": 15.0,
+    "heading_correction_slew_mm_s2": 40.0,
+    "imu_yaw_sign": 1,
+    "imu_model": "MPU6050",
+    "imu_supply_v": 3.3,
+    "imu_i2c_hz": 100000,
+    "imu_axis": "z",
+    "lidar_angle_sign": 1,
+    "tof_offset_mm": 0,
+    "pwm_limit": 512,
+    "speed_step_mm_s_per_10ms": 5,
+    "pwm_step_per_10ms": 32,
+    "hardware_verified": false,
+    "notes": "2026-10-22: Startup comparison against user-confirmed A740 moving build. Increase PWM slew from 8 to 32/10ms and encoder no-pulse startup allowance from 200ms to 500ms; retain latched encoder fault after the grace period. Validate with wheels raised before ground testing. LD06 front appeared left in serial GUI; user confirmed GUI rotation +90 deg makes vertical board appear ahead with correct direction. For A741 clockwise raw angles inverted on display, equivalent zero offset is 270 deg. MPU module 3.3V user report; pullups/bank/pins and H14 USB_PA3 isolation remain unverified. User measured wheel track 234mm; wheel CPR/diameter provisional."
+  },
+  "config_sha256": "5db887329456d2f165fc9141719e889ec1117b7b3b43c70f213ca370762fd3e9",
+  "synchronization": "latest received snapshot; not a camera exposure timestamp",
+  "fusion": null,
+  "geometry": {
+    "schema": 1,
+    "units": "mm",
+    "source_models": {
+      "lower_stl": "EdgeMind_Lower_254mm.stl",
+      "assembly_step": "EdgeMind_Assembly.step",
+      "step_length_unit": "millimetre",
+      "user_confirmed_matches_vehicle": true,
+      "user_confirmed_ld06": "black unit at centered front end, facing forward"
+    },
+    "lower_shell_bbox_mm": {
+      "x_extent": 180.0,
+      "y_extent": 254.0,
+      "z_extent": 28.0,
+      "stl_bounds": [
+        [
+          -90.0,
+          -127.0,
+          57.7812
+        ],
+        [
+          90.0,
+          127.0,
+          85.7812
+        ]
+      ]
+    },
+    "wheel_track_mm": 234.0,
+    "wheel_track_source": "user measured wheel-center spacing",
+    "vehicle_outer_footprint_mm": [
+      [
+        -70,
+        -131
+      ],
+      [
+        221,
+        -131
+      ],
+      [
+        221,
+        131
+      ],
+      [
+        -70,
+        131
+      ]
+    ],
+    "wheel_axle_center_in_model_mm": [
+      0,
+      60.000002,
+      33.181167
+    ],
+    "lidar_origin_in_axle_frame_mm": [
+      164.000002,
+      0.0,
+      0
+    ],
+    "lidar_height_mm": null,
+    "lidar_forward_axis": "vehicle forward, centered laterally",
+    "navigation_geometry_verified": true,
+    "navigation_enabled": true,
+    "reason_locked": "",
+    "lidar_optical_height_range_mm": [
+      185.681167,
+      198.281167
+    ],
+    "physical_geometry_verified": false,
+    "geometry_authority": "User requested CAD-derived geometry, 2026-10-24; XY navigation only. Optical-window height interval is not an exact laser plane.",
+    "cad_navigation_audit": {
+      "model_version": "v4-lidar-imu, cross-checked against v5-rgb-touch-display",
+      "assembly_bounds_mm": [
+        -120.10100675771062,
+        -160.0,
+        -1.0000002131628207e-07,
+        120.10100675771062,
+        130.0,
+        198.2811672820691
+      ],
+      "model_wheel_center_track_mm": 214.16100665771023,
+      "measured_track_mm": 234.0,
+      "added_lateral_margin_each_side_mm": 9.919496671144884,
+      "forward_axis": "navigation X = -CAD Y, navigation Y = CAD X",
+      "lidar_z_offset_used": false,
+      "front_extent_mm": 221,
+      "rear_extent_mm": 70,
+      "half_width_mm": 131,
+      "source_sha256": {
+        "model/chassis/v4-lidar-imu/verification.json": "ce948462d8af6e6930e5e03c9e353302b9db6baf4ecf39c12c69e4aaeed0f50b",
+        "model/chassis/v4-lidar-imu/parameters.json": "26aaaf3ebe16f5bfd5fe51114f990d653eea0c616b78b39996971c6beee51a6d",
+        "model/chassis/v4-lidar-imu/EdgeMind_Assembly.step": "56bc5757483a796d685c3615e04dc25155319790d32f094864ff2a3d5606f3c7",
+        "model/chassis/v5-rgb-touch-display/verification.json": "35e4ee7387776d8d65b52f7467390b2b9b1303de5916b84842230e48e0061265",
+        "model/chassis/v5-rgb-touch-display/parameters.json": "029718b7e3b27414d45c7d7c42ad8835e2b9435b798d12c442b1b1fa95e1d32c",
+        "model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step": "dad4fa75e6a76b0a31a578befd13de437d8656ef0ea82c90c444e1cca452439f"
+      }
+    }
+  }
+}

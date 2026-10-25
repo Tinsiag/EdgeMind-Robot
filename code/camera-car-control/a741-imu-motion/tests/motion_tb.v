@@ -42,8 +42,11 @@ module motion_tb;
         arm();cmd(8'h11,{192'd0,32'd100,32'd100});
         for(n=0;n<20;n=n+1) begin sample_ms();if(n==18) cmd(8'h05,0);end
         if(faults || !armed) $fatal(1,"encoder startup grace expired too early");
-        for(n=20;n<55;n=n+1) begin sample_ms();if(n%20==19) cmd(8'h05,0);end
-        if(!faults[2] || armed) $fatal(1,"encoder stall not latched after startup grace");
+        // The current profile allows 100 samples at the 100 Hz control tick.
+        for(n=20;n<95;n=n+1) begin sample_ms();if(n%20==19) cmd(8'h05,0);end
+        if(faults || !armed) $fatal(1,"encoder fault before the 1000ms feedback window");
+        for(n=95;n<105;n=n+1) begin sample_ms();if(n%20==19) cmd(8'h05,0);end
+        if(!faults[2] || armed) $fatal(1,"encoder stall not latched after the 1000ms feedback window");
         cmd(8'h21,0);
         // A replacement command arrives on the exact edge that could commit the old result.
         arm();cmd(8'h11,{192'd0,32'd80,32'd120});target_boundary;

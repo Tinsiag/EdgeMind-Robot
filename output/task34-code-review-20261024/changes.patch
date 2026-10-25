@@ -1,0 +1,178 @@
+--- before/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v
++++ after/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v
+@@ -23,7 +23,7 @@
+     a741_divider angle_converter(.clk(clk),.rst_n(rst_n),.cancel(!valid),.start(convert_start),
+         .numerator({normalized[15:0],16'd0}),.denominator(16'd36000),.busy(convert_busy),.done(convert_done),.quotient(angle_raw));
+     wire push=valid && point_valid && confidence>=10 && distance_mm>=60 && distance_mm<=12000 && count<64;
+-    wire pop=valid && state==0 && count!=0;
++    wire pop=valid && state==0 && count!=0 && !busy;
+     a741_sincos trig(.clk(clk),.rst_n(rst_n),.start(launch),.angle(trig_angle),.busy(busy),.done(done),.cosine(c),.sine(s));
+     always @(posedge clk or negedge rst_n)
+         if(!rst_n) begin
+--- before/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v
++++ after/code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v
+@@ -12,6 +12,7 @@
+     output reg [7:0] quality
+ );
+     reg signed [15:0] points_x[0:63],points_y[0:63];
++    reg signed [15:0] point_x_q,point_y_q;
+     reg [6:0] count,index,samples;reg [2:0] decimate;
+     reg [4:0] candidate;reg [3:0] state;
+     reg signed [31:0] origin_x,origin_y,tx,ty,gx,gy;
+@@ -25,6 +26,15 @@
+     a741_divider quality_divider(.clk(clk),.rst_n(rst_n),.cancel(cancel || !enable),.start(quality_start),
+         .numerator({24'd0,best_score}*32'd100),.denominator({9'd0,samples}),.busy(quality_busy),.done(quality_done),.quotient(quality_value));
+     a741_sincos trig(.clk(clk),.rst_n(rst_n),.start(launch),.angle(offset_yaw),.busy(trig_busy),.done(trig_done),.cosine(c),.sine(s));
++    // Registered reads map the scan cache to RAM instead of 2048 flip-flops
++    // and large combinational multiplexers feeding the multipliers.
++    always @(posedge clk) begin
++        point_x_q<=points_x[index[5:0]];point_y_q<=points_y[index[5:0]];
++        if(rst_n && !cancel && enable && state==0 && point_valid && !scan_end && decimate==0 && count<64) begin
++            points_x[count[5:0]]<=endpoint_x-pose_x;
++            points_y[count[5:0]]<=endpoint_y-pose_y;
++        end
++    end
+     always @(posedge clk or negedge rst_n)
+         if(!rst_n) begin
+             busy<=0;map_read<=0;map_address<=0;result_valid<=0;accepted<=0;localized<=0;
+@@ -46,7 +56,7 @@
+                             origin_x<=pose_x;origin_y<=pose_y;busy<=1;state<=1;
+                         end else count<=0;
+                     end else if(decimate==0 && count<64) begin
+-                        points_x[count[5:0]]<=endpoint_x-pose_x;points_y[count[5:0]]<=endpoint_y-pose_y;count<=count+1'b1;
++                        count<=count+1'b1;
+                     end
+                 end
+                 1:begin
+@@ -57,9 +67,10 @@
+                 end
+                 2:begin launch<=1;state<=3;end
+                 3:if(trig_done) state<=4;
+-                4:begin
+-                    px<=$signed(points_x[index[5:0]])*c-$signed(points_y[index[5:0]])*s;
+-                    py<=$signed(points_x[index[5:0]])*s+$signed(points_y[index[5:0]])*c;state<=5;
++                4:state<=13;
++                13:begin
++                    px<=$signed(point_x_q)*c-$signed(point_y_q)*s;
++                    py<=$signed(point_x_q)*s+$signed(point_y_q)*c;state<=5;
+                 end
+                 5:begin tx<=origin_x+offset_x+(px>>>15)+3200;ty<=origin_y+offset_y+(py>>>15)+3200;state<=6;end
+                 6:begin gx<={24'd0,8'(tx_grid/13'd50)};gy<={24'd0,8'(ty_grid/13'd50)};state<=7;end
+--- before/code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_control.v
++++ after/code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_control.v
+@@ -31,7 +31,7 @@
+     wire same_session=session_valid && incoming_session==session;
+     wire expects_reply=buffer[15]==8'h01 || buffer[15]==8'h02 || buffer[15]==8'h03 ||
+         buffer[15]==8'h04 || buffer[15]==8'h20 || buffer[15]==8'h21 || buffer[15]==8'h30 || buffer[15]==8'h40 || buffer[15]==8'h41 || buffer[15]==8'h42 || buffer[15]==8'h43 || buffer[15]==8'h44 || buffer[15]==8'h46 ||
+-        (buffer[15]>=8'h50 && buffer[15]<=8'h57);
++        (buffer[15]>=8'h50 && buffer[15]<=8'h58);
+     wire known=expects_reply || buffer[15]==8'h05 || buffer[15]==8'h11 || buffer[15]==8'h45 || buffer[15]==8'h47;
+     uart_tx #(.CLK_HZ(CLK_HZ)) sender(.clk(clk),.rstn(rst_n),.start(uart_start),
+         .data(buffer[index]),.tx(motion_uart_rx),.busy(uart_busy));
+--- before/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
++++ after/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
+@@ -45,20 +45,27 @@
+             if(!stream_valid) begin scan_valid<=0;points<=0;coverage<=0;scan_front<=65535;scan_rear<=65535;scan_min<=65535;end
+             else if(point_valid) begin
+                 if(scan_end) begin
+-                    front_mm<=scan_front;rear_mm<=scan_rear;min_mm<=scan_min;
++                    front_mm<=in_front && front_gap<scan_front ? front_gap:scan_front;
++                    rear_mm<=in_rear && rear_gap<scan_rear ? rear_gap:scan_rear;
++                    min_mm<=point_min<scan_min ? point_min:scan_min;
+                     scan_valid<=points>=60 && &coverage && scan_front!=65535 && scan_rear!=65535;
+-                    age<=0;points<=0;coverage<=0;scan_front<=65535;scan_rear<=65535;scan_min<=65535;
++                    // Projector marks the first point after angular wrap. It
++                    // also belongs to the new scan, including its obstacle.
++                    age<=0;points<=1;
++                    coverage<=angle_cdeg<36000 ? (12'b1 << (angle_cdeg/16'd3000)):12'd0;
++                    scan_front<=in_front ? front_gap:16'd65535;
++                    scan_rear<=in_rear ? rear_gap:16'd65535;scan_min<=point_min;
+                 end else begin
+                     if(points!=1023) points<=points+1'b1;
+                     if(angle_cdeg<36000) coverage[angle_cdeg/16'd3000]<=1;
+                     if(point_min<scan_min) scan_min<=point_min;
+                     if(in_front && front_gap<scan_front) scan_front<=front_gap;
+                     if(in_rear && rear_gap<scan_rear) scan_rear<=rear_gap;
++                    // New nearby obstacles take effect before a full revolution.
++                    if(in_front && front_gap<front_mm) front_mm<=front_gap;
++                    if(in_rear && rear_gap<rear_mm) rear_mm<=rear_gap;
++                    if(point_min<min_mm) min_mm<=point_min;
+                 end
+-                // A newly observed nearby obstacle is acted upon before a full revolution.
+-                if(in_front && front_gap<front_mm) front_mm<=front_gap;
+-                if(in_rear && rear_gap<rear_mm) rear_mm<=rear_gap;
+-                if(point_min<min_mm) min_mm<=point_min;
+             end
+         end
+ endmodule
+--- before/code/camera-car-control/a741-fpga-fusion/tests/lidar_projection_tb.v
++++ after/code/camera-car-control/a741-fpga-fusion/tests/lidar_projection_tb.v
+@@ -21,8 +21,17 @@
+         check(0,0,1100,0);check(9000,0,100,1000);check(18000,0,-900,0);check(27000,0,100,-1000);
+         check(0,16384,0,1100);check(0,-16384,0,-1100);check(0,-32768,-1100,0);
+         zero_cdeg=27000;clockwise=1;check(27000,0,1100,0);
++        // Cancel while CORDIC is busy, then immediately queue a new point.
++        // The canceled calculation must not consume the replacement point.
++        zero_cdeg=0;clockwise=0;
++        @(negedge clk);angle_cdeg=9000;point_valid=1;
++        @(negedge clk);point_valid=0;
++        wait(dut.busy);@(negedge clk);valid=0;
++        @(negedge clk);valid=1;
++        check(18000,0,-900,0);
++        repeat(150) begin @(negedge clk);if(point_done) $fatal(1,"canceled point reappeared");end
+         valid=0;repeat(3) @(negedge clk);if(overflow) $fatal(1,"projector overflowed sparse input");
+-        $display("PASS LD06 all quadrants, world heading, installation offset and front alignment");$finish;
++        $display("PASS LD06 quadrants, heading, installation offset and immediate stream-loss recovery without lost/duplicate points");$finish;
+     end
+     initial begin #50000;$fatal(1,"watchdog");end
+ endmodule
+--- before/code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v
++++ after/code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v
+@@ -20,6 +20,17 @@
+         requested_left=-100;requested_right=-100;#1;if(stop) $fatal(1,"forward obstacle incorrectly blocked clear rear");
+         point(18000,200);#1;if(!stop) $fatal(1,"reverse obstacle ignored");
+         requested_left=-40;requested_right=40;#1;if(rotation_clear || !stop) $fatal(1,"rotation swept envelope ignored");
++        // The wrap point is the first sample of the next revolution. Keep a
++        // close obstacle there until a complete later scan proves it cleared.
++        stream_valid=0;@(negedge clk);stream_valid=1;requested_left=100;requested_right=100;
++        for(i=0;i<72;i=i+1) point(i*500,1000);
++        @(negedge clk);point_valid=1;scan_end=1;angle_cdeg=0;distance_mm=100;
++        @(negedge clk);point_valid=0;scan_end=0;#1;
++        if(!stop || front_mm!=100) $fatal(1,"wrap obstacle was not applied immediately");
++        for(i=1;i<72;i=i+1) point(i*500,1000);
++        @(negedge clk);point_valid=1;scan_end=1;angle_cdeg=0;distance_mm=1000;
++        @(negedge clk);point_valid=0;scan_end=0;#1;
++        if(!scan_valid || !stop || front_mm!=100) $fatal(1,"wrap obstacle disappeared at next revolution front=%0d valid=%0d",front_mm,scan_valid);
+         stream_valid=0;@(negedge clk);#1;if(scan_valid || !stop) $fatal(1,"lidar disconnect not invalidated");
+         $display("PASS complete-scan lease, immediate obstacle, forward/reverse slowdown and swept rotation guard");$finish;
+     end
+--- before/code/camera-car-control/a741-fpga-fusion/scripts/fusion_network_check.py
++++ after/code/camera-car-control/a741-fpga-fusion/scripts/fusion_network_check.py
+@@ -22,6 +22,9 @@
+     # No motion packet is ever accepted by the map endpoint.
+     add(map_packet(103,0x55,b""))
+     add(udp(envelope(0x57,5)))
++    # Exercise the real Ethernet -> EMC1 -> UART -> RV32I command path.
++    for number,payload in enumerate((b"\0",b"\1"+struct.pack("<BBH",64,65,0),b"\4",b"\2",b"\3"),6):
++        add(udp(envelope(0x58,number,payload)))
+     path.write_text("\n".join(f"{v:04x}" for v in values)+"\n",encoding="ascii")
+     return len(values)
+ 
+@@ -51,10 +54,15 @@
+         else:
+             assert sport==dport==6104 and data[:4]==b"EMM1" and len(data)==44
+             mapping[int.from_bytes(data[4:8],"little")]=data[10:42]
+-    assert set(control)=={1,2,3,4,5},control.keys()
++    assert set(control)==set(range(1,11)),control.keys()
+     assert control[2][0]==0xc0 and int.from_bytes(control[2][2][4:6],"little")&0x800
+     assert control[3][0]==control[4][0]==control[5][0]==0xd0
+     assert control[4][2][0]==1
++    for number in range(6,11):
++        assert control[number][0]==0xd0 and len(control[number][2])==32
++        assert control[number][2][0]==(1 if number==9 else 0)
++        assert not control[number][2][1]&1  # never active on an unarmed board
++    assert control[8][2][5]==1  # the appended waypoint reached the CPU
+     assert set(mapping)=={100,101,102} and all(v[0]==0 for v in mapping.values())
+     assert mapping[102][4]==0x55 and fusion
+-    print("PASS Ethernet EMC1 navigation lock, EMM1 map roundtrip and EMF1 under backpressure; motor outputs stay zero")
++    print("PASS Ethernet EMC1 navigation/CPU waypoints, unarmed start rejection, EMM1 map roundtrip and EMF1 under backpressure; motors stay zero")

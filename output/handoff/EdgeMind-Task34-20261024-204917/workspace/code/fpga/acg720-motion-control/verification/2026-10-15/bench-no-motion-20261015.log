@@ -1,0 +1,36 @@
+0x04 seq=11: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=12: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=9 value=0
+0x30 seq=13: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=14: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=0 value=1469
+0x30 seq=15: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=16: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=1 value=1471
+0x30 seq=17: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=18: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=2 value=66
+0x30 seq=19: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=20: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=3 value=66
+0x30 seq=21: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=22: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=4 value=121
+0x30 seq=23: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=24: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=5 value=50
+0x30 seq=25: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=26: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=6 value=491
+0x30 seq=27: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=28: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+SET_PARAM id=10 value=5
+0x30 seq=29: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=30: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x02 seq=31: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=32: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=33: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x04 seq=34: Status(state=1, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+0x20 seq=35: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)
+PASS: matched UART, parameter commands, ARM READY stable, STOP DISARMED; PWM=0 throughout. No motion commands.
+0x20 seq=36: Status(state=0, faults=0, left_count=0, right_count=0, left_speed=0, right_speed=0, left_pwm=0, right_pwm=0, command_age_ms=65535)

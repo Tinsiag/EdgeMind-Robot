@@ -18,7 +18,7 @@ module network_tb;
     always @(posedge clk) begin
         if($test$plusargs("TRACE") && cycle%1000==0) begin
             $display("trace t=%t bridge=%d uart=%d req=%d tx=%d hdr=%b/%b payload=%b/%b ctl=%b len=%d",
-                $time,dut.bridge.state,dut.motion.responses.state,dut.motion.request_pending,dut.router.tx_active,
+                $time,dut.bridge.state,dut.motion.direct_reply_valid,dut.motion.request_pending,dut.router.tx_active,
                 dut.router.uhv,dut.router.uhr,dut.router.upv,dut.router.upr,dut.router.tx_control,dut.router.tx_length);
             $fflush();
             $display("sum state=%h wr=%h rd=%h reset=%b",

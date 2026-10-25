@@ -1,0 +1,31 @@
+{
+  "before": {
+    "name": "a741_top",
+    "Register": "46",
+    "Lut": "48",
+    "T_Register": "28214(46)",
+    "T_Alu": "5590(0)",
+    "T_Lut": "40491(48)",
+    "T_MULTALU27X18": "18(0)",
+    "T_MULT12X12": "16(0)",
+    "T_MULT27X36": "29(0)",
+    "T_MULTADDALU12X12": "1(0)",
+    "T_Bsram": "81(0)"
+  },
+  "after": {
+    "name": "a741_top",
+    "Register": "46",
+    "Lut": "45",
+    "T_Register": "27189(46)",
+    "T_Alu": "5285(0)",
+    "T_Lut": "35357(45)",
+    "T_MULTALU27X18": "18(0)",
+    "T_MULT12X12": "16(0)",
+    "T_MULT27X36": "29(0)",
+    "T_MULTADDALU12X12": "1(0)",
+    "T_Bsram": "81(0)"
+  },
+  "lut_reduction": 5134,
+  "lut_reduction_percent": 12.679360845620014,
+  "synthesis_estimate_only": true
+}
