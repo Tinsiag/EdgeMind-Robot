@@ -8,6 +8,9 @@ import sys
 import time
 import hashlib
 import re
+import shutil
+
+IS_WINDOWS_HOST = shutil.which("wsl.exe") is not None
 
 ROOT = Path(__file__).resolve().parents[1]
 CAMERA = ROOT.parent
@@ -45,6 +48,24 @@ def rtl_benches():
                    VISION.parent/"tests/ddr_framebuffer_tb.v"])
 
 
+def gowin_prim_sim():
+    """Locate the real Gowin GW5A simulation primitives on Windows or Linux."""
+    roots = []
+    configured = os.environ.get("GOWIN_HOME")
+    if configured:
+        roots.append(Path(configured))
+    roots.extend((Path.home() / "tools", Path("/opt/Gowin"), Path("/opt/gowin")))
+    candidates = []
+    for root in roots:
+        candidates.extend((root / "IDE/simlib/gw5a/prim_sim.v",
+                          root / "simlib/gw5a/prim_sim.v"))
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    searched = ", ".join(str(path) for path in candidates)
+    raise FileNotFoundError("Gowin GW5A prim_sim.v not found; searched: " + searched)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", action="append", help="Run named RTL benches only")
@@ -61,16 +82,21 @@ def main():
     inputs += [ROOT / "config/geometry.json"]+list((ROOT / "scripts").glob("*.py"))
     inputs += list((ROOT / "firmware").glob("*")) + [ROOT / "third_party/picorv32/source.json"]
     inputs += list((ROOT / "native").glob("*")) + list((ROOT / "third_party/coreslam").glob("*"))
-    mapping_dll=ROOT / ".local/mapping/edgemind_slam.dll"
-    if mapping_dll.is_file():inputs.append(mapping_dll)
+    mapping_libraries = (ROOT / ".local/mapping/edgemind_slam.dll",
+                         ROOT / ".local/mapping/edgemind_slam.so")
+    inputs += [path for path in mapping_libraries if path.is_file()]
     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs if p.is_file()}
     bins = REPO / "tmp/vision-motion-tools/bin"
+    use_wsl = bool(args.wsl and IS_WINDOWS_HOST)
     def path_arg(path):
         value=Path(path).resolve().as_posix()
-        return "/mnt/"+value[0].lower()+value[2:] if args.wsl else value
+        return "/mnt/"+value[0].lower()+value[2:] if use_wsl else value
     def command(tool,arguments):
-        return (["wsl.exe","-d",args.wsl,"--cd",path_arg(ROOT),"--exec",tool,*arguments] if args.wsl else
-                [str(bins/(tool+".exe")),*arguments])
+        if use_wsl:
+            return ["wsl.exe","-d",args.wsl,"--cd",path_arg(ROOT),"--exec",tool,*arguments]
+        if IS_WINDOWS_HOST:
+            return [str(bins/(tool+".exe")),*arguments]
+        return [tool,*arguments]
     passed = []
     backends={}
     for bench in benches:
@@ -88,9 +114,9 @@ def main():
                    "-o", path_arg(product), *map(path_arg, sources()), path_arg(bench)]
         if bench.stem == "hdmi_tb":
             compile_args += [path_arg(ROOT / ".local/platform-motion-lidar/dvi_encoder.v"),
-                        path_arg(Path(os.environ.get("GOWIN_HOME", "C:/Gowin/Gowin_V1.9.12.04_x64")) /
-                            "IDE/simlib/gw5a/prim_sim.v")]
-        if args.wsl and bench.stem in ("cad_navigation_tb", "cad_stalled_navigation_tb", "continuous_navigation_tb", "mission_navigation_tb"):
+                             path_arg(gowin_prim_sim())]
+        if (use_wsl or not IS_WINDOWS_HOST) and bench.stem in ("cad_navigation_tb", "cad_stalled_navigation_tb",
+                                     "continuous_navigation_tb", "continuous_obstacle_tb", "mission_navigation_tb"):
             # Compile the CAD room and the concurrent video/navigation fixture
             # instead of interpreting millions of A* and video clock cycles.
             obj="/var/tmp/edgemind-"+hashlib.sha256(str(ROOT).encode()).hexdigest()[:12]+"-"+bench.stem
@@ -112,7 +138,8 @@ def main():
             run = subprocess.run(run_cmd,cwd=ROOT,stdout=simulation_log,stderr=subprocess.STDOUT,
                 # The real RV32I CPU now runs throughout the network fixture.
                 # This is host wall time only; HDL watchdogs and robot TTLs stay unchanged.
-                timeout=1200 if bench.stem in ("cad_navigation_tb","cad_stalled_navigation_tb","continuous_navigation_tb") else 600 if bench.stem in ("fusion_network_tb","mission_navigation_tb") else 300 if bench.stem=="autonomy_navigation_tb" else 60)
+                timeout=1200 if bench.stem in ("cad_navigation_tb","cad_stalled_navigation_tb",
+                                                   "continuous_navigation_tb","continuous_obstacle_tb") else 600 if bench.stem in ("fusion_network_tb","mission_navigation_tb") else 300 if bench.stem=="autonomy_navigation_tb" else 60)
         run_log=simulation_text(log_path)
         log_path.write_text(run_log,encoding="utf-8")
         if run.returncode or "PASS" not in run_log:
@@ -136,7 +163,7 @@ def main():
     if any(hashlib.sha256(Path(p).read_bytes()).hexdigest() != h for p, h in before.items()):
         raise RuntimeError("Sources changed during regression")
     record = {"rtl_passed": passed, "hardware_tested": False, "unix_time": time.time(),
-              "rtl_backend":"wsl:"+args.wsl if args.wsl else "windows-icarus",
+              "rtl_backend":("wsl:"+args.wsl if use_wsl else "windows-icarus" if IS_WINDOWS_HOST else "linux-native"),
               "rtl_backend_per_bench":backends,
               "host_tests": int(re.search(r"Ran (\d+) tests", host_log)[1]), "input_sha256": before}
     (out / "result.json").write_text(json.dumps(record, indent=2), encoding="utf-8")

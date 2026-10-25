@@ -1,8 +1,10 @@
 # EdgeMind-Robot
 
-下一位AI请先阅读[从GitHub克隆开始的最新交接文档](HANDOFF-20261025.md)。源码检查点`87c97b7`；用户已暂停开发。
+当前目标：**自主避障巡航，哪里有路往哪里走，尽量精简**。最新进度在分支 `codex/avoidance-handoff-20261025`，请先读[交接文档](HANDOFF-20261025.md)和[下一位AI提示词](NEXT-AI-PROMPT-20261025.md)。
 
-可直接复制的[下一位AI提示词](NEXT-AI-PROMPT-20261025.md)；独立拉取检查见[克隆验证记录](CLONE-VERIFICATION-20261025.md)。
+最新 Linux 回归 **57组RTL、61项Python通过**；算法一完整构建在90%布线阶段因 **7463条未布通网络**失败，无本次可交付位流或最终时序签核，未烧录、未ARM、未驱动车辆。地图/A*等旧硬件尚未裁剪。[原始验证证据与源码身份](output/avoidance-handoff-20261025/README.md)；可下载增量包见 [GitHub Release](https://github.com/Tinsiag/EdgeMind-Robot/releases/tag/checkpoint-avoidance-20261025)。
+
+以下为历史导航阶段记录；55组回归、暂停、连续障碍失败等描述已被上述最新检查点取代。[旧克隆验证](CLONE-VERIFICATION-20261025.md)仅证明其当时版本。
 
 2026-10-25 09:44（北京时间）用户要求暂停并交接。当前任务3/4开发源码55组RTL、61项主机回归通过；连续突发障碍绕行诊断仍失败，整板时序和实车均未验收。本轮未烧录、未ARM或运动。暂停状态见[任务3/4进度](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md)，最新证据见[回归报告](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md)。本机未找回原130843位流归档，不能将下面的历史路径理解为新克隆已包含该固件。
 

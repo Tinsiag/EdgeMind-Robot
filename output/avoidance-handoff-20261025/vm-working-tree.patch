@@ -1,0 +1,1902 @@
+diff --git a/code/camera-car-control/a741-fpga-fusion/firmware/manifest.json b/code/camera-car-control/a741-fpga-fusion/firmware/manifest.json
+index b043f76..13fdafe 100644
+--- a/code/camera-car-control/a741-fpga-fusion/firmware/manifest.json
++++ b/code/camera-car-control/a741-fpga-fusion/firmware/manifest.json
+@@ -1,13 +1,13 @@
+ {
+   "architecture": "rv32i/ilp32",
+   "ram_bytes": 8192,
+-  "program_bytes": 920,
+-  "binary_sha256": "d8696588e9110ad1e65884aaef5195b92cb6c9ccb793e7fbc4bb3d882d3c9b07",
+-  "hex_sha256": "3b9d8f2fafbd662da0011d1abb72b8559b714b49b8a6c97289fc70590d8dce18",
++  "program_bytes": 916,
++  "binary_sha256": "11cb79db09c4d23162be4a8f5682ac28ed8651a57165b6f94aa8b1ac804022ab",
++  "hex_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+   "inputs": {
++    "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+     "link.ld": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+-    "mission.c": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+-    "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15"
++    "mission.c": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb"
+   },
+-  "compiler": "0.13.0"
++  "compiler": "0.17.0"
+ }
+diff --git a/code/camera-car-control/a741-fpga-fusion/firmware/mission.hex b/code/camera-car-control/a741-fpga-fusion/firmware/mission.hex
+index c8fe98d..339cfdf 100644
+--- a/code/camera-car-control/a741-fpga-fusion/firmware/mission.hex
++++ b/code/camera-car-control/a741-fpga-fusion/firmware/mission.hex
+@@ -18,38 +18,38 @@ f9010113
+ 00000c13
+ 00000a13
+ 00000993
+-00000f13
+-00000593
++00000793
++00000613
+ 10000537
+-02052023
+-0741c637
+-0de60613
+-0001d6b7
+-4c168693
+-00400713
+-000007b7
+-38478793
+-00410813
+-05400893
+-05500293
+-3e900313
+-12b00393
+-00000e37
+-370e0e13
+-01000e93
++0741ceb7
++0001df37
++00400593
++000006b7
++38068693
++00410713
++05400813
++05500893
++3e900293
++12b00313
++000003b7
++36c38393
++01000e13
+ 00008fb7
++02052023
++0dee8e93
++4c1f0f13
+ 080f8f93
+-00200413
++00300413
+ 000c0913
+ 00052b03
+ 00452a83
+ 00852b83
+-02c52223
+-00859c13
++03d52223
++00861c13
+ 01099c93
+ 01849d13
+ 01acecb3
+-01ec6c33
++00fc6c33
+ 018cec33
+ 004b7c93
+ 03852423
+@@ -61,11 +61,11 @@ f9010113
+ 02052023
+ 00600493
+ 100bfc13
+-0a0c0a63
++0a0c0663
+ 0ffbfb93
+-0b776263
++0975ee63
+ 002b9b93
+-01cb8bb3
++01738bb3
+ 000bac03
+ 00000b93
+ 000c0067
+@@ -73,32 +73,30 @@ f9010113
+ 0019bc13
+ fffc0c13
+ 009c74b3
+-01ec7f33
+-00bc75b3
++00fc77b3
++00cc7633
+ 001b9b93
+-0740006f
++06c0006f
+ 00000493
+ 00000993
+ 00000b93
+ 02052023
+-0600006f
++0580006f
+ 00200b93
+-04099c63
+-05d58a63
++04099863
++05c60663
+ 00c52983
+ 01f9f9b3
+-1a098a63
++1a098863
+ 00000993
+-0400006f
++0380006f
+ 00100b93
+-02099c63
+-02058a63
+-001b7c13
+-020c0663
+-006b7c13
++02099863
++02060663
++007b7c13
+ 028c1263
+ 00000493
+-00000f13
++00000793
+ 00000b93
+ 00100993
+ 03352023
+@@ -110,22 +108,22 @@ fffc0c13
+ 00098c93
+ 00000993
+ 00090c13
+-ee0c84e3
++ee0c88e3
+ 417a89b3
+-00d9ee63
++01e9ee63
+ 00000993
+ 02052023
+ 00700493
+ 00090c13
+ 000b8a13
+-ec9ff06f
++ed1ff06f
+ fffc8d13
+ 00090c13
+ 000b8a13
+ 000c8993
+-eba76ae3
++eba5eee3
+ 002d1d13
+-00fd0d33
++01a68d33
+ 000d2983
+ 00098067
+ 01c52983
+@@ -133,101 +131,103 @@ eba76ae3
+ 00100993
+ 00090c13
+ 000b8a13
+-e80a96e3
+-002f1993
+-013809b3
++e80a9ae3
++00279993
++013709b3
+ 0009a983
+ 01352c23
+-01152a23
++01052a23
+ 00200993
+ fa1ff06f
+-412a8a33
+-00100993
+-f943eae3
++412a89b3
++0d336263
+ 00500993
+-f8dff06f
++f91ff06f
+ 01c52983
+ 1009fb13
+ 00300993
+ 00090c13
+ 000b8a13
+-e40b12e3
++e40b18e3
+ 01c52983
+ 0ff9fb13
+ 00400993
+ 000a8c13
+ 000b8a13
+-e20b06e3
++e20b0ce3
+ 00000993
+ 02052023
+ 00300493
+-f4dff06f
++f51ff06f
+ 008b7993
+-06099a63
++06099e63
+ 010b7993
+-08099c63
++0a099063
+ 412a8ab3
+ 00400993
+ 00090c13
+ 000b8a13
+-de6aece3
++e05ae2e3
+ 020b7a93
+ 00090c13
+ 000b8a13
+-de0a94e3
++de0a9ae3
+ 00000993
+ 02052023
+ 00500493
+-f09ff06f
++f0dff06f
+ 01c52983
+ 1009fa93
+ 00200993
+ 00090c13
+ 000b8a13
+-dc0a90e3
++dc0a96e3
+ 01c52983
+ 0ff9f993
+-06098863
++06098c63
+ 00000993
+ 02052023
+ 00200493
+-ed5ff06f
++ed9ff06f
++00100993
++ed1ff06f
+ 00000993
+ 02052023
+ 00400493
+-ec5ff06f
++ec1ff06f
+ 00000b93
+ 00c52c03
+-00259c93
+-00158593
+-01980cb3
++00261c93
++00160613
++01970cb3
+ 018ca023
+-e7dff06f
+-001f0f13
++e79ff06f
++00178793
+ 00500993
+ 000a8c13
+ 000a8a13
+-d6bf12e3
++d6c794e3
+ 00000493
+ 00000993
+ 02052023
+ 00090c13
+ 000b8a13
+-00058f13
+-d49ff06f
+-00552a23
++00060793
++d4dff06f
++01152a23
+ 00300993
+-e6dff06f
++e69ff06f
+ 0000011c
+ 00000150
+ 00000170
+ 0000013c
+-000001ac
+-00000208
+-000002d4
+-00000250
+-00000290
+-0000023c
++000001a4
++00000200
++000002c8
++00000244
++00000284
++00000234
++00000000
+ 00000000
+ 00000000
+ 00000000
+diff --git a/code/camera-car-control/a741-fpga-fusion/host/app.py b/code/camera-car-control/a741-fpga-fusion/host/app.py
+index f920de5..124b4eb 100644
+--- a/code/camera-car-control/a741-fpga-fusion/host/app.py
++++ b/code/camera-car-control/a741-fpga-fusion/host/app.py
+@@ -179,8 +179,8 @@ class App:
+         log_bar=ttk.Frame(self.root);log_bar.grid(row=3,column=0,sticky="ew",padx=8,pady=(8,0))
+         ttk.Label(log_bar,text="日志级别").pack(side="left")
+         ttk.OptionMenu(log_bar,self.log_filter,"ALL","ALL","INFO","DEBUG","WARNING","ERROR").pack(side="left",padx=5)
+-        self.log_view = tk.Text(self.root, height=7, wrap="word", state="disabled", font=("Consolas", 10))
+-        self.log_view.grid(row=4, column=0, sticky="ew", padx=8, pady=8)
++        self.log_view = tk.Text(self.root, height=5, wrap="word", state="disabled", font=("Consolas", 10))
++        self.log_view.grid(row=4, column=0, sticky="ew", padx=8, pady=4)
+ 
+     def log(self, kind, value, level=None):
+         if level is None:
+diff --git a/code/camera-car-control/a741-fpga-fusion/host/mapping.py b/code/camera-car-control/a741-fpga-fusion/host/mapping.py
+index eabb904..58594d8 100644
+--- a/code/camera-car-control/a741-fpga-fusion/host/mapping.py
++++ b/code/camera-car-control/a741-fpga-fusion/host/mapping.py
+@@ -31,8 +31,10 @@ def map_display_image(raw, pixels=600):
+ class SlamEngine:
+     def __init__(self, pixels=600, meters=30):
+         self.pixels, self.meters = pixels, meters
+-        path = ROOT / ".local/mapping/edgemind_slam.dll"
+-        if not path.is_file():
++        candidates = (ROOT / ".local/mapping/edgemind_slam.dll",
++                      ROOT / ".local/mapping/edgemind_slam.so")
++        path = next((candidate for candidate in candidates if candidate.is_file()), None)
++        if path is None:
+             raise RuntimeError("建图内核未安装，请运行 scripts/setup_mapping.py")
+         self.lib = ct.CDLL(str(path))
+         self.lib.em_create.argtypes = [ct.c_int, ct.c_double];self.lib.em_create.restype = ct.c_void_p
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v
+index f202576..dd4a95b 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v
+@@ -7,6 +7,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+     input wire travel_tick,travel_valid,input wire signed [31:0] left_travel,right_travel,manual_left,manual_right,
+     input wire signed [15:0] yaw,input wire [15:0] motor_faults,
+     input wire lidar_point,input wire [15:0] lidar_angle,lidar_distance,input wire [7:0] lidar_confidence,
++    input wire [15:0] lidar_front,lidar_left,lidar_right,
+     input wire command,input wire [7:0] kind,input wire [255:0] payload,
+     output reg reply_done,output reg [255:0] reply,
+     output wire drive_enabled,force_stop,output wire signed [31:0] drive_left,drive_right,
+@@ -17,6 +18,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+     ,output wire mission_busy,mission_arrived,mission_failed
+ );
+     reg building,committed,pose_seeded,target_set,request_nav,nav_running,allow_generated_crc,preview_only;
++    reg avoid_running,avoid_turning,avoid_turn_left;
+     reg [3:0] navigation_phase;
+     reg [15:0] replan_wait;reg [2:0] replans;
+     reg [9:0] transfer_ms;
+@@ -28,7 +30,35 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+     wire pose_valid,pose_overrun;
+     wire point_done,scan_end,project_overflow;
+     wire signed [31:0] ex,ey,ox,oy,bx,by;wire [15:0] body_angle,range_mm;
+-    wire safe_scan,rotation_clear;wire [15:0] rear_distance,min_distance,clearance;
++    wire safe_scan,rotation_clear,nav_sensor_stop;
++    wire [9:0] nav_sensor_limit;
++    wire [15:0] nav_front_distance,rear_distance,min_distance,clearance;
++    localparam [15:0] AVOID_STOP_MM=16'd450,AVOID_SLOW_MM=16'd900,
++        AVOID_CLEAR_MM=16'd600,AVOID_SIDE_MM=16'd500;
++    localparam signed [31:0] AVOID_CRUISE=32'sd120,AVOID_SLOW=32'sd60,
++        AVOID_TURN=32'sd80;
++    wire avoid_lidar_ok=lidar_valid && lidar_front!=16'hffff &&
++        lidar_left!=16'hffff && lidar_right!=16'hffff;
++    wire avoid_left_open=avoid_lidar_ok && lidar_left>=AVOID_SIDE_MM;
++    wire avoid_right_open=avoid_lidar_ok && lidar_right>=AVOID_SIDE_MM;
++    wire avoid_turn_blocked=avoid_turning &&
++        ((avoid_turn_left && !avoid_left_open) ||
++         (!avoid_turn_left && !avoid_right_open));
++    wire avoid_sensor_stop=!avoid_lidar_ok || avoid_turn_blocked ||
++        (!avoid_turning && lidar_front<=AVOID_STOP_MM &&
++         !avoid_left_open && !avoid_right_open);
++    wire signed [31:0] avoid_left_cmd=avoid_sensor_stop ? 32'sd0 :
++        avoid_turning ? (avoid_turn_left ? -AVOID_TURN:AVOID_TURN) :
++        (lidar_front<=AVOID_STOP_MM ? 32'sd0 :
++         lidar_front<=AVOID_SLOW_MM ? AVOID_SLOW:AVOID_CRUISE);
++    wire signed [31:0] avoid_right_cmd=avoid_sensor_stop ? 32'sd0 :
++        avoid_turning ? (avoid_turn_left ? AVOID_TURN:-AVOID_TURN) :
++        (lidar_front<=AVOID_STOP_MM ? 32'sd0 :
++         lidar_front<=AVOID_SLOW_MM ? AVOID_SLOW:AVOID_CRUISE);
++    wire [9:0] avoid_limit=!avoid_lidar_ok ? 10'd0 :
++        avoid_turning ? 10'd80 :
++        lidar_front<=AVOID_STOP_MM ? 10'd0 :
++        lidar_front<=AVOID_SLOW_MM ? 10'd60:10'd120;
+     // Assess the requested direction before the final pose/stop output gates.
+     // Feeding gated drive outputs back here lengthens the safety feedback path
+     // and loses direction information exactly when a stop gate becomes active.
+@@ -44,8 +74,8 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+         .body_x(bx),.body_y(by),.body_angle_cdeg(body_angle),.range_mm(range_mm));
+     a741_lidar_safety #(.BODY_COORDINATES(1),.FRONT_EXTENT(FRONT_EXTENT),.REAR_EXTENT(REAR_EXTENT),.HALF_WIDTH(HALF_WIDTH)) safety(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lidar_valid && !project_overflow),
+         .point_valid(point_done),.scan_end(scan_end),.angle_cdeg(body_angle),.distance_mm(range_mm),.rotation_radius_mm(16'(RADIUS_MM)),
+-        .requested_left(safety_l),.requested_right(safety_r),.point_x(bx),.point_y(by),.stop(sensor_stop),.rotation_clear(rotation_clear),.scan_valid(safe_scan),
+-        .front_mm(front_distance),.rear_mm(rear_distance),.min_mm(min_distance),.clearance_mm(clearance),.speed_limit(sensor_limit));
++        .requested_left(safety_l),.requested_right(safety_r),.point_x(bx),.point_y(by),.stop(nav_sensor_stop),.rotation_clear(rotation_clear),.scan_valid(safe_scan),
++        .front_mm(nav_front_distance),.rear_mm(rear_distance),.min_mm(min_distance),.clearance_mm(clearance),.speed_limit(nav_sensor_limit));
+ 
+     wire ray_busy,ray_update,ray_done,ray_invalid;
+     wire [6:0] ray_x,ray_y;wire [1:0] ray_value;
+@@ -74,11 +104,19 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+             tracking_limit<=limit;
+             tracking_turn_limit<=rotation_clear ? sensor_limit:10'd0;
+         end
+-    assign drive_enabled=nav_running || (request_nav && !preview_only);
+-    assign drive_left=request_nav ? 32'sd0:guard_search && !guard_stop ? -32'sd40:guard_active && !guard_stop ? tracker_left:32'sd0;
+-    assign drive_right=request_nav ? 32'sd0:guard_search && !guard_stop ? 32'sd40:guard_active && !guard_stop ? tracker_right:32'sd0;
+-    assign force_stop=nav_running && (guard_locked || tracker_fault || !safe_scan || replans==7);
+-    assign mission_busy=nav_running || request_nav;
++    assign sensor_stop=avoid_running ? avoid_sensor_stop:nav_sensor_stop;
++    assign sensor_limit=avoid_running ? avoid_limit:nav_sensor_limit;
++    assign front_distance=avoid_running ? lidar_front:nav_front_distance;
++    assign drive_enabled=avoid_running || nav_running || (request_nav && !preview_only);
++    assign drive_left=avoid_running ? avoid_left_cmd:
++        request_nav ? 32'sd0:guard_search && !guard_stop ? -32'sd40:
++        guard_active && !guard_stop ? tracker_left:32'sd0;
++    assign drive_right=avoid_running ? avoid_right_cmd:
++        request_nav ? 32'sd0:guard_search && !guard_stop ? 32'sd40:
++        guard_active && !guard_stop ? tracker_right:32'sd0;
++    assign force_stop=(avoid_running && (!armed || !link_alive || motor_faults!=0)) ||
++        (nav_running && (guard_locked || tracker_fault || !safe_scan || replans==7));
++    assign mission_busy=avoid_running || nav_running || request_nav;
+     assign mission_arrived=arrived && !request_nav;
+     assign mission_failed=guard_locked || tracker_fault || plan_fail || replans==7;
+ 
+@@ -133,7 +171,7 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+     endfunction
+     always @(posedge clk or negedge rst_n)
+         if(!rst_n) begin
+-            building<=0;committed<=0;pose_seeded<=0;target_set<=0;request_nav<=0;nav_running<=0;revision<=0;navigation_phase<=0;allow_generated_crc<=0;preview_only<=0;
++            building<=0;committed<=0;pose_seeded<=0;target_set<=0;request_nav<=0;nav_running<=0;avoid_running<=0;avoid_turning<=0;avoid_turn_left<=0;revision<=0;navigation_phase<=0;allow_generated_crc<=0;preview_only<=0;
+             clear_map<=0;set_pose<=0;set_x<=0;set_y<=0;set_yaw<=0;goal_x<=0;goal_y<=0;goal_yaw<=0;
+             transfer_ms<=0;replan_wait<=0;replans<=0;
+             reply_done<=0;reply<=0;host_write<=0;host_read<=0;host_address<=0;host_value<=0;
+@@ -158,6 +196,16 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+                 search_ms<=search_ms+1'b1;
+                 if(search_delta>=5461) search_done<=1;
+             end
++            if(ms_tick && avoid_running && avoid_lidar_ok) begin
++                if(avoid_turning) begin
++                    if(lidar_front>=AVOID_CLEAR_MM) avoid_turning<=0;
++                end else if(lidar_front<=AVOID_STOP_MM &&
++                             (avoid_left_open || avoid_right_open)) begin
++                    avoid_turning<=1;
++                    avoid_turn_left<=avoid_left_open && (!avoid_right_open ||
++                        lidar_left>=lidar_right);
++                end
++            end
+             if(nav_running && !request_nav && guard_active && safe_scan &&
+                 ((sensor_stop && (drive_left!=0 || drive_right!=0)) || tracker_blocked) && replans<7) begin
+                 request_nav<=1;navigation_phase<=7;preview_only<=0;replan_wait<=0;replans<=replans+1'b1;
+@@ -180,12 +228,13 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+             endcase
+             // A previous leg's sticky arrived flag clears on route_begin.
+             // It must not cancel the next leg in the cycle before that clear.
+-            if((plan_fail && navigation_phase==5) || guard_locked || (arrived && nav_running) || tracker_fault || !link_alive || motor_faults!=0 || (nav_running && !armed)) begin
++            if(avoid_running && (!link_alive || motor_faults!=0 || !armed)) begin avoid_running<=0;avoid_turning<=0;end
++              if((plan_fail && navigation_phase==5) || guard_locked || (arrived && nav_running) || tracker_fault || !link_alive || motor_faults!=0 || (nav_running && !armed)) begin
+                 request_nav<=0;nav_running<=0;navigation_phase<=0;
+             end
+-            if(command && (kind==3 || kind==4 || kind==8'h56)) begin nav_cancel<=1;nav_running<=0;request_nav<=0;end
++            if(command && (kind==3 || kind==4 || kind==8'h56 || (kind==8'h59 && payload[7:0]==0))) begin nav_cancel<=1;nav_running<=0;request_nav<=0;end
+             if(command && kind==8'h21) nav_clear<=1;
+-            if(command && kind>=8'h50 && kind<=8'h57 && op_state==0) begin
++            if(command && kind>=8'h50 && kind<=8'h59 && op_state==0) begin
+                 reply<=0;reply[7:0]<=0;reply_done<=1;
+                 case(kind)
+                     8'h50:if(armed || nav_running || plan_busy || inflate_busy || payload[7:0]>1) reply[7:0]<=2;
+@@ -224,7 +273,15 @@ module a741_autonomy #(parameter GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR
+                         reply[191:176]<=route_remaining;reply[207:192]<=expanded;
+                         reply[239:208]<=CONFIG_CRC;
+                     end
+-                    default:;
++                      8'h59:if(payload[7:0]>1 ||
++                              (payload[7:0]==1 && (!armed || nav_running || request_nav)))
++                              reply[7:0]<=1;
++                          else begin
++                              avoid_running<=payload[7:0]==1;
++                              avoid_turning<=0;
++                              avoid_turn_left<=0;
++                          end
++                      default:;
+                 endcase
+             end
+             case(op_state)
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v
+index 6734b04..43e4f04 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v
+@@ -79,7 +79,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
+     wire [7:0] mrd,mtd,mkind;wire mrv,mrl,mrb,mrr,mtv,mtl,mtr,mcommand,mwaiting;
+     wire [15:0] mlen;wire [255:0] mpayload;
+     reg map_owner,pending_control;reg [7:0] pending_kind;reg [255:0] pending_payload;
+-    wire control_is_nav=fkind>=8'h50 && fkind<=8'h58;
++    wire control_is_nav=fkind>=8'h50 && fkind<=8'h59;
+     wire deferred=pending_control && !mwaiting && !map_owner;
+     wire acmd=mcommand || deferred || (fcommand && (!control_is_nav || !map_owner));
+     wire [7:0] akind=mcommand ? mkind:deferred ? pending_kind:fkind;
+@@ -103,7 +103,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
+         wire [31:0] mission_progress;
+         wire nav_busy,nav_arrived,nav_failed;
+         reg mission_reply_owner,rejected_nav_reply,mission_session;
+-        wire rejected_nav=acmd && akind>=8'h50 && akind<=8'h57 && akind!=8'h56 &&
++        wire rejected_nav=acmd && ((akind>=8'h50 && akind<=8'h57 && akind!=8'h56) || akind==8'h59) &&
+             ((cpu_owns && akind<=8'h55) || mission_reply_owner || cpu_command);
+         wire external_nav=acmd && akind!=8'h58 && !rejected_nav;
+         a741_mission_cpu mission(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),
+@@ -133,12 +133,13 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
+             .armed(armed),.link_alive(flink),.travel_tick(travel_tick),.travel_valid(travel_valid),.left_travel(left_travel),.right_travel(right_travel),
+             .manual_left(manual_l),.manual_right(manual_r),.yaw(heading_positive ? yaw:-yaw),.motor_faults(faults),
+             .lidar_point(lidar_point),.lidar_angle(lidar_angle),.lidar_distance(lidar_distance),.lidar_confidence(lidar_confidence),
++              .lidar_front(front),.lidar_left(lside),.lidar_right(rside),
+             .command(external_nav || cpu_command),.kind(cpu_command ? cpu_kind:akind),.payload(cpu_command ? cpu_payload:apayload),
+             .reply_done(autonomy_reply_done),.reply(autonomy_reply),.drive_enabled(autonomy_owns),.force_stop(autonomy_stop),
+             .mission_busy(nav_busy),.mission_arrived(nav_arrived),.mission_failed(nav_failed),
+             .drive_left(fl),.drive_right(fr),.sensor_stop(fobstacle),.sensor_limit(flimit),.pose_x(pose_x),.pose_y(pose_y),.pose_heading(pose_heading),
+             .nav_state(nav_state),.nav_fault(nav_fault),.localization_quality(quality),.front_distance(ffront),.map_revision(map_revision));
+-        assign mission_alive=cpu_owns && cpu_alive;
++        assign mission_alive=autonomy_owns || (cpu_owns && cpu_alive);
+         assign mission_display={5'd0,cpu_fault,cpu_alive,cpu_owns,mission_progress};
+     end else begin
+         assign freply_valid=0;assign freply=0;assign fowns=0;assign fstop=0;assign fobstacle=0;assign flimit=400;
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
+index bea32fa..a73988e 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
+@@ -11,6 +11,7 @@ module a741_lidar_safety #(parameter BODY_COORDINATES=0,FRONT_EXTENT=0,REAR_EXTE
+     output wire [15:0] clearance_mm,output wire [9:0] speed_limit
+ );
+     reg [15:0] scan_front,scan_rear,scan_min,age;
++    reg [63:0] scan_rotation_min_sq,rotation_min_sq;
+     reg [9:0] points;
+     reg [11:0] coverage;
+     reg [11:0] scaled_gap;
+@@ -20,13 +21,22 @@ module a741_lidar_safety #(parameter BODY_COORDINATES=0,FRONT_EXTENT=0,REAR_EXTE
+     wire turning=requested_left!=requested_right;
+     wire [31:0] abs_x=point_x<0 ? -point_x:point_x,abs_y=point_y<0 ? -point_y:point_y;
+     wire [31:0] body_radius=abs_x>abs_y ? abs_x:abs_y;
++    // Use the exact squared distance for the swept rotational envelope.
++    // This avoids a square-root datapath and keeps the safety comparison exact.
++    wire [63:0] rotation_x_sq={32'd0,abs_x}*{32'd0,abs_x};
++    wire [63:0] rotation_y_sq={32'd0,abs_y}*{32'd0,abs_y};
++    wire [63:0] distance_sq={48'd0,distance_mm}*{48'd0,distance_mm};
++    wire [63:0] rotation_point_sq=BODY_COORDINATES!=0 ?
++        rotation_x_sq+rotation_y_sq:distance_sq;
++    wire [31:0] rotation_limit={16'd0,rotation_radius_mm}+32'd100;
++    wire [63:0] rotation_limit_sq={32'd0,rotation_limit}*{32'd0,rotation_limit};
+     wire [15:0] point_min=BODY_COORDINATES!=0 ? (body_radius>65535 ? 16'd65535:body_radius[15:0]):distance_mm;
+     wire in_front=BODY_COORDINATES!=0 ? (point_x>0 && abs_y<HALF_WIDTH+100):(angle_cdeg<3000 || angle_cdeg>33000);
+     wire in_rear=BODY_COORDINATES!=0 ? (point_x<0 && abs_y<HALF_WIDTH+100):(angle_cdeg>15000 && angle_cdeg<21000);
+     wire [15:0] front_gap=BODY_COORDINATES!=0 ? (point_x>FRONT_EXTENT ? 16'(point_x-FRONT_EXTENT):16'd0):distance_mm;
+     wire [15:0] rear_gap=BODY_COORDINATES!=0 ? (-point_x>REAR_EXTENT ? 16'(-point_x-REAR_EXTENT):16'd0):distance_mm;
+     assign clearance_mm=forward ? front_mm:reverse ? rear_mm:min_mm;
+-    assign rotation_clear=scan_valid && rotation_radius_mm!=0 && min_mm>rotation_radius_mm+100;
++    assign rotation_clear=scan_valid && rotation_radius_mm!=0 && rotation_min_sq>rotation_limit_sq;
+     assign stop=(!scan_valid || (turning ? !rotation_clear:clearance_mm<=250));
+     assign speed_limit=!scan_valid || clearance_mm<=250 ? 0:clearance_mm>=600 ? 400:speed_cached;
+     // 400/350 = 8/7. Narrow arithmetic and a register avoid a 32-bit
+@@ -39,22 +49,23 @@ module a741_lidar_safety #(parameter BODY_COORDINATES=0,FRONT_EXTENT=0,REAR_EXTE
+         end
+     always @(posedge clk or negedge rst_n)
+         if(!rst_n) begin scan_front<=65535;scan_rear<=65535;scan_min<=65535;age<=65535;points<=0;
+-            front_mm<=65535;rear_mm<=65535;min_mm<=65535;scan_valid<=0;coverage<=0;end
++            front_mm<=65535;rear_mm<=65535;min_mm<=65535;rotation_min_sq<=64'hffff_ffff_ffff_ffff;scan_rotation_min_sq<=64'hffff_ffff_ffff_ffff;scan_valid<=0;coverage<=0;end
+         else begin
+             if(ms_tick) begin if(age!=65535) age<=age+1'b1;if(age>=300) scan_valid<=0;end
+-            if(!stream_valid) begin scan_valid<=0;points<=0;coverage<=0;scan_front<=65535;scan_rear<=65535;scan_min<=65535;end
++            if(!stream_valid) begin scan_valid<=0;points<=0;coverage<=0;scan_front<=65535;scan_rear<=65535;scan_min<=65535;scan_rotation_min_sq<=64'hffff_ffff_ffff_ffff;end
+             else if(point_valid) begin
+                 if(scan_end) begin
+                     front_mm<=in_front && front_gap<scan_front ? front_gap:scan_front;
+                     rear_mm<=in_rear && rear_gap<scan_rear ? rear_gap:scan_rear;
+                     min_mm<=point_min<scan_min ? point_min:scan_min;
++                    rotation_min_sq<=rotation_point_sq<scan_rotation_min_sq ? rotation_point_sq:scan_rotation_min_sq;
+                     scan_valid<=points>=60 && &coverage && scan_front!=65535 && scan_rear!=65535;
+                     // Projector marks the first point after angular wrap. It
+                     // also belongs to the new scan, including its obstacle.
+                     age<=0;points<=1;
+                     coverage<=angle_cdeg<36000 ? (12'b1 << (angle_cdeg/16'd3000)):12'd0;
+                     scan_front<=in_front ? front_gap:16'd65535;
+-                    scan_rear<=in_rear ? rear_gap:16'd65535;scan_min<=point_min;
++                    scan_rear<=in_rear ? rear_gap:16'd65535;scan_min<=point_min;scan_rotation_min_sq<=rotation_point_sq;
+                 end else begin
+                     if(points!=1023) points<=points+1'b1;
+                     if(angle_cdeg<36000) coverage[angle_cdeg/16'd3000]<=1;
+@@ -65,6 +76,8 @@ module a741_lidar_safety #(parameter BODY_COORDINATES=0,FRONT_EXTENT=0,REAR_EXTE
+                     if(in_front && front_gap<front_mm) front_mm<=front_gap;
+                     if(in_rear && rear_gap<rear_mm) rear_mm<=rear_gap;
+                     if(point_min<min_mm) min_mm<=point_min;
++                    if(rotation_point_sq<rotation_min_sq) rotation_min_sq<=rotation_point_sq;
++                    if(rotation_point_sq<scan_rotation_min_sq) scan_rotation_min_sq<=rotation_point_sq;
+                 end
+             end
+         end
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v
+index d6a92ee..b46dd5d 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v
+@@ -28,7 +28,8 @@ module a741_mission_cpu #(parameter FIRMWARE_FILE="firmware/mission.hex")(
+     assign fault=trap || cpu_failed;
+     assign owns=active;
+     wire stop_request=host_command && (host_kind==3 || host_kind==4 || host_kind==8'h56 ||
+-        (host_kind==8'h58 && host_payload[7:0]==3));
++        (host_kind==8'h58 && host_payload[7:0]==3) ||
++        (host_kind==8'h59 && host_payload[7:0]==0));
+     always @(posedge clk) begin
+         if(mem_valid && !mem_ready && mem_addr<8192) begin
+             // Arora V supports normal/write-through SP modes. Do not infer
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v
+index e773651..8a47e70 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v
+@@ -80,7 +80,8 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
+     assign travel_valid=lvalid && rvalid;
+     assign heading_positive=cfg[7]==1;
+     wire stop_cmd=cv && (kind==3 || kind==4 || (FUSION_ENABLED!=0 &&
+-        (kind==8'h56 || (kind==8'h58 && payload[7:0]==3))));
++        (kind==8'h56 || (kind==8'h58 && payload[7:0]==3) ||
++         (kind==8'h59 && payload[7:0]==0))));
+     reg [15:0] effective_ttl;
+     reg imu_required,heading_hold;
+     reg signed [15:0] heading_origin,previous_yaw;
+@@ -233,7 +234,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
+             end
+             // Allow the registered PWM telemetry to reflect command updates.
+             if(request_pending && reply_ready && !reply_request && !reply_command_delay &&
+-                (!(saved_kind>=8'h50 && saved_kind<=8'h58) || fusion_response_pending || fusion_reply_valid)) begin
++                (!(saved_kind>=8'h50 && saved_kind<=8'h59) || fusion_response_pending || fusion_reply_valid)) begin
+                 request_pending<=0;reply_request<=1;reply_kind<=8'h80;reply_seq<=saved_seq;reply_length<=25;reply_payload<=0;
+                 reply_payload[7:0]<=state_code;reply_payload[23:8]<=faults;
+                 reply_payload[55:24]<=left_count;reply_payload[87:56]<=right_count;
+@@ -242,7 +243,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
+                 if(saved_kind==8'h40) begin
+                     reply_kind<=8'hc0;reply_length<=8;
+                     reply_payload<={192'd0,16'd400,(FUSION_ENABLED!=0 ? 16'h0f51:MOTION_LIDAR!=0 ? 16'h0751:IMU_TEST!=0 ? 16'h00d1:SENSOR_PINS_ENABLED!=0 ? 16'h0031:16'h0011),32'h314d5645};
+-                end else if(saved_kind>=8'h50 && saved_kind<=8'h58 && FUSION_ENABLED!=0) begin
++                end else if(saved_kind>=8'h50 && saved_kind<=8'h59 && FUSION_ENABLED!=0) begin
+                     reply_kind<=8'hd0;reply_length<=32;reply_payload<=fusion_reply_valid ? fusion_reply:fusion_response_data;
+                     fusion_response_pending<=0;
+                 end
+@@ -275,7 +276,9 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
+                 end
+                 case(kind)
+                     8'h02: if(IMU_TEST==0 && calibration_config_ok && calibrated && !calibrating && imu_valid && gyro_valid && faults==0) begin armed<=1;command_age<=0;end
+-                    8'h03,8'h04,8'h56,8'h58: if(kind!=8'h58 || (FUSION_ENABLED!=0 && payload[7:0]==3)) begin armed<=0;rotating<=0;heading_hold<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
++                    8'h03,8'h04,8'h56,8'h58,8'h59: if((kind!=8'h58 && kind!=8'h59) ||
++                        (kind==8'h58 && FUSION_ENABLED!=0 && payload[7:0]==3) ||
++                        (kind==8'h59 && payload[7:0]==0)) begin armed<=0;rotating<=0;heading_hold<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                         calibrating<=0;if(calibrating) calibration_result<=4;
+                     end
+                     8'h05: command_age<=0;
+diff --git a/code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v b/code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v
+index e1e1d6f..ff59f51 100644
+--- a/code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v
++++ b/code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v
+@@ -46,6 +46,7 @@ module a741_protocol(
+                 8'h54:valid_length=size==4;
+                 8'h55,8'h56,8'h57:valid_length=size==0;
+                 8'h58:valid_length=cmd_payload[7:0]<=4 && size==(cmd_payload[7:0]==1 ? 5:1);
++                8'h59:valid_length=size==1;
+                 default:valid_length=0;
+             endcase
+         end
+diff --git a/code/camera-car-control/a741-fpga-fusion/scripts/archive.py b/code/camera-car-control/a741-fpga-fusion/scripts/archive.py
+index 36ab22f..b89f814 100644
+--- a/code/camera-car-control/a741-fpga-fusion/scripts/archive.py
++++ b/code/camera-car-control/a741-fpga-fusion/scripts/archive.py
+@@ -62,7 +62,10 @@ def main():
+         shutil.copytree(ROOT / "third_party/coreslam", dest / "third_party/coreslam")
+         shutil.copytree(ROOT / "native", dest / "native")
+         (dest / ".local/mapping").mkdir(parents=True)
+-        shutil.copyfile(ROOT / ".local/mapping/edgemind_slam.dll", dest / ".local/mapping/edgemind_slam.dll")
++        mapping_library = next((ROOT / ".local/mapping").glob("edgemind_slam.*"), None)
++        if mapping_library is None:
++            raise RuntimeError("Run scripts/setup_mapping.py before archiving motion+LD06")
++        shutil.copyfile(mapping_library, dest / ".local/mapping" / mapping_library.name)
+         shutil.copyfile(ROOT / "requirements-mapping-build.txt", dest / "requirements-mapping-build.txt")
+     shutil.copyfile(ROOT / "verification/ACCEPTANCE.md", dest / "ACCEPTANCE-PENDING.md")
+     shutil.copyfile(ROOT / "verification/mpu6050-reference.json", dest / "mpu6050-reference.json")
+diff --git a/code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py b/code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py
+index a3365e8..c4fe5a8 100644
+--- a/code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py
++++ b/code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py
+@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
+ 
+ def build():
+     import ziglang
+-    zig = Path(ziglang.__file__).parent / "zig.exe"
++    zig = Path(ziglang.__file__).parent / ("zig.exe" if sys.platform == "win32" else "zig")
+     out = ROOT / ".local/mission-firmware"
+     out.mkdir(parents=True, exist_ok=True)
+     elf = out / "mission.elf"
+diff --git a/code/camera-car-control/a741-fpga-fusion/scripts/check.py b/code/camera-car-control/a741-fpga-fusion/scripts/check.py
+index ac6279f..783e306 100644
+--- a/code/camera-car-control/a741-fpga-fusion/scripts/check.py
++++ b/code/camera-car-control/a741-fpga-fusion/scripts/check.py
+@@ -8,6 +8,9 @@ import sys
+ import time
+ import hashlib
+ import re
++import shutil
++
++IS_WINDOWS_HOST = shutil.which("wsl.exe") is not None
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ CAMERA = ROOT.parent
+@@ -45,6 +48,24 @@ def rtl_benches():
+                    VISION.parent/"tests/ddr_framebuffer_tb.v"])
+ 
+ 
++def gowin_prim_sim():
++    """Locate the real Gowin GW5A simulation primitives on Windows or Linux."""
++    roots = []
++    configured = os.environ.get("GOWIN_HOME")
++    if configured:
++        roots.append(Path(configured))
++    roots.extend((Path.home() / "tools", Path("/opt/Gowin"), Path("/opt/gowin")))
++    candidates = []
++    for root in roots:
++        candidates.extend((root / "IDE/simlib/gw5a/prim_sim.v",
++                          root / "simlib/gw5a/prim_sim.v"))
++    for candidate in candidates:
++        if candidate.is_file():
++            return candidate
++    searched = ", ".join(str(path) for path in candidates)
++    raise FileNotFoundError("Gowin GW5A prim_sim.v not found; searched: " + searched)
++
++
+ def main():
+     parser = argparse.ArgumentParser()
+     parser.add_argument("--only", action="append", help="Run named RTL benches only")
+@@ -61,16 +82,21 @@ def main():
+     inputs += [ROOT / "config/geometry.json"]+list((ROOT / "scripts").glob("*.py"))
+     inputs += list((ROOT / "firmware").glob("*")) + [ROOT / "third_party/picorv32/source.json"]
+     inputs += list((ROOT / "native").glob("*")) + list((ROOT / "third_party/coreslam").glob("*"))
+-    mapping_dll=ROOT / ".local/mapping/edgemind_slam.dll"
+-    if mapping_dll.is_file():inputs.append(mapping_dll)
++    mapping_libraries = (ROOT / ".local/mapping/edgemind_slam.dll",
++                         ROOT / ".local/mapping/edgemind_slam.so")
++    inputs += [path for path in mapping_libraries if path.is_file()]
+     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs if p.is_file()}
+     bins = REPO / "tmp/vision-motion-tools/bin"
++    use_wsl = bool(args.wsl and IS_WINDOWS_HOST)
+     def path_arg(path):
+         value=Path(path).resolve().as_posix()
+-        return "/mnt/"+value[0].lower()+value[2:] if args.wsl else value
++        return "/mnt/"+value[0].lower()+value[2:] if use_wsl else value
+     def command(tool,arguments):
+-        return (["wsl.exe","-d",args.wsl,"--cd",path_arg(ROOT),"--exec",tool,*arguments] if args.wsl else
+-                [str(bins/(tool+".exe")),*arguments])
++        if use_wsl:
++            return ["wsl.exe","-d",args.wsl,"--cd",path_arg(ROOT),"--exec",tool,*arguments]
++        if IS_WINDOWS_HOST:
++            return [str(bins/(tool+".exe")),*arguments]
++        return [tool,*arguments]
+     passed = []
+     backends={}
+     for bench in benches:
+@@ -88,9 +114,9 @@ def main():
+                    "-o", path_arg(product), *map(path_arg, sources()), path_arg(bench)]
+         if bench.stem == "hdmi_tb":
+             compile_args += [path_arg(ROOT / ".local/platform-motion-lidar/dvi_encoder.v"),
+-                        path_arg(Path(os.environ.get("GOWIN_HOME", "C:/Gowin/Gowin_V1.9.12.04_x64")) /
+-                            "IDE/simlib/gw5a/prim_sim.v")]
+-        if args.wsl and bench.stem in ("cad_navigation_tb", "cad_stalled_navigation_tb", "continuous_navigation_tb", "mission_navigation_tb"):
++                             path_arg(gowin_prim_sim())]
++        if (use_wsl or not IS_WINDOWS_HOST) and bench.stem in ("cad_navigation_tb", "cad_stalled_navigation_tb",
++                                     "continuous_navigation_tb", "continuous_obstacle_tb", "mission_navigation_tb"):
+             # Compile the CAD room and the concurrent video/navigation fixture
+             # instead of interpreting millions of A* and video clock cycles.
+             obj="/var/tmp/edgemind-"+hashlib.sha256(str(ROOT).encode()).hexdigest()[:12]+"-"+bench.stem
+@@ -112,7 +138,8 @@ def main():
+             run = subprocess.run(run_cmd,cwd=ROOT,stdout=simulation_log,stderr=subprocess.STDOUT,
+                 # The real RV32I CPU now runs throughout the network fixture.
+                 # This is host wall time only; HDL watchdogs and robot TTLs stay unchanged.
+-                timeout=1200 if bench.stem in ("cad_navigation_tb","cad_stalled_navigation_tb","continuous_navigation_tb") else 600 if bench.stem in ("fusion_network_tb","mission_navigation_tb") else 300 if bench.stem=="autonomy_navigation_tb" else 60)
++                timeout=1200 if bench.stem in ("cad_navigation_tb","cad_stalled_navigation_tb",
++                                                   "continuous_navigation_tb","continuous_obstacle_tb") else 600 if bench.stem in ("fusion_network_tb","mission_navigation_tb") else 300 if bench.stem=="autonomy_navigation_tb" else 60)
+         run_log=simulation_text(log_path)
+         log_path.write_text(run_log,encoding="utf-8")
+         if run.returncode or "PASS" not in run_log:
+@@ -136,7 +163,7 @@ def main():
+     if any(hashlib.sha256(Path(p).read_bytes()).hexdigest() != h for p, h in before.items()):
+         raise RuntimeError("Sources changed during regression")
+     record = {"rtl_passed": passed, "hardware_tested": False, "unix_time": time.time(),
+-              "rtl_backend":"wsl:"+args.wsl if args.wsl else "windows-icarus",
++              "rtl_backend":("wsl:"+args.wsl if use_wsl else "windows-icarus" if IS_WINDOWS_HOST else "linux-native"),
+               "rtl_backend_per_bench":backends,
+               "host_tests": int(re.search(r"Ran (\d+) tests", host_log)[1]), "input_sha256": before}
+     (out / "result.json").write_text(json.dumps(record, indent=2), encoding="utf-8")
+diff --git a/code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py b/code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py
+index 5f62cdf..ad44feb 100644
+--- a/code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py
++++ b/code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py
+@@ -1,4 +1,4 @@
+-"""Fetch pinned upstream CoreSLAM sources and build a replaceable local DLL."""
++"""Fetch pinned upstream CoreSLAM sources and build a replaceable local native library."""
+ import base64
+ import hashlib
+ import json
+@@ -12,8 +12,10 @@ REPOSITORY = "simondlevy/BreezySLAM"
+ 
+ 
+ def api(path):
+-    request = urllib.request.Request("https://api.github.com/repos/"+REPOSITORY+"/"+path,
+-                                     headers={"User-Agent": "EdgeMind-local-build"})
++    request = urllib.request.Request(
++        "https://api.github.com/repos/" + REPOSITORY + "/" + path,
++        headers={"User-Agent": "EdgeMind-local-build"},
++    )
+     with urllib.request.urlopen(request, timeout=45) as response:
+         return json.load(response)
+ 
+@@ -23,37 +25,85 @@ def main():
+     source.mkdir(parents=True, exist_ok=True)
+     manifest_file = source / "provenance.json"
+     manifest = json.loads(manifest_file.read_text()) if manifest_file.exists() else None
+-    commit = manifest["commit"] if manifest else "1170285cd42a88300eddd275fc3df36e642e3a2e"
+-    paths = ["LICENSE.md", "c/coreslam.c", "c/coreslam.h", "c/coreslam_internals.h",
+-             "c/coreslam_sisd.c", "c/random.c", "c/random.h", "c/ziggurat.c", "c/ziggurat.h"]
++    commit = manifest["commit"] if manifest else "1170285cd42a88300eddd275fc3df336e642e3a2e"
++    paths = [
++        "LICENSE.md",
++        "c/coreslam.c",
++        "c/coreslam.h",
++        "c/coreslam_internals.h",
++        "c/coreslam_sisd.c",
++        "c/random.c",
++        "c/random.h",
++        "c/ziggurat.c",
++        "c/ziggurat.h",
++    ]
+     hashes = {}
+     for path in paths:
+         target = source / Path(path).name
+         if not target.exists():
+-            record = api("contents/"+path+"?ref="+commit)
++            record = api("contents/" + path + "?ref=" + commit)
+             target.write_bytes(base64.b64decode(record["content"]))
+         digest = hashlib.sha256(target.read_bytes()).hexdigest()
+         if manifest and manifest["sha256"].get(path) != digest:
+-            raise RuntimeError("Upstream source changed locally: "+path)
++            raise RuntimeError("Upstream source changed locally: " + path)
+         hashes[path] = digest
++
+     # LGPL v3 incorporates GPL v3; ship both license texts.
+     license_file = source / "GPL-3.0.txt"
+     if not license_file.exists():
+-        request = urllib.request.Request("https://api.github.com/repos/spdx/license-list-data/contents/text/GPL-3.0-or-later.txt",
+-                                         headers={"User-Agent": "EdgeMind-local-build"})
++        request = urllib.request.Request(
++            "https://api.github.com/repos/spdx/license-list-data/contents/text/GPL-3.0-or-later.txt",
++            headers={"User-Agent": "EdgeMind-local-build"},
++        )
+         with urllib.request.urlopen(request, timeout=45) as response:
+             license_file.write_bytes(base64.b64decode(json.load(response)["content"]))
+-    manifest_file.write_text(json.dumps({"repository": REPOSITORY, "commit": commit,
+-        "license": "LGPL-3.0-or-later", "sha256": hashes}, indent=2)+"\n", encoding="utf-8", newline="\n")
++
++    manifest_file.write_text(
++        json.dumps(
++            {
++                "repository": REPOSITORY,
++                "commit": commit,
++                "license": "LGPL-3.0-or-later",
++                "sha256": hashes,
++            },
++            indent=2,
++        )
++        + "\n",
++        encoding="utf-8",
++        newline="\n",
++    )
++
+     destination = ROOT / ".local/mapping"
+     destination.mkdir(parents=True, exist_ok=True)
+-    import ziglang
+-    zig = Path(ziglang.__file__).parent / "zig.exe"
+-    subprocess.run([str(zig), "cc", "-shared", "-O2", "-std=c99", "-DM_PI=3.14159265358979323846", "-I", str(source),
+-        str(ROOT / "native/slam_bridge.c"), *[str(source / name) for name in
+-        ("coreslam.c", "coreslam_sisd.c", "random.c", "ziggurat.c")],
+-        "-o", str(destination / "edgemind_slam.dll")], check=True)
+-    print(destination / "edgemind_slam.dll")
++    sources = [
++        str(ROOT / "native/slam_bridge.c"),
++        *[
++            str(source / name)
++            for name in ("coreslam.c", "coreslam_sisd.c", "random.c", "ziggurat.c")
++        ],
++    ]
++    common_flags = [
++        "-shared",
++        "-O2",
++        "-std=c99",
++        "-DM_PI=3.14159265358979323846",
++        "-I",
++        str(source),
++    ]
++    if sys.platform.startswith("linux"):
++        output = destination / "edgemind_slam.so"
++        command = ["gcc", "-fPIC", *common_flags, *sources, "-lm", "-o", str(output)]
++    elif sys.platform == "win32":
++        import ziglang
++
++        zig = Path(ziglang.__file__).parent / "zig.exe"
++        output = destination / "edgemind_slam.dll"
++        command = [str(zig), "cc", *common_flags, *sources, "-o", str(output)]
++    else:
++        output = destination / "edgemind_slam.so"
++        command = ["cc", "-fPIC", *common_flags, *sources, "-lm", "-o", str(output)]
++    subprocess.run(command, check=True)
++    print(output)
+ 
+ 
+ if __name__ == "__main__":
+diff --git a/code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v b/code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v
+index adeb483..dce9ca0 100644
+--- a/code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v
++++ b/code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v
+@@ -12,6 +12,7 @@ module autonomy_navigation_tb;
+     reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
+     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
+     wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
+diff --git a/code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v b/code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v
+index 9305289..c12e26c 100644
+--- a/code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v
++++ b/code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v
+@@ -6,6 +6,7 @@ module autonomy_tb;
+     reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
+     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;wire signed [31:0] drive_left,drive_right,pose_x,pose_y;
+     wire [9:0] sensor_limit;wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,localization_quality;
+diff --git a/code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v b/code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v
+index 5cc3e74..88c22c6 100644
+--- a/code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v
++++ b/code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v
+@@ -14,6 +14,7 @@ module cad_navigation_tb;
+     reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
+     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
+     wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
+diff --git a/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v b/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v
+index a549cca..f1eef56 100644
+--- a/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v
++++ b/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v
+@@ -14,6 +14,7 @@ module cad_stalled_navigation_tb;
+     reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
+     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
+     wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
+diff --git a/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v b/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v
+index 32226b9..93994da 100644
+--- a/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v
++++ b/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v
+@@ -18,6 +18,7 @@ module continuous_navigation_tb;
+     reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
+     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
+     wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
+diff --git a/code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md b/code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md
+index 142e695..fa573f2 100644
+--- a/code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md
++++ b/code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md
+@@ -1,5 +1,21 @@
+ # 给下一位 AI 的交接说明
+ 
++## 本轮最终检查点（2026-10-25，Linux 虚拟机）
++
++本轮已经完成并重新核对：
++
++- Git 基线为 `6a32a56`，项目位于 `/home/smallcoral/Dev/EdgeMind-Robot-main`；当前工作区保留未提交修改和连续导航诊断产物，禁止用 `git reset` 或覆盖这些文件。
++- RTL 回归 **56 组通过**，Python/主机回归 **61 项通过**；Flash 工具离线测试 **9 项通过**，GUI 布局检查通过。
++- 连续障碍导航夹具通过：最终位置约 `(1476.08, -25.49)`，`replans=1`、`rotation_clear=1`、`blocked=0`，完成定位恢复并到达目标。证据位于 `output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/result.json` 和同目录 `run.log`。这是合成理想运动模型验证，不是实车几何、制动或运动验收。
++- 已按用户指定的算法一运行整板 PNR：`route_option=1`、`place_option=1`，并保留时序驱动、hold 修复和时钟检查。综合阶段完成，`clk` 综合估算约 `50.540 MHz / 50 MHz`；PNR 在 `3600.0716 s` 超时，日志停在 `Routing Phase 0 completed`。
++- 当前没有可交付 `.fs`、没有最终 `.tr`，`timing_signed_off=false`、`compile_passed=false`、`hardware_programmed=false`；未烧录、未上电、未 ARM、未驱动电机，也没有运行实车。
++- PNR 结果见 `.local/gowin-fusion-tft480/result.json`，日志见 `.local/gowin-fusion-tft480/impl/pnr/a741.log`；输入哈希已与当前源码核对一致。
++- Linux Gowin IDE/Programmer 已安装在 `/home/smallcoral/tools/IDE` 和 `/home/smallcoral/tools/Programmer`，许可证已配置；Linux CoreSLAM 库为 `code/camera-car-control/a741-fpga-fusion/.local/mapping/edgemind_slam.so`。这些工具就绪不等于位流已经生成或硬件已验证。
++- `physical_geometry_verified=false`；原始 `A741-MOTION-LD06-H20-H14-20261022-130843` 位流归档仍缺失，不能把重编译结果冒称原基线。
++
++下一步若继续，只能在用户明确要求后重跑算法一 PNR或先做针对性时序/布线优化；不要用算法二掩盖本轮超时，不要复用未核对输入的旧网表，也不要烧录任何旧 `.fs`。如需给小车上电，必须先提醒用户并确认电机 VM 已关闭。
++
++
+ 记录时间：2026-10-24，北京时间。工作区为 `C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot`。
+ 
+ **接续更新（2026-10-24 23:40）：用户已恢复开发。本轮50组RTL/61项主机测试通过，整板综合估算50.153MHz；PNR达到1800秒超时上限，没有位流或最终时序报告。现场与本轮改动保存在仓库`output/task34-resume-20261024/`，当前结果见[TASK3-4-REPORT.md](TASK3-4-REPORT.md)。未烧录、Reprogram、ARM或驱动电机，尚未达到用户要求的上电验收阶段。下方保留原交接时状态。**
+diff --git a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md
+index 1ee4273..1cac846 100644
+--- a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md
++++ b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md
+@@ -1,5 +1,21 @@
+ # 任务3/4阶段记录（2026-10-25）
+ 
++## 本轮最终检查点（2026-10-25，Linux 虚拟机）
++
++本轮已经完成并重新核对：
++
++- Git 基线为 `6a32a56`，项目位于 `/home/smallcoral/Dev/EdgeMind-Robot-main`；当前工作区保留未提交修改和连续导航诊断产物，禁止用 `git reset` 或覆盖这些文件。
++- RTL 回归 **56 组通过**，Python/主机回归 **61 项通过**；Flash 工具离线测试 **9 项通过**，GUI 布局检查通过。
++- 连续障碍导航夹具通过：最终位置约 `(1476.08, -25.49)`，`replans=1`、`rotation_clear=1`、`blocked=0`，完成定位恢复并到达目标。证据位于 `output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/result.json` 和同目录 `run.log`。这是合成理想运动模型验证，不是实车几何、制动或运动验收。
++- 已按用户指定的算法一运行整板 PNR：`route_option=1`、`place_option=1`，并保留时序驱动、hold 修复和时钟检查。综合阶段完成，`clk` 综合估算约 `50.540 MHz / 50 MHz`；PNR 在 `3600.0716 s` 超时，日志停在 `Routing Phase 0 completed`。
++- 当前没有可交付 `.fs`、没有最终 `.tr`，`timing_signed_off=false`、`compile_passed=false`、`hardware_programmed=false`；未烧录、未上电、未 ARM、未驱动电机，也没有运行实车。
++- PNR 结果见 `.local/gowin-fusion-tft480/result.json`，日志见 `.local/gowin-fusion-tft480/impl/pnr/a741.log`；输入哈希已与当前源码核对一致。
++- Linux Gowin IDE/Programmer 已安装在 `/home/smallcoral/tools/IDE` 和 `/home/smallcoral/tools/Programmer`，许可证已配置；Linux CoreSLAM 库为 `code/camera-car-control/a741-fpga-fusion/.local/mapping/edgemind_slam.so`。这些工具就绪不等于位流已经生成或硬件已验证。
++- `physical_geometry_verified=false`；原始 `A741-MOTION-LD06-H20-H14-20261022-130843` 位流归档仍缺失，不能把重编译结果冒称原基线。
++
++下一步若继续，只能在用户明确要求后重跑算法一 PNR或先做针对性时序/布线优化；不要用算法二掩盖本轮超时，不要复用未核对输入的旧网表，也不要烧录任何旧 `.fs`。如需给小车上电，必须先提醒用户并确认电机 VM 已关闭。
++
++
+ **最终暂停检查点：用户于09:44:48要求停止开发并推送GitHub、制作新交接。所有本轮GW编译及WSL仿真进程已停止。当前完整55组RTL、61项主机测试通过；最新综合被用户暂停，247.63秒，未完成，尚未对这批输入重新PNR。新主工程没有可交付位流或整板时序签核，本轮未上电、烧录、ARM或运动。最新TASK3-4-REPORT.md / RESULTS.json已刷新为55组通过、综合中断，不能使用下文较早检查点代替。**
+ 
+ 新增连续运动回归复现了每次零扫描修正仍重设整数位姿、反复丢失Q16小数里程的问题。已增加零修正跳过条件，同一理想差速模型连续行驶900.6mm并在目标1025mm前约99.4mm处按100mm容差停车；估计与模型位置差小于1mm。新55组已包括此修复和`continuous_navigation_tb`。该误差是仿真模型与估计的比较，不是实车精度。
+diff --git a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md
+index c18546b..efecc4a 100644
+--- a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md
++++ b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md
+@@ -1,12 +1,10 @@
+ # 任务3/4与RGB屏验证结果
+ 
+-记录时间：2026-10-25T09:48:26.798591+08:00
++记录时间：2026-10-26T00:38:40.151148+08:00
+ 
+-RTL 55组、Python 61项通过；后端 `wsl:Ubuntu-26.04`；当前输入哈希一致。
++RTL 57组、Python 61项通过；后端 `linux-native`；当前输入哈希一致。
+ 
+-用户已于09:44:48要求暂停。另有独立连续突发障碍诊断失败，未计入这55组通过；首要接续问题、从GitHub恢复步骤及失败复现命令见仓库根`HANDOFF-20261025.md`。本报告不能作为连续绕障或实车通过证明。
+-
+-本轮模式`synth`；完整工具流程：尚未完成，阶段耗时247.6秒；时序尚未签核；未发布运动固件。
++本轮模式`build`；完整工具流程：尚未完成，阶段耗时1413.4秒；时序尚未签核；未发布运动固件。
+ 
+ 时序违例：`{}`；最差裕量ns：`{}`；最小脉宽最差裕量ns：`None`。
+ 
+@@ -26,7 +24,7 @@ RTL 55组、Python 61项通过；后端 `wsl:Ubuntu-26.04`；当前输入哈希
+ 
+ CAD推导前/后/半宽为221/70/131mm，旋转半径257mm，雷达前偏164mm。运动学继续采用用户实测234mm轮距；实车外廓与精确扫描高度未验收。
+ 
+-管脚冲突0项；综合器资源原始字段：`{"name": "a741_top", "Register": "46", "Lut": "51", "T_Register": "27236(46)", "T_Alu": "5241(0)", "T_Lut": "35218(51)", "T_MULTALU27X18": "18(0)", "T_MULT12X12": "16(0)", "T_MULT27X36": "25(0)", "T_MULTADDALU12X12": "1(0)", "T_Bsram": "81(0)"}`。
++管脚冲突0项；综合器资源原始字段：`{"name": "a741_top", "Register": "46", "Lut": "53", "T_Register": "27780(46)", "T_Alu": "5554(0)", "T_Lut": "35824(53)", "T_MULTALU27X18": "18(0)", "T_MULT12X12": "16(0)", "T_MULT27X36": "30(0)", "T_MULTADDALU12X12": "1(0)", "T_Bsram": "81(0)"}`。
+ 
+ 未烧录、未ARM、未驱动电机，未验证屏幕实物或真正断电重启。原130843归档在本机缺失，未覆盖或重新冒称原基线。
+ 
+diff --git a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json
+index e1ee37e..b36ec49 100644
+--- a/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json
++++ b/code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json
+@@ -1,27 +1,283 @@
+ {
+   "schema": 1,
+-  "generated_local": "2026-10-25T09:48:26.798591+08:00",
++  "generated_local": "2026-10-26T00:38:40.151148+08:00",
+   "variant": "A741-FPGA-FUSION-TFT480",
+   "compile_passed": false,
+-  "build_mode": "synth",
++  "build_mode": "build",
+   "stage_compile_passed": false,
+-  "synthesis_timing": {},
++  "synthesis_timing": {
++    "synthesis_estimate_only": true,
++    "clocks": [
++      {
++        "clock": "clk",
++        "requested_mhz": 50.0,
++        "estimated_fmax_mhz": 49.25,
++        "logic_levels": 28
++      },
++      {
++        "clock": "rgmii_rx_clk",
++        "requested_mhz": 100.0,
++        "estimated_fmax_mhz": 143.973,
++        "logic_levels": 9
++      },
++      {
++        "clock": "camera_pclk",
++        "requested_mhz": 100.0,
++        "estimated_fmax_mhz": 117.345,
++        "logic_levels": 11
++      },
++      {
++        "clock": "clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk",
++        "requested_mhz": 125.0,
++        "estimated_fmax_mhz": 126.155,
++        "logic_levels": 10
++      },
++      {
++        "clock": "video_pll/u_pll/PLLA_inst/CLKOUT0.default_gen_clk",
++        "requested_mhz": 55.0,
++        "estimated_fmax_mhz": 1352.949,
++        "logic_levels": 1
++      },
++      {
++        "clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk",
++        "requested_mhz": 400.0,
++        "estimated_fmax_mhz": 1293.494,
++        "logic_levels": 1
++      },
++      {
++        "clock": "pixel_divider/CLKOUT.default_gen_clk",
++        "requested_mhz": 33.0,
++        "estimated_fmax_mhz": 54.694,
++        "logic_levels": 23
++      },
++      {
++        "clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk",
++        "requested_mhz": 100.0,
++        "estimated_fmax_mhz": 192.4,
++        "logic_levels": 3
++      }
++    ],
++    "paths": [
++      {
++        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
++        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
++        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
++        "slack_ns": -0.725,
++        "logic_levels": 2
++      },
++      {
++        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
++        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
++        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
++        "slack_ns": -0.725,
++        "logic_levels": 2
++      },
++      {
++        "source": "video/diagnostics/held_2_s0",
++        "destination": "video/diagnostics/dst_data_2_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/diagnostics/held_3_s0",
++        "destination": "video/diagnostics/dst_data_3_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/diagnostics/req_s0",
++        "destination": "video/diagnostics/req_sync_0_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_0_s0",
++        "destination": "video/net_fifo/wg1_0_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_1_s0",
++        "destination": "video/net_fifo/wg1_1_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_2_s0",
++        "destination": "video/net_fifo/wg1_2_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_3_s0",
++        "destination": "video/net_fifo/wg1_3_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_4_s0",
++        "destination": "video/net_fifo/wg1_4_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_5_s0",
++        "destination": "video/net_fifo/wg1_5_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_6_s0",
++        "destination": "video/net_fifo/wg1_6_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_7_s0",
++        "destination": "video/net_fifo/wg1_7_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_8_s0",
++        "destination": "video/net_fifo/wg1_8_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_9_s0",
++        "destination": "video/net_fifo/wg1_9_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_10_s0",
++        "destination": "video/net_fifo/wg1_10_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_11_s0",
++        "destination": "video/net_fifo/wg1_11_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wg_12_s0",
++        "destination": "video/net_fifo/wg1_12_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/net_fifo/wb_13_s0",
++        "destination": "video/net_fifo/wg1_13_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/osd_cdc/ack_s0",
++        "destination": "video/osd_cdc/ack_sync_0_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "clk[R]",
++        "slack_ns": -0.494,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/output_fifo/rg_0_s0",
++        "destination": "video/output_fifo/rg1_0_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "slack_ns": -0.471,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/output_fifo/rg_1_s0",
++        "destination": "video/output_fifo/rg1_1_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "slack_ns": -0.471,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/output_fifo/rg_2_s0",
++        "destination": "video/output_fifo/rg1_2_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "slack_ns": -0.471,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/output_fifo/rg_3_s0",
++        "destination": "video/output_fifo/rg1_3_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "slack_ns": -0.471,
++        "logic_levels": 1
++      },
++      {
++        "source": "video/output_fifo/rg_4_s0",
++        "destination": "video/output_fifo/rg1_4_s0",
++        "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
++        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
++        "slack_ns": -0.471,
++        "logic_levels": 1
++      }
++    ]
++  },
+   "build_timed_out": false,
+-  "build_seconds": 247.63152170181274,
+-  "build_state": "interrupted",
++  "build_seconds": 1413.3662424087524,
++  "build_state": "failed",
+   "route_option": 1,
+   "place_option": 1,
+   "current_build_inputs_match": true,
+   "current_test_inputs_match": true,
+-  "rtl_benches_passed": 55,
++  "rtl_benches_passed": 57,
+   "rtl_benches": [
+     "tft480_panel_tb",
+     "async_fifo_tb",
++    "autonomy_avoid_tb",
+     "autonomy_navigation_tb",
+     "autonomy_tb",
+     "cad_navigation_tb",
+     "cad_stalled_navigation_tb",
+     "continuous_navigation_tb",
++    "continuous_obstacle_tb",
+     "control_tb",
+     "fusion_core_tb",
+     "fusion_network_tb",
+@@ -72,15 +328,17 @@
+     "ddr_framebuffer_tb"
+   ],
+   "host_tests_passed": 61,
+-  "rtl_backend": "wsl:Ubuntu-26.04",
++  "rtl_backend": "linux-native",
+   "rtl_backend_per_bench": {
+     "tft480_panel_tb": "icarus",
+     "async_fifo_tb": "icarus",
++    "autonomy_avoid_tb": "icarus",
+     "autonomy_navigation_tb": "icarus",
+     "autonomy_tb": "icarus",
+     "cad_navigation_tb": "verilator",
+     "cad_stalled_navigation_tb": "verilator",
+     "continuous_navigation_tb": "verilator",
++    "continuous_obstacle_tb": "verilator",
+     "control_tb": "icarus",
+     "fusion_core_tb": "icarus",
+     "fusion_network_tb": "icarus",
+@@ -167,13 +425,13 @@
+   "resources": {
+     "name": "a741_top",
+     "Register": "46",
+-    "Lut": "51",
+-    "T_Register": "27236(46)",
+-    "T_Alu": "5241(0)",
+-    "T_Lut": "35218(51)",
++    "Lut": "53",
++    "T_Register": "27780(46)",
++    "T_Alu": "5554(0)",
++    "T_Lut": "35824(53)",
+     "T_MULTALU27X18": "18(0)",
+     "T_MULT12X12": "16(0)",
+-    "T_MULT27X36": "25(0)",
++    "T_MULT27X36": "30(0)",
+     "T_MULTADDALU12X12": "1(0)",
+     "T_Bsram": "81(0)"
+   },
+@@ -315,56 +573,56 @@
+   "preserved_camera_paths": [
+     {
+       "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v",
+-      "sha256": "7773bf2ef39e8a2955d849d08d01714fb13634aafbbd3f6b061fd02b6334c417",
++      "sha256": "e5f024d89987aed4d8f2f2c457e01be858141b303670ef1a90bdfadfdf85e66a",
+       "unchanged_text_from_HEAD": true
+     },
+     {
+       "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_hdmi.v",
+-      "sha256": "5aa480d4b74bca004657ead717068d5a794e661cd360a06dd6dd73cc243cbc5b",
+-      "unchanged_text_from_HEAD": false
++      "sha256": "50041821ef76efba12c14cbddbd558aa8aba19e6288621b8984bcc5a134a2997",
++      "unchanged_text_from_HEAD": true
+     },
+     {
+       "path": "code/camera-car-control/constraints/acg720_camera_car.cst",
+-      "sha256": "c24afcd61413e6bbd17b97cc3a9b67432e18d3e8fdc74336347725bd126de53d",
++      "sha256": "9e06b63e950c4e50d8c7bcc106c18ed2d21cdca89cf18a794cf22d805e9ee455",
+       "unchanged_text_from_HEAD": true
+     },
+     {
+       "path": "code/camera-car-control/rtl/ov5640_board_init.v",
+-      "sha256": "f33605b0918cca093c14544666bc94e4fa57031566c91061963246c2dd85af48",
++      "sha256": "127a68201452cf768103715223f6d53e3e19ac68d83eaba78bd1ef6bb0f1009b",
+       "unchanged_text_from_HEAD": true
+     },
+     {
+       "path": "code/camera-car-control/rtl/video_udp_packetizer.v",
+-      "sha256": "e912e8ea361e889e188e65cf76fc17460ce573c079e2443e8a01a0fbe13b37b0",
++      "sha256": "23f9a57cf17ac6de330d324879adc375cdd7f9af2e624fa7d54581c65f079367",
+       "unchanged_text_from_HEAD": true
+     }
+   ],
+   "camera_counter_timing_changes": [
+     {
+-      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\dvp_capture_continuous.v",
+-      "sha256": "48604d1a321350575228b68641531eb33efe8677a2629069dd80dda224fc095b"
++      "path": "/home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/dvp_capture_continuous.v",
++      "sha256": "89b9a5a0c567c653aa7adcbc6f31fc8cf2240738089b542559ef79b9e6140747"
+     },
+     {
+-      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\ddr_framebuffer.v",
+-      "sha256": "b8edbb251fcd21a1e2e187a54ab83191f2c41d1ea1f4401a56efbf284fa792f9"
++      "path": "/home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/ddr_framebuffer.v",
++      "sha256": "b9fd41ab4b02034f5ea1bc522a66b51fcc133793a9ca9a1e5eb5ad10929f4f8c"
+     },
+     {
+-      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\async_fifo.v",
+-      "sha256": "db89ce7888807448a39a3507fe6adf25161927e401167d1c505d736368edbf8e"
++      "path": "/home/smallcoral/Dev/EdgeMind-Robot-main/code/fpga/acg720-vision-motion/rtl/async_fifo.v",
++      "sha256": "20ea780862dcbc0696ae7b88d5095ebabe0f28a83e50ee305985ea749666270c"
+     }
+   ],
+   "firmware": {
+     "architecture": "rv32i/ilp32",
+     "ram_bytes": 8192,
+-    "program_bytes": 920,
+-    "binary_sha256": "d8696588e9110ad1e65884aaef5195b92cb6c9ccb793e7fbc4bb3d882d3c9b07",
+-    "hex_sha256": "3b9d8f2fafbd662da0011d1abb72b8559b714b49b8a6c97289fc70590d8dce18",
++    "program_bytes": 916,
++    "binary_sha256": "11cb79db09c4d23162be4a8f5682ac28ed8651a57165b6f94aa8b1ac804022ab",
++    "hex_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+     "inputs": {
++      "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+       "link.ld": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+-      "mission.c": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+-      "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15"
++      "mission.c": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb"
+     },
+-    "compiler": "0.13.0"
++    "compiler": "0.17.0"
+   },
+   "hardware_programmed": false,
+   "cold_boot_verified": false,
+@@ -379,66 +637,68 @@
+     "rebuilt_as_original": false
+   },
+   "evidence_sha256": {
+-    "build_result": "ae34b26b25a14c0ec47d3a11605ecb8869f3bcfe2fd92a7b885c3bc9c4f87b3b",
+-    "test_result": "ec7d1e294e08e5a12eef07e010a238c5123ccbe27e5ca46529dc1c52e168f3a7",
+-    "build_log": "3ee3dc8274f2c8c18caf86a0f04afa7772dfe30f681b5acc9ff78c56c30c603f",
+-    "host_log": "d70db7030874828eeed892cf7d9c5fa6857940e5301279fc7c919101febab666",
++    "build_result": "2925fef36b39fa847b41d12049e287c57655fae22f406aeba295e2e074d46a05",
++    "test_result": "37b656c914ca92aa79ef54ad44ce6cbfaf27164ba03e83d0bb83ccd95821f9e0",
++    "build_log": "c61fe0a0b749d9145fb817cc2adfae2f0b332d68f69b4cc2893e3caf3c04a8c5",
++    "host_log": "abf6014c451e1e101c662285e1dd0817bae6df3431443c0c1c06d5b4e43db9b8",
+     "rtl_logs": {
+-      "tft480_panel_tb": "47848be1ec1cce4343dc69a0c63f1c66a94ae45d7f73276dbb24977b2607302e",
+-      "async_fifo_tb": "8077fdf206a7b6dbf408203687872286b82500dd9fdf9868dafef486031b49e5",
+-      "autonomy_navigation_tb": "f03536208f6c48e5f61aeb3ddcc7521989064cde2aaebae17ecc68df17131911",
+-      "autonomy_tb": "e8483d4c37a81a05e6a1ac4b4155111aa3cb71c09f1a7f66ea33814c327db125",
+-      "cad_navigation_tb": "04af5045af0340e2a4b79e5cec7377c8b6d2dc3246ec80edb3e14c7da7492791",
+-      "cad_stalled_navigation_tb": "383372f7eccfa635a7f92e4e17a27f521d7a599dc5bb6069a97b9effaa7c339c",
+-      "continuous_navigation_tb": "8a3c939b88b80accde4ad9ccd37947920e69f1ad2c359dc09e7e1b03c55b1a11",
+-      "control_tb": "574924ced79a94d5495bc962e66979f15a16ec5bf7bc9eaa8dac1aaa2d2f6966",
+-      "fusion_core_tb": "17d220448d1837d6dde01140c493697c68d220f68d6502290c261af6fb69519d",
+-      "fusion_network_tb": "eb65e83fbd3d172dab01864b8032b29f4a6048df3daadabdbd64f141062862ae",
+-      "grid_map_tb": "e339d5b630599cd178cc3943c1f3623b2a5fd10aa14bf00db72de9e39fc4258a",
+-      "hdmi_tb": "0df56f2e9b7346a12338ee64b4b28fab51ddbb074394ef3afb31256413302cb2",
+-      "imu_sensor_tb": "5ff42e1c51ddf70690763e7fd8f353684aa7dfd03174431806b962fb9b6d9a9c",
+-      "imu_test_tb": "db669e32a11e5a37380075114d9e7b269de0291657bf9a21bbaafff67d9babba",
+-      "ld06_embedded_header_tb": "9da435a86c07c9993362c82891545a33aeb623ff96cf0ef5034109c10de06ea7",
+-      "ld06_recovery_tb": "25cc955739dfc7a71475efce2994064ca5d820ac99ec6a7acea04dfe9d4882fc",
+-      "lidar_body_safety_tb": "831a4852d5b0b41afd0df8008342a5b245d7f677ce8a1af4dff84652e8edbbc6",
+-      "lidar_control_tb": "49e9d330542756246a52f4cf8f02ed3389bbb11a5f382a8b036faa8b7b014159",
+-      "lidar_projection_tb": "01230a6e984c6e639b0b551975d04c8b541ffa6b24d2a7c5eb1e8c711e8b84b5",
+-      "lidar_safety_tb": "3753abaf398d67b0f7983f12483b3a1c06ad0615691dfa26337b361d201c81db",
+-      "local_lease_tb": "72a95eb6004495d3964622c4c3b75e81c682a56e431328485abf49881396d731",
+-      "map_udp_tb": "c229d84c3b808c6ee6392b2706bb3de8c9c669dc537474919991d07151765bc6",
+-      "mission_cpu_tb": "363806799b62b88b9b0290b693613ab7b8864b2b75fb096a14a7d725bb164368",
+-      "mission_navigation_tb": "2998a8cf9389c9a7d8db6e6518b175f1eadffb7b7fa3376afa97ad5a62260ee8",
+-      "motion_lidar_tb": "c470e64aadaebdfb921027ae001071de7d749f3aae2f19b594dbf50c82a97f0c",
+-      "motion_tb": "a0ab6662fec96f6e0a237a163af9da609ae441e533584e3465330b81e47b6024",
+-      "mpu_driver_tb": "4cc7e5611599b0dd4fcd041d135fdea8475c57166afcc45e3e2241d267da2e6c",
+-      "mpu_heading_tb": "19aba52a266b87c1d8508fd41e17026e4a8f4b909c378969b92181f630751a44",
+-      "mpu_i2c_tb": "7e4b3998f6cc30c366cc2e7286d3865e669b97d23952e277201bc1b6d07c14a4",
+-      "mpu_legacy_identity_tb": "a71c26ad11c72038cd7d6e1485e09b1ad9f58405d44b37f13b3e3ae10f8d82fc",
+-      "nav_guard_tb": "5dd85ade1d046a9aa105eea0d84341fc4b63dbb2260e17120d4ef92b6ec23fe0",
+-      "net_health_tb": "7b8a704ba798f469e7698e447ccc4abda0d19992165ef045715da7939d657abe",
+-      "network_tb": "2375ec8b6ec9db84bdd374c2288a3bae22baa1a9cf2c34bd2c402a89ed0d6b4e",
+-      "osd_tb": "9c2cddca112447cf8eb330857e9927069885630ff441d4234691c36bdd559804",
+-      "path_planner_tb": "61b8b6ace9ea6dfcf4ba3e8d45d6bc23ab3049a50b625bfa9525bcab9336f701",
+-      "path_tracker_directional_tb": "16ed6b0da606606541e12966106a27fc01dba5fef3b46a106c05043392541c10",
+-      "path_tracker_tb": "6efcff09df7eb50fe9da11891e0b75539f129e64884d0139ae605acacd8b2875",
+-      "phy_init_tb": "3d195d21beaa4c4c4e36e265b4e3f434317a4b1fe6dfae8810c22c8ec8dc3714",
+-      "phy_telemetry_tb": "fdeb87da598585173befddc557e32c99b42c75ed3733795405e1c6a1a02773e2",
+-      "pi_target_limit_tb": "1e8150ee6d1c5d205800177df96c112c63d81f3a4be04314f755a36649379da0",
+-      "pose_fusion_tb": "d6f386a79207023dcd10b146f591a9fd7362271d67fd9bc9809c5d5ccb989845",
+-      "protocol_tb": "e59464fb0f5319007561ec25f6cb5192b0c32ab05c9b2c6ba47868131f1816a7",
+-      "ray_mapper_tb": "97058b26fec6f6cbcf6f722e5337da46758812a5eb5f6c6621d6110cc102b83c",
+-      "router_tb": "3cfb13d03a4edd0278b6eaf12954ad84a464d24929ebd3518e57d96f1efd46fa",
+-      "scan_match_tb": "46e1e1315b629e02bdb560212097e2b58443e3ce844e3eff15382809db3a2008",
+-      "sensors_tb": "4076bbeb7e52294de7be40135f0486506a38458db79a7a7f8134de1385cedc8d",
+-      "sincos_equivalence_tb": "2e025714c19b074238f71c2a834bfa7cd7a1f78487236affa5454cdeb4cfe9dd",
+-      "speed_tb": "51fb817a7edb66426841e33861f83217a4bd0cf027273cf359c0de143131de95",
+-      "targets_tb": "27e6d95f49195367dfffe16a9ca4a90335d0a3c1d917ac20ce2f34e4a074df61",
+-      "telemetry_tb": "62733978d08ba83974c1a1371abb7d2930a2c1c526b7eadc00e2daa99605190d",
+-      "travel_tb": "0e2d00e1d99baf384d1ac28cae1b5db0a9f0492c956de81d08d2980261e9bfb2",
+-      "udp_direct_tb": "358afc70ef49fe6bbd9f5c3e33b6552d64cbbcd33d60982146d60e90fc726bbc",
+-      "video_capture_tb": "e00c8ba1592f3e12beaa5d8c085703f0d6ea7270dd14a5839a68748e6d585403",
+-      "video_tb": "1662355975b3026cd1d8882c59399711fcc7e1cf8261e258591e0b6177e2fbee",
+-      "ddr_framebuffer_tb": "ff6f3b2a5b2ad70fd990580f219e53d7ec32dddfb9aa8f3d836dd83329b2c2f9"
++      "tft480_panel_tb": "1ab3ce2f257d49546df40a23cb38b34a125117f6f6b30c38243cfc6548d8acfe",
++      "async_fifo_tb": "9d9e8dd901abc4e5a29dc13ee510f9c9520b56707ad9e9fc9b9721a22aa538b5",
++      "autonomy_avoid_tb": "de8f258e30dd7a4f8379aaf0dcc84747c733cb336f33358b8ac0ca714a2ee075",
++      "autonomy_navigation_tb": "e7832e646bdd57b049c3c6143416b38cb5236e76ae8b85c7c843996e15683278",
++      "autonomy_tb": "d020bc48f56714c3bf92413b2a79457e5fcbc77724add07d9461965bf4509d55",
++      "cad_navigation_tb": "6a9f6e31ce5cebeb95accedb57a34fc9b5a1dbac1ced1f0c4e40a935abb7090f",
++      "cad_stalled_navigation_tb": "1c349e6b77fd604f9db52a3ffd0f43ccd2c1d9dc36f834f3f29bb8349131e16d",
++      "continuous_navigation_tb": "8f16230de3649fd6c64199431dcf1ae3fdb9c17609e2caec0aad6a5ff8112dcc",
++      "continuous_obstacle_tb": "adc60c1542f8d341d3309b37cedcfe4312dc5ad1cac4adbe32081f6fab35a411",
++      "control_tb": "bdba0ad0cd901e17004e172cb291679d1ba7de9abdd28e2025d6af66bee1cb63",
++      "fusion_core_tb": "9df7b7974403638d81ad70bae2b68ec8d64a6033cb08006e5e893084c7319e38",
++      "fusion_network_tb": "64bbe4eb642233be245ae2838d998ef91b3f6bb046bea80b49a0873546c62490",
++      "grid_map_tb": "0a5b0900c354778bbe75bb4b7ccce3dea1ba06b0233c825d675516b1abd0da63",
++      "hdmi_tb": "9fa3fb85eb1b2e10ed84020c57c5ad9f5a2dbb22c78346489a4266cd290e78ed",
++      "imu_sensor_tb": "a16d96eb99ab3015cb7188bc8d1268583736063f35e83ef490616d4bdd7f3dec",
++      "imu_test_tb": "e1a793fa780001cc55f478ed7676e493ef989daf97ac6e827c073996f53c812b",
++      "ld06_embedded_header_tb": "9f2337493ecc37b735f0fba81dd27a7db4f78be3927010f285420efbb47c3341",
++      "ld06_recovery_tb": "f5a51f9b605fd2c1760f5c00efae3a1306daa6cb0449d5e5c948609df2d5cf37",
++      "lidar_body_safety_tb": "30d0dc211de51afe4f6afd541582661ec8fd6d153886936e3d7aeab2cdbe8ed9",
++      "lidar_control_tb": "ca02af9b937b1a0f1c20561a3fbdb8ab96c53e8fca6a826093954b7f9e6e8240",
++      "lidar_projection_tb": "701e5ff16ff2c6431d7ab88709d7d47e6312428f08211a884ac98e8d9aead319",
++      "lidar_safety_tb": "2d848b1f52a81b322cd73555492f2b7ceaa0b9e9b6aa9b2fdf1f1a62cabe8449",
++      "local_lease_tb": "931d5000e0ae1c9990c42a0b1e8762a573f5e0e59b3dbcc804348c9bc0c5c410",
++      "map_udp_tb": "0e8d61fc4268c0d02c9e39dc2504ad94300d347405917801b26613666eb263f2",
++      "mission_cpu_tb": "0b86e35b7ea8b382c27ee1f8f56d833a929da15587eac7dbe28d47a5108a2db9",
++      "mission_navigation_tb": "f66539ac898ac355a9b3ffc8756556106056f757b8d0c9653555bb5c853252e0",
++      "motion_lidar_tb": "1bb7f016500104c12dad73cb2e09cd6b5f58c0c409bcd949feb42ebfddbfd5e5",
++      "motion_tb": "07e810c9d463c7cc57f1d9701d1120017c0276416377468b038d395d53354dc6",
++      "mpu_driver_tb": "df6c1144565bf379afb085b571be42ef88f8758fffb781e3433ee2f2152ce025",
++      "mpu_heading_tb": "ae437f6f98f73e12686f6c0ae4a8d5ad3a6d3695a8e42039486e4139de3268a2",
++      "mpu_i2c_tb": "5861ec1257ff5fda91aa2251cde9b019d29afeea88677ba6b7ced9168a9ec7ca",
++      "mpu_legacy_identity_tb": "6d5dd973094ff09bae466843dbedfcc123cd53d09c386ff58817900d1e1f91f3",
++      "nav_guard_tb": "88315902862955ae70289f05bfd96e3a3410eb5140e1979cc6c456a6b6bd3449",
++      "net_health_tb": "712d21dc55e17c36d592b0c33a18c7a268cca1f87edac142655ac7034582e32b",
++      "network_tb": "bab698faae4d73c9d325949c1241161097fcc25e21161b7314db745a966dc551",
++      "osd_tb": "92a0134b8dc659b28a5b8c685be4d9701ad131d6b44edd2b26b8a2d53c2d1f4e",
++      "path_planner_tb": "4a110b33fa903fe3fb0e1124dc8cb84d729522f7bc902724d5f40a5a40e1a6c3",
++      "path_tracker_directional_tb": "69b53e961f70f7562689ef503ed3cddb270c90a2fb4d80bfdc934ee7a18e7397",
++      "path_tracker_tb": "1c95d9d13cd65a50c8e0632c5da835eb326e5019c5656de5f9e2c7407e33b03b",
++      "phy_init_tb": "7c22817617752c3a3f68dc973cadcdd0c0de740cf40e9648db78bd085f362017",
++      "phy_telemetry_tb": "4650b2ea7d91593b548fe542a8cb22312313f5bc7be35504185889e222a5128a",
++      "pi_target_limit_tb": "99a948e7e67342dabdef9f6a871ddad858914fb503b3f369159c5aba84916f3d",
++      "pose_fusion_tb": "ed328e82b4cedc0d65b8d698b4106df0b1d855d6a62de6d514cb8eb59952230d",
++      "protocol_tb": "0029a80582f269ae3adfa3388f070c043011ca817f462d9133df6c55d25282f0",
++      "ray_mapper_tb": "4902fae9a7558ed039a1fc19465a41724ab8c0d0b078d403bc9cb5eddbbce932",
++      "router_tb": "ba97d5ad928e6c1e49df412d0ef19cf3ec947d82fb8644eee9de3b6ef6a47361",
++      "scan_match_tb": "711bd8823d82ea693621fcb54191d95500e7619d0de6c04bffe842343c24fb3d",
++      "sensors_tb": "0213b6833fce15f25b95e272f1b33c2c5adec30adb4284aded8c4c5990d8c177",
++      "sincos_equivalence_tb": "c73e08623b84a80e7d48fbb4a6c85ea0ed0945cc482a3dab3e1a3158edb3aad4",
++      "speed_tb": "bf92c31777c1ac8d4f2f7e7096c5c9891c6a799ca406202346607629ac81a17b",
++      "targets_tb": "0b7b6779905ef493b4ec8ece3862c92f99db889843b0058707cf5a23cad60dca",
++      "telemetry_tb": "d7d964614b6dd385fa43d0f367a50152a70c73ec6021d571c1c3849279b57969",
++      "travel_tb": "a6038fe9cf1110e2c0f0fb82f54b25ac9236fd9a51750ce0dc71215cd49e6c1f",
++      "udp_direct_tb": "1717e2e9a4e334544948a201d684f4bf2fa6deca3ec2f0e5f78208d3d994a7e2",
++      "video_capture_tb": "77961173c748f84f031f2f8b0672665fcbff0cd212d798abb5d365d4acd2883f",
++      "video_tb": "a15dff62ffd97519d73d18536746692ddad12b6213ce36e184aa648e7ce85bae",
++      "ddr_framebuffer_tb": "f9cff7d1761c897c6cc2fcf01d0aba5493adb8047456ba8ecbaea6505f4b88b0"
+     }
+   },
+   "limitations": [
+@@ -448,16 +708,5 @@
+     "Runtime map/calibration/waypoints are not persisted by FPGA configuration Flash",
+     "No vehicle motion or Flash operation was performed"
+   ],
+-  "paused_by_user": true,
+-  "known_diagnostic_failures": [
+-    {
+-      "name": "continuous_obstacle_tb",
+-      "passed": false,
+-      "included_in_formal_green_regression": false,
+-      "guard_fault": 5,
+-      "replans_observed": 2,
+-      "log": "output/task34-recheck-20261025/continuous-navigation/obstacle/run.log",
+-      "root_cause_confirmed": false
+-    }
+-  ]
++  "synthesis_netlist_sha256": "4617fd566498bcaf5067e999401211d06cfdea31203c2cfdf602dbec5b012d92"
+ }
+diff --git a/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v b/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v
+index 002c073..5c392e9 100644
+--- a/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v
++++ b/output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v
+@@ -1,118 +1,118 @@
+-`timescale 1ns/1ps
+-// Synthetic 3x2.4m room with the compiled CAD footprint/offset.
+-// Ideal differential-drive plant with per-point moving-room ray casts.
+-// Synthetic model only: no measured wheel slip, inertia or sensor delays.
+-module continuous_obstacle_tb;
+-    reg clk=0;always #5 clk=~clk;
+-    reg rst_n=0;integer cycles=0;
+-    wire ms_tick=cycles%500==499,tick=cycles%5000==4999;
+-    always @(posedge clk) if(rst_n) cycles<=cycles+1;
+-    integer match_count=0;
+-    always @(posedge clk) if(dut.match_result && dut.nav_running) begin
+-        match_count=match_count+1;
+-        if(!dut.match_accepted || dut.correction_x!=0 || dut.correction_y!=0 || dut.correction_yaw!=0 || match_count%20==0) begin
+-            $display("trace match=%0d accepted=%0d best=%0d second=%0d samples=%0d correction=(%0d,%0d,%0d) true=(%0.1f,%0.1f) estimated=(%0d,%0d) localized=%0d",match_count,dut.match_accepted,dut.matcher.best_score,dut.matcher.second_score,dut.matcher.samples,dut.correction_x,dut.correction_y,dut.correction_yaw,true_x,true_y,pose_x,pose_y,dut.localized);$fflush();
+-        end
+-    end
+-    reg imu_valid=1,lidar_valid=0,calibrated=1,armed=0,link_alive=1;
+-    reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
+-    reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
+-    reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
+-    reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
+-    wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
+-    wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
+-    wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,localization_quality;
+-    wire [15:0] front_distance;wire [31:0] map_revision;
+-    a741_autonomy #(.GEOMETRY_VERIFIED(1),.RADIUS_MM(257),.LIDAR_X(164),.FRONT_EXTENT(221),.REAR_EXTENT(70),.HALF_WIDTH(131)) dut(.*);
+-    wire mission_busy,mission_arrived,mission_failed;
+-    task cmd(input [7:0] k,input [255:0] p);
+-        integer age;
+-        begin
+-            @(negedge clk);kind=k;payload=p;command=1;@(negedge clk);command=0;
+-            age=0;while(!reply_done && age<200000) begin @(negedge clk);age=age+1;end
+-            if(!reply_done || reply[7:0]!=0) $fatal(1,"synthetic navigation command %h failed reply=%h",k,reply[7:0]);
+-        end
+-    endtask
+-    real true_x=25.0,true_y=25.0,true_theta=0.0;
+-    reg obstacle_present=0;
+-    real vl,vr,ds,dtheta,midpoint;
+-    integer robot_ticks=0,move_ticks=0;
+-    always @(negedge clk) begin
+-        travel_tick=0;
+-        if(rst_n && tick) begin
+-            vl=(armed && drive_enabled && !force_stop && !sensor_stop) ? $itor($signed(drive_left)):0.0;
+-            vr=(armed && drive_enabled && !force_stop && !sensor_stop) ? $itor($signed(drive_right)):0.0;
+-            ds=(vl+vr)*0.005;dtheta=(vr-vl)*0.01/234.0;
+-            midpoint=true_theta+dtheta*0.5;
+-            true_x=true_x+ds*$cos(midpoint);true_y=true_y+ds*$sin(midpoint);
+-            true_theta=true_theta+dtheta;
+-            left_travel=$rtoi(vl*0.01*65536.0);right_travel=$rtoi(vr*0.01*65536.0);
+-            yaw=16'($rtoi(true_theta*65536.0/(2.0*3.141592653589793)));
+-            travel_tick=1;robot_ticks=robot_ticks+1;
+-            if(true_x>=175.0) obstacle_present=1;
+-            if(vl!=0.0 || vr!=0.0) move_ticks=move_ticks+1;
+-            if(robot_ticks%1000==0) begin
+-                $display("trace t=%0dms true=(%0.1f,%0.1f,%0.1fdeg) estimated=(%0d,%0d,%0d) drive=(%0d,%0d) phase=%0d state=%0d loc=%0d quality=%0d front=%0d replans=%0d",robot_ticks*10,true_x,true_y,true_theta*180.0/3.141592653589793,pose_x,pose_y,pose_heading,drive_left,drive_right,dut.navigation_phase,nav_state,dut.localized,localization_quality,front_distance,dut.replans);$fflush();
+-            end
+-        end
+-    end
+-    integer n=0;real a,c,s,dx,dy,d,origin_x,origin_y,bx,by,projected,discriminant,obstacle_range;
+-    initial forever begin
+-        @(negedge clk);lidar_point=0;
+-        if(lidar_valid) begin
+-            origin_x=true_x+164.0*$cos(true_theta);origin_y=true_y+164.0*$sin(true_theta);
+-            a=(270-n)*3.141592653589793/180.0+true_theta;c=$cos(a);s=$sin(a);
+-            dx=c>0.00001 ? (2025.0-origin_x)/c:c< -0.00001 ? (-975.0-origin_x)/c:1000000;
+-            dy=s>0.00001 ? (1225.0-origin_y)/s:s< -0.00001 ? (-1175.0-origin_y)/s:1000000;d=dx<dy ? dx:dy;
+-            if(obstacle_present) begin
+-                bx=origin_x-756.0;by=origin_y-25.0;projected=bx*c+by*s;
+-                discriminant=projected*projected-(bx*bx+by*by-3600.0);
+-                if(discriminant>=0) begin
+-                    obstacle_range=-projected-$sqrt(discriminant);
+-                    if(obstacle_range>0 && obstacle_range<d) d=obstacle_range;
+-                end
+-            end
+-            lidar_angle=n*100;lidar_distance=$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
+-        end
+-        @(negedge clk);lidar_point=0;
+-        repeat(118) @(negedge clk);
+-    end
+-    integer x,y;
+-    initial begin
+-        #30;rst_n=1;cmd(8'h50,1);wait(dut.map_ready);
+-        // Known fixture isolates matching/planning from ray-map quality.
+-        @(negedge clk);
+-        for(y=0;y<128;y=y+1) for(x=0;x<128;x=x+1)
+-            dut.grid.cells[y*128+x]=(x>=44 && x<=104 && y>=40 && y<=88 &&
+-                (x==44 || x==104 || y==40 || y==88)) ? 2'b10:2'b01;
+-        cmd(8'h52,0);cmd(8'h53,{176'd0,16'd0,32'd25,32'd25});
+-        $display("trace synthetic map committed; waiting for localization");$fflush();
+-        // Skip only the idle post-transfer delay in this accelerated fixture.
+-        @(negedge clk);dut.transfer_ms=0;lidar_valid=1;
+-        wait(dut.localized && !dut.matcher_busy && dut.safe_scan);
+-        $display("trace synthetic localization quality=%0d",localization_quality);$fflush();
+-        cmd(8'h54,{224'd0,16'd0,8'd64,8'd94});
+-        wait(!dut.request_nav && dut.localized && !dut.matcher_busy);
+-        $display("trace synthetic preview complete");$fflush();
+-        if(!dut.plan_valid || !dut.tracker_ready) $fatal(1,"preview did not produce usable path");
+-        armed=1;cmd(8'h55,0);
+-        if(!drive_enabled || drive_left || drive_right) $fatal(1,"planning did not own zero wheel targets");
+-        wait(dut.nav_running && nav_state==1);
+-        $display("trace synthetic tracking running");$fflush();
+-        wait(drive_left>0 && drive_right>0);
+-        if(drive_left>100 || drive_right>100) $fatal(1,"navigation wheel speed cap");
+-        wait(mission_arrived || mission_failed);
+-        if(mission_failed) $fatal(1,"continuous navigation failed fault=%0d state=%0d phase=%0d replans=%0d",nav_fault,nav_state,dut.navigation_phase,dut.replans);
+-        if(true_x<1425.0 || true_x>1625.0 || true_y< -75.0 || true_y>125.0)
+-            $fatal(1,"actual plant did not reach goal: %0.2f,%0.2f",true_x,true_y);
+-        if($itor($signed(pose_x))-true_x>1.5 || true_x-$itor($signed(pose_x))>1.5 ||
+-            $itor($signed(pose_y))-true_y>1.5 || true_y-$itor($signed(pose_y))>1.5)
+-            $fatal(1,"zero-correction scan matching lost fractional odometry");
+-        if(!obstacle_present || dut.replans==0) $fatal(1,"dynamic obstacle did not require replanning");
+-        if(move_ticks<500) $fatal(1,"arrival fixture did not require substantial travel");
+-        repeat(20000) @(negedge clk);
+-        if(drive_enabled || drive_left || drive_right) $fatal(1,"arrival did not release motor ownership");
+-        $display("PASS continuous ideal plant bypasses unexpected obstacle and reaches 1500mm goal true=(%0.2f,%0.2f) ticks=%0d moves=%0d",true_x,true_y,robot_ticks,move_ticks);$finish;
+-    end
+-    initial begin #1000000000;$fatal(1,"continuous navigation watchdog true=(%0.1f,%0.1f) phase=%0d localized=%0d quality=%0d state=%0d",true_x,true_y,dut.navigation_phase,dut.localized,localization_quality,nav_state);end
+-endmodule
++`timescale 1ns/1ps
++// Synthetic 3x2.4m room with the compiled CAD footprint/offset.
++// Ideal differential-drive plant with per-point moving-room ray casts.
++// Synthetic model only: no measured wheel slip, inertia or sensor delays.
++module continuous_obstacle_tb;
++    reg clk=0;always #5 clk=~clk;
++    reg rst_n=0;integer cycles=0;
++    wire ms_tick=cycles%500==499,tick=cycles%5000==4999;
++    always @(posedge clk) if(rst_n) cycles<=cycles+1;
++    integer match_count=0;
++    always @(posedge clk) if(dut.match_result && dut.nav_running) begin
++        match_count=match_count+1;
++        if(!dut.match_accepted || dut.correction_x!=0 || dut.correction_y!=0 || dut.correction_yaw!=0 || match_count%20==0) begin
++            $display("trace match=%0d accepted=%0d best=%0d second=%0d samples=%0d correction=(%0d,%0d,%0d) true=(%0.1f,%0.1f) estimated=(%0d,%0d) localized=%0d",match_count,dut.match_accepted,dut.matcher.best_score,dut.matcher.second_score,dut.matcher.samples,dut.correction_x,dut.correction_y,dut.correction_yaw,true_x,true_y,pose_x,pose_y,dut.localized);$fflush();
++        end
++    end
++    reg imu_valid=1,lidar_valid=0,calibrated=1,armed=0,link_alive=1;
++    reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
++    reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
++    reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
++    reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
++    wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
++    wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;
++    wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,localization_quality;
++    wire [15:0] front_distance;wire [31:0] map_revision;
++    a741_autonomy #(.GEOMETRY_VERIFIED(1),.RADIUS_MM(257),.LIDAR_X(164),.FRONT_EXTENT(221),.REAR_EXTENT(70),.HALF_WIDTH(131)) dut(.*);
++    wire mission_busy,mission_arrived,mission_failed;
++    task cmd(input [7:0] k,input [255:0] p);
++        integer age;
++        begin
++            @(negedge clk);kind=k;payload=p;command=1;@(negedge clk);command=0;
++            age=0;while(!reply_done && age<200000) begin @(negedge clk);age=age+1;end
++            if(!reply_done || reply[7:0]!=0) $fatal(1,"synthetic navigation command %h failed reply=%h",k,reply[7:0]);
++        end
++    endtask
++    real true_x=25.0,true_y=25.0,true_theta=0.0;
++    reg obstacle_present=0;
++    real vl,vr,ds,dtheta,midpoint;
++    integer robot_ticks=0,move_ticks=0;
++    always @(negedge clk) begin
++        travel_tick=0;
++        if(rst_n && tick) begin
++            vl=(armed && drive_enabled && !force_stop && !sensor_stop) ? $itor($signed(drive_left)):0.0;
++            vr=(armed && drive_enabled && !force_stop && !sensor_stop) ? $itor($signed(drive_right)):0.0;
++            ds=(vl+vr)*0.005;dtheta=(vr-vl)*0.01/234.0;
++            midpoint=true_theta+dtheta*0.5;
++            true_x=true_x+ds*$cos(midpoint);true_y=true_y+ds*$sin(midpoint);
++            true_theta=true_theta+dtheta;
++            left_travel=$rtoi(vl*0.01*65536.0);right_travel=$rtoi(vr*0.01*65536.0);
++            yaw=16'($rtoi(true_theta*65536.0/(2.0*3.141592653589793)));
++            travel_tick=1;robot_ticks=robot_ticks+1;
++            if(true_x>=175.0) obstacle_present=1;
++            if(vl!=0.0 || vr!=0.0) move_ticks=move_ticks+1;
++            if(robot_ticks%1000==0) begin
++            $display("trace t=%0dms true=(%0.1f,%0.1f,%0.1fdeg) estimated=(%0d,%0d,%0d) drive=(%0d,%0d) forward=%0d left=%0d cap=%0d blocked=%0d rotation_clear=%0d min_mm=%0d localized=%0d navigation_phase=%0d replans=%0d", robot_ticks*10,true_x,true_y,true_theta*180.0/3.141592653589793,pose_x,pose_y,pose_heading,drive_left,drive_right,dut.tracker.forward,dut.tracker.left,dut.tracker.cap,dut.tracker_blocked,dut.rotation_clear,dut.min_distance,dut.localized,dut.navigation_phase,dut.replans);$fflush();
++        end
++        end
++    end
++    integer n=0;real a,c,s,dx,dy,d,origin_x,origin_y,bx,by,projected,discriminant,obstacle_range;
++    initial forever begin
++        @(negedge clk);lidar_point=0;
++        if(lidar_valid) begin
++            origin_x=true_x+164.0*$cos(true_theta);origin_y=true_y+164.0*$sin(true_theta);
++            a=(270-n)*3.141592653589793/180.0+true_theta;c=$cos(a);s=$sin(a);
++            dx=c>0.00001 ? (2025.0-origin_x)/c:c< -0.00001 ? (-975.0-origin_x)/c:1000000;
++            dy=s>0.00001 ? (1225.0-origin_y)/s:s< -0.00001 ? (-1175.0-origin_y)/s:1000000;d=dx<dy ? dx:dy;
++            if(obstacle_present) begin
++                bx=origin_x-756.0;by=origin_y-25.0;projected=bx*c+by*s;
++                discriminant=projected*projected-(bx*bx+by*by-3600.0);
++                if(discriminant>=0) begin
++                    obstacle_range=-projected-$sqrt(discriminant);
++                    if(obstacle_range>0 && obstacle_range<d) d=obstacle_range;
++                end
++            end
++            lidar_angle=n*100;lidar_distance=$rtoi(d+0.5);lidar_point=1;n=(n+1)%360;
++        end
++        @(negedge clk);lidar_point=0;
++        repeat(118) @(negedge clk);
++    end
++    integer x,y;
++    initial begin
++        #30;rst_n=1;cmd(8'h50,1);wait(dut.map_ready);
++        // Known fixture isolates matching/planning from ray-map quality.
++        @(negedge clk);
++        for(y=0;y<128;y=y+1) for(x=0;x<128;x=x+1)
++            dut.grid.cells[y*128+x]=(x>=44 && x<=104 && y>=40 && y<=88 &&
++                (x==44 || x==104 || y==40 || y==88)) ? 2'b10:2'b01;
++        cmd(8'h52,0);cmd(8'h53,{176'd0,16'd0,32'd25,32'd25});
++        $display("trace synthetic map committed; waiting for localization");$fflush();
++        // Skip only the idle post-transfer delay in this accelerated fixture.
++        @(negedge clk);dut.transfer_ms=0;lidar_valid=1;
++        wait(dut.localized && !dut.matcher_busy && dut.safe_scan);
++        $display("trace synthetic localization quality=%0d",localization_quality);$fflush();
++        cmd(8'h54,{224'd0,16'd0,8'd64,8'd94});
++        wait(!dut.request_nav && dut.localized && !dut.matcher_busy);
++        $display("trace synthetic preview complete");$fflush();
++        if(!dut.plan_valid || !dut.tracker_ready) $fatal(1,"preview did not produce usable path");
++        armed=1;cmd(8'h55,0);
++        if(!drive_enabled || drive_left || drive_right) $fatal(1,"planning did not own zero wheel targets");
++        wait(dut.nav_running && nav_state==1);
++        $display("trace synthetic tracking running");$fflush();
++        wait(drive_left>0 && drive_right>0);
++        if(drive_left>100 || drive_right>100) $fatal(1,"navigation wheel speed cap");
++        wait(mission_arrived || mission_failed);
++        if(mission_failed) $fatal(1,"continuous navigation failed fault=%0d state=%0d phase=%0d replans=%0d",nav_fault,nav_state,dut.navigation_phase,dut.replans);
++        if(true_x<1425.0 || true_x>1625.0 || true_y< -75.0 || true_y>125.0)
++            $fatal(1,"actual plant did not reach goal: %0.2f,%0.2f",true_x,true_y);
++        if($itor($signed(pose_x))-true_x>1.5 || true_x-$itor($signed(pose_x))>1.5 ||
++            $itor($signed(pose_y))-true_y>1.5 || true_y-$itor($signed(pose_y))>1.5)
++            $fatal(1,"zero-correction scan matching lost fractional odometry");
++        if(!obstacle_present || dut.replans==0) $fatal(1,"dynamic obstacle did not require replanning");
++        if(move_ticks<500) $fatal(1,"arrival fixture did not require substantial travel");
++        repeat(20000) @(negedge clk);
++        if(drive_enabled || drive_left || drive_right) $fatal(1,"arrival did not release motor ownership");
++        $display("PASS continuous ideal plant bypasses unexpected obstacle and reaches 1500mm goal true=(%0.2f,%0.2f) ticks=%0d moves=%0d",true_x,true_y,robot_ticks,move_ticks);$finish;
++    end
++    initial begin #1000000000;$fatal(1,"continuous navigation watchdog true=(%0.1f,%0.1f) phase=%0d localized=%0d quality=%0d state=%0d",true_x,true_y,dut.navigation_phase,dut.localized,localization_quality,nav_state);end
++endmodule
+diff --git a/output/task34-recheck-20261025/continuous-navigation/run.py b/output/task34-recheck-20261025/continuous-navigation/run.py
+index 4178c8a..11ae282 100644
+--- a/output/task34-recheck-20261025/continuous-navigation/run.py
++++ b/output/task34-recheck-20261025/continuous-navigation/run.py
+@@ -1,6 +1,8 @@
+ """Run a synthetic moving-room diagnostic without touching the live build."""
+ from pathlib import Path
+-import argparse, hashlib, json, subprocess, sys, time
++import argparse, hashlib, json, shutil, subprocess, sys, time
++
++IS_WINDOWS_HOST = shutil.which("wsl.exe") is not None
+ 
+ HERE = Path(__file__).resolve().parent
+ REPO = HERE.parents[2]
+@@ -10,6 +12,8 @@ from check import sources
+ 
+ def linux(path):
+     path = Path(path).resolve().as_posix()
++    if not IS_WINDOWS_HOST:
++        return path
+     return '/mnt/' + path[0].lower() + path[2:]
+ 
+ def sha(path):
+@@ -33,7 +37,10 @@ def main():
+     top = bench.stem
+     before = {str(p): sha(p) for p in paths + [Path(__file__)]}
+     obj = '/var/tmp/edgemind-continuous-' + hashlib.sha256(str(out).encode()).hexdigest()[:12]
+-    prefix = ['wsl.exe', '-d', 'Ubuntu-26.04', '--cd', linux(ROOT), '--exec']
++    prefix = (
++        ['wsl.exe', '-d', 'Ubuntu-26.04', '--cd', linux(ROOT), '--exec']
++        if IS_WINDOWS_HOST else []
++    )
+     started = time.time()
+     with (out / 'compile.log').open('w', encoding='utf-8') as log:
+         rc = subprocess.run(prefix + ['verilator', '--binary', '--timing', '-j', '4', '-Wno-fatal', '--Mdir', obj,

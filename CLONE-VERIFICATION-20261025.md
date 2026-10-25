@@ -1,5 +1,7 @@
 # GitHub独立克隆验证
 
+> Historical clone check for an earlier checkpoint. For the current avoidance branch, package and validation facts, read [HANDOFF-20261025.md](HANDOFF-20261025.md).
+
 2026-10-25约09:56～10:03（北京时间），直接从GitHub的`main`新克隆源码检查点`87c97b7ceb8018fb3edc88cce0c29f15515d4ec9`，使用独立目录及新建Python虚拟环境。没有复制旧工作区的平台、DLL或测试缓存；公共系统工具与WSL仍使用本机安装。
 
 | 检查 | 实际结果 |

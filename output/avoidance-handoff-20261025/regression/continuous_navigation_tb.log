@@ -1,0 +1,19 @@
+trace synthetic map committed; waiting for localization
+trace synthetic localization quality=100
+trace synthetic preview complete
+trace synthetic tracking running
+trace match=20 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(127.0,25.0) estimated=(127,25) localized=1
+trace match=40 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(230.8,25.0) estimated=(230,25) localized=1
+trace t=10000ms true=(290.8,25.0,0.0deg) estimated=(290,25,0) drive=(60,60) phase=0 state=1 loc=1 quality=100 front=1513 replans=0
+trace match=60 accepted=1 best=37 second=20 samples=37 correction=(0,0,0) true=(334.6,25.0) estimated=(334,25) localized=1
+trace match=80 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(437.8,25.0) estimated=(437,25) localized=1
+trace match=100 accepted=1 best=36 second=18 samples=36 correction=(0,0,0) true=(541.6,25.0) estimated=(541,25) localized=1
+trace match=120 accepted=1 best=37 second=19 samples=37 correction=(0,0,0) true=(645.4,25.0) estimated=(645,25) localized=1
+trace match=140 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(749.2,25.0) estimated=(749,25) localized=1
+trace match=160 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(852.4,25.0) estimated=(852,25) localized=1
+trace t=20000ms true=(890.8,25.0,0.0deg) estimated=(890,25,0) drive=(60,60) phase=0 state=1 loc=1 quality=100 front=916 replans=0
+PASS continuous ideal plant reaches 1000mm goal true=(925.60,25.00) ticks=2062 moves=1501
+- /home/smallcoral/Dev/EdgeMind-Robot-main/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v:105: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 103ms; walltime 5.932 s; speed 17.394 ms/s
+- Verilator: cpu 5.927 s on 1 threads; alloced 57 MB

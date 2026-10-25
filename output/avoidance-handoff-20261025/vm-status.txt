@@ -1,0 +1,30 @@
+ M code/camera-car-control/a741-fpga-fusion/firmware/manifest.json
+ M code/camera-car-control/a741-fpga-fusion/firmware/mission.hex
+ M code/camera-car-control/a741-fpga-fusion/host/app.py
+ M code/camera-car-control/a741-fpga-fusion/host/mapping.py
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v
+ M code/camera-car-control/a741-fpga-fusion/scripts/archive.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/check.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py
+ M code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v
+ M code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md
+ M code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md
+ M code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md
+ M code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json
+ M output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v
+ M output/task34-recheck-20261025/continuous-navigation/run.py
+?? code/camera-car-control/a741-fpga-fusion/HANDOFF-20261025.md
+?? code/camera-car-control/a741-fpga-fusion/tests/autonomy_avoid_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/continuous_obstacle_tb.v
+?? output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/
+?? output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/

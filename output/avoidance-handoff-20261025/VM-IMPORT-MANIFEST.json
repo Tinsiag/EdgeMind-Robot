@@ -1,0 +1,764 @@
+{
+  "captured_at_utc": "2026-10-25T10:49:12.025805+00:00",
+  "vm_repository": "/home/smallcoral/Dev/EdgeMind-Robot-main",
+  "vm_head": "6a32a56ee1755c8353116ace9afed6631ba57d9c",
+  "vm_branch": "main",
+  "files": [
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/firmware/manifest.json",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/firmware/manifest.json",
+      "bytes": 545,
+      "sha256": "75a77720981e80e62a5a088725ade101872e1c6fcd5fd68742031f58785d284d",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.hex",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.hex",
+      "bytes": 18432,
+      "sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/host/app.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/host/app.py",
+      "bytes": 38720,
+      "sha256": "0a60f83d49589535eddfa5bdda34ef1c72fbb7680dd1222ee640d59a06bd291c",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/host/mapping.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/host/mapping.py",
+      "bytes": 12264,
+      "sha256": "975cf25d5ed433296e3d3dee0575b4fefcc8860e55fbf9cf209110e23685c61d",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v",
+      "bytes": 24127,
+      "sha256": "c0c1938cca8e6ab92918c8a0f1201e9b12a1eae6bc7f06ff40100751a2dccc65",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v",
+      "bytes": 16090,
+      "sha256": "1547b79cdcacc53ca8fd8790f0215cae9d1593ac2d90143cfa67e1ec14d06b1e",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v",
+      "bytes": 5680,
+      "sha256": "0dc2b6bbc3de2be1b9819c4c5095d3ca829ea3df5f65116b0574b26c2a89e0f5",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v",
+      "bytes": 5655,
+      "sha256": "fc0260712509f84bd52e0e320d0a5003e92df42e43325aedf6e96004bc6f187c",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v",
+      "bytes": 24330,
+      "sha256": "564674b1b699d856271dc52c3ea68e692b40d6bff1e41603568267675f342bc6",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v",
+      "bytes": 4137,
+      "sha256": "db068cc814cd4718f5e90459dbcf4082d1d6d4671781d5894c1c058f4048e08c",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/scripts/archive.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/scripts/archive.py",
+      "bytes": 7613,
+      "sha256": "37d7313b6209471ea7c24f2d7eb276979c1d7be22212b5bfecb2a9005d1b3c39",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py",
+      "bytes": 2239,
+      "sha256": "aefdc7f2f431f826c57eeb5b769aaac6bf8738d9db71534aed1d0aeeb8c570c8",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/scripts/check.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/scripts/check.py",
+      "bytes": 9267,
+      "sha256": "a537e0bdf9c2b1203a8bdade8d22b664a59ba320bf5d85d37a9a2c1ad14a29ce",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py",
+      "bytes": 3596,
+      "sha256": "d74410399d2f8614c63169be7bcc034efab72dc3ae4310fbd2c21d372b4291bd",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v",
+      "bytes": 5225,
+      "sha256": "a5e20109a1832626ebc88fd459c04f4f0eaa6e3d9604a70cea326e52cadfb5e4",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v",
+      "bytes": 2784,
+      "sha256": "8343aac5cfdfd78abd165515126cb6c2c43bdebeba7f1d8a657a7e4056da74c0",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v",
+      "bytes": 5440,
+      "sha256": "ca7cca39b0d921727cf871dc527d344bc1c3261ef86e0a49df91b052129219ea",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v",
+      "bytes": 5897,
+      "sha256": "e90c0cf9ae08f3509103ba5e72dad542c91a63c167f755556466969bce8427f8",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v",
+      "bytes": 7266,
+      "sha256": "7908c289f51aefb5812619737299355fe64fc287166599b5bc0170d972b1f498",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/verification/AI-HANDOFF-20261024.md",
+      "bytes": 13598,
+      "sha256": "4481f74a5b6bc86b32eec45b224d001b189b03d5c13ed01b61ea87f9151666ae",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md",
+      "bytes": 9985,
+      "sha256": "b53d5debdbdb04076b315aea413c625139ee932ae6723ad5bbcf0e324ffad036",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md",
+      "bytes": 2796,
+      "sha256": "bd33823dc469700e14027e3838315560fc74c2ffcc3d0f32f75f3e3d1f729caa",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-RESULTS.json",
+      "bytes": 26872,
+      "sha256": "962ba3b60d86a9396d35ab4b7b4558883558782b86ec80a1cebfc1187dd7ff01",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/continuous_obstacle_tb.v",
+      "bytes": 7964,
+      "sha256": "e8fc2f4b5db2d716f6addb1518be37cf0746d97874883deb7522010c6dff4fa3",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/run.py",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/run.py",
+      "bytes": 2993,
+      "sha256": "9adc799409133d1f5db614f094f16568e12239be7eec2091a7d4da167fa0bcbc",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/HANDOFF-20261025.md",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/HANDOFF-20261025.md",
+      "bytes": 2363,
+      "sha256": "c00731473929635bc5bf09e80eaa915621a79601becf8b2c882a5477751b1bc2",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_avoid_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_avoid_tb.v",
+      "bytes": 6042,
+      "sha256": "5afaf2bd2ccb5143c7c3b3d6af57c62539b9e253442b2986cebc39550a499ec8",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_obstacle_tb.v",
+      "saved_path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_obstacle_tb.v",
+      "bytes": 8044,
+      "sha256": "cc72205ef972940baf00963f0085daa56bea9a5d52f7d3bf3b339839dc674d02",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/compile.log",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/compile.log",
+      "bytes": 153226,
+      "sha256": "2d534352955bbebe436f9ddbe737e984974644c6ba0d4629172475775af15083",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/result.json",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/result.json",
+      "bytes": 16606,
+      "sha256": "e520d51f60eb13cc95879ce8cc206bf377f84d47007168fb4beb812bfc631ea2",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/run.log",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai-with-trace/run.log",
+      "bytes": 6968,
+      "sha256": "6e4cd08ae21bf2cdf9c34b92c0db609e88b95bf6c5eba4aee8c853204a2cadd8",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/compile.log",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/compile.log",
+      "bytes": 153226,
+      "sha256": "158e56cf138d8b6a8634233f3d09d576561f9ed8d7f52331142d79a196fa0f96",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/result.json",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/result.json",
+      "bytes": 16606,
+      "sha256": "0f67895f9b4f94060a8ff2e3a1449880c575b325d0f792728d0d45ec946d6dc0",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/run.log",
+      "saved_path": "output/task34-recheck-20261025/continuous-navigation/reproduced-by-next-ai/run.log",
+      "bytes": 6514,
+      "sha256": "e155e674d0f663d1564feba15233457bebb50e968e1ae4e2e32f57f23f00dd17",
+      "role": "vm-working-tree"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/lidar_body_safety_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/lidar_body_safety_tb.log",
+      "bytes": 238,
+      "sha256": "30d0dc211de51afe4f6afd541582661ec8fd6d153886936e3d7aeab2cdbe8ed9",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/continuous_obstacle_tb-compile.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/continuous_obstacle_tb-compile.log",
+      "bytes": 153182,
+      "sha256": "9779b7a0918e9d872cc09276cd6da048bd4589bc51861556278723b68126a407",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/grid_map_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/grid_map_tb.log",
+      "bytes": 201,
+      "sha256": "0a5b0900c354778bbe75bb4b7ccce3dea1ba06b0233c825d675516b1abd0da63",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/lidar_projection_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/lidar_projection_tb.log",
+      "bytes": 262,
+      "sha256": "701e5ff16ff2c6431d7ab88709d7d47e6312428f08211a884ac98e8d9aead319",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mpu_driver_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mpu_driver_tb.log",
+      "bytes": 258,
+      "sha256": "df6c1144565bf379afb085b571be42ef88f8758fffb781e3433ee2f2152ce025",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/ray_mapper_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/ray_mapper_tb.log",
+      "bytes": 236,
+      "sha256": "4902fae9a7558ed039a1fc19465a41724ab8c0d0b078d403bc9cb5eddbbce932",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/scan_match_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/scan_match_tb.log",
+      "bytes": 232,
+      "sha256": "711bd8823d82ea693621fcb54191d95500e7619d0de6c04bffe842343c24fb3d",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/hdmi_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/hdmi_tb.log",
+      "bytes": 467,
+      "sha256": "9fa3fb85eb1b2e10ed84020c57c5ad9f5a2dbb22c78346489a4266cd290e78ed",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/cad_navigation_tb-compile.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/cad_navigation_tb-compile.log",
+      "bytes": 154929,
+      "sha256": "49a76fbdb43423dfbf169d25f92539166c81d4571590e3c5f3065a8274e99a0b",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/imu_test_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/imu_test_tb.log",
+      "bytes": 237,
+      "sha256": "e1a793fa780001cc55f478ed7676e493ef989daf97ac6e827c073996f53c812b",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/pose_fusion_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/pose_fusion_tb.log",
+      "bytes": 218,
+      "sha256": "ed328e82b4cedc0d65b8d698b4106df0b1d855d6a62de6d514cb8eb59952230d",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/async_fifo_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/async_fifo_tb.log",
+      "bytes": 262,
+      "sha256": "9d9e8dd901abc4e5a29dc13ee510f9c9520b56707ad9e9fc9b9721a22aa538b5",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/travel_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/travel_tb.log",
+      "bytes": 215,
+      "sha256": "a6038fe9cf1110e2c0f0fb82f54b25ac9236fd9a51750ce0dc71215cd49e6c1f",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/cad_navigation_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/cad_navigation_tb.log",
+      "bytes": 1456,
+      "sha256": "6a9f6e31ce5cebeb95accedb57a34fc9b5a1dbac1ced1f0c4e40a935abb7090f",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mission_navigation_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mission_navigation_tb.log",
+      "bytes": 834,
+      "sha256": "f66539ac898ac355a9b3ffc8756556106056f757b8d0c9653555bb5c853252e0",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/sincos_equivalence_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/sincos_equivalence_tb.log",
+      "bytes": 244,
+      "sha256": "c73e08623b84a80e7d48fbb4a6c85ea0ed0945cc482a3dab3e1a3158edb3aad4",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/udp_direct_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/udp_direct_tb.log",
+      "bytes": 307,
+      "sha256": "1717e2e9a4e334544948a201d684f4bf2fa6deca3ec2f0e5f78208d3d994a7e2",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/cad_stalled_navigation_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/cad_stalled_navigation_tb.log",
+      "bytes": 1467,
+      "sha256": "1c349e6b77fd604f9db52a3ffd0f43ccd2c1d9dc36f834f3f29bb8349131e16d",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mission_cpu_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mission_cpu_tb.log",
+      "bytes": 242,
+      "sha256": "0b86e35b7ea8b382c27ee1f8f56d833a929da15587eac7dbe28d47a5108a2db9",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/host.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/host.log",
+      "bytes": 7998,
+      "sha256": "abf6014c451e1e101c662285e1dd0817bae6df3431443c0c1c06d5b4e43db9b8",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/path_tracker_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/path_tracker_tb.log",
+      "bytes": 222,
+      "sha256": "1c95d9d13cd65a50c8e0632c5da835eb326e5019c5656de5f9e2c7407e33b03b",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/osd_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/osd_tb.log",
+      "bytes": 246,
+      "sha256": "92a0134b8dc659b28a5b8c685be4d9701ad131d6b44edd2b26b8a2d53c2d1f4e",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/ld06_embedded_header_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/ld06_embedded_header_tb.log",
+      "bytes": 237,
+      "sha256": "9f2337493ecc37b735f0fba81dd27a7db4f78be3927010f285420efbb47c3341",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/cad_stalled_navigation_tb-compile.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/cad_stalled_navigation_tb-compile.log",
+      "bytes": 156033,
+      "sha256": "20944cdfda8f93627bf0a276151cb7b2aabeeba8823b9092ed4c9cef8165fcf5",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/lidar_safety_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/lidar_safety_tb.log",
+      "bytes": 238,
+      "sha256": "2d848b1f52a81b322cd73555492f2b7ceaa0b9e9b6aa9b2fdf1f1a62cabe8449",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/control_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/control_tb.log",
+      "bytes": 269,
+      "sha256": "bdba0ad0cd901e17004e172cb291679d1ba7de9abdd28e2025d6af66bee1cb63",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/path_planner_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/path_planner_tb.log",
+      "bytes": 248,
+      "sha256": "4a110b33fa903fe3fb0e1124dc8cb84d729522f7bc902724d5f40a5a40e1a6c3",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/pi_target_limit_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/pi_target_limit_tb.log",
+      "bytes": 229,
+      "sha256": "99a948e7e67342dabdef9f6a871ddad858914fb503b3f369159c5aba84916f3d",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/fusion_network_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/fusion_network_tb.log",
+      "bytes": 224,
+      "sha256": "64bbe4eb642233be245ae2838d998ef91b3f6bb046bea80b49a0873546c62490",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/phy_init_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/phy_init_tb.log",
+      "bytes": 209,
+      "sha256": "7c22817617752c3a3f68dc973cadcdd0c0de740cf40e9648db78bd085f362017",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/map_udp_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/map_udp_tb.log",
+      "bytes": 268,
+      "sha256": "0e8d61fc4268c0d02c9e39dc2504ad94300d347405917801b26613666eb263f2",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/local_lease_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/local_lease_tb.log",
+      "bytes": 286,
+      "sha256": "931d5000e0ae1c9990c42a0b1e8762a573f5e0e59b3dbcc804348c9bc0c5c410",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/continuous_navigation_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/continuous_navigation_tb.log",
+      "bytes": 1824,
+      "sha256": "8f16230de3649fd6c64199431dcf1ae3fdb9c17609e2caec0aad6a5ff8112dcc",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/imu_sensor_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/imu_sensor_tb.log",
+      "bytes": 257,
+      "sha256": "a16d96eb99ab3015cb7188bc8d1268583736063f35e83ef490616d4bdd7f3dec",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/sensors_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/sensors_tb.log",
+      "bytes": 204,
+      "sha256": "0213b6833fce15f25b95e272f1b33c2c5adec30adb4284aded8c4c5990d8c177",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/autonomy_avoid_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/autonomy_avoid_tb.log",
+      "bytes": 232,
+      "sha256": "de8f258e30dd7a4f8379aaf0dcc84747c733cb336f33358b8ac0ca714a2ee075",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/result.json",
+      "saved_path": "output/avoidance-handoff-20261025/regression/result.json",
+      "bytes": 40222,
+      "sha256": "37b656c914ca92aa79ef54ad44ce6cbfaf27164ba03e83d0bb83ccd95821f9e0",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/net_health_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/net_health_tb.log",
+      "bytes": 208,
+      "sha256": "712d21dc55e17c36d592b0c33a18c7a268cca1f87edac142655ac7034582e32b",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/speed_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/speed_tb.log",
+      "bytes": 211,
+      "sha256": "bf92c31777c1ac8d4f2f7e7096c5c9891c6a799ca406202346607629ac81a17b",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/path_tracker_directional_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/path_tracker_directional_tb.log",
+      "bytes": 252,
+      "sha256": "69b53e961f70f7562689ef503ed3cddb270c90a2fb4d80bfdc934ee7a18e7397",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/telemetry_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/telemetry_tb.log",
+      "bytes": 216,
+      "sha256": "d7d964614b6dd385fa43d0f367a50152a70c73ec6021d571c1c3849279b57969",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/network_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/network_tb.log",
+      "bytes": 224,
+      "sha256": "bab698faae4d73c9d325949c1241161097fcc25e21161b7314db745a966dc551",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/router_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/router_tb.log",
+      "bytes": 208,
+      "sha256": "ba97d5ad928e6c1e49df412d0ef19cf3ec947d82fb8644eee9de3b6ef6a47361",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/phy_telemetry_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/phy_telemetry_tb.log",
+      "bytes": 228,
+      "sha256": "4650b2ea7d91593b548fe542a8cb22312313f5bc7be35504185889e222a5128a",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mpu_heading_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mpu_heading_tb.log",
+      "bytes": 267,
+      "sha256": "ae437f6f98f73e12686f6c0ae4a8d5ad3a6d3695a8e42039486e4139de3268a2",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/ld06_recovery_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/ld06_recovery_tb.log",
+      "bytes": 246,
+      "sha256": "f5a51f9b605fd2c1760f5c00efae3a1306daa6cb0449d5e5c948609df2d5cf37",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/targets_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/targets_tb.log",
+      "bytes": 277,
+      "sha256": "0b7b6779905ef493b4ec8ece3862c92f99db889843b0058707cf5a23cad60dca",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/tft480_panel_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/tft480_panel_tb.log",
+      "bytes": 260,
+      "sha256": "1ab3ce2f257d49546df40a23cb38b34a125117f6f6b30c38243cfc6548d8acfe",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/autonomy_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/autonomy_tb.log",
+      "bytes": 237,
+      "sha256": "d020bc48f56714c3bf92413b2a79457e5fcbc77724add07d9461965bf4509d55",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/fusion_core_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/fusion_core_tb.log",
+      "bytes": 212,
+      "sha256": "9df7b7974403638d81ad70bae2b68ec8d64a6033cb08006e5e893084c7319e38",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/continuous_navigation_tb-compile.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/continuous_navigation_tb-compile.log",
+      "bytes": 153430,
+      "sha256": "cc63548e71bfc43794087e6e89d5ea33fa878a83fa3556aac15469a412636e98",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/nav_guard_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/nav_guard_tb.log",
+      "bytes": 234,
+      "sha256": "88315902862955ae70289f05bfd96e3a3410eb5140e1979cc6c456a6b6bd3449",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/motion_lidar_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/motion_lidar_tb.log",
+      "bytes": 252,
+      "sha256": "1bb7f016500104c12dad73cb2e09cd6b5f58c0c409bcd949feb42ebfddbfd5e5",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/video_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/video_tb.log",
+      "bytes": 225,
+      "sha256": "a15dff62ffd97519d73d18536746692ddad12b6213ce36e184aa648e7ce85bae",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/protocol_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/protocol_tb.log",
+      "bytes": 203,
+      "sha256": "0029a80582f269ae3adfa3388f070c043011ca817f462d9133df6c55d25282f0",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mpu_i2c_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mpu_i2c_tb.log",
+      "bytes": 220,
+      "sha256": "5861ec1257ff5fda91aa2251cde9b019d29afeea88677ba6b7ced9168a9ec7ca",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/continuous_obstacle_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/continuous_obstacle_tb.log",
+      "bytes": 6962,
+      "sha256": "adc60c1542f8d341d3309b37cedcfe4312dc5ad1cac4adbe32081f6fab35a411",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/lidar_control_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/lidar_control_tb.log",
+      "bytes": 222,
+      "sha256": "ca02af9b937b1a0f1c20561a3fbdb8ab96c53e8fca6a826093954b7f9e6e8240",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/ddr_framebuffer_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/ddr_framebuffer_tb.log",
+      "bytes": 283,
+      "sha256": "f9cff7d1761c897c6cc2fcf01d0aba5493adb8047456ba8ecbaea6505f4b88b0",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mission_navigation_tb-compile.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mission_navigation_tb-compile.log",
+      "bytes": 292824,
+      "sha256": "3db8fc6e42aa7684bf60e934c8fce84aec83d27a15c68e1ab0c513e3bb68b66d",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/mpu_legacy_identity_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/mpu_legacy_identity_tb.log",
+      "bytes": 240,
+      "sha256": "6d5dd973094ff09bae466843dbedfcc123cd53d09c386ff58817900d1e1f91f3",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/video_capture_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/video_capture_tb.log",
+      "bytes": 228,
+      "sha256": "77961173c748f84f031f2f8b0672665fcbff0cd212d798abb5d365d4acd2883f",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/motion_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/motion_tb.log",
+      "bytes": 250,
+      "sha256": "07e810c9d463c7cc57f1d9701d1120017c0276416377468b038d395d53354dc6",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/tests/autonomy_navigation_tb.log",
+      "saved_path": "output/avoidance-handoff-20261025/regression/autonomy_navigation_tb.log",
+      "bytes": 1285,
+      "sha256": "e7832e646bdd57b049c3c6143416b38cb5236e76ae8b85c7c843996e15683278",
+      "role": "regression-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/result.json",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/result.json",
+      "bytes": 32958,
+      "sha256": "2925fef36b39fa847b41d12049e287c57655fae22f406aeba295e2e074d46a05",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/build.log",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/build.log",
+      "bytes": 391208,
+      "sha256": "c61fe0a0b749d9145fb817cc2adfae2f0b332d68f69b4cc2893e3caf3c04a8c5",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/build.tcl",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/build.tcl",
+      "bytes": 352,
+      "sha256": "f8619304dc3fd5fbc99d6d383dc7a8dd77833af18e75366274e718136be219e4",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/a741.gprj",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/a741.gprj",
+      "bytes": 16839,
+      "sha256": "0ba55ac3503461b42c4d89543f188d7542ccb3cead2aeff1019f56200ca0290a",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/pnr/cmd.do",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/pnr/cmd.do",
+      "bytes": 767,
+      "sha256": "d5e84c0b826b1431fa76c54a5be459bd6b3d0b87cb04d59976dea66eb2b89b92",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/pnr/a741.log",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/pnr/a741.log",
+      "bytes": 1394,
+      "sha256": "4d05497df14027bfaae7d81d3432fb2826a20fc3d73e913d356798344d21535f",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/pnr/a741.rpt.txt",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/pnr/a741.rpt.txt",
+      "bytes": 134951,
+      "sha256": "45a3084c6fae85b23c93edb447e53d2139fdaae59cfa403209571b644bae1942",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/pnr/a741.rpt.html",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/pnr/a741.rpt.html",
+      "bytes": 160051,
+      "sha256": "9117f214019403c7ac54bb166b40e5646873fe921ac737d137cc2cdf8a378d53",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/gwsynthesis/a741_syn.rpt.html",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/gwsynthesis/a741_syn.rpt.html",
+      "bytes": 100609,
+      "sha256": "7cd8ece2c6dd1b08535fbb58b97219e07fab29e0667da63e0ee3deedcf36e550",
+      "role": "build-evidence"
+    },
+    {
+      "source_path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/impl/gwsynthesis/a741_syn_rsc.xml",
+      "saved_path": "output/avoidance-handoff-20261025/gowin/impl/gwsynthesis/a741_syn_rsc.xml",
+      "bytes": 16314,
+      "sha256": "d84f8deac61343a1d7c319d291e104a410663b431c0d3fa4df597565f5d27216",
+      "role": "build-evidence"
+    }
+  ]
+}

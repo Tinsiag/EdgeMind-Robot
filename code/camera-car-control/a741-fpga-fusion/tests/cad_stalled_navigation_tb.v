@@ -14,6 +14,7 @@ module cad_stalled_navigation_tb;
     reg travel_tick=0,travel_valid=1;reg signed [31:0] left_travel=0,right_travel=0,manual_left=0,manual_right=0;
     reg signed [15:0] yaw=0;reg [15:0] motor_faults=0;
     reg lidar_point=0;reg [15:0] lidar_angle=0,lidar_distance=1000;reg [7:0] lidar_confidence=100;
+    reg [15:0] lidar_front=16'hffff, lidar_left=16'hffff, lidar_right=16'hffff;
     reg command=0;reg [7:0] kind=0;reg [255:0] payload=0;
     wire reply_done;wire [255:0] reply;wire drive_enabled,force_stop,sensor_stop;
     wire signed [31:0] drive_left,drive_right,pose_x,pose_y;wire [9:0] sensor_limit;

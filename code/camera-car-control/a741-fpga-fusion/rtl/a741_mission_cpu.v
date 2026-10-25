@@ -28,7 +28,8 @@ module a741_mission_cpu #(parameter FIRMWARE_FILE="firmware/mission.hex")(
     assign fault=trap || cpu_failed;
     assign owns=active;
     wire stop_request=host_command && (host_kind==3 || host_kind==4 || host_kind==8'h56 ||
-        (host_kind==8'h58 && host_payload[7:0]==3));
+        (host_kind==8'h58 && host_payload[7:0]==3) ||
+        (host_kind==8'h59 && host_payload[7:0]==0));
     always @(posedge clk) begin
         if(mem_valid && !mem_ready && mem_addr<8192) begin
             // Arora V supports normal/write-through SP modes. Do not infer

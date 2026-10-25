@@ -1,0 +1,2340 @@
+{
+  "regression": {
+    "inputs": [
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v",
+        "expected_sha256": "c0c1938cca8e6ab92918c8a0f1201e9b12a1eae6bc7f06ff40100751a2dccc65",
+        "vm_sha256": "c0c1938cca8e6ab92918c8a0f1201e9b12a1eae6bc7f06ff40100751a2dccc65",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v",
+        "expected_sha256": "1547b79cdcacc53ca8fd8790f0215cae9d1593ac2d90143cfa67e1ec14d06b1e",
+        "vm_sha256": "1547b79cdcacc53ca8fd8790f0215cae9d1593ac2d90143cfa67e1ec14d06b1e",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_divider.v",
+        "expected_sha256": "0b71f0ead89450621c325f4a8fab6a905b9b056436304c39582fc9b5c959de21",
+        "vm_sha256": "0b71f0ead89450621c325f4a8fab6a905b9b056436304c39582fc9b5c959de21",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_fusion_core.v",
+        "expected_sha256": "fc27618a7daa00674bffeb3c2d9157db2a5254ed24462514a6221e0f9ce4c399",
+        "vm_sha256": "fc27618a7daa00674bffeb3c2d9157db2a5254ed24462514a6221e0f9ce4c399",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_grid_map.v",
+        "expected_sha256": "f629db55239ddeae4223cad854e088d0b9f7ffd7f1554c0168db0df4078b7237",
+        "vm_sha256": "f629db55239ddeae4223cad854e088d0b9f7ffd7f1554c0168db0df4078b7237",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_hdmi.v",
+        "expected_sha256": "50041821ef76efba12c14cbddbd558aa8aba19e6288621b8984bcc5a134a2997",
+        "vm_sha256": "50041821ef76efba12c14cbddbd558aa8aba19e6288621b8984bcc5a134a2997",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_imu_i2c.v",
+        "expected_sha256": "f3bdccf02124a1e83f011577d2f2de66a70db6caa0e0a966895fa9fc5d26f2c0",
+        "vm_sha256": "f3bdccf02124a1e83f011577d2f2de66a70db6caa0e0a966895fa9fc5d26f2c0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_inflate.v",
+        "expected_sha256": "bfbcc34725d52367d6c5451670d62fd04f8b6fbb2377c3556d5a2258c72c17b9",
+        "vm_sha256": "bfbcc34725d52367d6c5451670d62fd04f8b6fbb2377c3556d5a2258c72c17b9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v",
+        "expected_sha256": "707343fab57e896a690bf15e459f1216728412d6a26b05ce18c47ec5a0eb24cc",
+        "vm_sha256": "707343fab57e896a690bf15e459f1216728412d6a26b05ce18c47ec5a0eb24cc",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v",
+        "expected_sha256": "0dc2b6bbc3de2be1b9819c4c5095d3ca829ea3df5f65116b0574b26c2a89e0f5",
+        "vm_sha256": "0dc2b6bbc3de2be1b9819c4c5095d3ca829ea3df5f65116b0574b26c2a89e0f5",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_map_udp.v",
+        "expected_sha256": "4d5dc43c24b6585efb517ff9c425527ef1c5bcf4a314894285d08bce528082a2",
+        "vm_sha256": "4d5dc43c24b6585efb517ff9c425527ef1c5bcf4a314894285d08bce528082a2",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v",
+        "expected_sha256": "fc0260712509f84bd52e0e320d0a5003e92df42e43325aedf6e96004bc6f187c",
+        "vm_sha256": "fc0260712509f84bd52e0e320d0a5003e92df42e43325aedf6e96004bc6f187c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v",
+        "expected_sha256": "564674b1b699d856271dc52c3ea68e692b40d6bff1e41603568267675f342bc6",
+        "vm_sha256": "564674b1b699d856271dc52c3ea68e692b40d6bff1e41603568267675f342bc6",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_nav_guard.v",
+        "expected_sha256": "88c7c16ab1860e1458ca1cc1645ff626c6abdda690fe84732e7435c51e2e882b",
+        "vm_sha256": "88c7c16ab1860e1458ca1cc1645ff626c6abdda690fe84732e7435c51e2e882b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_net_health.v",
+        "expected_sha256": "3608144e35e34dfc9e51634a746a0d8211d91c8b8a18e87b63a9563c549dd584",
+        "vm_sha256": "3608144e35e34dfc9e51634a746a0d8211d91c8b8a18e87b63a9563c549dd584",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_osd.v",
+        "expected_sha256": "59c000ef2cb64d3db13cc03b3066266579050987627c0bdbb57a32e055212d50",
+        "vm_sha256": "59c000ef2cb64d3db13cc03b3066266579050987627c0bdbb57a32e055212d50",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v",
+        "expected_sha256": "c137712366d28a9084fd146b70b9681e85ac8e34e60bd8a670130e498499fea6",
+        "vm_sha256": "c137712366d28a9084fd146b70b9681e85ac8e34e60bd8a670130e498499fea6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v",
+        "expected_sha256": "debf3155c84bd1b6d96e483d639129147a3f45ab27c857b5b59d40ffda43e943",
+        "vm_sha256": "debf3155c84bd1b6d96e483d639129147a3f45ab27c857b5b59d40ffda43e943",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_phy_init.v",
+        "expected_sha256": "36bc5d7ccb92985f89ae153106408c5c39c79cd65c663a9c49cdf7ae2b335a8c",
+        "vm_sha256": "36bc5d7ccb92985f89ae153106408c5c39c79cd65c663a9c49cdf7ae2b335a8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_pi.v",
+        "expected_sha256": "231d81cd1467569a4d24081e15d11f41eb21be0f4207d1c3c9d23cc4f1a21b6e",
+        "vm_sha256": "231d81cd1467569a4d24081e15d11f41eb21be0f4207d1c3c9d23cc4f1a21b6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v",
+        "expected_sha256": "8974212481eec84f77df80db2be2689ff71896ac1c442c449b0ea81ff7a31639",
+        "vm_sha256": "8974212481eec84f77df80db2be2689ff71896ac1c442c449b0ea81ff7a31639",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v",
+        "expected_sha256": "db068cc814cd4718f5e90459dbcf4082d1d6d4671781d5894c1c058f4048e08c",
+        "vm_sha256": "db068cc814cd4718f5e90459dbcf4082d1d6d4671781d5894c1c058f4048e08c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v",
+        "expected_sha256": "2e04f39ece4896e45b7a025be557e60aaf55b0dd864154b0ad5ba3dafbbdf2ef",
+        "vm_sha256": "2e04f39ece4896e45b7a025be557e60aaf55b0dd864154b0ad5ba3dafbbdf2ef",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v",
+        "expected_sha256": "59ce5bf6891aaaf8232ae292f3b79238d2ae7072bef92ca743db87a12decb6ef",
+        "vm_sha256": "59ce5bf6891aaaf8232ae292f3b79238d2ae7072bef92ca743db87a12decb6ef",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v",
+        "expected_sha256": "af5e5b035be5a22b6ec49929cbde8c62d2e99fd3bfe77b39839097282ce2ecce",
+        "vm_sha256": "af5e5b035be5a22b6ec49929cbde8c62d2e99fd3bfe77b39839097282ce2ecce",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_sensors.v",
+        "expected_sha256": "f41b38ccd203b6885c13086cc63b8db3f0005ac65b464fc29d89d5b05dd71cd5",
+        "vm_sha256": "f41b38ccd203b6885c13086cc63b8db3f0005ac65b464fc29d89d5b05dd71cd5",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_sincos.v",
+        "expected_sha256": "702e3585ff13a99c1186f2c3e8287ad73c2d15f5fdea5966ba9998f83f60ef3a",
+        "vm_sha256": "702e3585ff13a99c1186f2c3e8287ad73c2d15f5fdea5966ba9998f83f60ef3a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_speed.v",
+        "expected_sha256": "38bcc66e241d0d419299a9b8129924b82e28765efa4daca38e822fb6225b1836",
+        "vm_sha256": "38bcc66e241d0d419299a9b8129924b82e28765efa4daca38e822fb6225b1836",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_targets.v",
+        "expected_sha256": "4d2cb782ade3e217c220bc546aa8e4402db88be7da522b24d82791691c45b136",
+        "vm_sha256": "4d2cb782ade3e217c220bc546aa8e4402db88be7da522b24d82791691c45b136",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_telemetry.v",
+        "expected_sha256": "c85491494fbe48101d58616b50793e524461936a6a9632d6a78b4ab43898ed3f",
+        "vm_sha256": "c85491494fbe48101d58616b50793e524461936a6a9632d6a78b4ab43898ed3f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v",
+        "expected_sha256": "505be991500a72d91e7ac2d558a2dad49d3efe6056f2c58f43d1cf3a1a8aaf5d",
+        "vm_sha256": "505be991500a72d91e7ac2d558a2dad49d3efe6056f2c58f43d1cf3a1a8aaf5d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_travel.v",
+        "expected_sha256": "728f02281a9b3fd0fb250c72fb27d20c9a221d6362629a83410baabf2429bb81",
+        "vm_sha256": "728f02281a9b3fd0fb250c72fb27d20c9a221d6362629a83410baabf2429bb81",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_tx_stage.v",
+        "expected_sha256": "30d1f8499258a1d82877d91d42ccedfd935dabe585cbf74106f36eccf6554b88",
+        "vm_sha256": "30d1f8499258a1d82877d91d42ccedfd935dabe585cbf74106f36eccf6554b88",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_control.v",
+        "expected_sha256": "59f97f71688a7a050ca4a2f1261d2d2e2793073615c40048d539ad9e01807d10",
+        "vm_sha256": "59f97f71688a7a050ca4a2f1261d2d2e2793073615c40048d539ad9e01807d10",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_direct.v",
+        "expected_sha256": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+        "vm_sha256": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v",
+        "expected_sha256": "e5f024d89987aed4d8f2f2c457e01be858141b303670ef1a90bdfadfdf85e66a",
+        "vm_sha256": "e5f024d89987aed4d8f2f2c457e01be858141b303670ef1a90bdfadfdf85e66a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/jy901_parser.v",
+        "expected_sha256": "1357905349f823a5d497dadc5080ecebd5401177a721aad02a763a602ffa1c6e",
+        "vm_sha256": "1357905349f823a5d497dadc5080ecebd5401177a721aad02a763a602ffa1c6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/ld06_control.v",
+        "expected_sha256": "f5400098e406da4db690f66b173640d6605a01ffc736b4f77fdf60eb3332cda9",
+        "vm_sha256": "f5400098e406da4db690f66b173640d6605a01ffc736b4f77fdf60eb3332cda9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/ld06_parser.v",
+        "expected_sha256": "59c22b8a18470b519b324a2433b23cb6ad9a12bf73ec33465752c54f450b060b",
+        "vm_sha256": "59c22b8a18470b519b324a2433b23cb6ad9a12bf73ec33465752c54f450b060b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_driver.v",
+        "expected_sha256": "9e8099fb0bdf0a614771f19ab8840be0d50fda985e2246c7c74de1bbde85ac8c",
+        "vm_sha256": "9e8099fb0bdf0a614771f19ab8840be0d50fda985e2246c7c74de1bbde85ac8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_heading.v",
+        "expected_sha256": "b0e7c7352372c2e6a37bd2ceddf24b2a6c8a18808bc5540cc4f26ae42857906f",
+        "vm_sha256": "b0e7c7352372c2e6a37bd2ceddf24b2a6c8a18808bc5540cc4f26ae42857906f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/display/rtl/a741_tft480_panel.v",
+        "expected_sha256": "5908f6dc35d6da86b8e710f00f6d8ab0914d9072afea9cd92f53219e08313a5a",
+        "vm_sha256": "5908f6dc35d6da86b8e710f00f6d8ab0914d9072afea9cd92f53219e08313a5a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v",
+        "expected_sha256": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+        "vm_sha256": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arbiter.v",
+        "expected_sha256": "4b4291e2afc5cdb93e261d43c439ea3c9bedce3d628d3db9c6e2ed8f4c27c3f1",
+        "vm_sha256": "4b4291e2afc5cdb93e261d43c439ea3c9bedce3d628d3db9c6e2ed8f4c27c3f1",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp.v",
+        "expected_sha256": "46d339fe7b4de1ff5c6c881c53f9c0c718ec8eb776673bc4d5916ea230512512",
+        "vm_sha256": "46d339fe7b4de1ff5c6c881c53f9c0c718ec8eb776673bc4d5916ea230512512",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_cache.v",
+        "expected_sha256": "e7eb3f5fc90c6e5cc9f1f9f3d59afefcfc87fd667a1893de8ddad3aa94309529",
+        "vm_sha256": "e7eb3f5fc90c6e5cc9f1f9f3d59afefcfc87fd667a1893de8ddad3aa94309529",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_rx.v",
+        "expected_sha256": "6a49bd6f7c2311baffe1b3985d7eee0b9adee54f7d05ffa4316cf201adb526ee",
+        "vm_sha256": "6a49bd6f7c2311baffe1b3985d7eee0b9adee54f7d05ffa4316cf201adb526ee",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_tx.v",
+        "expected_sha256": "8125cf542196132b388c30f4ac3005a0153082c7cd9f87916680c6767db72dfb",
+        "vm_sha256": "8125cf542196132b388c30f4ac3005a0153082c7cd9f87916680c6767db72dfb",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_adapter.v",
+        "expected_sha256": "94eb7348f2b833126c1b519f28da72fcf3abcc4a6766b3759bce0d828db3bfe1",
+        "vm_sha256": "94eb7348f2b833126c1b519f28da72fcf3abcc4a6766b3759bce0d828db3bfe1",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo.v",
+        "expected_sha256": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+        "vm_sha256": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v",
+        "expected_sha256": "3472e2624af75bbc978c15603b78afc9e08a0d61dc9471cbfb4ba4579df5c4d3",
+        "vm_sha256": "3472e2624af75bbc978c15603b78afc9e08a0d61dc9471cbfb4ba4579df5c4d3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v",
+        "expected_sha256": "8ee436631ece272f478a4396c3819f62e5cd4f9a492b80502562aeb73c9e6294",
+        "vm_sha256": "8ee436631ece272f478a4396c3819f62e5cd4f9a492b80502562aeb73c9e6294",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo_adapter.v",
+        "expected_sha256": "7751ab4ec51642abc5ed38e9d029e052ba1405af463ea4f9f32b0ca9c107e6ff",
+        "vm_sha256": "7751ab4ec51642abc5ed38e9d029e052ba1405af463ea4f9f32b0ca9c107e6ff",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_rx.v",
+        "expected_sha256": "9fc42a832d36ab6e2f43fb69dcf897a3b38db7a072bdc26ff2e6f8a2fd19aae8",
+        "vm_sha256": "9fc42a832d36ab6e2f43fb69dcf897a3b38db7a072bdc26ff2e6f8a2fd19aae8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_tx.v",
+        "expected_sha256": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+        "vm_sha256": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_arb_mux.v",
+        "expected_sha256": "ce578195dc565962e3515d5444d13d6a47c42ee82bd2109d31dd62a7ed0775ea",
+        "vm_sha256": "ce578195dc565962e3515d5444d13d6a47c42ee82bd2109d31dd62a7ed0775ea",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v",
+        "expected_sha256": "394d811d97bb10e865fde1e4820af594313296cf36fb8d1316defca8ba222bb7",
+        "vm_sha256": "394d811d97bb10e865fde1e4820af594313296cf36fb8d1316defca8ba222bb7",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_tx.v",
+        "expected_sha256": "633d15019041a2ab8144d0b5d5c76122f2829f6f23d1b45d82ddf1cc00476653",
+        "vm_sha256": "633d15019041a2ab8144d0b5d5c76122f2829f6f23d1b45d82ddf1cc00476653",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v",
+        "expected_sha256": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
+        "vm_sha256": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v",
+        "expected_sha256": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
+        "vm_sha256": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip.v",
+        "expected_sha256": "0fa6834e1d4eade6641ea6c0dc918bc3fb8d758dd8e0a38c7853d7c10f7853a3",
+        "vm_sha256": "0fa6834e1d4eade6641ea6c0dc918bc3fb8d758dd8e0a38c7853d7c10f7853a3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_arb_mux.v",
+        "expected_sha256": "429fce396c6d5e311497b419f6d0c930e4e17eea5637efb4f7a4df1299cfea6e",
+        "vm_sha256": "429fce396c6d5e311497b419f6d0c930e4e17eea5637efb4f7a4df1299cfea6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_complete.v",
+        "expected_sha256": "c0f5981200d90312065eece7117dd22733d224169af1865760522e38122df120",
+        "vm_sha256": "c0f5981200d90312065eece7117dd22733d224169af1865760522e38122df120",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_rx.v",
+        "expected_sha256": "ad9c44691fe27d76373e64d3aadf8e076d819030266d4569e683030cc67a05bc",
+        "vm_sha256": "ad9c44691fe27d76373e64d3aadf8e076d819030266d4569e683030cc67a05bc",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_tx.v",
+        "expected_sha256": "a9d5bdbea9ccecedf7ff513dfe3e34cbfbc505bfc3877d1430a3416b8689fd1c",
+        "vm_sha256": "a9d5bdbea9ccecedf7ff513dfe3e34cbfbc505bfc3877d1430a3416b8689fd1c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/lfsr.v",
+        "expected_sha256": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+        "vm_sha256": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/priority_encoder.v",
+        "expected_sha256": "07c610b8dda24daf67dec36c743f79fca30f9d01d5469e1e7f795a16f4c7aa97",
+        "vm_sha256": "07c610b8dda24daf67dec36c743f79fca30f9d01d5469e1e7f795a16f4c7aa97",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp.v",
+        "expected_sha256": "a11fcaaf918868706c2a3ea97ecb5842813b6a21a4bd9d35ad38906be81a4c7f",
+        "vm_sha256": "a11fcaaf918868706c2a3ea97ecb5842813b6a21a4bd9d35ad38906be81a4c7f",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v",
+        "expected_sha256": "94c2f9a93a07256493c2f87e77444cc14cec686247f653d5a769264a43a9faee",
+        "vm_sha256": "94c2f9a93a07256493c2f87e77444cc14cec686247f653d5a769264a43a9faee",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_rx.v",
+        "expected_sha256": "a3d11dac41e6349e52c9fbe531b9e3345d5688b062157b8c6a85f4b40cc41050",
+        "vm_sha256": "a3d11dac41e6349e52c9fbe531b9e3345d5688b062157b8c6a85f4b40cc41050",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_tx.v",
+        "expected_sha256": "4df5a48a8eded39d4503923e14aa3f66824bbc830008e2c37b3e767ca345f60a",
+        "vm_sha256": "4df5a48a8eded39d4503923e14aa3f66824bbc830008e2c37b3e767ca345f60a",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v",
+        "expected_sha256": "30ce288d05ccbfbaab5639b7c8d168bc07263aa039e903d39fbae33de5ac3969",
+        "vm_sha256": "30ce288d05ccbfbaab5639b7c8d168bc07263aa039e903d39fbae33de5ac3969",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/rtl/video_udp_packetizer.v",
+        "expected_sha256": "23f9a57cf17ac6de330d324879adc375cdd7f9af2e624fa7d54581c65f079367",
+        "vm_sha256": "23f9a57cf17ac6de330d324879adc375cdd7f9af2e624fa7d54581c65f079367",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/uart_rx.v",
+        "expected_sha256": "4c5de72c4d5c6891d4a56fd946dee1636cb5e1c6e4fab7946f4b0fda107f14c6",
+        "vm_sha256": "4c5de72c4d5c6891d4a56fd946dee1636cb5e1c6e4fab7946f4b0fda107f14c6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/uart_tx.v",
+        "expected_sha256": "176a657e5e05b2130e4e515101a38ad1ef6239ebf263a7364a6da093444558e6",
+        "vm_sha256": "176a657e5e05b2130e4e515101a38ad1ef6239ebf263a7364a6da093444558e6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/quadrature_decoder.v",
+        "expected_sha256": "3be866efd4f9320de3bb4aeb2d42fb5333194460e163ea3aabce7c18b74300c0",
+        "vm_sha256": "3be866efd4f9320de3bb4aeb2d42fb5333194460e163ea3aabce7c18b74300c0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/encoder_counter.v",
+        "expected_sha256": "fc37948e8108f25d84b5738fdf3b87a9ffa41a23bd2672c01c1d7fd071c0db1d",
+        "vm_sha256": "fc37948e8108f25d84b5738fdf3b87a9ffa41a23bd2672c01c1d7fd071c0db1d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/motor_pwm_safe.v",
+        "expected_sha256": "06614905466df21a0b8fd2dea10a2bf0facd261db054d04a41de0962444104fe",
+        "vm_sha256": "06614905466df21a0b8fd2dea10a2bf0facd261db054d04a41de0962444104fe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vision_packet_tx.v",
+        "expected_sha256": "33f5d608af150b9d79fffb013d91e03a20606ae52f8d75c4d978906cc4c6cbe0",
+        "vm_sha256": "33f5d608af150b9d79fffb013d91e03a20606ae52f8d75c4d978906cc4c6cbe0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/i2c_reg_master.v",
+        "expected_sha256": "08feab92bdae45eea4819213c7fb8be52a7d02baf0c362c313fcbd7f639ffc4f",
+        "vm_sha256": "08feab92bdae45eea4819213c7fb8be52a7d02baf0c362c313fcbd7f639ffc4f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vl53l1x_driver.v",
+        "expected_sha256": "0ad84313fcc15365050dac1061498d73d5f879b5e22a9d658755001f7f2f7235",
+        "vm_sha256": "0ad84313fcc15365050dac1061498d73d5f879b5e22a9d658755001f7f2f7235",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vl53l1x_config_rom.v",
+        "expected_sha256": "57f9e2aa5b31a6dd540533ab632ca5c1b0256eb5eb2f62d1994749f499353841",
+        "vm_sha256": "57f9e2aa5b31a6dd540533ab632ca5c1b0256eb5eb2f62d1994749f499353841",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/reset_sync.v",
+        "expected_sha256": "93ee6a7a8ce1c5139f439f03138b4397e3b81fb99c0ecdbc3032af2ce4b3a184",
+        "vm_sha256": "93ee6a7a8ce1c5139f439f03138b4397e3b81fb99c0ecdbc3032af2ce4b3a184",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/dvp_capture_continuous.v",
+        "expected_sha256": "89b9a5a0c567c653aa7adcbc6f31fc8cf2240738089b542559ef79b9e6140747",
+        "vm_sha256": "89b9a5a0c567c653aa7adcbc6f31fc8cf2240738089b542559ef79b9e6140747",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/capture_tokens.v",
+        "expected_sha256": "2e22bb7d6468c35d1b2e03c84aa262a934968693717818e5409281bd977da4bb",
+        "vm_sha256": "2e22bb7d6468c35d1b2e03c84aa262a934968693717818e5409281bd977da4bb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/async_fifo.v",
+        "expected_sha256": "20ea780862dcbc0696ae7b88d5095ebabe0f28a83e50ee305985ea749666270c",
+        "vm_sha256": "20ea780862dcbc0696ae7b88d5095ebabe0f28a83e50ee305985ea749666270c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/cdc_mailbox.v",
+        "expected_sha256": "08c59533c87f5154ca73b790c59b9a6a7e2a4dfee56b7b9d801dbd81cc6deb40",
+        "vm_sha256": "08c59533c87f5154ca73b790c59b9a6a7e2a4dfee56b7b9d801dbd81cc6deb40",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/ddr_framebuffer.v",
+        "expected_sha256": "b9fd41ab4b02034f5ea1bc522a66b51fcc133793a9ca9a1e5eb5ad10929f4f8c",
+        "vm_sha256": "b9fd41ab4b02034f5ea1bc522a66b51fcc133793a9ca9a1e5eb5ad10929f4f8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/video_pixels.v",
+        "expected_sha256": "bda1cede050b9a9078376aa52440be0eea49e41d95e823ee88ee4b192b8e0b5f",
+        "vm_sha256": "bda1cede050b9a9078376aa52440be0eea49e41d95e823ee88ee4b192b8e0b5f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/video_timing.v",
+        "expected_sha256": "e1a8714c764b61475cc7bf2fb22f903ef0cc5f488895b22e29fecc75ac4e3bbb",
+        "vm_sha256": "e1a8714c764b61475cc7bf2fb22f903ef0cc5f488895b22e29fecc75ac4e3bbb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/video.py",
+        "expected_sha256": "d022fe12fbc939d563842a597b6a6e085b9d4c2a798ffa8c1e46145b4c781a6c",
+        "vm_sha256": "d022fe12fbc939d563842a597b6a6e085b9d4c2a798ffa8c1e46145b4c781a6c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/heading_control.py",
+        "expected_sha256": "fcaa9e70df71985141ad9aa9057d4de1b75fbfaff0d8f96ca05256de6fd0846f",
+        "vm_sha256": "fcaa9e70df71985141ad9aa9057d4de1b75fbfaff0d8f96ca05256de6fd0846f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/calibration.py",
+        "expected_sha256": "8434a1a9e0b45dba21fb0809a2487905cdd03625eaf9417f6f606d4c20d4fbf7",
+        "vm_sha256": "8434a1a9e0b45dba21fb0809a2487905cdd03625eaf9417f6f606d4c20d4fbf7",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/fusion_config.py",
+        "expected_sha256": "cafa9af667e82d329d6f5a72327d91e26b71068ecd6b1a213247d93b4f9c72a9",
+        "vm_sha256": "cafa9af667e82d329d6f5a72327d91e26b71068ecd6b1a213247d93b4f9c72a9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/fusion.py",
+        "expected_sha256": "bc275fc8c435f2c4fffa9fc5a2c05d3925efbdc8f0a6a9fd96e8448913982a36",
+        "vm_sha256": "bc275fc8c435f2c4fffa9fc5a2c05d3925efbdc8f0a6a9fd96e8448913982a36",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/fusion_view.py",
+        "expected_sha256": "27ad57fd65ad89dff9337ee7c9788960d16c3149d82c9e6f82e14ff62cf82723",
+        "vm_sha256": "27ad57fd65ad89dff9337ee7c9788960d16c3149d82c9e6f82e14ff62cf82723",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/client.py",
+        "expected_sha256": "6e38a28167b322e6b685642af4748c0170e39b77d00a38961b622b57535c1ccd",
+        "vm_sha256": "6e38a28167b322e6b685642af4748c0170e39b77d00a38961b622b57535c1ccd",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/telemetry.py",
+        "expected_sha256": "d594cd646876a354800c362d92328895442024b06da2917de206afd7f1f90005",
+        "vm_sha256": "d594cd646876a354800c362d92328895442024b06da2917de206afd7f1f90005",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/app.py",
+        "expected_sha256": "0a60f83d49589535eddfa5bdda34ef1c72fbb7680dd1222ee640d59a06bd291c",
+        "vm_sha256": "0a60f83d49589535eddfa5bdda34ef1c72fbb7680dd1222ee640d59a06bd291c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/mapping.py",
+        "expected_sha256": "975cf25d5ed433296e3d3dee0575b4fefcc8860e55fbf9cf209110e23685c61d",
+        "vm_sha256": "975cf25d5ed433296e3d3dee0575b4fefcc8860e55fbf9cf209110e23685c61d",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/imu_test.py",
+        "expected_sha256": "77c939dcdeed65c04b0ea544c287e33215aa90f5ba6fe3eac070e36f8d2ad4ad",
+        "vm_sha256": "77c939dcdeed65c04b0ea544c287e33215aa90f5ba6fe3eac070e36f8d2ad4ad",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/travel_tb.v",
+        "expected_sha256": "b7e6b7a017da7dfbb0bf1ae444537d76f3cd68ec966b544611d42e687529bd95",
+        "vm_sha256": "b7e6b7a017da7dfbb0bf1ae444537d76f3cd68ec966b544611d42e687529bd95",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/fusion_core_tb.v",
+        "expected_sha256": "724eb1d9ea8b189c23691376333f24c9fc712458851cac4de636efbe9a9172bb",
+        "vm_sha256": "724eb1d9ea8b189c23691376333f24c9fc712458851cac4de636efbe9a9172bb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/network_tb.v",
+        "expected_sha256": "a59176aeebed2f297aada0a61078d9fcd92c79b62b61f8963bba267c3e9f66e2",
+        "vm_sha256": "a59176aeebed2f297aada0a61078d9fcd92c79b62b61f8963bba267c3e9f66e2",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/protocol_tb.v",
+        "expected_sha256": "5a6047933f5acd3ed7928481469c4ce81abe00110d8ab40c2fb14d1bc648221c",
+        "vm_sha256": "5a6047933f5acd3ed7928481469c4ce81abe00110d8ab40c2fb14d1bc648221c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/speed_tb.v",
+        "expected_sha256": "ed76560eeaa25b2c6d9e2f66c027733c96399afd2e29160d60a8c3434362068a",
+        "vm_sha256": "ed76560eeaa25b2c6d9e2f66c027733c96399afd2e29160d60a8c3434362068a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/sincos_equivalence_tb.v",
+        "expected_sha256": "663492d89e4afa0cb59c318ed67ee97a001c01add5e60b7b9630c3428c7f254f",
+        "vm_sha256": "663492d89e4afa0cb59c318ed67ee97a001c01add5e60b7b9630c3428c7f254f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/phy_telemetry_tb.v",
+        "expected_sha256": "8f10d405852c5ff674a7502d32bf475db83751e8815a5489e90a04bf5ad0e31a",
+        "vm_sha256": "8f10d405852c5ff674a7502d32bf475db83751e8815a5489e90a04bf5ad0e31a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mission_cpu_tb.v",
+        "expected_sha256": "0cd9300ebee0ce48e8f5ae35753ad913a6ff89da9ef089791d0bdba4ccbdc2e5",
+        "vm_sha256": "0cd9300ebee0ce48e8f5ae35753ad913a6ff89da9ef089791d0bdba4ccbdc2e5",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mpu_legacy_identity_tb.v",
+        "expected_sha256": "bddbf24b50e64fd0f680e67e6d248218fb3aabdc6a0f753030fa756d712d6322",
+        "vm_sha256": "bddbf24b50e64fd0f680e67e6d248218fb3aabdc6a0f753030fa756d712d6322",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/async_fifo_tb.v",
+        "expected_sha256": "cd4e3ff15e3a3dcdcaa48d533648b764ff2dc231b2ebf2deac406da7e0e314a8",
+        "vm_sha256": "cd4e3ff15e3a3dcdcaa48d533648b764ff2dc231b2ebf2deac406da7e0e314a8",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v",
+        "expected_sha256": "ca7cca39b0d921727cf871dc527d344bc1c3261ef86e0a49df91b052129219ea",
+        "vm_sha256": "ca7cca39b0d921727cf871dc527d344bc1c3261ef86e0a49df91b052129219ea",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/udp_direct_tb.v",
+        "expected_sha256": "2cff3307b4f0d7139fc1b14e7053bd424e1ad1c1eb6ab637a22a29a345ce23c8",
+        "vm_sha256": "2cff3307b4f0d7139fc1b14e7053bd424e1ad1c1eb6ab637a22a29a345ce23c8",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_avoid_tb.v",
+        "expected_sha256": "5afaf2bd2ccb5143c7c3b3d6af57c62539b9e253442b2986cebc39550a499ec8",
+        "vm_sha256": "5afaf2bd2ccb5143c7c3b3d6af57c62539b9e253442b2986cebc39550a499ec8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v",
+        "expected_sha256": "5662639abd89fd7633fa654caee49ea64119ab9d926182ac68b47ae11e2306fe",
+        "vm_sha256": "5662639abd89fd7633fa654caee49ea64119ab9d926182ac68b47ae11e2306fe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/video_tb.v",
+        "expected_sha256": "7ddb98a3665f9a1523de99fa550db5fe2a3ffbde01e7ba2abb7158d9a796a618",
+        "vm_sha256": "7ddb98a3665f9a1523de99fa550db5fe2a3ffbde01e7ba2abb7158d9a796a618",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/ld06_recovery_tb.v",
+        "expected_sha256": "9d62006942ec5c5b383cfe210e238fa0d72d553afe83815eb304defc369cd680",
+        "vm_sha256": "9d62006942ec5c5b383cfe210e238fa0d72d553afe83815eb304defc369cd680",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/local_lease_tb.v",
+        "expected_sha256": "c1ea2c98a38d64732905c0e645f89cf32550daa8930c0e8496f456b6234cd619",
+        "vm_sha256": "c1ea2c98a38d64732905c0e645f89cf32550daa8930c0e8496f456b6234cd619",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/ray_mapper_tb.v",
+        "expected_sha256": "171395d3a44b5618455d4c8f690477ffa26bad910b67a2d588f7085c17f1d1e1",
+        "vm_sha256": "171395d3a44b5618455d4c8f690477ffa26bad910b67a2d588f7085c17f1d1e1",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v",
+        "expected_sha256": "7908c289f51aefb5812619737299355fe64fc287166599b5bc0170d972b1f498",
+        "vm_sha256": "7908c289f51aefb5812619737299355fe64fc287166599b5bc0170d972b1f498",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/path_planner_tb.v",
+        "expected_sha256": "355530d20ea1f0c777759b3f1cc6aa210ac9c1cda923c9de150e1a89277800eb",
+        "vm_sha256": "355530d20ea1f0c777759b3f1cc6aa210ac9c1cda923c9de150e1a89277800eb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v",
+        "expected_sha256": "a5e20109a1832626ebc88fd459c04f4f0eaa6e3d9604a70cea326e52cadfb5e4",
+        "vm_sha256": "a5e20109a1832626ebc88fd459c04f4f0eaa6e3d9604a70cea326e52cadfb5e4",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/map_udp_tb.v",
+        "expected_sha256": "6de886408cb9e8fc3148e219ceb9a581ce208e2b5be784833f5d30a01c08987c",
+        "vm_sha256": "6de886408cb9e8fc3148e219ceb9a581ce208e2b5be784833f5d30a01c08987c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/lidar_control_tb.v",
+        "expected_sha256": "6b8c278ec5fc97ac49adaa31f70c97c7acd7481ff63c2e8909968a5e0fcbc67c",
+        "vm_sha256": "6b8c278ec5fc97ac49adaa31f70c97c7acd7481ff63c2e8909968a5e0fcbc67c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v",
+        "expected_sha256": "8343aac5cfdfd78abd165515126cb6c2c43bdebeba7f1d8a657a7e4056da74c0",
+        "vm_sha256": "8343aac5cfdfd78abd165515126cb6c2c43bdebeba7f1d8a657a7e4056da74c0",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/video_capture_tb.v",
+        "expected_sha256": "81d5577dbb80e674dc529e826e0f355bf0931e77a5d0ac43454af7388a3420aa",
+        "vm_sha256": "81d5577dbb80e674dc529e826e0f355bf0931e77a5d0ac43454af7388a3420aa",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/test_fusion.py",
+        "expected_sha256": "9691983f6f7f2948680788c8f5591b235420a3846fa42594c8f0ea2d719b9adc",
+        "vm_sha256": "9691983f6f7f2948680788c8f5591b235420a3846fa42594c8f0ea2d719b9adc",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/lidar_projection_tb.v",
+        "expected_sha256": "12d90ce3360a6a186e8f0148dfbb6a4fae70a018e7d7b285c853908b28ccefe0",
+        "vm_sha256": "12d90ce3360a6a186e8f0148dfbb6a4fae70a018e7d7b285c853908b28ccefe0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/sensors_tb.v",
+        "expected_sha256": "92bd30e635d8e5f58e6a91a7de795f531f1bbe825a068a49cb987d90abcd01a7",
+        "vm_sha256": "92bd30e635d8e5f58e6a91a7de795f531f1bbe825a068a49cb987d90abcd01a7",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mpu_i2c_tb.v",
+        "expected_sha256": "9030a5ad7eb9f0137aa030f61d94db4494b033b8083749d87336958c5ac90301",
+        "vm_sha256": "9030a5ad7eb9f0137aa030f61d94db4494b033b8083749d87336958c5ac90301",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/pose_fusion_tb.v",
+        "expected_sha256": "d750ad283441450e91de8e9470931d519ef92d60099144a431a6e412c4a0de17",
+        "vm_sha256": "d750ad283441450e91de8e9470931d519ef92d60099144a431a6e412c4a0de17",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/imu_sensor_tb.v",
+        "expected_sha256": "2d73646716f53b7f5f68f5f2664375dbd444d9a6d18fced5b9afee8bc6d689ba",
+        "vm_sha256": "2d73646716f53b7f5f68f5f2664375dbd444d9a6d18fced5b9afee8bc6d689ba",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mpu_driver_tb.v",
+        "expected_sha256": "8925d0e03084b9d2651207c4900ab97763da4f83959e4978573138885824b468",
+        "vm_sha256": "8925d0e03084b9d2651207c4900ab97763da4f83959e4978573138885824b468",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/continuous_obstacle_tb.v",
+        "expected_sha256": "cc72205ef972940baf00963f0085daa56bea9a5d52f7d3bf3b339839dc674d02",
+        "vm_sha256": "cc72205ef972940baf00963f0085daa56bea9a5d52f7d3bf3b339839dc674d02",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/test_mission.py",
+        "expected_sha256": "4b6298688ba56a688d93f6314160e626a9deb212e57dfd53f6f02bbbb01ceec1",
+        "vm_sha256": "4b6298688ba56a688d93f6314160e626a9deb212e57dfd53f6f02bbbb01ceec1",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/fusion_network_tb.v",
+        "expected_sha256": "87a6ae19de0fd19e9ef2ecc41defb41dccb5ba2cf4e9a6d8e669d322bf99a78f",
+        "vm_sha256": "87a6ae19de0fd19e9ef2ecc41defb41dccb5ba2cf4e9a6d8e669d322bf99a78f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/grid_map_tb.v",
+        "expected_sha256": "4efdb04b2fef84537f1df72248d852ddc6896c9541df1b62ecc39bd59c6f032e",
+        "vm_sha256": "4efdb04b2fef84537f1df72248d852ddc6896c9541df1b62ecc39bd59c6f032e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/lidar_body_safety_tb.v",
+        "expected_sha256": "3990189762d6cfe34101c79b9fb933db0b2cc9784c305738a6954139545d5462",
+        "vm_sha256": "3990189762d6cfe34101c79b9fb933db0b2cc9784c305738a6954139545d5462",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/router_tb.v",
+        "expected_sha256": "4e9410094a8d67ba45143c92949e131219a844264ff50813bd3e7f53bbd2a73f",
+        "vm_sha256": "4e9410094a8d67ba45143c92949e131219a844264ff50813bd3e7f53bbd2a73f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/test_host.py",
+        "expected_sha256": "e78661a45c6089526dd5df91808ebd0c31322a898cc9d333f7c1d907c73d1b50",
+        "vm_sha256": "e78661a45c6089526dd5df91808ebd0c31322a898cc9d333f7c1d907c73d1b50",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mpu_heading_tb.v",
+        "expected_sha256": "13725f4316a623477510beead00ac2353826368b02b623c3298563d3647bacbe",
+        "vm_sha256": "13725f4316a623477510beead00ac2353826368b02b623c3298563d3647bacbe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/phy_init_tb.v",
+        "expected_sha256": "b85276372c39e1f899762a208fc4df68e184fbe5c3c7e9b852066943aa89c221",
+        "vm_sha256": "b85276372c39e1f899762a208fc4df68e184fbe5c3c7e9b852066943aa89c221",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/pi_target_limit_tb.v",
+        "expected_sha256": "f66f0b0eea30b3c6be07076b43be950969df55eeeb037beec49bb13335072302",
+        "vm_sha256": "f66f0b0eea30b3c6be07076b43be950969df55eeeb037beec49bb13335072302",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v",
+        "expected_sha256": "e90c0cf9ae08f3509103ba5e72dad542c91a63c167f755556466969bce8427f8",
+        "vm_sha256": "e90c0cf9ae08f3509103ba5e72dad542c91a63c167f755556466969bce8427f8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/path_tracker_tb.v",
+        "expected_sha256": "37934506e2874f629af5806ca71f8fbd2e74df7503d5e7a4aa44c82246fac6d8",
+        "vm_sha256": "37934506e2874f629af5806ca71f8fbd2e74df7503d5e7a4aa44c82246fac6d8",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/test_gui.py",
+        "expected_sha256": "7060037be7192a5d1a69825f19440198d59aad8f9ee8b8be7b49a035bd708aa0",
+        "vm_sha256": "7060037be7192a5d1a69825f19440198d59aad8f9ee8b8be7b49a035bd708aa0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/osd_tb.v",
+        "expected_sha256": "88578e53c952d8026f5091b6e35d4d9e8acdf2aec12ef126598ae16fa7027f0b",
+        "vm_sha256": "88578e53c952d8026f5091b6e35d4d9e8acdf2aec12ef126598ae16fa7027f0b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/imu_test_tb.v",
+        "expected_sha256": "c3b8bfc7c066f1195d5445f923648dcef61b11cf4c611ad56b6b910d9fcbbb25",
+        "vm_sha256": "c3b8bfc7c066f1195d5445f923648dcef61b11cf4c611ad56b6b910d9fcbbb25",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/mission_navigation_tb.v",
+        "expected_sha256": "844b5bd7215fa777fb9e7d31928455cd13868cc6cb1405dd32d9cdfffa7f8ccd",
+        "vm_sha256": "844b5bd7215fa777fb9e7d31928455cd13868cc6cb1405dd32d9cdfffa7f8ccd",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/ld06_embedded_header_tb.v",
+        "expected_sha256": "f401bae8aa88c278774e4907d23ca21074c18db8720c6e0eb4680ec13510e7a7",
+        "vm_sha256": "f401bae8aa88c278774e4907d23ca21074c18db8720c6e0eb4680ec13510e7a7",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/nav_guard_tb.v",
+        "expected_sha256": "a12e1c5326b0d6f140ee04a3520b740ca619292724e27835493cf5c9aae4d5f4",
+        "vm_sha256": "a12e1c5326b0d6f140ee04a3520b740ca619292724e27835493cf5c9aae4d5f4",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/motion_lidar_tb.v",
+        "expected_sha256": "57ba726a964d9a7c827c28055418eb9ec1db0fa4fc4f447dfa896dc01771932e",
+        "vm_sha256": "57ba726a964d9a7c827c28055418eb9ec1db0fa4fc4f447dfa896dc01771932e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/control_tb.v",
+        "expected_sha256": "25678e6ec21a2ad456aa7fe87cb326c37d68a6cb9462380f4c393e85abc49d5f",
+        "vm_sha256": "25678e6ec21a2ad456aa7fe87cb326c37d68a6cb9462380f4c393e85abc49d5f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/targets_tb.v",
+        "expected_sha256": "084d25951623ed8945743d4b8ecd9ce1c0f727c86cd41a2a83d5c29ce27dfabe",
+        "vm_sha256": "084d25951623ed8945743d4b8ecd9ce1c0f727c86cd41a2a83d5c29ce27dfabe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/path_tracker_directional_tb.v",
+        "expected_sha256": "b7ff105142a911d16a287ce75eefb135a31a1ce2b74ba3fd9daf0c0b6ae8515a",
+        "vm_sha256": "b7ff105142a911d16a287ce75eefb135a31a1ce2b74ba3fd9daf0c0b6ae8515a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/test_mapping.py",
+        "expected_sha256": "f66f19ff58700f88f7da87bc89fdc7538ceac8f390cd7d3d1d7fc043a80bb3eb",
+        "vm_sha256": "f66f19ff58700f88f7da87bc89fdc7538ceac8f390cd7d3d1d7fc043a80bb3eb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/net_health_tb.v",
+        "expected_sha256": "4a301b13f31b1fe557d13589b1c77c7df0ade544426b10649015afe46a929af4",
+        "vm_sha256": "4a301b13f31b1fe557d13589b1c77c7df0ade544426b10649015afe46a929af4",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/motion_tb.v",
+        "expected_sha256": "000a6623b95d9f4eef707062706422c7ad6ddab5cc96e6b3e73768486e61039a",
+        "vm_sha256": "000a6623b95d9f4eef707062706422c7ad6ddab5cc96e6b3e73768486e61039a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/telemetry_tb.v",
+        "expected_sha256": "f9dd8f2abde23cf97976079075e13bdf707a03a7aa1d231a055deec7d298c0ac",
+        "vm_sha256": "f9dd8f2abde23cf97976079075e13bdf707a03a7aa1d231a055deec7d298c0ac",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/hdmi_tb.v",
+        "expected_sha256": "76aa3de9e31c1244bb00ff74b240ec8066b350c7240ca8abdc13fb61f59d7401",
+        "vm_sha256": "76aa3de9e31c1244bb00ff74b240ec8066b350c7240ca8abdc13fb61f59d7401",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/tests/scan_match_tb.v",
+        "expected_sha256": "6f193d2d9c353280fcc467c222a99deb06237c669a47c47671aaede0259c091c",
+        "vm_sha256": "6f193d2d9c353280fcc467c222a99deb06237c669a47c47671aaede0259c091c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/display/tests/tft480_panel_tb.v",
+        "expected_sha256": "4f1dc909ee68513ab31dc4f0282ec6709a4a0fa6afce3cc1265e12c254ecc97d",
+        "vm_sha256": "4f1dc909ee68513ab31dc4f0282ec6709a4a0fa6afce3cc1265e12c254ecc97d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/tests/ddr_framebuffer_tb.v",
+        "expected_sha256": "9c4adef21d7f59b19e969aab57ef1645726ea6ebc2f049f2a4ea71a2b4df435f",
+        "vm_sha256": "9c4adef21d7f59b19e969aab57ef1645726ea6ebc2f049f2a4ea71a2b4df435f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/config/calibration.json",
+        "expected_sha256": "df8bfa262204bbaf438e3d8cd1c3bafc36084424f7334a6b012959a6ec0bdc91",
+        "vm_sha256": "df8bfa262204bbaf438e3d8cd1c3bafc36084424f7334a6b012959a6ec0bdc91",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/config/geometry.json",
+        "expected_sha256": "253080bd41b3f23d2f3a3e0e6649523e2652a097005065d9b93d8e5f09d22543",
+        "vm_sha256": "253080bd41b3f23d2f3a3e0e6649523e2652a097005065d9b93d8e5f09d22543",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/vendor.py",
+        "expected_sha256": "4feb3a354bae3da58f6ad3a01755e43a21880b7c02525d0d7f9a67d0d8aa92c4",
+        "vm_sha256": "4feb3a354bae3da58f6ad3a01755e43a21880b7c02525d0d7f9a67d0d8aa92c4",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/geometry_from_model.py",
+        "expected_sha256": "6a4fff8ed8cbaa49106dee5731f1ee0a63ccb2608c187c2791244efa8bda5a93",
+        "vm_sha256": "6a4fff8ed8cbaa49106dee5731f1ee0a63ccb2608c187c2791244efa8bda5a93",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/inspect_geometry.py",
+        "expected_sha256": "a1aa5d779b12b6fd08231b2910822e75a7d1b20f698fbb6c08d5ad498885cb42",
+        "vm_sha256": "a1aa5d779b12b6fd08231b2910822e75a7d1b20f698fbb6c08d5ad498885cb42",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/check.py",
+        "expected_sha256": "a537e0bdf9c2b1203a8bdade8d22b664a59ba320bf5d85d37a9a2c1ad14a29ce",
+        "vm_sha256": "a537e0bdf9c2b1203a8bdade8d22b664a59ba320bf5d85d37a9a2c1ad14a29ce",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/reference_mpu.py",
+        "expected_sha256": "15ac5d684e93ee027a91a5abe9f95100691d0edd66aa465601be6a515fe351bb",
+        "vm_sha256": "15ac5d684e93ee027a91a5abe9f95100691d0edd66aa465601be6a515fe351bb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/fusion_network_check.py",
+        "expected_sha256": "154c282689358572e3ab3887795d99441ec2dbf0d7c5854c48fc15d84448e806",
+        "vm_sha256": "154c282689358572e3ab3887795d99441ec2dbf0d7c5854c48fc15d84448e806",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/audit_imu.py",
+        "expected_sha256": "2359119ba30a339d2fa9e1ad26c8462c84b6f9d36e35215519445fe65a9b8353",
+        "vm_sha256": "2359119ba30a339d2fa9e1ad26c8462c84b6f9d36e35215519445fe65a9b8353",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py",
+        "expected_sha256": "aefdc7f2f431f826c57eeb5b769aaac6bf8738d9db71534aed1d0aeeb8c570c8",
+        "vm_sha256": "aefdc7f2f431f826c57eeb5b769aaac6bf8738d9db71534aed1d0aeeb8c570c8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/report_task34.py",
+        "expected_sha256": "129ccfd67f2b244f645c61b99eb8ac14aadc10f980ab3fa1c6e31cbec286929e",
+        "vm_sha256": "129ccfd67f2b244f645c61b99eb8ac14aadc10f980ab3fa1c6e31cbec286929e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/preview_fusion_gui.py",
+        "expected_sha256": "b95bf9b2da7cfd1f52071a612774d591f0e1c192a285593b36f65f84fadb8612",
+        "vm_sha256": "b95bf9b2da7cfd1f52071a612774d591f0e1c192a285593b36f65f84fadb8612",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/capture_lidar.py",
+        "expected_sha256": "fccb7f1b558becd45dc0ee754c40412c5df310b579d743b1747ef94ae0001770",
+        "vm_sha256": "fccb7f1b558becd45dc0ee754c40412c5df310b579d743b1747ef94ae0001770",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/build.py",
+        "expected_sha256": "a1e4d7504674bd27c1130638d962edd4b9c588010b52c84c8bdf9c694a3e1ad0",
+        "vm_sha256": "a1e4d7504674bd27c1130638d962edd4b9c588010b52c84c8bdf9c694a3e1ad0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/report_fusion.py",
+        "expected_sha256": "848a3c2d72c82f9539e3ab43907ccb715d7598260392e4c5133dfecd2a10c6fd",
+        "vm_sha256": "848a3c2d72c82f9539e3ab43907ccb715d7598260392e4c5133dfecd2a10c6fd",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/audit_motion_lidar.py",
+        "expected_sha256": "343029a1891e6d2a6913289e88d542c7a030c94c35cb3be7fa9c79c5c4a95990",
+        "vm_sha256": "343029a1891e6d2a6913289e88d542c7a030c94c35cb3be7fa9c79c5c4a95990",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/check_baseline.py",
+        "expected_sha256": "cc4cff152303e459cb4ef2fc8f65b6af4001149554e072fe5b381ece088c894b",
+        "vm_sha256": "cc4cff152303e459cb4ef2fc8f65b6af4001149554e072fe5b381ece088c894b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/diagnose_control.py",
+        "expected_sha256": "715434860b62f9a6cf320f247c4991ef48edb2ab81b1151f27b71d117dda858d",
+        "vm_sha256": "715434860b62f9a6cf320f247c4991ef48edb2ab81b1151f27b71d117dda858d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/archive.py",
+        "expected_sha256": "37d7313b6209471ea7c24f2d7eb276979c1d7be22212b5bfecb2a9005d1b3c39",
+        "vm_sha256": "37d7313b6209471ea7c24f2d7eb276979c1d7be22212b5bfecb2a9005d1b3c39",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/network_check.py",
+        "expected_sha256": "70fd9a6687bdd54f5143d4f8a894290b6f849e6727ad7b9fd1676ddc7f58db3a",
+        "vm_sha256": "70fd9a6687bdd54f5143d4f8a894290b6f849e6727ad7b9fd1676ddc7f58db3a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/regress_related.py",
+        "expected_sha256": "5eca5e5aa2cda4f190ab67e380075ec1942561249d0d7f6aecb0c99460b93b11",
+        "vm_sha256": "5eca5e5aa2cda4f190ab67e380075ec1942561249d0d7f6aecb0c99460b93b11",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py",
+        "expected_sha256": "d74410399d2f8614c63169be7bcc034efab72dc3ae4310fbd2c21d372b4291bd",
+        "vm_sha256": "d74410399d2f8614c63169be7bcc034efab72dc3ae4310fbd2c21d372b4291bd",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/start.S",
+        "expected_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+        "vm_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/link.ld",
+        "expected_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+        "vm_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.c",
+        "expected_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+        "vm_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/manifest.json",
+        "expected_sha256": "75a77720981e80e62a5a088725ade101872e1c6fcd5fd68742031f58785d284d",
+        "vm_sha256": "75a77720981e80e62a5a088725ade101872e1c6fcd5fd68742031f58785d284d",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.hex",
+        "expected_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/picorv32/source.json",
+        "expected_sha256": "b6dd9049fd77a55d0a6e7b829ba55b131fa2f90342a6b848e17133cd35bb9a85",
+        "vm_sha256": "b6dd9049fd77a55d0a6e7b829ba55b131fa2f90342a6b848e17133cd35bb9a85",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/native/slam_bridge.c",
+        "expected_sha256": "0fd1ca242780472c06e60178e370ab8e7c78c3a1c2b30eb59b4f342e5846564b",
+        "vm_sha256": "0fd1ca242780472c06e60178e370ab8e7c78c3a1c2b30eb59b4f342e5846564b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/provenance.json",
+        "expected_sha256": "56be9e619dd8216accd9b8fda1a0638b2ae1b7628aa5d1452fba2d9d0673fc49",
+        "vm_sha256": "56be9e619dd8216accd9b8fda1a0638b2ae1b7628aa5d1452fba2d9d0673fc49",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam.h",
+        "expected_sha256": "0d1dab1c23853fac9a2cb66187be6edef59982d3dab536df22d69c4255792220",
+        "vm_sha256": "0d1dab1c23853fac9a2cb66187be6edef59982d3dab536df22d69c4255792220",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam_internals.h",
+        "expected_sha256": "70e374ceb5ef46323b2a45c3d50918a8efc83a2dbd4e326cb73db6c7155d7dbc",
+        "vm_sha256": "70e374ceb5ef46323b2a45c3d50918a8efc83a2dbd4e326cb73db6c7155d7dbc",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/LICENSE.md",
+        "expected_sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+        "vm_sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/ziggurat.c",
+        "expected_sha256": "30457bd74255303d0d2d18d1d4dc098c6f33a74d6bd22618c7bb02e8fa1f2c0b",
+        "vm_sha256": "30457bd74255303d0d2d18d1d4dc098c6f33a74d6bd22618c7bb02e8fa1f2c0b",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/random.c",
+        "expected_sha256": "815b1ad81086e797d3103eef1bdaa9ab6505483f6cd23866d91696b213baa68f",
+        "vm_sha256": "815b1ad81086e797d3103eef1bdaa9ab6505483f6cd23866d91696b213baa68f",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam.c",
+        "expected_sha256": "6be2f7838df3c2f081bb9643cdd974f874c3c1296f3298e56b559189c4d89126",
+        "vm_sha256": "6be2f7838df3c2f081bb9643cdd974f874c3c1296f3298e56b559189c4d89126",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam_sisd.c",
+        "expected_sha256": "80c971f0d82fb77cd9b6dccda9599e38ff46566868a5f2df9d1c6d120f1f8046",
+        "vm_sha256": "80c971f0d82fb77cd9b6dccda9599e38ff46566868a5f2df9d1c6d120f1f8046",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/ziggurat.h",
+        "expected_sha256": "34fa600213dbce899f9380d764ae54da061808d6295a9fbe7f2faaa5080bdb52",
+        "vm_sha256": "34fa600213dbce899f9380d764ae54da061808d6295a9fbe7f2faaa5080bdb52",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/random.h",
+        "expected_sha256": "c9aa2c8359146c2349138a88ae052cad07cb6653f9d44f57c5ba0e2ab45e15d8",
+        "vm_sha256": "c9aa2c8359146c2349138a88ae052cad07cb6653f9d44f57c5ba0e2ab45e15d8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/README.md",
+        "expected_sha256": "9bae3c7e985febc5c727c11c9e362774d8ef831a334cb57db2a4d000f9d73e05",
+        "vm_sha256": "9bae3c7e985febc5c727c11c9e362774d8ef831a334cb57db2a4d000f9d73e05",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/coreslam/GPL-3.0.txt",
+        "expected_sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+        "vm_sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/mapping/edgemind_slam.so",
+        "expected_sha256": "c162a70386eef145206e50816bb8575804b7350a9879ef4c4a36d9e407301fcd",
+        "vm_sha256": "c162a70386eef145206e50816bb8575804b7350a9879ef4c4a36d9e407301fcd",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      }
+    ],
+    "all_vm_inputs_match": true,
+    "total_inputs": 205
+  },
+  "gowin": {
+    "inputs": [
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v",
+        "expected_sha256": "c0c1938cca8e6ab92918c8a0f1201e9b12a1eae6bc7f06ff40100751a2dccc65",
+        "vm_sha256": "c0c1938cca8e6ab92918c8a0f1201e9b12a1eae6bc7f06ff40100751a2dccc65",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v",
+        "expected_sha256": "1547b79cdcacc53ca8fd8790f0215cae9d1593ac2d90143cfa67e1ec14d06b1e",
+        "vm_sha256": "1547b79cdcacc53ca8fd8790f0215cae9d1593ac2d90143cfa67e1ec14d06b1e",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_divider.v",
+        "expected_sha256": "0b71f0ead89450621c325f4a8fab6a905b9b056436304c39582fc9b5c959de21",
+        "vm_sha256": "0b71f0ead89450621c325f4a8fab6a905b9b056436304c39582fc9b5c959de21",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_fusion_core.v",
+        "expected_sha256": "fc27618a7daa00674bffeb3c2d9157db2a5254ed24462514a6221e0f9ce4c399",
+        "vm_sha256": "fc27618a7daa00674bffeb3c2d9157db2a5254ed24462514a6221e0f9ce4c399",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_grid_map.v",
+        "expected_sha256": "f629db55239ddeae4223cad854e088d0b9f7ffd7f1554c0168db0df4078b7237",
+        "vm_sha256": "f629db55239ddeae4223cad854e088d0b9f7ffd7f1554c0168db0df4078b7237",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_hdmi.v",
+        "expected_sha256": "50041821ef76efba12c14cbddbd558aa8aba19e6288621b8984bcc5a134a2997",
+        "vm_sha256": "50041821ef76efba12c14cbddbd558aa8aba19e6288621b8984bcc5a134a2997",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_imu_i2c.v",
+        "expected_sha256": "f3bdccf02124a1e83f011577d2f2de66a70db6caa0e0a966895fa9fc5d26f2c0",
+        "vm_sha256": "f3bdccf02124a1e83f011577d2f2de66a70db6caa0e0a966895fa9fc5d26f2c0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_inflate.v",
+        "expected_sha256": "bfbcc34725d52367d6c5451670d62fd04f8b6fbb2377c3556d5a2258c72c17b9",
+        "vm_sha256": "bfbcc34725d52367d6c5451670d62fd04f8b6fbb2377c3556d5a2258c72c17b9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v",
+        "expected_sha256": "707343fab57e896a690bf15e459f1216728412d6a26b05ce18c47ec5a0eb24cc",
+        "vm_sha256": "707343fab57e896a690bf15e459f1216728412d6a26b05ce18c47ec5a0eb24cc",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v",
+        "expected_sha256": "0dc2b6bbc3de2be1b9819c4c5095d3ca829ea3df5f65116b0574b26c2a89e0f5",
+        "vm_sha256": "0dc2b6bbc3de2be1b9819c4c5095d3ca829ea3df5f65116b0574b26c2a89e0f5",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_map_udp.v",
+        "expected_sha256": "4d5dc43c24b6585efb517ff9c425527ef1c5bcf4a314894285d08bce528082a2",
+        "vm_sha256": "4d5dc43c24b6585efb517ff9c425527ef1c5bcf4a314894285d08bce528082a2",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v",
+        "expected_sha256": "fc0260712509f84bd52e0e320d0a5003e92df42e43325aedf6e96004bc6f187c",
+        "vm_sha256": "fc0260712509f84bd52e0e320d0a5003e92df42e43325aedf6e96004bc6f187c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v",
+        "expected_sha256": "564674b1b699d856271dc52c3ea68e692b40d6bff1e41603568267675f342bc6",
+        "vm_sha256": "564674b1b699d856271dc52c3ea68e692b40d6bff1e41603568267675f342bc6",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_nav_guard.v",
+        "expected_sha256": "88c7c16ab1860e1458ca1cc1645ff626c6abdda690fe84732e7435c51e2e882b",
+        "vm_sha256": "88c7c16ab1860e1458ca1cc1645ff626c6abdda690fe84732e7435c51e2e882b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_net_health.v",
+        "expected_sha256": "3608144e35e34dfc9e51634a746a0d8211d91c8b8a18e87b63a9563c549dd584",
+        "vm_sha256": "3608144e35e34dfc9e51634a746a0d8211d91c8b8a18e87b63a9563c549dd584",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_osd.v",
+        "expected_sha256": "59c000ef2cb64d3db13cc03b3066266579050987627c0bdbb57a32e055212d50",
+        "vm_sha256": "59c000ef2cb64d3db13cc03b3066266579050987627c0bdbb57a32e055212d50",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v",
+        "expected_sha256": "c137712366d28a9084fd146b70b9681e85ac8e34e60bd8a670130e498499fea6",
+        "vm_sha256": "c137712366d28a9084fd146b70b9681e85ac8e34e60bd8a670130e498499fea6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v",
+        "expected_sha256": "debf3155c84bd1b6d96e483d639129147a3f45ab27c857b5b59d40ffda43e943",
+        "vm_sha256": "debf3155c84bd1b6d96e483d639129147a3f45ab27c857b5b59d40ffda43e943",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_phy_init.v",
+        "expected_sha256": "36bc5d7ccb92985f89ae153106408c5c39c79cd65c663a9c49cdf7ae2b335a8c",
+        "vm_sha256": "36bc5d7ccb92985f89ae153106408c5c39c79cd65c663a9c49cdf7ae2b335a8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_pi.v",
+        "expected_sha256": "231d81cd1467569a4d24081e15d11f41eb21be0f4207d1c3c9d23cc4f1a21b6e",
+        "vm_sha256": "231d81cd1467569a4d24081e15d11f41eb21be0f4207d1c3c9d23cc4f1a21b6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v",
+        "expected_sha256": "8974212481eec84f77df80db2be2689ff71896ac1c442c449b0ea81ff7a31639",
+        "vm_sha256": "8974212481eec84f77df80db2be2689ff71896ac1c442c449b0ea81ff7a31639",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v",
+        "expected_sha256": "db068cc814cd4718f5e90459dbcf4082d1d6d4671781d5894c1c058f4048e08c",
+        "vm_sha256": "db068cc814cd4718f5e90459dbcf4082d1d6d4671781d5894c1c058f4048e08c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v",
+        "expected_sha256": "2e04f39ece4896e45b7a025be557e60aaf55b0dd864154b0ad5ba3dafbbdf2ef",
+        "vm_sha256": "2e04f39ece4896e45b7a025be557e60aaf55b0dd864154b0ad5ba3dafbbdf2ef",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v",
+        "expected_sha256": "59ce5bf6891aaaf8232ae292f3b79238d2ae7072bef92ca743db87a12decb6ef",
+        "vm_sha256": "59ce5bf6891aaaf8232ae292f3b79238d2ae7072bef92ca743db87a12decb6ef",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v",
+        "expected_sha256": "af5e5b035be5a22b6ec49929cbde8c62d2e99fd3bfe77b39839097282ce2ecce",
+        "vm_sha256": "af5e5b035be5a22b6ec49929cbde8c62d2e99fd3bfe77b39839097282ce2ecce",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_sensors.v",
+        "expected_sha256": "f41b38ccd203b6885c13086cc63b8db3f0005ac65b464fc29d89d5b05dd71cd5",
+        "vm_sha256": "f41b38ccd203b6885c13086cc63b8db3f0005ac65b464fc29d89d5b05dd71cd5",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_sincos.v",
+        "expected_sha256": "702e3585ff13a99c1186f2c3e8287ad73c2d15f5fdea5966ba9998f83f60ef3a",
+        "vm_sha256": "702e3585ff13a99c1186f2c3e8287ad73c2d15f5fdea5966ba9998f83f60ef3a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_speed.v",
+        "expected_sha256": "38bcc66e241d0d419299a9b8129924b82e28765efa4daca38e822fb6225b1836",
+        "vm_sha256": "38bcc66e241d0d419299a9b8129924b82e28765efa4daca38e822fb6225b1836",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_targets.v",
+        "expected_sha256": "4d2cb782ade3e217c220bc546aa8e4402db88be7da522b24d82791691c45b136",
+        "vm_sha256": "4d2cb782ade3e217c220bc546aa8e4402db88be7da522b24d82791691c45b136",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_telemetry.v",
+        "expected_sha256": "c85491494fbe48101d58616b50793e524461936a6a9632d6a78b4ab43898ed3f",
+        "vm_sha256": "c85491494fbe48101d58616b50793e524461936a6a9632d6a78b4ab43898ed3f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_travel.v",
+        "expected_sha256": "728f02281a9b3fd0fb250c72fb27d20c9a221d6362629a83410baabf2429bb81",
+        "vm_sha256": "728f02281a9b3fd0fb250c72fb27d20c9a221d6362629a83410baabf2429bb81",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_tx_stage.v",
+        "expected_sha256": "30d1f8499258a1d82877d91d42ccedfd935dabe585cbf74106f36eccf6554b88",
+        "vm_sha256": "30d1f8499258a1d82877d91d42ccedfd935dabe585cbf74106f36eccf6554b88",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_control.v",
+        "expected_sha256": "59f97f71688a7a050ca4a2f1261d2d2e2793073615c40048d539ad9e01807d10",
+        "vm_sha256": "59f97f71688a7a050ca4a2f1261d2d2e2793073615c40048d539ad9e01807d10",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_direct.v",
+        "expected_sha256": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+        "vm_sha256": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v",
+        "expected_sha256": "e5f024d89987aed4d8f2f2c457e01be858141b303670ef1a90bdfadfdf85e66a",
+        "vm_sha256": "e5f024d89987aed4d8f2f2c457e01be858141b303670ef1a90bdfadfdf85e66a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/jy901_parser.v",
+        "expected_sha256": "1357905349f823a5d497dadc5080ecebd5401177a721aad02a763a602ffa1c6e",
+        "vm_sha256": "1357905349f823a5d497dadc5080ecebd5401177a721aad02a763a602ffa1c6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/ld06_control.v",
+        "expected_sha256": "f5400098e406da4db690f66b173640d6605a01ffc736b4f77fdf60eb3332cda9",
+        "vm_sha256": "f5400098e406da4db690f66b173640d6605a01ffc736b4f77fdf60eb3332cda9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/ld06_parser.v",
+        "expected_sha256": "59c22b8a18470b519b324a2433b23cb6ad9a12bf73ec33465752c54f450b060b",
+        "vm_sha256": "59c22b8a18470b519b324a2433b23cb6ad9a12bf73ec33465752c54f450b060b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_driver.v",
+        "expected_sha256": "9e8099fb0bdf0a614771f19ab8840be0d50fda985e2246c7c74de1bbde85ac8c",
+        "vm_sha256": "9e8099fb0bdf0a614771f19ab8840be0d50fda985e2246c7c74de1bbde85ac8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_heading.v",
+        "expected_sha256": "b0e7c7352372c2e6a37bd2ceddf24b2a6c8a18808bc5540cc4f26ae42857906f",
+        "vm_sha256": "b0e7c7352372c2e6a37bd2ceddf24b2a6c8a18808bc5540cc4f26ae42857906f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/display/rtl/a741_tft480_panel.v",
+        "expected_sha256": "5908f6dc35d6da86b8e710f00f6d8ab0914d9072afea9cd92f53219e08313a5a",
+        "vm_sha256": "5908f6dc35d6da86b8e710f00f6d8ab0914d9072afea9cd92f53219e08313a5a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v",
+        "expected_sha256": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+        "vm_sha256": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arbiter.v",
+        "expected_sha256": "4b4291e2afc5cdb93e261d43c439ea3c9bedce3d628d3db9c6e2ed8f4c27c3f1",
+        "vm_sha256": "4b4291e2afc5cdb93e261d43c439ea3c9bedce3d628d3db9c6e2ed8f4c27c3f1",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp.v",
+        "expected_sha256": "46d339fe7b4de1ff5c6c881c53f9c0c718ec8eb776673bc4d5916ea230512512",
+        "vm_sha256": "46d339fe7b4de1ff5c6c881c53f9c0c718ec8eb776673bc4d5916ea230512512",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_cache.v",
+        "expected_sha256": "e7eb3f5fc90c6e5cc9f1f9f3d59afefcfc87fd667a1893de8ddad3aa94309529",
+        "vm_sha256": "e7eb3f5fc90c6e5cc9f1f9f3d59afefcfc87fd667a1893de8ddad3aa94309529",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_rx.v",
+        "expected_sha256": "6a49bd6f7c2311baffe1b3985d7eee0b9adee54f7d05ffa4316cf201adb526ee",
+        "vm_sha256": "6a49bd6f7c2311baffe1b3985d7eee0b9adee54f7d05ffa4316cf201adb526ee",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_tx.v",
+        "expected_sha256": "8125cf542196132b388c30f4ac3005a0153082c7cd9f87916680c6767db72dfb",
+        "vm_sha256": "8125cf542196132b388c30f4ac3005a0153082c7cd9f87916680c6767db72dfb",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_adapter.v",
+        "expected_sha256": "94eb7348f2b833126c1b519f28da72fcf3abcc4a6766b3759bce0d828db3bfe1",
+        "vm_sha256": "94eb7348f2b833126c1b519f28da72fcf3abcc4a6766b3759bce0d828db3bfe1",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo.v",
+        "expected_sha256": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+        "vm_sha256": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v",
+        "expected_sha256": "3472e2624af75bbc978c15603b78afc9e08a0d61dc9471cbfb4ba4579df5c4d3",
+        "vm_sha256": "3472e2624af75bbc978c15603b78afc9e08a0d61dc9471cbfb4ba4579df5c4d3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v",
+        "expected_sha256": "8ee436631ece272f478a4396c3819f62e5cd4f9a492b80502562aeb73c9e6294",
+        "vm_sha256": "8ee436631ece272f478a4396c3819f62e5cd4f9a492b80502562aeb73c9e6294",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo_adapter.v",
+        "expected_sha256": "7751ab4ec51642abc5ed38e9d029e052ba1405af463ea4f9f32b0ca9c107e6ff",
+        "vm_sha256": "7751ab4ec51642abc5ed38e9d029e052ba1405af463ea4f9f32b0ca9c107e6ff",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_rx.v",
+        "expected_sha256": "9fc42a832d36ab6e2f43fb69dcf897a3b38db7a072bdc26ff2e6f8a2fd19aae8",
+        "vm_sha256": "9fc42a832d36ab6e2f43fb69dcf897a3b38db7a072bdc26ff2e6f8a2fd19aae8",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_tx.v",
+        "expected_sha256": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+        "vm_sha256": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_arb_mux.v",
+        "expected_sha256": "ce578195dc565962e3515d5444d13d6a47c42ee82bd2109d31dd62a7ed0775ea",
+        "vm_sha256": "ce578195dc565962e3515d5444d13d6a47c42ee82bd2109d31dd62a7ed0775ea",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v",
+        "expected_sha256": "394d811d97bb10e865fde1e4820af594313296cf36fb8d1316defca8ba222bb7",
+        "vm_sha256": "394d811d97bb10e865fde1e4820af594313296cf36fb8d1316defca8ba222bb7",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_tx.v",
+        "expected_sha256": "633d15019041a2ab8144d0b5d5c76122f2829f6f23d1b45d82ddf1cc00476653",
+        "vm_sha256": "633d15019041a2ab8144d0b5d5c76122f2829f6f23d1b45d82ddf1cc00476653",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v",
+        "expected_sha256": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
+        "vm_sha256": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v",
+        "expected_sha256": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
+        "vm_sha256": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip.v",
+        "expected_sha256": "0fa6834e1d4eade6641ea6c0dc918bc3fb8d758dd8e0a38c7853d7c10f7853a3",
+        "vm_sha256": "0fa6834e1d4eade6641ea6c0dc918bc3fb8d758dd8e0a38c7853d7c10f7853a3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_arb_mux.v",
+        "expected_sha256": "429fce396c6d5e311497b419f6d0c930e4e17eea5637efb4f7a4df1299cfea6e",
+        "vm_sha256": "429fce396c6d5e311497b419f6d0c930e4e17eea5637efb4f7a4df1299cfea6e",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_complete.v",
+        "expected_sha256": "c0f5981200d90312065eece7117dd22733d224169af1865760522e38122df120",
+        "vm_sha256": "c0f5981200d90312065eece7117dd22733d224169af1865760522e38122df120",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_rx.v",
+        "expected_sha256": "ad9c44691fe27d76373e64d3aadf8e076d819030266d4569e683030cc67a05bc",
+        "vm_sha256": "ad9c44691fe27d76373e64d3aadf8e076d819030266d4569e683030cc67a05bc",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_tx.v",
+        "expected_sha256": "a9d5bdbea9ccecedf7ff513dfe3e34cbfbc505bfc3877d1430a3416b8689fd1c",
+        "vm_sha256": "a9d5bdbea9ccecedf7ff513dfe3e34cbfbc505bfc3877d1430a3416b8689fd1c",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/lfsr.v",
+        "expected_sha256": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+        "vm_sha256": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/priority_encoder.v",
+        "expected_sha256": "07c610b8dda24daf67dec36c743f79fca30f9d01d5469e1e7f795a16f4c7aa97",
+        "vm_sha256": "07c610b8dda24daf67dec36c743f79fca30f9d01d5469e1e7f795a16f4c7aa97",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp.v",
+        "expected_sha256": "a11fcaaf918868706c2a3ea97ecb5842813b6a21a4bd9d35ad38906be81a4c7f",
+        "vm_sha256": "a11fcaaf918868706c2a3ea97ecb5842813b6a21a4bd9d35ad38906be81a4c7f",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v",
+        "expected_sha256": "94c2f9a93a07256493c2f87e77444cc14cec686247f653d5a769264a43a9faee",
+        "vm_sha256": "94c2f9a93a07256493c2f87e77444cc14cec686247f653d5a769264a43a9faee",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_rx.v",
+        "expected_sha256": "a3d11dac41e6349e52c9fbe531b9e3345d5688b062157b8c6a85f4b40cc41050",
+        "vm_sha256": "a3d11dac41e6349e52c9fbe531b9e3345d5688b062157b8c6a85f4b40cc41050",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_tx.v",
+        "expected_sha256": "4df5a48a8eded39d4503923e14aa3f66824bbc830008e2c37b3e767ca345f60a",
+        "vm_sha256": "4df5a48a8eded39d4503923e14aa3f66824bbc830008e2c37b3e767ca345f60a",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/vendor/udp_checksum_gen.v",
+        "expected_sha256": "30ce288d05ccbfbaab5639b7c8d168bc07263aa039e903d39fbae33de5ac3969",
+        "vm_sha256": "30ce288d05ccbfbaab5639b7c8d168bc07263aa039e903d39fbae33de5ac3969",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/rtl/video_udp_packetizer.v",
+        "expected_sha256": "23f9a57cf17ac6de330d324879adc375cdd7f9af2e624fa7d54581c65f079367",
+        "vm_sha256": "23f9a57cf17ac6de330d324879adc375cdd7f9af2e624fa7d54581c65f079367",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/uart_rx.v",
+        "expected_sha256": "4c5de72c4d5c6891d4a56fd946dee1636cb5e1c6e4fab7946f4b0fda107f14c6",
+        "vm_sha256": "4c5de72c4d5c6891d4a56fd946dee1636cb5e1c6e4fab7946f4b0fda107f14c6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/uart_tx.v",
+        "expected_sha256": "176a657e5e05b2130e4e515101a38ad1ef6239ebf263a7364a6da093444558e6",
+        "vm_sha256": "176a657e5e05b2130e4e515101a38ad1ef6239ebf263a7364a6da093444558e6",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/quadrature_decoder.v",
+        "expected_sha256": "3be866efd4f9320de3bb4aeb2d42fb5333194460e163ea3aabce7c18b74300c0",
+        "vm_sha256": "3be866efd4f9320de3bb4aeb2d42fb5333194460e163ea3aabce7c18b74300c0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-motion-control/rtl/encoder_counter.v",
+        "expected_sha256": "fc37948e8108f25d84b5738fdf3b87a9ffa41a23bd2672c01c1d7fd071c0db1d",
+        "vm_sha256": "fc37948e8108f25d84b5738fdf3b87a9ffa41a23bd2672c01c1d7fd071c0db1d",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/motor_pwm_safe.v",
+        "expected_sha256": "06614905466df21a0b8fd2dea10a2bf0facd261db054d04a41de0962444104fe",
+        "vm_sha256": "06614905466df21a0b8fd2dea10a2bf0facd261db054d04a41de0962444104fe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vision_packet_tx.v",
+        "expected_sha256": "33f5d608af150b9d79fffb013d91e03a20606ae52f8d75c4d978906cc4c6cbe0",
+        "vm_sha256": "33f5d608af150b9d79fffb013d91e03a20606ae52f8d75c4d978906cc4c6cbe0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/i2c_reg_master.v",
+        "expected_sha256": "08feab92bdae45eea4819213c7fb8be52a7d02baf0c362c313fcbd7f639ffc4f",
+        "vm_sha256": "08feab92bdae45eea4819213c7fb8be52a7d02baf0c362c313fcbd7f639ffc4f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vl53l1x_driver.v",
+        "expected_sha256": "0ad84313fcc15365050dac1061498d73d5f879b5e22a9d658755001f7f2f7235",
+        "vm_sha256": "0ad84313fcc15365050dac1061498d73d5f879b5e22a9d658755001f7f2f7235",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/vl53l1x_config_rom.v",
+        "expected_sha256": "57f9e2aa5b31a6dd540533ab632ca5c1b0256eb5eb2f62d1994749f499353841",
+        "vm_sha256": "57f9e2aa5b31a6dd540533ab632ca5c1b0256eb5eb2f62d1994749f499353841",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/reset_sync.v",
+        "expected_sha256": "93ee6a7a8ce1c5139f439f03138b4397e3b81fb99c0ecdbc3032af2ce4b3a184",
+        "vm_sha256": "93ee6a7a8ce1c5139f439f03138b4397e3b81fb99c0ecdbc3032af2ce4b3a184",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/dvp_capture_continuous.v",
+        "expected_sha256": "89b9a5a0c567c653aa7adcbc6f31fc8cf2240738089b542559ef79b9e6140747",
+        "vm_sha256": "89b9a5a0c567c653aa7adcbc6f31fc8cf2240738089b542559ef79b9e6140747",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/capture_tokens.v",
+        "expected_sha256": "2e22bb7d6468c35d1b2e03c84aa262a934968693717818e5409281bd977da4bb",
+        "vm_sha256": "2e22bb7d6468c35d1b2e03c84aa262a934968693717818e5409281bd977da4bb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/async_fifo.v",
+        "expected_sha256": "20ea780862dcbc0696ae7b88d5095ebabe0f28a83e50ee305985ea749666270c",
+        "vm_sha256": "20ea780862dcbc0696ae7b88d5095ebabe0f28a83e50ee305985ea749666270c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/cdc_mailbox.v",
+        "expected_sha256": "08c59533c87f5154ca73b790c59b9a6a7e2a4dfee56b7b9d801dbd81cc6deb40",
+        "vm_sha256": "08c59533c87f5154ca73b790c59b9a6a7e2a4dfee56b7b9d801dbd81cc6deb40",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/ddr_framebuffer.v",
+        "expected_sha256": "b9fd41ab4b02034f5ea1bc522a66b51fcc133793a9ca9a1e5eb5ad10929f4f8c",
+        "vm_sha256": "b9fd41ab4b02034f5ea1bc522a66b51fcc133793a9ca9a1e5eb5ad10929f4f8c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/video_pixels.v",
+        "expected_sha256": "bda1cede050b9a9078376aa52440be0eea49e41d95e823ee88ee4b192b8e0b5f",
+        "vm_sha256": "bda1cede050b9a9078376aa52440be0eea49e41d95e823ee88ee4b192b8e0b5f",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-vision-motion/rtl/video_timing.v",
+        "expected_sha256": "e1a8714c764b61475cc7bf2fb22f903ef0cc5f488895b22e29fecc75ac4e3bbb",
+        "vm_sha256": "e1a8714c764b61475cc7bf2fb22f903ef0cc5f488895b22e29fecc75ac4e3bbb",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/ddr3_memory_interface.v",
+        "expected_sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+        "vm_sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/ddr_pll.v",
+        "expected_sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+        "vm_sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/ddr_pll_mod.v",
+        "expected_sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+        "vm_sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/pll_mDRP_intf.v",
+        "expected_sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+        "vm_sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/dvi_encoder.v",
+        "expected_sha256": "d096ff2557f8bb77199a107c5bae2174869f64077000e17d678640b0caa8f89b",
+        "vm_sha256": "d096ff2557f8bb77199a107c5bae2174869f64077000e17d678640b0caa8f89b",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/gowin_pll.v",
+        "expected_sha256": "37040df237d814100983d77ab000278ba35438dcecda1daf4db575319f433757",
+        "vm_sha256": "37040df237d814100983d77ab000278ba35438dcecda1daf4db575319f433757",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/gowin_pll_mod.v",
+        "expected_sha256": "7480591af591b593b2c5666ffcaaaec798e9cfc875ff0317973da8f2846dc189",
+        "vm_sha256": "7480591af591b593b2c5666ffcaaaec798e9cfc875ff0317973da8f2846dc189",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/pll_init.v",
+        "expected_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+        "vm_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/gmii_rgmii_gmii/gmii_to_rgmii.v",
+        "expected_sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+        "vm_sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/mdio/phy_reg_config.v",
+        "expected_sha256": "2401a4a435482341b0dd78168a2ed4c5e9e91c5624a97d5dbc01176c061f2043",
+        "vm_sha256": "2401a4a435482341b0dd78168a2ed4c5e9e91c5624a97d5dbc01176c061f2043",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/mdio/mdio_bit_shift.v",
+        "expected_sha256": "470bf1ff074072ecd9977403651b18d8df125e5c0d670d35ce06cd5139796057",
+        "vm_sha256": "470bf1ff074072ecd9977403651b18d8df125e5c0d670d35ce06cd5139796057",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/gowin_pll/gowin_pll_mod.v",
+        "expected_sha256": "495395f7cf26ade4c10ba757b9f63753e1b000797007c2c9291e9b6c9bc23885",
+        "vm_sha256": "495395f7cf26ade4c10ba757b9f63753e1b000797007c2c9291e9b6c9bc23885",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/original/ch59/src/gowin_pll/gowin_pll.v",
+        "expected_sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+        "vm_sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/.local/platform/ov5640_init_table_rgb.v",
+        "expected_sha256": "e7f0ecae7b71985dc5d09442fd4b751d21d6600281aa3eea3eb4c6d26984b7b4",
+        "vm_sha256": "e7f0ecae7b71985dc5d09442fd4b751d21d6600281aa3eea3eb4c6d26984b7b4",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/rtl/ov5640_board_init.v",
+        "expected_sha256": "127a68201452cf768103715223f6d53e3e19ac68d83eaba78bd1ef6bb0f1009b",
+        "vm_sha256": "127a68201452cf768103715223f6d53e3e19ac68d83eaba78bd1ef6bb0f1009b",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/rtl/acg720_rgmii_rx.v",
+        "expected_sha256": "151c0f1e3c5994402bb7f62e3f644a6e068376c40c52d2c5533046a8a9b401fe",
+        "vm_sha256": "151c0f1e3c5994402bb7f62e3f644a6e068376c40c52d2c5533046a8a9b401fe",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-ddr3/rtl/camera_init/ov5640_ctrl.v",
+        "expected_sha256": "1056d65254e43669c22efc6048c085ddc2fb3233f9dd3fc88001ef1c489f828a",
+        "vm_sha256": "1056d65254e43669c22efc6048c085ddc2fb3233f9dd3fc88001ef1c489f828a",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/fpga/acg720-ddr3/rtl/camera_init/sccb_master.v",
+        "expected_sha256": "29fa2f27d2fe234453fd294e8ae762b062d17f9938cd6a0406ca54d24dc4c0ef",
+        "vm_sha256": "29fa2f27d2fe234453fd294e8ae762b062d17f9938cd6a0406ca54d24dc4c0ef",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/a741_top.v",
+        "expected_sha256": "d93c4f62cd111ab335557350144c7a6362f1b81113ce3ab05e8cbf62fe2441aa",
+        "vm_sha256": "d93c4f62cd111ab335557350144c7a6362f1b81113ce3ab05e8cbf62fe2441aa",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/a741.cst",
+        "expected_sha256": "1af06e1b2afcf07d5b966ef662e9343ba44a26949ce80e54d91ec8d0fc77fc43",
+        "vm_sha256": "1af06e1b2afcf07d5b966ef662e9343ba44a26949ce80e54d91ec8d0fc77fc43",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/platform-tft480/a741.sdc",
+        "expected_sha256": "2bad53b7d6a631dbecdfb4967cc003f9cbe5819207306021d4501f7c413bf938",
+        "vm_sha256": "2bad53b7d6a631dbecdfb4967cc003f9cbe5819207306021d4501f7c413bf938",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/check.py",
+        "expected_sha256": "a537e0bdf9c2b1203a8bdade8d22b664a59ba320bf5d85d37a9a2c1ad14a29ce",
+        "vm_sha256": "a537e0bdf9c2b1203a8bdade8d22b664a59ba320bf5d85d37a9a2c1ad14a29ce",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/vendor.py",
+        "expected_sha256": "4feb3a354bae3da58f6ad3a01755e43a21880b7c02525d0d7f9a67d0d8aa92c4",
+        "vm_sha256": "4feb3a354bae3da58f6ad3a01755e43a21880b7c02525d0d7f9a67d0d8aa92c4",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/constraints/cdc.sdc",
+        "expected_sha256": "fe40add7653e8e664af758a15c3b259d7ea925e7358af9ca96b521effe246905",
+        "vm_sha256": "fe40add7653e8e664af758a15c3b259d7ea925e7358af9ca96b521effe246905",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/constraints/acg720_camera_car.cst",
+        "expected_sha256": "9e06b63e950c4e50d8c7bcc106c18ed2d21cdca89cf18a794cf22d805e9ee455",
+        "vm_sha256": "9e06b63e950c4e50d8c7bcc106c18ed2d21cdca89cf18a794cf22d805e9ee455",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/constraints/acg720_camera_car.sdc",
+        "expected_sha256": "d105b1c4054c773a67d24795282239826183f4a61747551b5a2d39e45fe8ff82",
+        "vm_sha256": "d105b1c4054c773a67d24795282239826183f4a61747551b5a2d39e45fe8ff82",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/config/sensor-pins.json",
+        "expected_sha256": "86e8c94582c9991fe7865b7321223000d167b793bee56b13fed360c1bd29e416",
+        "vm_sha256": "86e8c94582c9991fe7865b7321223000d167b793bee56b13fed360c1bd29e416",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/scripts/build.py",
+        "expected_sha256": "a1e4d7504674bd27c1130638d962edd4b9c588010b52c84c8bdf9c694a3e1ad0",
+        "vm_sha256": "a1e4d7504674bd27c1130638d962edd4b9c588010b52c84c8bdf9c694a3e1ad0",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/constraints/board.cst",
+        "expected_sha256": "2606883d1f5816192b23c00682af8b3199b85cb25341e225da7502ecf3a4cb4c",
+        "vm_sha256": "2606883d1f5816192b23c00682af8b3199b85cb25341e225da7502ecf3a4cb4c",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/config/geometry.json",
+        "expected_sha256": "253080bd41b3f23d2f3a3e0e6649523e2652a097005065d9b93d8e5f09d22543",
+        "vm_sha256": "253080bd41b3f23d2f3a3e0e6649523e2652a097005065d9b93d8e5f09d22543",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/config/calibration.json",
+        "expected_sha256": "df8bfa262204bbaf438e3d8cd1c3bafc36084424f7334a6b012959a6ec0bdc91",
+        "vm_sha256": "df8bfa262204bbaf438e3d8cd1c3bafc36084424f7334a6b012959a6ec0bdc91",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/host/fusion_config.py",
+        "expected_sha256": "cafa9af667e82d329d6f5a72327d91e26b71068ecd6b1a213247d93b4f9c72a9",
+        "vm_sha256": "cafa9af667e82d329d6f5a72327d91e26b71068ecd6b1a213247d93b4f9c72a9",
+        "vm_match": true,
+        "windows_checkout_comparison": "lf-equivalent"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/start.S",
+        "expected_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+        "vm_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/link.ld",
+        "expected_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+        "vm_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.c",
+        "expected_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+        "vm_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/manifest.json",
+        "expected_sha256": "75a77720981e80e62a5a088725ade101872e1c6fcd5fd68742031f58785d284d",
+        "vm_sha256": "75a77720981e80e62a5a088725ade101872e1c6fcd5fd68742031f58785d284d",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/firmware/mission.hex",
+        "expected_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_match": true,
+        "windows_checkout_comparison": "exact"
+      },
+      {
+        "path": "code/camera-car-control/a741-fpga-fusion/.local/gowin-fusion-tft480/firmware/mission.hex",
+        "expected_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_sha256": "969b0018b606e67d40ce4af2253948be3acb43ce82a09fb0f49f413c43308789",
+        "vm_match": true,
+        "windows_checkout_comparison": "generated-local-file-not-in-git"
+      }
+    ],
+    "all_vm_inputs_match": true,
+    "total_inputs": 127
+  },
+  "verified_at_utc": "2026-10-25T10:51:30.154555+00:00",
+  "note": "LF-equivalent means only CRLF checkout conversion; this is provenance verification, not a new regression run. Generated .local inputs remain on the VM and are rebuilt from repository sources and bundled examples."
+}

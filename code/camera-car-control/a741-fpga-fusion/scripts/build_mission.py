@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def build():
     import ziglang
-    zig = Path(ziglang.__file__).parent / "zig.exe"
+    zig = Path(ziglang.__file__).parent / ("zig.exe" if sys.platform == "win32" else "zig")
     out = ROOT / ".local/mission-firmware"
     out.mkdir(parents=True, exist_ok=True)
     elf = out / "mission.elf"

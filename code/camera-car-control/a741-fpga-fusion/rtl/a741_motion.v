@@ -80,7 +80,8 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     assign travel_valid=lvalid && rvalid;
     assign heading_positive=cfg[7]==1;
     wire stop_cmd=cv && (kind==3 || kind==4 || (FUSION_ENABLED!=0 &&
-        (kind==8'h56 || (kind==8'h58 && payload[7:0]==3))));
+        (kind==8'h56 || (kind==8'h58 && payload[7:0]==3) ||
+         (kind==8'h59 && payload[7:0]==0))));
     reg [15:0] effective_ttl;
     reg imu_required,heading_hold;
     reg signed [15:0] heading_origin,previous_yaw;
@@ -233,7 +234,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             end
             // Allow the registered PWM telemetry to reflect command updates.
             if(request_pending && reply_ready && !reply_request && !reply_command_delay &&
-                (!(saved_kind>=8'h50 && saved_kind<=8'h58) || fusion_response_pending || fusion_reply_valid)) begin
+                (!(saved_kind>=8'h50 && saved_kind<=8'h59) || fusion_response_pending || fusion_reply_valid)) begin
                 request_pending<=0;reply_request<=1;reply_kind<=8'h80;reply_seq<=saved_seq;reply_length<=25;reply_payload<=0;
                 reply_payload[7:0]<=state_code;reply_payload[23:8]<=faults;
                 reply_payload[55:24]<=left_count;reply_payload[87:56]<=right_count;
@@ -242,7 +243,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                 if(saved_kind==8'h40) begin
                     reply_kind<=8'hc0;reply_length<=8;
                     reply_payload<={192'd0,16'd400,(FUSION_ENABLED!=0 ? 16'h0f51:MOTION_LIDAR!=0 ? 16'h0751:IMU_TEST!=0 ? 16'h00d1:SENSOR_PINS_ENABLED!=0 ? 16'h0031:16'h0011),32'h314d5645};
-                end else if(saved_kind>=8'h50 && saved_kind<=8'h58 && FUSION_ENABLED!=0) begin
+                end else if(saved_kind>=8'h50 && saved_kind<=8'h59 && FUSION_ENABLED!=0) begin
                     reply_kind<=8'hd0;reply_length<=32;reply_payload<=fusion_reply_valid ? fusion_reply:fusion_response_data;
                     fusion_response_pending<=0;
                 end
@@ -275,7 +276,9 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                 end
                 case(kind)
                     8'h02: if(IMU_TEST==0 && calibration_config_ok && calibrated && !calibrating && imu_valid && gyro_valid && faults==0) begin armed<=1;command_age<=0;end
-                    8'h03,8'h04,8'h56,8'h58: if(kind!=8'h58 || (FUSION_ENABLED!=0 && payload[7:0]==3)) begin armed<=0;rotating<=0;heading_hold<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                    8'h03,8'h04,8'h56,8'h58,8'h59: if((kind!=8'h58 && kind!=8'h59) ||
+                        (kind==8'h58 && FUSION_ENABLED!=0 && payload[7:0]==3) ||
+                        (kind==8'h59 && payload[7:0]==0)) begin armed<=0;rotating<=0;heading_hold<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
                         calibrating<=0;if(calibrating) calibration_result<=4;
                     end
                     8'h05: command_age<=0;

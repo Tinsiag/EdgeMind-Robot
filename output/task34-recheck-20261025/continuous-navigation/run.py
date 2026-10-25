@@ -1,6 +1,8 @@
 """Run a synthetic moving-room diagnostic without touching the live build."""
 from pathlib import Path
-import argparse, hashlib, json, subprocess, sys, time
+import argparse, hashlib, json, shutil, subprocess, sys, time
+
+IS_WINDOWS_HOST = shutil.which("wsl.exe") is not None
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
@@ -10,6 +12,8 @@ from check import sources
 
 def linux(path):
     path = Path(path).resolve().as_posix()
+    if not IS_WINDOWS_HOST:
+        return path
     return '/mnt/' + path[0].lower() + path[2:]
 
 def sha(path):
@@ -33,7 +37,10 @@ def main():
     top = bench.stem
     before = {str(p): sha(p) for p in paths + [Path(__file__)]}
     obj = '/var/tmp/edgemind-continuous-' + hashlib.sha256(str(out).encode()).hexdigest()[:12]
-    prefix = ['wsl.exe', '-d', 'Ubuntu-26.04', '--cd', linux(ROOT), '--exec']
+    prefix = (
+        ['wsl.exe', '-d', 'Ubuntu-26.04', '--cd', linux(ROOT), '--exec']
+        if IS_WINDOWS_HOST else []
+    )
     started = time.time()
     with (out / 'compile.log').open('w', encoding='utf-8') as log:
         rc = subprocess.run(prefix + ['verilator', '--binary', '--timing', '-j', '4', '-Wno-fatal', '--Mdir', obj,
