@@ -20,6 +20,7 @@ model/chassis/** -text
 output/** -text
 code/camera-car-control/a741-fpga-fusion/third_party/picorv32/** -text
 code/camera-car-control/a741-fpga-fusion/verification/handoff-20261025/** -text
+code/camera-car-control/a741-fpga-fusion/firmware/** text eol=lf
 model/chassis/v5-rgb-touch-display/EdgeMind_Chassis.FCStd filter=lfs diff=lfs merge=lfs -text
 model/chassis/v5-rgb-touch-display/preview-meshes.json filter=lfs diff=lfs merge=lfs -text
 model/chassis/EdgeMind_Chassis_v4_Sensors.zip filter=lfs diff=lfs merge=lfs -text

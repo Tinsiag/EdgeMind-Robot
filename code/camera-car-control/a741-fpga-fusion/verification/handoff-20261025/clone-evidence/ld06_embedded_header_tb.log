@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS LD06 embedded payload/timestamp header, CRC, missing byte and framing recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/ld06_embedded_header_tb.v:58: $finish called at 2446640000 (1ps)

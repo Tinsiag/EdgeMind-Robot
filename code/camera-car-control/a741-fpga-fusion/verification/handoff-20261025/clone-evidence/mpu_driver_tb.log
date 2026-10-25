@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS MPU6050/6500 identities, both addresses, model config/readback, signed samples, unknown rejection and recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mpu_driver_tb.v:51: $finish called at 250495000 (1ps)

@@ -447,5 +447,17 @@
     "CAD geometry is audited; vehicle geometry and stopping distance have not been measured",
     "Runtime map/calibration/waypoints are not persisted by FPGA configuration Flash",
     "No vehicle motion or Flash operation was performed"
+  ],
+  "paused_by_user": true,
+  "known_diagnostic_failures": [
+    {
+      "name": "continuous_obstacle_tb",
+      "passed": false,
+      "included_in_formal_green_regression": false,
+      "guard_fault": 5,
+      "replans_observed": 2,
+      "log": "output/task34-recheck-20261025/continuous-navigation/obstacle/run.log",
+      "root_cause_confirmed": false
+    }
   ]
 }

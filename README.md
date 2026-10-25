@@ -1,5 +1,9 @@
 # EdgeMind-Robot
 
+下一位AI请先阅读[从GitHub克隆开始的最新交接文档](HANDOFF-20261025.md)。源码检查点`87c97b7`；用户已暂停开发。
+
+可直接复制的[下一位AI提示词](NEXT-AI-PROMPT-20261025.md)；独立拉取检查见[克隆验证记录](CLONE-VERIFICATION-20261025.md)。
+
 2026-10-25 09:44（北京时间）用户要求暂停并交接。当前任务3/4开发源码55组RTL、61项主机回归通过；连续突发障碍绕行诊断仍失败，整板时序和实车均未验收。本轮未烧录、未ARM或运动。暂停状态见[任务3/4进度](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md)，最新证据见[回归报告](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md)。本机未找回原130843位流归档，不能将下面的历史路径理解为新克隆已包含该固件。
 
 2026-10-24 当前实施：[任务3实时避障与任务4自主导航](code/camera-car-control/a741-fpga-fusion/docs/TASK3-4.md)，采用现有 FPGA＋内部 PicoRV32 裸机软核，保留摄像头实例和接线，使用完整3D装配提取导航几何。实现、离线验证与实车/Flash验收分别记录，稳定固件仍按下方 `130843` 保留。

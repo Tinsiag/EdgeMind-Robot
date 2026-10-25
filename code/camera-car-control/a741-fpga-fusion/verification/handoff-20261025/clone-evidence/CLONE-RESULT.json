@@ -1,0 +1,37 @@
+{
+  "verified_beijing": "2026-10-25T10:06:41.564962+08:00",
+  "remote": "https://github.com/Tinsiag/EdgeMind-Robot.git",
+  "source_commit": "87c97b7ceb8018fb3edc88cce0c29f15515d4ec9",
+  "clone_directory": "C:\\Users\\sc\\AppData\\Local\\Temp\\EdgeMind-GitHub-Handoff-20261025-0956",
+  "git_lfs_fsck": "OK after clone completed",
+  "fresh_virtual_environment": true,
+  "python": "3.12.14",
+  "restore_all_steps_passed": true,
+  "rtl_passed": 55,
+  "host_tests_passed": 61,
+  "all_test_time_inputs_still_match": true,
+  "flash_tool_offline_tests_passed": 9,
+  "firmware_binary_sha256": "d8696588e9110ad1e65884aaef5195b92cb6c9ccb793e7fbc4bb3d882d3c9b07",
+  "firmware_hex_sha256": "3b9d8f2fafbd662da0011d1abb72b8559b714b49b8a6c97289fc70590d8dce18",
+  "firmware_lf_identity": {
+    "link.ld": {
+      "git_blob_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+      "original_tested_worktree_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+      "clone_after_lf_normalization_sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3"
+    },
+    "mission.c": {
+      "git_blob_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+      "original_tested_worktree_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+      "clone_after_lf_normalization_sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb"
+    },
+    "start.S": {
+      "git_blob_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+      "original_tested_worktree_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+      "clone_after_lf_normalization_sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15"
+    }
+  },
+  "packaging_followup": "Pin firmware/** to LF to prevent Windows checkout from changing manifest input hashes. No RTL or firmware source change.",
+  "hardware_accessed": false,
+  "synthesis_or_pnr_started": false,
+  "continuous_obstacle_diagnostic_passed": false
+}

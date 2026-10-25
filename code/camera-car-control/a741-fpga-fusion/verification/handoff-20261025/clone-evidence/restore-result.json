@@ -1,0 +1,27 @@
+[
+  {
+    "step": "restore",
+    "returncode": 0,
+    "seconds": 0.09737038612365723
+  },
+  {
+    "step": "prepare-motion",
+    "returncode": 0,
+    "seconds": 0.24976587295532227
+  },
+  {
+    "step": "prepare-fusion",
+    "returncode": 0,
+    "seconds": 0.42935633659362793
+  },
+  {
+    "step": "firmware",
+    "returncode": 0,
+    "seconds": 0.24632954597473145
+  },
+  {
+    "step": "mapping",
+    "returncode": 0,
+    "seconds": 20.526976108551025
+  }
+]

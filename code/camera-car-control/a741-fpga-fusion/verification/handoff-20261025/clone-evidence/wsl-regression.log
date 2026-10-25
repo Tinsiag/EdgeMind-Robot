@@ -1,0 +1,377 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS AT043TN24 480x272/525x286, 9MHz PCLK bounds, setup margins, startup backlight and signed status text
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_panel_tb.v:50: $finish called at 33366870000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS async FIFO capacity, overflow/underflow, FWFT ordering, wrap, concurrent stalls and queued reset at 8/4096 entries
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/async_fifo_tb.v:64: $finish called at 510594000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+trace synthetic map committed; waiting for localization
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=789 rear=920 overflow=0
+trace synthetic localization quality=100
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=789 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=380 points=57 front=789 rear=920 overflow=0
+trace synthetic preview complete
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=74 front=789 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=380 points=57 front=789 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=74 front=789 rear=920 overflow=0
+trace synthetic tracking running
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=380 points=56 front=789 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=74 front=789 rear=920 overflow=0
+PASS synthetic room localization, preview, stationary planning, obstacle pause/replan/resume and link-loss latch
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v:78: $finish called at 15350920000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS map command write/read/CRC, initial pose, status layout and unverified-geometry motor lock
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v:42: $finish called at 1556991000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+trace synthetic map committed; waiting for localization
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic localization quality=100
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic preview complete
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace synthetic tracking running
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=380 points=48 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=75 front=1788 rear=920 overflow=0
+PASS synthetic room localization, preview, stationary planning, obstacle pause/replan/resume and link-loss latch
+- /mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v:80: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 189ms; walltime 14.120 s; speed 13.372 ms/s
+- Verilator: cpu 14.101 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+trace synthetic map committed; waiting for localization
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic localization quality=100
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace synthetic preview complete
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=1788 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=1788 rear=920 overflow=0
+trace synthetic tracking running
+trace match accepted=1 localized=0 quality=100 scan=1 coverage=3c0 points=86 front=254 rear=920 overflow=0
+trace match accepted=1 localized=1 quality=100 scan=1 coverage=3c0 points=66 front=254 rear=920 overflow=0
+PASS CAD rounded-zero obstacle triggers replan, persistent obstacle permits only checked escape turn, link loss stops
+- /mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v:83: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 197ms; walltime 14.783 s; speed 13.355 ms/s
+- Verilator: cpu 14.763 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+trace synthetic map committed; waiting for localization
+trace synthetic localization quality=100
+trace synthetic preview complete
+trace synthetic tracking running
+trace match=20 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(127.0,25.0) estimated=(127,25) localized=1
+trace match=40 accepted=1 best=36 second=20 samples=36 correction=(0,0,0) true=(230.8,25.0) estimated=(230,25) localized=1
+trace t=10000ms true=(290.8,25.0,0.0deg) estimated=(290,25,0) drive=(60,60) phase=0 state=1 loc=1 quality=100 front=1513 replans=0
+trace match=60 accepted=1 best=37 second=20 samples=37 correction=(0,0,0) true=(334.6,25.0) estimated=(334,25) localized=1
+trace match=80 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(437.8,25.0) estimated=(437,25) localized=1
+trace match=100 accepted=1 best=36 second=18 samples=36 correction=(0,0,0) true=(541.6,25.0) estimated=(541,25) localized=1
+trace match=120 accepted=1 best=37 second=19 samples=37 correction=(0,0,0) true=(645.4,25.0) estimated=(645,25) localized=1
+trace match=140 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(749.2,25.0) estimated=(749,25) localized=1
+trace match=160 accepted=1 best=36 second=19 samples=36 correction=(0,0,0) true=(852.4,25.0) estimated=(852,25) localized=1
+trace t=20000ms true=(890.8,25.0,0.0deg) estimated=(890,25,0) drive=(60,60) phase=0 state=1 loc=1 quality=100 front=916 replans=0
+PASS continuous ideal plant reaches 1000mm goal true=(925.60,25.00) ticks=2062 moves=1501
+- /mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v:104: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 103ms; walltime 6.983 s; speed 14.790 ms/s
+- Verilator: cpu 6.971 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS PI staged arithmetic/reference, 100Hz ramps, reversal, anti-windup, signed division, extreme feedback and in-flight disable
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/control_tb.v:128: $finish called at 426200000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS fused pose, map import/read, lidar ray and navigation interlock
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/fusion_core_tb.v:52: $finish called at 164290000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS integrated fusion Ethernet control/map/telemetry and zero motor outputs
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/fusion_network_tb.v:33: $finish called at 7301680000 (1ps)
+PASS Ethernet EMC1 navigation/CPU waypoints, unarmed start rejection, EMM1 map roundtrip and EMF1 under backpressure; motors stay zero
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS 128x128 map clear, occupancy writes and addressed reads
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/grid_map_tb.v:26: $finish called at 163990000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS local reset and active TMDS at pixel phase 6
+PASS local reset and active TMDS at pixel phase 12
+PASS local reset and active TMDS at pixel phase 18
+PASS local reset and active TMDS at pixel phase 24
+PASS local reset and active TMDS at pixel phase 0
+PASS all five CLKDIV startup phases, repeated reset, four local reset pipelines
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/hdmi_tb.v:51: $finish called at 9271000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS MPU6500 wire-level integration, 0x69 fallback/WHO, configured samples, heading and disconnected invalidation
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/imu_sensor_tb.v:58: $finish called at 4404160000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS IMU test calibration without track, diagnostic registers, ARM rejection and forced motor lock
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/imu_test_tb.v:42: $finish called at 9000000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 embedded payload/timestamp header, CRC, missing byte and framing recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/ld06_embedded_header_tb.v:58: $finish called at 2446640000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 bad-packet/stale recovery rejects false wrap and publishes only a complete continuous scan
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/ld06_recovery_tb.v:94: $finish called at 441000000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS CAD body clearances, front/rear slowdown/stop, curved swept clearance and stream loss
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/lidar_body_safety_tb.v:28: $finish called at 1651000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 startup acquisition, bounded PWM, STOP, expiry and explicit restart
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/lidar_control_tb.v:25: $finish called at 26160000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 quadrants, heading, installation offset and immediate stream-loss recovery without lost/duplicate points
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/lidar_projection_tb.v:34: $finish called at 10010000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS complete-scan lease, immediate obstacle, forward/reverse slowdown and swept rotation guard
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v:35: $finish called at 4501000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS motor-stage local lease, normal release without false timeout, release priority over ARM, unconditional STOP and local lease loss shutdown
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/local_lease_tb.v:75: $finish called at 65540000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS dedicated map UDP CRC, whitelist, truncation/errors/arbitration, maximum payload, busy packet boundary and reply backpressure
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/map_udp_tb.v:72: $finish called at 5060000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS real RV32I firmware boot, armed gate, three waypoints without host heartbeat and CPU watchdog
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mission_cpu_tb.v:46: $finish called at 424920000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+trace integrated room map ready
+trace integrated room localized
+trace core CPU nav command=54 progress=00000300
+trace core CPU nav command=55 progress=00020300
+trace core CPU nav command=54 progress=00010301
+trace core CPU nav command=55 progress=00020301
+trace core CPU nav command=54 progress=00010302
+trace core CPU nav command=55 progress=00020302
+PASS real core RV32I to room-localized A*/tracker, three nearby waypoints, expired host TTL, active map rejection and concurrent camera/DDR/HDMI pixels/Ethernet/TFT
+- /mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mission_navigation_tb.v:145: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 13ms; walltime 2.864 s; speed 4.614 ms/s
+- Verilator: cpu 2.857 s on 1 threads; alloced 123 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS motor unlock after config/calibration, explicit no-ToF profile, LD06 PWM bounds and IMU/STOP protection
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/motion_lidar_tb.v:42: $finish called at 93540000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS config/calibration, atomic command replacement, STOP/ToF/TTL valid boundaries, IMU unwrap/loss and cancel
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/motion_tb.v:108: $finish called at 683620000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS MPU6050/6500 identities, both addresses, model config/readback, signed samples, unknown rejection and recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mpu_driver_tb.v:51: $finish called at 250495000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS MPU6050 exact pipelined conversion/integration, signed extremes, wrap, bias, cancellation, gaps and flat-install check
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mpu_heading_tb.v:84: $finish called at 748250000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS MPU6050 8-bit register, 14-byte burst, repeated START, ACK/NACK, stuck bus
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mpu_i2c_tb.v:41: $finish called at 1066500000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS default motion profile rejects MPU6500, probes both addresses and performs no writes
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/mpu_legacy_identity_tb.v:25: $finish called at 10100000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS geometry/link/obstacle locks, no forward recovery pulse, segment settle and scan timeout
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/nav_guard_tb.v:43: $finish called at 31011000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS MAC diagnostics good-frame modulo, bad-FCS saturation and reset
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/net_health_tb.v:18: $finish called at 520000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS Ethernet ARP, A741 commands, replay rejection and telemetry under backpressure
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/network_tb.v:49: $finish called at 2035760000 (1ps)
+PASS host decoded A741 Ethernet checksums, capability/config/sensors, stale replay and EMS1
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS sequential decimal OSD, bounded conversion, atomic frames, signed limits, invalid labels and pixel mapping
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/osd_tb.v:71: $finish called at 15530000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS weighted A* known-free path, obstacle detour, blocked goal and diagonal corner-cutting rejection
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/path_planner_tb.v:46: $finish called at 13124471000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS zero-speed blocked report, independent checked turns, rotation cap, final heading and cancel
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/path_tracker_directional_tb.v:33: $finish called at 4410000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS path tracking speed limits, heading turn, cancel and final goal tolerance
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/path_tracker_tb.v:46: $finish called at 38350000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS RTL8211F read-only identity/status, reset settle and MDIO timeout
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/phy_init_tb.v:51: $finish called at 9111000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS EMP1 exact byte layout, 1Hz scheduling, backpressure atomicity and EMS1 resume
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/phy_telemetry_tb.v:31: $finish called at 43360000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS PI tick-atomic target/cap, signed clamp, zero target/cap and immediate disable
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/pi_target_limit_tb.v:26: $finish called at 1130000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS encoder/IMU pose projection, map heading offset and invalid-sample gate
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/pose_fusion_tb.v:25: $finish called at 2160000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS A741 command lengths, versions, CRC, STOP resynchronization
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/protocol_tb.v:32: $finish called at 5980000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS Bresenham octants, full-span/zero-length rays, free/occupied cells and setup cancellation
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/ray_mapper_tb.v:46: $finish called at 10901000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS control > telemetry > map > video, packet lock and map backpressure
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/router_tb.v:32: $finish called at 700000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS bounded correlative matching, repeated confidence gate, unknown rejection and cancel
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/scan_match_tb.v:32: $finish called at 285211000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS sensor checksum, CRC, resync, signed data, wrap packet, stale
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/sensors_tb.v:57: $finish called at 9760000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS all 65536 CORDIC angles exactly match original 32-bit arithmetic; largest vector=32772
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/sincos_equivalence_tb.v:34: $finish called at 11141150000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS pipelined wheel speed, signed counts, divisor bound and invalid config
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/speed_tb.v:21: $finish called at 9840000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS multi-cycle targets: 203 reference cases, half-turn signs, atomic wheels, ToF, braking, commit/divider cancellation and lost enable
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/targets_tb.v:121: $finish called at 439640000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS atomic snapshots, EML1 header, lidar drop count, arbitrary backpressure
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/telemetry_tb.v:28: $finish called at 5040000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS signed Q16 encoder travel, sub-mm counts, config and overflow rejection
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/travel_tb.v:19: $finish called at 171750000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS direct EMC1 atomic commit, dual CRC, truncation/size/transport errors, replay/session rules, no-reply commands, maximum payload, timeout and reply backpressure
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/udp_direct_tb.v:120: $finish called at 22480000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS bounded capture counters, warmup, malformed long-frame saturation and recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/video_capture_tb.v:32: $finish called at 22390000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS camera full-frame DDR, HDMI independent of network stall, video drop and recovery
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/camera-car-control/a741-fpga-fusion/tests/video_tb.v:45: $finish called at 3112200000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS: independent DDR command/data stalls, sparse/continuous tokens, complete writes before END, ordered pixels, bad-frame drop and bank protection
+/mnt/c/Users/sc/AppData/Local/Temp/EdgeMind-GitHub-Handoff-20261025-0956/code/fpga/acg720-vision-motion/tests/ddr_framebuffer_tb.v:74: $finish called at 2815000 (1ps)
+w s l :   �hKm0R  l o c a l h o s t   �NtM�n�FO*g\��P0R  W S L 0N A T   !j_N�v  W S L   
+N/ec  l o c a l h o s t   �Nt0
+ 
+ w s l :   �hKm0R  l o c a l h o s t   �NtM�n�FO*g\��P0R  W S L 0N A T   !j_N�v  W S L   
+N/ec  l o c a l h o s t   �Nt0
+ 
+ w s l :   �hKm0R  l o c a l h o s t   �NtM�n�FO*g\��P0R  W S L 0N A T   !j_N�v  W S L   
+N/ec  l o c a l h o s t   �Nt0
+ 
+ w s l :   �hKm0R  l o c a l h o s t   �NtM�n�FO*g\��P0R  W S L 0N A T   !j_N�v  W S L   
+N/ec  l o c a l h o s t   �Nt0
+ 
+test_configuration_mismatch_never_prepares_lidar_or_arms (test_fusion.FusionTests.test_configuration_mismatch_never_prepares_lidar_or_arms) ... ok
+test_geometry_identity_tracks_offsets_and_refuses_incomplete_verification (test_fusion.FusionTests.test_geometry_identity_tracks_offsets_and_refuses_incomplete_verification) ... ok
+test_goal_bounds_fail_before_transmission (test_fusion.FusionTests.test_goal_bounds_fail_before_transmission) ... ok
+test_locked_navigation_never_arms (test_fusion.FusionTests.test_locked_navigation_never_arms) ... ok
+test_map_export_roundtrip_crc_and_old_map_rejection (test_fusion.FusionTests.test_map_export_roundtrip_crc_and_old_map_rejection) ... ok
+test_map_socket_validates_crc_id_source_and_never_sends_motion (test_fusion.FusionTests.test_map_socket_validates_crc_id_source_and_never_sends_motion) ... ok
+test_map_upload_sends_exact_crc_and_bounded_chunks (test_fusion.FusionTests.test_map_upload_sends_exact_crc_and_bounded_chunks) ... ok
+test_navigate_ui_stall_stops_without_retry (test_fusion.FusionTests.test_navigate_ui_stall_stops_without_retry) ... ok
+test_navigation_layout_and_geometry_lock (test_fusion.FusionTests.test_navigation_layout_and_geometry_lock) ... ok
+test_upload_cancel_never_commits (test_fusion.FusionTests.test_upload_cancel_never_commits) ... ok
+test_calibration_rejection_keeps_connection (test_gui.GuiTests.test_calibration_rejection_keeps_connection) ... ok
+test_clear_fault_confirms_fpga_status_before_reporting_success (test_gui.GuiTests.test_clear_fault_confirms_fpga_status_before_reporting_success) ... ok
+test_clear_fault_timeout_keeps_connection_and_marks_result_unknown (test_gui.GuiTests.test_clear_fault_timeout_keeps_connection_and_marks_result_unknown) ... ok
+test_connect_calibrates_once_without_arming_and_preserves_rejected_connection (test_gui.GuiTests.test_connect_calibrates_once_without_arming_and_preserves_rejected_connection) ... ok
+test_deadman_ui_stall (test_gui.GuiTests.test_deadman_ui_stall) ... ok
+test_encoder_arm_rejection_keeps_control_and_telemetry_connected (test_gui.GuiTests.test_encoder_arm_rejection_keeps_control_and_telemetry_connected) ... ok
+test_layout_frame_and_clean_shutdown_without_network (test_gui.GuiTests.test_layout_frame_and_clean_shutdown_without_network) ... ok
+test_log_persists_level_and_displays_it (test_gui.GuiTests.test_log_persists_level_and_displays_it) ... ok
+test_motion_speed_rejects_input_above_configured_limit_before_submit (test_gui.GuiTests.test_motion_speed_rejects_input_above_configured_limit_before_submit) ... ok
+test_stop_cancels_busy_motion_and_clears_lidar_request (test_gui.GuiTests.test_stop_cancels_busy_motion_and_clears_lidar_request) ... ok
+test_telemetry_summary_contains_motion_imu_network_and_video_fields (test_gui.GuiTests.test_telemetry_summary_contains_motion_imu_network_and_video_fields) ... ok
+test_telemetry_summary_supports_ems1_without_pwm_fields (test_gui.GuiTests.test_telemetry_summary_supports_ems1_without_pwm_fields) ... ok
+test_arc_reference_scaled_signed_and_wrapped (test_host.HostTests.test_arc_reference_scaled_signed_and_wrapped) ... ok
+test_arc_runtime_encoder_fault_is_recoverable_not_transport_failure (test_host.HostTests.test_arc_runtime_encoder_fault_is_recoverable_not_transport_failure) ... ok
+test_cancel_before_task_never_arms (test_host.HostTests.test_cancel_before_task_never_arms) ... ok
+test_encoder_fault_arm_rejection_is_recoverable_and_never_clears_fault (test_host.HostTests.test_encoder_fault_arm_rejection_is_recoverable_and_never_clears_fault) ... ok
+test_expired_visible_scan_freezes_mapping (test_host.HostTests.test_expired_visible_scan_freezes_mapping) ... ok
+test_front_left_raw_rotation_maps_to_forward_for_a741 (test_host.HostTests.test_front_left_raw_rotation_maps_to_forward_for_a741) ... ok
+test_geometry_preserves_ratio (test_host.HostTests.test_geometry_preserves_ratio) ... ok
+test_idempotent_control_retry_is_bounded_and_motion_is_never_retryable (test_host.HostTests.test_idempotent_control_retry_is_bounded_and_motion_is_never_retryable) ... ok
+test_imu_calibration_invalid_data_and_valid_flat_pose (test_host.HostTests.test_imu_calibration_invalid_data_and_valid_flat_pose) ... ok
+test_imu_diagnostics_signed_units (test_host.HostTests.test_imu_diagnostics_signed_units) ... ok
+test_imu_test_capability_and_motor_rejection (test_host.HostTests.test_imu_test_capability_and_motor_rejection) ... ok
+test_lidar_crc_and_wrap (test_host.HostTests.test_lidar_crc_and_wrap) ... ok
+test_mapping_pairing_rejects_stale_and_marks_packet_gaps (test_host.HostTests.test_mapping_pairing_rejects_stale_and_marks_packet_gaps) ... ok
+test_mpu6500_identity_temperature_and_invalid_data (test_host.HostTests.test_mpu6500_identity_temperature_and_invalid_data) ... ok
+test_network_diagnostics_preserve_old_snapshot_schema (test_host.HostTests.test_network_diagnostics_preserve_old_snapshot_schema) ... ok
+test_no_motion_retry (test_host.HostTests.test_no_motion_retry) ... ok
+test_old_jy901_firmware_rejected_before_config_write (test_host.HostTests.test_old_jy901_firmware_rejected_before_config_write) ... ok
+test_phy_diagnostic_layout_does_not_touch_scan (test_host.HostTests.test_phy_diagnostic_layout_does_not_touch_scan) ... ok
+test_radar_display_poll_does_not_reset_incomplete_revolution (test_host.HostTests.test_radar_display_poll_does_not_reset_incomplete_revolution) ... ok
+test_release_before_job_never_arms (test_host.HostTests.test_release_before_job_never_arms) ... ok
+test_release_while_arming_sends_stop_without_speed (test_host.HostTests.test_release_while_arming_sends_stop_without_speed) ... ok
+test_scan_complete_gap_and_stale (test_host.HostTests.test_scan_complete_gap_and_stale) ... ok
+test_sensor_debug_blocks_motor_packets_before_socket_access (test_host.HostTests.test_sensor_debug_blocks_motor_packets_before_socket_access) ... ok
+test_snapshot_offsets (test_host.HostTests.test_snapshot_offsets) ... ok
+test_tilted_imu_reports_pose_before_calibration_request (test_host.HostTests.test_tilted_imu_reports_pose_before_calibration_request) ... ok
+test_uncalibrated_arm_rejection_explains_calibration_without_retry (test_host.HostTests.test_uncalibrated_arm_rejection_explains_calibration_without_retry) ... ok
+test_unmeasured_track_blocks_arc (test_host.HostTests.test_unmeasured_track_blocks_arc) ... ok
+test_user_measured_track_and_motion_lidar_arm (test_host.HostTests.test_user_measured_track_and_motion_lidar_arm) ... ok
+test_counter_and_yaw_wrap (test_mapping.MappingTests.test_counter_and_yaw_wrap) ... ok
+test_lidar_forward_azimuth_matches_core_slam_robot_x_axis (test_mapping.MappingTests.test_lidar_forward_azimuth_matches_core_slam_robot_x_axis) ... ok
+test_map_image_and_pose_forward_up_left_left (test_mapping.MappingTests.test_map_image_and_pose_forward_up_left_left) ... ok
+test_native_room_occupancy_and_motion (test_mapping.MappingTests.test_native_room_occupancy_and_motion) ... ok
+test_persistent_invalid_stream_and_imu_loss_freeze (test_mapping.MappingTests.test_persistent_invalid_stream_and_imu_loss_freeze) ... ok
+test_worker_gates_stale_data_and_exports_actual_map (test_mapping.MappingTests.test_worker_gates_stale_data_and_exports_actual_map) ... ok
+test_cancel_before_start_never_arms (test_mission.MissionTests.test_cancel_before_start_never_arms) ... ok
+test_fault_stops_without_retrying_start_or_arm (test_mission.MissionTests.test_fault_stops_without_retrying_start_or_arm) ... ok
+test_status_decodes_cpu_lease_and_waypoint_progress (test_mission.MissionTests.test_status_decodes_cpu_lease_and_waypoint_progress) ... ok
+test_upload_start_completion_uses_onboard_lease_and_stops_at_end (test_mission.MissionTests.test_upload_start_completion_uses_onboard_lease_and_stops_at_end) ... ok
+test_waypoint_encoding_and_invalid_entire_route_before_hardware (test_mission.MissionTests.test_waypoint_encoding_and_invalid_entire_route_before_hardware) ... ok
+
+----------------------------------------------------------------------
+Ran 61 tests in 1.475s
+
+OK
+
+ 

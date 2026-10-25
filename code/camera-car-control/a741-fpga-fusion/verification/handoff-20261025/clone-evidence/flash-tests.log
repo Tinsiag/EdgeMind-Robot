@@ -1,0 +1,14 @@
+test_missing_verify_evidence_is_not_success (test_program_flash.FlashTests.test_missing_verify_evidence_is_not_success) ... ok
+test_nonzero_exit_overrides_success_text (test_program_flash.FlashTests.test_nonzero_exit_overrides_success_text) ... ok
+test_preview_never_invokes_programmer (test_program_flash.FlashTests.test_preview_never_invokes_programmer) ... ok
+test_reload_failure_preserves_flash_success_without_claiming_boot (test_program_flash.FlashTests.test_reload_failure_preserves_flash_success_without_claiming_boot) ... ok
+test_success_stages_exact_image_and_keeps_cold_boot_pending (test_program_flash.FlashTests.test_success_stages_exact_image_and_keeps_cold_boot_pending) ... ok
+test_timeout_preserves_incomplete_result_without_retry (test_program_flash.FlashTests.test_timeout_preserves_incomplete_result_without_retry) ... ok
+test_verify_evidence_can_come_from_vendor_output_file (test_program_flash.FlashTests.test_verify_evidence_can_come_from_vendor_output_file) ... ok
+test_verify_failure_even_with_exit_zero_stops_before_reload (test_program_flash.FlashTests.test_verify_failure_even_with_exit_zero_stops_before_reload) ... ok
+test_wrong_hash_rejected_before_hardware (test_program_flash.FlashTests.test_wrong_hash_rejected_before_hardware) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.093s
+
+OK

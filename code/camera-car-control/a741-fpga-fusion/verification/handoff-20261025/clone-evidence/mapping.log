@@ -1,0 +1,16 @@
+C:\Users\sc\AppData\Local\Temp\EdgeMind-GitHub-Handoff-20261025-0956\code\camera-car-control\a741-fpga-fusion\third_party\coreslam\ziggurat.c:412:8: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  412 |   if ( fabs ( hz ) < kn[iz] )
+      |        ^
+C:\Users\sc\AppData\Local\Temp\EdgeMind-GitHub-Handoff-20261025-0956\code\camera-car-control\a741-fpga-fusion\third_party\coreslam\ziggurat.c:412:8: note: use function 'abs' instead
+  412 |   if ( fabs ( hz ) < kn[iz] )
+      |        ^~~~
+      |        abs
+C:\Users\sc\AppData\Local\Temp\EdgeMind-GitHub-Handoff-20261025-0956\code\camera-car-control\a741-fpga-fusion\third_party\coreslam\ziggurat.c:455:12: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+  455 |       if ( fabs ( hz ) < kn[iz] )
+      |            ^
+C:\Users\sc\AppData\Local\Temp\EdgeMind-GitHub-Handoff-20261025-0956\code\camera-car-control\a741-fpga-fusion\third_party\coreslam\ziggurat.c:455:12: note: use function 'abs' instead
+  455 |       if ( fabs ( hz ) < kn[iz] )
+      |            ^~~~
+      |            abs
+2 warnings generated.
+C:\Users\sc\AppData\Local\Temp\EdgeMind-GitHub-Handoff-20261025-0956\code\camera-car-control\a741-fpga-fusion\.local\mapping\edgemind_slam.dll
