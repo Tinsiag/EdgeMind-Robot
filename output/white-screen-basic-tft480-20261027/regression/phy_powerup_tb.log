@@ -1,0 +1,6 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS PHY production startup: reset >=10 ms, settle >=50 ms, absent PHY fails closed without retry
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/phy_powerup_tb.v:28: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 94ms; walltime 1.177 s; speed 79.863 ms/s
+- Verilator: cpu 1.177 s on 1 threads; alloced 121 MB

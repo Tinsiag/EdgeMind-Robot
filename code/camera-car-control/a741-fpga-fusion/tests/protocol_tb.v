@@ -22,13 +22,15 @@ module protocol_tb;
     endtask
     initial begin
         #50;rst=1;
-        send(1,8'h42,0,0);send(2,4,0,0);send(1,8'h45,7,0);
+        send(1,8'h59,0,0);send(2,4,0,0);send(1,8'h11,7,0);
         if(accepted || rejected!=3) $fatal(1,"malformed accepted");
-        send(1,8'h42,6,1);if(accepted) $fatal(1,"CRC accepted");
-        send(1,8'h42,6,0);send(1,4,0,0);send(1,8'h45,8,0);
-        if(accepted!=3) $fatal(1,"valid commands rejected");
-        send(1,8'h47,8,0);if(rejected!=4) $fatal(1,"short arc command accepted");
-        send(1,8'h47,10,0);if(accepted!=4) $fatal(1,"arc command rejected");
+        send(1,8'h59,1,1);if(accepted) $fatal(1,"CRC accepted");
+        send(1,8'h59,1,0);send(1,4,0,0);send(1,8'h11,8,0);send(1,8'h57,0,0);
+        if(accepted!=4) $fatal(1,"valid basic commands rejected");
+        send(1,8'h42,6,0);send(1,8'h45,8,0);send(1,8'h47,10,0);
+        for(k=8'h50;k<=8'h55;k=k+1) send(1,k,0,0);
+        send(1,8'h58,1,0);
+        if(accepted!=4 || rejected!=13) $fatal(1,"removed angle/heading/map/task accepted");
         $display("PASS A741 command lengths, versions, CRC, STOP resynchronization");$finish;
     end
     initial begin #200000;$fatal(1,"watchdog");end

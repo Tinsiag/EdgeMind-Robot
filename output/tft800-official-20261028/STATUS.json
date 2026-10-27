@@ -1,0 +1,43 @@
+{
+  "status": "tft800_33mhz_candidate_offline_verified_awaiting_trial_authorization",
+  "panel_size": [
+    800,
+    480
+  ],
+  "pixel_clock_mhz": 33,
+  "recorded_utc": "2026-10-27T16:57:24.665886+00:00",
+  "compile_passed": true,
+  "timing_numeric_checks_pass": true,
+  "timing_signed_off": true,
+  "signoff_scope": "Motor-locked diagnostic only, scoped vendor DDR calibration/reset model and 0.2ns Ethernet PCB skew budget, 8ns TFT receiver setup/hold with1ns unmeasured LCD interconnect skew +0.3ns clock reserve; no hardware/cold-boot validation.",
+  "programming_ready": true,
+  "new_trial_authorization_required": true,
+  "motor_pads_grounded": true,
+  "motion_release_allowed": false,
+  "rtl_tests_passed": 43,
+  "python_tests_passed": 41,
+  "route_option": 1,
+  "place_option": 1,
+  "timing_driven": true,
+  "correct_hold": true,
+  "worst_slack_ns": {
+    "setup": 0.02,
+    "hold": 0.047,
+    "recovery": 3.692,
+    "removal": 0.353,
+    "minimum_pulse_width": 1.122
+  },
+  "tft_min_setup_ns": 15.950515151515152,
+  "tft_min_hold_ns": 14.114515151515153,
+  "tft_margin_ns": 4.814515151515153,
+  "tx_worst_abs_pad_skew_ns": 0.022,
+  "tx_skew_margin_including_board_budget_ns": 0.243,
+  "artifact": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\build-evidence-final\\a741.fs",
+  "artifact_sha256": "d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b",
+  "full_build_seconds": 402.68078875541687,
+  "candidate_hardware_programmed": false,
+  "cold_boot_verified": false,
+  "white_screen_fixed": false,
+  "currently_flashed_sha256": "7434d07af48de4ad1814326e26c67485aca8da5b7e4f4eed5064a1f84fddf2ea",
+  "currently_flashed_application_passed": false
+}

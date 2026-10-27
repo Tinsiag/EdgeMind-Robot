@@ -1,0 +1,50 @@
+INNOLUX                                   SPEC NO.: A043-24-TT-11  Date : 2008/04/07 
+     Page : 9/24 
+The copyright belongs to InnoLux. Any unauthorized use is prohibited. 
+Data Setup Time 
+tds 
+10 
+- 
+- 
+ns 
+ 
+Data Hold Time 
+tdh 
+10 
+- 
+- 
+ns 
+ 
+DE Setup Time 
+tdes 
+10 
+- 
+- 
+ns 
+ 
+DE Hold Time 
+tdeh 
+10 
+- 
+- 
+ns 
+ 
+Vsync Setup Time 
+tvhs 
+10 
+- 
+- 
+ns 
+ 
+Vsync Hold Time 
+tvhh 
+10 
+- 
+- 
+ns 
+ 
+                        
+Note 1: thd=480CLK, thf= 2CLK, thp= 41CLK, thb= 2CLK 
+525CLK=480CLK + 2CLK + 41CLK + 2CLK 
+Note 2: thf+ thp+ thb﹥44 CLK 
+ 

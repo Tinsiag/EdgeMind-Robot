@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "same_official_tft_pin_count": 21,
+  "pins": {
+    "tft_bl": "AB21",
+    "tft_de": "AB22",
+    "tft_clk": "AB20",
+    "tft_vsync": "Y19",
+    "tft_hsync": "V19",
+    "tft_rgb[15]": "N14",
+    "tft_rgb[14]": "P16",
+    "tft_rgb[13]": "R17",
+    "tft_rgb[12]": "N15",
+    "tft_rgb[11]": "L6",
+    "tft_rgb[10]": "T18",
+    "tft_rgb[9]": "N17",
+    "tft_rgb[8]": "P17",
+    "tft_rgb[7]": "P15",
+    "tft_rgb[6]": "R16",
+    "tft_rgb[5]": "N13",
+    "tft_rgb[4]": "U17",
+    "tft_rgb[3]": "U18",
+    "tft_rgb[2]": "P14",
+    "tft_rgb[1]": "R14",
+    "tft_rgb[0]": "R18"
+  },
+  "pll_mhz": 33.0,
+  "pll_parameters_unchanged": true,
+  "pll_init_renamed_only": true,
+  "pll_files": [
+    {
+      "source": "gowin_pll/gowin_pll.v",
+      "original_sha256": "5fe37992d48fb850705a094c6e2ce481d5fa3048819538892458ab704d2e50a0",
+      "prepared_sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8"
+    },
+    {
+      "source": "gowin_pll/gowin_pll_mod.v",
+      "original_sha256": "9842683ad0aab408209f836a5b412ea9db963d1915f913d77b8ec2cf2ddd8a41",
+      "prepared_sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794"
+    },
+    {
+      "source": "pll_init.v",
+      "original_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "prepared_sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e"
+    }
+  ],
+  "sample_edge_source": "WKS43189_SPEC_V0.0.pdf page12",
+  "geometry_source": "same PDF page4",
+  "board_model_confirmed_by_marking": false,
+  "user_selected_size": [
+    800,
+    480
+  ],
+  "measured_active_area_approx_mm": [
+    95,
+    55
+  ],
+  "diagonal_inches": 4.321751653563021
+}

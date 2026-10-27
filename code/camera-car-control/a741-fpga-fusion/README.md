@@ -1,87 +1,55 @@
-# A741 感知输入与 FPGA 核心融合
+# EdgeMind 基础摄像头 / 姿态 / 避障工程
 
-2026-10-24：按用户任务图片新增 [任务3/4实现说明](docs/TASK3-4.md)，使用完整 V4/V5 装配提取 XY 几何，加入 PicoRV32 裸机路径点任务、车体净空及有限停车重规划，保留现有摄像头实例和接线。本轮验证以 `verification/TASK3-4-REPORT.md` 为准；下方关于“几何尚未核实、纯RTL”的内容是此前版本记录。CAD 核对与实车验收分别记录，未经签核不替换稳定固件。
+2026-10-28 暂停交接：以根 [HANDOFF-20261028.md](../../../HANDOFF-20261028.md) 和 [NEXT-AI-PROMPT-20261028.md](../../../NEXT-AI-PROMPT-20261028.md) 为当前入口。800 屏锁电机位流已恢复视频/文字；运动版三次 PNR 失败，未生成位流。用户要求当前只打包和上传 GitHub，以下命令仅供日后明确恢复后使用。
 
-**现阶段可用固件和代码是用户确认的 `a741-imu-motion/release/A741-MOTION-LD06-H20-H14-20261022-130843`，固件 SHA-256 为 `e492146beb969e5ff97aaa2608b677f6ebab5b22354768cca6f55c5a8b15fe8e`。日常上位机从 `a741-imu-motion/launch.cmd` 启动，详见 [可用版本说明](../a741-imu-motion/README.md)。本融合目录仅为未验收开发版，不替代该固件和代码。**
+活动现场为本目录，器件 ACG720 / GW5AT-LV60PG484AC1/I0，工具 Gowin V1.9.12.04。用户已恢复完整实现，并于2026-10-28明确切换到官方800×480/33MHz。当前入口见根 [TFT800-20261028.md](../../../TFT800-20261028.md)。新候选需单独完成时序与实板验证；旧HANDOFF、480位流及其烧录记录均为历史证据。
 
-独立工程 `a741-fpga-fusion`。保留原 `a741`、`a741-imu-motion` 与历史发布包。采集、位姿、栅格、定位、规划、跟踪和停车由 Verilog 执行；摄像头仅用于 HDMI / UDP 画面与记录，无视觉识别或边缘 AI。
+## 当前功能
 
-**当前为开发验证版本，不能替换已验证的运动固件。** 几何基准未核实，自动导航在 RTL 内锁定。仿真、综合、布局布线、时序签核和实车验收分别记录，最终证据见 `verification/FUSION-RESULTS.json` 和 `verification/FUSION-REPORT.md`。时序不通过时不发布可刷写运动位流。
+- OV5640 输出 800×480 RGB565，经 DDR3 完整帧双缓冲显示到原 J1 TFT。
+- MPU6050/6500 采样：共享迭代 CORDIC 估计加速度横滚/俯仰，陀螺积分提供偏航，四行文字叠加在视频上。横滚/俯仰与偏航分别判断有效性。
+- LD06 在 FPGA 内执行基础避障，保留编码器反馈、轮速 PI、PWM、ARM/STOP、失联与故障停车；PicoRV32 运行裸机监督程序。
+- 网口仅设置、遥测与调试。电脑不计算避障。HDMI、网口视频、地图、A*、定位匹配、航点、手动转角与航向保持均已移除。
 
-以下仅为创建融合工程时保留的历史通信基线，当前可用版本以顶部 `130843` 为准：
+横滚/俯仰会受线加速度影响，偏航会漂移；不是完整 AHRS 或绝对航向。雷达阈值是扇区距离，不是车壳净空；速度是控制目标，不是实测车速。
 
-```text
-C:\Users\Administrator\Documents\EdgeMind-Robot\code\camera-car-control\a741\release\A741-MOTION-LD06-H20-H14-20261022-101036\A741-MOTION-LD06-H20-H14.fs
-SHA-256: fa9e1cd508b1f2b9e47884200fece220d6c7ea040f27a99cbaca8e13bb3491f9
-```
+## 接线与屏幕时序
 
-用户曾反馈基线通过 501/501 只读请求；不代表本版本的时序、运动精度或导航验收。A740 基础移动反馈、A741 低速 `0x0004` 问题保留在历史工程中，不将其写成本版已经实测解决。
+沿用原摄像头、DDR3、IMU、LD06、电机、RJ45 和 J1 接线。官方首选参考为用户指定的`fpga/小梅哥ACG720国产高云FPGA教学开发板资料/02_例程源码/GW5AT60K`第28章，以及配套新版TFT_V3.0手册。用户指定800×480/33MHz；实测95×55mm接近新版4.3寸800屏，但尺寸不能独立确认型号。旧480参考保留作回归历史，当前构建仅生成800版本。
 
-## 实现范围
-
-| 部分 | 实现与限制 |
+| 接口 | FPGA 球号 |
 | --- | --- |
-| 采集 | MPU6050/6500、LD06 UART/CRC/点流、左右编码器；沿用时间戳、序号、失效与错误计数 |
-| 位姿 | 编码器区间增量直接转换为 Q16 毫米，左右均值配合相对 IMU 航向与 CORDIC 积分；人工设置初始位姿 |
-| 地图 | BSRAM，128×128，50 mm/格，2 bit/格，范围 [-3200,3200) mm；射线空闲/端点占据；人工探索后冻结 |
-| 定位 | 最多 64 点，±50 mm / ±3° 的 27 候选局部匹配；连续两帧确认、400 ms 过期；拒绝同分模糊结果；无全局回环 |
-| 规划 | 8 邻域 10/14 代价 A* 波前搜索，最多 16,384 格；仅已知空闲格，禁止切过对角障碍；同步 RAM |
-| 外廓 | 完整外廓的旋转半径加 100 mm 裕量，保守方形膨胀；当前待核实 |
-| 跟踪 | 前视单元与差速轮速换算，自动轮速 ≤100 mm/s；末端 L1 位置误差 ≤100 mm、航向约 ≤15° |
-| 恢复 | 先停车稳定，再以 40 mm/s 轮速扫描，每段 30°，最多 12 段，段间停车；单段超时锁定 |
-| 电机 | 既有轮速 PI、100 Hz 斜坡，手动上限 400 mm/s；规划期间独占零目标，跟踪时禁止手动抢占 |
-| 安全 | IMU/雷达失效、障碍、无反馈、无路径及命令租约过期停车；不自动清故障或重启；无 ToF 保护 |
-| 视频 | DDR3 完整帧、HDMI 和可丢帧 UDP 通道；融合位姿与状态加入共享 FPGA OSD |
-| 上位机 | 摄像头/雷达、FPGA 地图上传下载/清空/保存、初始位姿、目标点、启动/取消/停止、日志与截图；历史电脑建图页隐藏 |
+| TFT PCLK / DE / HS / VS / BL | AB20 / AB22 / V19 / Y19 / AB21 |
+| TFT R[4:0] | N14 P16 R17 N15 L6 |
+| TFT G[5:0] | T18 N17 P17 P15 R16 N13 |
+| TFT B[4:0] | U17 U18 P14 R14 R18 |
+| IMU SCL / SDA | L18 / M20 |
+| LD06 CTL / DATA | H20 / H14 |
 
-控制、传感器与视频保留 EMC1/EMS1/EML1/EMV1，新增 EMM1 地图、EMF1 遥测。详见 `docs/FUSION-PROTOCOL.md` 与 `docs/FUSION-ARCHITECTURE.md`。
+固定33 MHz PLL、50%占空比，1056×525扫描。采用官方扫描范围`[215,1015)×[34,514)`，输出整体延迟两像素与文字流水线对齐；RGB/DE在PCLK下降沿更新，按新版面板上升沿采样，硬件以ODDR转发时钟。默认12帧约201.6ms后背光常亮。50MHz控制逻辑与33MHz显示使用完整快照握手跨域。ToF未接入，兼容遥测字段保持无效。
 
-## 几何与接线
+## 调试与停止
 
-`config/geometry.json` 记录基准和锁定原因。已知下壳 STL 约 180×254×28 mm，STEP 使用毫米，用户确认 LD06 在前端中心并朝前，轮距实测 234 mm。待确认：整车含车轮/突出物外廓、轮轴中点、雷达扫描中心相对轮轴偏移、扫描平面高度。不用下壳尺寸或截图估算代替实测基准。
+`launch.cmd` 启动调试面板，`launch.cmd --sensors-only` 禁止 ARM 和运动。电脑地址192.168.0.3，FPGA192.168.0.2；控制UDP5000/5001，遥测6103。没有6102视频和6104地图入口。
 
-未核实时导航拒绝启动，旋转净空也不借用虚构半径放行。默认零雷达偏移只供未标定预览，不代表准确地图外参。补齐几何后须重新综合、时序检查和验收。构建与上位机共用 `host/fusion_config.py` 比较编译配置 CRC，防止参数与位流不一致。
+连接先STOP、核对能力和配置，不自动校准、ARM或启动。按需启动雷达、静止校准，再显式ARM、显式启动避障。停止清除待执行动作并发送STOP和DISARM。连接失败关闭控制与遥测接收；旧状态显示过期，不能当作硬件当前状态。界面停止响应时工作线程结束控制会话，FPGA租期继续提供独立失联保护。
 
-| 信号 | FPGA 球号 | 说明 |
-| --- | --- | --- |
-| IMU SCL / SDA | L18 / M20 | 开漏 I2C；用户测得模块与总线空闲约 3.3 V |
-| IMU XDA / XCL | A1 / B2 | 输入高阻，非主 I2C |
-| IMU AD0 / INT | M17 / B1 | 输入不驱动；探测 0x68/0x69，曾读出 0x70 MPU6500 |
-| LD06 CTL / DATA | H20 / H14 | 沿用调速/UART；H14 板载复用冲突按历史记录核查 |
-| VL53L1X | 未绑定 | 未接入，状态无效，无 ToF 保护 |
+避障扇区按已确认的270°安装偏移及顺时针方向转换到车体朝向，网口原始点云角度保持不变。前方>900 mm目标120 mm/s，450～900 mm为60 mm/s，≤450 mm选更宽且≥500 mm的一侧，以±80 mm/s转向；前方≥600 mm结束转向。雷达无效、两侧堵塞或所选侧受阻立即给零目标。失联、掉ARM、CPU/电机故障结束本次控制，恢复信号不会自动重启。重复启动不会重置正在进行的转向。
 
-表中为芯片球号，并非排针序号。电机、摄像头、DDR3、HDMI、RJ45 保留现有接线。`docs/HARDWARE.md` 是继承资料，其中早期候选引脚不得替代本表；没有新增 5 V 输入设计。
+原始左右轮速命令0x11仅供调试，不能抢占避障。旧0x42/0x45/0x47转角和航向控制已从接收协议与计算模块删除。CPU、停止、编码器、IMU和雷达保护不因精简而放宽。
 
-## 工作流
+## 当前离线流程
 
-双击本目录 `launch.cmd`。只做传感器检查：
-
-```bat
-launch.cmd --sensors-only
-```
-
-有线电脑 192.168.0.3，FPGA 192.168.0.2；端口：控制 5000/5001、视频 6102、遥测 6103、地图 6104。启动不会自动连接或运行电机，连接后静止校准不会 ARM。
-
-1. VM 关闭时核对传感器、网络、IMU 校准及版本。未签核构建只做离线验证，不安排实车运动。
-2. 在“FPGA地图 / 导航”新建地图，硬件验收后人工驾驶探索。结束建图冻结并计算 CRC，下载后保存 JSON/PNG/PGM/YAML。
-3. 上传只接受本版 128×128、50 mm/格 JSON，核对长度、CRC32、SHA-256；不能直接上传 CoreSLAM 地图。先 DISARM，取消/失败不提交半图。
-4. 选择“初始位姿”，设置角度后点击地图；前方朝上，左侧朝左。等待可靠匹配，再选择目标。
-5. 几何、时序和全部验收通过后启动导航。规划期间零目标、持续心跳；人工停止/取消始终优先。
-6. “返回起点”向本会话人工确认的起点重新规划，不保证原路返回，同样受全部安全锁约束。
-
-日志位于本目录 `.local/logs/YYYYMMDD-HHMMSS/session.jsonl`，有 INFO/DEBUG/WARNING/ERROR、FPGA 时间/序号、状态、故障和通信统计。截图含最新遥测与配置元数据，不是曝光时刻的硬同步测量。UI 卡住后停止续租，FPGA 最迟在有效 TTL（通常 250 ms）内停车；板级延迟必须实测。
-
-## 构建与验收
-
-在本目录执行，使用既有 Python、Icarus 与 Gowin V1.9.12.04：
+从本目录运行，禁止使用命中商店占位符的裸 `python`：
 
 ```powershell
-& ..\.venv\Scripts\python.exe scripts/build.py prepare --fusion --tft480 --route-option 1 --place-option 1
-& ..\.venv\Scripts\python.exe -u scripts/check.py
-& ..\.venv\Scripts\python.exe scripts/build.py build --fusion --tft480 --route-option 1 --place-option 1
-& ..\.venv\Scripts\python.exe scripts/report_task34.py
+& ../.venv/Scripts/python.exe -X utf8 -u scripts/check.py --wsl Ubuntu-26.04
+& ../.venv/Scripts/python.exe -X utf8 scripts/build.py prepare --fusion --tft800 --screen-test --display-diagnostic --route-option 1 --place-option 1
+& ../.venv/Scripts/python.exe -X utf8 scripts/build.py build --fusion --tft800 --screen-test --display-diagnostic --route-option 1 --place-option 1 --timeout 1800
 ```
 
-原厂 IP 从本机例程 ZIP 按哈希恢复，网络 MIT 许可保留。含参数屏的结果在本目录 `.local/gowin-fusion-tft480`；当前使用布线选项1、布局选项1。继承的 `scripts/archive.py` 不用于融合发布；任务3/4证据由 `scripts/report_task34.py` 记录，时序不通过时不发布运动位流。
+`--fusion/--tft800` 只生成当前基础功能，旧`--tft480`不再接受。上述诊断输出在 `.local/platform-basic-tft800-screen-test-diagnostic` 和 `.local/gowin-basic-tft800-screen-test-diagnostic`。`screen-test` 将四个电机物理输出硬接GND；`display-diagnostic`强制要求该锁，启动五色后恢复视频/文字。普通构建没有这项物理锁，不属于试屏候选的运动签核范围。
 
-次序见 `verification/FUSION-ACCEPTANCE.md`。软件仿真仅证明覆盖的模型行为；没有完整录制数据回放、几何核对、实板/实车验收的项目保持待验证。首版仅限室内平整静态环境，不覆盖动态人群、低矮或透明障碍及边缘 AI。
+布局算法1、布线算法1、时序驱动和hold修复显式保留。`build-timeline.jsonl` 记录日志接收时刻（可能受工具输出缓冲影响）；`scripts/report_resources.py` 提取层级资源、DSP原语、关键路径与连接数量，并保留源码/报告SHA。综合结果不提供实际CLS时写null，不能用LUT/2推算CLS。旧 `.local/gowin-fusion*` 属于历史版本。
+
+CAD参数核对与实物验证分开：`navigation_geometry_verified=true`、`physical_geometry_verified=false`。本轮离线验证不代表上车签核；最终布线时序、实物显示、完整Flash固化和真正断电保持须分别验收。

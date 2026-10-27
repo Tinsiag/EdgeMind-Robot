@@ -1,0 +1,15 @@
+{
+  "reused_verified_rom": true,
+  "architecture": "rv32i/ilp32",
+  "ram_bytes": 8192,
+  "program_bytes": 44,
+  "binary_sha256": "d360a81248f5316fbdacfc69925565c73b44276695adb006ed7af6593c93de18",
+  "hex_sha256": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44",
+  "inputs": {
+    "link.ld": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+    "mission.c": "0b9d5477d31c500fc934c1af674fb10986eaa752ebedc37e2c5fe46d018d980b",
+    "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15"
+  },
+  "compiler": "0.16.0"
+}
+Prepared A741 platform; IMU test=False; no hardware operation.

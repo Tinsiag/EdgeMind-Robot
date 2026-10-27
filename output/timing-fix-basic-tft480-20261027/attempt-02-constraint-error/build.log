@@ -1,0 +1,12 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/.local/gowin-basic-tft480-screen-test/a741.gprj finished
+Reading netlist file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\gowin-basic-tft480-screen-test\impl\gwsynthesis\a741.vg"
+Parsing netlist file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\gowin-basic-tft480-screen-test\impl\gwsynthesis\a741.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\platform-basic-tft480-screen-test\a741.cst"
+Physical Constraint parsed completed
+ERROR  (TA2003) : "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\platform-basic-tft480-screen-test\a741.sdc":60 | Can't set timing constraint to object 
+
+    while executing
+"run pnr"
+    (file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\.local\gowin-basic-tft480-screen-test\build.tcl" line 14)

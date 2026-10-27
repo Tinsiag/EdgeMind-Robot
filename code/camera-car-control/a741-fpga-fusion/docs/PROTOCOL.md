@@ -1,3 +1,5 @@
+> 历史版本资料：当前基础版功能、操作与协议以 [README](../README.md) 和 [基础协议](FUSION-PROTOCOL.md) 为准；下文旧视频/导航/串口入口及验收记录不适用于当前源码。
+
 # A741 接口
 
 本文件保留原 EMC1/EMS1/EML1 的兼容接口。融合扩展命令 0x50～0x57、EMM1、EMF1 与配置 CRC 见 [融合协议](FUSION-PROTOCOL.md)，不得将二者的不同快照布局混用。

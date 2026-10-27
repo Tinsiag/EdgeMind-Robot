@@ -1,0 +1,34 @@
+{
+  "status": "flash_verified_application_failed_white_screen",
+  "recorded_utc": "2026-10-27T17:21:38.518310+00:00",
+  "bitstream_sha256": "5f1c436e422728ed56d8b6f22c27134a7d9fe8f7831a9709fb38ba0990f9d250",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-official-probe-20261028\\20261027T171645.948638Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "device": "GW5AT-60B",
+  "status_register": "0x30000460",
+  "panel_size": [
+    800,
+    480
+  ],
+  "pixel_clock_mhz": 33,
+  "diagnostic": "official chapter28 eight colour blocks with reset/output retiming adapter",
+  "main_project_source_preserved": true,
+  "camera_sensors_network_active": false,
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "retry_attempted": false,
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "user_screen_report": "仍然全白",
+  "standing_programming_authorization": true,
+  "per_candidate_approval_required": false,
+  "led_map": {
+    "D0": "constant-on candidate marker, not PLL status",
+    "D1": "50MHz system counter heartbeat",
+    "D2": "16-frame heartbeat",
+    "D3-D7": "off"
+  }
+}

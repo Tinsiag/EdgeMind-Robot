@@ -1,0 +1,18 @@
+{
+  "recorded_local": "2026-10-27T18:51:47.722948+08:00",
+  "workspace": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot",
+  "branch": "main",
+  "base_commit": "6a32a56ee1755c8353116ace9afed6631ba57d9c",
+  "latest_user_confirmation": "Official AC620_TFT43 works with ACG720; actual screen480x272; 480 trial not yet successfully programmed.",
+  "previous_files_sha256": {
+    "display/rtl/a741_tft480_panel.v": "af9ddc368b7dd0f3cb6773d76fbb7826a56c160c543c2e8b69ac55ce1c89e8f5",
+    "display/tests/tft480_panel_tb.v": "394f9c853580aae400e57a55a87962f1f035b6df4d3fcc887615fc52a03d455b",
+    "display/tests/tft480_timing_tb.v": "ec33210bdb3447637b95d7d6056f8d0b337b0d2547430c91ac4efc19f869b207",
+    "scripts/build.py": "7c5784c04e2e398adbcf31f8156ae35343c72f2c2d474bb941f2e5944b7b07df",
+    "scripts/check.py": "ef743b4ddda7220a3f1318db4e8eec052fa0e4e0b7bc2abb541f126074e51b18",
+    "scripts/vendor.py": "cc97ca714be6c44c10d528726c8ec1a7ea3d4fac6c0ec8b6000dcf5592eec21e"
+  },
+  "hardware_writes_this_task": false,
+  "motion_release_allowed": false,
+  "timing_signed_off": false
+}

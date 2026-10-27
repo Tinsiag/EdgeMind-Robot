@@ -1,0 +1,108 @@
+{
+  "recorded_utc": "2026-10-27T19:35:25.521404+00:00",
+  "status": "DE_misconnection_corrected_eight_blocks_normal_then_800_retested",
+  "bitstream_sha256": "5409ed97b235a6f54a71cdf274e83875e2ba1ef755863c3aafb131a6673d6863",
+  "parent_bitstream_sha256": "afca1552286593e586758ca26ccc9107d8f45d36a84eb5b400effab8113ed119",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-stable480-meter-detail-20261028\\20261027T190600.898056Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "configuration_ready": true,
+  "user_code_verified": true,
+  "read_user_code": "0x0000A731",
+  "final_status_register": "0x70022020",
+  "status_sample_count": 10,
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "pixel_clock_mhz": 9,
+  "active_raster_size": [
+    480,
+    272
+  ],
+  "total_raster_size": [
+    525,
+    286
+  ],
+  "sample_edge_hypothesis": "falling",
+  "physical_panel_resolution_confirmed": false,
+  "mapping": "AB22=DE AB21=high; no switching",
+  "user_screen_report": "connected screen white; preceding candidate showed unstable color blocks",
+  "user_led_report": "7灭，0-3亮，7亮，只有1亮",
+  "connected_interpretation": "PLL/PCLK/HS/VS checks pass; DE edge count and duty fail; only DE stable readback mismatches; RGB/HS/VS/BL readback passes",
+  "isolation_test": {
+    "user_action": "all power off, disconnect TFT FPC at development board, power FPGA/programmer only; same Flash image",
+    "user_result": "拔下屏幕后检查全部通过：D7灭时0～6全亮，D7亮时仅7亮",
+    "all_pad_checks_pass": true,
+    "firmware_changed_between_tests": false,
+    "conclusion": "DE failure depends on connecting the display; same firmware also passes with cable attached to FPGA and display end open. Screen-end connector, attached cable contact/load, panel DE circuit or mounting contact still need distinction.",
+    "cable_only_test": {
+      "all_checks_pass": true,
+      "setup": "original cable connected to FPGA, screen end disconnected"
+    },
+    "original_cable_reseated_and_display_connected": {
+      "all_checks_pass": false,
+      "pass_page_lit": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "error_page_lit_excluding_D7": [
+        1
+      ]
+    },
+    "latest_user_report": "不接屏幕全部通过，接了屏幕依旧只有D1，D7同时亮，D7灭就0-3亮",
+    "next_pending": null
+  },
+  "DE_pin_trace": {
+    "FPGA_ball": "AB22",
+    "development_board_J1": 33,
+    "display_user_FPC_J1": 33,
+    "documented_series_network": "RN7 pins1-8,33ohm",
+    "bare_panel_J2": 34
+  },
+  "fpga_only_cold_start_observed": true,
+  "led_pages": {
+    "D7_off_lit_means_pass": {
+      "D0": "PLL lock",
+      "D1": "PCLK frequency",
+      "D2": "HS count",
+      "D3": "VS count",
+      "D4": "DE edge count",
+      "D5": "DE duty samples",
+      "D6": "all checks"
+    },
+    "D7_on_lit_means_error": {
+      "D0": "BL",
+      "D1": "DE",
+      "D2": "HS",
+      "D3": "VS",
+      "D4": "RGB[7:0]",
+      "D5": "RGB[15:8]",
+      "D6": "any RGB"
+    }
+  },
+  "page_seconds": 5.36870912,
+  "measurement_seconds": 1,
+  "pad_measurement_boundary": "FPGA input buffers only; not the far cable end or analog integrity",
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "rewrite_attempted": false,
+  "camera_sensors_network_active": false,
+  "main_project_source_preserved": true,
+  "standing_programming_authorization": true,
+  "pre_repair_status": "cable_only_passes_screen_reconnected_DE_fails_after_reseat",
+  "user_repair_result": {
+    "recorded_utc": "2026-10-27T19:35:25.521404+00:00",
+    "user_report": "我找到原因了！现在8个色块全部正常显示了！原因是我之前不小心把DE引脚和其他引脚接到一起了，现在D1-D6全亮，屏幕正常显示",
+    "external_DE_misconnection_corrected_by_user": true,
+    "color_pattern_verified_by_user": true,
+    "bitstream_sha256": "5409ed97b235a6f54a71cdf274e83875e2ba1ef755863c3aafb131a6673d6863",
+    "full_application_verified": false,
+    "panel_native_resolution_confirmed": false,
+    "DE": "AB22 -> user FPC J1-33",
+    "subsequent_test": "output/flash-tft800-retry-20261028/STATUS.json"
+  },
+  "color_pattern_verified": true,
+  "current_hardware_status": "output/flash-tft800-retry-20261028/STATUS.json"
+}

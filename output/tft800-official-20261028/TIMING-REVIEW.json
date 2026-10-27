@@ -1,0 +1,165 @@
+{
+  "violated_endpoints": {
+    "setup": 0,
+    "hold": 0
+  },
+  "clock_frequencies": {
+    "sys_clk": {
+      "constraint_mhz": 50.0,
+      "reported_fmax_mhz": 62.788
+    },
+    "camera_pclk": {
+      "constraint_mhz": 100.0,
+      "reported_fmax_mhz": 128.334
+    },
+    "rgmii_rx_clk": {
+      "constraint_mhz": 125.0,
+      "reported_fmax_mhz": 160.334
+    },
+    "tx125m": {
+      "constraint_mhz": 125.0,
+      "reported_fmax_mhz": 208.415
+    },
+    "display33m": {
+      "constraint_mhz": 33.0,
+      "reported_fmax_mhz": 56.77
+    },
+    "memory400m": {
+      "constraint_mhz": 400.0,
+      "reported_fmax_mhz": 2240.144
+    },
+    "ddr_ui100m": {
+      "constraint_mhz": 100.0,
+      "reported_fmax_mhz": 100.196
+    }
+  },
+  "worst_reported_slack_ns": {
+    "setup": 0.02,
+    "hold": 0.047,
+    "recovery": 3.692,
+    "removal": 0.353,
+    "minimum_pulse_width": 1.122
+  },
+  "per_clock_tns": [
+    {
+      "clock": "sys_clk",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "sys_clk",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "camera_pclk",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "camera_pclk",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "rgmii_rx_clk",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "rgmii_rx_clk",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "tx250m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "tx250m",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "tx125m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "tx125m",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "display33m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "display33m",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "memory400m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "memory400m",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "ddr_ui100m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "ddr_ui100m",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    }
+  ],
+  "empty_analysis_tables": [],
+  "expected_live_clocks": {
+    "sys_clk": 50,
+    "camera_pclk": 100,
+    "rgmii_rx_clk": 125,
+    "memory400m": 400,
+    "ddr_ui100m": 100,
+    "tx125m": 125,
+    "display33m": 33
+  },
+  "live_clocks_match": true,
+  "clock_summary": {
+    "sys_clk": 50.0,
+    "camera_pclk": 100.0,
+    "rgmii_rx_clk": 125.0,
+    "tx250m": 250.0,
+    "tx125m": 125.0,
+    "display33m": 33.0,
+    "memory400m": 400.0,
+    "ddr_ui100m": 100.0
+  },
+  "clock_summary_matches": true,
+  "inactive_constraints": [],
+  "numeric_checks_pass": true
+}

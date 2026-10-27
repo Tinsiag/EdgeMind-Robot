@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation_probe_tb.v": "5137db82700a56bbaec7768296bdead8843b9b80165a1510707172e8c08177c5",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-probe-v2\\wrapper.v": "e5c62edbcb41f869ed0ceb9df6932094177de0fa79c9787bef451ae8469ab30f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-probe-v2\\src\\rotation_scan.v": "c2680bfecf205073297f0a4d21674302f9f1db604f26476c2b16c43062b461da",
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544"
+  },
+  "pll_model": "ideal33MHz; actual Gowin IOBUF model",
+  "mode_duration": "accelerated480 to3 frames; unchanged pixel/line/frame timing",
+  "checks": "all pixels via inverse90deg transform,exact2frames each geometry,colors,DE width,HS pulse,line/frame periods,motor outputs,pad inputs"
+}

@@ -1,0 +1,27 @@
+{
+  "returncode": 0,
+  "seconds": 27.570177793502808,
+  "source_sha256": {
+    "build.tcl": "3c02f58abc8fe98e1723ed69362858ee7f00c4ac8d7523fa8d5da8a7f48a8837",
+    "probe.cst": "01bbdad80b4b87d9a9be6205f8df362544109104ae357c831872456ec112cbc6",
+    "probe.gprj": "3579e178ae30d5737e1ef881e4c3082bb180f1a713b9fe1fe93d8e1bcc1ee039",
+    "probe.sdc": "333a1ea5baffc10151f2ad624638cc9ef6fa1cedae4861947118890588dec2c1",
+    "wrapper.v": "76f183872b4b905fe3ef2a892367d8101855a555e4792464829a33dacbe0bc37",
+    "src\\disp_driver.v": "26c474c8afcdd6e554a2065d2810f8e2e3ee9dcc78d411329de122b8d7fa9de4",
+    "src\\disp_parameter_cfg.v": "f9134e120b857bf22df9523e6fd184c68324cd9dffdbf0ea17e096cf6a4ba488",
+    "src\\pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+    "src\\rotation_scan.v": "c2680bfecf205073297f0a4d21674302f9f1db604f26476c2b16c43062b461da",
+    "src\\tft_ctrl.cst": "d64c24e10e5901948fba621ae2c9a6b8bdb31b5fb883dd15e94ae67a70442825",
+    "src\\tft_ctrl_test.v": "856917d7855f5edb37fbf74edbbbeb4b13c4b03aacad2359a34bfc58d1545568",
+    "src\\gowin_pll\\gowin_pll.v": "5fe37992d48fb850705a094c6e2ce481d5fa3048819538892458ab704d2e50a0",
+    "src\\gowin_pll\\gowin_pll_mod.v": "9842683ad0aab408209f836a5b412ea9db963d1915f913d77b8ec2cf2ddd8a41",
+    "src\\gowin_pll\\gowin_pll_mod_tmp.v": "f2ce51b8b4d561b6f9a55d602ab1ee43e7b30f1fc84d46ab85ee165e78693468",
+    "src\\gowin_pll\\gowin_pll_tmp.v": "1c4018e3c9186d37946e1323bbf570b0dc890b3adfdbcb8b8171dc7821b43d3c",
+    "src\\tb\\tft_ctrl_tb.v": "aabd64ebdd720a8ca18eb6f3bc60d4de9796cb88ef0ecd2a00fd0228cc16c8df",
+    "src\\tb\\tft_ctrl_test_tb.v": "66f162a0c92b420c7f6b992a4829f7abc99e5b18729716e4314a9f070a9dad7c"
+  },
+  "sources_changed": false,
+  "artifact_sha256": "2733c1ea9b04b421ff639bd8765ec90519c3738a56610cc2cf5f107fcf324912",
+  "hardware_programmed": false,
+  "purpose": "user-requested DE/BL swap applied to exactly same clockwise90 dualgeometry candidate"
+}

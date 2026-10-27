@@ -1,0 +1,14 @@
+Report Command:report_min_pulse_width -nworst 10 -detail
+  Number   Slack    Actual Width   Required Width         Type                             Clock                                      Objects                
+ ======== ======== ============== ================ ================== ================================================ ===================================== 
+  1        -0.068   0.832          0.900            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_2_s  
+  2        -0.067   0.833          0.900            High Pulse Width   clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_2_s  
+  3        -0.064   0.836          0.900            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_1_s  
+  4        -0.062   0.838          0.900            High Pulse Width   clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_1_s  
+  5        -0.059   0.841          0.900            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_0_s  
+  6        -0.058   0.842          0.900            High Pulse Width   clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   mac/tx_fifo/fifo_inst/mem_mem_0_0_s  
+  7        0.607    0.832          0.225            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   phy_ready_tx_1_s0                    
+  8        0.607    0.832          0.225            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   phy_ready_tx_0_s0                    
+  9        0.607    0.832          0.225            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   txreset/pipe_1_s0                    
+  10       0.607    0.832          0.225            Low Pulse Width    clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk   txreset/pipe_0_s0                    
+

@@ -1,0 +1,7 @@
+PREVIEW ONLY; no Programmer process or hardware operation.
+Image: C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\official-probe-v3\impl\pnr\probe.fs
+SHA-256: 5f1c436e422728ed56d8b6f22c27134a7d9fe8f7831a9709fb38ba0990f9d250
+flash_program_verify: C:\Gowin\Gowin_V1.9.12.04_x64\Programmer\bin\programmer_cli.exe --device GW5AT-60B --cable-index 1 --chain_index 0 --chain_size 1 --frequency 2.5MHz --channel 0 --run 54 --spiaddr 0x000000 --fsFile C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\official-probe-v3\impl\pnr\probe.fs
+reprogram: C:\Gowin\Gowin_V1.9.12.04_x64\Programmer\bin\programmer_cli.exe --device GW5AT-60B --cable-index 1 --chain_index 0 --chain_size 1 --frequency 2.5MHz --channel 0 --run 1
+read_status: C:\Gowin\Gowin_V1.9.12.04_x64\Programmer\bin\programmer_cli.exe --device GW5AT-60B --cable-index 1 --chain_index 0 --chain_size 1 --frequency 2.5MHz --channel 0 --run 74
+Execution requires --program. Power off motor VM before writing/reloading.

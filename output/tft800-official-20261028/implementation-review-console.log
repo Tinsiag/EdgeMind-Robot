@@ -1,0 +1,231 @@
+{
+  "compile_passed": true,
+  "seconds": 402.68078875541687,
+  "timing": {
+    "violated_endpoints": {
+      "setup": 0,
+      "hold": 0
+    },
+    "clock_frequencies": {
+      "sys_clk": {
+        "constraint_mhz": 50.0,
+        "reported_fmax_mhz": 62.788
+      },
+      "camera_pclk": {
+        "constraint_mhz": 100.0,
+        "reported_fmax_mhz": 128.334
+      },
+      "rgmii_rx_clk": {
+        "constraint_mhz": 125.0,
+        "reported_fmax_mhz": 160.334
+      },
+      "tx125m": {
+        "constraint_mhz": 125.0,
+        "reported_fmax_mhz": 208.415
+      },
+      "display33m": {
+        "constraint_mhz": 33.0,
+        "reported_fmax_mhz": 56.77
+      },
+      "memory400m": {
+        "constraint_mhz": 400.0,
+        "reported_fmax_mhz": 2240.144
+      },
+      "ddr_ui100m": {
+        "constraint_mhz": 100.0,
+        "reported_fmax_mhz": 100.196
+      }
+    },
+    "worst_reported_slack_ns": {
+      "setup": 0.02,
+      "hold": 0.047,
+      "recovery": 3.692,
+      "removal": 0.353,
+      "minimum_pulse_width": 1.122
+    },
+    "per_clock_tns": [
+      {
+        "clock": "sys_clk",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "sys_clk",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "camera_pclk",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "camera_pclk",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "rgmii_rx_clk",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "rgmii_rx_clk",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "tx250m",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "tx250m",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "tx125m",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "tx125m",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "display33m",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "display33m",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "memory400m",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "memory400m",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "ddr_ui100m",
+        "analysis": "setup",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      },
+      {
+        "clock": "ddr_ui100m",
+        "analysis": "hold",
+        "tns_ns": 0.0,
+        "endpoints": 0
+      }
+    ],
+    "empty_analysis_tables": [],
+    "expected_live_clocks": {
+      "sys_clk": 50,
+      "camera_pclk": 100,
+      "rgmii_rx_clk": 125,
+      "memory400m": 400,
+      "ddr_ui100m": 100,
+      "tx125m": 125,
+      "display33m": 33
+    },
+    "live_clocks_match": true,
+    "clock_summary": {
+      "sys_clk": 50.0,
+      "camera_pclk": 100.0,
+      "rgmii_rx_clk": 125.0,
+      "tx250m": 250.0,
+      "tx125m": 125.0,
+      "display33m": 33.0,
+      "memory400m": 400.0,
+      "ddr_ui100m": 100.0
+    },
+    "clock_summary_matches": true,
+    "inactive_constraints": [],
+    "numeric_checks_pass": true
+  },
+  "resources": [
+    {
+      "resource": "Resources",
+      "usage": "Usage",
+      "utilization": "Utilization"
+    },
+    {
+      "resource": "Logic",
+      "usage": "23190/59904",
+      "utilization": "39%"
+    },
+    {
+      "resource": "--LUT,ALU,ROM16",
+      "usage": "23190(20125 LUT, 3065 ALU, 0 ROM16)",
+      "utilization": "-"
+    },
+    {
+      "resource": "--SSRAM(RAM16)",
+      "usage": "0",
+      "utilization": "-"
+    },
+    {
+      "resource": "Register",
+      "usage": "17973/60780",
+      "utilization": "30%"
+    },
+    {
+      "resource": "--Logic Register as Latch",
+      "usage": "0/59904",
+      "utilization": "0%"
+    },
+    {
+      "resource": "--Logic Register as FF",
+      "usage": "17936/59904",
+      "utilization": "30%"
+    },
+    {
+      "resource": "--I/O Register as Latch",
+      "usage": "0/876",
+      "utilization": "0%"
+    },
+    {
+      "resource": "--I/O Register as FF",
+      "usage": "37/876",
+      "utilization": "5%"
+    },
+    {
+      "resource": "CLS",
+      "usage": "18161/29952",
+      "utilization": "61%"
+    },
+    {
+      "resource": "I/O Port",
+      "usage": "124/297",
+      "utilization": "42%"
+    },
+    {
+      "resource": "I/O Buf",
+      "usage": "117",
+      "utilization": "-"
+    }
+  ]
+}

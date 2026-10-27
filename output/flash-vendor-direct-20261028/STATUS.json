@@ -1,0 +1,60 @@
+{
+  "recorded_utc": "2026-10-27T18:27:35.653338+00:00",
+  "status": "original_vendor_flash_verified_display_failed_white_screen",
+  "bitstream_sha256": "39352f551ef022aaac90608eb79614d189565b56c68a01675225f7deab1490a6",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-vendor-direct-20261028\\20261027T180951.853657Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "status_register": "0x30004460",
+  "no_recompile": true,
+  "no_rtl_changes": true,
+  "no_constraint_changes": true,
+  "no_bitstream_changes": true,
+  "original_vendor_zip_matches": true,
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "user_request": "你先直接先把官方的烧进去得了，看看能不能显示，能显示了再考虑差异",
+  "user_screen_report": "仍然全白或无图案",
+  "reset_and_complete_power_cycle_result": "用户确认：两步都做了，仍然全白",
+  "user_performed_complete_power_cycle": true,
+  "cold_boot_display_check_passed": false,
+  "post_cold_boot_readonly_verification": {
+    "status_register": "0x70026020",
+    "user_code": "0x0000FBC9",
+    "configuration_ready": true,
+    "version_matches_original_header": true,
+    "document": "UG718-1.0.4 table5-1; wakeup bit30 and done_final bit13"
+  },
+  "expected_pattern": [
+    [
+      "black",
+      "blue"
+    ],
+    [
+      "red",
+      "purple"
+    ],
+    [
+      "green",
+      "cyan"
+    ],
+    [
+      "yellow",
+      "white"
+    ]
+  ],
+  "camera_sensors_network_active": false,
+  "main_project_source_preserved": true,
+  "motor_pads_grounded": false,
+  "unused_pins_vendor_configuration": "input tri-state with pull-up",
+  "motor_vm_must_remain_off": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "diagnostic_led_map_applicable": false,
+  "standing_programming_authorization": true,
+  "per_candidate_approval_required": false,
+  "retry_attempted": false,
+  "timing_signoff_for_vendor_artifact_available": false,
+  "qualification": "manufacturer original display trial only; not full application or motion validation"
+}

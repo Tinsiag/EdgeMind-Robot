@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\official480-9mhz-probe\\official480_9_tb.v": "6ff41bdf65506754fa228c5a4b843ad35531e0868892028233583ab24e725422",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\official480-9mhz-probe\\wrapper.v": "53067e88a33b0bb2fdf1956993c2f33c4ef75472e1788753083f98a2319175ef",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\official480-9mhz-probe\\src\\disp_driver.v": "26c474c8afcdd6e554a2065d2810f8e2e3ee9dcc78d411329de122b8d7fa9de4",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\official480-9mhz-probe\\src\\tft_ctrl_test.v": "142278c74f13ebdc4b305e45ce8f9904851029a6a3f6ac1a5dfae0053949a8f7",
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\official480-9mhz-probe\\src\\disp_parameter_cfg.v": "4d04b6f282ce03086ab97f48d91727bed981a27bfbb91c9c5c2beda44520474f"
+  },
+  "pll_model": "ideal9MHz, actual Gowin IOBUF model",
+  "mode_duration": "accelerated480 to3 frames; same pixel/line/frame timing",
+  "sample_edge_hypothesis": "falling",
+  "checks": "all3control-mapping modes, full480x272 active frames, all8colour blocks, clock edge setup, physical pad readback and motorGND"
+}

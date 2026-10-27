@@ -1,0 +1,2 @@
+// CLKDIV/2 drives the Ethernet 125 MHz clock. Allow the clock router to use
+// its dedicated connection; forcing BUFG=CLK introduced PR1014 detours.

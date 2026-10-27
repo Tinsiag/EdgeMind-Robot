@@ -1,8 +1,16 @@
 # EdgeMind-Robot
 
-下一位AI请先阅读[从GitHub克隆开始的最新交接文档](HANDOFF-20261025.md)。源码检查点`87c97b7`；用户已暂停开发。
+下一位 AI 请先阅读 [2026-10-28 完整交接文档](HANDOFF-20261028.md) 和 [交接提示词](NEXT-AI-PROMPT-20261028.md)。用户已暂停实现、布局布线和硬件调试，本轮只整理交接并按要求推送 GitHub。
 
-可直接复制的[下一位AI提示词](NEXT-AI-PROMPT-20261025.md)；独立拉取检查见[克隆验证记录](CLONE-VERIFICATION-20261025.md)。
+当前最后写入的是 **800×480／33 MHz 摄像头＋姿态文字 screen-test 位流**，SHA-256 为 `d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b`。用户确认重新烧录后摄像头与文字恢复，四路电机物理接 GND；冷启动摄像头仍有问题。此前白屏/滚动的实际原因是 DE 误接短接，用户已修正。
+
+运动版三次布局布线均以 `PR0004` 失败，未得到 `.fs`，未烧录、未 ARM、未驱动电机。当前功能范围为摄像头/DDR/TFT、IMU 文字、LD06 基础避障及闭环保护、内部软核监督、网口设置调试；地图、A*、定位、航点、HDMI 和网口视频已从活动工程移除。
+
+完整 [交接 ZIP（Git LFS）](output/EdgeMind-Robot-handoff-20261028.zip)、[恢复与校验说明](output/handoff-20261028/PACKAGE-README.md)、[包校验结果](output/EdgeMind-Robot-handoff-20261028-VERIFY.json)、[最新烧录证据](output/flash-tft800-reburn-20261028/STATUS.json)、[运动版失败证据](output/motion-tft800-20261028/STATUS.json)。包内包含当前源码、CAD、构建/烧录历史证据、真实 d5 位流和精确输入快照；克隆后需 `git lfs pull`。未经新的继续指令不要执行构建或硬件操作。
+
+## 以下为历史记录
+
+下文“当前”“优先使用”“下一步”等均是对应日期的历史状态，不能覆盖上面的 2026-10-28 暂停快照。旧 `130843` 运动基线仍须保留；本机未找回其原始位流，不能用当前源码重编的文件冒充。
 
 2026-10-25 09:44（北京时间）用户要求暂停并交接。当前任务3/4开发源码55组RTL、61项主机回归通过；连续突发障碍绕行诊断仍失败，整板时序和实车均未验收。本轮未烧录、未ARM或运动。暂停状态见[任务3/4进度](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-PROGRESS.md)，最新证据见[回归报告](code/camera-car-control/a741-fpga-fusion/verification/TASK3-4-REPORT.md)。本机未找回原130843位流归档，不能将下面的历史路径理解为新克隆已包含该固件。
 
@@ -29,7 +37,7 @@
 
 ## 2026-10-23 FPGA 感知融合实验
 
-新增独立目录 [A741 FPGA 感知融合](code/camera-car-control/a741-fpga-fusion/README.md)：纯 RTL 的编码器/IMU 位姿融合、LD06 投影与保护、128×128 栅格、局部匹配、A* 与路径跟踪，以及地图 UDP/上位机界面。**不是已验收自动驾驶固件。** 完整车体/轮轴/雷达外参尚待核对，导航硬锁；本次综合/布线和时序状态以该目录 `verification/FUSION-RESULTS.json` 为准。保留此前确认的稳定固件 [A741-LD06 基线](code/camera-car-control/a741/release/A741-MOTION-LD06-H20-H14-20261022-101036/A741-MOTION-LD06-H20-H14.fs)，新工程不会覆盖它。
+新增独立目录 [A741 FPGA 感知融合](code/camera-car-control/a741-fpga-fusion/README.md)：纯 RTL 的编码器/IMU 位姿融合、LD06 投影与保护、128×128 栅格、局部匹配、A* 与路径跟踪，以及地图 UDP/上位机界面。**不是已验收自动驾驶固件。** 完整车体/轮轴/雷达外参尚待核对，导航硬锁；本次综合/布线和时序状态以该目录 `verification/FUSION-RESULTS.json` 为准。保留此前确认的稳定固件 A741-LD06 `101036` 历史基线（该本机归档路径当前未恢复），新工程不会覆盖它。
 
 ## 2026-10-22 项目交接摘要
 

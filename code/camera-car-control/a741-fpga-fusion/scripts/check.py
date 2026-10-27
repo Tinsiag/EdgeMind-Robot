@@ -14,6 +14,15 @@ CAMERA = ROOT.parent
 REPO = CAMERA.parents[1]
 MOTION = CAMERA.parent / "fpga/acg720-motion-control/rtl"
 VISION = CAMERA.parent / "fpga/acg720-vision-motion/rtl"
+PRIMITIVES = Path(os.environ.get("GOWIN_SIMLIB", "C:/Gowin/Gowin_V1.9.12.04_x64/IDE/simlib/gw5a/prim_sim.v"))
+
+
+def bench_sources(bench):
+    if bench.stem == "tft800_reference_tb":
+        return [ROOT / "display/reference/acg720-ch28/disp_driver.v"]
+    if bench.stem == "ethernet_io_tb":
+        return [CAMERA / "rtl/acg720_rgmii_rx.v", PRIMITIVES]
+    return []
 
 
 def simulation_text(path):
@@ -32,12 +41,10 @@ def sources():
     return (sorted((ROOT / "rtl").glob("*.v")) + sorted((ROOT / "display/rtl").glob("*.v")) + [ROOT / "third_party/picorv32/picorv32.v"] +
             [p for p in sorted((CAMERA / "third_party/verilog-ethernet/rtl").glob("*.v")) if p.name != "udp_checksum_gen.v"] +
             [checksum] +
-            [CAMERA / "rtl/video_udp_packetizer.v"] +
-            [MOTION / n for n in ("uart_rx.v", "uart_tx.v", "quadrature_decoder.v", "encoder_counter.v")] +
-            [VISION / n for n in ("motor_pwm_safe.v", "vision_packet_tx.v", "i2c_reg_master.v",
-                                  "vl53l1x_driver.v", "vl53l1x_config_rom.v", "reset_sync.v",
+            [MOTION / n for n in ("uart_rx.v", "quadrature_decoder.v", "encoder_counter.v")] +
+            [VISION / n for n in ("motor_pwm_safe.v", "reset_sync.v",
                                   "dvp_capture_continuous.v", "capture_tokens.v", "async_fifo.v", "cdc_mailbox.v",
-                                  "ddr_framebuffer.v", "video_pixels.v", "video_timing.v")])
+                                  "ddr_framebuffer.v", "video_pixels.v")])
 
 
 def rtl_benches():
@@ -60,9 +67,10 @@ def main():
     inputs += [ROOT / "config/calibration.json"]
     inputs += [ROOT / "config/geometry.json"]+list((ROOT / "scripts").glob("*.py"))
     inputs += list((ROOT / "firmware").glob("*")) + [ROOT / "third_party/picorv32/source.json"]
-    inputs += list((ROOT / "native").glob("*")) + list((ROOT / "third_party/coreslam").glob("*"))
-    mapping_dll=ROOT / ".local/mapping/edgemind_slam.dll"
-    if mapping_dll.is_file():inputs.append(mapping_dll)
+    inputs += list((ROOT / "display/reference").glob("*.v"))
+    inputs += list((ROOT / "display/reference/acg720-ch28").glob("*.v"))
+    inputs += list((ROOT / "tests/reference").glob("*.v"))
+    inputs += [p for bench in benches for p in bench_sources(bench)]
     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs if p.is_file()}
     bins = REPO / "tmp/vision-motion-tools/bin"
     def path_arg(path):
@@ -78,24 +86,25 @@ def main():
             continue
         product = out / (bench.stem + ".vvp")
         extra = []
-        if bench.stem in ("network_tb","fusion_network_tb"):
+        if bench.stem in ("network_tb",):
             from importlib import import_module
-            network=import_module("fusion_network_check" if bench.stem=="fusion_network_tb" else "network_check")
+            network=import_module("network_check")
             vector_path = out / (bench.stem+"-input.hex")
             count = network.vectors(vector_path)
             extra = [f"+INPUT={path_arg(vector_path)}", f"+COUNT={count}", f"+DUMP={path_arg(out / (bench.stem+'-output.hex'))}"]
         compile_args = ["-g2012", "-Wall", "-s", bench.stem,
-                   "-o", path_arg(product), *map(path_arg, sources()), path_arg(bench)]
-        if bench.stem == "hdmi_tb":
-            compile_args += [path_arg(ROOT / ".local/platform-motion-lidar/dvi_encoder.v"),
-                        path_arg(Path(os.environ.get("GOWIN_HOME", "C:/Gowin/Gowin_V1.9.12.04_x64")) /
-                            "IDE/simlib/gw5a/prim_sim.v")]
-        if args.wsl and bench.stem in ("cad_navigation_tb", "cad_stalled_navigation_tb", "continuous_navigation_tb", "mission_navigation_tb"):
-            # Compile the CAD room and the concurrent video/navigation fixture
-            # instead of interpreting millions of A* and video clock cycles.
+                   "-o", path_arg(product), *map(path_arg, sources()+bench_sources(bench)), path_arg(bench)]
+        if bench.stem=="tft480_reference_tb":
+            compile_args += [path_arg(ROOT/"display/reference/TFT_CTRL_480_270_16b.v")]
+        include_args=["-I"+path_arg(ROOT/"display/reference/acg720-ch28")] if bench.stem=="tft800_reference_tb" else []
+        compile_args+=include_args
+        if args.wsl and bench.stem in ("camera_tft_tb", "tft480_timing_tb", "tft480_reference_tb", "display_diagnostic_tb", "phy_powerup_tb", "camera_tft800_tb", "display800_diagnostic_tb", "tft800_reference_tb"):
+            # Compile the full camera/display fixture and long panel timing tests.
+            # The LCD startup/reset test also runs 18 complete physical frames.
             obj="/var/tmp/edgemind-"+hashlib.sha256(str(ROOT).encode()).hexdigest()[:12]+"-"+bench.stem
             compile_cmd=command("verilator",["--binary","--timing","-j","4","-Wno-fatal","--Mdir",obj,
-                "--top-module",bench.stem,*map(path_arg,sources()),path_arg(bench)])
+                "--top-module",bench.stem,*include_args,*map(path_arg,sources()+bench_sources(bench)),path_arg(bench),
+                *([path_arg(ROOT/"display/reference/TFT_CTRL_480_270_16b.v")] if bench.stem=="tft480_reference_tb" else [])])
             run_cmd=command(obj+"/V"+bench.stem,[])
             backends[bench.stem]="verilator"
         else:
@@ -103,27 +112,29 @@ def main():
             run_cmd=command("vvp",[path_arg(product),*extra])
             backends[bench.stem]="icarus"
         compile_result = subprocess.run(compile_cmd, capture_output=True, text=True, errors="replace",cwd=ROOT)
-        if backends[bench.stem]=="verilator":
-            (out/(bench.stem+"-compile.log")).write_text(compile_result.stdout+compile_result.stderr,encoding="utf-8")
+        (out/(bench.stem+"-compile.log")).write_text(compile_result.stdout+compile_result.stderr,encoding="utf-8")
         if compile_result.returncode:
             raise RuntimeError(compile_result.stdout + compile_result.stderr)
         log_path=out/(bench.stem+".log")
         with log_path.open("w",encoding="utf-8") as simulation_log:
             run = subprocess.run(run_cmd,cwd=ROOT,stdout=simulation_log,stderr=subprocess.STDOUT,
-                # The real RV32I CPU now runs throughout the network fixture.
-                # This is host wall time only; HDL watchdogs and robot TTLs stay unchanged.
-                timeout=1200 if bench.stem in ("cad_navigation_tb","cad_stalled_navigation_tb","continuous_navigation_tb") else 600 if bench.stem in ("fusion_network_tb","mission_navigation_tb") else 300 if bench.stem=="autonomy_navigation_tb" else 60)
+                timeout=60)
         run_log=simulation_text(log_path)
         log_path.write_text(run_log,encoding="utf-8")
         if run.returncode or "PASS" not in run_log:
             raise RuntimeError(run_log)
         print(run_log.strip())
-        if bench.stem in ("network_tb","fusion_network_tb"):
+        if bench.stem in ("network_tb",):
             network.verify(out / (bench.stem+"-output.hex"))
         passed.append(bench.stem)
     if args.only:
+        if any(hashlib.sha256(Path(p).read_bytes()).hexdigest()!=h for p,h in before.items()):
+            raise RuntimeError("Sources changed during selected regression")
+        record={"rtl_passed":passed,"full_suite":False,"hardware_tested":False,"unix_time":time.time(),
+                "rtl_backend_per_bench":backends,"input_sha256":before}
+        (out/"selection-result.json").write_text(json.dumps(record,indent=2),encoding="utf-8")
         return
-    for top in ("a741_motion", "a741_sensors", "a741_telemetry", "a741_fusion_core"):
+    for top in ("a741_motion", "a741_sensors", "a741_telemetry"):
         subprocess.run(command("iverilog",["-g2012", "-Wall", "-s", top, "-o",
                         path_arg(out / (top + ".vvp")), *map(path_arg, sources())]), check=True,cwd=ROOT)
     host = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests"),

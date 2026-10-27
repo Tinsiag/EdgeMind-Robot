@@ -57,8 +57,10 @@ try {
         Write-Output "Icarus: $simulationBin"
         Write-Output "Examples: $Examples"
         foreach ($name in $selected) {
-            Require-Path (Join-Path $cameraRoot "$name\.local\mapping\edgemind_slam.dll")
-            Require-Path (Join-Path $cameraRoot "$name\.local\platform-motion-lidar\dvi_encoder.v")
+            if ($name -ne 'a741-fpga-fusion') {
+                Require-Path (Join-Path $cameraRoot "$name\.local\mapping\edgemind_slam.dll")
+                Require-Path (Join-Path $cameraRoot "$name\.local\platform-motion-lidar\dvi_encoder.v")
+            }
         }
         Write-Output 'PASS: development dependencies are available. Board acceptance is separate.'
         return
@@ -66,14 +68,17 @@ try {
     foreach ($name in $selected) {
         Push-Location (Join-Path $cameraRoot $name)
         try {
-            $variant = if ($name -eq 'a741-fpga-fusion') { @('--fusion', '--tft480', '--route-option', '1', '--place-option', '1') } else { @('--motion-lidar') }
+            $variant = if ($name -eq 'a741-fpga-fusion') { @('--fusion', '--tft800', '--route-option', '1', '--place-option', '1') } else { @('--motion-lidar') }
             Write-Output "$name / $Action"
             switch ($Action) {
                 'prepare' {
                     Require-Path $Examples
                     Invoke-ProjectPython -PythonArguments (@('scripts/build.py', 'prepare') + $variant + @('--examples', $Examples))
                 }
-                'mapping' { Invoke-ProjectPython -PythonArguments @('scripts/setup_mapping.py') }
+                'mapping' {
+                    if ($name -eq 'a741-fpga-fusion') { throw 'The basic TFT/avoidance project has no mapping module.' }
+                    Invoke-ProjectPython -PythonArguments @('scripts/setup_mapping.py')
+                }
                 'test' {
                     Require-Path (Join-Path $simulationBin 'iverilog.exe')
                     Require-Path $simulationLibrary

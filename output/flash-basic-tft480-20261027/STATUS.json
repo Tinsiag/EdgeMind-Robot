@@ -1,0 +1,35 @@
+{
+  "recorded_utc": "2026-10-27T15:34:12.790773+00:00",
+  "status": "flash_verified_application_failed_white_screen",
+  "hardware_programmed": true,
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "fpga_status_register": "0x30000460",
+  "cold_boot_verified": false,
+  "application_verified": false,
+  "motor_pads_grounded": true,
+  "motion_release_allowed": false,
+  "vm_off_confirmed_by_user": true,
+  "bitstream_sha256": "094862d12885cd786f3d5efb676205a9a999ff64e244b533e72ef538b4b2c8ee",
+  "source_image": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\timing-fix-basic-tft480-20261027\\build-evidence-final\\a741.fs",
+  "staged_image": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-basic-tft480-20261027\\20261027T153133.512530Z\\image.fs",
+  "audit": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-basic-tft480-20261027\\20261027T153133.512530Z\\audit.json",
+  "automatic_retry_performed": false,
+  "sram_download_performed": false,
+  "observation_recorded_utc": "2026-10-27T15:47:01.636771+00:00",
+  "power_cycle_reported_by_user": true,
+  "application_result": "Full white screen with no text immediately after programming and after reported power cycle.",
+  "user_leds_on": [
+    "D0",
+    "D3"
+  ],
+  "user_leds_off": [
+    "D1",
+    "D2",
+    "D4",
+    "D5",
+    "D6",
+    "D7"
+  ]
+}

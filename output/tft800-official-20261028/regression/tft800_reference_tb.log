@@ -1,0 +1,6 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS ACG720800 scan,13 complete frames,33MHz fixed clock,rising-edge sample/half-cycle setup hold,200ms backlight
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft800_reference_tb.v:38: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 218ms; walltime 2.839 s; speed 77.077 ms/s
+- Verilator: cpu 2.834 s on 1 threads; alloced 121 MB

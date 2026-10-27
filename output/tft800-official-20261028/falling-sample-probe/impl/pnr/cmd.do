@@ -1,0 +1,22 @@
+-d C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\falling-sample-probe\impl\gwsynthesis\probe.vg
+-p GW5AT-60B-PBGA484A-1
+-pn GW5AT-LV60PG484AC1/I0
+-cst C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\falling-sample-probe\probe.cst
+-cfg C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\falling-sample-probe\impl\pnr\device.cfg
+-sdc C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\falling-sample-probe\probe.sdc
+-bit
+-tr
+-ph
+-sdf
+-o
+-timing
+-cst_error
+-convert_sdp32_36_to_sdp16_18
+-place_option 1
+-route_option 1
+-retiming_resource none
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 100.000
+-enable_dsrm 0

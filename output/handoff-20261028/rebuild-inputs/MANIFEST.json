@@ -1,0 +1,105 @@
+{
+  "note": "Examples needed for prepare; chapter 47 is explicitly local-source repack, not a vendor-original ZIP. No EDA installers included.",
+  "files": [
+    {
+      "path": "example-archives.json",
+      "bytes": 1781,
+      "sha256": "16d219166343b01ddf0388b60b727ee4e6ac9a79e844a7af5dc75b61b2959e41"
+    },
+    {
+      "path": "restoration-report.json",
+      "bytes": 7342,
+      "sha256": "67a6882aa050720abb0a1c3fd472f25b78a39831b1875ca6a2dfe1ff44d15be5"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/tft_ctrl.gprj",
+      "bytes": 859,
+      "sha256": "471e2265f35ff2ab06da1019a17a7f94e898bf11e5ce147d8b2fcfd46d97383b"
+    },
+    {
+      "path": "examples/GW5AT60K/第38章 基于DDR3的串口传图帧缓存系统设计实现/ch38_uart_ddr3_tft_hdmi.zip",
+      "bytes": 5629747,
+      "sha256": "7539193cf056a9fdd0600bdfab897db64ed1adacb2dca1f9d8f8ef8d93cd2836"
+    },
+    {
+      "path": "examples/GW5AT60K/第47章 OV5640摄像头采集HDMI显示屏显示/ch47-local-source.zip",
+      "bytes": 3041464,
+      "sha256": "e0902ff484ec3fec90fdb75fbe8fccaef4a7c133d8834292fb20bf2300f88759"
+    },
+    {
+      "path": "examples/GW5AT60K/第59章 基于OV5640的以太网RGMII图像传输系统设计/ch59_ov5640_udp_rgmii.zip",
+      "bytes": 662741,
+      "sha256": "5c9ab29ed8d9c6bec6dccbde8caf8886a64ce88147592427b2a33c69adf164d4"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/disp_driver.v",
+      "bytes": 3368,
+      "sha256": "26c474c8afcdd6e554a2065d2810f8e2e3ee9dcc78d411329de122b8d7fa9de4"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/disp_parameter_cfg.v",
+      "bytes": 6921,
+      "sha256": "f9134e120b857bf22df9523e6fd184c68324cd9dffdbf0ea17e096cf6a4ba488"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/pll_init.v",
+      "bytes": 15848,
+      "sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/tft_ctrl.cst",
+      "bytes": 2571,
+      "sha256": "d64c24e10e5901948fba621ae2c9a6b8bdb31b5fb883dd15e94ae67a70442825"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/tft_ctrl_test.v",
+      "bytes": 4976,
+      "sha256": "80cfce5ff2fb1eb4b9cc9bcb550f0d3984e963a64089fd98394d24aabedc549d"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/tft_timing_parameter.vh",
+      "bytes": 1228,
+      "sha256": "3f31d297b3d6ad45652a717985ac40a39736725cfbcc67ccdc9b08ff1f821985"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll.ipc",
+      "bytes": 3964,
+      "sha256": "59dde29c822dfd44962c04cae1ade0f49c80ffe1e9709980db9115a7724daac5"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll.mod",
+      "bytes": 797,
+      "sha256": "f30da7db97d7a8aa4763f5af3435386a9d124e73525e0340ef6b0cd98ae27fb3"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll.v",
+      "bytes": 1068,
+      "sha256": "5fe37992d48fb850705a094c6e2ce481d5fa3048819538892458ab704d2e50a0"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll_mod.v",
+      "bytes": 4527,
+      "sha256": "9842683ad0aab408209f836a5b412ea9db963d1915f913d77b8ec2cf2ddd8a41"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll_mod_tmp.v",
+      "bytes": 856,
+      "sha256": "f2ce51b8b4d561b6f9a55d602ab1ee43e7b30f1fc84d46ab85ee165e78693468"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/gowin_pll/gowin_pll_tmp.v",
+      "bytes": 602,
+      "sha256": "1c4018e3c9186d37946e1323bbf570b0dc890b3adfdbcb8b8171dc7821b43d3c"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/tb/tft_ctrl_tb.v",
+      "bytes": 2016,
+      "sha256": "aabd64ebdd720a8ca18eb6f3bc60d4de9796cb88ef0ecd2a00fd0228cc16c8df"
+    },
+    {
+      "path": "examples/GW5AT60K/第28章 TFT显示屏驱动设计与验证/src/tb/tft_ctrl_test_tb.v",
+      "bytes": 1607,
+      "sha256": "66f162a0c92b420c7f6b992a4829f7abc99e5b18729716e4314a9f070a9dad7c"
+    }
+  ]
+}

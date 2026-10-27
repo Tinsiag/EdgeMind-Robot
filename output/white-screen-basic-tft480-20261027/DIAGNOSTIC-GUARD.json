@@ -1,0 +1,13 @@
+{
+  "command": [
+    "code\\camera-car-control\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "code/camera-car-control/a741-fpga-fusion/scripts/build.py",
+    "prepare",
+    "--display-diagnostic"
+  ],
+  "returncode": 2,
+  "stderr": "usage: build.py [-h] [--motion-lidar] [--fusion] [--tft480] [--screen-test]\n                [--display-diagnostic] [--in-place] [--timeout TIMEOUT]\n                [--route-option {0,1,2}] [--place-option {0,1,2,3,4}]\n                [--examples EXAMPLES] [--gowin GOWIN]\n                {prepare,synth,build,pnr,report}\nbuild.py: error: --display-diagnostic requires --screen-test\n",
+  "unsafe_variant_rejected_before_prepare": true
+}

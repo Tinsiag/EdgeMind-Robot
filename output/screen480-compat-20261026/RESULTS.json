@@ -1,0 +1,313 @@
+{
+  "screen_confirmed_by_user": "480x272",
+  "rtl_passed": [
+    "tft480_panel_tb",
+    "tft480_timing_tb",
+    "mission_navigation_tb",
+    "osd_tb",
+    "hdmi_tb",
+    "video_tb",
+    "video_capture_tb",
+    "sensors_tb"
+  ],
+  "host_tests_passed": 61,
+  "clk_hz": 50000000,
+  "pixel_hz": 10000000,
+  "pixel_period_ns": 100,
+  "pixel_high_low_ns": [
+    40,
+    60
+  ],
+  "rtl_setup_hold_ns": [
+    60,
+    40
+  ],
+  "frame_total": [
+    525,
+    286
+  ],
+  "frame_active": [
+    480,
+    272
+  ],
+  "frame_hz": 66.6000666000666,
+  "backlight_frames": 11,
+  "backlight_delay_ms": 165.16500000000002,
+  "source_sha256": {
+    "code\\camera-car-control\\a741-fpga-fusion\\display\\rtl\\a741_tft480_panel.v": "af9ddc368b7dd0f3cb6773d76fbb7826a56c160c543c2e8b69ac55ce1c89e8f5",
+    "code\\camera-car-control\\a741-fpga-fusion\\display\\tests\\tft480_panel_tb.v": "394f9c853580aae400e57a55a87962f1f035b6df4d3fcc887615fc52a03d455b",
+    "code\\camera-car-control\\a741-fpga-fusion\\display\\tests\\tft480_timing_tb.v": "ec33210bdb3447637b95d7d6056f8d0b337b0d2547430c91ac4efc19f869b207",
+    "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_osd.v": "b89b866ecd88be43501fd384a54149ed8b8ced6db0c824c2a72a0a2e171ec092",
+    "code\\camera-car-control\\a741-fpga-fusion\\scripts\\build.py": "4a557291a620829905ed46c1eae7ab472980277eb4ca4bd344e79ec53809c72d",
+    "code\\camera-car-control\\a741-fpga-fusion\\scripts\\check.py": "ef743b4ddda7220a3f1318db4e8eec052fa0e4e0b7bc2abb541f126074e51b18"
+  },
+  "timing_signed_off": false,
+  "hardware_programmed": false,
+  "physical_screen_tested": false,
+  "power_cycle_verified": false,
+  "known_navigation_blocker": "Continuous obstacle scenario remains failed in the 20261025 handoff.",
+  "synthesis": {
+    "compile_passed": true,
+    "run_state": "completed",
+    "seconds": 315.61985206604004,
+    "sources_changed": false,
+    "route_option": 1,
+    "place_option": 1,
+    "synthesis_netlist_sha256": "9360a638c4fe7360536bf27ae8ebf6ba7968822a86882970fb6ff73ae3781007",
+    "synthesis_timing": {
+      "synthesis_estimate_only": true,
+      "clocks": [
+        {
+          "clock": "clk",
+          "requested_mhz": 50.0,
+          "estimated_fmax_mhz": 51.276,
+          "logic_levels": 27
+        },
+        {
+          "clock": "rgmii_rx_clk",
+          "requested_mhz": 100.0,
+          "estimated_fmax_mhz": 143.973,
+          "logic_levels": 9
+        },
+        {
+          "clock": "camera_pclk",
+          "requested_mhz": 100.0,
+          "estimated_fmax_mhz": 117.345,
+          "logic_levels": 11
+        },
+        {
+          "clock": "clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk",
+          "requested_mhz": 125.0,
+          "estimated_fmax_mhz": 126.155,
+          "logic_levels": 10
+        },
+        {
+          "clock": "video_pll/u_pll/PLLA_inst/CLKOUT0.default_gen_clk",
+          "requested_mhz": 55.0,
+          "estimated_fmax_mhz": 1352.949,
+          "logic_levels": 1
+        },
+        {
+          "clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk",
+          "requested_mhz": 400.0,
+          "estimated_fmax_mhz": 1293.494,
+          "logic_levels": 1
+        },
+        {
+          "clock": "pixel_divider/CLKOUT.default_gen_clk",
+          "requested_mhz": 33.0,
+          "estimated_fmax_mhz": 55.016,
+          "logic_levels": 23
+        },
+        {
+          "clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk",
+          "requested_mhz": 100.0,
+          "estimated_fmax_mhz": 192.4,
+          "logic_levels": 3
+        }
+      ],
+      "paths": [
+        {
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+          "slack_ns": -0.725,
+          "logic_levels": 2
+        },
+        {
+          "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
+          "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+          "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+          "slack_ns": -0.725,
+          "logic_levels": 2
+        },
+        {
+          "source": "video/diagnostics/held_2_s0",
+          "destination": "video/diagnostics/dst_data_2_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/diagnostics/held_3_s0",
+          "destination": "video/diagnostics/dst_data_3_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/diagnostics/req_s0",
+          "destination": "video/diagnostics/req_sync_0_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_0_s0",
+          "destination": "video/net_fifo/wg1_0_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_1_s0",
+          "destination": "video/net_fifo/wg1_1_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_2_s0",
+          "destination": "video/net_fifo/wg1_2_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_3_s0",
+          "destination": "video/net_fifo/wg1_3_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_4_s0",
+          "destination": "video/net_fifo/wg1_4_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_5_s0",
+          "destination": "video/net_fifo/wg1_5_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_6_s0",
+          "destination": "video/net_fifo/wg1_6_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_7_s0",
+          "destination": "video/net_fifo/wg1_7_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_8_s0",
+          "destination": "video/net_fifo/wg1_8_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_9_s0",
+          "destination": "video/net_fifo/wg1_9_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_10_s0",
+          "destination": "video/net_fifo/wg1_10_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_11_s0",
+          "destination": "video/net_fifo/wg1_11_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wg_12_s0",
+          "destination": "video/net_fifo/wg1_12_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/net_fifo/wb_13_s0",
+          "destination": "video/net_fifo/wg1_13_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/osd_cdc/ack_s0",
+          "destination": "video/osd_cdc/ack_sync_0_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "clk[R]",
+          "slack_ns": -0.494,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/output_fifo/rg_0_s0",
+          "destination": "video/output_fifo/rg1_0_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "slack_ns": -0.471,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/output_fifo/rg_1_s0",
+          "destination": "video/output_fifo/rg1_1_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "slack_ns": -0.471,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/output_fifo/rg_2_s0",
+          "destination": "video/output_fifo/rg1_2_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "slack_ns": -0.471,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/output_fifo/rg_3_s0",
+          "destination": "video/output_fifo/rg1_3_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "slack_ns": -0.471,
+          "logic_levels": 1
+        },
+        {
+          "source": "video/output_fifo/rg_4_s0",
+          "destination": "video/output_fifo/rg1_4_s0",
+          "launch_clock": "pixel_divider/CLKOUT.default_gen_clk[R]",
+          "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+          "slack_ns": -0.471,
+          "logic_levels": 1
+        }
+      ]
+    }
+  }
+}

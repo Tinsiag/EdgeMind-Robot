@@ -1,0 +1,3 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS Ethernet IO: vendor CLKDIV duty/reset and IODELAY+IDDR byte/DV/error alignment
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/ethernet_io_tb.v:28: $finish called at 644100 (1ps)

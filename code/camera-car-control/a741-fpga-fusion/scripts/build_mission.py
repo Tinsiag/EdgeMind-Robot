@@ -4,13 +4,47 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def build():
+def cached_image():
+    """Reuse only a complete pinned ROM whose source and decoded bytes match."""
+    target = ROOT / "firmware/mission.hex"
+    manifest = ROOT / "firmware/manifest.json"
+    if not target.is_file() or not manifest.is_file():
+        return None
+    try:
+        record = json.loads(manifest.read_text(encoding="utf-8"))
+        names = {"link.ld", "mission.c", "start.S"}
+        if set(record["inputs"]) != names or record["architecture"] != "rv32i/ilp32" or record["ram_bytes"] != 8192:
+            return None
+        if any(hashlib.sha256((ROOT/"firmware"/n).read_bytes()).hexdigest()!=h for n,h in record["inputs"].items()):
+            return None
+        data = target.read_bytes()
+        if hashlib.sha256(data).hexdigest()!=record["hex_sha256"]:
+            return None
+        words = data.decode("ascii").split()
+        if len(words)!=2048 or any(len(word)!=8 for word in words):
+            return None
+        raw = b"".join(int(word,16).to_bytes(4,"little") for word in words)
+        size = record["program_bytes"]
+        if not 0<size<=7168 or any(raw[size:]) or hashlib.sha256(raw[:size]).hexdigest()!=record["binary_sha256"]:
+            return None
+        return target,record
+    except (KeyError, ValueError, OSError, TypeError, UnicodeError):
+        return None
+
+
+def build(force=False):
+    cached = None if force else cached_image()
+    if cached is not None:
+        target,record = cached
+        print(json.dumps({"reused_verified_rom":True,**record},indent=2))
+        return target
     import ziglang
-    zig = Path(ziglang.__file__).parent / "zig.exe"
+    zig = Path(ziglang.__file__).parent / ("zig.exe" if sys.platform == "win32" else "zig")
     out = ROOT / ".local/mission-firmware"
     out.mkdir(parents=True, exist_ok=True)
     elf = out / "mission.elf"
@@ -44,4 +78,6 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--force",action="store_true",help="Recompile even when the pinned ROM and all sources match")
+    build(parser.parse_args().force)

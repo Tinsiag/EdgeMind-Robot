@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-10-27T16:09:56.908697+00:00",
+  "status": "diagnostic_flash_verified_reloaded_application_failed_white_screen",
+  "hardware_programmed": true,
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "cold_boot_verified": false,
+  "application_verified": false,
+  "motor_pads_grounded": true,
+  "motion_release_allowed": false,
+  "bitstream_sha256": "7434d07af48de4ad1814326e26c67485aca8da5b7e4f4eed5064a1f84fddf2ea",
+  "source_image": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\white-screen-basic-tft480-20261027\\build-evidence-final\\a741.fs",
+  "staged_image": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-diagnostic-tft480-20261028\\20261027T160730.580794Z\\image.fs",
+  "audit": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-diagnostic-tft480-20261028\\20261027T160730.580794Z\\audit.json",
+  "user_observation": "始终全白，没有文字",
+  "diagnostic_led_observation_pending": false,
+  "diagnostic_power_cycle_not_yet_reported": true,
+  "automatic_retry_performed": false,
+  "sram_download_performed": false,
+  "led_observation_recorded_utc": "2026-10-27T16:11:31.093274+00:00",
+  "user_leds_blinking": [
+    "D1",
+    "D2"
+  ],
+  "user_leds_off": [
+    "D5",
+    "D7"
+  ],
+  "user_leds_on": [
+    "D0",
+    "D3",
+    "D4",
+    "D6"
+  ],
+  "interpretation": {
+    "system_clock_activity": true,
+    "internal_tft_frame_activity": true,
+    "pll_locked": true,
+    "ddr_ready": true,
+    "camera_ready": true,
+    "phy_ready": true,
+    "camera_init_error": false,
+    "phy_init_error": false,
+    "external_tft_signals_measured": false
+  },
+  "followup_observation": {
+    "recorded_utc": "2026-10-27T16:18:59.028275+00:00",
+    "user_report": "还是全白，到底怎么插，用同面还是异面",
+    "interpretation": "White screen persists; cable contact orientation requires clarification; do not treat cold boot function as passed."
+  }
+}

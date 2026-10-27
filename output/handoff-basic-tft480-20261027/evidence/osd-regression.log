@@ -1,0 +1,8 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS OSD area equivalence: four layouts, 90000 cycles, atomic text/RGB, queued status, reset during conversion
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/osd_area_tb.v:60: $finish called at 1800060000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS sequential decimal OSD, bounded conversion, atomic frames, signed limits, invalid labels and pixel mapping
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/osd_tb.v:71: $finish called at 15530000 (1ps)

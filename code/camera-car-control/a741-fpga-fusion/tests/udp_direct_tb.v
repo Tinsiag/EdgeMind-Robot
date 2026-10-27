@@ -108,8 +108,9 @@ module udp_direct_tb;
         make_packet(10,2,8'h59,0);send_packet(length,-1,0);
         make_packet(10,2,8'h51,33);send_packet(length,-1,0);
         make_packet(10,2,8'h04,0);length=length+1;outer_crc;send_packet(length,-1,0);
-        make_packet(10,2,8'h58,5);send_packet(length,-1,1);answer(1,10,2);
-        make_packet(10,3,8'h51,28);send_packet(length,-1,1);answer(32,10,3);
+        make_packet(10,2,8'h59,1);send_packet(length,-1,1);answer(1,10,2);
+        make_packet(10,3,8'h42,6);send_packet(length,-1,0);
+        make_packet(10,3,8'h57,0);send_packet(length,-1,1);answer(32,10,3);
         make_packet(10,4,8'h05,0);send_packet(length,-1,1);
         make_packet(10,5,8'h11,8);send_packet(length,-1,1);
         make_packet(11,6,8'h02,0);send_packet(length,-1,0);
@@ -117,6 +118,8 @@ module udp_direct_tb;
         make_packet(11,7,8'h40,0);send_packet(length,-1,1);
         repeat(1010) @(negedge clk);if(!rx_ready) $fatal(1,"reply timeout did not recover");
         make_packet(11,8,8'h04,0);send_packet(length,-1,1);answer(32,11,8);
+        make_packet(11,9,8'h59,1);send_packet(length,-1,1);answer(1,11,9);
+        make_packet(11,10,8'h59,2);send_packet(length,-1,0);
         $display("PASS direct EMC1 atomic commit, dual CRC, truncation/size/transport errors, replay/session rules, no-reply commands, maximum payload, timeout and reply backpressure");$finish;
     end
     initial begin #1000000;$fatal(1,"bridge watchdog");end

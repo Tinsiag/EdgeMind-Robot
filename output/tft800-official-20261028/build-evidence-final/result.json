@@ -1,0 +1,454 @@
+{
+  "variant": "A741-TFT800-DISPLAY-DIAGNOSTIC-MOTOR-LOCKED",
+  "mode": "build",
+  "compile_passed": true,
+  "returncode": 0,
+  "timed_out": false,
+  "seconds": 402.68078875541687,
+  "run_state": "completed",
+  "started_unix": 1793119690.9440246,
+  "route_option": 1,
+  "place_option": 1,
+  "p4_enabled": false,
+  "imu_enabled": true,
+  "motor_locked": true,
+  "screen_test": true,
+  "display_diagnostic": true,
+  "motion_lidar": true,
+  "tof_enabled": false,
+  "platform_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic",
+  "hardware_programmed": false,
+  "timing_signed_off": false,
+  "timing_violations": {
+    "setup": 0,
+    "hold": 0
+  },
+  "sources_changed": false,
+  "source_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_attitude.v": "ab29968241e8992e903c5f2c7d3b6cb9e3815aab6a1f1f187e8835d0edd2ebdf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_avoidance.v": "8efd850187b90a354e0bd36870d2740ebb3af47c23d58b1a686a320f7aa8bcd0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_bare_cpu.v": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_core.v": "49cbe9897fd99e2c79def5c417fa6b9f9fe3b984e4fa060614326887041d78f6",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_divider.v": "6ef116a71b94c4df50b5213effc10a5232da82eb801741f5aa3e37d7a369eea0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_imu_i2c.v": "ca08c56ac95ce852383183481dedbc54d99776dc08aff2298222d95c4c1fca8a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_lidar_guard.v": "6020866db8a187aae3b4580ab0d9ad87ba8726d258486abe4a8b18c58e6bae37",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_motion.v": "10a635ffbde80b41d9dd6088658742b9ed23458dc63c396a46673ad9d15cc7b5",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_net_health.v": "5b74ada7a73d9ada4a56d74ae0618fe4c4425c2ec5a92357a73cdf3d1afcea0b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_osd.v": "2e9a63f306e4445eb501b4fb1062c25b3a2436ddba7c79ef393206950464fa8b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_phy_config.v": "d73925ae4645df7e468ac1d27139ed443fa4db24fbbedde4e019b01faf5d8a59",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_pi.v": "e6cb58f1f0f6a45bee6c1eca17ba42e4da92f8bcf557df7a8c3b2e4a016f7926",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_protocol.v": "b120aa9cf77ff873195a9e2448977a132a3317f1cee523b58ec58c7278424030",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_router.v": "ef3b8fdb4ce5f65f69cfd80a272e4285a7570361b061384aa3ddc68ea5702752",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_sensors.v": "0e735ca4818242e255b0f4153dbebbbbdb05210adde3aa5056b8f6baa368355e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_speed.v": "4f8339447e4a4e13cd4c42a4adbad0389192bcaa2f8a3d7c5793c2a4c8483073",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_targets.v": "0bae538544f2d5d105bfd4317e64660517a0b9d6f80e5a2d29a8f2d2590249b7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_telemetry.v": "56223432e4f9f5aa0fed53ef6a6b16acdc198a9dcac4770aa00a7ec7199f0188",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_tx_stage.v": "2603e8ad6a8ddc83a82a1ef83907040b7039883dec5b4cd15d8c08aadae38ec8",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_udp_direct.v": "3a50f8dbb7d50d60f437b49b14c0237e99cd0248d728d83063adb651d73baecf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_video.v": "c1b32d6192c5687488f75e67848a0d6c485b4b51f4876457b00d8716008f504b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\ld06_control.v": "49eb9e849e8d53195db99e31e44ce06b98fef2bdb9e3c5387ddca8c073c05501",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\ld06_parser.v": "bca5d365e1fd70098a4e7bb40f6c59fb52e943abee42e553fcf93b65f9e4c48f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\mpu6050_driver.v": "f6b011f3a689b9a5a647ad8a782030738e2e0a29eae7dcdadbff1dba12b02bd7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\rtl\\mpu6050_heading.v": "94fb9cf33db57551369a0e8f53424d20b133d86dcc7eb3d9409552871f8b69b3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\display\\rtl\\a741_display_cdc.v": "504670def8a6a9e3a6c138998832ab30f15be29a2a70a4fe2910595bb7065302",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\display\\rtl\\a741_display_diagnostic.v": "c4777fe6dc9dcfaacb80ae7defced3359a3e2ad76cc099c91cd9fa30302df1a6",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\display\\rtl\\a741_tft480_panel.v": "d479dec23499a4c605463ffde4c2e10098656cf500852649e7f30ecc87feee74",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\display\\rtl\\a741_tft800_panel.v": "f61486291a68e7f4596aaf24c55b249a389bcdcddadf58af9db10bd6b4702fd2",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\third_party\\picorv32\\picorv32.v": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arbiter.v": "4b4291e2afc5cdb93e261d43c439ea3c9bedce3d628d3db9c6e2ed8f4c27c3f1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp.v": "46d339fe7b4de1ff5c6c881c53f9c0c718ec8eb776673bc4d5916ea230512512",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_cache.v": "e7eb3f5fc90c6e5cc9f1f9f3d59afefcfc87fd667a1893de8ddad3aa94309529",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_eth_rx.v": "6a49bd6f7c2311baffe1b3985d7eee0b9adee54f7d05ffa4316cf201adb526ee",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_eth_tx.v": "8125cf542196132b388c30f4ac3005a0153082c7cd9f87916680c6767db72dfb",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_adapter.v": "94eb7348f2b833126c1b519f28da72fcf3abcc4a6766b3759bce0d828db3bfe1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_async_fifo.v": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_async_fifo_adapter.v": "3472e2624af75bbc978c15603b78afc9e08a0d61dc9471cbfb4ba4579df5c4d3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_fifo.v": "8ee436631ece272f478a4396c3819f62e5cd4f9a492b80502562aeb73c9e6294",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_fifo_adapter.v": "7751ab4ec51642abc5ed38e9d029e052ba1405af463ea4f9f32b0ca9c107e6ff",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_gmii_rx.v": "9fc42a832d36ab6e2f43fb69dcf897a3b38db7a072bdc26ff2e6f8a2fd19aae8",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_gmii_tx.v": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_arb_mux.v": "ce578195dc565962e3515d5444d13d6a47c42ee82bd2109d31dd62a7ed0775ea",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_axis_rx.v": "394d811d97bb10e865fde1e4820af594313296cf36fb8d1316defca8ba222bb7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_axis_tx.v": "633d15019041a2ab8144d0b5d5c76122f2829f6f23d1b45d82ddf1cc00476653",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g.v": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g_fifo.v": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip.v": "0fa6834e1d4eade6641ea6c0dc918bc3fb8d758dd8e0a38c7853d7c10f7853a3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_arb_mux.v": "429fce396c6d5e311497b419f6d0c930e4e17eea5637efb4f7a4df1299cfea6e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_complete.v": "c0f5981200d90312065eece7117dd22733d224169af1865760522e38122df120",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_eth_rx.v": "ad9c44691fe27d76373e64d3aadf8e076d819030266d4569e683030cc67a05bc",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_eth_tx.v": "a9d5bdbea9ccecedf7ff513dfe3e34cbfbc505bfc3877d1430a3416b8689fd1c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\lfsr.v": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\priority_encoder.v": "07c610b8dda24daf67dec36c743f79fca30f9d01d5469e1e7f795a16f4c7aa97",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp.v": "a11fcaaf918868706c2a3ea97ecb5842813b6a21a4bd9d35ad38906be81a4c7f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_complete.v": "94c2f9a93a07256493c2f87e77444cc14cec686247f653d5a769264a43a9faee",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_ip_rx.v": "a3d11dac41e6349e52c9fbe531b9e3345d5688b062157b8c6a85f4b40cc41050",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_ip_tx.v": "4df5a48a8eded39d4503923e14aa3f66824bbc830008e2c37b3e767ca345f60a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\vendor\\udp_checksum_gen.v": "30ce288d05ccbfbaab5639b7c8d168bc07263aa039e903d39fbae33de5ac3969",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motion-control\\rtl\\uart_rx.v": "c2607eb819bf48e5a3e6f1057b1eb8233aab95d9e7a68288510dc6fe127e01d1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motion-control\\rtl\\quadrature_decoder.v": "859f1eac7cab9c34102d398e4a846733cdd41061587b254f9efc88ff7e340cf9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-motion-control\\rtl\\encoder_counter.v": "d6c8aa44bc0c878ae10748a75b6aee1cc3ac5dac341cf8c6d91aaa8412407c5c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\motor_pwm_safe.v": "d524b51acc85c9757497141b7891599c734c90421a05c35ee74d1874a5d24f89",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\reset_sync.v": "60e6e8bfc0e234d148b3ad61eb99d6f17de93ce52666eb6e5f0773d92709cd97",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\dvp_capture_continuous.v": "48604d1a321350575228b68641531eb33efe8677a2629069dd80dda224fc095b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\capture_tokens.v": "c49cb5ba089440725f154e5481a1440ead0c96662947ea12d02126f23b2cdd66",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\async_fifo.v": "db89ce7888807448a39a3507fe6adf25161927e401167d1c505d736368edbf8e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\cdc_mailbox.v": "954e842cf8ea0640d7ccf599b8a7c2be2d963f2a2fe5ad9bd70e12b24007c629",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\ddr_framebuffer.v": "b8edbb251fcd21a1e2e187a54ab83191f2c41d1ea1f4401a56efbf284fa792f9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-vision-motion\\rtl\\video_pixels.v": "53e24d9d37886d049cb4d65f0f703f00d75307130fa5443a1a4a2c3788791bd4",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\tft_gowin_pll.v": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\tft_gowin_pll_mod.v": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\tft_pll_init.v": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\ddr3_memory_interface.v": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\ddr_pll.v": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\ddr_pll_mod.v": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\pll_mDRP_intf.v": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\gmii_rgmii_gmii\\gmii_to_rgmii.v": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\gowin_pll\\gowin_pll.v": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\mdio\\mdio_bit_shift.v": "470bf1ff074072ecd9977403651b18d8df125e5c0d670d35ce06cd5139796057",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\mdio\\phy_reg_config.v": "2401a4a435482341b0dd78168a2ed4c5e9e91c5624a97d5dbc01176c061f2043",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\ethernet_pll_mod.v": "d421976ffbaf0f307c72f65d13a8ef18ec91d732a433c2efee89bb34c743eb00",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\ov5640_init_table_rgb.v": "43347654e874c60e18589b323f82fe753a099092e0797b1297b16d6ccf0063a0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\rtl\\ov5640_board_init.v": "f33605b0918cca093c14544666bc94e4fa57031566c91061963246c2dd85af48",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\rtl\\acg720_rgmii_rx.v": "671894d19f089f0548ac6495b29387f485033a48c803a74f71dae53ad98d54c0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-ddr3\\rtl\\camera_init\\ov5640_ctrl.v": "1056d65254e43669c22efc6048c085ddc2fb3233f9dd3fc88001ef1c489f828a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga\\acg720-ddr3\\rtl\\camera_init\\sccb_master.v": "29fa2f27d2fe234453fd294e8ae762b062d17f9938cd6a0406ca54d24dc4c0ef",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\a741_top.v": "acde5d7341e090da4dc3611edc149f3e6452bb8014d6911cccc5a23e36012c5e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\a741.cst": "92abf829e50f8d93721f2003d8f2df069ebaa73402a464aec124da681f0f546a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft800-screen-test-diagnostic\\a741.sdc": "65ba9176d5c8a3597f9d13d54d633d3f6c750a8789283124ddd3965d0cc56c1b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\scripts\\check.py": "3b3b6c1df1d164ad687548f405eebf880c252f65e29153e59002d3950f6804af",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\scripts\\vendor.py": "87880165b8f0574a7010dd23e9b8d799a72dc0a584d85b9071c442f65acb47e8",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\scripts\\prepare_basic.py": "b950d8405b5a09c6426586ddb259b03345e2ba944cbd78946cce4cb054814428",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\constraints\\cdc.sdc": "58bfe817a673fe5cf2bc83cbb8eb91dfe3c6748fd02b7818b6552ee30d86f064",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\constraints\\ddr_control.sdc": "81a01e8b3800946df94a1f684c9e9f3ccac1734926519f90a3abc5cf6c00dfd5",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\constraints\\ethernet.sdc": "dd6db7cfb81efbbb222dcce784584192d52047e51fc6c502634a6e05e2c4b8da",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\constraints\\acg720_camera_car.cst": "c24afcd61413e6bbd17b97cc3a9b67432e18d3e8fdc74336347725bd126de53d",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\constraints\\acg720_camera_car.sdc": "34be7a57486a481192881c53bdd8115560a8c068d6a669ee9abf304e859dd036",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\config\\sensor-pins.json": "abded2bc654d56299a7d1cf1223fea79366aa1f73187c206fa4d1e399a128139",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\scripts\\build.py": "f5c58e41d4686d3cc8fe38f0ed197d123605ad2cea03ee35d19e71efb3935df9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\constraints\\board.cst": "9e7c3d91e6f4277666156c057caffb8b2e6e02777b7873859a05ca9e8489033f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\config\\geometry.json": "c71338aebce07b9a977c1ff0d38e809a9b523da03e42fb0a3c9a404bd97c5ad3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\config\\calibration.json": "6b39e64f1deda838df1edf8a56c45f2eb04653277672a4f46c9ff7d02532a0ae",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\host\\board_config.py": "c30dc9da48aa07edb504924dca3415dd37c66a6c94c7577de6cb3b08dcbfa499",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\link.ld": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\manifest.json": "acff24fb6a98de6f8b941417f3937e6668c5bda9cf52041feb7389eacca58789",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\mission.c": "0b9d5477d31c500fc934c1af674fb10986eaa752ebedc37e2c5fe46d018d980b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\firmware\\start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft800-screen-test-diagnostic\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44"
+  },
+  "timeline": {
+    "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft800-screen-test-diagnostic\\build-timeline.jsonl",
+    "sha256": "75508d17453487e9682f7b55aed0429e86751441e738606e4a42cec49a00a88d",
+    "meaning": "stdout receipt times; EDA output buffering can delay messages"
+  },
+  "timing_driven": true,
+  "correct_hold_violation": true,
+  "tcl_sha256": "43c405c4ca8c13a28223117989a3b2c9b452c4accd4a9ef7c5f2b355b5ac38af",
+  "worst_reported_slack_ns": {
+    "setup": 0.02,
+    "hold": 0.047,
+    "recovery": 3.692,
+    "removal": 0.353
+  },
+  "clock_frequencies": {
+    "sys_clk": {
+      "constraint_mhz": 50.0,
+      "reported_fmax_mhz": 62.788
+    },
+    "camera_pclk": {
+      "constraint_mhz": 100.0,
+      "reported_fmax_mhz": 128.334
+    },
+    "rgmii_rx_clk": {
+      "constraint_mhz": 125.0,
+      "reported_fmax_mhz": 160.334
+    },
+    "tx125m": {
+      "constraint_mhz": 125.0,
+      "reported_fmax_mhz": 208.415
+    },
+    "display33m": {
+      "constraint_mhz": 33.0,
+      "reported_fmax_mhz": 56.77
+    },
+    "memory400m": {
+      "constraint_mhz": 400.0,
+      "reported_fmax_mhz": 2240.144
+    },
+    "ddr_ui100m": {
+      "constraint_mhz": 100.0,
+      "reported_fmax_mhz": 100.196
+    }
+  },
+  "minimum_pulse_width_worst_slack_ns": 1.122,
+  "timing_report_sha256": "dc0fab1d57008b135a8f037b66aa5f51adab32386500fdca699be9ef678963b8",
+  "cache_reuse_requested": false,
+  "synthesis_reused": false,
+  "tool_auto_resynthesized": true,
+  "synthesis_netlist_sha256": "801ca481154f9862f6040f3c55a329450edc3c96433279cb59b20f0c587f09fd",
+  "synthesis_timing": {
+    "synthesis_estimate_only": true,
+    "clocks": [
+      {
+        "clock": "clk",
+        "requested_mhz": 50.0,
+        "estimated_fmax_mhz": 80.751,
+        "logic_levels": 13
+      },
+      {
+        "clock": "rgmii_rx_clk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 139.828,
+        "logic_levels": 10
+      },
+      {
+        "clock": "camera_pclk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 153.521,
+        "logic_levels": 8
+      },
+      {
+        "clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk",
+        "requested_mhz": 33.0,
+        "estimated_fmax_mhz": 79.349,
+        "logic_levels": 15
+      },
+      {
+        "clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk",
+        "requested_mhz": 400.0,
+        "estimated_fmax_mhz": 1293.494,
+        "logic_levels": 1
+      },
+      {
+        "clock": "tx_divider/CLKOUT.default_gen_clk",
+        "requested_mhz": 125.0,
+        "estimated_fmax_mhz": 179.537,
+        "logic_levels": 7
+      },
+      {
+        "clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 192.4,
+        "logic_levels": 3
+      }
+    ],
+    "paths": [
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+        "slack_ns": -0.725,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+        "slack_ns": -0.725,
+        "logic_levels": 2
+      },
+      {
+        "source": "display_cdc/to_system/held_32_s0",
+        "destination": "display_cdc/to_system/dst_data_32_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "display_cdc/to_system/held_33_s0",
+        "destination": "display_cdc/to_system/dst_data_33_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "display_cdc/to_system/held_34_s0",
+        "destination": "display_cdc/to_system/dst_data_34_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "display_cdc/to_system/held_35_s0",
+        "destination": "display_cdc/to_system/dst_data_35_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "display_cdc/to_system/req_s0",
+        "destination": "display_cdc/to_system/req_sync_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "display_cdc/to_display/ack_s0",
+        "destination": "display_cdc/to_display/ack_sync_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "clk[R]",
+        "slack_ns": -0.506,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_0_s0",
+        "destination": "video/output_fifo/rg1_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_1_s0",
+        "destination": "video/output_fifo/rg1_1_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_2_s0",
+        "destination": "video/output_fifo/rg1_2_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_3_s0",
+        "destination": "video/output_fifo/rg1_3_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_4_s0",
+        "destination": "video/output_fifo/rg1_4_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rg_5_s0",
+        "destination": "video/output_fifo/rg1_5_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/rb_6_s0",
+        "destination": "video/output_fifo/rg1_6_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/dcdc/req_s2",
+        "destination": "video/dcdc/req_sync_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/fcdc/ack_s0",
+        "destination": "video/fcdc/ack_sync_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/bcdc/req_s2",
+        "destination": "video/bcdc/req_sync_0_s0",
+        "launch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": -0.483,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_0_s0",
+        "destination": "video/output_fifo/wg1_0_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_1_s0",
+        "destination": "video/output_fifo/wg1_1_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_2_s0",
+        "destination": "video/output_fifo/wg1_2_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_3_s0",
+        "destination": "video/output_fifo/wg1_3_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_4_s0",
+        "destination": "video/output_fifo/wg1_4_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wg_5_s0",
+        "destination": "video/output_fifo/wg1_5_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      },
+      {
+        "source": "video/output_fifo/wb_6_s0",
+        "destination": "video/output_fifo/wg1_6_s0",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "display_clocks/u_pll/PLLA_inst/CLKOUT0.default_gen_clk[R]",
+        "slack_ns": -0.46,
+        "logic_levels": 1
+      }
+    ]
+  },
+  "synthesis_report_sha256": "5298f70cdafb4be0aeb604c6133490100b25591a4354cf58852629d52b93e12a",
+  "calibration_json_sha256": "6b39e64f1deda838df1edf8a56c45f2eb04653277672a4f46c9ff7d02532a0ae",
+  "basic_enabled": true,
+  "hdmi_enabled": false,
+  "network_video_enabled": false,
+  "navigation_enabled": false,
+  "camera_size": [
+    800,
+    480
+  ],
+  "tft800_enabled": true,
+  "geometry_verified": true,
+  "motion_release_allowed": false,
+  "artifact": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft800-screen-test-diagnostic\\impl\\pnr\\a741.fs",
+  "artifact_sha256": "d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b"
+}

@@ -1,0 +1,305 @@
+{
+  "metric": "Named port-connection degree per synthesized module; includes output connections and not exact flattened fanout",
+  "largest": [
+    {
+      "module": "a741_osd_0",
+      "net": "clk_d",
+      "pin_degree": 1712
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "n78_11",
+      "pin_degree": 1712
+    },
+    {
+      "module": "a741_osd",
+      "net": "pixel_clk",
+      "pin_degree": 1686
+    },
+    {
+      "module": "a741_osd",
+      "net": "n1773_6",
+      "pin_degree": 1686
+    },
+    {
+      "module": "ld06_parser",
+      "net": "clk_d",
+      "pin_degree": 1555
+    },
+    {
+      "module": "ld06_parser",
+      "net": "n78_11",
+      "pin_degree": 1555
+    },
+    {
+      "module": "a741_motion",
+      "net": "clk_d",
+      "pin_degree": 1335
+    },
+    {
+      "module": "a741_motion",
+      "net": "n78_11",
+      "pin_degree": 1335
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "clk_d",
+      "pin_degree": 1188
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "n78_11",
+      "pin_degree": 1188
+    },
+    {
+      "module": "a741_core",
+      "net": "clk_d",
+      "pin_degree": 916
+    },
+    {
+      "module": "a741_core",
+      "net": "n78_11",
+      "pin_degree": 916
+    },
+    {
+      "module": "a741_autonomy",
+      "net": "clk_d",
+      "pin_degree": 858
+    },
+    {
+      "module": "a741_autonomy",
+      "net": "n78_11",
+      "pin_degree": 858
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "snapshot_due",
+      "pin_degree": 704
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "tx_buffer_127_7",
+      "pin_degree": 702
+    },
+    {
+      "module": "a741_core",
+      "net": "ms_tick",
+      "pin_degree": 653
+    },
+    {
+      "module": "a741_map_udp",
+      "net": "clk_d",
+      "pin_degree": 594
+    },
+    {
+      "module": "a741_map_udp",
+      "net": "n78_11",
+      "pin_degree": 594
+    },
+    {
+      "module": "a741_path_tracker",
+      "net": "clk_d",
+      "pin_degree": 571
+    },
+    {
+      "module": "a741_path_tracker",
+      "net": "n78_11",
+      "pin_degree": 563
+    },
+    {
+      "module": "a741_pi",
+      "net": "clk_d",
+      "pin_degree": 563
+    },
+    {
+      "module": "a741_pi",
+      "net": "n78_11",
+      "pin_degree": 563
+    },
+    {
+      "module": "a741_pi_0",
+      "net": "clk_d",
+      "pin_degree": 563
+    },
+    {
+      "module": "a741_pi_0",
+      "net": "n78_11",
+      "pin_degree": 563
+    },
+    {
+      "module": "picorv32",
+      "net": "clk_d",
+      "pin_degree": 541
+    },
+    {
+      "module": "a741_lidar_project",
+      "net": "clk_d",
+      "pin_degree": 522
+    },
+    {
+      "module": "a741_udp_direct",
+      "net": "clk_d",
+      "pin_degree": 515
+    },
+    {
+      "module": "a741_udp_direct",
+      "net": "n78_11",
+      "pin_degree": 514
+    },
+    {
+      "module": "a741_osd",
+      "net": "y[4]",
+      "pin_degree": 504
+    },
+    {
+      "module": "a741_osd",
+      "net": "n10783_7",
+      "pin_degree": 491
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "n11096_7",
+      "pin_degree": 490
+    },
+    {
+      "module": "a741_lidar_project",
+      "net": "n78_11",
+      "pin_degree": 487
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "panel_row[0]",
+      "pin_degree": 475
+    },
+    {
+      "module": "ld06_parser",
+      "net": "n4800_7",
+      "pin_degree": 466
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "panel_row[1]",
+      "pin_degree": 450
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "fusion_due",
+      "pin_degree": 448
+    },
+    {
+      "module": "a741_telemetry",
+      "net": "lpv",
+      "pin_degree": 446
+    },
+    {
+      "module": "a741_osd",
+      "net": "\\lines[0] [510]",
+      "pin_degree": 443
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "\\lines[0] [510]",
+      "pin_degree": 436
+    },
+    {
+      "module": "a741_osd",
+      "net": "y[5]",
+      "pin_degree": 427
+    },
+    {
+      "module": "udp_checksum_gen",
+      "net": "clk_d",
+      "pin_degree": 411
+    },
+    {
+      "module": "a741_osd",
+      "net": "y[6]",
+      "pin_degree": 407
+    },
+    {
+      "module": "a741_path_planner",
+      "net": "clk_d",
+      "pin_degree": 399
+    },
+    {
+      "module": "a741_scan_match",
+      "net": "clk_d",
+      "pin_degree": 397
+    },
+    {
+      "module": "a741_scan_match",
+      "net": "n78_11",
+      "pin_degree": 395
+    },
+    {
+      "module": "ld06_parser",
+      "net": "n7471_9",
+      "pin_degree": 393
+    },
+    {
+      "module": "a741_osd_0",
+      "net": "panel_row[2]",
+      "pin_degree": 386
+    },
+    {
+      "module": "a741_travel",
+      "net": "clk_d",
+      "pin_degree": 372
+    },
+    {
+      "module": "a741_travel",
+      "net": "n78_11",
+      "pin_degree": 372
+    },
+    {
+      "module": "a741_travel_0",
+      "net": "clk_d",
+      "pin_degree": 372
+    },
+    {
+      "module": "a741_travel_0",
+      "net": "n78_11",
+      "pin_degree": 372
+    },
+    {
+      "module": "ld06_parser",
+      "net": "n18479_4",
+      "pin_degree": 369
+    },
+    {
+      "module": "a741_path_planner",
+      "net": "n78_11",
+      "pin_degree": 351
+    },
+    {
+      "module": "ddr_framebuffer",
+      "net": "n438_6",
+      "pin_degree": 344
+    },
+    {
+      "module": "ddr_framebuffer",
+      "net": "ui_clk",
+      "pin_degree": 343
+    },
+    {
+      "module": "a741_motion",
+      "net": "n5545_4",
+      "pin_degree": 316
+    },
+    {
+      "module": "cdc_mailbox_2",
+      "net": "pixel_clk",
+      "pin_degree": 315
+    },
+    {
+      "module": "cdc_mailbox_2",
+      "net": "n1773_6",
+      "pin_degree": 315
+    },
+    {
+      "module": "cdc_mailbox_2",
+      "net": "n2322_3",
+      "pin_degree": 314
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "flash_verified_camera_and_text_restored_user_confirmed",
+  "recorded_utc": "2026-10-27T19:59:59.326471+00:00",
+  "bitstream_sha256": "d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-reburn-20261028\\20261027T195611.670896Z",
+  "final_status_register": "0x70022020",
+  "read_user_code": "0x0000A741",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "configuration_ready": true,
+  "user_code_verified": true,
+  "user_report": "摄像头画面与文字已恢复",
+  "cold_boot_verified": false,
+  "cold_boot_deferred_by_user": true,
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "authorization": "User requested reburn after power cycle; existing continuous programming authorization applies.",
+  "motor_vm_off_basis": "Same debugging session: VM remained off; user has not reported enabling it.",
+  "regression_evidence": "output/tft800-official-20261028/VALIDATION-CHAIN.json; reused identical archived bitstream, no recompilation this time"
+}

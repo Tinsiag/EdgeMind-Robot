@@ -1,0 +1,1462 @@
+{
+  "created_utc": "2026-10-27T13:01:10.724334+00:00",
+  "kind": "local incremental handoff, no GitHub upload",
+  "base_commit": "6a32a56ee1755c8353116ace9afed6631ba57d9c",
+  "files": [
+    {
+      "path": "current-source/.gitattributes",
+      "sha256": "aea70559fbd4096be1b4bab3220b23ce31896b8e171b6eb21022dec3b5c850fb",
+      "bytes": 3215
+    },
+    {
+      "path": "current-source/AGENTS.md",
+      "sha256": "41fd648636352ddc179d104935fcfd27f21253f378b9d7ddd4e35f07bc93bd1f",
+      "bytes": 5881
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/config/calibration.json",
+      "sha256": "6b39e64f1deda838df1edf8a56c45f2eb04653277672a4f46c9ff7d02532a0ae",
+      "bytes": 1570
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/config/geometry.json",
+      "sha256": "c71338aebce07b9a977c1ff0d38e809a9b523da03e42fb0a3c9a404bd97c5ad3",
+      "bytes": 2929
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/config/sensor-pins.json",
+      "sha256": "abded2bc654d56299a7d1cf1223fea79366aa1f73187c206fa4d1e399a128139",
+      "bytes": 2629
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/constraints/board.cst",
+      "sha256": "87de85a597cb89c804d6c778b53b8dfd8d9647490f506a1baf81f77d5009c65c",
+      "bytes": 99
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/constraints/cdc.sdc",
+      "sha256": "58bfe817a673fe5cf2bc83cbb8eb91dfe3c6748fd02b7818b6552ee30d86f064",
+      "bytes": 4651
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/reference/README.md",
+      "sha256": "d61c69469a9bd9f9dd9f4df37d312e328ed511f5fe163347071bcb9d8dcfad96",
+      "bytes": 1066
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/reference/TFT_CTRL_480_270_16b.v",
+      "sha256": "50ec82be5dc9429658eea27730f271833d527af08014a0c42b1434e74f02ed9e",
+      "bytes": 2923
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/rtl/a741_tft480_panel.v",
+      "sha256": "e15a9df04bdf57d8613d646c210acfd98072f9776ea85a9df1099b8bedfca5e9",
+      "bytes": 1509
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_panel_tb.v",
+      "sha256": "9d70f1de981fcc5f6ee3b782845405721114d85c86485556c9ae206fe689fc64",
+      "bytes": 1051
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v",
+      "sha256": "2800ed486bba55c53da2e6697f75cc019e68a3de657c2dfa685a3e3f8f65b461",
+      "bytes": 2191
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_timing_tb.v",
+      "sha256": "0755527eeaf4eba9c54631003cf4c4b4269ea9f0a4756154429dd0cc6a89b8be",
+      "bytes": 3780
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/FIRMWARE-GUIDE.md",
+      "sha256": "7ad6f2ea3ba0be1fc13414733421c51131edc4b5029b57efe2417d324ae64e9f",
+      "bytes": 18803
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/FUSION-ARCHITECTURE.md",
+      "sha256": "6bfb2970059ab5ac49f52298e3f63f8b4f6ecbe90a7aeeddc9d18a7e18ed3422",
+      "bytes": 4170
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/FUSION-PROTOCOL.md",
+      "sha256": "af65b43b743e509d6f474a9f3240d96b46ac6ded92d001586b4092901e719fea",
+      "bytes": 5306
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/hardware/acg720-pin-assignment.csv",
+      "sha256": "b377a9cec54e86911586abf500f4aff46a182da55743aa1e05f0a65895fe4437",
+      "bytes": 11878
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/HARDWARE.md",
+      "sha256": "20740c1d4e809af10eb34fc9e081cdc50210c5f1aa330329a1cae9c5e6200f68",
+      "bytes": 3242
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/images/mpu6050-module-schematic.jpg",
+      "sha256": "5530599dee17ffb3c2e2b248f417443fc62aa7bace9e1d8a214c6efc47245a72",
+      "bytes": 136643
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/images/mpu6050-product-pins.jpg",
+      "sha256": "20e62e782c2bb8b88987fe78b1f0bffbadab9de1e0b2e968547d27fa8e62ba61",
+      "bytes": 1378600
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/images/mpu6050-product-spec.jpg",
+      "sha256": "280e09d837a59d439b7ff78269ce5c572d38d25b7e0a246045b8f92a56d33681",
+      "bytes": 1600215
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/images/README.md",
+      "sha256": "bb4409694e1c732d758b56432fd0c76db8ca3b58edf97706cd6c66d752c16518",
+      "bytes": 601
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/IMU-TEST.md",
+      "sha256": "9bfa30f26fc677555a5a6721edc59dc685fb7407138a5d229182aaba8ed85dac",
+      "bytes": 7625
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/MOTION-LIDAR-MAPPING.md",
+      "sha256": "7168a63af7ee1c3d8cfa555083f1b298482f3885edd0f8a5d61a761c5f99e26a",
+      "bytes": 4261
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/MPU6050.md",
+      "sha256": "aab8fd1ebcffe40ac88a119ecdad44ad4aa1863bf32c5ed9543aeef3fc9c70ec",
+      "bytes": 6349
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/NETWORK-DIAGNOSIS.md",
+      "sha256": "00235b0b60ab505f77b9b423916ad0d114febb074bf37bd87f1d94b00b23bcdd",
+      "bytes": 4344
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/PROTOCOL.md",
+      "sha256": "c6fefa8cda8f37c92e4edf1c856c764223015968cc463450ef4a76e36dd47ba9",
+      "bytes": 7431
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/docs/TASK3-4.md",
+      "sha256": "fc778d5f368955513dbc3e3be37f935e8c0bc10358ee0fe4055841f52c16997a",
+      "bytes": 17338
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/firmware/link.ld",
+      "sha256": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+      "bytes": 338
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/firmware/manifest.json",
+      "sha256": "acff24fb6a98de6f8b941417f3937e6668c5bda9cf52041feb7389eacca58789",
+      "bytes": 544
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/firmware/mission.c",
+      "sha256": "0b9d5477d31c500fc934c1af674fb10986eaa752ebedc37e2c5fe46d018d980b",
+      "bytes": 265
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/firmware/mission.hex",
+      "sha256": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44",
+      "bytes": 18432
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/firmware/start.S",
+      "sha256": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15",
+      "bytes": 96
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/app.py",
+      "sha256": "34304bb521d14d04d08f91c47b22c7000bb8c7f8457b8b92c31a94c4b9a94b2a",
+      "bytes": 7260
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/avoidance.py",
+      "sha256": "eecb46d4945f938d755210dfdd094dbcf6a35d28d078fdfa2b7d8cd2329a65d9",
+      "bytes": 2493
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/board_config.py",
+      "sha256": "c30dc9da48aa07edb504924dca3415dd37c66a6c94c7577de6cb3b08dcbfa499",
+      "bytes": 2460
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/calibration.py",
+      "sha256": "61725e15fa7aa1e20a3312e6965e3b2b24041611283967ff355a39bbbd0d1a98",
+      "bytes": 4111
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/client.py",
+      "sha256": "67d532d99d3bf2f81a5dbc8e7e82e69fe99634916812a9bb8571eca14ee07d77",
+      "bytes": 13017
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/imu_test.py",
+      "sha256": "e9c695c3821e17c8d9e6d4193d8b598fb1f562d13c3e14682b295951659d7123",
+      "bytes": 1963
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/host/telemetry.py",
+      "sha256": "6b3f0b34e42d9234af8c8e33d99619eb151d37f3483f879429471b40874a9468",
+      "bytes": 11107
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/README.md",
+      "sha256": "0f2638ad1ab3040e45dc297c82dc8835ede716e74d0c147c1d30f5abe8d26b78",
+      "bytes": 8764
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_attitude.v",
+      "sha256": "ab29968241e8992e903c5f2c7d3b6cb9e3815aab6a1f1f187e8835d0edd2ebdf",
+      "bytes": 2905
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_avoidance.v",
+      "sha256": "0e49fa684fa7c66aee14a6de5493fb8a12a701e96b296977f5d4df94496a77ee",
+      "bytes": 5036
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_bare_cpu.v",
+      "sha256": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
+      "bytes": 2879
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v",
+      "sha256": "4e1f1f62412575ed5910aeee4a9efe8ca58f5fdfda498b35302a36e53de56ef1",
+      "bytes": 12595
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_divider.v",
+      "sha256": "6ef116a71b94c4df50b5213effc10a5232da82eb801741f5aa3e37d7a369eea0",
+      "bytes": 1262
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_imu_i2c.v",
+      "sha256": "ca08c56ac95ce852383183481dedbc54d99776dc08aff2298222d95c4c1fca8a",
+      "bytes": 6090
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_guard.v",
+      "sha256": "6020866db8a187aae3b4580ab0d9ad87ba8726d258486abe4a8b18c58e6bae37",
+      "bytes": 3328
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v",
+      "sha256": "e0ca0c294dfdbf99e948fc4941b162df7bc22dc2760d026179c4625b898bdfc8",
+      "bytes": 23779
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_net_health.v",
+      "sha256": "5b74ada7a73d9ada4a56d74ae0618fe4c4425c2ec5a92357a73cdf3d1afcea0b",
+      "bytes": 634
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_osd.v",
+      "sha256": "9111413de38002b84fafeb383f955fb32831a820eaf540b696803e6cacf7d1f0",
+      "bytes": 10413
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_pi.v",
+      "sha256": "e6cb58f1f0f6a45bee6c1eca17ba42e4da92f8bcf557df7a8c3b2e4a016f7926",
+      "bytes": 7081
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v",
+      "sha256": "f8d2a5c56899c0236ac64295a29fab39287e73a7fae46eb8deabc7ae87f79bee",
+      "bytes": 3755
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v",
+      "sha256": "ef3b8fdb4ce5f65f69cfd80a272e4285a7570361b061384aa3ddc68ea5702752",
+      "bytes": 6734
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_sensors.v",
+      "sha256": "87d552a311ecc67163cb9be7b3a7bcbaf04d09c3a23e1abe8792aeddbf860b50",
+      "bytes": 4196
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_speed.v",
+      "sha256": "4f8339447e4a4e13cd4c42a4adbad0389192bcaa2f8a3d7c5793c2a4c8483073",
+      "bytes": 2556
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_targets.v",
+      "sha256": "0c55d67743da073e70b9095ca9c77d1509e97409e9964f4ea0930cc414b22bbf",
+      "bytes": 7286
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_telemetry.v",
+      "sha256": "56223432e4f9f5aa0fed53ef6a6b16acdc198a9dcac4770aa00a7ec7199f0188",
+      "bytes": 2757
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v",
+      "sha256": "a1b11a40cf60682c17e008c74cf52557721eefa88458f52a58b93f59219f7940",
+      "bytes": 11320
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_tx_stage.v",
+      "sha256": "2603e8ad6a8ddc83a82a1ef83907040b7039883dec5b4cd15d8c08aadae38ec8",
+      "bytes": 672
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_direct.v",
+      "sha256": "75a84244446ad91adbdf54e203f3790adf9c84ffbb684bd1951094d10ae519a1",
+      "bytes": 7616
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v",
+      "sha256": "d84843265f02489a5f17c3624ae73e75ad75095f9e9e7fbf10a9b8b7e0c7787d",
+      "bytes": 4544
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/ld06_control.v",
+      "sha256": "49eb9e849e8d53195db99e31e44ce06b98fef2bdb9e3c5387ddca8c073c05501",
+      "bytes": 2489
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/ld06_parser.v",
+      "sha256": "28953c0454d6d3f2a4e2c69eb0b77eb7bfb30c445afb42aa6c53d7941d3fad20",
+      "bytes": 8057
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_driver.v",
+      "sha256": "f6b011f3a689b9a5a647ad8a782030738e2e0a29eae7dcdadbff1dba12b02bd7",
+      "bytes": 7170
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/rtl/mpu6050_heading.v",
+      "sha256": "94fb9cf33db57551369a0e8f53424d20b133d86dcc7eb3d9409552871f8b69b3",
+      "bytes": 5530
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/archive.py",
+      "sha256": "1afdf0b126047b2c3e6ab9d924bb9ff08c2c7bd2df996bda21ca59f05fb35833",
+      "bytes": 7528
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/audit_imu.py",
+      "sha256": "c10cbb60b9caa73bc619940b5b0bc2b6cac6ac418f7229b7bb45edaf8fc03d0c",
+      "bytes": 4177
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/audit_motion_lidar.py",
+      "sha256": "9d66a3c7ae925b0a419d83133ddbabc8b12b6d6fd5d0a864875a53b4c6251f04",
+      "bytes": 2660
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/build.py",
+      "sha256": "69f164ecbefc30cc0f69b73ee54edbb964dc0a73e3b83d4e5d20def52b270170",
+      "bytes": 19141
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py",
+      "sha256": "26f27c73dd0e6258803f72e631afa1817afdbc41ed61c23f3a781f990df0f65b",
+      "bytes": 4062
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/capture_lidar.py",
+      "sha256": "ed0395f8eaf3cb956d042ffb359b27108e18ac8336ee2c0a8350668b93d94a11",
+      "bytes": 4857
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/check.py",
+      "sha256": "ee283819ca73fc6f5bc50e7454e51aed7717bc7e9d8af4fe29ac7b9bb71ccaa8",
+      "bytes": 8414
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/check_baseline.py",
+      "sha256": "577b51c42fc5739542ebd3d537be0ddf33a48af68a16501eb36a5c7cb650f2b4",
+      "bytes": 1545
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/diagnose_control.py",
+      "sha256": "c21ec983c19f81e0631a83ac67d0c33dd58614ed155b7f886bfa78d3769ac627",
+      "bytes": 3082
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/geometry_from_model.py",
+      "sha256": "6a4fff8ed8cbaa49106dee5731f1ee0a63ccb2608c187c2791244efa8bda5a93",
+      "bytes": 3547
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/inspect_geometry.py",
+      "sha256": "de37cd0711b80e68dd0dfba3a3af2c76c8ac4385e7ecd5475896d5235a548bfa",
+      "bytes": 2140
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/network_check.py",
+      "sha256": "88fa7e0467bb6545271e43a88f749aec8239e31c0030ce8314319f6e7fb223de",
+      "bytes": 4225
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/prepare_basic.py",
+      "sha256": "edb26bf9fbc15f4b351d2df7a981b3537c893e1f05992a50a9ca75e292d24bdc",
+      "bytes": 6291
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/reference_mpu.py",
+      "sha256": "a19b3f5e14cba063859f7ea6750c1bfa9a268eeed603618cb018e6a482f2b1c8",
+      "bytes": 4392
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/regress_related.py",
+      "sha256": "5a5c4c8ad48f3251f2df2de3165c7c0aa018c38c603f144fc25a5b6ddc6ad546",
+      "bytes": 1721
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/scripts/vendor.py",
+      "sha256": "87880165b8f0574a7010dd23e9b8d799a72dc0a584d85b9071c442f65acb47e8",
+      "bytes": 1953
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/async_fifo_tb.v",
+      "sha256": "b170c2c77a4fa86e02a00ed02a37a9976410691d9497d7602a57029af16f9498",
+      "bytes": 2618
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/attitude-vectors.hex",
+      "sha256": "09c7e26db4ad82938efdf2a8758eb69770b5ebccfcf927ece5ed63b5ce5d4757",
+      "bytes": 45056
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/attitude_tb.v",
+      "sha256": "3e9d74adf22d471d6a01bca0b4eb2eb62b500c63b1cff0bc65b8f727e89e885d",
+      "bytes": 1906
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/avoidance_core_tb.v",
+      "sha256": "b7ab50689c72bc5c54f652bc76d02b8defa06fab0519d97849ae61160220887b",
+      "bytes": 3776
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/avoidance_lite_tb.v",
+      "sha256": "3e5ab92ea3220674267573dd2201e72c10be554328f436b533f06ec055918985",
+      "bytes": 7137
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/bare_cpu_tb.v",
+      "sha256": "c5282a057c6d4c3ef3eb32a56ae2d0284b9aa14e267e3ed76119c4a3f90a354c",
+      "bytes": 2150
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/camera_tft_tb.v",
+      "sha256": "6a407a0b5f00041ebe966daf83e702d3331e5d2f9dd4bc36c3c31cab38d83006",
+      "bytes": 7709
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/imu_sensor_tb.v",
+      "sha256": "702a60a63b0f0636eb4ecc7237de9d2cdf2b9e724841a825968a807a252aa26a",
+      "bytes": 3498
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/imu_test_tb.v",
+      "sha256": "4ba7e049e4836dcf1b708596d66e90ed7c1730412e3f71c524d0d3944e12e4a1",
+      "bytes": 2933
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/ld06_embedded_header_tb.v",
+      "sha256": "9d0410a4d042aed3cc837f38aff89080f475f353bee6d1b6d17f50bf89af349f",
+      "bytes": 2614
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/ld06_recovery_tb.v",
+      "sha256": "3f45043ea994545315de21f05fe2b17425428653263f6b56f434c73ea1f4a19c",
+      "bytes": 4639
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/lidar_control_tb.v",
+      "sha256": "92c67bd51cfbb4e277001a8e372fe651a952d455dbf5a139b563631e04f53679",
+      "bytes": 1682
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/lidar_guard_tb.v",
+      "sha256": "18cb3ac1e11b235110c48e47a017d8eed7b428bb9840cdbb6d3b755961f06a85",
+      "bytes": 2031
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/motion_lidar_tb.v",
+      "sha256": "528efa4b04b1b58b0527f80a8566004da28ed7dabfbc42cd4a43d839bc8bf3ed",
+      "bytes": 3397
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/motion_tb.v",
+      "sha256": "ecfe32981e00e354868df2ba8048773ed04a4a8a3cb2fe6e7f6dd193e03cb066",
+      "bytes": 7447
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/mpu_driver_tb.v",
+      "sha256": "25d489cc698ec01ceaa64219ba38a550941e40a0dea05b87b709bbdb6bf721e9",
+      "bytes": 3258
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/mpu_heading_tb.v",
+      "sha256": "f701a48ea1f910e72ebdcd0dc4b87aae48165e7d23ba30cfd073080dee872a43",
+      "bytes": 5143
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/mpu_i2c_tb.v",
+      "sha256": "bb5ce6484f99855ef10bb9bba2a20e7b728ada81795b22800157f49a1fbf6b67",
+      "bytes": 2120
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/mpu_legacy_identity_tb.v",
+      "sha256": "2bda907b441aa733c319f196a57e625b116a5a49006498fa289cfccd9fc232a7",
+      "bytes": 1548
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/net_health_tb.v",
+      "sha256": "9ac47e6f4abbd5a884a49b701e995c019d081891006ebfbf7f5168dec1119777",
+      "bytes": 719
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/network_tb.v",
+      "sha256": "2c9122704a53878a5751cbf7e34cc9884acae64d62301acb96ecbae73483591d",
+      "bytes": 2932
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/osd_tb.v",
+      "sha256": "00bec7317c498f00b5a4881ab75fcdd6898b339024463007da1d054166d22fdd",
+      "bytes": 2704
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/phy_telemetry_tb.v",
+      "sha256": "cedb23ac5a08ba490c3a091679fb22979c76efe959de1a114f615919f857cc14",
+      "bytes": 1732
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/pi_target_limit_tb.v",
+      "sha256": "6a4d932b9e85f58a3eb6bfa78dd70b39824774958c6e2df724964ae6bde8ffdb",
+      "bytes": 1501
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/protocol_tb.v",
+      "sha256": "b6ab8279bc1d1778534bb7cf40f3a52bd6eacabfe47f44b5a4969a46a9002e40",
+      "bytes": 1975
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/router_tb.v",
+      "sha256": "bf0fa484329305bd66c931b287c86b0042cc97c00040a9d2a3ed9d0dac51a59d",
+      "bytes": 1174
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/speed_tb.v",
+      "sha256": "cbb2ca244cf350eab2ace3df3d2b6043619965c66aa66b0021d4f671d8ff94a4",
+      "bytes": 1422
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/targets_tb.v",
+      "sha256": "19bc7d8860c01c7c529e6a1a8b551eb2cc3eaf8d614e86405d8c6bdf1d077d91",
+      "bytes": 6660
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/telemetry_tb.v",
+      "sha256": "2b0d26ed32146df0852e9eb6161c8d7086094603831d120adf310a80b2c9747a",
+      "bytes": 1631
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/test_avoidance.py",
+      "sha256": "09a84c4e69a175aa9a75c1d621de43a2a1e28114d799e141b55cac16af650dc2",
+      "bytes": 2673
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/test_firmware_cache.py",
+      "sha256": "d5742c295166a78a7c9139e996df247570cd23c3e59c476dba4ca779d343d011",
+      "bytes": 1716
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/test_gui.py",
+      "sha256": "2e00525ce1904adf91dc5f9de8b71e82d328f260a7185ec551c2d2612b9268c7",
+      "bytes": 2281
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/test_host.py",
+      "sha256": "46406fac010cd3beefa85ff3a78c33047df5d56ecb2e933cc9e8d0c2d8a5cf54",
+      "bytes": 13692
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/test_vendor.py",
+      "sha256": "f34e5b06325f6eda88a3126ab829453ad39c9cf560147480571c22278ce6a9f7",
+      "bytes": 1920
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/tests/udp_direct_tb.v",
+      "sha256": "f2728f785ba59f50196170ae7223fb3ad222828a4083fc5230f599c021d943d5",
+      "bytes": 7414
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/picorv32.v",
+      "sha256": "0836050971b3c6cdd28ac3b1e5719a67fb645161912bef1e472e63995ceb0622",
+      "bytes": 94657
+    },
+    {
+      "path": "current-source/code/camera-car-control/a741-fpga-fusion/third_party/picorv32/source.json",
+      "sha256": "b6dd9049fd77a55d0a6e7b829ba55b131fa2f90342a6b848e17133cd35bb9a85",
+      "bytes": 391
+    },
+    {
+      "path": "current-source/code/camera-car-control/dev.ps1",
+      "sha256": "32e16bdbfae6ee5ba576696ce31e6f0c4203cfc33a27ea31f8feba303a62af95",
+      "bytes": 4557
+    },
+    {
+      "path": "diagnosis/baseline/build.log",
+      "sha256": "87dcac55438fb89a43855476a04caf2a457c1680b5a9751e057531a55caa3b4f",
+      "bytes": 405711
+    },
+    {
+      "path": "diagnosis/baseline/build.tcl",
+      "sha256": "f8619304dc3fd5fbc99d6d383dc7a8dd77833af18e75366274e718136be219e4",
+      "bytes": 352
+    },
+    {
+      "path": "diagnosis/baseline/hierarchy.json",
+      "sha256": "5d6161a595a2aaa50fcdbc49f78c66c0134afa1fafb057c8545595e65f439733",
+      "bytes": 28013
+    },
+    {
+      "path": "diagnosis/baseline/impl/gwsynthesis/a741_syn.rpt.html",
+      "sha256": "7887f84bd5ab12e1f87854bc5e7a49b989a5f6b30e26566ab96bdc6d8467177f",
+      "bytes": 106794
+    },
+    {
+      "path": "diagnosis/baseline/impl/gwsynthesis/a741_syn_rsc.xml",
+      "sha256": "cf197dfbf1169fa45a72acd7cb47f2fdea2443b8b0d7698302354b22a3e3eccf",
+      "bytes": 16339
+    },
+    {
+      "path": "diagnosis/baseline/impl/pnr/a741.log",
+      "sha256": "00cde4ecb0fadbedeb06ebab4bf66ec0b53bd2eb5c4f5725a2b4e76a920cee42",
+      "bytes": 821
+    },
+    {
+      "path": "diagnosis/baseline/impl/pnr/cmd.do",
+      "sha256": "b5810d84a535d21dd2f6ac8e700217ac779931c3afcc6bbe63c34361fb984fa8",
+      "bytes": 851
+    },
+    {
+      "path": "diagnosis/baseline/net-pin-degree.json",
+      "sha256": "a1da70bf0e270c0eee61308ef83d04e5960f8ce37ced80e79aeb4f7b99c8f5c9",
+      "bytes": 6025
+    },
+    {
+      "path": "diagnosis/baseline/result.json",
+      "sha256": "b79436b06f74ff5cecd71f914f07f2dceb05adf8d8f06cda9d3ed90b747b8a0f",
+      "bytes": 36189
+    },
+    {
+      "path": "diagnosis/baseline/source/rtl/a741_osd.v",
+      "sha256": "b89b866ecd88be43501fd384a54149ed8b8ced6db0c824c2a72a0a2e171ec092",
+      "bytes": 19103
+    },
+    {
+      "path": "diagnosis/baseline/source/rtl/a741_sincos.v",
+      "sha256": "bcd387f10ed10800f7b192cf77d20b416cff40dd253093de64da342e9e9cf1a5",
+      "bytes": 1598
+    },
+    {
+      "path": "diagnosis/baseline/source/scripts/build.py",
+      "sha256": "3205b93d17bf8ab448a9f753276a7c05ec4da1dd71c838bb42c74beefd51a639",
+      "bytes": 30469
+    },
+    {
+      "path": "diagnosis/baseline/source/scripts/check.py",
+      "sha256": "5a5d4597a1625b52b411924ffd5ea56921027738062cac55cd60ca8ed31a3724",
+      "bytes": 9223
+    },
+    {
+      "path": "diagnosis/pre-prune/firmware/manifest.json",
+      "sha256": "4e338711a577409319c9ca1952fcdba42cdd65984ab4287a2f328189c2b81e03",
+      "bytes": 545
+    },
+    {
+      "path": "diagnosis/pre-prune/firmware/mission.c",
+      "sha256": "896dceccafde806901b3340871d0ad0178f08e096d1e2236fc1ce53a87012dfb",
+      "bytes": 2629
+    },
+    {
+      "path": "diagnosis/pre-prune/firmware/mission.hex",
+      "sha256": "3b9d8f2fafbd662da0011d1abb72b8559b714b49b8a6c97289fc70590d8dce18",
+      "bytes": 18432
+    },
+    {
+      "path": "diagnosis/pre-prune/host/app.py",
+      "sha256": "b6d72099552fd2788d3e2988dd6727e1628b604e259fda896605036b943e1fda",
+      "bytes": 34044
+    },
+    {
+      "path": "diagnosis/pre-prune/host/avoidance_view.py",
+      "sha256": "175996c4892eeaf18c31c94c0f17488626a6cf07a19f246e9267482f56622aaf",
+      "bytes": 2130
+    },
+    {
+      "path": "diagnosis/pre-prune/host/client.py",
+      "sha256": "0e39d89199f97a4cea3552889750b8712666f1fc9fc3b88de01fabac6fec3948",
+      "bytes": 20685
+    },
+    {
+      "path": "diagnosis/pre-prune/host/fusion.py",
+      "sha256": "6effbdc7c047f110a03b8110a61659566de16ec26587b52d7939b0667be8c6bf",
+      "bytes": 13896
+    },
+    {
+      "path": "diagnosis/pre-prune/host/fusion_config.py",
+      "sha256": "76521add92e0301def9370500f4fbc82873926eda44775bc19bc5dbab279d670",
+      "bytes": 2465
+    },
+    {
+      "path": "diagnosis/pre-prune/host/fusion_view.py",
+      "sha256": "e30f47eac3e9728e421064be446aa881f713deb946e9f24ab5b04293338dbd8b",
+      "bytes": 11490
+    },
+    {
+      "path": "diagnosis/pre-prune/host/heading_control.py",
+      "sha256": "f686d8275ae4b052b448b32b2d38ccacc2f841ef0a1b15b19984687eefeb06d5",
+      "bytes": 1701
+    },
+    {
+      "path": "diagnosis/pre-prune/host/mapping.py",
+      "sha256": "c4e7baa8cbba8c05f5be430b2853b1f90feb029de85568ef25ce131ec8e4e782",
+      "bytes": 12351
+    },
+    {
+      "path": "diagnosis/pre-prune/host/telemetry.py",
+      "sha256": "7dfd125d2221cc009d906043b2e936dc8865c68f1cb0c64a488ef5ded60aa57b",
+      "bytes": 13316
+    },
+    {
+      "path": "diagnosis/pre-prune/host/video.py",
+      "sha256": "df973993587190a8a0b705563098b4affef2a2afef42a851ff472543a77d1afa",
+      "bytes": 7644
+    },
+    {
+      "path": "diagnosis/pre-prune/native/slam_bridge.c",
+      "sha256": "6fd66a7eb7b4952de94a34db23d66fa602b5e237dcc7b00a4e517a8f1910cae6",
+      "bytes": 3224
+    },
+    {
+      "path": "diagnosis/pre-prune/requirements-mapping-build.txt",
+      "sha256": "277cb9f22651b0bdb403b36599059b96be50d4d17a9a0e28d8be4c14fd14411c",
+      "bytes": 77
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_autonomy.v",
+      "sha256": "36f112f7bb600b9e0aa44e14d09d7b704f034dc872ae3725bc97e4849ac7d2f0",
+      "bytes": 21147
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_core.v",
+      "sha256": "0da0056093eb931a0cf8522d5853ae7ce5c99271f1aba212e2bbe7697efb2003",
+      "bytes": 16184
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_fusion_core.v",
+      "sha256": "15709a58ed9853a30f27c61fa2926018ff217fb2ef94e1ded599af983948950e",
+      "bytes": 4209
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_grid_map.v",
+      "sha256": "34d7e98badf682b57b23689638256527f99f3204c41603469b11a5eec450be82",
+      "bytes": 1606
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_hdmi.v",
+      "sha256": "5aa480d4b74bca004657ead717068d5a794e661cd360a06dd6dd73cc243cbc5b",
+      "bytes": 2141
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_inflate.v",
+      "sha256": "40457a5736c793cbc524ddad6d2c660a6273de13271926db6ecae8c1bffeeb4e",
+      "bytes": 2459
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_lidar_project.v",
+      "sha256": "3f6ec9b7344085ae42c789d150c4d1a67a88c3a47127af4e39ad7436444c64a5",
+      "bytes": 4760
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_lidar_safety.v",
+      "sha256": "486db800a4b48e451e9e19e970065161aee6be64bdbbe5a2c5226cf2dfc4dcbb",
+      "bytes": 4612
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_map_udp.v",
+      "sha256": "317041c1962eaede153fe4797750cd89e4395790392fb2a7fb846166d19f92ec",
+      "bytes": 4842
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_mission_cpu.v",
+      "sha256": "d04cfd5f530c0e63b82a872c3713432426badd56714490e1dc245b8fb8aed2ff",
+      "bytes": 5601
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_motion.v",
+      "sha256": "7a056b43890e382c23ae34274270d3501f632d5ecccdee9951d6eceedb39a985",
+      "bytes": 24507
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_nav_guard.v",
+      "sha256": "3a51ea6fb3c4d431633d9fd9cd6f9c53e029eef9dcc11fe421623e53128c5668",
+      "bytes": 5567
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_path_planner.v",
+      "sha256": "79365c9acbc308883a030e9bd2555a16865f20391f20b78ae4b38e2b3af15838",
+      "bytes": 9993
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_path_tracker.v",
+      "sha256": "938559c540517f8ca09d9cf53f2055b3b81cd2002b397da2bab0d228d9f4ef89",
+      "bytes": 8266
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_phy_init.v",
+      "sha256": "e6a2d00cba7050122546c75bee4298540c60eb1a3512321c09e657916f61724c",
+      "bytes": 3934
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_pose_fusion.v",
+      "sha256": "310959729f8f5e388b8a169da8b98659f4298d760391918010d3a320f36a7713",
+      "bytes": 2545
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_protocol.v",
+      "sha256": "a2f4484f1a176690fefa37f68891b440da62ee0519746ede89f4e74eb1f7e9ad",
+      "bytes": 4176
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_ray_mapper.v",
+      "sha256": "bcf16f8202a4e7934013941d1f294ea8fe6feead3f1f9da844a2834a1352b559",
+      "bytes": 2446
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_router.v",
+      "sha256": "1b32d66ac86df04d71967615cb30f593278c27cd3fa724ca5ea47943c2dfd4d1",
+      "bytes": 8135
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_scan_match.v",
+      "sha256": "72a98020885b5d71a3fb6c16d7b1711ccb8e11aec103bb8261c4a7b2a3fc038b",
+      "bytes": 6339
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_sincos.v",
+      "sha256": "bcd387f10ed10800f7b192cf77d20b416cff40dd253093de64da342e9e9cf1a5",
+      "bytes": 1598
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_travel.v",
+      "sha256": "65d2fa265f96816cd6265c2fdcd2857dd8c8b08f9736c2dd9b5d319888a49bc2",
+      "bytes": 2291
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_udp_control.v",
+      "sha256": "27016ab9b8139d5e51e3f80a3e3efef9588d91e5cbe0c9bd604f6c5aa2406ce6",
+      "bytes": 7232
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/a741_udp_direct.v",
+      "sha256": "83644b814380868ccad0fe4ea1c36e9e16d1597e9eee83651fa47d93d3ab6d3d",
+      "bytes": 7483
+    },
+    {
+      "path": "diagnosis/pre-prune/rtl/jy901_parser.v",
+      "sha256": "a1350f6e80866a7b019c82f03f4b650e830112ee2286818b37c87fd4ea7312e7",
+      "bytes": 2491
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/build_mission.py",
+      "sha256": "20d0b79460ee5f7eaf53f0701b4f444435029cb39cb16afc020f3e5865e62c67",
+      "bytes": 2199
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/fusion_network_check.py",
+      "sha256": "67af04f9ded150f9c7385b32a2614c37ee75f4f24991c8b9318ee5765259cf14",
+      "bytes": 3484
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/preview_fusion_gui.py",
+      "sha256": "d20a45c02075e1b7d64f4cfedecf9e9531478af443929cf7a3aed0d97f24f57d",
+      "bytes": 1527
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/report_fusion.py",
+      "sha256": "1f1d6560fedbc36c01e671073555c2074d98b66af22a0a2574034b15fe501056",
+      "bytes": 7490
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/report_task34.py",
+      "sha256": "129ccfd67f2b244f645c61b99eb8ac14aadc10f980ab3fa1c6e31cbec286929e",
+      "bytes": 9052
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/setup_mapping.py",
+      "sha256": "9cd10594f5f9802c6c50e0b16e55d3f20d385acaa198494b3df7dd1e3cf5b5da",
+      "bytes": 2898
+    },
+    {
+      "path": "diagnosis/pre-prune/scripts/vendor.py",
+      "sha256": "cc97ca714be6c44c10d528726c8ec1a7ea3d4fac6c0ec8b6000dcf5592eec21e",
+      "bytes": 1590
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/autonomy_navigation_tb.v",
+      "sha256": "09ae40258073b7422d6443bed362f3319d38edca40ed4066c1c94bb960c96d38",
+      "bytes": 5226
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/autonomy_tb.v",
+      "sha256": "ed6b43adf9be270be1d0b2203c92c36e4f65b2d543c7d9c3d0bbd9d93b87fcbf",
+      "bytes": 2749
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/avoidance_video_tb.v",
+      "sha256": "d7006582cb78bb7296042a755a878a91454ac0fdd88900d24bb2142b2b61b191",
+      "bytes": 8964
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/cad_navigation_tb.v",
+      "sha256": "0bc1c4bd2b5c214a839089904d2d279b7791cd1878e25ffba80dc2fbef911dfd",
+      "bytes": 5443
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/cad_stalled_navigation_tb.v",
+      "sha256": "b4abd37ad00e015d3a7923103966302a09e17f7add4befb6f5a5b42e00534a6f",
+      "bytes": 5907
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/continuous_navigation_tb.v",
+      "sha256": "a22802681d7503a80d8875e973e655a1745a9b1a8dab6f5aa914b455ea521df7",
+      "bytes": 7293
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/control_tb.v",
+      "sha256": "c0fab41925f2afb66e568251bc9ecc9f5f02e32453e739b71620f4401a272689",
+      "bytes": 7460
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/fusion_core_tb.v",
+      "sha256": "9d69b5c27314aad8c52f58e840ed49500e6bcfcd6f5e5e1e8cee278735033a84",
+      "bytes": 4243
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/fusion_network_tb.v",
+      "sha256": "fec31011ef770c35359eb9d581e743378756ea9f37c87c27064d64248aab80e9",
+      "bytes": 2228
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/grid_map_tb.v",
+      "sha256": "c8b1c8f61aeb40aabaf5b40a57c56c7571f6c1c38229e63b451a3513d2093401",
+      "bytes": 1698
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/hdmi_tb.v",
+      "sha256": "546f4515355388a1bc45f34a66d4858c0c940245e2924373bca27c51f9f4f7e5",
+      "bytes": 2533
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/lidar_body_safety_tb.v",
+      "sha256": "3990189762d6cfe34101c79b9fb933db0b2cc9784c305738a6954139545d5462",
+      "bytes": 2023
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/lidar_projection_tb.v",
+      "sha256": "0534ef0e7eb5270a7355dec5e33250ffa62ed0510649bb3fd871298c31f2f84e",
+      "bytes": 2177
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/lidar_safety_tb.v",
+      "sha256": "c04d1f0e44ef4d2f88c09ba565767a21492f8c4d1ef71ab4362d704d65b14b0d",
+      "bytes": 2696
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/local_lease_tb.v",
+      "sha256": "c1ea2c98a38d64732905c0e645f89cf32550daa8930c0e8496f456b6234cd619",
+      "bytes": 5156
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/map_udp_tb.v",
+      "sha256": "d7a48d53b8cce12f775ef9f1b56de2ab591e0ffc4da4a83b5fa8b9651b8f08d5",
+      "bytes": 4695
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/mission_cpu_tb.v",
+      "sha256": "0cd9300ebee0ce48e8f5ae35753ad913a6ff89da9ef089791d0bdba4ccbdc2e5",
+      "bytes": 2579
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/mission_navigation_tb.v",
+      "sha256": "844b5bd7215fa777fb9e7d31928455cd13868cc6cb1405dd32d9cdfffa7f8ccd",
+      "bytes": 10374
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/nav_guard_tb.v",
+      "sha256": "9378bd55b22e1d33015eec659b43433b949dcb13970924ea933d0ceb79d5d527",
+      "bytes": 3382
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/osd_area_tb.v",
+      "sha256": "c0779b253ea6e4ee073d3c6908b3a839d16a44c06b3d37189b800c83c8297194",
+      "bytes": 3030
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/path_planner_tb.v",
+      "sha256": "ca86fa619715cbe5b07d3a7381fdbeafe5165cda443d69f90ac04ee8ec5c6892",
+      "bytes": 3547
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/path_tracker_directional_tb.v",
+      "sha256": "b7ff105142a911d16a287ce75eefb135a31a1ce2b74ba3fd9daf0c0b6ae8515a",
+      "bytes": 2124
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/path_tracker_tb.v",
+      "sha256": "4d00da64341085d030a2ace41b22d33f3825d5c97da6e4078920b5dad64134d3",
+      "bytes": 3733
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/phy_init_tb.v",
+      "sha256": "ef2debd5964f0f32046c14fcfbe0e7eba6801588566f4c0279a48034a9a8c6f8",
+      "bytes": 2741
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/pi_target_limit_tb.v",
+      "sha256": "f66f0b0eea30b3c6be07076b43be950969df55eeeb037beec49bb13335072302",
+      "bytes": 1472
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/pose_fusion_tb.v",
+      "sha256": "4105ca39fb4c4e169ac68247bc298ec8f7dc5c56f5b0f5b463463fff38bec19e",
+      "bytes": 1682
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/ray_mapper_tb.v",
+      "sha256": "8673a8436f6a3416819f8be97b143f54a07858836d1e813fd71490679de3dedc",
+      "bytes": 3048
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/reference/a741_osd_area_reference.v",
+      "sha256": "1c3c286c747eaa640b875a8c20ec189f2b86090bafbc5af5aed97fd04c80e58e",
+      "bytes": 19250
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/router_tb.v",
+      "sha256": "8c7aaaa50b5fd74219f4d3c5137e2abf0ca412b8bf9f1a90165b0c27972d6d80",
+      "bytes": 2267
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/scan_match_tb.v",
+      "sha256": "eca034a78298dec26efc4103723d57c91af0d0d64c0efa6a9529e847f4ded823",
+      "bytes": 1986
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/sensors_tb.v",
+      "sha256": "9836b86a6bde3a4513643350582083c6e5cdf6f68f1e819b05379854bbd6e5dd",
+      "bytes": 3167
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/sincos_equivalence_tb.v",
+      "sha256": "663492d89e4afa0cb59c318ed67ee97a001c01add5e60b7b9630c3428c7f254f",
+      "bytes": 1837
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/test_fusion.py",
+      "sha256": "5b9e8f633695debb095edcb1848ac7fe0569d1d0dca888e0ffb58b5c59e08134",
+      "bytes": 6346
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/test_gui.py",
+      "sha256": "56d59bab8954b3f0f86633f38555e09614c6f1ead756b0f072c4eb3249e81e9d",
+      "bytes": 12539
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/test_host.py",
+      "sha256": "f9fe5d63c98f8e560cc633650d440a3359ac5dd9a5d60b124fe3d30ea78d1154",
+      "bytes": 19364
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/test_mapping.py",
+      "sha256": "0bccbdc4b4b9e506d48f270058d1be9490d6c12ed6778ff2e4cacb62f179e3d0",
+      "bytes": 7289
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/test_mission.py",
+      "sha256": "4b6298688ba56a688d93f6314160e626a9deb212e57dfd53f6f02bbbb01ceec1",
+      "bytes": 2927
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/travel_tb.v",
+      "sha256": "5637c4c8cc9847b42b8004c720ca750148624e46e8883c0c6d6c9cb16d2bab6c",
+      "bytes": 1144
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/udp_direct_tb.v",
+      "sha256": "2cff3307b4f0d7139fc1b14e7053bd424e1ad1c1eb6ab637a22a29a345ce23c8",
+      "bytes": 7154
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/video_capture_tb.v",
+      "sha256": "81d5577dbb80e674dc529e826e0f355bf0931e77a5d0ac43454af7388a3420aa",
+      "bytes": 1753
+    },
+    {
+      "path": "diagnosis/pre-prune/tests/video_tb.v",
+      "sha256": "c9b275456257083b3d2681d4e266c2ae16a14f437593bfaf5e5441bb0c11b564",
+      "bytes": 2711
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/coreslam.c",
+      "sha256": "6be2f7838df3c2f081bb9643cdd974f874c3c1296f3298e56b559189c4d89126",
+      "bytes": 17125
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/coreslam.h",
+      "sha256": "0d1dab1c23853fac9a2cb66187be6edef59982d3dab536df22d69c4255792220",
+      "bytes": 3853
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/coreslam_internals.h",
+      "sha256": "70e374ceb5ef46323b2a45c3d50918a8efc83a2dbd4e326cb73db6c7155d7dbc",
+      "bytes": 1101
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/coreslam_sisd.c",
+      "sha256": "80c971f0d82fb77cd9b6dccda9599e38ff46566868a5f2df9d1c6d120f1f8046",
+      "bytes": 2470
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/GPL-3.0.txt",
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+      "bytes": 34674
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/LICENSE.md",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "bytes": 7651
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/provenance.json",
+      "sha256": "56be9e619dd8216accd9b8fda1a0638b2ae1b7628aa5d1452fba2d9d0673fc49",
+      "bytes": 953
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/random.c",
+      "sha256": "815b1ad81086e797d3103eef1bdaa9ab6505483f6cd23866d91696b213baa68f",
+      "bytes": 1676
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/random.h",
+      "sha256": "c9aa2c8359146c2349138a88ae052cad07cb6653f9d44f57c5ba0e2ab45e15d8",
+      "bytes": 1413
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/README.md",
+      "sha256": "9bae3c7e985febc5c727c11c9e362774d8ef831a334cb57db2a4d000f9d73e05",
+      "bytes": 897
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/ziggurat.c",
+      "sha256": "30457bd74255303d0d2d18d1d4dc098c6f33a74d6bd22618c7bb02e8fa1f2c0b",
+      "bytes": 14113
+    },
+    {
+      "path": "diagnosis/pre-prune/third_party/coreslam/ziggurat.h",
+      "sha256": "34fa600213dbce899f9380d764ae54da061808d6295a9fbe7f2faaa5080bdb52",
+      "bytes": 1395
+    },
+    {
+      "path": "evidence/ACTIVE-BUILD-OPTIONS.json",
+      "sha256": "bfa3433bfbb520cdb61dbed999eceb5e95119c21786788151fff5df08960821a",
+      "bytes": 269
+    },
+    {
+      "path": "evidence/attitude-regression.log",
+      "sha256": "6f20eb84f5161756aacae023dd68c59836909dd18839bdc678734a0ced31ee0d",
+      "bytes": 1591
+    },
+    {
+      "path": "evidence/basic-selection.log",
+      "sha256": "bcd10723b0910c209de9bcdbd7cd707d26e354784d1f9aee6fefed67f9f5c2e5",
+      "bytes": 1814
+    },
+    {
+      "path": "evidence/camera-tft-regression.log",
+      "sha256": "aded94f8d9b2d43f417cd20850364ba0cfc38f0e6e82f2265b0bc4273f60d9bb",
+      "bytes": 609
+    },
+    {
+      "path": "evidence/camera-tft.png",
+      "sha256": "e5fa717d895b8affb7f0d9bc371e841b4afcf5daee98d0bcff87c8bdd3c219cf",
+      "bytes": 4604
+    },
+    {
+      "path": "evidence/host-regression.log",
+      "sha256": "6a37e8dbf986061aa4766739909b9559258412aef1d270b16463f5d28861447c",
+      "bytes": 5102
+    },
+    {
+      "path": "evidence/interrupted-old-build/a741.gprj",
+      "sha256": "884f8771d9f2ce7dd49b42b5c7c3b6cf22da63df26cc49cbc251dbca3d111e49",
+      "bytes": 17949
+    },
+    {
+      "path": "evidence/interrupted-old-build/build.tcl",
+      "sha256": "f8619304dc3fd5fbc99d6d383dc7a8dd77833af18e75366274e718136be219e4",
+      "bytes": 352
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/gwsynthesis/a741.vg",
+      "sha256": "0ea54e41cb304e7f7c188bec137c8d05c7bbf9ced35c9d2c47caae65580bc567",
+      "bytes": 12860878
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/pnr/a741.db",
+      "sha256": "ca7721c5e883a49a2da223c33a9a7f33bb1d498051db2269e1286c31602164e4",
+      "bytes": 1376704
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/pnr/a741.log",
+      "sha256": "00cde4ecb0fadbedeb06ebab4bf66ec0b53bd2eb5c4f5725a2b4e76a920cee42",
+      "bytes": 821
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/pnr/a741.p",
+      "sha256": "edfb6465c7264637cb71e9d61d0a9f464d57fd007256876a8121bd54ad153693",
+      "bytes": 7932066
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/pnr/cmd.do",
+      "sha256": "b5810d84a535d21dd2f6ac8e700217ac779931c3afcc6bbe63c34361fb984fa8",
+      "bytes": 851
+    },
+    {
+      "path": "evidence/interrupted-old-build/impl/pnr/device.cfg",
+      "sha256": "cbfa70f102fab0acf3f6d3690e35bfaf74c84ca855fd986acd79c2beb96ffda6",
+      "bytes": 599
+    },
+    {
+      "path": "evidence/latest-attitude-selection-result.json",
+      "sha256": "e60e31a49ad6cca1ea49fa5cce2c3d388caa66ac6940e5ccf3a46f38f2bd2ba1",
+      "bytes": 28489
+    },
+    {
+      "path": "evidence/LATEST-INPUT-AUDIT.json",
+      "sha256": "51cdf221fff3863e236fbcd59047370633e74e67d42d0e0fa0161f23050bd60f",
+      "bytes": 124
+    },
+    {
+      "path": "evidence/osd-regression.log",
+      "sha256": "6c9202690e5628575cc6b33c062105a979ea4f54d23d12e48b5de06c45be1e83",
+      "bytes": 760
+    },
+    {
+      "path": "evidence/prepare.log",
+      "sha256": "7bffc406ce5b6d84d58dcf27e333f952e3948744d7773d1e3dc6e5f9083bc56b",
+      "bytes": 653
+    },
+    {
+      "path": "evidence/prepared-basic-platform/a741.cst",
+      "sha256": "9c9bd84a476a77c1ac6b1a5e54cd88ed74b9227aad9d3b3d292f5285b04f0c93",
+      "bytes": 11675
+    },
+    {
+      "path": "evidence/prepared-basic-platform/a741.sdc",
+      "sha256": "d6fdbab86946f2f27a858cbd84daa8a6881b1a9efe292f09aa26cfe5d812103b",
+      "bytes": 6480
+    },
+    {
+      "path": "evidence/prepared-basic-platform/a741_top.v",
+      "sha256": "5e77cab06568b1e8972cd47c974f16b2865976b90d85e9339a1d324c50f67e12",
+      "bytes": 11433
+    },
+    {
+      "path": "evidence/prepared-basic-platform/basic-parameters.json",
+      "sha256": "c553ae3ef96b03af85b8d9922641b145da6922b384f5bf50c1c01d7e5aa87169",
+      "bytes": 278
+    },
+    {
+      "path": "evidence/prepared-basic-platform/provenance.json",
+      "sha256": "98fa0a1372413bb29f5e5396016ab834b67b27c82553bc0b4222b07e3ead1955",
+      "bytes": 4856
+    },
+    {
+      "path": "evidence/PRUNE-MANIFEST.json",
+      "sha256": "9cf3021bf3295eba34c02a6ef90fcac9754509a68e9b868ad75a466af6eb4810",
+      "bytes": 26322
+    },
+    {
+      "path": "evidence/RESOURCE-HIERARCHY.json",
+      "sha256": "c549366f8ed9ba02e204d079c790a7b7b82e8830238bc62abfb7983d65c5da21",
+      "bytes": 20826
+    },
+    {
+      "path": "evidence/USER-STOP.json",
+      "sha256": "5e0475c4fb045138c4bf88df0a4fa6cfee390ace77ae1825fb267cbb752fc433",
+      "bytes": 349
+    },
+    {
+      "path": "GIT-STATUS.txt",
+      "sha256": "3d0c9983902f612c8a982f8f961b87158dadd04c4423d057a346e694b1d2ab0b",
+      "bytes": 9130
+    },
+    {
+      "path": "HANDOFF-20261027.md",
+      "sha256": "49634d20bc287e6d0760bf65162948160b7638ccba2f1c39ace89ae279f139b0",
+      "bytes": 16744
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/display/reference/README.md",
+      "sha256": "d61c69469a9bd9f9dd9f4df37d312e328ed511f5fe163347071bcb9d8dcfad96",
+      "bytes": 1066
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/display/reference/TFT_CTRL_480_270_16b.v",
+      "sha256": "50ec82be5dc9429658eea27730f271833d527af08014a0c42b1434e74f02ed9e",
+      "bytes": 2923
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v",
+      "sha256": "2800ed486bba55c53da2e6697f75cc019e68a3de657c2dfa685a3e3f8f65b461",
+      "bytes": 2191
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_timing_tb.v",
+      "sha256": "0755527eeaf4eba9c54631003cf4c4b4269ea9f0a4756154429dd0cc6a89b8be",
+      "bytes": 3780
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/host/avoidance.py",
+      "sha256": "eecb46d4945f938d755210dfdd094dbcf6a35d28d078fdfa2b7d8cd2329a65d9",
+      "bytes": 2493
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/host/board_config.py",
+      "sha256": "c30dc9da48aa07edb504924dca3415dd37c66a6c94c7577de6cb3b08dcbfa499",
+      "bytes": 2460
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/rtl/a741_attitude.v",
+      "sha256": "ab29968241e8992e903c5f2c7d3b6cb9e3815aab6a1f1f187e8835d0edd2ebdf",
+      "bytes": 2905
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/rtl/a741_avoidance.v",
+      "sha256": "0e49fa684fa7c66aee14a6de5493fb8a12a701e96b296977f5d4df94496a77ee",
+      "bytes": 5036
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/rtl/a741_bare_cpu.v",
+      "sha256": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
+      "bytes": 2879
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_guard.v",
+      "sha256": "6020866db8a187aae3b4580ab0d9ad87ba8726d258486abe4a8b18c58e6bae37",
+      "bytes": 3328
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/scripts/prepare_basic.py",
+      "sha256": "edb26bf9fbc15f4b351d2df7a981b3537c893e1f05992a50a9ca75e292d24bdc",
+      "bytes": 6291
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/attitude-vectors.hex",
+      "sha256": "09c7e26db4ad82938efdf2a8758eb69770b5ebccfcf927ece5ed63b5ce5d4757",
+      "bytes": 45056
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/attitude_tb.v",
+      "sha256": "3e9d74adf22d471d6a01bca0b4eb2eb62b500c63b1cff0bc65b8f727e89e885d",
+      "bytes": 1906
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/avoidance_core_tb.v",
+      "sha256": "b7ab50689c72bc5c54f652bc76d02b8defa06fab0519d97849ae61160220887b",
+      "bytes": 3776
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/avoidance_lite_tb.v",
+      "sha256": "3e5ab92ea3220674267573dd2201e72c10be554328f436b533f06ec055918985",
+      "bytes": 7137
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/bare_cpu_tb.v",
+      "sha256": "c5282a057c6d4c3ef3eb32a56ae2d0284b9aa14e267e3ed76119c4a3f90a354c",
+      "bytes": 2150
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/camera_tft_tb.v",
+      "sha256": "6a407a0b5f00041ebe966daf83e702d3331e5d2f9dd4bc36c3c31cab38d83006",
+      "bytes": 7709
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/lidar_guard_tb.v",
+      "sha256": "18cb3ac1e11b235110c48e47a017d8eed7b428bb9840cdbb6d3b755961f06a85",
+      "bytes": 2031
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/test_avoidance.py",
+      "sha256": "09a84c4e69a175aa9a75c1d621de43a2a1e28114d799e141b55cac16af650dc2",
+      "bytes": 2673
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/test_firmware_cache.py",
+      "sha256": "d5742c295166a78a7c9139e996df247570cd23c3e59c476dba4ca779d343d011",
+      "bytes": 1716
+    },
+    {
+      "path": "new-files/code/camera-car-control/a741-fpga-fusion/tests/test_vendor.py",
+      "sha256": "f34e5b06325f6eda88a3126ab829453ad39c9cf560147480571c22278ce6a9f7",
+      "bytes": 1920
+    },
+    {
+      "path": "new-files/HANDOFF-20261027.md",
+      "sha256": "49634d20bc287e6d0760bf65162948160b7638ccba2f1c39ace89ae279f139b0",
+      "bytes": 16744
+    },
+    {
+      "path": "new-files/NEXT-AI-PROMPT-20261027.md",
+      "sha256": "145e5c4b635d39647ceda781e0bc723a382332b3fe41894e3d376278bbac5d2a",
+      "bytes": 6328
+    },
+    {
+      "path": "NEXT-AI-PROMPT-20261027.md",
+      "sha256": "145e5c4b635d39647ceda781e0bc723a382332b3fe41894e3d376278bbac5d2a",
+      "bytes": 6328
+    },
+    {
+      "path": "PACKAGE-README.md",
+      "sha256": "3080fba98e25fb84491507c4e840c68e1f8d9d46b56c03f332e2d2fba1cbc4c8",
+      "bytes": 3230
+    },
+    {
+      "path": "PATCH-MANIFEST.json",
+      "sha256": "4e2f669d0b4aee656ee31da8ad3f3e708b3ff7c5e968762cb9caa2708d6c8028",
+      "bytes": 13221
+    },
+    {
+      "path": "SOURCE-MANIFEST.json",
+      "sha256": "8715c44b69e8fe45ba32f0cd624612af3789d9cdbc6854b4d6e0f8d820d0b7a3",
+      "bytes": 30050
+    },
+    {
+      "path": "STATUS.json",
+      "sha256": "1b4371e220db8bc2ff1edeca7e70876ced9361705e439f8798a059b87f8005c8",
+      "bytes": 2721
+    },
+    {
+      "path": "USER-OPTIMIZATION-IDEAS-1.md",
+      "sha256": "46be88c27448368f8cfaadbf279e7ba2d76a81ccdf25a812920e4fb66ae68a48",
+      "bytes": 24704
+    },
+    {
+      "path": "worktree.patch",
+      "sha256": "0fcc84b26371d6a2d687cca7a6fe13ea236577ef628358aaa0b7e94b4b0584ea",
+      "bytes": 669871
+    }
+  ]
+}

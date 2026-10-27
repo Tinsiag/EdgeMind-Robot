@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-10-27T15:29:43.746367+00:00",
+  "regression_rtl": 37,
+  "regression_python": 41,
+  "regression_input_count": 143,
+  "build_input_count": 105,
+  "common_input_count": 80,
+  "all_current_inputs_match": true,
+  "same_synthesis_netlist_reused": true,
+  "synthesis_origin": "attempt-01-constraint-error/a741.vg (synthesis completed; failure was subsequent SDC parsing)",
+  "synthesis_netlist_sha256": "a28fb90bf3aaadbcc067bc5f31d5f49219961e0e1859777fe83d61165a63da97",
+  "ddr_originals_unchanged": true,
+  "final_artifact_sha256": "094862d12885cd786f3d5efb676205a9a999ff64e244b533e72ef538b4b2c8ee",
+  "motor_pads_grounded": true,
+  "hardware_programmed": false
+}

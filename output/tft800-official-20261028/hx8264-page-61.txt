@@ -1,0 +1,73 @@
+ 
+ 
+-P.61-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+12.2 Timing diagram   
+ 
+12.2.1 Input clock and data timing waveform  
+ 
+//
+//
+//
+Last
+Last data
+2nd data
+First data
+30%
+70%
+Tcwl
+Tcwh
+Tcph
+1
+2
+Tdhd
+Tdsu
+//
+Tesu
+//
+//
+Tvst
+Thhd
+//
+Thhd
+Thst
+Th
+DEN
+Data
+CLKIN
+CLKIN
+VSD
+HSD
+Tehd
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+70%
+70%
+30%
+30%
+70%
+ 
+Figure 12.1: Input Clock and Data Timing Diagram 
+ 
+12.2.2 Source output timing waveform (Cascade) 
+ 
+ 
+Figure 12.2: Source Output Timing Diagram 
+ 
+ 
+Figure 12.3: Output Load Condition 
+ 
+ 

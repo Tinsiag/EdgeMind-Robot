@@ -1,0 +1,60 @@
+{
+  "reused_verified_rom": true,
+  "architecture": "rv32i/ilp32",
+  "ram_bytes": 8192,
+  "program_bytes": 44,
+  "binary_sha256": "d360a81248f5316fbdacfc69925565c73b44276695adb006ed7af6593c93de18",
+  "hex_sha256": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44",
+  "inputs": {
+    "link.ld": "5ba7d82a4a6328c559c5544064f6fe9988809cfde0eaa826891f24da7db3fad3",
+    "mission.c": "0b9d5477d31c500fc934c1af674fb10986eaa752ebedc37e2c5fe46d018d980b",
+    "start.S": "8f697bbaabecf1e36cee70ef0c3c02d4f6b51c434b03df66b13ed4293aaa7e15"
+  },
+  "compiler": "0.16.0"
+}
+test_cad_identity_keeps_physical_validation_separate (test_avoidance.AvoidanceTests.test_cad_identity_keeps_physical_validation_separate) ... ok
+test_sensor_only_start_and_unsupported_firmware_never_send (test_avoidance.AvoidanceTests.test_sensor_only_start_and_unsupported_firmware_never_send) ... ok
+test_start_stop_send_only_explicit_single_byte_commands (test_avoidance.AvoidanceTests.test_start_stop_send_only_explicit_single_byte_commands) ... ok
+test_unverified_connection_cannot_arm_or_start (test_avoidance.AvoidanceTests.test_unverified_connection_cannot_arm_or_start) ... ok
+test_wire_status_is_basic_not_old_navigation (test_avoidance.AvoidanceTests.test_wire_status_is_basic_not_old_navigation) ... ok
+test_source_or_rom_change_invalidates_pinned_image (test_firmware_cache.FirmwareCacheTests.test_source_or_rom_change_invalidates_pinned_image) ... ok
+test_valid_pinned_image_needs_no_compiler_or_rewrite (test_firmware_cache.FirmwareCacheTests.test_valid_pinned_image_needs_no_compiler_or_rewrite) ... ok
+test_arm_is_explicit_separate_from_start (test_gui.GuiTests.test_arm_is_explicit_separate_from_start) ... ok
+test_cancelled_start_never_reaches_fpga (test_gui.GuiTests.test_cancelled_start_never_reaches_fpga) ... ok
+test_clear_fault_verifies_fpga_before_success (test_gui.GuiTests.test_clear_fault_verifies_fpga_before_success) ... ok
+test_connect_never_calibrates_arms_or_starts (test_gui.GuiTests.test_connect_never_calibrates_arms_or_starts) ... ok
+test_disconnect_and_status_timeout_remove_old_values (test_gui.GuiTests.test_disconnect_and_status_timeout_remove_old_values) ... ok
+test_pending_stop_cannot_be_cleared_by_submit (test_gui.GuiTests.test_pending_stop_cannot_be_cleared_by_submit) ... ok
+test_rejected_connect_closes_socket_and_never_keeps_lease_alive (test_gui.GuiTests.test_rejected_connect_closes_socket_and_never_keeps_lease_alive) ... ok
+test_sensors_only_rejects_arm_and_start (test_gui.GuiTests.test_sensors_only_rejects_arm_and_start) ... ok
+test_stalled_ui_stops_heartbeat_and_closes_both_receivers (test_gui.GuiTests.test_stalled_ui_stops_heartbeat_and_closes_both_receivers) ... ok
+test_stop_and_disarm_win_over_cancel (test_gui.GuiTests.test_stop_and_disarm_win_over_cancel) ... ok
+test_stop_discards_a_queued_start (test_gui.GuiTests.test_stop_discards_a_queued_start) ... ok
+test_stop_timeout_still_attempts_disarm (test_gui.GuiTests.test_stop_timeout_still_attempts_disarm) ... ok
+test_tilt_and_yaw_validity_are_independent (test_gui.GuiTests.test_tilt_and_yaw_validity_are_independent) ... ok
+test_encoder_fault_arm_rejection_is_recoverable_and_never_clears_fault (test_host.HostTests.test_encoder_fault_arm_rejection_is_recoverable_and_never_clears_fault) ... ok
+test_expired_visible_scan_is_cleared (test_host.HostTests.test_expired_visible_scan_is_cleared) ... ok
+test_idempotent_control_retry_is_bounded_and_motion_is_never_retryable (test_host.HostTests.test_idempotent_control_retry_is_bounded_and_motion_is_never_retryable) ... ok
+test_imu_calibration_invalid_data_and_valid_flat_pose (test_host.HostTests.test_imu_calibration_invalid_data_and_valid_flat_pose) ... ok
+test_imu_diagnostics_signed_units (test_host.HostTests.test_imu_diagnostics_signed_units) ... ok
+test_imu_test_capability_and_motor_rejection (test_host.HostTests.test_imu_test_capability_and_motor_rejection) ... ok
+test_lidar_crc_and_wrap (test_host.HostTests.test_lidar_crc_and_wrap) ... ok
+test_mpu6500_identity_temperature_and_invalid_data (test_host.HostTests.test_mpu6500_identity_temperature_and_invalid_data) ... ok
+test_network_diagnostics_preserve_old_snapshot_schema (test_host.HostTests.test_network_diagnostics_preserve_old_snapshot_schema) ... ok
+test_no_motion_retry (test_host.HostTests.test_no_motion_retry) ... ok
+test_old_jy901_firmware_rejected_before_config_write (test_host.HostTests.test_old_jy901_firmware_rejected_before_config_write) ... ok
+test_phy_diagnostic_layout_does_not_touch_scan (test_host.HostTests.test_phy_diagnostic_layout_does_not_touch_scan) ... ok
+test_radar_display_poll_does_not_reset_incomplete_revolution (test_host.HostTests.test_radar_display_poll_does_not_reset_incomplete_revolution) ... ok
+test_scan_complete_gap_and_stale (test_host.HostTests.test_scan_complete_gap_and_stale) ... ok
+test_sensor_debug_blocks_motor_packets_before_socket_access (test_host.HostTests.test_sensor_debug_blocks_motor_packets_before_socket_access) ... ok
+test_snapshot_offsets (test_host.HostTests.test_snapshot_offsets) ... ok
+test_tilted_imu_reports_pose_before_calibration_request (test_host.HostTests.test_tilted_imu_reports_pose_before_calibration_request) ... ok
+test_uncalibrated_arm_rejection_explains_calibration_without_retry (test_host.HostTests.test_uncalibrated_arm_rejection_explains_calibration_without_retry) ... ok
+test_unmeasured_track_blocks_motion_configuration (test_host.HostTests.test_unmeasured_track_blocks_motion_configuration) ... ok
+test_user_measured_track_and_motion_lidar_arm (test_host.HostTests.test_user_measured_track_and_motion_lidar_arm) ... ok
+test_repeated_prepare_preserves_timestamps_and_repairs_changed_output (test_vendor.VendorPreparationTests.test_repeated_prepare_preserves_timestamps_and_repairs_changed_output) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.044s
+
+OK

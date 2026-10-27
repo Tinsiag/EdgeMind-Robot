@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="official_probe" Register="81" Alu="50" Lut="7" T_Register="222(81)" T_Alu="109(50)" T_Lut="249(7)" T_MULT12X12="1(0)" T_Bsram="1(0)">
+ <SubModule name="official" Register="40" Alu="41" Lut="89" MULT12X12="1" T_Register="141(40)" T_Alu="59(41)" T_Lut="242(89)" T_MULT12X12="1(1)" T_Bsram="1(0)">
+  <SubModule name="Gowin_PLL" T_Register="101(0)" T_Alu="18(0)" T_Lut="153(0)" T_Bsram="1(0)">
+   <SubModule name="u_pll"/>
+   <SubModule name="u_pll_init" Register="101" Alu="18" Lut="153" Bsram="1" T_Register="101(101)" T_Alu="18(18)" T_Lut="153(153)" T_Bsram="1(1)"/>
+  </SubModule>
+ </SubModule>
+</Module>

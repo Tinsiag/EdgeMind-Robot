@@ -1,0 +1,27 @@
+{
+  "status": "flash_verified_application_failed_white_screen",
+  "recorded_utc": "2026-10-27T17:01:46.326589+00:00",
+  "bitstream_sha256": "d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-20261028\\20261027T165845.165609Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "device": "GW5AT-60B",
+  "idcode": "0x0001481B",
+  "status_register": "0x30000460",
+  "panel_size": [
+    800,
+    480
+  ],
+  "pixel_clock_mhz": 33,
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "user_display_report": "仍然全白",
+  "led_report_pending": false,
+  "motor_vm_confirmed_off": true,
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "automatic_retry_attempted": false,
+  "user_led_report": "D0亮，D1，D2闪烁"
+}

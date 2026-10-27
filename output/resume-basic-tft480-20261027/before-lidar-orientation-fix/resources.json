@@ -1,0 +1,335 @@
+{
+  "scope": "same device/tool/screen-test pad lock; old navigation/HDMI/video versus current basic design",
+  "build_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth",
+  "baseline_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-fusion-tft480-screen-test",
+  "seconds": 139.16759872436523,
+  "comparison": {
+    "T_Lut": {
+      "before": 35153,
+      "after": 19870,
+      "delta": -15283
+    },
+    "T_Register": {
+      "before": 27235,
+      "after": 17455,
+      "delta": -9780
+    },
+    "T_Alu": {
+      "before": 5195,
+      "after": 2892,
+      "delta": -2303
+    },
+    "T_Bsram": {
+      "before": 81,
+      "after": 36,
+      "delta": -45
+    }
+  },
+  "utilization_table": [
+    [
+      "Resource",
+      "Usage",
+      "Utilization"
+    ],
+    [
+      "Logic",
+      "22762(19870 LUT, 2892 ALU) / 59904",
+      "38%"
+    ],
+    [
+      "Register",
+      "17455 / 60780",
+      "29%"
+    ],
+    [
+      "--Register as Latch",
+      "0 / 60780",
+      "0%"
+    ],
+    [
+      "--Register as FF",
+      "17455 / 60780",
+      "29%"
+    ],
+    [
+      "BSRAM",
+      "36 / 118",
+      "31%"
+    ]
+  ],
+  "dsp_primitives": {
+    "T_MULTALU27X18": 9,
+    "T_MULT12X12": 6,
+    "T_MULT27X36": 6
+  },
+  "actual_cls": null,
+  "final_wns_ns": null,
+  "final_tns_ns": null,
+  "congestion": null,
+  "pnr_completed": false,
+  "hardware_tested": false,
+  "synthesis_timing": {
+    "synthesis_estimate_only": true,
+    "clocks": [
+      {
+        "clock": "clk",
+        "requested_mhz": 50.0,
+        "estimated_fmax_mhz": 79.391,
+        "logic_levels": 13
+      },
+      {
+        "clock": "rgmii_rx_clk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 141.408,
+        "logic_levels": 10
+      },
+      {
+        "clock": "camera_pclk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 152.442,
+        "logic_levels": 9
+      },
+      {
+        "clock": "clocks/u_pll/PLLA_inst/CLKOUT1.default_gen_clk",
+        "requested_mhz": 125.0,
+        "estimated_fmax_mhz": 163.609,
+        "logic_levels": 8
+      },
+      {
+        "clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk",
+        "requested_mhz": 400.0,
+        "estimated_fmax_mhz": 1293.494,
+        "logic_levels": 1
+      },
+      {
+        "clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk",
+        "requested_mhz": 100.0,
+        "estimated_fmax_mhz": 192.4,
+        "logic_levels": 3
+      }
+    ],
+    "paths": [
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+        "slack_ns": -0.725,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "launch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[F]",
+        "slack_ns": -0.725,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_0_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_1_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_2_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_3_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_4_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_5_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_6_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_dll",
+        "destination": "memory/gw3_top/u_ddr_phy_top/dll_step_base_7_s0",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT.default_gen_clk[R]",
+        "slack_ns": 1.693,
+        "logic_levels": 2
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      },
+      {
+        "source": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs",
+        "destination": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem",
+        "launch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "latch_clock": "memory_pll/u_pll/PLLA_inst/CLKOUT2.default_gen_clk[R]",
+        "slack_ns": 1.727,
+        "logic_levels": 1
+      }
+    ]
+  },
+  "stage_messages": [
+    {
+      "received_unix": 1793108890.8535533,
+      "elapsed_s": 1.524,
+      "line": "GowinSynthesis start"
+    },
+    {
+      "received_unix": 1793109028.0346603,
+      "elapsed_s": 138.705,
+      "line": "GowinSynthesis finish"
+    }
+  ],
+  "timeline_caveat": "stdout receipt time is not an internal EDA phase timer",
+  "evidence_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth\\result.json": "09ed004563e7271f8dde85c815df87fc0945c08cc15f21471e04458bfbc77999",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth\\build.tcl": "6150298ffac55d7cb0402fc80845d3d1cd4baedbd3858e731b93b3d25ccba3eb",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth\\impl\\gwsynthesis\\a741.vg": "a3a2b2e149c39a85661771c86a43d6dfa729764937ec7307645817e6b57a2b8c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth\\impl\\gwsynthesis\\a741_syn_rsc.xml": "ddd8f26ff69741e939c60b630a8bffee9edbb1493f885aa28b28162900cbd4cf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test-synth\\impl\\gwsynthesis\\a741_syn.rpt.html": "aef96408d77733b52d9aa4115d922169a29368440f65a724eca84976d090f8cf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-fusion-tft480-screen-test\\impl\\gwsynthesis\\a741_syn_rsc.xml": "cf197dfbf1169fa45a72acd7cb47f2fdea2443b8b0d7698302354b22a3e3eccf"
+  }
+}

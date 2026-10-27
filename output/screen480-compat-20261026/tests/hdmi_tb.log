@@ -1,0 +1,8 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+PASS local reset and active TMDS at pixel phase 6
+PASS local reset and active TMDS at pixel phase 12
+PASS local reset and active TMDS at pixel phase 18
+PASS local reset and active TMDS at pixel phase 24
+PASS local reset and active TMDS at pixel phase 0
+PASS all five CLKDIV startup phases, repeated reset, four local reset pipelines
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/hdmi_tb.v:51: $finish called at 9271000 (1ps)

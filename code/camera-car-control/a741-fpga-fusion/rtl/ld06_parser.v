@@ -2,7 +2,7 @@
 `default_nettype none
 // LD06: 54 2c, speed, start-angle, 12*(distance,confidence), end-angle,
 // device timestamp, CRC8(poly 4d). Stream only packets that passed CRC.
-module ld06_parser #(parameter STALE_MS=300)(
+module ld06_parser #(parameter STALE_MS=300,LIDAR_ZERO=0,LIDAR_CLOCKWISE=0)(
     input wire clk,rst_n,ms_tick,byte_valid,framing_error,input wire [7:0] data,
     output reg packet_valid,valid,point_valid,
     output reg [15:0] angle_cdeg,distance_mm,
@@ -35,6 +35,16 @@ module ld06_parser #(parameter STALE_MS=300)(
     reg have_last;
     reg emitted_first;
     reg [15:0] last_step,gap_angle;
+    // Preserve raw angle/packet outputs. Only body-relative avoidance sectors
+    // apply the same mounting transform used by the manual protection guard.
+    wire [16:0] shifted_angle=LIDAR_CLOCKWISE!=0 ?
+        17'(LIDAR_ZERO)+17'd36000-{1'b0,angle_cdeg}:
+        {1'b0,angle_cdeg}+17'd36000-17'(LIDAR_ZERO);
+    wire [15:0] sector_angle=16'(shifted_angle>=36000 ? shifted_angle-36000:shifted_angle);
+    wire in_front=sector_angle<=3000 || sector_angle>=33000;
+    wire in_left=sector_angle>=4500 && sector_angle<=13500;
+    wire in_right=sector_angle>=22500 && sector_angle<=31500;
+    wire usable=confidence>=10 && distance_mm>0;
     integer k;
     function [7:0] crc_byte;
         input [7:0] c,b;reg [7:0] v;integer n;
@@ -78,7 +88,7 @@ module ld06_parser #(parameter STALE_MS=300)(
                 end
             end
             // Sector telemetry consumes the already registered point. The
-            // navigation point output keeps its original latency; avoid a RAM
+            // raw point output keeps its original latency; avoid a RAM
             // byte selection + angle/gap calculation + min comparison in one
             // cycle. Invalidating the stream must also discard this stage.
             if(point_valid && valid && !framing_error && !(ms_tick && age>=STALE_MS-1)) begin
@@ -88,12 +98,14 @@ module ld06_parser #(parameter STALE_MS=300)(
                     scan_front<=65535;scan_left<=65535;scan_right<=65535;dropped<=dropped+1'b1;
                 end else if(have_last && angle_cdeg+18000<last_angle) begin
                     if(scan_started) begin front_mm<=scan_front;left_mm<=scan_left;right_mm<=scan_right;end
-                    scan_front<=confidence>=10 && distance_mm>0 ? distance_mm:65535;
-                    scan_left<=65535;scan_right<=65535;scan_started<=1;
-                end else if(confidence>=10 && distance_mm>0) begin
-                    if((angle_cdeg<=3000 || angle_cdeg>=33000) && distance_mm<scan_front) scan_front<=distance_mm;
-                    if(angle_cdeg>=4500 && angle_cdeg<=13500 && distance_mm<scan_left) scan_left<=distance_mm;
-                    if(angle_cdeg>=22500 && angle_cdeg<=31500 && distance_mm<scan_right) scan_right<=distance_mm;
+                    // The raw zero crossing can be a side sector after rotation.
+                    scan_front<=usable && in_front ? distance_mm:16'hffff;
+                    scan_left<=usable && in_left ? distance_mm:16'hffff;
+                    scan_right<=usable && in_right ? distance_mm:16'hffff;scan_started<=1;
+                end else if(usable) begin
+                    if(in_front && distance_mm<scan_front) scan_front<=distance_mm;
+                    if(in_left && distance_mm<scan_left) scan_left<=distance_mm;
+                    if(in_right && distance_mm<scan_right) scan_right<=distance_mm;
                 end
                 last_angle<=angle_cdeg;have_last<=1;
             end

@@ -1,0 +1,21 @@
+{
+  "netlist_sha256": "0d7f4510dcc5c8389cd965e1d8e76a9a4df6f14f212d6729c5b69c14e2da783d",
+  "motor_obuf": {
+    "left_in1": {
+      "cell": "left_in1_obuf",
+      "I": "GND"
+    },
+    "left_in2": {
+      "cell": "left_in2_obuf",
+      "I": "GND"
+    },
+    "right_in1": {
+      "cell": "right_in1_obuf",
+      "I": "GND"
+    },
+    "right_in2": {
+      "cell": "right_in2_obuf",
+      "I": "GND"
+    }
+  }
+}

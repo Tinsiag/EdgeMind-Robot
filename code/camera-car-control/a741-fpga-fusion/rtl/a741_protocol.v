@@ -32,20 +32,12 @@ module a741_protocol(
         begin
             case(kind)
                 8'h01,8'h02,8'h03,8'h04,8'h05,8'h20,8'h21,8'h40,8'h41,8'h43: valid_length=size==0;
-                8'h11,8'h45:valid_length=size==8;
-                8'h47:valid_length=size==10;
+                8'h11:valid_length=size==8;
                 8'h30:valid_length=size==5;
-                8'h42:valid_length=size==6;
                 8'h44:valid_length=size==4;
                 8'h46:valid_length=size==2;
-                8'h50:valid_length=size==1;
-                8'h51:valid_length=cmd_payload[7:0]<=1 && cmd_payload[31:24]>=1 && cmd_payload[31:24]<=24 &&
-                    size==(cmd_payload[7:0]==0 ? 4:4+cmd_payload[31:24]);
-                8'h52:valid_length=size==4;
-                8'h53:valid_length=size==10;
-                8'h54:valid_length=size==4;
-                8'h55,8'h56,8'h57:valid_length=size==0;
-                8'h58:valid_length=cmd_payload[7:0]<=4 && size==(cmd_payload[7:0]==1 ? 5:1);
+                8'h56,8'h57:valid_length=size==0;
+                8'h59:valid_length=size==1;
                 default:valid_length=0;
             endcase
         end

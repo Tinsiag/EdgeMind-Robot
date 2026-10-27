@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-27T16:18:59.029278+00:00",
+  "board_connector": "ACG720 J1: flip latch, bottom contacts, 40 positions, 0.5 mm pitch",
+  "display_connector": "TFT_4.3&5.0V2 user J1: flip latch, bottom contacts; NOT raw-panel J2",
+  "manual": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\小梅哥ACG720国产高云FPGA教学开发板资料\\01_教材文档\\小梅哥高云 ACG720-138&60K通用FPGA开发板自学教程\\第28章 TFT显示屏驱动设计与验证.pdf",
+  "manual_sha256": "baf5827fd8f601fd25b158a0ae72ce51ab12d59a20c5e392fa5aaaf3b9bc1428",
+  "manual_pages": [
+    8,
+    9,
+    10
+  ],
+  "conclusion": "For the documented matched J1-to-J1 connection, use opposite-side exposed-contact (异面) 40P 0.5 mm FFC. At each bottom-contact connector, metal faces its local PCB; the insulated stiffener faces away. Cable face type is judged laid flat, not in installed folded shape.",
+  "basis": "Both supplied schematics mark bottom-contact user sockets with matching 1-to-1 nets. Manual Fig 28-9 shows printed vs blank cable faces at the two ends, both stiffeners outward."
+}

@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-10-27T19:04:16.720615+00:00",
+  "status": "flash_ready_version_matched_fixed480_pad_meter_scan_and_readback_failed",
+  "bitstream_sha256": "afca1552286593e586758ca26ccc9107d8f45d36a84eb5b400effab8113ed119",
+  "parent_bitstream_sha256": "163ea290fec887007502fb65886d914a5e893249d9f04e5dde49d22bdec195cc",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-stable480-meter-20261028\\20261027T185643.796440Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "configuration_ready": true,
+  "user_code_verified": true,
+  "read_user_code": "0x0000A730",
+  "final_status_register": "0x70022020",
+  "status_sample_count": 10,
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "pixel_clock_mhz": 9,
+  "active_raster_size": [
+    480,
+    272
+  ],
+  "total_raster_size": [
+    525,
+    286
+  ],
+  "sample_edge_hypothesis": "falling",
+  "physical_panel_resolution_confirmed": false,
+  "mapping": "AB22=DE AB21=high; no switching",
+  "user_screen_report": "全白",
+  "user_led_report": [
+    "D0,D1,D3,D4亮，1，2闪，6，7灭，全白",
+    "D5灭"
+  ],
+  "interpretation": "PLL/PCLK ratio/BL reported good; HS/VS/DE aggregate scan test and stable RGB/control readback test failed. Individual failing signal not yet identified.",
+  "led_meanings": {
+    "D0": "PLL lock",
+    "D1": "50MHz heartbeat",
+    "D2": "pad VS frame heartbeat",
+    "D3": "backlight pad high",
+    "D4": "pad pixel clock frequency correct",
+    "D5": "pad HS/VS/DE aggregate scan counts correct",
+    "D6": "pad RGB/control stable-region comparison correct",
+    "D7": "PLL and D4/5/6 all pass"
+  },
+  "pad_measurement_boundary": "FPGA pad input buffers only; not the far end of the cable, analog integrity or panel sampling",
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "rewrite_attempted": false,
+  "camera_sensors_network_active": false,
+  "main_project_source_preserved": true,
+  "standing_programming_authorization": true
+}

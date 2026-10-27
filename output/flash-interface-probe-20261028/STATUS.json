@@ -1,0 +1,51 @@
+{
+  "status": "flash_verified_rolling_coloured_bands_not_correct_eight_blocks",
+  "recorded_utc": "2026-10-27T17:38:22.412304+00:00",
+  "bitstream_sha256": "b7cb31acf792c9650a6e99299a5a077af61f5b6976d7af662ca295d47f13510b",
+  "log_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-interface-probe-20261028\\20261027T172655.080769Z",
+  "flash_program_verify_completed": true,
+  "reload_completed": true,
+  "status_read_completed": true,
+  "status_register": "0x30000460",
+  "panel_size": [
+    800,
+    480
+  ],
+  "pixel_clock_mhz": 33,
+  "user_screen_reports": [
+    "出现了彩色色块",
+    "现在屏幕每大约一秒就闪烁一次，每次闪烁都会滑动色块",
+    "后续澄清：滚动的彩色色条，并非清楚的两列四行八色块"
+  ],
+  "user_led_report": "D3闪烁，而且跟屏幕闪烁时间一致，D1，D2，D4也闪烁，D5，D0常亮",
+  "backlight_toggle_seconds": 0.67108864,
+  "colour_response_visible": true,
+  "correct_eight_blocks_verified": false,
+  "stable_picture_verified": false,
+  "physical_pad_readback_observed": {
+    "backlight": true,
+    "pclk_activity": true,
+    "de_seen": true
+  },
+  "application_verified": false,
+  "cold_boot_verified": false,
+  "camera_sensors_network_active": false,
+  "main_project_source_preserved": true,
+  "motor_pads_grounded": true,
+  "arm_sent": false,
+  "motion_started": false,
+  "retry_attempted": false,
+  "standing_programming_authorization": true,
+  "per_candidate_approval_required": false,
+  "root_cause": "not established; both pad primitives and backlight behaviour changed since previous white-screen build",
+  "next_step": "Keep successful interface/scanner, change only backlight to one startup delay then continuously on; inspect stable pattern",
+  "led_map": {
+    "D0": "constant-on marker",
+    "D1": "system heartbeat",
+    "D2": "16-frame heartbeat",
+    "D3": "backlight pad readback",
+    "D4": "PCLK pad activity",
+    "D5": "DE seen",
+    "D6-D7": "off"
+  }
+}

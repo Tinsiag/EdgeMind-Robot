@@ -1,0 +1,1246 @@
+PDF PAGE 1
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.1  
+ 
+PRODUCT :     TFT TOUCH MODULE          
+MODULE NO. :  WKS43189                     
+SUPPLIER:     WKS Technology Co., LTD        
+DATE:         Mar 3, 2019                     
+ 
+SPECIFICATION 
+Revision: 0.0 
+WKS43189 
+This module uses ROHS material 
+ 
+ 
+ 
+ 
+ 
+This specification may change without prior notice in order to improve performance or quality. Please 
+contact WKS R&D department for updated specification and product status before design for this product 
+or release of this order. 
+ 
+ 
+WRITTEN BY 
+CHECKED BY 
+APPROVED BY 
+Jason 
+Tim 
+Henry 
+
+
+PDF PAGE 2
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.2  
+ 
+REVISION RECORD 
+REV NO.
+REV DATE
+CONTENTS 
+REMARKS 
+0.0 
+2019-03-03 
+First release 
+Preliminary 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 3
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.3  
+CONTENTS 
+1、GENERAL INFORMATION 
+2、EXTERNAL DIMENSIONS 
+3、ABSOLUTE MAXIMUM RATINGS 
+4、ELECTRICAL CHARACTERISTICS 
+5、BACKLIGHT CHARACTERISTICS 
+6、CTP CHARACTERISTICS 
+7、ELECTRO-OPTICAL CHARACTERISTICS 
+8、INTERFACE DESCRIPTION 
+9、INPUT TIMING  
+10、POWER ON SEQUENCE 
+11、RELIABILITY TEST CONDITIONS 
+12、INSPECTION CRITERION 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 4
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.4  
+1、GENERAL INFORMATION 
+Item of general information 
+Contents 
+Unit 
+LCD Display Size (Diagonal) 
+4.3 
+inch 
+LCD Display Type 
+TFT 
+- 
+LCD Display Mode 
+Normally Black 
+- 
+Recommended Viewing Direction 
+ALL VIEW 
+- 
+Module size (W×H×T) 
+105.50×67.20×4.63 
+mm 
+Active area (W×H) 
+95.04×53.86 
+mm 
+Number of pixels (Resolution) 
+800RGB×480 
+pixel 
+Pixel pitch (W×H) 
+0.1188×0.1122 
+mm 
+Color Pixel Arrangement 
+RGB Stripe 
+- 
+LCD Driver IC 
+- 
+- 
+Interface Type 
+Parallel 24bit RGB interface 
+- 
+Input voltage 
+3.3V 
+V 
+Power consumption 
+- 
+mA 
+Color Numbers 
+16.7M 
+- 
+Backlight Type 
+White LED 
+- 
+ 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 5
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.5  
+2、EXTERNAL DIMENSIONS 
+ 
+
+
+PDF PAGE 6
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.6  
+3、ABSOLUTE MAXIMUM RATINGS 
+Parameter of absolute 
+maximum ratings 
+Symbol 
+Min 
+Max 
+Unit 
+LCD supply voltage 
+VDD 
+-0.5 
+5.0 
+V 
+Operating temperature 
+Top 
+-20 
+70 
+℃ 
+Storage temperature 
+Tst 
+-30 
+80 
+℃ 
+Humidity 
+RH 
+- 
+90%(Max 60℃)
+RH 
+Note: Absolute maximum ratings mean the product can withstand short-term, not more than 
+120 hours. If the product is a long time to withstand these conditions, the life time would be 
+shorter. 
+4、ELECTRICAL CHARACTERISTICS(DC CHARACTERISTICS) 
+Parameter of DC 
+characteristics 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+LCD operating voltage 
+VDD 
+2.7 
+3.3 
+3.6 
+V 
+Input voltage ‘H’ level 
+VIH 
+0.7*VDD 
+- 
+VDD 
+V 
+Input voltage ‘L’ level 
+VIL 
+VSS 
+- 
+0.3*VDD 
+V 
+Output voltage ‘H’ level 
+VOH 
+VDD-0.4 
+- 
+VDD 
+V 
+Output voltage ‘L’ level 
+VOL 
+VSS 
+- 
+VSS+0.4 
+V 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 7
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.7  
+5、BACKLIGHT CHARACTERISTICS 
+Item of backlight 
+characteristics 
+Symbol
+Min.
+Typ. 
+Max. 
+Unit 
+Remark 
+Forward Voltage 
+Vf 
+14.5 
+15.5 
+16.5 
+V 
+Note1 
+Forward Current 
+If 
+- 
+40 
+- 
+mA 
+- 
+Number of LED 
+- 
+- 
+5×2=10 
+- 
+Piece 
+- 
+LED Connection mode
+S/P 
+- 
+Serial/Parallel
+- 
+- 
+- 
+Lifetime of LED 
+- 
+- 
+10000 
+- 
+hour 
+Note2 
+Note:  
+ Note1: The LED Supply Voltage is defined by the number of LED at Ta=25℃ and 
+If=40mA. 
+ Note2: The LED lifetime define as the estimated time to 50% degradation of initial 
+luminous. The LED lifetime could be decreased if operating If is larger than 40mA. 
+ Backlight circuit: 
+ 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 8
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.8  
+6、CTP CHARACTERISTICS 
+Item of CTP 
+characteristics 
+Specification  
+Unit  
+Remark 
+Panel Type 
+Glass Cover + Glass Sensor 
+- 
+- 
+Resolution 
+800 × 480 
+pixel 
+- 
+Surface Hardness 
+6H 
+- 
+- 
+Transparency 
+≥82% 
+- 
+- 
+Driver IC 
+GT9147 
+- 
+- 
+Interface Type 
+I2C 
+- 
+- 
+Support Points 
+5(Max) 
+- 
+- 
+Sampling Rate 
+20~100 
+Hz 
+- 
+Supply voltage 
+3.3 
+V 
+- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+PDF PAGE 9
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.9  
+7、ELECTRO-OPTICAL CHARACTERISTICS 
+Item of  
+electro-optical 
+characteristics 
+Symbol
+Condition
+Min.
+Typ.
+Max.
+Unit
+Remark
+Note
+Response time 
+Tr+Tf 
+θ=0 
+=0 
+Ta=25℃ 
+- 
+30 
+40 
+ms 
+FIG 1. 
+4 
+Contrast Ratio 
+CR 
+640 
+800 
+- 
+- 
+FIG 2. 
+1 
+Luminance uniformity
+WHITE
+- 
+80 
+- 
+% 
+FIG 2. 
+3 
+Surface Luminance 
+Lv 
+- 
+350 
+- 
+cd/m2
+FIG 2. 
+2 
+CIE (x, y) 
+chromaticity
+White 
+White x 
+θ=0 
+=0 
+Ta=25℃ 
+0.309
+0.313
+0.315
+- 
+FIG 2. 
+5 
+White y 
+0.337
+0.339
+0.341
+Red 
+Red x 
+0.629
+0.631
+0.633
+Red y 
+0.327
+0.329
+0.331
+Green
+Green x 
+0.326
+0.328
+0.330
+Green y 
+0.546
+0.548
+0.550
+Blue 
+Blue x 
+0.134
+0.136
+0.138
+Blue y 
+0.139
+0.141
+0.143
+Viewing 
+angle range
+=90(12 o’clock)
+CR  10 
+70 
+80 
+- 
+deg 
+FIG 3. 
+6 
+=270(6 o’clock)
+70 
+80 
+- 
+deg 
+=0(3 o’clock) 
+70 
+80 
+- 
+deg 
+=180(9 o’clock)
+70 
+80 
+- 
+deg 
+NTSC ratio
+- 
+- 
+- 
+50 
+- 
+% 
+- 
+- 
+Note 1. Contrast Ratio(CR) is defined mathematically by the following formula. For more 
+information see FIG 2.: 
+ 
+Note 2. Surface luminance is the LCD surface from the surface with all pixels displaying 
+white. For more information see FIG 2. 
+Lv=Average Surface Luminance with all white pixels (P1,P2,P3,P4,P5,P6,P7,P8,P9) 
+Note 3. The uniformity in surface luminance（WHITE）is determined by measuring 
+
+
+PDF PAGE 10
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.10  
+luminance at each test position 1 through 9, and then dividing the maximum luminance of 
+9points luminance by minimum luminance of 9 points luminance. For more information see 
+FIG 2. 
+ 
+Note 4. Response time is the time required for the display to transition from White to 
+black(Rise Time, Tr) and from black to white(Decay Time, Tf). For additional information 
+see FIG 1. 
+Note 5. CIE (x, y) chromaticity ,The x,y value is determined by screen active area position 5. 
+For more information see FIG 2. 
+Note 6. Viewing angle is the angle at which the contrast ratio is greater than a specific value. 
+For TFT module, the specific value of contrast ratio is 10.The angles are determined for the 
+horizontal or x axis and the vertical or y axis with respect to the z axis which is normal to the 
+LCD surface. For more information see FIG 3. 
+Note 7. For Viewing angle and response time testing, the testing data is base on 
+Autronic-Melchers’s ConoScope. Series Instruments. For contrast ratio, Surface Luminance, 
+Luminance uniformity and CIE，the testing data is base on BM-7 photo detector. 
+Note 8. For TN type TFT transmissive module, Gray scale reverse occurs in the direction of 
+panel viewing angle. 
+FIG.1. The definition of Response Time 
+ 
+
+
+PDF PAGE 11
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.11  
+FIG.2. Measuring method for Contrast ratio, surface luminance, Luminance uniformity, 
+CIE (x , y) chromaticity 
+A : H/6 ; 
+B : V/6 ; 
+H,V : Active Area(AA) size 
+Measurement instrument: BM-7; Light spot size=5mm, 350mm distance from the LCD 
+surface to detector lens. 
+ 
+FIG.3. The definition of viewing angle 
+ 
+
+
+PDF PAGE 12
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.12  
+8、INTERFACE DESCRIPTI 
+A、LCD Interface Description 
+NO. 
+Symbol 
+I/O 
+DESCRIPTION 
+1 
+LED-K 
+Power supply 
+Backlight Cathode 
+2 
+LED-A 
+Power supply 
+Backlight Anode 
+3 
+GND 
+Power supply 
+Power ground 
+4 
+VDD 
+Power supply 
+Digital Power supply(3.3V Typ.) 
+5~12
+R0~R7 
+I 
+8bit digital Red data input(R0:LSB; R7:MSB)  
+13~20
+G0~G7 
+I 
+8bit digital Green data input(G0:LSB; G7:MSB) 
+21~28
+B0~B7 
+I 
+8bit digital Blue data input(B0:LSB; B7:MSB) 
+29 
+GND 
+Power supply 
+Power ground 
+30 
+DCLK 
+I 
+Clock signal. Latching data at the rising edge. 
+31 
+DISP 
+I 
+Standby setting pin, it should be connected to VDD in normal 
+operation mode. If connected to GND, the driver IC is in standby 
+mode. 
+32 
+HSYNC 
+I 
+Horizontal Sync input. Negative polarity. 
+33 
+VSYNC 
+I 
+Vertical Sync input. Negative polarity. 
+34 
+DEN 
+I 
+Data input Enable. Active high to enable the data input Bus. 
+35 
+NC 
+- 
+No Connection 
+36 
+GND 
+Power supply 
+Power ground 
+37 
+XR 
+- 
+RTP pin 
+38 
+YD 
+- 
+RTP pin 
+39 
+XL 
+- 
+RTP pin 
+40 
+YU 
+- 
+RTP pin 
+ 
+ 
+ 
+B、CTP Interface Description 
+NO. 
+Symbol 
+I/O 
+DESCRIPTION 
+1 
+INT 
+O 
+CTP External interrupt to the host 
+2 
+SDA 
+I/O 
+CTP I2C data input and output 
+3 
+SCL 
+I 
+CTP I2C clock input 
+4 
+RESET 
+I 
+CTP external reset signal, Low is active 
+5 
+GND 
+Power supply 
+Power ground 
+6 
+VDD 
+Power supply 
+CTP Power input 
+ 
+
+
+PDF PAGE 13
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.13  
+9、INPUT TIMING 
+Parameter 
+Symbol 
+Value 
+Unit 
+Min. 
+Typ. 
+Max. 
+PCLK frequency@ Frame rate=60Hz 
+PCLK 
+- 
+30 
+50 
+MHz 
+Horizontal display area 
+thd 
+800 
+PCLK 
+Horizontal period time 
+th 
+889 
+928 
+1143 
+PCLK 
+HSYNC Back Porch 
+thbp 
+- 
+88 
+- 
+PCLK 
+HSYNC Front Porch 
+thfp 
+1 
+40 
+255 
+PCLK 
+HSYNC Pulse Width 
+thw 
+1 
+48 
+255 
+PCLK 
+Vertical display area 
+tvd 
+480 
+H 
+VSYNC period time 
+tv 
+513 
+525 
+767 
+H 
+VSYNC Back Porch 
+tvbp 
+- 
+32 
+- 
+H 
+VSYNC Front Porch 
+tvfp 
+1 
+13 
+255 
+H 
+VSYNC Pulse Width 
+tvw 
+3 
+3 
+255 
+H 
+10、POWER ON SEQUENCE 
+ 
+
+
+PDF PAGE 14
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.14  
+11、RELIABILITY TEST CONDITIONS 
+No.
+Test Item 
+Test Condition 
+1 
+High Temperature Storage 
+80℃/120 hours 
+2 
+Low Temperature Storage 
+-30℃/120 hours 
+3 
+High Temperature Operating 
+70℃/120 hours 
+4 
+Low Temperature Operating 
+-20℃/120 hours 
+5 
+Temperature Cycle Storage 
+-20℃(30min.)~25(5min.)~70℃(30min.)×10cycles
+A、Inspection after test: 
+Inspection after 2~4 hours storage at room temperature, the sample shall be free from 
+defects: 
+ Air bubble in the LCD; 
+ Sealleak; 
+ Non-display; 
+ Missing segments; 
+ Glass crack; 
+ Current is twice higher than initial value. 
+B、Remark: 
+ The test samples should be applied to only one test item. 
+ Sample size for each test item is 5~10pcs. 
+ Failure Judgment Criterion: Basic Specification, Electrical Characteristic, Mechanical 
+Characteristic, Optical Characteristic. 
+ 
+
+
+PDF PAGE 15
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.15  
+12、INSPECTION CRITERION 
+This specification is made to be used as the standard of acceptance/rejection criteria for 
+TFT-LCD/IPS TFT-LCD module product, and this specification is applicable only in the 
+case that the size of module equal to or exceed than 3.5 inch. 
+12. 1  Sample plan 
+Sampling plan according to GB/T2828.1-2003/ISO 2859-1：1999 and ANSI/ASQC 
+Z1.4-1993,normal level 2 and based on: 
+Major defect: AQL 0.65 
+Minor defect: AQL 1.5 
+12.2  Inspection condition 
+Viewing distance for cosmetic inspection is about 30cm with bare eyes, and under an 
+environment of 20~40W light intensity, all directions for inspecting the sample should be 
+within 45°against perpendicular line. (Normal temperature 20~25℃and normal humidity 60
+±15%RH ) 
+12.3  Definition of Inspection Item 
+A、 Definition of inspection zone in LCD. 
+ 
+ 
+
+
+PDF PAGE 16
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.16  
+Zone A: character/Digit area 
+Zone B: viewing area except Zone A (Zone A + Zone B=minimum Viewing area) 
+Zone C: Outside viewing area (invisible area after assembly in customer’s product) 
+Fig.1 Inspection zones in an LCD 
+Note: As a general rule, visual defects in Zone C are permissible, when it is no trouble for 
+quality and assembly of customer’s product. 
+B、 Definition of some visual defect 
+Bright dot 
+Because of losing all or part function, bad pixel dots appear bright and the 
+size is more than 50% of one dot in which LCD panel is displaying under 
+black pattern. 
+Dark dot 
+Dots appear dark and unchanged in size in which LCD panel is displaying 
+under pure red, green, blue picture, or pure whiter picture. 
+12.4  Major Defect 
+Item  
+No. 
+Items to be 
+inspected 
+Inspection standard 
+Classification
+of defects 
+   1 
+Functional defects
+1) No display  
+2) Display abnormally 
+3) Missing vertical, horizontal segment 
+4) Short circuit 
+5) Excess power consumption 
+6)Backlight no lighting, flickering and abnormal 
+lighting 
+major 
+2 
+Missing 
+Missing component 
+3 
+Outline dimension
+Overall outline dimension beyond the drawing is not 
+allowed 
+ 
+ 
+
+
+PDF PAGE 17
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.17  
+12.5  Minor Defect 
+Item 
+ No. 
+Items to be 
+inspected 
+Inspection standard 
+Classification
+of defects 
+1 
+Bright dot 
+/dark dot 
+defect 
+             Zone 
+Acceptable Qty 
+A+B 
+ 
+C 
+3.5～7” 
+7～10.1” 
+＞10.1” 
+Bright pixel dot 
+1 
+2 
+3 
+Acceptable 
+Dark pixel dot 
+4 
+4 
+4 
+2bright dots adjacent 
+0 
+0 
+0 
+2dark dots adjacent 
+0 
+0 
+0 
+Total bright and dark 
+dots 
+5 
+6 
+7 
+Note: Minimum distance between defective dots is more than 5mm; 
+Pixel dots’ function is normal, but bright dots caused by foreign 
+material and other reasons are judged by the dot defect of 5.2. 
+Minor 
+2 
+          Zone 
+ 
+Size(mm) 
+Acceptable Qty 
+A+B 
+ 
+C 
+3.5”～7” 
+7～10.1” 
+＞10.1” 
+Φ≤0.2 
+Acceptable
+Acceptable
+Acceptable
+Acceptable 
+0.2＜Φ≤0.5 
+4 
+5 
+6 
+Φ＞0.5 
+0 
+0 
+0 
+Note:  
+1. Minimum distance between defective dots is more than 5 mm; 
+2. The quantity of defect is zero in operating condition. 
+ 
+Minor 
+3 
+Linear 
+defect 
+          Zone 
+ 
+Size (mm) 
+Acceptable Qty 
+A+B 
+ 
+C 
+Length
+Width 
+3.5”～7” 
+7～10.1” 
+＞10.1” 
+Ignore
+W≤0.05
+Acceptable
+Acceptable
+Acceptable
+Acceptable 
+L≤5.0
+0.05＜
+W≤0.1
+4 
+5 
+6 
+L＞5.0
+W＞0.1
+0 
+0 
+0 
+ 
+Minor 
+
+
+PDF PAGE 18
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.18  
+4 
+Polarizer 
+defect 
+5.4.1 Polarizer Position 
+( i) Shifting in position should not exceed the glass outline 
+dimension. 
+( ii ) Incomplete covering of the viewing area due to shifting is not 
+allowed. 
+5.4.2 Dirt on polarizer 
+Dirt which can be wiped easily should be acceptable. 
+5.4.3 Polarizer Dent & Air bubble 
+          Zone 
+ 
+Size(mm) 
+Acceptable Qty 
+A+B 
+ 
+C 
+3.5”～7” 
+7～10.1” 
+＞10.1” 
+Φ≤0.2 
+Acceptable
+Acceptable
+Acceptable
+Acceptable 
+0.2＜Φ≤0.5 
+4 
+5 
+6 
+Φ＞0.5 
+0 
+0 
+0 
+5.4.4 Polarizer scratch 
+(i) If the polarizer scratch can be seen after cover assembling 
+or in the operating condition, judge by the linear defect of 5.3.
+( ii )If the polarizer scratch can be seen only in non-operating 
+condition or some special angle, judge by the following: 
+          Zone 
+ 
+Size (mm) 
+Acceptable Qty 
+A+B 
+ 
+C 
+Length
+Width 
+3.5”～7” 
+7～10.1” 
+＞10.1” 
+Ignore
+W≤0.05
+Acceptable
+Acceptable
+Acceptable
+Acceptable 
+1.0＜L
+≤5.0 
+0.05＜
+W≤0.20
+4 
+5 
+6 
+L＞5.0
+W＞0.2
+0 
+0 
+0 
+Minor 
+ 
+ 
+ 
+5 
+ 
+ 
+ 
+MURA 
+Using 3% ND filter, it’s NG if it can be seen in R,G,B picture. 
+Minor 
+White/Black 
+dot（MURA） 
+Visible under：ND3%；D≦0.15mm, Acceptable； 
+0.15mm<D≦0.5mm, N≦4；D>0.5mm, Not allowable. 
+
+
+PDF PAGE 19
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.19  
+6 
+Glass 
+defect 
+(i) Crack 
+Cracks are not allowed. 
+Minor 
+(ii) TFT chips on corner 
+ 
+X 
+Y 
+Z 
+Acceptable 
+≤3.0 
+≤3.0 
+Not more than the 
+thickness of glass 
+N≤3 
+Chips on the corner of terminal shall not be allowed to extend 
+into the ITO pad or expose perimeter seal. 
+Minor 
+(iii) Usual surface crack 
+ 
+X 
+Y 
+Z 
+Acceptable 
+≤1.5 
+≤1.5 
+Not more than the 
+thickness of glass 
+N≤4 
+It is only applicable to the upper glass of LCD. 
+ 
+Minor 
+ 
+ 
+ 
+
+
+PDF PAGE 20
+WKS         TOUCH MODULE         WKS43189         Version:0.0       Mar 3, 2019 
+                                                                               
+WKS Technology Co., LTD                  WKS CONFIDENTIAL                               P.20  
+12.6  Module Cosmetic Criteria 
+Item 
+No. 
+Items to be 
+inspected 
+Inspection Standard 
+Classification 
+of defects 
+1 
+Difference in Spec. 
+Not allowable 
+Major 
+2 
+Pattern peeling 
+No substrate pattern peeling and floating 
+Major 
+3 
+Soldering defects 
+No soldering missing 
+Major 
+No soldering bridge 
+Major 
+No cold soldering 
+Minor 
+4 
+Resist flaw on PCB 
+Visible copper foil (Φ0.5 mm or more) on substrate 
+pattern is not allowed 
+Minor 
+5 
+FPC gold finger 
+No dirt, breaking, oxidation lead to black 
+Major 
+6 
+Backlight plastic frame 
+No deformation, crack, breaking, backlight positioning column 
+breaking, obvious nick. 
+Minor 
+7 
+Marking printing effect 
+No dark marking, incomplete, deformation lead to 
+unable to judge 
+Minor 
+8 
+Accretion of metallic 
+Foreign matter 
+No accretion of metallic foreign matter (Not exceed Φ0.2mm) 
+Minor 
+9 
+Stain 
+No stain to spoil cosmetic badly 
+Minor 
+10 
+Plate discoloring 
+No plate fading, rusting and discoloring 
+Minor 
+11 
+1. Lead parts 
+a. Soldering side of PCB Solder to form a ‘Filet’ all around 
+the lead. Solder should not hide the lead form perfectly.  
+Minor 
+ 
+b. Components side(In case of ‘Through Hole PCB') 
+Solder to reach the Components side of PCB. 
+Minor 
+ 
+2. Flat packages 
+ 
+Either ‘Toe’(A) or ‘Seal’(B)of the lead to be covered by 
+“Filet”. Lead form to be assume over Solder.  
+Minor 
+ 
+3. Chips 
+(3/2) H ≥h ≥(1/2) H 
+ 
+Minor 
+ 
+4. Solder ball/Solder 
+splash 
+a. The spacing between solder ball and the conductor or 
+solder pad h ≥0.13 mm. The diameter of solder ball d≤0.15 
+mm. 
+Minor 
+ 
+b. The quantity of solder balls or solder splashes isn’t beyond 
+5 in 600 mm2. 
+Minor 
+ 
+c. Solder balls/Solder splashes do not violate minimum 
+electrical clearance. 
+Major 
+ 

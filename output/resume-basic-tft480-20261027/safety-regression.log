@@ -1,0 +1,8 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS autonomous avoidance cruise, slow, wider-side turns, block and invalid-lidar stop
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/avoidance_lite_tb.v:131: $finish called at 3000000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS real calibration/ARM/PI, STOP/DISARM/avoidance-stop, manual arbitration, link TTL, CPU/IMU faults, no restart
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/basic_safety_tb.v:85: $finish called at 936440000 (1ps)

@@ -1,0 +1,27 @@
+{
+  "status": "offline_implementation_and_synthesis_complete",
+  "rtl_tests": 34,
+  "python_tests": 41,
+  "all_current_inputs_match": true,
+  "new_basic_synthesis_completed": true,
+  "synthesis_seconds": 139.16759872436523,
+  "resources": {
+    "lut": 19870,
+    "register": 17455,
+    "alu": 2892,
+    "bsram": 36,
+    "actual_cls": null
+  },
+  "system_fmax_synthesis_estimate_mhz": 79.391,
+  "ddr_cross_clock_synthesis_slack_ns": -0.725,
+  "full_board_pnr_started": false,
+  "final_timing_signed_off": false,
+  "new_bitstream_generated": false,
+  "hardware_programmed": false,
+  "cold_boot_verified": false,
+  "screen_test_motor_pads_grounded": true,
+  "motion_release_allowed": false,
+  "github_uploaded": false,
+  "telemetry_local_experiment_merged": false,
+  "unix_time": 1793109476.3255696
+}

@@ -1,0 +1,32 @@
+ 
+ 
+-P.52-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+9. Power on/off Sequence 
+ 
+To prevent the device damage from latch up, the power on/off sequence shown 
+below must be followed. 
+          
+ Power ON: VDD, VSS à VDDA, VSSA à V1 to V14 
+ Power OFF: V1 to V14 à VDDA, VSSA à VDD, VSS 
+ 
+9.1 Power on/off control 
+ 
+HX8264-D03 has a power on/off sequence control function. In order to prevent IC 
+from power on reset fail, the rising time (TPOR) of the digital power supply VDD should 
+be maintained within the given specifications. Please refer to “AC Characteristics” for 
+more detail on timing. 
+ 
+ 
+Figure 9.1: Power on/off Timing Sequence 
+ 
+9.2 Enter and exit standby mode sequence 
+ 
+ 
+Figure 9.2: Enter and Exit Standby Mode Sequence 

@@ -1,0 +1,46 @@
+{
+  "before": {
+    "resource_attributes": {
+      "name": "telemetry_experiment",
+      "Register": "1395",
+      "Alu": "31",
+      "Lut": "2071",
+      "T_Register": "1395(1395)",
+      "T_Alu": "31(31)",
+      "T_Lut": "2071(2071)"
+    },
+    "ff_primitives": {
+      "DFFCE": 1395
+    },
+    "netlist_sha256": "3f9e038910f7fdd84a59a2554e1f4058ad7a81761c9fa82ec73e5b3b429c9d7d",
+    "source_sha256": "3ea86c1b05c971466fdb3c85a54cd70f6924bdf95387706ea4abd104845c3d4d"
+  },
+  "after": {
+    "resource_attributes": {
+      "name": "telemetry_experiment",
+      "Register": "1394",
+      "Alu": "31",
+      "Lut": "2069",
+      "T_Register": "1394(1394)",
+      "T_Alu": "31(31)",
+      "T_Lut": "2069(2069)"
+    },
+    "ff_primitives": {
+      "DFFRE": 1336,
+      "DFFCE": 58
+    },
+    "netlist_sha256": "c49415e72766694d87f468e459f87bff202451d22c8dbd418c16f7003a1fa410",
+    "source_sha256": "dec04bf4f64992909c2f995fd4bf509bde287eff5d63ac87f90ec34e36703d4f"
+  },
+  "equivalence_passed": true,
+  "cycles": 120000,
+  "packet_counts": {
+    "EMS1": 296,
+    "EML1": 382,
+    "EMF1": 294,
+    "EMP1": 13
+  },
+  "merged": false,
+  "reason": "Only 2 LUT and 1 FF saved in standalone synthesis; reset load changes but the large payload select/enable nets remain. No physical routing benefit measured. Preserve the fully verified board baseline.",
+  "validity": "Local all-packet-types experiment; do not subtract its counts from whole-board resource totals."
+}

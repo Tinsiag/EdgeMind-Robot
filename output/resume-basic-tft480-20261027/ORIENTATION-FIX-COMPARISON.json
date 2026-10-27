@@ -1,0 +1,25 @@
+{
+  "comparison": {
+    "T_Lut": {
+      "before_fix": 19870,
+      "after_fix": 19832,
+      "delta": -38
+    },
+    "T_Register": {
+      "before_fix": 17455,
+      "after_fix": 17457,
+      "delta": 2
+    },
+    "T_Alu": {
+      "before_fix": 2892,
+      "after_fix": 2889,
+      "delta": -3
+    },
+    "T_Bsram": {
+      "before_fix": 36,
+      "after_fix": 36,
+      "delta": 0
+    }
+  },
+  "note": "Two distinct frozen whole-board synthesis runs; small mapped-resource changes outside edited modules may reflect optimization variability. No PNR."
+}

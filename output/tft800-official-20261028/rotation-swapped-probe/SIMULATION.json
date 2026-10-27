@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-swapped-probe\\rotation_swapped_tb.v": "b85f2d738e753b4fa632ab76c5dca5d3b3426bf98b568eebd551dcf856fd6d77",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-swapped-probe\\wrapper.v": "76f183872b4b905fe3ef2a892367d8101855a555e4792464829a33dacbe0bc37",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-swapped-probe\\src\\rotation_scan.v": "c2680bfecf205073297f0a4d21674302f9f1db604f26476c2b16c43062b461da",
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544"
+  },
+  "pll_model": "ideal33MHz; actual Gowin IOBUF model",
+  "mode_duration": "accelerated480 to3 frames; unchanged pixel/line/frame timing",
+  "checks": "same inverse-coordinate checker but DE observed atAB21 and AB22 constantly high"
+}

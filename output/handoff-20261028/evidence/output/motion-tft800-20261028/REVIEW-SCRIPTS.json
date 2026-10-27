@@ -1,0 +1,12 @@
+{
+  "source_directory": "output\\tft800-official-20261028",
+  "adaptation": "Same review logic applied to separate motion build; motor OBUF expectations changed from GND to dynamic. No previous result is copied as a pass.",
+  "review_scripts": {
+    "inspect_implementation.py": "19cca80338bf2e4e361ce6a01402ea900895350de173cf245041f7662dc14ac4",
+    "audit_constraint_targets.py": "141105241da6c2314597fd477cb7844756a6e311879cff0cd45f92b073dc6a5b",
+    "audit_tx_sdf.py": "d20bd7b4a266d10fd8fe1b2bcf808ca27127afadad717af245d8d878bb0a6f51",
+    "audit_tft_sdf.py": "9d5d11f7c6af939c8592755b3324f693efb3d760db37c76de7afa05c048ff27a",
+    "audit_display_cdc.py": "c463b4bb807a97ed7bc83362dc31b648027eeb676da7372e0c48eec9beced5e9",
+    "audit_official.py": "58780dd14e45142d16f911627f6365457e3c3f1e4763f2d91aa7d586be6c1b71"
+  }
+}

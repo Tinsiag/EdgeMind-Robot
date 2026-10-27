@@ -5,7 +5,8 @@ module motion_tb;
     reg signed [15:0] yaw=32000,gz=0;reg [15:0] range_mm=1000;
     wire armed,calibrated,calibrating,rotating;wire [15:0] faults;wire signed [31:0] tl,tr,acc;
     wire l1,l2,r1,r2;reg cv=0;reg [7:0] kind=0;reg [255:0] payload=0;
-    a741_motion dut(.clk(clk),.rst_n(rst),.uart_rx(1'b1),.ms_tick(ms),.tick(tick),
+    a741_motion dut(.clk(clk),.rst_n(rst),.direct_valid(cv),.direct_kind(kind),.direct_payload(payload),
+        .direct_ttl(16'd250),.direct_seq(8'd1),.direct_reply_ready(1'b1),.ms_tick(ms),.tick(tick),
         .left_a(1'b0),.left_b(1'b0),.right_a(1'b0),.right_b(1'b0),
         .imu_valid(iv),.gyro_valid(gv),.imu_stationary(1'b1),.angle_update(au),.gyro_update(gu),.yaw(yaw),.gz(gz),
         .tof_valid(tv),.tof_mm(range_mm),.now_ms(32'd0),.armed(armed),.calibrated(calibrated),
@@ -31,7 +32,6 @@ module motion_tb;
         end
     endtask
     initial begin
-        force dut.cv=cv;force dut.kind=kind;force dut.payload=payload;force dut.ttl=16'd250;
         #50;rst=1;cmd(2,0);if(armed) $fatal(1,"unconfigured ARM");
         cfg(0,1469);cfg(1,1471);cfg(2,66300);cfg(3,66300);cfg(4,121400);
         cfg(5,200);cfg(6,74101);cfg(7,1);cfg(8,0);cfg(9,512);cfg(10,5);cfg(11,8);
@@ -68,16 +68,14 @@ module motion_tb;
         if(dut.enable || l1 || l2 || r1 || r2) $fatal(1,"TTL valid boundary left output enabled");
         repeat(260) begin @(negedge clk);if(armed || tl || tr) $fatal(1,"expired valid result restarted wheels");end
         if(!faults[0]) $fatal(1,"boundary TTL fault not latched");cmd(8'h21,0);
-        arm();range_mm=375;cmd(8'h45,{192'd0,32'd100,32'd100});control_tick();
+        arm();range_mm=375;cmd(8'h11,{192'd0,32'd100,32'd100});control_tick();
         if(tl!=50 || tr!=50) $fatal(1,"ToF scaling %d %d",tl,tr);
         tv=0;repeat(4) @(negedge clk);
         if(armed || !faults[5] || l1 || l2 || r1 || r2) $fatal(1,"ToF stale stop");
         tv=1;range_mm=1000;cmd(8'h21,0);
-        arm();cmd(8'h42,{208'd0,16'd100,32'd16384});control_tick();
-        @(negedge clk);yaw=-32000;au=1;@(negedge clk);au=0;
-        if(acc!=1536) $fatal(1,"IMU unwrap %d",acc);
+        arm();cmd(8'h11,{192'd0,32'd100,32'd100});control_tick();
         iv=0;repeat(4) @(negedge clk);
-        if(armed || rotating || !faults[4]) $fatal(1,"IMU loss must stop rotation");
+        if(armed || rotating || !faults[4]) $fatal(1,"IMU loss must stop wheels");
         if(calibrated) $fatal(1,"sensor loss retained calibration");
         iv=1;cmd(8'h21,0);cmd(8'h43,0);
         for(n=0;n<64;n=n+1) begin @(negedge clk);gu=1;@(negedge clk);gu=0;end
@@ -90,22 +88,19 @@ module motion_tb;
         if(armed || !faults[0]) $fatal(1,"idle ARM must expire");
         cmd(8'h11,{192'd0,32'd100,32'd100});control_tick();
         if(armed || tl || tr) $fatal(1,"delayed command restarted expired ARM");
-        cmd(8'h21,0);arm();cmd(8'h42,{208'd0,16'd100,32'd16384});
-        @(negedge clk);yaw=yaw+16384;au=1;@(negedge clk);au=0;control_tick();
-        for(n=0;n<202;n=n+1) clock_ms();
-        control_tick();
-        if(rotating || faults || tl || tr || dut.desired_l || dut.desired_r) $fatal(1,"rotation completed or restarted");
-        cmd(4,0);arm();cmd(8'h42,{208'd0,16'd100,32'd16384});
-        @(negedge clk);yaw=yaw+18000;au=1;@(negedge clk);au=0;control_tick();
-        for(n=0;n<202;n=n+1) clock_ms();
-        repeat(3) @(negedge clk);
-        if(!faults[9] || armed) $fatal(1,"rotation tolerance failure must latch");
+        cmd(8'h21,0);arm();
+        cmd(8'h42,{208'd0,16'd100,32'd16384});
+        cmd(8'h45,{192'd0,32'd100,32'd100});
+        cmd(8'h47,{176'd0,16'd1280,32'd100,32'd100});control_tick();
+        if(rotating || acc || tl || tr || dut.desired_l || dut.desired_r)
+            $fatal(1,"removed angle/heading command changed targets");
+        cmd(4,0);
         cmd(8'h43,0);
         @(negedge clk);yaw=yaw+400;au=1;@(negedge clk);au=0;
         if(calibrating || calibrated || dut.calibration_result!=2) $fatal(1,"moving calibration accepted");
         cmd(8'h43,0);gv=0;repeat(3) @(negedge clk);
         if(calibrating || dut.calibration_result!=3) $fatal(1,"stale calibration kept running");
-        $display("PASS config/calibration, atomic command replacement, STOP/ToF/TTL valid boundaries, IMU unwrap/loss and cancel");$finish;
+        $display("PASS config/calibration, atomic command replacement, STOP/ToF/TTL valid boundaries, removed-command rejection, IMU loss and cancel");$finish;
     end
     initial begin #1000000;$fatal(1,"watchdog");end
 endmodule

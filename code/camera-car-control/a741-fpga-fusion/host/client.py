@@ -1,18 +1,15 @@
 """Single-owner UDP control client. Motion commands are never retried."""
-import math
 from pathlib import Path
 import socket
 import struct
 import sys
 import time
-import threading
 import ipaddress
 from dataclasses import dataclass
 
 MOTION_HOST = Path(__file__).resolve().parents[2].parent / "fpga" / "acg720-motion-control" / "host"
 sys.path.insert(0, str(MOTION_HOST))
 from protocol import FrameParser, crc16_ccitt, decode_status, frame
-from heading_control import HeadingPD
 
 
 @dataclass
@@ -33,26 +30,6 @@ class CalibrationRejected(RuntimeError):
     """A calibration precondition failed; the connection can remain available."""
 
 
-class HoldLease:
-    """The UI must renew the deadman lease; a stuck UI cannot drive forever."""
-    def __init__(self, timeout=.2):
-        self.event = threading.Event()
-        self.timeout = timeout
-        self.deadline = 0
-
-    def set(self):
-        self.deadline = time.monotonic()+self.timeout
-        self.event.set()
-
-    def clear(self):
-        self.event.clear()
-
-    def is_set(self):
-        return self.event.is_set() and time.monotonic() < self.deadline
-
-    def renew(self):
-        if self.is_set():
-            self.deadline = time.monotonic()+self.timeout
 
 
 class Client:
@@ -70,7 +47,7 @@ class Client:
         self.motion_lidar = False
 
     def command(self, kind, payload=b"", reply=0x80):
-        if getattr(self,"sensors_only",False) and (kind in (2,0x11,0x42,0x45,0x47,0x55) or (kind==0x58 and payload[:1]==b"\x02")):
+        if getattr(self,"sensors_only",False) and (kind in (2,0x11,0x42,0x45,0x47) or (kind==0x59 and payload[:1]==b"\x01")):
             raise ValueError("传感器调试模式禁止ARM、轮速和旋转指令")
         self.diag.request_id = (self.diag.request_id+1) & 0xffffffff
         self.diag.last_command=kind
@@ -83,8 +60,7 @@ class Client:
         self.socket.sendto(body + struct.pack("<H", crc16_ccitt(body)), self.peer)
         self.diag.requests += 1
         if reply is None:
-            # The bridge serializes commands at 115200 baud; avoid flooding its
-            # single request slot with a second datagram before it finishes.
+            # Bound host traffic to the FPGA's single command slot.
             time.sleep(.004)
             return None
         deadline = start + self.timeout
@@ -198,8 +174,8 @@ class Client:
                 "gyro_dps": [v/16.4 for v in raw[3:]] if valid else None,
                 "temperature_c": temperature_c if valid else None}
 
-    def wheels(self, left, right, hold=False):
-        self.command(0x45 if hold else 0x11, struct.pack("<ii", left, right), reply=None)
+    def wheels(self, left, right):
+        self.command(0x11, struct.pack("<ii", left, right), reply=None)
 
     def heartbeat(self):
         self.command(5, reply=None)
@@ -267,137 +243,9 @@ class Client:
         return {"requested_permille": word & 1023, "effective_permille": (word >> 10) & 1023,
                 "acquiring": bool(word & (1 << 20)), "expired": bool(word & (1 << 21))}
 
-    def settle(self, cancel=None):
-        self.wheels(0, 0)
-        deadline = time.monotonic()+2
-        quiet = None
-        while time.monotonic() < deadline:
-            if cancel is not None and cancel.is_set():
-                return self.stop()
-            self.heartbeat()
-            s = self.status()
-            if s.faults:
-                raise CalibrationRejected(f"停车故障 0x{s.faults:04x}；FPGA已停车，连接保持")
-            if abs(s.left_speed) < 20 and abs(s.right_speed) < 20:
-                quiet = time.monotonic() if quiet is None else quiet
-                if time.monotonic()-quiet >= .2:
-                    return self.disarm()
-            else:
-                quiet = None
-            time.sleep(.02)
-        raise RuntimeError("停车稳定检查超时")
 
-    def drive(self, calibration, linear, angular, held, cancel):
-        if not held.is_set() or cancel.is_set():
-            return None
-        wheels = calibration.arc(linear, angular)
-        if angular and not getattr(self,"imu_motion",False):
-            raise ValueError("需要 IMU 运动增强固件（能力位0x400）")
-        origin = self.sensors()["yaw"] if angular else 0
-        self.arm(calibration)
-        if not held.is_set() or cancel.is_set():
-            return self.stop()
-        started = time.monotonic()
-        if not angular:
-            self.wheels(*wheels, hold=True)
-        while held.is_set() and not cancel.is_set():
-            if angular:
-                # arc() scales both wheel speeds together; integrate the same
-                # scaled angular velocity so heading and geometry agree.
-                half = math.radians(angular)*calibration.data["mechanical_track_um"]/2000
-                scale = max(1, max(abs(linear-half),abs(linear+half))/calibration.data["max_speed_mm_s"])
-                reference = round(origin + calibration.data["imu_yaw_sign"]*angular/scale*(time.monotonic()-started)*65536/360)
-                reference = (reference+32768)%65536-32768
-                self.command(0x47,struct.pack("<iih",*wheels,reference),reply=None)
-            self.heartbeat()
-            s = self.status()
-            if s.faults or s.state == 0:
-                raise CalibrationRejected(f"驾驶被FPGA停止：state={s.state}, faults=0x{s.faults:04x}；连接保持")
-            time.sleep(.02)
-        duration = time.monotonic()-started
-        reason = "released"
-        if cancel.is_set():
-            reason = "cancelled"
-        elif isinstance(held, HoldLease) and held.event.is_set():
-            reason = "ui_lease_expired"
-        status = self.stop() if cancel.is_set() else self.settle(cancel)
-        return {"drive_seconds": round(duration, 3), "stop_reason": reason,
-                "final_status": status}
 
-    def rotate(self, calibration, degrees, speed, cancel):
-        if cancel.is_set():
-            raise RuntimeError("旋转已取消")
-        if not math.isfinite(degrees) or not 1 <= abs(degrees) <= 360 or not 40 <= speed <= calibration.data["max_speed_mm_s"]:
-            raise ValueError("旋转角度须为 ±1~360°，轮速须在已配置范围内")
-        self.arm(calibration)
-        if cancel.is_set():
-            self.stop()
-            raise RuntimeError("旋转已取消")
-        result = self.command(0x42, struct.pack("<iH", round(degrees*65536/360), speed))
-        if decode_status(result).state != 4:
-            raise RuntimeError("FPGA 拒绝旋转")
-        deadline = time.monotonic()+60
-        while time.monotonic() < deadline and not cancel.is_set():
-            self.heartbeat()
-            sensor = self.sensors()
-            if sensor["faults"]:
-                raise CalibrationRejected(f"旋转被FPGA停止：faults=0x{sensor['faults']:04x}；连接保持")
-            if not sensor["flags"] & 2:
-                angle = sensor["relative"]*360/65536
-                self.disarm()
-                if abs(angle-degrees) > 5:
-                    raise RuntimeError(f"IMU 旋转超差：{angle:.2f}°")
-                return {"imu_degrees": angle, "external_degrees": None}
-            time.sleep(.02)
-        self.stop()
-        raise RuntimeError("旋转取消或超时")
 
-    def distance(self, calibration, mm, speed, cancel):
-        if cancel.is_set():
-            raise RuntimeError("距离任务已取消")
-        if not math.isfinite(mm) or not 20 <= abs(mm) <= 10000 or not 40 <= speed <= calibration.data["max_speed_mm_s"]:
-            raise ValueError(f"距离须为 ±20~10000 mm，速度须为40～{calibration.data['max_speed_mm_s']} mm/s")
-        self.arm(calibration)
-        first = self.status()
-        initial = self.sensors()
-        if initial["valid"] & 3 != 3 or not initial["flags"] & 4 or initial["faults"]:
-            self.stop()
-            raise CalibrationRejected("直线任务要求有效且已校准的IMU")
-        heading = HeadingPD(calibration, initial)
-        deadline = time.monotonic()+abs(mm)/40+10
-        sign = 1 if mm > 0 else -1
-        while time.monotonic() < deadline and not cancel.is_set():
-            self.heartbeat()
-            s = self.status()
-            if s.faults:
-                raise CalibrationRejected(f"距离任务被FPGA停止：faults=0x{s.faults:04x}；连接保持")
-            distances = calibration.distance_mm(s.left_count-first.left_count, s.right_count-first.right_count)
-            remaining = abs(mm)-sign*sum(distances)/2
-            # Deceleration uses the same 100 Hz speed ramp as the FPGA.
-            accel = calibration.data["speed_step_mm_s_per_10ms"] * 100
-            stop_margin = max(5, speed*.04)
-            if remaining <= stop_margin:
-                last = self.settle(cancel)
-                actual = calibration.distance_mm(last.left_count-first.left_count, last.right_count-first.right_count)
-                error = sum(actual)/2-mm
-                if abs(error) > 20:
-                    raise RuntimeError(f"编码器行程超差 {error:.1f} mm；不会自动补进")
-                return {"encoder_mm": actual, "encoder_error_mm": error, "external_mm": None}
-            value = sign*round(max(40, min(speed, math.sqrt(2*accel*max(0, remaining-stop_margin)))))
-            sensor = self.sensors()
-            if sensor["valid"] & 3 != 3 or not sensor["flags"] & 4 or sensor["faults"]:
-                self.stop()
-                raise CalibrationRejected("直线任务IMU失效或FPGA故障；已停止")
-            try:
-                left, right = heading.wheels(value, sensor, calibration.data["max_speed_mm_s"])
-            except ValueError as exc:
-                self.stop()
-                raise CalibrationRejected(str(exc)) from exc
-            # Raw wheel command bypasses the FPGA heading P term, not wheel PI.
-            self.wheels(left, right, hold=False)
-            time.sleep(.02)
-        self.stop()
-        raise RuntimeError("距离任务取消或超时")
 
     def close(self):
         self.socket.close()

@@ -1,12 +1,12 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a741_sensors #(parameter CLK_HZ=50000000,AUX_ENABLED=1,ALLOW_MPU6500=0,
+module a741_sensors #(parameter LIDAR_ZERO=0,LIDAR_CLOCKWISE=0,CLK_HZ=50000000,AUX_ENABLED=1,ALLOW_MPU6500=0,
     LIDAR_ENABLED=AUX_ENABLED,TOF_ENABLED=AUX_ENABLED)(
     input wire clk,rst_n,ms_tick,lidar_rx,imu_int,calibrated,
     input wire signed [15:0] gyro_bias,
     inout wire imu_sda,imu_scl,
     inout wire tof_sda,tof_scl,tof_xshut,
-    output wire imu_valid,angle_update,gyro_valid,gyro_update,imu_stationary,
+    output wire imu_valid,angle_update,gyro_valid,gyro_update,imu_stationary,tilt_valid,
     output wire signed [15:0] yaw,roll,pitch,gx,gy,gz,
     output wire [31:0] now_ms,imu_time,gyro_time,imu_seq,imu_errors,imu_diagnostic,
     output wire [95:0] imu_raw,output wire [15:0] imu_temperature,
@@ -45,39 +45,15 @@ module a741_sensors #(parameter CLK_HZ=50000000,AUX_ENABLED=1,ALLOW_MPU6500=0,
         .yaw(yaw),.gz(gz),.angle_update(angle_update),.gyro_update(gyro_update),.valid(imu_valid),.stationary(imu_stationary));
     assign gyro_valid=sample_valid;
     assign gyro_time=imu_time;
-    // No synthetic roll/pitch attitude is presented as a measured angle.
-    assign roll=0;assign pitch=0;
-    ld06_parser lidar(.clk(clk),.rst_n(rst_n && LIDAR_ENABLED!=0),.ms_tick(ms_tick),.byte_valid(lv),.framing_error(le),.data(lb),
+    a741_attitude inclination(.clk(clk),.rst_n(rst_n),.sample_update(sample_update),.sample_valid(sample_valid),
+        .ax(ax),.ay(ay),.az(az),.roll(roll),.pitch(pitch),.valid(tilt_valid),.done());
+    ld06_parser #(.LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE)) lidar(.clk(clk),.rst_n(rst_n && LIDAR_ENABLED!=0),.ms_tick(ms_tick),.byte_valid(lv),.framing_error(le),.data(lb),
         .packet_valid(lidar_packet_valid),.valid(lidar_valid),.point_valid(lidar_point),.angle_cdeg(lidar_angle),.distance_mm(lidar_distance),.confidence(lidar_confidence),
         .packet(lidar_packet),.sample_time(lidar_time),.sequence_id(lidar_seq),.errors(lidar_errors),.dropped(lidar_dropped),
         .front_mm(lidar_front),.left_mm(lidar_left),.right_mm(lidar_right));
-    wire start,read,busy,done,xerror,low,init,error,update,svalid;
-    wire [15:0] regaddr,range_mm;wire [2:0] count;wire [31:0] wd,rd;wire [7:0] status;
-    // Failed initialization is retried only while the control layer sees invalid
-    // data. A latched motion fault still requires a separate manual clear/ARM.
-    reg [15:0] retry_age,age;reg retry_reset;
-    reg [31:0] stamp,seq,errs;
-    always @(posedge clk or negedge rst_n)
-        if(!rst_n) begin retry_age<=0;age<=65535;retry_reset<=0;stamp<=0;seq<=0;errs<=0;end
-        else begin
-            retry_reset<=0;
-            if(ms_tick) begin
-                if(age!=65535) age<=age+1'b1;
-                if(error) begin
-                    if(retry_age==1999) begin retry_reset<=1;retry_age<=0;errs<=errs+1'b1;end
-                    else retry_age<=retry_age+1'b1;
-                end else retry_age<=0;
-            end
-            if(update) begin age<=0;stamp<=now_ms;seq<=seq+1'b1;end
-        end
-    wire trst=rst_n && !retry_reset && TOF_ENABLED!=0;
-    assign tof_xshut=low || !trst ? 1'b0:1'bz;
-    i2c_reg_master #(.CLK_HZ(CLK_HZ)) bus(.clk(clk),.rst_n(trst),.start(start),.read(read),.address(7'h29),
-        .reg_addr(regaddr),.byte_count(count),.write_data(wd),.read_data(rd),.busy(busy),.done(done),.error(xerror),.sda(tof_sda),.scl(tof_scl));
-    vl53l1x_driver tof(.clk(clk),.rst_n(trst),.ms_tick(ms_tick),.xshut_low(low),.xfer_start(start),.xfer_read(read),
-        .xfer_reg(regaddr),.xfer_count(count),.xfer_write(wd),.xfer_busy(busy),.xfer_done(done),.xfer_error(xerror),.xfer_data(rd),
-        .init_done(init),.error(error),.sample_update(update),.sample_valid(svalid),.distance_mm(range_mm),.range_status(status));
-    assign tof_valid=init && svalid && !error && age<150;
-    assign tof_mm=range_mm;assign tof_status=status;assign tof_time=stamp;assign tof_seq=seq;assign tof_errors=errs;
+    // Compatibility telemetry reserves these fields; no ToF hardware exists.
+    assign tof_sda=1'bz;assign tof_scl=1'bz;assign tof_xshut=1'bz;
+    assign tof_valid=0;assign tof_mm=65535;assign tof_status=255;
+    assign tof_time=0;assign tof_seq=0;assign tof_errors=0;
 endmodule
 `default_nettype wire

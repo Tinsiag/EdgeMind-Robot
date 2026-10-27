@@ -1,0 +1,12 @@
+[
+  {
+    "document": "SUG1220-2.1E_Gowin Software Tcl Commands User Guide.pdf",
+    "pdf_page": 43,
+    "text": "3 Tcl Commands \n 3.3 Command Description \n \nSUG1220-2.1E \n36(72) \n \nUsage \nName \nDescription  \n<0|1> \n0: Physical constraint warnings will not be elevated to \nerrors. \n1: Physical constraint warnings will be elevated to errors. \nType \nProject \nDescription  \nElevates physical constraint warnings to errors when running Place & \nRoute. The default value is 1. \nParameter \n<0|1>: Disable or enable promoting physical constraint warnings to \nerrors during Place & Route. \nExample \nset_option -cst_warn_to_error 1 \n-rpt_auto_place_io_info  \nReports auto-placed IO location information. \nSyntax \n-rpt_auto_place_io_info <0|1> \nUsage \nName \nDescription  \n<0|1> \n0: Auto-placed IO location information will not be reported. \n1: Auto-placed IO location information will be reported. \nType \nProject \nDescription  \nReports auto-placed IO location information when running Place & \nRoute. The default value is 0. \nParameter \n<0|1>: Disable or enable reporting the IO location information of \nautomatically placed pins. \nExample \nset_option -cst_warn_to_error 1 \n-place_option  \nPlacement algorithm option. \nSyntax \n-place_option <0|1|2|3|4> \n"
+  },
+  {
+    "document": "SUG1220-2.1E_Gowin Software Tcl Commands User Guide.pdf",
+    "pdf_page": 44,
+    "text": "3 Tcl Commands \n 3.3 Command Description \n \nSUG1220-2.1E \n37(72) \n \nUsage \nName \nDescription  \n<0|1|2|3|4> \n0: Default placement algorithm, with compilation speed \nprioritized. \n1: Routability prioritized. \n2: Timing prioritized. \n3: Attempts to achieve a better placement result. \n4: Attempts to achieve a better placement result. \nType \nProject \nDescription  \nPlacement algorithm option. The default value is 0. \nParameter \n<0|1|2|3|4>: Placement algorithm option. \nExample \nset_option -place_option 1 \n-route_option  \nRouting algorithm option. \nSyntax \n-route_option <0|1|2> \nUsage \nName \nDescription  \n<0|1|2> \n0: Uses the default routing algorithm. \n1: Sacrifices compilation speed to attempt to achieve a \nbetter routing result. \n2: Improves routing speed. \nType \nProject \nDescription  \nRouting algorithm option. The default value is 0. \nParameter \n<0|1|2>: Routing algorithm option. \nExample \nset_option -route_option 1 \n-ireg_in_iob   \nPlaces registers connected to input buffers into the IOB. \nSyntax \n-ireg_in_iob <0|1> \n"
+  }
+]

@@ -1,0 +1,32 @@
+{"received_unix": 1793113749.580517, "elapsed_s": 0.031, "line": "*** GOWIN Tcl Command Line Console  ***"}
+{"received_unix": 1793113750.8270006, "elapsed_s": 1.278, "line": "Open project C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/.local/gowin-basic-tft480-screen-test/a741.gprj finished"}
+{"received_unix": 1793113751.0278614, "elapsed_s": 1.478, "line": "Reading netlist file: \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\gwsynthesis\\a741.vg\""}
+{"received_unix": 1793113751.3096516, "elapsed_s": 1.76, "line": "Parsing netlist file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\gwsynthesis\\a741.vg\" completed"}
+{"received_unix": 1793113751.7880826, "elapsed_s": 2.239, "line": "Processing netlist completed"}
+{"received_unix": 1793113751.800112, "elapsed_s": 2.251, "line": "Reading constraint file: \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\platform-basic-tft480-screen-test\\a741.cst\""}
+{"received_unix": 1793113751.8073907, "elapsed_s": 2.258, "line": "Physical Constraint parsed completed"}
+{"received_unix": 1793113754.40743, "elapsed_s": 4.858, "line": "Running placement......"}
+{"received_unix": 1793113777.4693534, "elapsed_s": 27.92, "line": "[10%] Placement Phase 0 completed"}
+{"received_unix": 1793113779.7878861, "elapsed_s": 30.238, "line": "[20%] Placement Phase 1 completed"}
+{"received_unix": 1793113836.7779107, "elapsed_s": 87.228, "line": "[30%] Placement Phase 2 completed"}
+{"received_unix": 1793113888.0996299, "elapsed_s": 138.55, "line": "[50%] Placement Phase 3 completed"}
+{"received_unix": 1793113888.5068803, "elapsed_s": 138.957, "line": "Running routing......"}
+{"received_unix": 1793113944.6776264, "elapsed_s": 195.128, "line": "[60%] Routing Phase 0 completed"}
+{"received_unix": 1793113973.7291794, "elapsed_s": 224.18, "line": "[70%] Routing Phase 1 completed"}
+{"received_unix": 1793113993.998254, "elapsed_s": 244.449, "line": "[80%] Routing Phase 2 completed"}
+{"received_unix": 1793113994.6876981, "elapsed_s": 245.138, "line": "[90%] Routing Phase 3 completed"}
+{"received_unix": 1793114008.4081924, "elapsed_s": 258.859, "line": "Running timing analysis......"}
+{"received_unix": 1793114011.2300878, "elapsed_s": 261.681, "line": "[95%] Timing analysis completed"}
+{"received_unix": 1793114011.2300878, "elapsed_s": 261.681, "line": "Placement and routing completed"}
+{"received_unix": 1793114011.2300878, "elapsed_s": 261.681, "line": "Bitstream generation in progress......"}
+{"received_unix": 1793114018.1595979, "elapsed_s": 268.61, "line": "Bitstream generation completed"}
+{"received_unix": 1793114018.1595979, "elapsed_s": 268.61, "line": "Running power analysis......"}
+{"received_unix": 1793114018.4886286, "elapsed_s": 268.939, "line": "[100%] Power analysis completed"}
+{"received_unix": 1793114018.4909039, "elapsed_s": 268.941, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.power.html\" completed"}
+{"received_unix": 1793114018.5200524, "elapsed_s": 268.971, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.pin.html\" completed"}
+{"received_unix": 1793114018.668176, "elapsed_s": 269.119, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.rpt.html\" completed"}
+{"received_unix": 1793114018.678218, "elapsed_s": 269.129, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.rpt.txt\" completed"}
+{"received_unix": 1793114020.0880811, "elapsed_s": 270.539, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.tr.html\" completed"}
+{"received_unix": 1793114020.0880811, "elapsed_s": 270.539, "line": "Generate file \"C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion\\.local\\gowin-basic-tft480-screen-test\\impl\\pnr\\a741.tr\" completed"}
+{"received_unix": 1793114020.0880811, "elapsed_s": 270.539, "line": "Tue Oct 27 23:13:40 2026"}
+{"received_unix": 1793114020.0880811, "elapsed_s": 270.539, "line": ""}

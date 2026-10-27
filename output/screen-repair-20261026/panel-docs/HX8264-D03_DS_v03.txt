@@ -1,0 +1,17540 @@
+ 
+( DOC No. HX8264-D03-DS ) 
+HX8264-D03
+1200 CH TFT LCD Source Driver 
+with TCON 
+Version 03 January, 2012 
+
+ 
+ 
+-P.2- 
+Himax Confidential
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax. 
+ 
+ 
+ 
+ 
+ 
+ 
+1. General Description.............................................................................................................................. 5 
+2. Features ................................................................................................................................................ 5 
+3. Block Diagram ...................................................................................................................................... 6 
+3.1 Function block diagram ................................................................................................................... 6 
+3.2 Application block diagram................................................................................................................ 7 
+3.2.1 Single chip application.......................................................................................................... 7 
+3.2.2 Two chip cascade application ............................................................................................... 9 
+3.2.3 Dual gate application .......................................................................................................... 15 
+4. Pin Description ................................................................................................................................... 21 
+5. Operation Description ........................................................................................................................ 25 
+5.1 Relationship between input data and output channels.................................................................... 25 
+5.2 HX8264-D03 configuration table.................................................................................................... 27 
+5.3 The BIST Pattern for Aging Mode Test........................................................................................... 29 
+6. Gamma Adjustment Function............................................................................................................. 30 
+6.1 Relationship between gamma correction and output voltage.......................................................... 30 
+7. CABC (Content Adaptive Brightness Control) .................................................................................. 45 
+7.1 CABC Hardware Control ............................................................................................................... 46 
+7.2 CABC Software SPI Control .......................................................................................................... 46 
+7.3 Commend Description................................................................................................................... 47 
+8. 3-wire Serial Peripheral Interface (SPI).............................................................................................. 51 
+9. Power on/off Sequence ...................................................................................................................... 52 
+9.1 Power on/off control ...................................................................................................................... 52 
+9.2 Enter and exit standby mode sequence ......................................................................................... 52 
+10. DC Characteristics.............................................................................................................................. 53 
+10.1 Absolute maximum rating (VSS=0V).............................................................................................. 53 
+10.2 DC electrical characteristics (VSS=0V, T A=25℃) ........................................................................... 53 
+11. AC Characteristics.............................................................................................................................. 54 
+11.1 AC electrical characteristics........................................................................................................... 54 
+11.2 Data input format........................................................................................................................... 55 
+11.2.1 Resolution：800x480 ......................................................................................................... 56 
+11.2.2 Resolution：800x600 ......................................................................................................... 57 
+11.2.3 Resolution：640x480 ......................................................................................................... 58 
+11.2.4 Resolution：400x240 ......................................................................................................... 59 
+12. Waveform ............................................................................................................................................ 60 
+12.1 Timing waveform table .................................................................................................................. 60 
+12.1.1 Parallel 24-bit RGB mode ................................................................................................... 60 
+12.2 Timing diagram ............................................................................................................................. 61 
+12.2.1 Input clock and data timing waveform ................................................................................. 61 
+12.2.2 Source output timing waveform (Cascade).......................................................................... 61 
+12.2.3 Vertical timing diagram HV (Cascade)................................................................................. 62 
+12.2.4 Vertical timing diagram DE (Cascade)................................................................................. 62 
+12.2.5 Gate output timing diagram (Cascade)................................................................................ 62 
+12.2.6 Vertical timing diagram HV (Dual gate) ............................................................................... 63 
+12.2.7 Vertical timing diagram DE (Dual gate) ............................................................................... 63 
+12.2.8 Gate output timing diagram (Dual gate)............................................................................... 63 
+13. Pin Assignment (IC Face View) .......................................................................................................... 64 
+14. Package Outline.................................................................................................................................. 65 
+14.1 Pad coordinates ............................................................................................................................ 68 
+15. Ordering Information.......................................................................................................................... 84 
+16. Revision History ................................................................................................................................. 84 
+January, 2012
+HX8264-D03
+1200CH TFT LCD Source Driver  
+with TCON 
+ 
+List of Contents
+
+ 
+ 
+-P.3- 
+Himax Confidential
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax. 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3.1: HX8264-D03 Function Block Diagram........................................................................ 6 
+Figure 3.2: HX8264-D03 Single Chip 400(RGB) x 240 Application Block Diagram-1..................... 7 
+Figure 3.3: HX8264-D03 Single Chip 400(RGB) x 240 Application Block Diagram-2..................... 8 
+Figure 3.4: HX8264-D03 Two Chip Cascade 800(RGB) x 480 Application Block Diagram-1 ......... 9 
+Figure 3.5: HX8264-D03 Two Chip Cascade 800(RGB) x 480 Application Block Diagram-2 ....... 10 
+Figure 3.6: HX8264-D03 Two Chip Cascade 800(RGB) x 600 Application Block Diagram-1 ........11 
+Figure 3.7: HX8264-D03 Two Chip Cascade 800(RGB) x 600 Application Block Diagram-2 ....... 12 
+Figure 3.8: HX8264-D03 Two Chip Cascade 640(RGB) x 480 Application Block Diagram-1 ....... 13 
+Figure 3.9: HX8264-D03 Two Chip Cascade 640(RGB) x 480 Application Block Diagram-2 ....... 14 
+Figure 3.10: HX8264-D03 Dual Gate 800(RGB) x 480 Application Block Diagram-1................... 15 
+Figure 3.11: HX8264-D03 Dual Gate 800(RGB) x 480 Application Block Diagram-2 ................... 16 
+Figure 3.12: HX8264-D03 Dual Gate 800(RGB) x 600 Application Block Diagram-1................... 17 
+Figure 3.13: HX8264-D03 Dual Gate 800(RGB) x 600 Application Block Diagram-2................... 18 
+Figure 3.14: HX8264-D03 Dual Gate 640(RGB) x 480 Application Block Diagram-1................... 19 
+Figure 3.15: HX8264-D03 Dual Gate 640(RGB) x 480 Application Block Diagram-2................... 20 
+Figure 6.1: Gamma Correction Characteristic Curve .................................................................. 30 
+Figure 8.1: Serial Interface Signal Timing Chart ......................................................................... 51 
+Figure 9.1: Power on/off Timing Sequence................................................................................. 52 
+Figure 9.2: Enter and Exit Standby Mode Sequence .................................................................. 52 
+Figure 11.1: Horizontal Input Timing Diagram............................................................................. 55 
+Figure 11.2: Vertical Input Timing Diagram................................................................................. 55 
+Figure 12.1: Input Clock and Data Timing Diagram .................................................................... 61 
+Figure 12.2: Source Output Timing Diagram .............................................................................. 61 
+Figure 12.3: Output Load Condition ........................................................................................... 61 
+Figure 12.4: Vertical Timing Diagram HV (Cascade)................................................................... 62 
+Figure 12.5: Vertical Timing Diagram DE (Cascade)................................................................... 62 
+Figure 12.6: Gate Output Timing Diagram (Cascade)................................................................. 62 
+Figure 12.7: Vertical Timing Diagram HV (Dual Gate)................................................................. 63 
+Figure 12.8: Vertical Timing Diagram DE (Dual Gate)................................................................. 63 
+Figure 12.9: Gate Output Timing Diagram (Dual Gate)............................................................... 63 
+Figure 13.1: Pin Assignment ...................................................................................................... 64 
+Figure 14.1: Package Outline .................................................................................................... 66 
+Figure 14.2: Alignment Mark...................................................................................................... 67 
+ 
+ 
+ 
+January, 2012
+HX8264-D03
+1200CH TFT LCD Source Driver  
+with TCON 
+ 
+List of Figures 
+
+ 
+ 
+-P.4- 
+Himax Confidential
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax. 
+ 
+ 
+ 
+ 
+ 
+Table 4.1: HX8264-D03 Pass Line Description........................................................................... 24 
+Table 4.2: The Recommended Wiring Resistance Values........................................................... 24 
+Table 5.1: HX8264-D03 DATR[17:0] Pin Mapping Table ............................................................. 27 
+Table 5.2: HX8264-D03 DATL[17:0] Pin Mapping Table.............................................................. 28 
+Table 8.1: Serial Interface timing parameter ............................................................................... 51 
+Table 12.1: Parallel 24-bit RGB mode ........................................................................................ 60 
+Table 14.1: Pad Information....................................................................................................... 67 
+January, 2012
+HX8264-D03
+1200CH TFT LCD Source Driver  
+with TCON 
+ 
+List of Tables
+
+ 
+ 
+-P.5- 
+Himax Confidential
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax. 
+ 
+ 
+ 
+ 
+ 
+1. General Description 
+ 
+HX8264-D03 is a highly integrated 1200 channel outputs source driver with TTL 
+interface Timing Controller for color TFT-LCD panels. HX8264-D03 integrated source 
+driver, timing controller and pin control interface. 
+ 
+Input timing supports TTL digital 24-bit parallel RGB data format, and source output 
+supports 16M colors with dithering features. Operating parameters can be set via pin 
+control for all control features. Special circuit architecture is designed for low power 
+dissipation.  
+ 
+HX8264-D03 supports two chip cascade operation mode to reduce the FPC amount 
+and save the cost. Configurable Master and Slave configuration increase the 
+flexibility for different panel design. With wide range of supply voltages and small 
+output deviations make this chip more suitable for various applications.  
+ 
+HX8264-D03 supports single or double gate operation mode. 
+ 
+2. Features 
+ 
+l Special design for small-sized color TFT LCD source drivers with timing controller 
+l Integrated 1200 channel source driver  
+l Support display resolutions: 800(RGB) x600, 800(RGB) x480, 640(RGB) x480,  
+400(RGB) x240 
+l Support 16M colors with 2-bits dithering   
+l Support TTL 24-bit parallel (RGB) input timing 
+l Support data inverted function for normally black LCD 
+l Support 2 gamma curve for normally white or normally black LCD 
+l Support content adaptive brightness control (CABC) function 
+l Support cascade function with bidirectional shift control (CMOS signal) 
+l Support single or dual-gate operation mode  
+l Support delta or stripe color filter configuration 
+l Support stand-by mode for low power consumption  
+l Support dot inversion driving scheme for single gate operation mode 
+l V1~V14 for adjusting Gamma correction 
+l Output dynamic range:0.1~VDDA-0.1V 
+l Power for source driver voltage VDDA:6.5V~13.5V 
+l Power for digital interface circuit VDD:2.7 ~ 3.6V 
+l Operating frequency: 50MHz (Max.) 
+l COG package  
+ 
+ 
+January, 2012
+HX8264-D03
+1200CH TFT LCD Source Driver  
+with TCON 
+ 
+Version 03
+
+ 
+ 
+-P.6-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+3. Block Diagram 
+ 
+3.1 Function block diagram 
+ 
+Timing 
+Controller
+GAMMA
+Table
+V 1 ~ V14
+ Control
+Interface
+Gamma 
+Reference
+Mux
+Cascade 
+Control
+14
+Data 
+Decoder
+Source Driver
+SO1
+SO2
+SO3
+SO1198
+SO1199
+SO1200
+18
+DATR[17:0] /
+DATL[17:0]
+DCLKR / DCLKL
+DIOR / DIOL
+POLR / POLL
+LDR / LDL
+SYNCR / SYNCL
+8
+8
+8
+D[07:00]
+D[17:10]
+D[27:20]
+   CLKIN
+HSD
+VSD
+DEN
+RSTB
+STBYB
+MASL
+MASLOC
+RES0
+RES1
+SHLR
+UPDN
+MODE
+DITHB
+CLKPOL
+CFSEL
+DBGATE
+CAS
+BLKEN
+Gate Signal
+Cascade Data
+CABC
+Controller
+REV
+SPI
+SCEN
+SCL/DBCM[0]
+SDA/DBCM[1]
+DBC3
+CABC_EN
+CABC_PWM
+VSET
+ 
+Figure 3.1: HX8264-D03 Function Block Diagram 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.7-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+3.2 Application block diagram  
+ 
+3.2.1 Single chip application 
+ 
+a. 400(RGB) x 240 (Gate driver on left side) 
+ 
+RES [1:0]=11 
+CAS=0 
+DBGATE=0 
+ 
+HX8660
+G1
+G240
+400RGBx240
+(1, 1)
+(400, 1)
+(1 , 240)
+(400, 240)
+HX8264-D03
+OEV
+UD
+CKV
+STV1
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8660
+400RGBx240
+(1, 1)
+(400, 1)
+(1 , 240)
+(400, 240)
+HX8264-D03
+OEV
+UD
+CKV
+STV1
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8660
+400RGBx240
+(1, 1)
+(400, 1)
+(1, 240)
+(400, 240)
+HX8264-D03
+OEV
+UD
+CKV
+STV1
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8660
+400RGBx240
+(1, 1)
+(400, 1)
+(1, 240)
+(400, 240)
+HX8264-D03
+OEV
+UD
+CKV
+STV1
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+MASL         H
+SHLR          L    S1200 →S1
+UPDN         L
+MASL         H
+SHLR          L    S1200 →S1
+UPDN         H
+MASL         H
+SHLR         H    S1 →S1200
+UPDN         L
+MASL         H
+SHLR          H    S1 →S1200
+UPDN         H
+G1
+G240
+G1
+G240
+G1
+G240
+S1
+S1200
+S1
+S1200
+S1
+S1200
+S1
+S1200
+ 
+Figure 3.2: HX8264-D03 Single Chip 400(RGB) x 240 Application Block Diagram-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.8-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+b. 400(RGB) x 240 (Gate driver on right side) 
+ 
+RES [1:0]=11 
+CAS=0 
+DBGATE=0 
+ 
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+HX8660
+STV2
+PATH
+HX8660
+HX8660
+HX8660
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+ 
+Figure 3.3: HX8264-D03 Single Chip 400(RGB) x 240 Application Block Diagram-2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.9-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+3.2.2 Two chip cascade application 
+ 
+a. 800(RGB) x 480 (Gate driver on left side) 
+ 
+RES [1:0]=00 
+DBGATE=0 
+ 
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+PATH
+STV1
+PATH
+STV1
+ 
+Figure 3.4: HX8264-D03 Two Chip Cascade 800(RGB) x 480 Application Block Diagram-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.10-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+b. 800(RGB) x 480 (Gate driver on right side) 
+ 
+RES [1:0]=00 
+DBGATE=0 
+ 
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(800,480)
+(800,1)
+800(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(800,480)
+(800,1)
+800(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(800,480)
+(800,1)
+800(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(800,480)
+(800,1)
+800(RGB) x 480
+S1
+S1200
+S1200
+S1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+ 
+Figure 3.5: HX8264-D03 Two Chip Cascade 800(RGB) x 480 Application Block Diagram-2 
+ 
+ 
+ 
+
+ 
+ 
+-P.11-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+c. 800(RGB) x 600 (Gate driver on left side) 
+ 
+RES [1:0]=01 
+DBGATE=0 
+ 
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+PATH
+STV1
+PATH
+STV1
+ 
+Figure 3.6: HX8264-D03 Two Chip Cascade 800(RGB) x 600 Application Block Diagram-1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.12-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+d. 800(RGB) x 600 (Gate driver on right side) 
+ 
+RES [1:0]=01 
+DBGATE=0 
+ 
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           L
+MASLOC      L
+MASL            H
+HX8677
+G1
+G600
+(1,600)
+(800,600)
+(800,1)
+800(RGB) x 600
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           L
+MASLOC      L
+MASL            H
+HX8677
+G1
+G600
+(1,600)
+(800,600)
+(800,1)
+800(RGB) x 600
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1 S1200
+UPDN           H
+MASLOC      L
+MASL            H
+HX8677
+G1
+G600
+(1,600)
+(800,600)
+(800,1)
+800(RGB) x 600
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           H
+MASLOC      L
+MASL            H
+HX8677
+G1
+G600
+(1,600)
+(800,600)
+(800,1)
+800(RGB) x 600
+S1
+S1200
+S1200
+S1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+ 
+Figure 3.7: HX8264-D03 Two Chip Cascade 800(RGB) x 600 Application Block Diagram-2 
+ 
+ 
+
+ 
+ 
+-P.13-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+e. 640(RGB) x 480 (Gate driver on left side) 
+ 
+RES [1:0]=10 (Master and slave IC must be setup) 
+DBGATE=0 
+Channel 481~720 is disable 
+ 
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+HX8678
+OE
+L/R
+CPV
+PATH
+STV2
+PATH
+STV1
+PATH
+STV1
+PATH
+STV1
+ 
+Figure 3.8: HX8264-D03 Two Chip Cascade 640(RGB) x 480 Application Block Diagram-1 
+ 
+
+ 
+ 
+-P.14-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+f. 640(RGB) x 480 (Gate driver on right side) 
+ 
+RES [1:0]=10 (Master and slave IC must be setup) 
+DBGATE=0 
+Channel 481~720 is disable 
+ 
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+ 
+Figure 3.9: HX8264-D03 Two Chip Cascade 640(RGB) x 480 Application Block Diagram-2 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.15-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+3.2.3 Dual gate application  
+ 
+a. 800(RGB) x 480 (Gate driver on left side) 
+ 
+RES [1:0]=00 
+CAS=0 
+DBGATE=1 
+ 
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+800(RGB) x 480
+SHLR          H    S1   S1200
+UPDN         H    G1   G480
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+800(RGB) x 480
+SHLR          L    S1200    S1
+UPDN         H    G1   G480
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+800(RGB) x 480
+SHLR          H         S1    S1200
+UPDN          L
+      G480     G1
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+800(RGB) x 480
+SHLR          L     S1200   S1
+UPDN         L
+ G480   G1
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+ 
+Figure 3.10: HX8264-D03 Dual Gate 800(RGB) x 480 Application Block Diagram-1 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.16-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+b. 800(RGB) x 480 (Gate driver on right side) 
+ 
+RES [1:0]=00 
+CAS=0 
+DBGATE=1 
+ 
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+SHLR          H    S1  S1200
+UPDN         L    G480  G1
+800(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+SHLR          L      S1200   S1
+UPDN         L      G480   G1
+800(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+SHLR          H    S1   S1200
+UPDN         H    G1   G480
+800(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,480)
+(800,480)
+SHLR          L    S1200   S1
+UPDN         H
+G1   G480
+800(RGB) x 480
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+ 
+Figure 3.11: HX8264-D03 Dual Gate 800(RGB) x 480 Application Block Diagram-2 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.17-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+c. 800(RGB) x 600 (Gate driver on left side) 
+ 
+RES [1:0]=01 
+CAS=0 
+DBGATE=1 
+ 
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+HX8677
+OE
+L/R
+CPV
+PATH
+STV2
+OE
+L/R
+CPV
+PATH
+STV2
+HX8677
+STV1
+PATH
+STV1
+PATH
+STV1
+PATH
+STV1
+PATH
+ 
+Figure 3.12: HX8264-D03 Dual Gate 800(RGB) x 600 Application Block Diagram-1 
+ 
+ 
+
+ 
+ 
+-P.18-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+d. 800(RGB) x 600 (Gate driver on right side) 
+ 
+RES [1:0]=01 
+CAS=0 
+DBGATE=1 
+ 
+HX8264-D03
+G600
+G600
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,600)
+(800,600)
+OEV
+UD
+CKV
+STV2
+STV1
+SHLR          H          S1  S1200
+UPDN         L           G600  G1
+800(RGB) x 600
+HX8264-D03
+G600
+G600
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,600)
+(800,600)
+SHLR         L    S1200  S1
+UPDN        L    G600   G1
+800(RGB) x 600
+HX8264-D03
+G600
+G600
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,600)
+(800,600)
+SHLR          H    S1   S1200
+UPDN         H    G1   G600
+800(RGB) x 600
+HX8264-D03
+G600
+G600
+G1
+G1
+S1
+S1200
+(1,1)
+(800,1)
+(1,600)
+(800,600)
+SHLR         L    S1200  S1
+UPDN        H    G1  G600
+800(RGB) x 600
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G598
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G597
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G599
+G600
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G02
+G01
+G04
+G03
+G598
+G597
+G599
+G600
+G02
+G01
+G04
+G03
+G598
+G597
+G599
+G600
+G02
+G01
+G04
+G03
+G598
+G597
+G599
+G600
+ 
+Figure 3.13: HX8264-D03 Dual Gate 800(RGB) x 600 Application Block Diagram-2 
+ 
+ 
+
+ 
+ 
+-P.19-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+e. 640(RGB) x 480 (Gate driver on left side) 
+ 
+RES [1:0]=10 
+CAS=0 
+DBGATE=1 
+Channel 481~720 is disable 
+ 
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+640(RGB) x 480
+SHLR          H    S1   S1200
+UPDN         H    G1   G480
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+640(RGB) x 480
+SHLR          L    S1200    S1
+UPDN         H    G1   G480
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+640(RGB) x 480
+SHLR          H         S1    S1200
+UPDN          L
+      G480     G1
+UD
+HX8264-D03
+OEV
+CKV
+STV1
+STV2
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+640(RGB) x 480
+SHLR          L     S1200   S1
+UPDN         L
+ G480   G1
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+ 
+Figure 3.14: HX8264-D03 Dual Gate 640(RGB) x 480 Application Block Diagram-1 
+ 
+ 
+
+ 
+ 
+-P.20-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+f. 640(RGB) x 480 (Gate driver on right side) 
+ 
+RES [1:0]=10 
+CAS=0 
+DBGATE=1 
+Channel 481~720 is disable 
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+SHLR          H    S1  S1200
+UPDN         L    G480  G1
+640(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+SHLR          L      S1200   S1
+UPDN         L      G480   G1
+640(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+SHLR          H    S1   S1200
+UPDN         H    G1   G480
+640(RGB) x 480
+HX8264-D03
+G480
+G480
+G1
+G1
+S1
+S1200
+(1,1)
+(640,1)
+(1,480)
+(640,480)
+SHLR          L    S1200   S1
+UPDN         H
+G1   G480
+640(RGB) x 480
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+G02
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G01
+G04
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G03
+G478
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G477
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G479
+G480
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+R
+G
+B
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+G02
+G01
+G04
+G03
+G478
+G477
+G479
+G480
+ 
+Figure 3.15: HX8264-D03 Dual Gate 640(RGB) x 480 Application Block Diagram-2 
+ 
+ 
+ 
+
+ 
+ 
+-P.21-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+4. Pin Description 
+ 
+HX8264-D03 pin description 
+Pin name 
+I/O
+Description 
+D07~D00 
+D17~D10 
+D27~D20 
+I 
+Parallel data input. For TTL 24-bit parallel RGB image data input. 
+D[07:00]=R[7:0] data; D[17:10]=G[7:0] data; D[27:20]=B[7:0] data. 
+For 18-bit RGB interface, connect two LSB bits of all the R/G/B data 
+buses to VSS. 
+CLKIN 
+I 
+Clock for input data. Data latched at rising/falling edge of this signal. 
+Default falling edge. Normally pull low. 
+HSD 
+I 
+Horizontal sync input. Negative polarity. Normally pull high. 
+VSD 
+I 
+Vertical sync input. Negative polarity. Normally pull high. 
+DEN 
+I 
+Data input enable. Active high to enable the data input bus under “DE 
+Mode “. Normally pull low.  
+MODE 
+I 
+DE/SYNC mode select. Normally pull high.  
+MODE=“1”: DE mode. (Default) 
+MODE=“0”: HSD/VSD mode. 
+REV 
+I 
+Data inverted control. Normally pull low 
+REV=”1”: Data inverted for normally black LCD 
+REV=”0”: Data not inverted for normally white LCD. (Default) 
+RES[1:0] 
+I 
+Display resolution selection. Normally pull low 
+RES[1:0]=“00”: For 800(RGB)*480 display resolution. (Default) 
+RES[1:0]=”01”: For 800(RGB)*600 display resolution. 
+RES[1:0]=“10”: For 640(RGB)*480 display resolution. 
+RES[1:0]=“11”: For 400(RGB)*240 display resolution. 
+Note: When RES[1:0]=”10” , channel 481~720 is disable 
+SCEN 
+I 
+Serial Interface chip enable signal. Normally pull high 
+SCEN=”0”: The chip is selected (accessible) 
+SCEN=”1”: The chip is not selected (inaccessible) (Default) 
+Note: Fix to the VDD level if no used 
+SCL/DBCM[0]
+I 
+Multi function I/O pin. Normally pull high 
+When DBC3=”1”, this pin is SCL function (Default) 
+When DBC3=”0”, this pin is DBCM[0]function 
+Note: Fix to the VDD level if no used 
+SDA/DBCM[1]
+I/O
+Multi function I/O pin. Normally pull high 
+When DBC3=”1”, this pin is SDA function (Default) 
+When DBC3=”0”, this pin is DBCM[1] function 
+Note: Fix to the VDD level if no used 
+DBC3 
+I 
+CABC control by hardware or SPI selection. Normally pull high 
+DBC3=”0”: CABC control by hardware  
+DBC3=”1”: CABC control by SPI software (Default) 
+DITHB 
+I 
+Dithering function enable control. Normally pull high. 
+DITHB=“1”: Disable internal dithering function. (Default) 
+DITHB=“0”: Enable internal dithering function. 
+CLKPOL 
+I 
+Input clock edge selection. Normally pull low. 
+CLKPOL=“1”: Latch data at CLKIN rising edge.  
+CLKPOL=“0”: Latch data at CLKIN falling edge. (Default) 
+
+ 
+ 
+-P.22-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+CFSEL 
+I 
+Color filter type selection. Normally pull low. 
+CFSEL=“0 “: Stripe mode. (Default) 
+CFSEL=“1 “: Delta mode.  
+BLKEN 
+O 
+Backlight enable control signal for external controller.  
+BLKEN=“1”: Logical control signal to turn on external backlight controller. 
+BLKEN=“0”: Turn off external backlight controller. 
+Note: Refer to the power on/off sequence for the detail information. 
+CABC_EN 
+I 
+CABC Function Enable Control. Normally pull low 
+CABC_EN=”0”: CABC function disable, the CABC_PWM pin will output low level 
+to turn off external backlight controller. 
+CABC_EN=”1”: CABC_PWM pin will refer the gray scale content of display 
+image to output a PWM pulse to backlight driver 
+CABC_PWM
+O 
+CABC PWM output 
+DBGATE 
+I 
+Dual gate function enables control. Normally pull low.  
+DBGATE=“1”: Enable Dual Gate Function.  
+DBGATE=“0”: Disable Dual Gate Function. (Default) 
+Note: Cascade function will be disabled under “dual gate” mode! 
+V1 ~ V14 
+I 
+Gamma correction reference voltage. These input voltage must be 
+offered by user.  
+VSSA< V14 < V13 < V12 < V11 < V10 < V9 < V8 ; V7 < V6 < V5 < V4  
+< V3 < V2 < V1 < VDDA. 
+Please make sure VDDA-1>V1. 
+VSET 
+I 
+Gamma voltage input selection. Normally pull low. 
+VSET=“0”: 10 gamma voltage input, V2, V6, V9, V13 is disable. (Default) 
+VSET=“1”: V1~V14 gamma voltage input. 
+RSTB 
+I 
+Global reset pin. Active low to enter Reset State.  
+Suggest to connecting with an RC reset circuit for stability. 
+Normally pull high. 
+STBYB 
+I 
+Standby mode. Normally pulled high. 
+STBYB=“1”: Normally operation (Default) 
+STBYB=“0”: Timing controller, source driver will turn off ,all output are 
+High-Z. 
+MASL 
+I 
+Master and slave mode selection. Normally pulled high.  
+MASL=“1”: For master mode. (Default) 
+MASL=“0”: For slave mode. 
+Only the master chip will issue the gate and cascade control signal.  
+MASLOC 
+I 
+Master location definition pin. Normally pull low.  
+MASLOC=“0”: Master locate on right side (Panel top view).(Default) 
+MASLOC=”1”: Master locate on left side (Panel top view). 
+SHLR 
+I 
+Source Right or Left sequence control. Normally pulled high. 
+SHLR=“0”: Shift left: last data=S1 ß S2 ß S3...... ßS1200=first data. 
+SHLR=“1”: Shift right: first data=S1 àS2àS3...…àS1200=last data. 
+UPDN 
+I 
+Gate up or down scan control. Normally pulled low. 
+UPDN=“0”: STV2 output vertical start pulse and UD pin output logical 
+“0” to gate driver. (Default) 
+UPDN=“1”: STV1 output vertical start pulse and UD pin output logical  
+“1” to gate driver.  
+
+ 
+ 
+-P.23-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+BIST 
+I 
+Normal operation/BIST pattern select. Normally pull low. 
+BIST=“1”: BIST (DCLK input is not needed.) 
+BIST=“0”: Normal operation. (Default) 
+When BIST=”1”, CABC function will turn off, CABC_PWM keep high 
+CAS 
+I 
+Cascade function select. Normally pull high.  
+CAS=“1”: Enable cascade function. (Default) 
+CAS=“0”: Disable cascade function.  
+DATR[17:0] 
+I/O
+Multi function I/O pin.  
+Refer to the cascade DAT pin mapping table for the detail. 
+DCLKR 
+I/O
+Master and slave cascade control signal.  
+DIOR 
+I/O
+Master and slave cascade control signal. 
+POLR 
+I/O
+Master and slave cascade control signal. 
+LDR 
+I/O
+Master and slave cascade control signal. 
+SYNCR 
+I/O
+Master and slave cascade control signal. 
+DATL[17:0] 
+I/O
+Multi function I/O pin. 
+Refer to the cascade DAT pin mapping table for the detail. 
+DCLKL 
+I/O
+Master and slave cascade control signal. 
+DIOL 
+I/O
+Master and slave cascade control signal. 
+POLL 
+I/O
+Master and slave cascade control signal. 
+LDL 
+I/O
+Master and slave cascade control signal. 
+SYNCL 
+I/O
+Master and slave cascade control signal. 
+VDDA 
+PI
+Power supply for analog circuits. 
+VSSA 
+PI
+Ground pins for analog circuits. 
+VDD 
+PI
+Power supply for digital circuits. 
+VSS 
+PI
+Ground pins for digital circuits. 
+SO1~SO1200
+O 
+Source driver output signals. 
+All outputs will be of unknown values under stand-by mode. 
+ALIGN 
+M
+For assembly alignment.  
+COM1_B 
+COM2_B
+S 
+Internal link together between input side and output side. 
+COM1_T 
+COM2_T 
+S 
+Internal link together between input side and output side. 
+TP9~0 
+T 
+Test pin for Himax only. Float these pins for normal operation. 
+TESTG 
+T 
+Test pin for Himax only. Float this pin for normal operation. 
+SHIELDING 
+SH
+IC shielding pads. Those pins are internally connected to the VSSA. 
+DO NOT connect to any WOA on the panel.  
+DASHD 
+SH
+Data bus shielding pad. Those pins are internally connected to the VSS. 
+Recommend to add shielding lines on the FPC to reduce EMI. 
+Note: I: Input, O: Output, P: Power, D: Dummy, S: Shorted line, M: Mark, PI: Power input, PO: Power output,  
+T: Testing, SH: Shielding, I/O: Input/Output, PS: Power Setting, C: Capacitor Pin.  
+
+ 
+ 
+-P.24-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+HX8264-D03 passes line description 
+       
+Pass Line No: 
+Pin Name 
+1 
+COM1_B 
+COM1_T 
+2 
+COM2_B 
+COM2_T 
+Table 4.1: HX8264-D03 Pass Line Description 
+ 
+Value of wiring resistance to each pin 
+The recommended wiring resistance values are shown below. The wiring resistance 
+values affect. 
+The current capacity of the power supply, so be sure to design using values that do 
+not exceed those recommended. 
+ 
+Pin Name 
+Wiring resistance value(Ω) 
+VDD 
+< 25 
+VDDA 
+< 5 
+VSS 
+< 25 
+VSSA 
+< 5 
+V1~V14 
+< 20 
+D00~D07 
+< 200 
+D10~D17 
+< 200 
+D20~D27 
+< 200 
+DEN 
+< 200 
+MODE 
+< 1000 
+RES[1:0] 
+< 1000 
+DITHB 
+< 1000 
+CLKPOL 
+< 1000 
+BLKEN 
+< 1000 
+CFSEL 
+< 1000 
+DBGATE 
+< 1000 
+RSTB 
+< 1000 
+MASL 
+< 1000 
+MASLOC 
+< 1000 
+SHLR 
+< 1000 
+UPDN 
+< 1000 
+BIST 
+< 1000 
+CAS 
+< 1000 
+SCEN 
+< 200 
+SCL/DBCM[0] 
+< 200 
+SDA/DBCM[1] 
+< 200 
+DBC3 
+<1000 
+DATR[17:0] 
+< 200 & 20 pF 
+DCLKR 
+< 200 & 20 pF 
+DIOR 
+< 200 & 20 pF 
+POLR 
+< 200 & 20 pF 
+LDR 
+< 200 & 20 pF 
+SYNCR 
+< 200 & 20 pF 
+DATRL[17:0] 
+< 200 & 20 pF 
+DCLKL 
+< 200 & 20 pF 
+DIOL 
+< 200 & 20 pF 
+POLL 
+< 200 & 20 pF 
+LDL 
+< 200 & 20 pF 
+CASCADE V1~V14 
+< 50 
+CLKIN 
+< 50 
+HSD 
+< 200 
+VSD 
+< 200 
+Table 4.2: The Recommended Wiring Resistance Values 
+
+ 
+ 
+-P.25-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+5. Operation Description 
+ 
+5.1 Relationship between input data and output channels 
+ 
+l DBGATE=“0”, CFSEL=“0”, stripe mode 
+ 
+(1) SHLR=“1”, right shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+First Data 
+à 
+Last Data 
+Odd Line
+D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+Even Line D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+ 
+(2) SHLR=“0”, left shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+Last Data 
+ß 
+First Data 
+Odd Line
+D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+Even Line D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+ 
+l DBGATE=“0”, CFSEL=“1”, delta mode  
+ 
+(1) SHLR=“1”, right shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+First Data 
+à 
+Last Data  
+Odd Line
+D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+Even Line D17~D10 D27~D20 D07~D00
+••• 
+D17~D10
+D27~D20
+D07~D00
+ 
+(2) SHLR=“0”, left shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+Last Data  
+ß 
+First Data 
+Odd Line
+D07~D00 D17~D10 D27~D20
+••• 
+D07~D00
+D17~D10
+D27~D20
+Even Line D17~D10 D27~D20 D07~D00
+••• 
+D17~D10
+D27~D20
+D07~D00
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.26-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+l 
+DBGATE=“1”, CFSEL=“0”, stripe mode 
+ 
+(1) SHLR=“1”, right shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+First Data 
+à 
+Last Data  
+Odd Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Odd Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Even Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+ 
+(2) SHLR=“0”, left shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+Last Data 
+ß 
+First Data  
+Odd Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Odd Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Even Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+ 
+l DBGATE=“1”, CFSEL=“1”, delta mode  
+ 
+(1) SHLR=“1”, right shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+First Data 
+à 
+Last Data  
+Odd Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Odd Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn+1 
+D27~D20 D17~D10 D07~D00
+••• 
+D27~D20
+D17~D10
+D07~D00
+ 
+(2) SHLR=“0”, left shift  
+Output 
+Out1 
+Out2 
+Out3 
+••• 
+Out1198
+Out1199
+Out1200
+Order 
+Last Data 
+ß 
+First Data  
+Odd Line
+/Gn 
+D07~D00 D27~D20 D17~D10
+••• 
+D07~D00
+D27~D20
+D17~D10
+Odd Line
+/Gn+1 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn 
+D17~D10 D07~D00 D27~D20
+••• 
+D17~D10
+D07~D00
+D27~D20
+Even Line
+/Gn+1 
+D27~D20 D17~D10 D07~D00
+••• 
+D27~D20
+D17~D10
+D07~D00
+ 
+
+ 
+ 
+-P.27-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+5.2 HX8264-D03 configuration table 
+ 
+HX8264-D03 supports timing controllers for four resolutions. Since HX8264-D03 has 
+1200 channels, for example, two pieces of HX8264-D03 source drivers are cascaded 
+and extended to 2400 channels of 800RGB. The configuration summary tables of the 
+HX8264-D03 are illustrated as below two figures.   
+ 
+DATR[17:0] 
+DBGATE=”0”
+MASL =“1” 
+MASLOC=“0”
+CAS=“1” 
+DBGATE=”0”
+MASL=“1” 
+MASLOC=“1”
+CAS=“1” 
+DBGATE=”0”
+MASL=“0” 
+MASLOC=“0”
+CAS=“1” 
+DBGATE=”0”
+MASL=“0” 
+MASLOC=“1”
+CAS=“1” 
+DBGATE=”1”
+MASL=“1” 
+MASLOC=“X”
+CAS=“0” 
+DBGATE=”0”
+MASL=“1” 
+MASLOC=“X”
+CAS=“0” 
+RES[1:0]=“XX”
+Description 
+Master mode.
+Master locates 
+on panel  
+right side. 
+Master mode.
+Master locates
+on panel 
+left side. 
+Slave mode.
+Master locates
+on panel 
+right side. 
+Slave mode.
+Master locates 
+on panel 
+ left side. 
+Dual gate 
+mode 
+Single source 
+mode 
+DATR0 
+X 
+DAT0 
+DAT0 
+X 
+X 
+X 
+DATR1 
+X 
+DAT1 
+DAT1 
+X 
+X 
+X 
+DATR2 
+OEV 
+DAT2 
+DAT2 
+X 
+OEV 
+OEV 
+DATR3 
+X 
+DAT3 
+DAT3 
+X 
+X 
+X 
+DATR4 
+UD 
+DAT4 
+DAT4 
+X 
+UD 
+UD 
+DATR5 
+X 
+DAT5 
+DAT5 
+X 
+X 
+X 
+DATR6 
+CKV 
+DAT6 
+DAT6 
+X 
+CKV 
+CKV 
+DATR7 
+X 
+DAT7 
+DAT7 
+X 
+X 
+X 
+DATR8 
+STV1 
+DAT8 
+DAT8 
+X 
+STV1 
+STV1 
+DATR9 
+X 
+DAT9 
+DAT9 
+X 
+X 
+X 
+DATR10 
+STV2 
+DAT10 
+DAT10 
+X 
+STV2 
+STV2 
+DATR11 
+X 
+DAT11 
+DAT11 
+X 
+X 
+X 
+DATR12 
+STV1 
+DAT12 
+DAT12 
+X 
+STV1 
+STV1 
+DATR13 
+X 
+DAT13 
+DAT13 
+X 
+X 
+X 
+DATR14 
+X 
+DAT14 
+DAT14 
+X 
+X 
+X 
+DATR15 
+X 
+DAT15 
+DAT15 
+X 
+X 
+X 
+DATR16 
+STBN 
+DAT16 
+DAT16 
+X 
+STBN 
+STBN 
+DATR17 
+X 
+DAT17 
+DAT17 
+X 
+X 
+X 
+DCLKR 
+X 
+DCLK 
+DCLK 
+X 
+X 
+X 
+DIOR 
+X 
+DIO 
+DIO 
+X 
+X 
+X 
+LDR 
+X 
+LD 
+LD 
+X 
+X 
+X 
+SYNCR 
+X 
+SYNC 
+SYNC 
+X 
+X 
+X 
+Table 5.1: HX8264-D03 DATR[17:0] Pin Mapping Table 
+ 
+
+ 
+ 
+-P.28-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+        
+DATL[17:0] 
+DBGATE=”0”
+MASL =“1” 
+MASLOC=“0”
+CAS=“1” 
+DBGATE=”0”
+MASL=“1” 
+MASLOC=“1”
+CAS=“1” 
+DBGATE=”0”
+MASL=“0” 
+MASLOC=“0”
+CAS=“1” 
+DBGATE=”0”
+MASL=“0” 
+MASLOC=“1”
+CAS=“1” 
+DBGATE=”1”
+MASL=“1” 
+MASLOC=“X”
+CAS=“0” 
+DBGATE=”0”
+MASL=“1” 
+MASLOC=“X”
+CAS=“0” 
+RES[1:0]=“XX”
+Description 
+Master mode.
+Master locates 
+on panel  
+right side. 
+Master mode.
+Master locates
+on panel  
+left side. 
+Slave mode.
+Master locates
+on panel 
+right side. 
+Slave mode.
+Master locates 
+on panel 
+ left side. 
+Dual gate 
+mode 
+Single source 
+mode 
+DATL0 
+DAT0 
+X 
+X 
+DAT0 
+X 
+X 
+DATL1 
+DAT1 
+X 
+X 
+DAT1 
+X 
+X 
+DATL2 
+DAT2 
+OEV 
+X 
+DAT2 
+OEV 
+OEV 
+DATL3 
+DAT3 
+X 
+X 
+DAT3 
+X 
+X 
+DATL4 
+DAT4 
+UD 
+X 
+DAT4 
+UD 
+UD 
+DATL5 
+DAT5 
+X 
+X 
+DAT5 
+X 
+X 
+DATL6 
+DAT6 
+CKV 
+X 
+DAT6 
+CKV 
+CKV 
+DATL7 
+DAT7 
+X 
+X 
+DAT7 
+X 
+X 
+DATL8 
+DAT8 
+STV1 
+X 
+DAT8 
+STV1 
+STV1 
+DATL9 
+DAT9 
+X 
+X 
+DAT9 
+X 
+X 
+DATL10 
+DAT10 
+STV2 
+X 
+DAT10 
+STV2 
+STV2 
+DATL11 
+DAT11 
+X 
+X 
+DAT11 
+X 
+X 
+DATL12 
+DAT12 
+STV1 
+X 
+DAT12 
+STV1 
+STV1 
+DATL13 
+DAT13 
+X 
+X 
+DAT13 
+X 
+X 
+DATL14 
+DAT14 
+X 
+X 
+DAT14 
+X 
+X 
+DATL15 
+DAT15 
+X 
+X 
+DAT15 
+X 
+X 
+DATL16 
+DAT16 
+STBN 
+X 
+DAT16 
+STBN 
+STBN 
+DATL17 
+DAT17 
+X 
+X 
+DAT17 
+X 
+X 
+DCLKL 
+DCLK 
+X 
+X 
+DCLK 
+X 
+X 
+DIOL 
+DIO 
+X 
+X 
+DIO 
+X 
+X 
+LDL 
+LD 
+X 
+X 
+LD 
+X 
+X 
+SYNCL 
+SYNC 
+X 
+X 
+SYNC 
+X 
+X 
+Table 5.2: HX8264-D03 DATL[17:0] Pin Mapping Table 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.29-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+5.3 The BIST Pattern for Aging Mode Test 
+ 
+HX8264-D03 supports BIST pattern for aging mode test automatically. When external 
+BIST pin set to “H” level, then HX8264-D03 will leave normal operation mode and 
+starts to generate the BIST pattern to LCD panel without external clock signal. The 
+CABC function will turn off and CABC_PWM output keep high level when BIST mode 
+enable. 
+The BIST pattern is illustrated as below: 
+ 
+1 
+2 
+3 
+Red 
+Green 
+Blue 
+4 
+5 
+6 
+Black 
+White 
+Color Bar 
+7 
+8 
+9 
+Vertical 64 gray scale 
+Horizontal 64 gray scale 
+Gray with black block 
+10 
+11 
+12 
+Gray with black dot 
+Gray with black line 
+Black with white frame 
+ 
+ 
+ 
+
+ 
+ 
+-P.30-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+6. Gamma Adjustment Function 
+ 
+6.1 Relationship between gamma correction and output voltage 
+ 
+HX8264-D03 supports 2 gamma curve for normally white or normally black LCD 
+depend on REV function pin. The output voltage is determined by the 6-bit DAC input 
+data, and the V1 ~ V14 gamma correction reference voltage inputs.  
+ 
+Input code 
+Normally white LCD 
+REV=L 
+Normally black LCD 
+REV=H 
+00H 
+00H 
+3FH 
+0AH 
+0AH 
+35H 
+35H 
+35H 
+0AH 
+3FH 
+3FH 
+00H 
+ 
+Gamma correction characteristic curve: 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+VSET=1, 14 gamma voltage input. 
+ 
+00H
+08H
+10H
+18H
+20H
+28H
+30H
+38H
+3FH
+Input 
+data
+V1  V2    V3    V4    V5    V6     V7
+VSSA
+VDDA
+V8    V9   V10  V11  V12   V13   V14
+ 
+Figure 6.1: Gamma Correction Characteristic Curve 
+
+ 
+ 
+-P.31-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+Gamma correction resistor ratio: (1 unit=125ohm) 
+ 
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+9.6 
+ R32
+0.8 
+ 
+ 
+ 
+R1 
+8.4 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+7.6 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+6.4 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+5.2 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+4.4 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+3.6 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+2.8 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2.4 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2.4 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+2 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+2 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+1.6 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+1.6 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.2 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.2 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+1.2 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+1.2 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+1.2 
+ R51
+0.8 
+ 
+ 
+ 
+R20 
+1.2 
+ R52
+0.8 
+ 
+ 
+ 
+R21 
+1.2 
+ R53
+0.8 
+ 
+ 
+ 
+R22 
+0.8 
+ R54
+1.2 
+ 
+ 
+ 
+R23 
+0.8 
+ R55
+1.2 
+ 
+ 
+ 
+R24 
+0.8 
+ R56
+1.2 
+ 
+ 
+ 
+R25 
+0.8 
+ R57
+1.6 
+ 
+ 
+ 
+R26 
+0.8 
+ R58
+1.6 
+ 
+ 
+ 
+R27 
+0.8 
+ R59
+2 
+ 
+ 
+ 
+R28 
+0.8 
+ R60
+2.4 
+ 
+ 
+ 
+R29 
+0.8 
+ R61
+4 
+ 
+ 
+ 
+R30 
+0.8 
+ R62
+32.8 
+ 
+ 
+ 
+R31 
+0.8 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V1, V14 
+V3, V12 
+V4, V11 
+V5, V10
+V7, V8 
+V4, V11 
+
+ 
+ 
+-P.32-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=1, 14 gamma voltage input 
+Gamma correction resistor ratio: (1 unit=125ohm) 
+          
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+9.6 
+ R32
+0.8 
+ 
+ 
+ 
+R1 
+8.4 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+7.6 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+6.4 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+5.2 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+4.4 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+3.6 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+2.8 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2.4 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2.4 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+2 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+2 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+1.6 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+1.6 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.2 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.2 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+1.2 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+1.2 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+1.2 
+ R51
+0.8 
+ 
+ 
+ 
+R20 
+1.2 
+ R52
+0.8 
+ 
+ 
+ 
+R21 
+1.2 
+ R53
+0.8 
+ 
+ 
+ 
+R22 
+0.8 
+ R54
+1.2 
+ 
+ 
+ 
+R23 
+0.8 
+ R55
+1.2 
+ 
+ 
+ 
+R24 
+0.8 
+ R56
+1.2 
+ 
+ 
+ 
+R25 
+0.8 
+ R57
+1.6 
+ 
+ 
+ 
+R26 
+0.8 
+ R58
+1.6 
+ 
+ 
+ 
+R27 
+0.8 
+ R59
+2 
+ 
+ 
+ 
+R28 
+0.8 
+ R60
+2.4 
+ 
+ 
+ 
+R29 
+0.8 
+ R61
+4 
+ 
+ 
+ 
+R30 
+0.8 
+ R62
+32.8 
+ 
+ 
+ 
+R31 
+0.8 
+  
+  
+ 
+ 
+V1, V14 
+V4, V11 
+V4, V11 
+V3, V12 
+V5, V10
+V7, V8 
+V2, V13 
+V6, V9 
+
+ 
+ 
+-P.33-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data  
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+00H 
+V1 
+V14  
+01H 
+V3 + ( V1 – V3)X 53.2 / 62.8 
+ V14 + ( V12 – V14)X 9.6 / 62.8 
+02H 
+V3 + ( V1 – V3)X 44.8 / 62.8 
+V14 + ( V12 – V14)X 18 / 62.8 
+03H 
+V3 + ( V1 – V3)X 37.2 / 62.8 
+ V14 + ( V12 – V14)X 25.6 / 62.8 
+04H 
+V3 + ( V1 – V3)X 30.8 / 62.8 
+ V14 + ( V12 – V14)X 32 / 62.8 
+05H 
+V3 + ( V1 – V3)X 25.6 / 62.8 
+ V14 + ( V12 – V14)X 37.2 / 62.8 
+06H 
+V3 + ( V1 – V3)X 21.2 / 62.8 
+ V14 + ( V12 – V14)X 41.6 / 62.8 
+07H 
+V3 + ( V1 – V3)X 17.6 / 62.8 
+ V14 + ( V12 – V14)X 45.2 / 62.8 
+08H 
+V3 + ( V1 – V3)X 14.8 / 62.8 
+ V14 + ( V12 – V14)X 48 / 62.8 
+09H 
+V3 + ( V1 – V3)X 12.4 / 62.8 
+ V14 + ( V12 – V14)X 50.4 / 62.8 
+0AH 
+V3 + ( V1 – V3)X 10 / 62.8 
+ V14 + ( V12 – V14)X 52.8 / 62.8 
+0BH 
+V3 + ( V1 – V3)X 8 / 62.8 
+ V14 + ( V12 – V14)X 54.8 / 62.8 
+0CH 
+V3 + ( V1 – V3)X 6 / 62.8 
+ V14 + ( V12 – V14)X 56.8 / 62.8 
+0DH 
+V3 + ( V1 – V3)X 4.4 / 62.8 
+ V14 + ( V12 – V14)X 58.4 / 62.8 
+0EH 
+V3 + ( V1 – V3)X 2.8 / 62.8 
+ V14 + ( V12 – V14)X 60 / 62.8 
+0FH 
+V3 + ( V1 – V3)X 1.2 / 62.8 
+ V14 + ( V12 – V14)X 61.6 / 62.8 
+10H 
+V3 
+V12 
+11H 
+V4 + (V3 – V4) X 14 / 15.2 
+ V12 + ( V11 – V12)X 1.2 / 15.2 
+12H 
+V4 + (V3 – V4) X 12.8 / 15.2 
+ V12 + ( V11 – V12)X 2.4 / 15.2 
+13H 
+V4 + (V3 – V4) X 11.6 / 15.2 
+ V12 + ( V11 – V12)X 3.6 / 15.2 
+14H 
+V4 + (V3 – V4) X 10.4 / 15.2 
+ V12 + ( V11 – V12)X 4.8 / 15.2 
+15H 
+V4 + (V3 – V4) X 9.2 / 15.2 
+ V12 + ( V11 – V12)X 6 / 15.2 
+16H 
+V4 + (V3 – V4) X 8 / 15.2 
+ V12 + ( V11 – V12)X 7.2 / 15.2 
+17H 
+V4 + (V3 – V4) X 7.2 / 15.2 
+ V12 + ( V11 – V12)X 8 / 15.2 
+18H 
+V4 + (V3 – V4) X 6.4 / 15.2 
+ V12 + ( V11 – V12)X 8.8 / 15.2 
+19H 
+V4 + (V3 – V4) X 5.6 / 15.2 
+ V12 + ( V11 – V12)X 9.6 / 15.2 
+1AH 
+V4 + (V3 – V4) X 4.8 / 15.2 
+ V12 + ( V11 – V12)X 10.4 / 15.2 
+1BH 
+V4 + (V3 – V4) X 4 / 15.2 
+ V12 + ( V11 – V12)X 11.2 / 15.2 
+1CH 
+V4 + (V3 – V4) X 3.2 / 15.2 
+ V12 + ( V11 – V12)X 12 / 15.2 
+1DH 
+V4 + (V3 – V4) X 2.4 / 15.2 
+ V12 + ( V11 – V12)X 12.8 / 15.2 
+1EH 
+V4 + (V3 – V4) X 1.6 / 15.2 
+ V12 + ( V11 – V12)X 13.6 / 15.2 
+1FH 
+V4 + (V3 – V4) X 0.8 / 15.2 
+ V12 + ( V11 – V12)X 14.4 / 15.2 
+ 
+
+ 
+ 
+-P.34-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data (continued): 
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+20H 
+ V4 
+ V11 
+21H 
+ V5 + (V4 – V5) X 12 / 12.8 
+ V11 + ( V10 – V11) X 0.8 / 12.8 
+22H 
+ V5 + (V4 – V5) X 11.2 / 12.8 
+ V11 + ( V10 – V11) X 1.6 / 12.8 
+23H 
+ V5 + (V4 – V5) X 10.4 / 12.8 
+ V11 + ( V10 – V11) X 2.4 / 12.8 
+24H 
+ V5 + (V4 – V5) X 9.6 / 12.8 
+ V11 + ( V10 – V11) X 3.2 / 12.8 
+25H 
+ V5 + (V4 – V5) X 8.8 / 12.8 
+ V11 + ( V10 – V11) X 4 / 12.8 
+26H 
+ V5 + (V4 – V5) X 8 / 12.8 
+ V11 + ( V10 – V11) X 4.8 / 12.8 
+27H 
+ V5 + (V4 – V5) X 7.2 / 12.8 
+ V11 + ( V10 – V11) X 5.6 / 12.8 
+28H 
+V5 + (V4 – V5) X 6.4 / 12.8 
+ V11 + ( V10 – V11) X 6.4 / 12.8 
+29H 
+ V5 + (V4 – V5) X 5.6 / 12.8 
+ V11 + ( V10 – V11) X 7.2 / 12.8 
+2AH 
+ V5 + (V4 – V5) X 4.8 / 12.8 
+ V11 + ( V10 – V11) X 8 / 12.8 
+2BH 
+ V5 + (V4 – V5) X 4 / 12.8 
+ V11 + ( V10 – V11) X 8.8 / 12.8 
+2CH 
+ V5 + (V4 – V5) X 3.2 / 12.8 
+ V11 + ( V10 – V11)X 9.6 / 12.8 
+2DH 
+ V5 + (V4 – V5) X 2.4 / 12.8 
+ V11 + ( V10 – V11)X 10.4 / 12.8 
+2EH 
+ V5 + (V4 – V5) X 1.6 / 12.8 
+ V11 + ( V10 – V11) X 11.2 / 12.8 
+2FH 
+ V5 + (V4 – V5) X 0.8 / 12.8 
+ V11 + ( V10 – V11) X 12 / 12.8 
+30H 
+ V5 
+ V10 
+31H 
+ V7 + (V5 – V7) X 52 / 52.8 
+ V10 + ( V8 – V10) X 0.8 / 52.8 
+32H 
+ V7 + (V5 – V7) X 51.2 / 52.8 
+ V10 + ( V8 – V10) X 1.6 / 52.8 
+33H 
+ V7 + (V5 – V7) X 50.4 / 52.8 
+ V10 + ( V8 – V10) X 2.4 / 52.8 
+34H 
+ V7 + (V5 – V7) X 49.6 / 52.8 
+ V10 + ( V8 – V10) X 3.2 / 52.8 
+35H 
+ V7 + (V5 – V7) X 48.8 / 52.8 
+ V10 + ( V8 – V10) X 4 / 52.8 
+36H 
+ V7 + (V5 – V7) X 48 / 52.8 
+ V10 + ( V8 – V10) X 4.8 / 52.8 
+37H 
+ V7 + (V5 – V7) X 46.8 / 52.8 
+ V10 + ( V8 – V10) X 6 / 52.8 
+38H 
+ V7 + (V5 – V7) X 45.6 / 52.8 
+ V10 + ( V8 – V10) X 7.2 / 52.8 
+39H 
+ V7 + (V5 – V7) X 44.4 / 52.8 
+ V10 + ( V8 – V10) X 8.4 / 52.8 
+3AH 
+ V7 + (V5 – V7) X 42.8 / 52.8 
+ V10 + ( V8 – V10) X 10 / 52.8 
+3BH 
+ V7 + (V5 – V7) X 41.2 / 52.8 
+ V10 + ( V8 – V10) X 11.6 / 52.8 
+3CH 
+ V7 + (V5 – V7) X 39.2 / 52.8 
+ V10 + ( V8 – V10) X 13.6 / 52.8 
+3DH 
+ V7 + (V5 – V7) X 36.8 / 52.8 
+ V10 + ( V8 – V10) X 16 / 52.8 
+3EH 
+ V7 + (V5 – V7) X 32.8 / 52.8 
+V10 + ( V8 – V10) X 20 / 52.8 
+3FH 
+ V7 
+ V8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.35-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data 
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=1, 14 gamma voltage input 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+00H 
+V1 
+V14  
+01H 
+V2 
+ V13 
+02H 
+V3 + ( V1 – V3)X 44.8 / 53.2 
+V14 + ( V12 – V14)X 8.4 / 53.2 
+03H 
+V3 + ( V1 – V3)X 37.2 / 53.2 
+ V14 + ( V12 – V14)X 16 / 53.2 
+04H 
+V3 + ( V1 – V3)X 30.8 / 53.2 
+ V14 + ( V12 – V14)X 22.4 / 53.2 
+05H 
+V3 + ( V1 – V3)X 25.6 / 53.2 
+ V14 + ( V12 – V14)X 27.6 / 53.2 
+06H 
+V3 + ( V1 – V3)X 21.2 / 53.2 
+ V14 + ( V12 – V14)X 32 / 53.2 
+07H 
+V3 + ( V1 – V3)X 17.6 / 53.2 
+ V14 + ( V12 – V14)X 35.6 / 53.2 
+08H 
+V3 + ( V1 – V3)X 14.8 / 53.2 
+ V14 + ( V12 – V14)X 38.4 / 53.2 
+09H 
+V3 + ( V1 – V3)X 12.4 / 53.2 
+ V14 + ( V12 – V14)X 40.8 / 53.2 
+0AH 
+V3 + ( V1 – V3)X 10 / 53.2 
+ V14 + ( V12 – V14)X 43.2 / 53.2 
+0BH 
+V3 + ( V1 – V3)X 8 / 53.2 
+ V14 + ( V12 – V14)X 45.2 / 53.2 
+0CH 
+V3 + ( V1 – V3)X 6 / 53.2 
+ V14 + ( V12 – V14)X 47.2 / 53.2 
+0DH 
+V3 + ( V1 – V3)X 4.4 / 53.2 
+ V14 + ( V12 – V14)X 48.8 / 53.2 
+0EH 
+V3 + ( V1 – V3)X 2.8 / 53.2 
+ V14 + ( V12 – V14)X 50.4 / 53.2 
+0FH 
+V3 + ( V1 – V3)X 1.2 / 53.2 
+ V14 + ( V12 – V14)X 52 / 53.2 
+10H 
+V3 
+V12 
+11H 
+V4 + (V3 – V4) X 14 / 15.2 
+ V12 + ( V11 – V12)X 1.2 / 15.2 
+12H 
+V4 + (V3 – V4) X 12.8 / 15.2 
+ V12 + ( V11 – V12)X 2.4 / 15.2 
+13H 
+V4 + (V3 – V4) X 11.6 / 15.2 
+ V12 + ( V11 – V12)X 3.6 / 15.2 
+14H 
+V4 + (V3 – V4) X 10.4 / 15.2 
+ V12 + ( V11 – V12)X 4.8 / 15.2 
+15H 
+V4 + (V3 – V4) X 9.2 / 15.2 
+ V12 + ( V11 – V12)X 6 / 15.2 
+16H 
+V4 + (V3 – V4) X 8 / 15.2 
+ V12 + ( V11 – V12)X 7.2 / 15.2 
+17H 
+V4 + (V3 – V4) X 7.2 / 15.2 
+ V12 + ( V11 – V12)X 8 / 15.2 
+18H 
+V4 + (V3 – V4) X 6.4 / 15.2 
+ V12 + ( V11 – V12)X 8.8 / 15.2 
+19H 
+V4 + (V3 – V4) X 5.6 / 15.2 
+ V12 + ( V11 – V12)X 9.6 / 15.2 
+1AH 
+V4 + (V3 – V4) X 4.8 / 15.2 
+ V12 + ( V11 – V12)X 10.4 / 15.2 
+1BH 
+V4 + (V3 – V4) X 4 / 15.2 
+ V12 + ( V11 – V12)X 11.2 / 15.2 
+1CH 
+V4 + (V3 – V4) X 3.2 / 15.2 
+ V12 + ( V11 – V12)X 12 / 15.2 
+1DH 
+V4 + (V3 – V4) X 2.4 / 15.2 
+ V12 + ( V11 – V12)X 12.8 / 15.2 
+1EH 
+V4 + (V3 – V4) X 1.6 / 15.2 
+ V12 + ( V11 – V12)X 13.6 / 15.2 
+1FH 
+V4 + (V3 – V4) X 0.8 / 15.2 
+ V12 + ( V11 – V12)X 14.4 / 15.2 
+ 
+
+ 
+ 
+-P.36-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data (continued): 
+REV=0 data not inverted, for normally white panel (Default) 
+VSET=1, 14 gamma voltage input 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+20H 
+ V4 
+ V11 
+21H 
+ V5 + (V4 – V5) X 12 / 12.8 
+ V11 + ( V10 – V11) X 0.8 / 12.8 
+22H 
+ V5 + (V4 – V5) X 11.2 / 12.8 
+ V11 + ( V10 – V11) X 1.6 / 12.8 
+23H 
+ V5 + (V4 – V5) X 10.4 / 12.8 
+ V11 + ( V10 – V11) X 2.4 / 12.8 
+24H 
+ V5 + (V4 – V5) X 9.6 / 12.8 
+ V11 + ( V10 – V11) X 3.2 / 12.8 
+25H 
+ V5 + (V4 – V5) X 8.8 / 12.8 
+ V11 + ( V10 – V11) X 4 / 12.8 
+26H 
+ V5 + (V4 – V5) X 8 / 12.8 
+ V11 + ( V10 – V11) X 4.8 / 12.8 
+27H 
+ V5 + (V4 – V5) X 7.2 / 12.8 
+ V11 + ( V10 – V11) X 5.6 / 12.8 
+28H 
+V5 + (V4 – V5) X 6.4 / 12.8 
+ V11 + ( V10 – V11) X 6.4 / 12.8 
+29H 
+ V5 + (V4 – V5) X 5.6 / 12.8 
+ V11 + ( V10 – V11) X 7.2 / 12.8 
+2AH 
+ V5 + (V4 – V5) X 4.8 / 12.8 
+ V11 + ( V10 – V11) X 8 / 12.8 
+2BH 
+ V5 + (V4 – V5) X 4 / 12.8 
+ V11 + ( V10 – V11) X 8.8 / 12.8 
+2CH 
+ V5 + (V4 – V5) X 3.2 / 12.8 
+ V11 + ( V10 – V11)X 9.6 / 12.8 
+2DH 
+ V5 + (V4 – V5) X 2.4 / 12.8 
+ V11 + ( V10 – V11)X 10.4 / 12.8 
+2EH 
+ V5 + (V4 – V5) X 1.6 / 12.8 
+ V11 + ( V10 – V11) X 11.2 / 12.8 
+2FH 
+ V5 + (V4 – V5) X 0.8 / 12.8 
+ V11 + ( V10 – V11) X 12 / 12.8 
+30H 
+ V5 
+ V10 
+31H 
+ V7 + (V5 – V7) X 19.2 / 20 
+ V10 + ( V8 – V10) X 0.8 / 20 
+32H 
+ V7 + (V5 – V7) X 18.4 / 20 
+ V10 + ( V8 – V10) X 1.6 / 20 
+33H 
+ V7 + (V5 – V7) X 17.6 / 20 
+ V10 + ( V8 – V10) X 2.4 / 20 
+34H 
+ V7 + (V5 – V7) X 16.8 / 20 
+ V10 + ( V8 – V10) X 3.2 / 20 
+35H 
+ V7 + (V5 – V7) X 16 / 20 
+ V10 + ( V8 – V10) X 4 / 20 
+36H 
+ V7 + (V5 – V7) X 15.2 / 20 
+ V10 + ( V8 – V10) X 4.8 / 20 
+37H 
+ V7 + (V5 – V7) X 14 / 20 
+ V10 + ( V8 – V10) X 6 / 20 
+38H 
+ V7 + (V5 – V7) X 12.8 / 20 
+ V10 + ( V8 – V10) X 7.2 / 20 
+39H 
+ V7 + (V5 – V7) X 11.6 / 20 
+ V10 + ( V8 – V10) X 8.4 / 20 
+3AH 
+ V7 + (V5 – V7) X 10 / 20 
+ V10 + ( V8 – V10) X 10 / 20 
+3BH 
+ V7 + (V5 – V7) X 8.4 / 20 
+ V10 + ( V8 – V10) X 11.6 / 20 
+3CH 
+ V7 + (V5 – V7) X 6.4 / 20 
+ V10 + ( V8 – V10) X 13.6 / 20 
+3DH 
+ V7 + (V5 – V7) X 4 / 20 
+ V10 + ( V8 – V10) X 16 / 20 
+3EH 
+ V6 
+V9 
+3FH 
+ V7 
+ V8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.37-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=1 data inverted, for normally black panel 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+Gamma correction resistor ratio: (1 unit=125ohm) 
+ 
+Positive gamma  
+ 
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+6 
+ R32
+1.2 
+ 
+ 
+ 
+R1 
+8 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+6 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+5.2 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+4 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+3.2 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+2.8 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+2.4 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+1.6 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+1.6 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+1.6 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+1.6 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.6 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.6 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+1.6 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+1.6 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+1.2 
+ R51
+0.8 
+ 
+ 
+ 
+R20 
+1.2 
+ R52
+0.8 
+ 
+ 
+ 
+R21 
+1.2 
+ R53
+0.8 
+ 
+ 
+ 
+R22 
+1.2 
+ R54
+0.8 
+ 
+ 
+ 
+R23 
+1.2 
+ R55
+0.8 
+ 
+ 
+ 
+R24 
+0.8 
+ R56
+0.8 
+ 
+ 
+ 
+R25 
+0.8 
+ R57
+1.2 
+ 
+ 
+ 
+R26 
+0.8 
+ R58
+2.8 
+ 
+ 
+ 
+R27 
+0.8 
+ R59
+3.6 
+ 
+ 
+ 
+R28 
+0.8 
+ R60
+6 
+ 
+ 
+ 
+R29 
+0.8 
+ R61
+7.6 
+ 
+ 
+ 
+R30 
+0.8 
+ R62
+12.8 
+ 
+ 
+ 
+R31 
+1.2 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V1 
+V3 
+V4 
+V5 
+V7
+V4 
+
+ 
+ 
+-P.38-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=1 data inverted, for normally black panel 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+Negative gamma 
+ 
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+8 
+ R32
+0.8 
+ 
+ 
+ 
+R1 
+11.2 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+8 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+6.8 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+5.2 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+4.8 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+4 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+3.2 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2.8 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2.8 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+2.4 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+2 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+2 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+2 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.2 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.2 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+0.8 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+0.8 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+0.8 
+ R51
+1.2 
+ 
+ 
+ 
+R20 
+0.6 
+ R52
+1.2 
+ 
+ 
+ 
+R21 
+0.4 
+ R53
+1.2 
+ 
+ 
+ 
+R22 
+0.4 
+ R54
+1.6 
+ 
+ 
+ 
+R23 
+0.4 
+ R55
+1.6 
+ 
+ 
+ 
+R24 
+0.4 
+ R56
+2 
+ 
+ 
+ 
+R25 
+0.4 
+ R57
+2.4 
+ 
+ 
+ 
+R26 
+0.4 
+ R58
+2.4 
+ 
+ 
+ 
+R27 
+0.4 
+ R59
+3.2 
+ 
+ 
+ 
+R28 
+0.4 
+ R60
+3.2 
+ 
+ 
+ 
+R29 
+0.4 
+ R61
+6 
+ 
+ 
+ 
+R30 
+0.4 
+ R62
+5.6 
+ 
+ 
+ 
+R31 
+0.6 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V14 
+V12 
+V11 
+V10 
+V8
+V11 
+
+ 
+ 
+-P.39-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=1 data inverted, for normally black panel 
+VSET=1, 14 gamma voltage input 
+Positive gamma  
+ 
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+6 
+ R32
+1.2 
+ 
+ 
+ 
+R1 
+8 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+6 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+5.2 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+4 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+3.2 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+2.8 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+2.4 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+1.6 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+1.6 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+1.6 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+1.6 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.6 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.6 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+1.6 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+1.6 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+1.2 
+ R51
+0.8 
+ 
+ 
+ 
+R20 
+1.2 
+ R52
+0.8 
+ 
+ 
+ 
+R21 
+1.2 
+ R53
+0.8 
+ 
+ 
+ 
+R22 
+1.2 
+ R54
+0.8 
+ 
+ 
+ 
+R23 
+1.2 
+ R55
+0.8 
+ 
+ 
+ 
+R24 
+0.8 
+ R56
+0.8 
+ 
+ 
+ 
+R25 
+0.8 
+ R57
+1.2 
+ 
+ 
+ 
+R26 
+0.8 
+ R58
+2.8 
+ 
+ 
+ 
+R27 
+0.8 
+ R59
+3.6 
+ 
+ 
+ 
+R28 
+0.8 
+ R60
+6 
+ 
+ 
+ 
+R29 
+0.8 
+ R61
+7.6 
+ 
+ 
+ 
+R30 
+0.8 
+ R62
+12.8 
+ 
+ 
+ 
+R31 
+1.2 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V1 
+V4
+V4
+V3 
+V5
+V7 
+V2  
+V6 
+
+ 
+ 
+-P.40-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+REV=1 data inverted, for normally black panel 
+VSET=1, 14 gamma voltage input 
+Negative gamma  
+ 
+ 
+ 
+Name Resistor Name Resistor 
+ 
+ 
+R0 
+8 
+ R32
+0.8 
+ 
+ 
+ 
+R1 
+11.2 
+ R33
+0.8 
+ 
+ 
+ 
+R2 
+8 
+ R34
+0.8 
+ 
+ 
+ 
+R3 
+6.8 
+ R35
+0.8 
+ 
+ 
+ 
+R4 
+5.2 
+ R36
+0.8 
+ 
+ 
+ 
+R5 
+4.8 
+ R37
+0.8 
+ 
+ 
+ 
+R6 
+4 
+ R38
+0.8 
+ 
+ 
+ 
+R7 
+3.2 
+ R39
+0.8 
+ 
+ 
+ 
+R8 
+2.8 
+ R40
+0.8 
+ 
+ 
+ 
+R9 
+2.8 
+ R41
+0.8 
+ 
+ 
+ 
+R10 
+2.4 
+ R42
+0.8 
+ 
+ 
+ 
+R11 
+2 
+ R43
+0.8 
+ 
+ 
+ 
+R12 
+2 
+ R44
+0.8 
+ 
+ 
+ 
+R13 
+2 
+ R45
+0.8 
+ 
+ 
+ 
+R14 
+1.6 
+ R46
+0.8 
+ 
+ 
+ 
+R15 
+1.2 
+ R47
+0.8 
+ 
+ 
+ 
+R16 
+1.2 
+ R48
+0.8 
+ 
+ 
+ 
+R17 
+0.8 
+ R49
+0.8 
+ 
+ 
+ 
+R18 
+0.8 
+ R50
+0.8 
+ 
+ 
+ 
+R19 
+0.8 
+ R51
+1.2 
+ 
+ 
+ 
+R20 
+0.6 
+ R52
+1.2 
+ 
+ 
+ 
+R21 
+0.4 
+ R53
+1.2 
+ 
+ 
+ 
+R22 
+0.4 
+ R54
+1.6 
+ 
+ 
+ 
+R23 
+0.4 
+ R55
+1.6 
+ 
+ 
+ 
+R24 
+0.4 
+ R56
+2 
+ 
+ 
+ 
+R25 
+0.4 
+ R57
+2.4 
+ 
+ 
+ 
+R26 
+0.4 
+ R58
+2.4 
+ 
+ 
+ 
+R27 
+0.4 
+ R59
+3.2 
+ 
+ 
+ 
+R28 
+0.4 
+ R60
+3.2 
+ 
+ 
+ 
+R29 
+0.4 
+ R61
+6 
+ 
+ 
+ 
+R30 
+0.4 
+ R62
+5.6 
+ 
+ 
+ 
+R31 
+0.6 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+V14 
+V11 
+V11 
+V12
+V10
+V8 
+V13 
+V9 
+
+ 
+ 
+-P.41-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data  
+REV=1 data inverted, for normally black panel 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+00H 
+V1 
+V14  
+01H 
+V3 + ( V1 – V3)X 45.2 / 51.2 
+ V14 + ( V12 – V14)X 8 / 68 
+02H 
+V3 + ( V1 – V3)X 37.2 / 51.2 
+V14 + ( V12 – V14)X 19.2 / 68 
+03H 
+V3 + ( V1 – V3)X 31.2 / 51.2  
+ V14 + ( V12 – V14)X 27.2 / 68 
+04H 
+V3 + ( V1 – V3)X 26 / 51.2 
+ V14 + ( V12 – V14)X 34 / 68 
+05H 
+V3 + ( V1 – V3)X 22 / 51.2 
+ V14 + ( V12 – V14)X 39.2 / 68 
+06H 
+V3 + ( V1 – V3)X 18.8 / 51.2  
+ V14 + ( V12 – V14)X 44 / 68 
+07H 
+V3 + ( V1 – V3)X 16 / 51.2 
+ V14 + ( V12 – V14)X 48 / 68 
+08H 
+V3 + ( V1 – V3)X 13.6 / 51.2 
+ V14 + ( V12 – V14)X 51.2 / 68 
+09H 
+V3 + ( V1 – V3)X 11.6 / 51.2  
+ V14 + ( V12 – V14)X 54 / 68 
+0AH 
+V3 + ( V1 – V3)X 9.6 / 51.2 
+ V14 + ( V12 – V14)X 56.8 / 68 
+0BH 
+V3 + ( V1 – V3)X 8 / 51.2 
+ V14 + ( V12 – V14)X 59.2 / 68 
+0CH 
+V3 + ( V1 – V3)X 6.4 / 51.2  
+ V14 + ( V12 – V14)X 61.2 / 68 
+0DH 
+V3 + ( V1 – V3)X 4.8 / 51.2 
+ V14 + ( V12 – V14)X 63.2 / 68 
+0EH 
+V3 + ( V1 – V3)X 3.2 / 51.2 
+ V14 + ( V12 – V14)X 65.2 / 68 
+0FH 
+V3 + ( V1 – V3)X 1.6 / 51.2 
+ V14 + ( V12 – V14)X 66.8 / 68 
+10H 
+V3 
+V12 
+11H 
+V4 + (V3 – V4) X 16 / 17.6 
+ V12 + ( V11 – V12)X 1.2 / 8.8 
+12H 
+V4 + (V3 – V4) X 14.4 / 17.6 
+ V12 + ( V11 – V12)X 2 / 8.8 
+13H 
+V4 + (V3 – V4) X 12.8 / 17.6 
+ V12 + ( V11 – V12)X 2.8 / 8.8 
+14H 
+V4 + (V3 – V4) X 11.6 / 17.6 
+ V12 + ( V11 – V12)X 3.6 / 8.8 
+15H 
+V4 + (V3 – V4) X 10.4 / 17.6 
+ V12 + ( V11 – V12)X 4.2 / 8.8 
+16H 
+V4 + (V3 – V4) X 9.2 / 17.6 
+ V12 + ( V11 – V12)X 4.6 / 8.8 
+17H 
+V4 + (V3 – V4) X 8 / 17.6 
+ V12 + ( V11 – V12)X 5 / 8.8 
+18H 
+V4 + (V3 – V4) X 6.8 / 17.6 
+ V12 + ( V11 – V12)X 5.4 / 8.8 
+19H 
+V4 + (V3 – V4) X 6 / 17.6 
+ V12 + ( V11 – V12)X 5.8 / 8.8 
+1AH 
+V4 + (V3 – V4) X 5.2 / 17.6 
+ V12 + ( V11 – V12)X 6.2 / 8.8 
+1BH 
+V4 + (V3 – V4) X 4.4 / 17.6 
+ V12 + ( V11 – V12)X 6.6 / 8.8 
+1CH 
+V4 + (V3 – V4) X 3.6 / 17.6 
+ V12 + ( V11 – V12)X 7 / 8.8 
+1DH 
+V4 + (V3 – V4) X 2.8 / 17.6 
+ V12 + ( V11 – V12)X 7.4 / 8.8 
+1EH 
+V4 + (V3 – V4) X 2 / 17.6 
+ V12 + ( V11 – V12)X 7.8 / 8.8 
+1FH 
+V4 + (V3 – V4) X 1.2 / 17.6 
+ V12 + ( V11 – V12)X 8.2 / 8.8 
+ 
+
+ 
+ 
+-P.42-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data (continued): 
+REV=1 data inverted, for normally black panel 
+VSET=0, 10 gamma voltage input, V2, V6, V9, V13 is disable (Default) 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+20H 
+ V4 
+ V11 
+21H 
+ V5 + (V4 – V5) X 12 / 13.2 
+ V11 + ( V10 – V11) X 0.8 / 12.8 
+22H 
+ V5 + (V4 – V5) X 11.2 / 13.2 
+ V11 + ( V10 – V11) X 1.6 / 12.8 
+23H 
+ V5 + (V4 – V5) X 10.4 / 13.2 
+ V11 + ( V10 – V11) X 2.4 / 12.8 
+24H 
+ V5 + (V4 – V5) X 9.6 / 13.2 
+ V11 + ( V10 – V11) X 3.2 / 12.8 
+25H 
+ V5 + (V4 – V5) X 8.8 / 13.2 
+ V11 + ( V10 – V11) X 4 / 12.8 
+26H 
+ V5 + (V4 – V5) X 8 / 13.2 
+ V11 + ( V10 – V11) X 4.8 / 12.8 
+27H 
+ V5 + (V4 – V5) X 7.2 / 13.2 
+ V11 + ( V10 – V11) X 5.6 / 12.8 
+28H 
+V5 + (V4 – V5) X 6.4 / 13.2 
+ V11 + ( V10 – V11) X 6.4 / 12.8 
+29H 
+ V5 + (V4 – V5) X 5.6 / 13.2 
+ V11 + ( V10 – V11) X 7.2 / 12.8 
+2AH 
+ V5 + (V4 – V5) X 4.8 / 13.2 
+ V11 + ( V10 – V11) X 8 / 12.8 
+2BH 
+ V5 + (V4 – V5) X 4 / 13.2 
+ V11 + ( V10 – V11) X 8.8 / 12.8 
+2CH 
+ V5 + (V4 – V5) X 3.2 / 13.2 
+ V11 + ( V10 – V11)X 9.6 / 12.8 
+2DH 
+ V5 + (V4 – V5) X 2.4 / 13.2 
+ V11 + ( V10 – V11)X 10.4 / 12.8 
+2EH 
+ V5 + (V4 – V5) X 1.6 / 13.2 
+ V11 + ( V10 – V11) X 11.2 / 12.8 
+2FH 
+ V5 + (V4 – V5) X 0.8 / 13.2 
+ V11 + ( V10 – V11) X 12 / 12.8 
+30H 
+ V5 
+ V10 
+31H 
+ V7 + (V5 – V7) X 40.4 / 41.2 
+ V10 + ( V8 – V10) X 0.8 / 34 
+32H 
+ V7 + (V5 – V7) X 39.6 / 41.2 
+ V10 + ( V8 – V10) X 1.6 / 34 
+33H 
+ V7 + (V5 – V7) X 38.8 / 41.2 
+ V10 + ( V8 – V10) X 2.4 / 34 
+34H 
+ V7 + (V5 – V7) X 38 / 41.2 
+ V10 + ( V8 – V10) X 3.6 / 34 
+35H 
+ V7 + (V5 – V7) X 37.2 / 41.2 
+ V10 + ( V8 – V10) X 4.8 / 34 
+36H 
+ V7 + (V5 – V7) X 36.4 / 41.2 
+ V10 + ( V8 – V10) X 6 / 34 
+37H 
+ V7 + (V5 – V7) X 35.6 / 41.2 
+ V10 + ( V8 – V10) X 7.6 / 34 
+38H 
+ V7 + (V5 – V7) X 34.8 / 41.2 
+ V10 + ( V8 – V10) X 9.2 / 34 
+39H 
+ V7 + (V5 – V7) X 34 / 41.2 
+ V10 + ( V8 – V10) X 11.2 / 34 
+3AH 
+ V7 + (V5 – V7) X 32.8 / 41.2 
+ V10 + ( V8 – V10) X 13.6 / 34 
+3BH 
+ V7 + (V5 – V7) X 30 / 41.2 
+ V10 + ( V8 – V10) X 16 / 34 
+3CH 
+ V7 + (V5 – V7) X 26.4 / 41.2 
+ V10 + ( V8 – V10) X 19.2 / 34 
+3DH 
+ V7 + (V5 – V7) X 20.4 / 41.2 
+ V10 + ( V8 – V10) X 22.4 / 34 
+3EH 
+ V7 + (V5 – V7) X 12.8 / 41.2 
+V10 + ( V8 – V10) X 28.4 / 34 
+3FH 
+ V7 
+ V8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.43-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data 
+REV=1 data inverted, for normally black panel 
+VSET=1, 14 gamma voltage input 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+00H 
+V1 
+V14  
+01H 
+V2 
+ V13 
+02H 
+V3 + ( V1 – V3)X 37.2 / 51.2 
+V14 + ( V12 – V14)X 11.2 / 60 
+03H 
+V3 + ( V1 – V3)X 31.2 / 51.2  
+ V14 + ( V12 – V14)X 19.2 / 60 
+04H 
+V3 + ( V1 – V3)X 26 / 51.2 
+ V14 + ( V12 – V14)X 26 / 60 
+05H 
+V3 + ( V1 – V3)X 22 / 51.2 
+ V14 + ( V12 – V14)X 31.2 / 60 
+06H 
+V3 + ( V1 – V3)X 18.8 / 51.2  
+ V14 + ( V12 – V14)X 36 / 60 
+07H 
+V3 + ( V1 – V3)X 16 / 51.2 
+ V14 + ( V12 – V14)X 40 / 60 
+08H 
+V3 + ( V1 – V3)X 13.6 / 51.2 
+ V14 + ( V12 – V14)X 43.2 / 60 
+09H 
+V3 + ( V1 – V3)X 11.6 / 51.2  
+ V14 + ( V12 – V14)X 46 / 60 
+0AH 
+V3 + ( V1 – V3)X 9.6 / 51.2 
+ V14 + ( V12 – V14)X 48.8 / 60 
+0BH 
+V3 + ( V1 – V3)X 8 / 51.2 
+ V14 + ( V12 – V14)X 51.2 / 60 
+0CH 
+V3 + ( V1 – V3)X 6.4 / 51.2  
+ V14 + ( V12 – V14)X 53.2 / 60 
+0DH 
+V3 + ( V1 – V3)X 4.8 / 51.2 
+ V14 + ( V12 – V14)X 55.2 / 60 
+0EH 
+V3 + ( V1 – V3)X 3.2 / 51.2 
+ V14 + ( V12 – V14)X 57.2 / 60 
+0FH 
+V3 + ( V1 – V3)X 1.6 / 51.2 
+ V14 + ( V12 – V14)X 58.8 / 60 
+10H 
+V3 
+V12 
+11H 
+V4 + (V3 – V4) X 16 / 17.6 
+ V12 + ( V11 – V12)X 1.2 / 8.8 
+12H 
+V4 + (V3 – V4) X 14.4 / 17.6 
+ V12 + ( V11 – V12)X 2 / 8.8 
+13H 
+V4 + (V3 – V4) X 12.8 / 17.6 
+ V12 + ( V11 – V12)X 2.8 / 8.8 
+14H 
+V4 + (V3 – V4) X 11.6 / 17.6 
+ V12 + ( V11 – V12)X 3.6 / 8.8 
+15H 
+V4 + (V3 – V4) X 10.4 / 17.6 
+ V12 + ( V11 – V12)X 4.2 / 8.8 
+16H 
+V4 + (V3 – V4) X 9.2 / 17.6 
+ V12 + ( V11 – V12)X 4.6 / 8.8 
+17H 
+V4 + (V3 – V4) X 8 / 17.6 
+ V12 + ( V11 – V12)X 5 / 8.8 
+18H 
+V4 + (V3 – V4) X 6.8 / 17.6 
+ V12 + ( V11 – V12)X 5.4 / 8.8 
+19H 
+V4 + (V3 – V4) X 6 / 17.6 
+ V12 + ( V11 – V12)X 5.8 / 8.8 
+1AH 
+V4 + (V3 – V4) X 5.2 / 17.6 
+ V12 + ( V11 – V12)X 6.2 / 8.8 
+1BH 
+V4 + (V3 – V4) X 4.4 / 17.6 
+ V12 + ( V11 – V12)X 6.6 / 8.8 
+1CH 
+V4 + (V3 – V4) X 3.6 / 17.6 
+ V12 + ( V11 – V12)X 7 / 8.8 
+1DH 
+V4 + (V3 – V4) X 2.8 / 17.6 
+ V12 + ( V11 – V12)X 7.4 / 8.8 
+1EH 
+V4 + (V3 – V4) X 2 / 17.6 
+ V12 + ( V11 – V12)X 7.8 / 8.8 
+1FH 
+V4 + (V3 – V4) X 1.2 / 17.6 
+ V12 + ( V11 – V12)X 8.2 / 8.8 
+ 
+
+ 
+ 
+-P.44-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+Output Voltages vs. Source Input Data (continued): 
+REV=1 data inverted, for normally black panel 
+VSET=1, 14 gamma voltage input 
+ 
+Data 
+ Positive polarity Output Voltage 
+ Negative polarity Output Voltage 
+20H 
+ V4 
+ V11 
+21H 
+ V5 + (V4 – V5) X 12 / 13.2 
+ V11 + ( V10 – V11) X 0.8 / 12.8 
+22H 
+ V5 + (V4 – V5) X 11.2 / 13.2 
+ V11 + ( V10 – V11) X 1.6 / 12.8 
+23H 
+ V5 + (V4 – V5) X 10.4 / 13.2 
+ V11 + ( V10 – V11) X 2.4 / 12.8 
+24H 
+ V5 + (V4 – V5) X 9.6 / 13.2 
+ V11 + ( V10 – V11) X 3.2 / 12.8 
+25H 
+ V5 + (V4 – V5) X 8.8 / 13.2 
+ V11 + ( V10 – V11) X 4 / 12.8 
+26H 
+ V5 + (V4 – V5) X 8 / 13.2 
+ V11 + ( V10 – V11) X 4.8 / 12.8 
+27H 
+ V5 + (V4 – V5) X 7.2 / 13.2 
+ V11 + ( V10 – V11) X 5.6 / 12.8 
+28H 
+V5 + (V4 – V5) X 6.4 / 13.2 
+ V11 + ( V10 – V11) X 6.4 / 12.8 
+29H 
+ V5 + (V4 – V5) X 5.6 / 13.2 
+ V11 + ( V10 – V11) X 7.2 / 12.8 
+2AH 
+ V5 + (V4 – V5) X 4.8 / 13.2 
+ V11 + ( V10 – V11) X 8 / 12.8 
+2BH 
+ V5 + (V4 – V5) X 4 / 13.2 
+ V11 + ( V10 – V11) X 8.8 / 12.8 
+2CH 
+ V5 + (V4 – V5) X 3.2 / 13.2 
+ V11 + ( V10 – V11)X 9.6 / 12.8 
+2DH 
+ V5 + (V4 – V5) X 2.4 / 13.2 
+ V11 + ( V10 – V11)X 10.4 / 12.8 
+2EH 
+ V5 + (V4 – V5) X 1.6 / 13.2 
+ V11 + ( V10 – V11) X 11.2 / 12.8 
+2FH 
+ V5 + (V4 – V5) X 0.8 / 13.2 
+ V11 + ( V10 – V11) X 12 / 12.8 
+30H 
+ V5 
+ V10 
+31H 
+ V7 + (V5 – V7) X 40.4 / 41.2 
+ V10 + ( V8 – V10) X 0.8 / 34 
+32H 
+ V7 + (V5 – V7) X 39.6 / 41.2 
+ V10 + ( V8 – V10) X 1.6 / 34 
+33H 
+ V7 + (V5 – V7) X 38.8 / 41.2 
+ V10 + ( V8 – V10) X 2.4 / 34 
+34H 
+ V7 + (V5 – V7) X 38 / 41.2 
+ V10 + ( V8 – V10) X 3.6 / 34 
+35H 
+ V7 + (V5 – V7) X 37.2 / 41.2 
+ V10 + ( V8 – V10) X 4.8 / 34 
+36H 
+ V7 + (V5 – V7) X 36.4 / 41.2 
+ V10 + ( V8 – V10) X 6 / 34 
+37H 
+ V7 + (V5 – V7) X 35.6 / 41.2 
+ V10 + ( V8 – V10) X 7.6 / 34 
+38H 
+ V7 + (V5 – V7) X 34.8 / 41.2 
+ V10 + ( V8 – V10) X 9.2 / 34 
+39H 
+ V7 + (V5 – V7) X 34 / 41.2 
+ V10 + ( V8 – V10) X 11.2 / 34 
+3AH 
+ V7 + (V5 – V7) X 32.8 / 41.2 
+ V10 + ( V8 – V10) X 13.6 / 34 
+3BH 
+ V7 + (V5 – V7) X 30 / 41.2 
+ V10 + ( V8 – V10) X 16 / 34 
+3CH 
+ V7 + (V5 – V7) X 26.4 / 41.2 
+ V10 + ( V8 – V10) X 19.2 / 34 
+3DH 
+ V7 + (V5 – V7) X 20.4 / 41.2 
+ V10 + ( V8 – V10) X 22.4 / 34 
+3EH 
+ V6 
+V9 
+3FH 
+ V7 
+ V8 
+ 
+
+ 
+ 
+-P.45-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+7. CABC (Content Adaptive Brightness Control) 
+ 
+HX8264-D03 supports content adaptive brightness control (CABC) function to reduce 
+the power consumption of back light driver, depend on the image data output PWM 
+pulse to back light driver for brightness control. It control backlight brightness 
+intelligently by analyzing the display content which saves power, enhances contrast 
+while maintaining vivid display quality. 
+The dimming algorithm enables a smooth backlight adjustment even when the 
+content and brightness are swiftly changing. 
+CABC function can be configured by hardware control pin or software commends via 
+SPI mode.  
+ 
+Display ON
+CABC _ PWM
+CABC ON
+CABC _ PWM
+CABC OFF
+BLKEN
+ton
+toff
+t period
+ 
+
+ 
+ 
+-P.46-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+7.1 CABC Hardware Control  
+ 
+CABC_EN
+DBC3 
+SDA/DBCM[1]
+SCL/DBCM[0]
+Function 
+0 
+X 
+X 
+X 
+CABC Disable  
+1 
+0 
+0 
+1 
+CABC Disable 
+1 
+0 
+0 
+0 
+UI mode (User Interface Image) 
+1 
+0 
+1 
+0 
+Moving mode (Moving Picture Image)
+1 
+0 
+1 
+1 
+Still mode (Still Picture Image) 
+1 
+1 
+X 
+X 
+CABC software SPI control 
+ 
+7.2 CABC Software SPI Control 
+ 
+CABC Register Table 
+Register
+Name 
+Default
+Description 
+Note 
+R82h
+CABC_CTL 
+0x30
+[7:6]: Reserved 
+[5:4]: CABC mode selection 
+00: Bypass mode 
+01: UI mode 
+10: Still mode 
+11: Moving mode (Default) 
+[3:0]: Reserved 
+ 
+R51h
+BYPASS_DUTY
+0xFF
+[7:0]: CABC bypass mode duty cycle  
+When 0x82=00h, CABC duty cycle is fixed by R51h 
+ 
+R53h
+CABC_FUN1 
+0x0C
+[7:4]: Reserved 
+[3]: ENDIM, Dimming function enable and disable 
+0: Disable  
+1: Enable (Default) 
+[2]: BL, Back light is controlled by CABC function 
+0: Back light OFF 
+1: Back light ON (Default) 
+[1:0]: Reserved 
+ 
+R59h
+DRV_FRE_A 
+0x00 
+[7:3]: Reserved 
+[2:0]: DRV_FRE_A, parameter A of adjusting PWM 
+period 
+ 
+R5Eh
+CABC_MB 
+0x80 
+[7:0]: CABC_MB, Minimum duty constraint (minimum 
+brightness) 
+ 
+R60h
+DRV_FRE_B 
+0x04 
+[7:0]: DRV_FRE_B, parameter B of adjusting PWM 
+period 
+ 
+R65h
+DIMT 
+0x21 
+[7:6]: Reserved 
+[5:4]: DIM_A, total dimming time parameter A 
+[1:0]: DIM_B, total dimming time parameter B 
+Total dimming time = DIM_A x DIM_B (unit: frame) 
+ 
+R70h
+DBG_0 
+0x70 
+CABC curve user define gray level 0 
+ 
+R71h
+DBG_1 
+0xAC
+CABC curve user define gray level 32 
+ 
+R72h
+DBG_2 
+0xC0 
+CABC curve user define gray level 64 
+ 
+R73h
+DBG_3 
+0xCD
+CABC curve user define gray level 96 
+ 
+R74h
+DBG_4 
+0xD6 
+CABC curve user define gray level 128 
+ 
+R75h
+DBG_5 
+0xE0 
+CABC curve user define gray level 160 
+ 
+R76h
+DBG_6 
+0xEC
+CABC curve user define gray level 192 
+ 
+R77h
+DBG_7 
+0xF8 
+CABC curve user define gray level 224 
+ 
+R78h
+DBG_8 
+0xFF 
+CABC curve user define gray level 255 
+ 
+Note: (1) The un-addressed registers and reserved bit can ’t be written any data; otherwise the fault  
+function is possible. 
+(2) All CABC parameter registers (R59h, R5Eh, R60h, R65h and R70h~R78h) access must before  
+end of the power on sequence or enter standby mode or CABC_EN= ”0”.  
+(3) R70h~R78h default value depend on R82h[5:4] CABC mode selection. 
+ 
+ 
+
+ 
+ 
+-P.47-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+7.3 Commend Description 
+ 
+R82h 
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R82
+1/0
+1 
+0 
+0 
+0 
+0 
+0 
+1 
+0 
+0 
+0 
+1 
+1 
+0 
+0 
+0 
+0 
+ 
+R82h [5:4]: CABC_CTL, content adaptive brightness control mode  
+R82h[5:4] 
+Function 
+Note 
+0 
+0 
+Off (Bypass CABC) 
+- 
+0 
+1 
+UI mode (user interface image) 
+- 
+1 
+0 
+Still mode (still picture image) 
+- 
+1 
+1 
+Moving mode (Moving picture image) 
+Default 
+   Note: When R82h[5:4]=00, CABC function is bypassed and PWM duty is fixed by R51h.  
+ 
+R51h  
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R51
+1/0
+0   1 
+0 
+1 
+0 
+0 
+0 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+ 
+R51h [7:0]: Set PWM duty level when CABC Off (Bypass CABC mode) 
+Function 
+R51h[7:0] 
+PWM duty 
+Note 
+0
+0
+0
+0
+0
+0
+0
+0
+0% 
+- 
+0
+0
+0
+0
+0
+0
+0
+1
+0.3906% 
+- 
+0
+0
+0
+0
+0
+0
+1
+0
+0.7813% 
+- 
+:
+:
+:
+:
+:
+:
+:
+:
+: 
+- 
+1
+1
+1
+1
+1
+1
+0
+1
+98.8281% 
+- 
+1
+1
+1
+1
+1
+1
+1
+0
+99.2188% 
+- 
+1
+1
+1
+1
+1
+1
+1
+1
+100% 
+Default 
+ 
+R53h 
+No. R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R53
+1/0
+0 
+1 
+0 
+1 
+0 
+0 
+1 
+1 
+0 
+0 
+0 
+0 
+1 
+1 
+0 
+0 
+ 
+R53h [2]: BL, Back light is controlled by CABC function 
+R53h[2] 
+Function 
+Note 
+0 
+Off 
+- 
+1 
+On 
+Default 
+ 
+R53h [3]: ENDIM, Enable/Disable Dimming 
+R53h[3] 
+Function 
+Note 
+0 
+Disable 
+- 
+1 
+Enable 
+Default 
+ 
+ 
+
+ 
+ 
+-P.48-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+R59h   
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R59
+1/0
+0 
+1 
+0 
+1 
+1 
+0 
+0 
+1 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+ 
+R59h[2:0]: DRV_FRE_A, parameter A of adjusting PWM period 
+R59h[2:0] 
+Function 
+Note 
+0 
+0 
+0 
+1 
+Default 
+0 
+0 
+1 
+2 
+- 
+0 
+1 
+0 
+4 
+- 
+0 
+1 
+1 
+8 
+- 
+1 
+0 
+0 
+16 
+- 
+1 
+0 
+1 
+32 
+- 
+1 
+1 
+0 
+64 
+- 
+1 
+1 
+1 
+128 
+- 
+ 
+R5Eh 
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R5e
+1/0
+0 
+1 
+0 
+1 
+1 
+1 
+1 
+0 
+1 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+ 
+R5Eh [7:0]: CABC_MB, Minimum duty constraint (minimum brightness) 
+Function 
+R5eh[7:0] 
+PWM duty 
+Note 
+0
+0
+0
+0
+0
+0
+0
+0
+0% 
+- 
+0
+0
+0
+0
+0
+0
+0
+1
+0.3906% 
+- 
+0
+0
+0
+0
+0
+0
+1
+0
+0.7813% 
+- 
+:
+:
+:
+:
+:
+:
+:
+:
+: 
+- 
+1
+0
+0
+0
+0
+0
+0
+0
+50% 
+Default 
+:
+:
+:
+:
+:
+:
+:
+:
+: 
+- 
+1
+1
+1
+1
+1
+1
+0
+1
+98.8281% 
+- 
+1
+1
+1
+1
+1
+1
+1
+0
+99.2188% 
+- 
+1
+1
+1
+1
+1
+1
+1
+1
+100% 
+- 
+ 
+R60h  
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R60
+1/0
+0 
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+1 
+0 
+0 
+    
+R60h [7:0]: DRV_FRE_B, parameter B of adjusting PWM period 
+Function 
+R60h[7:0] 
+DRV_FRE_B 
+Note 
+0
+0
+0
+0
+0
+0
+0
+0
+0 
+- 
+0
+0
+0
+0
+0
+0
+0
+1
+1 
+- 
+0
+0
+0
+0
+0
+0
+1
+0
+2 
+- 
+0
+0
+0
+0
+0
+0
+1
+1
+3 
+ 
+0
+0
+0
+0
+0
+1
+0
+0
+4 
+Default 
+:
+:
+:
+:
+:
+:
+:
+:
+: 
+- 
+1
+0
+0
+0
+0
+0
+0
+0
+128 
+- 
+:
+:
+:
+:
+:
+:
+:
+:
+: 
+- 
+1
+1
+1
+1
+1
+1
+1
+1
+255 
+- 
+Backlight PWM output period = DCLK period x (DRV_FRE_A[2:0]) x 256 x 
+(DRV_FRE_B[7:0]+1) 
+
+ 
+ 
+-P.49-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+R65h 
+No.
+R/W
+Address 
+Default setting value 
+R/W
+A7
+A6
+A5
+A4
+A3
+A2
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+R65
+1/0
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+1 
+0 
+0 
+0 
+0 
+1 
+   Total dimming time = DIMT_A x DIMT_B frame 
+ 
+R65h [5:4]: DIMT_A, total dimming time parameter A 
+R65h[5:4] 
+Function 
+Note 
+0 
+0 
+2 
+- 
+0 
+1 
+4 
+- 
+1 
+0 
+8 
+Default  
+1 
+1 
+16 
+- 
+ 
+R65h [1:0]: DIMT_B, total dimming time parameter B  
+R65h[1:0] 
+Function 
+Note 
+0 
+0 
+1 
+- 
+0 
+1 
+2 
+Default 
+1 
+0 
+3 
+- 
+1 
+1 
+4 
+- 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.50-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+R70h [7:0] ~ R78h [7:0]: DBG_0~DBG_8 
+Address 
+Default setting value 
+No. R/W
+A7 A6 A5 A4 A3 A2 A1 A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+Type 
+1 
+1 
+0 
+0 
+1 
+0 
+0 
+0 
+UI 
+0 
+0 
+0 
+1 
+0 
+0 
+0 
+0 
+Still 
+R70 1/0
+0
+1
+1
+1
+0
+0
+0
+0
+0 
+1 
+1 
+1 
+0 
+0 
+0 
+0 
+Move
+1 
+1 
+0 
+1 
+0 
+1 
+1 
+0 
+UI 
+0 
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+Still 
+R71 1/0
+0
+1
+1
+1
+0
+0
+0
+1
+1 
+0 
+1 
+0 
+1 
+1 
+0 
+0 
+Move
+1 
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+UI 
+1 
+0 
+0 
+1 
+0 
+0 
+0 
+0 
+Still 
+R72 1/0
+0
+1
+1
+1
+0
+0
+1
+0
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+0 
+Move
+1 
+1 
+1 
+0 
+1 
+0 
+0 
+0 
+UI 
+1 
+0 
+1 
+1 
+1 
+0 
+1 
+0 
+Still 
+R73 1/0
+0
+1
+1
+1
+0
+0
+1
+1
+1 
+1 
+0 
+0 
+1 
+1 
+0 
+1 
+Move
+1 
+1 
+1 
+1 
+0 
+0 
+0 
+0 
+UI 
+1 
+1 
+0 
+0 
+1 
+1 
+0 
+1 
+Still 
+R74 1/0
+0
+1
+1
+1
+1
+0
+0
+0
+1 
+1 
+0 
+1 
+0 
+1 
+1 
+0 
+Move
+1 
+1 
+1 
+1 
+0 
+1 
+0 
+0 
+UI 
+1 
+1 
+0 
+1 
+1 
+1 
+0 
+0 
+Still 
+R75 1/0
+0
+1
+1
+1
+1
+0
+0
+1
+1 
+1 
+1 
+0 
+0 
+0 
+0 
+0 
+Move
+1 
+1 
+1 
+1 
+1 
+0 
+0 
+0 
+UI 
+1 
+1 
+1 
+0 
+0 
+1 
+1 
+0 
+Still 
+R76 1/0
+0
+1
+1
+1
+0
+1
+1
+0
+1 
+1 
+1 
+0 
+1 
+1 
+0 
+0 
+Move
+1 
+1 
+1 
+1 
+1 
+1 
+0 
+0 
+UI 
+1 
+1 
+1 
+1 
+0 
+0 
+1 
+0 
+Still 
+R77 1/0
+0
+1
+1
+1
+0
+1
+1
+1
+1 
+1 
+1 
+1 
+1 
+0 
+0 
+0 
+Move
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+UI 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+Still 
+R78 1/0
+0
+1
+1
+1
+1
+0
+0
+0
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+Move
+Duty cycle = (Register value / 255) x 100% 
+Register value = 255 x duty cycle 
+For example UI mode DBG0 duty cycle = 200/255 x100% = 78.43 %  
+If DBG0 duty cycle need 51% the register value = 255 x 0.51 = 130 = 0x82 
+R70h~R78h will return default value when register R82h [5:4] CABC mode selection 
+is written. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.51-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+8. 3-wire Serial Peripheral Interface (SPI) 
+ 
+The HX8264-D03 supports the 3-pin serial peripheral interface (SPI) to set internal 
+register. The data is written to the register of assigned address when “End of transfer” 
+is detected after the 17th SCL rising cycles.  
+Data is not accepted if there are less or more than 17 cycles for one transaction. Only 
+when SCL is input 17 times and SCEN is in the "Low" period simultaneously, SDA is 
+accepted.  
+The first bit means Read/Write command. “0” is WRITE. “1” is READ. And the next 8 
+bits (A7 ~ A0) specify the address of the register. And the last 8 bits are for Data 
+setting (D7 ~D0). The address and data are transferred from the MSB to LSB 
+sequentially. And next cycle is turn-round cycle.  
+ 
+A6
+A5
+A4
+A3
+A1
+A0
+D7
+D6
+D5
+D4
+D3
+D2
+D1
+D0
+A7
+A7
+ts1
+th1
+ts0
+tw1H
+tw1L
+th0
+tw2
+SDA
+SCL
+SCEN
+R/W
+R/W
+A2
+ 
+ 
+Figure 8.1: Serial Interface Signal Timing Chart 
+ 
+Spec. 
+Item 
+Symbol
+Conditions 
+Min. 
+Typ. 
+Max. 
+Unit
+ts0 
+SCEN to SCL 
+12 
+- 
+- 
+ns 
+SDA Setup Time 
+ts1 
+SDA to SCL 
+12 
+- 
+- 
+ns 
+th0 
+SCEN to SCL 
+12 
+- 
+- 
+ns 
+SDA Hold Time 
+th1 
+SDA to SCL 
+12 
+- 
+- 
+ns 
+tw1L 
+SCL low pulse width 
+50 
+- 
+- 
+ns 
+tw1H 
+SCL high pulse width 
+50 
+- 
+- 
+ns 
+Pulse Width 
+tw2 
+SCEN high pulse width 
+50 
+- 
+- 
+ns 
+Clock duty 
+- 
+- 
+40 
+50 
+60 
+% 
+Table 8.1: Serial Interface timing parameter 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.52-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+9. Power on/off Sequence 
+ 
+To prevent the device damage from latch up, the power on/off sequence shown 
+below must be followed. 
+          
+ Power ON: VDD, VSS à VDDA, VSSA à V1 to V14 
+ Power OFF: V1 to V14 à VDDA, VSSA à VDD, VSS 
+ 
+9.1 Power on/off control 
+ 
+HX8264-D03 has a power on/off sequence control function. In order to prevent IC 
+from power on reset fail, the rising time (TPOR) of the digital power supply VDD should 
+be maintained within the given specifications. Please refer to “AC Characteristics” for 
+more detail on timing. 
+ 
+ 
+Figure 9.1: Power on/off Timing Sequence 
+ 
+9.2 Enter and exit standby mode sequence 
+ 
+ 
+Figure 9.2: Enter and Exit Standby Mode Sequence 
+
+ 
+ 
+-P.53-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+10. DC Characteristics 
+ 
+10.1 Absolute maximum rating (VSS=0V) 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Power supply voltage 1 
+VDD 
+-0.5 
+- 
++3.96 
+V 
+Power supply voltage 2 
+VDDA 
+-0.5 
+- 
++14.85 
+V 
+Logic Output Voltage 
+VOUT 
+-0.5 
+- 
++5.0 
+V 
+Input voltage 
+Vin 
+-0.5 
+- 
+VDDA+0.5
+V 
+Operation temperature 
+TOPR 
+-30 
+- 
++85 
+℃ 
+Storage temperature 
+TSTG 
+-55 
+- 
++125 
+℃ 
+Note: (1) All of the voltages listed above are with respective to VSS=0V. 
+(2) Device is subject to be damaged permanently if stresses beyond those absolute maximum ratings listed above. 
+ 
+10.2 DC electrical characteristics (VSS=0V, TA=25℃) 
+ 
+Spec. 
+Parameter 
+Symbol
+Min. 
+Typ.
+Max. 
+Unit
+Condition 
+Power supply voltage 
+VDD 
+2.7 
+3.3 
+3.6 
+V 
+- 
+Power supply voltage 
+VDDA
+6.5 
+- 
+13.5 
+V 
+- 
+Low level input voltage 
+VIL 
+0 
+- 
+0.3VDD
+V 
+For digital circuit 
+High level input voltage 
+VIH 
+0.7VDD
+- 
+VDD 
+V 
+For digital circuit 
+Output low voltage 
+VOL 
+- 
+- 
+VSS+0.4
+V 
+IOL=400µA 
+Output high voltage 
+VOH 
+VDD-0.4
+- 
+- 
+V 
+IOH=-400µA 
+Pull low/high resistance 
+Ri 
+200 
+250 
+300 
+kΩ 
+For the digital input pin @VDD=3.3V
+Input leakage current 
+Ii 
+- 
+- 
+±1 
+uA 
+For digital circuit 
+- 
+5 
+14 
+mA
+Dual gate mode or Cascade mode 
+slave, Fclk=50MHz, LD=48KHz, 
+VDD=3.3V, CABC disable, No load 
+Digital Operation current 
+Idd 
+- 
+7 
+16 
+mA
+Cascade mode master, Fclk=50MHz,
+LD=48KHz,VDD=3.3V, CABC 
+disable, No load 
+Digital stand-by current 
+Ist1 
+- 
+10 
+50 
+μA 
+Clock & all functions are stopped 
+Analog Operating current 
+Idda 
+- 
+6 
+8 
+mA
+No load, Fclk=50MHz,FLD=48KHz 
+@ VDDA=10V, V1=8V, V14=0.4V 
+Analog Stand-by current 
+Ist2 
+- 
+10 
+50 
+μA 
+No load, clock & all functions are 
+stopped 
+Input level of V1~V7 
+Vref1 
+0.4VDDA
+- 
+VDDA-1
+V 
+Gamma correction voltage input 
+Input level of V8~V14 
+Vref2 
+0.1 
+- 
+0.6VDDA
+V 
+Gamma correction voltage input 
+Output Voltage deviation 
+Vod1 
+- 
+±20 
+±35 
+mV
+Vo=VSSA+0.1V~VSSA+0.5V &  
+Vo=VDDA-0.5V~VDDA-0.1V 
+Output Voltage deviation 
+Vod2 
+- 
+±15 
+±20 
+mV
+Vo=VSSA+0.5V~VDDA-0.5V 
+Output Voltage Offset 
+between Chips 
+Voc 
+- 
+- 
+±20 
+mV
+Vo=VSSA+0.5V~VDDA-0.5V 
+Dynamic Range of Output 
+Vdr 
+0.1 
+- 
+VDDA-0.1
+V 
+SO1~SO1200 
+Sinking Current of Outputs
+IOLy 
+80 
+- 
+- 
+μA 
+SO1~SO1200; Vo=0.1V vs.  
+1.0V, VDDA=13.5V 
+Driving Current of Outputs
+IOHy 
+80 
+- 
+- 
+μA 
+SO1~SO1200 ;Vo=0.1V vs. 12.5V, 
+VDDA=13.5V 
+Resistance of Gamma 
+Table 
+Rg 
+0.7*Rn 
+1.0*Rn
+1.3*Rn 
+Ω 
+Rn: Internal gamma resistor 
+ 
+ 
+
+ 
+ 
+-P.54-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11. AC Characteristics 
+ 
+11.1 AC electrical characteristics 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+HS setup time 
+Thst 
+8 
+- 
+- 
+ns 
+HS hold time 
+Thhd 
+8 
+- 
+- 
+ns 
+VS setup time 
+Tvst 
+8 
+- 
+- 
+ns 
+VS hold time 
+Tvhd 
+8 
+- 
+- 
+ns 
+Data setup time 
+Tdsu 
+8 
+- 
+- 
+ns 
+Data hold time 
+Tdhd 
+8 
+- 
+- 
+ns 
+DE setup time 
+Tesu 
+8 
+- 
+- 
+ns 
+DE hold time 
+Tehd 
+8 
+- 
+- 
+ns 
+VDD Power On Slew rate 
+TPOR 
+- 
+- 
+20 
+ms 
+RSTB pulse width 
+TRst 
+10 
+- 
+- 
+μs 
+CLKIN cycle time 
+Tcph 
+20 
+- 
+- 
+ns 
+CLKIN pulse duty 
+Tcwh 
+40 
+50 
+60 
+% 
+Output stable time 
+Tsst 
+- 
+- 
+6 
+μs 
+
+ 
+ 
+-P.55-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11.2 Data input format  
+ 
+l 
+Horizontal timing 
+ 
+ 
+Figure 11.1: Horizontal Input Timing Diagram 
+ 
+l 
+Vertical timing 
+ 
+ 
+Figure 11.2: Vertical Input Timing Diagram 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.56-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11.2.1 Resolution：800x480 
+ 
+l 
+Horizontal timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Horizontal Display Area 
+thd 
+800 
+DCLK 
+DCLK frequency  
+fclk 
+- 
+30 
+50 
+MHz 
+One Horizontal Line 
+th 
+889 
+928 
+1143 
+DCLK 
+HS pulse width 
+thpw 
+1 
+48 
+255 
+DCLK 
+HS Back Porch (Blanking) 
+thb 
+88 
+DCLK 
+HS Front Porch 
+thfp 
+1 
+40 
+255 
+DCLK 
+DE mode Blanking 
+th-thd 
+85 
+128 
+512 
+DCLK 
+ 
+l 
+Vertical timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Vertical Display Area  
+tvd 
+480 
+TH 
+VS period time  
+tv 
+513 
+525 
+767 
+TH 
+VS pulse width  
+tvpw 
+3 
+3 
+255 
+TH 
+VS Back Porch (Blanking) 
+tvb 
+32 
+TH 
+VS Front Porch 
+tvfp 
+1 
+13 
+255 
+TH 
+DE mode Blanking 
+tv-tvd 
+4 
+45 
+255 
+TH 
+
+ 
+ 
+-P.57-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11.2.2 Resolution：800x600 
+ 
+l 
+Horizontal timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Horizontal Display Area 
+thd 
+800 
+DCLK 
+DCLK frequency  
+fclk 
+- 
+40 
+50 
+MHz 
+One Horizontal Line 
+th 
+889 
+1000 
+1143 
+DCLK 
+HS pulse width  
+thpw 
+1 
+48 
+255 
+DCLK 
+HS Back Porch (Blanking) 
+thb 
+88 
+DCLK 
+HS Front Porch 
+thfp 
+1 
+112 
+255 
+DCLK 
+DE mode Blanking 
+th-thd 
+85 
+200 
+512 
+DCLK 
+ 
+l 
+Vertical timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Vertical Display Area  
+tvd 
+600 
+TH 
+VS period time  
+tv 
+640 
+660 
+943 
+TH 
+VS pulse width  
+tvpw 
+3 
+3 
+255 
+TH 
+VS Back Porch (Blanking) 
+tvb 
+39 
+TH 
+VS Front Porch 
+tvfp 
+1 
+21 
+255 
+TH 
+DE mode Blanking 
+tv-tvd 
+4 
+60 
+255 
+TH 
+
+ 
+ 
+-P.58-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11.2.3 Resolution：640x480 
+ 
+l 
+Horizontal timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Horizontal Display Area 
+thd 
+640 
+DCLK 
+DCLK frequency  
+fclk 
+- 
+24 
+50 
+MHz 
+One Horizontal Line 
+th 
+- 
+760 
+- 
+DCLK 
+HS pulse width  
+thpw 
+1 
+48 
+255 
+DCLK 
+HS Back Porch (Blanking) 
+thb 
+88 
+DCLK 
+HS Front Porch 
+thfp 
+1 
+32 
+255 
+DCLK 
+DE mode Blanking 
+th-thd 
+85 
+120 
+512 
+DCLK 
+ 
+l 
+Vertical timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Vertical Display Area  
+tvd 
+480 
+TH 
+VS period time  
+tv 
+513 
+525 
+767 
+TH 
+VS pulse width  
+tvpw 
+3 
+3 
+255 
+TH 
+VS Back Porch (Blanking) 
+tvb 
+32 
+TH 
+VS Front Porch 
+tvfp 
+1 
+13 
+255 
+TH 
+DE mode Blanking 
+tv-tvd 
+4 
+45 
+255 
+TH 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.59-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+11.2.4 Resolution：400x240 
+ 
+l 
+Horizontal timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Horizontal Display Area 
+thd 
+400 
+DCLK 
+DCLK frequency  
+fclk 
+- 
+8.4 
+50 
+MHz 
+One Horizontal Line 
+th 
+489 
+520 
+743 
+DCLK 
+HS pulse width  
+thpw 
+1 
+1 
+255 
+DCLK 
+HS Back Porch 
+thb 
+88 
+DCLK 
+HS Front Porch 
+thfp 
+1 
+32 
+255 
+DCLK 
+DE mode Blanking 
+th-thd 
+85 
+120 
+512 
+DCLK 
+ 
+l 
+Vertical timing 
+ 
+Spec. 
+Parameter 
+Symbol 
+Min. 
+Typ. 
+Max. 
+Unit 
+Vertical Display Area  
+tvd 
+240 
+TH 
+VS period time  
+tv 
+258 
+270 
+512 
+TH 
+VS pulse width  
+tvpw 
+1 
+1 
+255 
+TH 
+VS Back Porch 
+tvb 
+17 
+TH 
+VS Front Porch 
+tvfp 
+1 
+13 
+255 
+TH 
+DE mode Blanking 
+tv-tvd 
+4 
+30 
+255 
+TH 
+
+ 
+ 
+-P.60-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+12. Waveform 
+ 
+12.1 Timing waveform table  
+ 
+12.1.1 Parallel 24-bit RGB mode  
+ 
+Parameter  
+Symbol
+Min. 
+Typ. 
+Max.
+Unit 
+Conditions 
+CLKIN Frequency 
+Fclk 
+- 
+40 
+50 
+MHz 
+VDD=3.0V~3.6V
+CLKIN Cycle Time 
+Tclk 
+20 
+25 
+- 
+ns 
+- 
+CLKIN Pulse Duty 
+Tcwh 
+40 
+50 
+60 
+% 
+Tclk 
+Time from HSD to Source Output
+Thso 
+64 
+CLKIN
+- 
+Time from HSD to LD 
+Thld 
+64 
+CLKIN
+- 
+Time from HSD to STV 
+Thstv 
+2 
+CLKIN
+- 
+Time from HSD to CKV 
+Thckv 
+20 
+CLKIN
+- 
+Time from HSD to OEV 
+Thoev 
+4 
+CLKIN
+- 
+LD Pulse Width 
+Twld 
+10 
+CLKIN
+- 
+CKV Pulse Width 
+Twckv 
+66 
+CLKIN
+- 
+OEV Pulse Width 
+Twoev 
+74 
+CLKIN
+- 
+Table 12.1: Parallel 24-bit RGB mode 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.61-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+12.2 Timing diagram   
+ 
+12.2.1 Input clock and data timing waveform  
+ 
+//
+//
+//
+Last
+Last data
+2nd data
+First data
+30%
+70%
+Tcwl
+Tcwh
+Tcph
+1
+2
+Tdhd
+Tdsu
+//
+Tesu
+//
+//
+Tvst
+Thhd
+//
+Thhd
+Thst
+Th
+DEN
+Data
+CLKIN
+CLKIN
+VSD
+HSD
+Tehd
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+30%
+70%
+70%
+30%
+30%
+70%
+ 
+Figure 12.1: Input Clock and Data Timing Diagram 
+ 
+12.2.2 Source output timing waveform (Cascade) 
+ 
+ 
+Figure 12.2: Source Output Timing Diagram 
+ 
+ 
+Figure 12.3: Output Load Condition 
+ 
+ 
+
+ 
+ 
+-P.62-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+12.2.3 Vertical timing diagram HV (Cascade) 
+ 
+ 
+Figure 12.4: Vertical Timing Diagram HV (Cascade) 
+ 
+12.2.4 Vertical timing diagram DE (Cascade) 
+ 
+ 
+Figure 12.5: Vertical Timing Diagram DE (Cascade) 
+ 
+12.2.5 Gate output timing diagram (Cascade) 
+ 
+ 
+Figure 12.6: Gate Output Timing Diagram (Cascade) 
+
+ 
+ 
+-P.63-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+12.2.6 Vertical timing diagram HV (Dual gate) 
+ 
+ 
+Figure 12.7: Vertical Timing Diagram HV (Dual Gate) 
+ 
+12.2.7 Vertical timing diagram DE (Dual gate) 
+ 
+ 
+Figure 12.8: Vertical Timing Diagram DE (Dual Gate) 
+ 
+12.2.8 Gate output timing diagram (Dual gate) 
+ 
+ 
+Figure 12.9: Gate Output Timing Diagram (Dual Gate) 
+ 
+
+ 
+ 
+-P.64-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+13. Pin Assignment (IC Face View) 
+ 
+Figure 13.1: Pin Assignment 
+
+ 
+ 
+-P.65-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+14. Package Outline 
+Chip size: 22578µm x 944µm (including seal ring and scribe line) 
+Bump height: 12µm±3µm or 9µm±2µm 
+Bump hardness: 60 HV±15 HV 
+Total bump area: 4256340 µm2 
+ 
+
+ 
+ 
+-P.66-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+C
+C
+C
+C
+C
+C
+C
+C
+C
+C
+C
+DATL1
+DATL0
+D D1
+C2
+D2
+D3
+D2
+D4
+A2
+A3
+A2
+A3
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+E3
+E5
+E4
+B2
+B
+B
+B
+B1
+B1
+B1
+B1
+B1
+B3
+A
+A
+A
+A
+A1
+A1
+(204)
+(450)
+(858)
+E1
+(300)
+(300)
+A1
+A1
+E5
+E2
+E4
+C1
+C1
+C1
+C1
+C1
+C1
+C1
+C1
+C1
+C1
+C1
+B4
+(115)
+(115)
+D
+DATL3
+DATL2
+D D1
+D
+DATL5
+DATL4
+D D1
+D
+DATL7
+DATL6
+D D1
+D
+DATL9
+DATL8
+D D1
+D
+DATL11
+DATL10
+D D1
+D
+DATL13
+DATL12
+D D1
+D
+DATL15
+DATL14
+D D1
+D
+DATL17
+DATL16
+D D1
+D
+DCLKL
+DIOL
+D D1
+D
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D5
+C
+C1
+(10200)
+A2
+ 
+Figure 14.1: Package Outline 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.67-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+Alignment mark 
+ 
+20
+25
+25
+25
+20
+115
+20
+25
+25
+25
+20
+115
+Alignment mark dimension (unit:µm)
+Left side
+Right side
+ 
+Figure 14.2: Alignment Mark 
+ 
+Pad information 
+ 
+Symbol 
+Dimension (um)
+Symbol 
+Dimension (um)
+A 
+17 
+D 
+30 
+A1 
+34 
+D1 
+40 
+A2 
+110 
+D2 
+100 
+A3 
+30 
+D3 
+30 
+B 
+30 
+D4 
+70 
+B1 
+50 
+D5 
+34 
+B2 
+70 
+D6 
+168.5 
+B3 
+50 
+E1 
+22578 
+B4 
+191.5 
+E2 
+944 
+C 
+65 
+E3 
+324 
+C1 
+85 
+E4 
+60 
+C2 
+110 
+ 
+E5 
+60 
+Table 14.1: Pad Information 
+ 
+ 
+ 
+
+ 
+ 
+-P.68-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+14.1 Pad coordinates 
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+1 
+SHIELDING -10922.5
+-357 
+65x110 
+51
+V14R 
+-6672.5
+-357 
+65x110 
+2 
+SHIELDING -10837.5
+-357 
+65x110 
+52
+V14R 
+-6587.5
+-357 
+65x110 
+3 
+TP9 
+-10752.5
+-357 
+65x110 
+53
+SHIELDING
+-6502.5
+-357 
+65x110 
+4 
+COM1_B 
+-10667.5
+-357 
+65x110 
+54
+TP7 
+-6417.5
+-357 
+65x110 
+5 
+COM1_B 
+-10582.5
+-357 
+65x110 
+55
+SHIELDING
+-6332.5
+-357 
+65x110 
+6 
+VSSA 
+-10497.5
+-357 
+65x110 
+56
+TP6 
+-6247.5
+-357 
+65x110 
+7 
+VSSA 
+-10412.5
+-357 
+65x110 
+57
+SHIELDING
+-6162.5
+-357 
+65x110 
+8 
+VSSA 
+-10327.5
+-357 
+65x110 
+58
+TP5 
+-6077.5
+-357 
+65x110 
+9 
+VSSA 
+-10242.5
+-357 
+65x110 
+59
+REV 
+-5992.5
+-357 
+65x110 
+10 
+TP8 
+-10157.5
+-357 
+65x110 
+60
+BIST 
+-5907.5
+-357 
+65x110 
+11 
+SHIELDING -10072.5
+-357 
+65x110 
+61
+BIST 
+-5822.5
+-357 
+65x110 
+12 
+V1R 
+-9987.5
+-357 
+65x110 
+62
+CFSEL 
+-5737.5
+-357 
+65x110 
+13 
+V1R 
+-9902.5
+-357 
+65x110 
+63
+VDDA 
+-5652.5
+-357 
+65x110 
+14 
+SHIELDING -9817.5
+-357 
+65x110 
+64
+VDDA 
+-5567.5
+-357 
+65x110 
+15 
+V2R 
+-9732.5
+-357 
+65x110 
+65
+VDDA 
+-5482.5
+-357 
+65x110 
+16 
+V2R 
+-9647.5
+-357 
+65x110 
+66
+VDDA 
+-5397.5
+-357 
+65x110 
+17 
+SHIELDING -9562.5
+-357 
+65x110 
+67
+SHIELDING
+-5312.5
+-357 
+65x110 
+18 
+V3R 
+-9477.5
+-357 
+65x110 
+68
+VSSA 
+-5227.5
+-357 
+65x110 
+19 
+V3R 
+-9392.5
+-357 
+65x110 
+69
+VSSA 
+-5142.5
+-357 
+65x110 
+20 
+SHIELDING -9307.5
+-357 
+65x110 
+70
+VSSA 
+-5057.5
+-357 
+65x110 
+21 
+V4R 
+-9222.5
+-357 
+65x110 
+71
+VSSA 
+-4972.5
+-357 
+65x110 
+22 
+V4R 
+-9137.5
+-357 
+65x110 
+72
+SHIELDING
+-4887.5
+-357 
+65x110 
+23 
+SHIELDING -9052.5
+-357 
+65x110 
+73
+VSS 
+-4802.5
+-357 
+65x110 
+24 
+V5R 
+-8967.5
+-357 
+65x110 
+74
+VSS 
+-4717.5
+-357 
+65x110 
+25 
+V5R 
+-8882.5
+-357 
+65x110 
+75
+VSS 
+-4632.5
+-357 
+65x110 
+26 
+SHIELDING -8797.5
+-357 
+65x110 
+76
+VSS 
+-4547.5
+-357 
+65x110 
+27 
+V6R 
+-8712.5
+-357 
+65x110 
+77
+SHIELDING
+-4462.5
+-357 
+65x110 
+28 
+V6R 
+-8627.5
+-357 
+65x110 
+78
+BLKEN 
+-4377.5
+-357 
+65x110 
+29 
+SHIELDING -8542.5
+-357 
+65x110 
+79
+BLKEN 
+-4292.5
+-357 
+65x110 
+30 
+V7R 
+-8457.5
+-357 
+65x110 
+80
+SHIELDING
+-4207.5
+-357 
+65x110 
+31 
+V7R 
+-8372.5
+-357 
+65x110 
+81
+VDD 
+-4122.5
+-357 
+65x110 
+32 
+SHIELDING -8287.5
+-357 
+65x110 
+82
+VDD 
+-4037.5
+-357 
+65x110 
+33 
+V8R 
+-8202.5
+-357 
+65x110 
+83
+VDD 
+-3952.5
+-357 
+65x110 
+34 
+V8R 
+-8117.5
+-357 
+65x110 
+84
+VDD 
+-3867.5
+-357 
+65x110 
+35 
+SHIELDING -8032.5
+-357 
+65x110 
+85
+TP2 
+-3782.5
+-357 
+65x110 
+36 
+V9R 
+-7947.5
+-357 
+65x110 
+86
+DBGATE 
+-3697.5
+-357 
+65x110 
+37 
+V9R 
+-7862.5
+-357 
+65x110 
+87
+DBGATE 
+-3612.5
+-357 
+65x110 
+38 
+SHIELDING -7777.5
+-357 
+65x110 
+88
+SCEN 
+-3527.5
+-357 
+65x110 
+39 
+V10R 
+-7692.5
+-357 
+65x110 
+89
+MASL 
+-3442.5
+-357 
+65x110 
+40 
+V10R 
+-7607.5
+-357 
+65x110 
+90
+MASL 
+-3357.5
+-357 
+65x110 
+41 
+SHIELDING -7522.5
+-357 
+65x110 
+91
+SCL/DCM[0] -3272.5
+-357 
+65x110 
+42 
+V11R 
+-7437.5
+-357 
+65x110 
+92
+MASLOC 
+-3187.5
+-357 
+65x110 
+43 
+V11R 
+-7352.5
+-357 
+65x110 
+93
+MASLOC 
+-3102.5
+-357 
+65x110 
+44 
+SHIELDING -7267.5
+-357 
+65x110 
+94
+SDA/DCM[1] -3017.5
+-357 
+65x110 
+45 
+V12R 
+-7182.5
+-357 
+65x110 
+95
+RES0 
+-2932.5
+-357 
+65x110 
+46 
+V12R 
+-7097.5
+-357 
+65x110 
+96
+RES0 
+-2847.5
+-357 
+65x110 
+47 
+SHIELDING -7012.5
+-357 
+65x110 
+97
+CABC_PWM -2762.5
+-357 
+65x110 
+48 
+V13R 
+-6927.5
+-357 
+65x110 
+98
+CABC_EN
+-2677.5
+-357 
+65x110 
+49 
+V13R 
+-6842.5
+-357 
+65x110 
+99
+RES1 
+-2592.5
+-357 
+65x110 
+50 
+SHIELDING -6757.5
+-357 
+65x110 
+100
+RES1 
+-2507.5
+-357 
+65x110 
+ 
+
+ 
+ 
+-P.69-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+101
+DBC3 
+-2422.5
+-357 
+65x110 
+151
+D11 
+1827.5
+-357 
+65x110 
+102
+DBC3 
+-2337.5
+-357 
+65x110 
+152
+D11 
+1912.5
+-357 
+65x110 
+103
+DASHD1 
+-2252.5
+-357 
+65x110 
+153
+D10 
+1997.5
+-357 
+65x110 
+104
+VSD 
+-2167.5
+-357 
+65x110 
+154
+D10 
+2082.5
+-357 
+65x110 
+105
+VSD 
+-2082.5
+-357 
+65x110 
+155
+DASHD13
+2167.5
+-357 
+65x110 
+106
+DASHD2 
+-1997.5
+-357 
+65x110 
+156
+D07 
+2252.5
+-357 
+65x110 
+107
+HSD 
+-1912.5
+-357 
+65x110 
+157
+D07 
+2337.5
+-357 
+65x110 
+108
+HSD 
+-1827.5
+-357 
+65x110 
+158
+D06 
+2422.5
+-357 
+65x110 
+109
+DASHD3 
+-1742.5
+-357 
+65x110 
+159
+D06 
+2507.5
+-357 
+65x110 
+110
+DEN 
+-1657.5
+-357 
+65x110 
+160
+DASHD14
+2592.5
+-357 
+65x110 
+111
+DEN 
+-1572.5
+-357 
+65x110 
+161
+D05 
+2677.5
+-357 
+65x110 
+112
+DASHD4 
+-1487.5
+-357 
+65x110 
+162
+D05 
+2762.5
+-357 
+65x110 
+113
+CLKIN 
+-1402.5
+-357 
+65x110 
+163
+D04 
+2847.5
+-357 
+65x110 
+114
+CLKIN 
+-1317.5
+-357 
+65x110 
+164
+D04 
+2932.5
+-357 
+65x110 
+115
+DASHD5 
+-1232.5
+-357 
+65x110 
+165
+DASHD15
+3017.5
+-357 
+65x110 
+116
+D27 
+-1147.5
+-357 
+65x110 
+166
+D03 
+3102.5
+-357 
+65x110 
+117
+D27 
+-1062.5
+-357 
+65x110 
+167
+D03 
+3187.5
+-357 
+65x110 
+118
+D26 
+-977.5
+-357 
+65x110 
+168
+D02 
+3272.5
+-357 
+65x110 
+119
+D26 
+-892.5
+-357 
+65x110 
+169
+D02 
+3357.5
+-357 
+65x110 
+120
+DASHD6 
+-807.5
+-357 
+65x110 
+170
+DASHD16
+3442.5
+-357 
+65x110 
+121
+D25 
+-722.5
+-357 
+65x110 
+171
+D01 
+3527.5
+-357 
+65x110 
+122
+D25 
+-637.5
+-357 
+65x110 
+172
+D01 
+3612.5
+-357 
+65x110 
+123
+D24 
+-552.5
+-357 
+65x110 
+173
+D00 
+3697.5
+-357 
+65x110 
+124
+D24 
+-467.5
+-357 
+65x110 
+174
+D00 
+3782.5
+-357 
+65x110 
+125
+DASHD7 
+-382.5
+-357 
+65x110 
+175
+DASHD17
+3867.5
+-357 
+65x110 
+126
+D23 
+-297.5
+-357 
+65x110 
+176
+TP1 
+3952.5
+-357 
+65x110 
+127
+D23 
+-212.5
+-357 
+65x110 
+177
+MODE 
+4037.5
+-357 
+65x110 
+128
+D22 
+-127.5
+-357 
+65x110 
+178
+MODE 
+4122.5
+-357 
+65x110 
+129
+D22 
+-42.5 
+-357 
+65x110 
+179
+CLKPOL 
+4207.5
+-357 
+65x110 
+130
+DASHD8 
+42.5 
+-357 
+65x110 
+180
+CLKPOL 
+4292.5
+-357 
+65x110 
+131
+D21 
+127.5
+-357 
+65x110 
+181
+SHIELDING
+4377.5
+-357 
+65x110 
+132
+D21 
+212.5
+-357 
+65x110 
+182
+DITHB 
+4462.5
+-357 
+65x110 
+133
+D20 
+297.5
+-357 
+65x110 
+183
+DITHB 
+4547.5
+-357 
+65x110 
+134
+D20 
+382.5
+-357 
+65x110 
+184
+VSET 
+4632.5
+-357 
+65x110 
+135
+DASHD9 
+467.5
+-357 
+65x110 
+185
+SHLR 
+4717.5
+-357 
+65x110 
+136
+D17 
+552.5
+-357 
+65x110 
+186
+SHLR 
+4802.5
+-357 
+65x110 
+137
+D17 
+637.5
+-357 
+65x110 
+187
+TESTG 
+4887.5
+-357 
+65x110 
+138
+D16 
+722.5
+-357 
+65x110 
+188
+UPDN 
+4972.5
+-357 
+65x110 
+139
+D16 
+807.5
+-357 
+65x110 
+189
+UPDN 
+5057.5
+-357 
+65x110 
+140
+DASHD10
+892.5
+-357 
+65x110 
+190
+TP0 
+5142.5
+-357 
+65x110 
+141
+D15 
+977.5
+-357 
+65x110 
+191
+STBYB 
+5227.5
+-357 
+65x110 
+142
+D15 
+1062.5
+-357 
+65x110 
+192
+STBYB 
+5312.5
+-357 
+65x110 
+143
+D14 
+1147.5
+-357 
+65x110 
+193
+SHIELDING
+5397.5
+-357 
+65x110 
+144
+D14 
+1232.5
+-357 
+65x110 
+194
+RSTB 
+5482.5
+-357 
+65x110 
+145
+DASHD11
+1317.5
+-357 
+65x110 
+195
+RSTB 
+5567.5
+-357 
+65x110 
+146
+D13 
+1402.5
+-357 
+65x110 
+196
+SHIELDING
+5652.5
+-357 
+65x110 
+147
+D13 
+1487.5
+-357 
+65x110 
+197
+VDD 
+5737.5
+-357 
+65x110 
+148
+D12 
+1572.5
+-357 
+65x110 
+198
+VDD 
+5822.5
+-357 
+65x110 
+149
+D12 
+1657.5
+-357 
+65x110 
+199
+VDD 
+5907.5
+-357 
+65x110 
+150
+DASHD12
+1742.5
+-357 
+65x110 
+200
+VDD 
+5992.5
+-357 
+65x110 
+ 
+
+ 
+ 
+-P.70-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+201
+CAS 
+6077.5
+-357 
+65x110 
+251
+VDDA 
+10327.5
+-357 
+65x110 
+202
+VSS 
+6162.5
+-357 
+65x110 
+252
+VDDA 
+10412.5
+-357 
+65x110 
+203
+VSS 
+6247.5
+-357 
+65x110 
+253
+TP4 
+10497.5
+-357 
+65x110 
+204
+VSS 
+6332.5
+-357 
+65x110 
+254
+COM2_B
+10582.5
+-357 
+65x110 
+205
+VSS 
+6417.5
+-357 
+65x110 
+255
+COM2_B
+10667.5
+-357 
+65x110 
+206
+SHIELDING 6502.5
+-357 
+65x110 
+256
+TP3 
+10752.5
+-357 
+65x110 
+207
+V14L 
+6587.5
+-357 
+65x110 
+257
+SHIELDING 10837.5
+-357 
+65x110 
+208
+V14L 
+6672.5
+-357 
+65x110 
+258
+SHIELDING 10922.5
+-357 
+65x110 
+209
+SHIELDING 6757.5
+-357 
+65x110 
+259
+DCLKL 
+11049 
+-363 
+100x30 
+210
+V13L 
+6842.5
+-357 
+65x110 
+260
+DIOL 
+11179 
+-323 
+100x30 
+211
+V13L 
+6927.5
+-357 
+65x110 
+261
+DATL17 
+11049 
+-283 
+100x30 
+212
+SHIELDING 7012.5
+-357 
+65x110 
+262
+DATL16 
+11179 
+-243 
+100x30 
+213
+V12L 
+7097.5
+-357 
+65x110 
+263
+DATL15 
+11049 
+-203 
+100x30 
+214
+V12L 
+7182.5
+-357 
+65x110 
+264
+DATL14 
+11179 
+-163 
+100x30 
+215
+SHIELDING 7267.5
+-357 
+65x110 
+265
+DATL13 
+11049 
+-123 
+100x30 
+216
+V11L 
+7352.5
+-357 
+65x110 
+266
+DATL12 
+11179 
+-83 
+100x30 
+217
+V11L 
+7437.5
+-357 
+65x110 
+267
+DATL11 
+11049 
+-43 
+100x30 
+218
+SHIELDING 7522.5
+-357 
+65x110 
+268
+DATL10 
+11179 
+-3 
+100x30 
+219
+V10L 
+7607.5
+-357 
+65x110 
+269
+DATL9 
+11049 
+37 
+100x30 
+220
+V10L 
+7692.5
+-357 
+65x110 
+270
+DATL8 
+11179 
+77 
+100x30 
+221
+SHIELDING 7777.5
+-357 
+65x110 
+271
+DATL7 
+11049 
+117 
+100x30 
+222
+V9L 
+7862.5
+-357 
+65x110 
+272
+DATL6 
+11179 
+157 
+100x30 
+223
+V9L 
+7947.5
+-357 
+65x110 
+273
+DATL5 
+11049 
+197 
+100x30 
+224
+SHIELDING 8032.5
+-357 
+65x110 
+274
+DATL4 
+11179 
+237 
+100x30 
+225
+V8L 
+8117.5
+-357 
+65x110 
+275
+DATL3 
+11049 
+277 
+100x30 
+226
+V8L 
+8202.5
+-357 
+65x110 
+276
+DATL2 
+11179 
+317 
+100x30 
+227
+SHIELDING 8287.5
+-357 
+65x110 
+277
+DATL1 
+11049 
+357 
+100x30 
+228
+V7L 
+8372.5
+-357 
+65x110 
+278
+DATL0 
+11179 
+397 
+100x30 
+229
+V7L 
+8457.5
+-357 
+65x110 
+279
+POLL 
+10914 
+377 
+30x70 
+230
+SHIELDING 8542.5
+-357 
+65x110 
+280
+LDL 
+10864 
+377 
+30x70 
+231
+V6L 
+8627.5
+-357 
+65x110 
+281
+SYNCL 
+10814 
+377 
+30x70 
+232
+V6L 
+8712.5
+-357 
+65x110 
+282
+COM2_T
+10764 
+377 
+30x70 
+233
+SHIELDING 8797.5
+-357 
+65x110 
+283
+COM2_T
+10714 
+377 
+30x70 
+234
+V5L 
+8882.5
+-357 
+65x110 
+284
+SHIELDING
+10664 
+377 
+30x70 
+235
+V5L 
+8967.5
+-357 
+65x110 
+285
+SO1 
+10620.5
+77 
+17x110 
+236
+SHIELDING 9052.5
+-357 
+65x110 
+286
+SO2 
+10603.5
+217 
+17x110 
+237
+V4L 
+9137.5
+-357 
+65x110 
+287
+SO3 
+10586.5
+357 
+17x110 
+238
+V4L 
+9222.5
+-357 
+65x110 
+288
+SO4 
+10569.5
+77 
+17x110 
+239
+SHIELDING 9307.5
+-357 
+65x110 
+289
+SO5 
+10552.5
+217 
+17x110 
+240
+V3L 
+9392.5
+-357 
+65x110 
+290
+SO6 
+10535.5
+357 
+17x110 
+241
+V3L 
+9477.5
+-357 
+65x110 
+291
+SO7 
+10518.5
+77 
+17x110 
+242
+SHIELDING 9562.5
+-357 
+65x110 
+292
+SO8 
+10501.5
+217 
+17x110 
+243
+V2L 
+9647.5
+-357 
+65x110 
+293
+SO9 
+10484.5
+357 
+17x110 
+244
+V2L 
+9732.5
+-357 
+65x110 
+294
+SO10 
+10467.5
+77 
+17x110 
+245
+SHIELDING 9817.5
+-357 
+65x110 
+295
+SO11 
+10450.5
+217 
+17x110 
+246
+V1L 
+9902.5
+-357 
+65x110 
+296
+SO12 
+10433.5
+357 
+17x110 
+247
+V1L 
+9987.5
+-357 
+65x110 
+297
+SO13 
+10416.5
+77 
+17x110 
+248
+SHIELDING 10072.5
+-357 
+65x110 
+298
+SO14 
+10399.5
+217 
+17x110 
+249
+VDDA 
+10157.5
+-357 
+65x110 
+299
+SO15 
+10382.5
+357 
+17x110 
+250
+VDDA 
+10242.5
+-357 
+65x110 
+300
+SO16 
+10365.5
+77 
+17x110 
+ 
+
+ 
+ 
+-P.71-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+301
+SO17 
+10348.5
+217 
+17x110 
+351
+SO67 
+9498.5
+77 
+17x110 
+302
+SO18 
+10331.5
+357 
+17x110 
+352
+SO68 
+9481.5
+217 
+17x110 
+303
+SO19 
+10314.5
+77 
+17x110 
+353
+SO69 
+9464.5
+357 
+17x110 
+304
+SO20 
+10297.5
+217 
+17x110 
+354
+SO70 
+9447.5
+77 
+17x110 
+305
+SO21 
+10280.5
+357 
+17x110 
+355
+SO71 
+9430.5
+217 
+17x110 
+306
+SO22 
+10263.5
+77 
+17x110 
+356
+SO72 
+9413.5
+357 
+17x110 
+307
+SO23 
+10246.5
+217 
+17x110 
+357
+SO73 
+9396.5
+77 
+17x110 
+308
+SO24 
+10229.5
+357 
+17x110 
+358
+SO74 
+9379.5
+217 
+17x110 
+309
+SO25 
+10212.5
+77 
+17x110 
+359
+SO75 
+9362.5
+357 
+17x110 
+310
+SO26 
+10195.5
+217 
+17x110 
+360
+SO76 
+9345.5
+77 
+17x110 
+311
+SO27 
+10178.5
+357 
+17x110 
+361
+SO77 
+9328.5
+217 
+17x110 
+312
+SO28 
+10161.5
+77 
+17x110 
+362
+SO78 
+9311.5 
+357 
+17x110 
+313
+SO29 
+10144.5
+217 
+17x110 
+363
+SO79 
+9294.5
+77 
+17x110 
+314
+SO30 
+10127.5
+357 
+17x110 
+364
+SO80 
+9277.5
+217 
+17x110 
+315
+SO31 
+10110.5
+77 
+17x110 
+365
+SO81 
+9260.5
+357 
+17x110 
+316
+SO32 
+10093.5
+217 
+17x110 
+366
+SO82 
+9243.5
+77 
+17x110 
+317
+SO33 
+10076.5
+357 
+17x110 
+367
+SO83 
+9226.5
+217 
+17x110 
+318
+SO34 
+10059.5
+77 
+17x110 
+368
+SO84 
+9209.5
+357 
+17x110 
+319
+SO35 
+10042.5
+217 
+17x110 
+369
+SO85 
+9192.5
+77 
+17x110 
+320
+SO36 
+10025.5
+357 
+17x110 
+370
+SO86 
+9175.5
+217 
+17x110 
+321
+SO37 
+10008.5
+77 
+17x110 
+371
+SO87 
+9158.5
+357 
+17x110 
+322
+SO38 
+9991.5
+217 
+17x110 
+372
+SO88 
+9141.5
+77 
+17x110 
+323
+SO39 
+9974.5
+357 
+17x110 
+373
+SO89 
+9124.5
+217 
+17x110 
+324
+SO40 
+9957.5
+77 
+17x110 
+374
+SO90 
+9107.5
+357 
+17x110 
+325
+SO41 
+9940.5
+217 
+17x110 
+375
+SO91 
+9090.5
+77 
+17x110 
+326
+SO42 
+9923.5
+357 
+17x110 
+376
+SO92 
+9073.5
+217 
+17x110 
+327
+SO43 
+9906.5
+77 
+17x110 
+377
+SO93 
+9056.5
+357 
+17x110 
+328
+SO44 
+9889.5
+217 
+17x110 
+378
+SO94 
+9039.5
+77 
+17x110 
+329
+SO45 
+9872.5
+357 
+17x110 
+379
+SO95 
+9022.5
+217 
+17x110 
+330
+SO46 
+9855.5
+77 
+17x110 
+380
+SO96 
+9005.5
+357 
+17x110 
+331
+SO47 
+9838.5
+217 
+17x110 
+381
+SO97 
+8988.5
+77 
+17x110 
+332
+SO48 
+9821.5
+357 
+17x110 
+382
+SO98 
+8971.5
+217 
+17x110 
+333
+SO49 
+9804.5
+77 
+17x110 
+383
+SO99 
+8954.5
+357 
+17x110 
+334
+SO50 
+9787.5
+217 
+17x110 
+384
+SO100 
+8937.5
+77 
+17x110 
+335
+SO51 
+9770.5
+357 
+17x110 
+385
+SO101 
+8920.5
+217 
+17x110 
+336
+SO52 
+9753.5
+77 
+17x110 
+386
+SO102 
+8903.5
+357 
+17x110 
+337
+SO53 
+9736.5
+217 
+17x110 
+387
+SO103 
+8886.5
+77 
+17x110 
+338
+SO54 
+9719.5
+357 
+17x110 
+388
+SO104 
+8869.5
+217 
+17x110 
+339
+SO55 
+9702.5
+77 
+17x110 
+389
+SO105 
+8852.5
+357 
+17x110 
+340
+SO56 
+9685.5
+217 
+17x110 
+390
+SO106 
+8835.5
+77 
+17x110 
+341
+SO57 
+9668.5
+357 
+17x110 
+391
+SO107 
+8818.5
+217 
+17x110 
+342
+SO58 
+9651.5
+77 
+17x110 
+392
+SO108 
+8801.5
+357 
+17x110 
+343
+SO59 
+9634.5
+217 
+17x110 
+393
+SO109 
+8784.5
+77 
+17x110 
+344
+SO60 
+9617.5
+357 
+17x110 
+394
+SO110 
+8767.5
+217 
+17x110 
+345
+SO61 
+9600.5
+77 
+17x110 
+395
+SO111 
+8750.5
+357 
+17x110 
+346
+SO62 
+9583.5
+217 
+17x110 
+396
+SO112 
+8733.5
+77 
+17x110 
+347
+SO63 
+9566.5
+357 
+17x110 
+397
+SO113 
+8716.5
+217 
+17x110 
+348
+SO64 
+9549.5
+77 
+17x110 
+398
+SO114 
+8699.5
+357 
+17x110 
+349
+SO65 
+9532.5
+217 
+17x110 
+399
+SO115 
+8682.5
+77 
+17x110 
+350
+SO66 
+9515.5
+357 
+17x110 
+400
+SO116 
+8665.5
+217 
+17x110 
+ 
+
+ 
+ 
+-P.72-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+401
+SO117
+8648.5
+357 
+17x110 
+451
+SO167 
+7798.5
+217 
+17x110 
+402
+SO118
+8631.5
+77 
+17x110 
+452
+SO168 
+7781.5
+357 
+17x110 
+403
+SO119
+8614.5
+217 
+17x110 
+453
+SO169 
+7764.5
+77 
+17x110 
+404
+SO120
+8597.5
+357 
+17x110 
+454
+SO170 
+7747.5
+217 
+17x110 
+405
+SO121
+8580.5
+77 
+17x110 
+455
+SO171 
+7730.5
+357 
+17x110 
+406
+SO122
+8563.5
+217 
+17x110 
+456
+SO172 
+7713.5
+77 
+17x110 
+407
+SO123
+8546.5
+357 
+17x110 
+457
+SO173 
+7696.5
+217 
+17x110 
+408
+SO124
+8529.5
+77 
+17x110 
+458
+SO174 
+7679.5
+357 
+17x110 
+409
+SO125
+8512.5
+217 
+17x110 
+459
+SO175 
+7662.5
+77 
+17x110 
+410
+SO126
+8495.5
+357 
+17x110 
+460
+SO176 
+7645.5
+217 
+17x110 
+411
+SO127
+8478.5
+77 
+17x110 
+461
+SO177 
+7628.5
+357 
+17x110 
+412
+SO128
+8461.5
+217 
+17x110 
+462
+SO178 
+7611.5 
+77 
+17x110 
+413
+SO129
+8444.5
+357 
+17x110 
+463
+SO179 
+7594.5
+217 
+17x110 
+414
+SO130
+8427.5
+77 
+17x110 
+464
+SO180 
+7577.5
+357 
+17x110 
+415
+SO131
+8410.5
+217 
+17x110 
+465
+SO181 
+7560.5
+77 
+17x110 
+416
+SO132
+8393.5
+357 
+17x110 
+466
+SO182 
+7543.5
+217 
+17x110 
+417
+SO133
+8376.5
+77 
+17x110 
+467
+SO183 
+7526.5
+357 
+17x110 
+418
+SO134
+8359.5
+217 
+17x110 
+468
+SO184 
+7509.5
+77 
+17x110 
+419
+SO135
+8342.5
+357 
+17x110 
+469
+SO185 
+7492.5
+217 
+17x110 
+420
+SO136
+8325.5
+77 
+17x110 
+470
+SO186 
+7475.5
+357 
+17x110 
+421
+SO137
+8308.5
+217 
+17x110 
+471
+SO187 
+7458.5
+77 
+17x110 
+422
+SO138
+8291.5
+357 
+17x110 
+472
+SO188 
+7441.5
+217 
+17x110 
+423
+SO139
+8274.5
+77 
+17x110 
+473
+SO189 
+7424.5
+357 
+17x110 
+424
+SO140
+8257.5
+217 
+17x110 
+474
+SO190 
+7407.5
+77 
+17x110 
+425
+SO141
+8240.5
+357 
+17x110 
+475
+SO191 
+7390.5
+217 
+17x110 
+426
+SO142
+8223.5
+77 
+17x110 
+476
+SO192 
+7373.5
+357 
+17x110 
+427
+SO143
+8206.5
+217 
+17x110 
+477
+SO193 
+7356.5
+77 
+17x110 
+428
+SO144
+8189.5
+357 
+17x110 
+478
+SO194 
+7339.5
+217 
+17x110 
+429
+SO145
+8172.5
+77 
+17x110 
+479
+SO195 
+7322.5
+357 
+17x110 
+430
+SO146
+8155.5
+217 
+17x110 
+480
+SO196 
+7305.5
+77 
+17x110 
+431
+SO147
+8138.5
+357 
+17x110 
+481
+SO197 
+7288.5
+217 
+17x110 
+432
+SO148
+8121.5
+77 
+17x110 
+482
+SO198 
+7271.5
+357 
+17x110 
+433
+SO149
+8104.5
+217 
+17x110 
+483
+SO199 
+7254.5
+77 
+17x110 
+434
+SO150
+8087.5
+357 
+17x110 
+484
+SO200 
+7237.5
+217 
+17x110 
+435
+SO151
+8070.5
+77 
+17x110 
+485
+SO201 
+7220.5
+357 
+17x110 
+436
+SO152
+8053.5
+217 
+17x110 
+486
+SO202 
+7203.5
+77 
+17x110 
+437
+SO153
+8036.5
+357 
+17x110 
+487
+SO203 
+7186.5
+217 
+17x110 
+438
+SO154
+8019.5
+77 
+17x110 
+488
+SO204 
+7169.5
+357 
+17x110 
+439
+SO155
+8002.5
+217 
+17x110 
+489
+SO205 
+7152.5
+77 
+17x110 
+440
+SO156
+7985.5
+357 
+17x110 
+490
+SO206 
+7135.5
+217 
+17x110 
+441
+SO157
+7968.5
+77 
+17x110 
+491
+SO207 
+7118.5 
+357 
+17x110 
+442
+SO158
+7951.5
+217 
+17x110 
+492
+SO208 
+7101.5
+77 
+17x110 
+443
+SO159
+7934.5
+357 
+17x110 
+493
+SO209 
+7084.5
+217 
+17x110 
+444
+SO160
+7917.5
+77 
+17x110 
+494
+SO210 
+7067.5
+357 
+17x110 
+445
+SO161
+7900.5
+217 
+17x110 
+495
+SO211 
+7050.5
+77 
+17x110 
+446
+SO162
+7883.5
+357 
+17x110 
+496
+SO212 
+7033.5
+217 
+17x110 
+447
+SO163
+7866.5
+77 
+17x110 
+497
+SO213 
+7016.5
+357 
+17x110 
+448
+SO164
+7849.5
+217 
+17x110 
+498
+SO214 
+6999.5
+77 
+17x110 
+449
+SO165
+7832.5
+357 
+17x110 
+499
+SO215 
+6982.5
+217 
+17x110 
+450
+SO166
+7815.5
+77 
+17x110 
+500
+SO216 
+6965.5
+357 
+17x110 
+ 
+
+ 
+ 
+-P.73-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+501
+SO217 
+6948.5
+77 
+17x110 
+551
+SO267 
+6098.5
+357 
+17x110 
+502
+SO218 
+6931.5
+217 
+17x110 
+552
+SO268 
+6081.5
+77 
+17x110 
+503
+SO219 
+6914.5
+357 
+17x110 
+553
+SO269 
+6064.5
+217 
+17x110 
+504
+SO220 
+6897.5
+77 
+17x110 
+554
+SO270 
+6047.5
+357 
+17x110 
+505
+SO221 
+6880.5
+217 
+17x110 
+555
+SO271 
+6030.5
+77 
+17x110 
+506
+SO222 
+6863.5
+357 
+17x110 
+556
+SO272 
+6013.5
+217 
+17x110 
+507
+SO223 
+6846.5
+77 
+17x110 
+557
+SO273 
+5996.5
+357 
+17x110 
+508
+SO224 
+6829.5
+217 
+17x110 
+558
+SO274 
+5979.5
+77 
+17x110 
+509
+SO225 
+6812.5
+357 
+17x110 
+559
+SO275 
+5962.5
+217 
+17x110 
+510
+SO226 
+6795.5
+77 
+17x110 
+560
+SO276 
+5945.5
+357 
+17x110 
+511
+SO227 
+6778.5
+217 
+17x110 
+561
+SO277 
+5928.5
+77 
+17x110 
+512
+SO228 
+6761.5
+357 
+17x110 
+562
+SO278 
+5911.5 
+217 
+17x110 
+513
+SO229 
+6744.5
+77 
+17x110 
+563
+SO279 
+5894.5
+357 
+17x110 
+514
+SO230 
+6727.5
+217 
+17x110 
+564
+SO280 
+5877.5
+77 
+17x110 
+515
+SO231 
+6710.5
+357 
+17x110 
+565
+SO281 
+5860.5
+217 
+17x110 
+516
+SO232 
+6693.5
+77 
+17x110 
+566
+SO282 
+5843.5
+357 
+17x110 
+517
+SO233 
+6676.5
+217 
+17x110 
+567
+SO283 
+5826.5
+77 
+17x110 
+518
+SO234 
+6659.5
+357 
+17x110 
+568
+SO284 
+5809.5
+217 
+17x110 
+519
+SO235 
+6642.5
+77 
+17x110 
+569
+SO285 
+5792.5
+357 
+17x110 
+520
+SO236 
+6625.5
+217 
+17x110 
+570
+SO286 
+5775.5
+77 
+17x110 
+521
+SO237 
+6608.5
+357 
+17x110 
+571
+SO287 
+5758.5
+217 
+17x110 
+522
+SO238 
+6591.5
+77 
+17x110 
+572
+SO288 
+5741.5
+357 
+17x110 
+523
+SO239 
+6574.5
+217 
+17x110 
+573
+SO289 
+5724.5
+77 
+17x110 
+524
+SO240 
+6557.5
+357 
+17x110 
+574
+SO290 
+5707.5
+217 
+17x110 
+525
+SO241 
+6540.5
+77 
+17x110 
+575
+SO291 
+5690.5
+357 
+17x110 
+526
+SO242 
+6523.5
+217 
+17x110 
+576
+SO292 
+5673.5
+77 
+17x110 
+527
+SO243 
+6506.5
+357 
+17x110 
+577
+SO293 
+5656.5
+217 
+17x110 
+528
+SO244 
+6489.5
+77 
+17x110 
+578
+SO294 
+5639.5
+357 
+17x110 
+529
+SO245 
+6472.5
+217 
+17x110 
+579
+SO295 
+5622.5
+77 
+17x110 
+530
+SO246 
+6455.5
+357 
+17x110 
+580
+SO296 
+5605.5
+217 
+17x110 
+531
+SO247 
+6438.5
+77 
+17x110 
+581
+SO297 
+5588.5
+357 
+17x110 
+532
+SO248 
+6421.5
+217 
+17x110 
+582
+SO298 
+5571.5
+77 
+17x110 
+533
+SO249 
+6404.5
+357 
+17x110 
+583
+SO299 
+5554.5
+217 
+17x110 
+534
+SO250 
+6387.5
+77 
+17x110 
+584
+SO300 
+5537.5
+357 
+17x110 
+535
+SO251 
+6370.5
+217 
+17x110 
+585
+SO301 
+5520.5
+77 
+17x110 
+536
+SO252 
+6353.5
+357 
+17x110 
+586
+SO302 
+5503.5
+217 
+17x110 
+537
+SO253 
+6336.5
+77 
+17x110 
+587
+SO303 
+5486.5
+357 
+17x110 
+538
+SO254 
+6319.5
+217 
+17x110 
+588
+SO304 
+5469.5
+77 
+17x110 
+539
+SO255 
+6302.5
+357 
+17x110 
+589
+SO305 
+5452.5
+217 
+17x110 
+540
+SO256 
+6285.5
+77 
+17x110 
+590
+SO306 
+5435.5
+357 
+17x110 
+541
+SO257 
+6268.5
+217 
+17x110 
+591
+SO307 
+5418.5
+77 
+17x110 
+542
+SO258 
+6251.5
+357 
+17x110 
+592
+SO308 
+5401.5
+217 
+17x110 
+543
+SO259 
+6234.5
+77 
+17x110 
+593
+SO309 
+5384.5
+357 
+17x110 
+544
+SO260 
+6217.5
+217 
+17x110 
+594
+SO310 
+5367.5
+77 
+17x110 
+545
+SO261 
+6200.5
+357 
+17x110 
+595
+SO311 
+5350.5
+217 
+17x110 
+546
+SO262 
+6183.5
+77 
+17x110 
+596
+SO312 
+5333.5
+357 
+17x110 
+547
+SO263 
+6166.5
+217 
+17x110 
+597
+SO313 
+5316.5
+77 
+17x110 
+548
+SO264 
+6149.5
+357 
+17x110 
+598
+SO314 
+5299.5
+217 
+17x110 
+549
+SO265 
+6132.5
+77 
+17x110 
+599
+SO315 
+5282.5
+357 
+17x110 
+550
+SO266 
+6115.5 
+217 
+17x110 
+600
+SO316 
+5265.5
+77 
+17x110 
+ 
+
+ 
+ 
+-P.74-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+X 
+Y 
+Bump size
+601
+SO317 
+5248.5
+217 
+17x110 
+651
+SO367 
+4398.5
+77 
+17x110 
+602
+SO318 
+5231.5
+357 
+17x110 
+652
+SO368 
+4381.5
+217 
+17x110 
+603
+SO319 
+5214.5
+77 
+17x110 
+653
+SO369 
+4364.5
+357 
+17x110 
+604
+SO320 
+5197.5
+217 
+17x110 
+654
+SO370 
+4347.5
+77 
+17x110 
+605
+SO321 
+5180.5
+357 
+17x110 
+655
+SO371 
+4330.5
+217 
+17x110 
+606
+SO322 
+5163.5
+77 
+17x110 
+656
+SO372 
+4313.5
+357 
+17x110 
+607
+SO323 
+5146.5
+217 
+17x110 
+657
+SO373 
+4296.5
+77 
+17x110 
+608
+SO324 
+5129.5
+357 
+17x110 
+658
+SO374 
+4279.5
+217 
+17x110 
+609
+SO325 
+5112.5 
+77 
+17x110 
+659
+SO375 
+4262.5
+357 
+17x110 
+610
+SO326 
+5095.5
+217 
+17x110 
+660
+SO376 
+4245.5
+77 
+17x110 
+611
+SO327 
+5078.5
+357 
+17x110 
+661
+SO377 
+4228.5
+217 
+17x110 
+612
+SO328 
+5061.5
+77 
+17x110 
+662
+SO378 
+4211.5 
+357 
+17x110 
+613
+SO329 
+5044.5
+217 
+17x110 
+663
+SO379 
+4194.5
+77 
+17x110 
+614
+SO330 
+5027.5
+357 
+17x110 
+664
+SO380 
+4177.5
+217 
+17x110 
+615
+SO331 
+5010.5
+77 
+17x110 
+665
+SO381 
+4160.5
+357 
+17x110 
+616
+SO332 
+4993.5
+217 
+17x110 
+666
+SO382 
+4143.5
+77 
+17x110 
+617
+SO333 
+4976.5
+357 
+17x110 
+667
+SO383 
+4126.5
+217 
+17x110 
+618
+SO334 
+4959.5
+77 
+17x110 
+668
+SO384 
+4109.5
+357 
+17x110 
+619
+SO335 
+4942.5
+217 
+17x110 
+669
+SO385 
+4092.5
+77 
+17x110 
+620
+SO336 
+4925.5
+357 
+17x110 
+670
+SO386 
+4075.5
+217 
+17x110 
+621
+SO337 
+4908.5
+77 
+17x110 
+671
+SO387 
+4058.5
+357 
+17x110 
+622
+SO338 
+4891.5
+217 
+17x110 
+672
+SO388 
+4041.5
+77 
+17x110 
+623
+SO339 
+4874.5
+357 
+17x110 
+673
+SO389 
+4024.5
+217 
+17x110 
+624
+SO340 
+4857.5
+77 
+17x110 
+674
+SO390 
+4007.5
+357 
+17x110 
+625
+SO341 
+4840.5
+217 
+17x110 
+675
+SO391 
+3990.5
+77 
+17x110 
+626
+SO342 
+4823.5
+357 
+17x110 
+676
+SO392 
+3973.5
+217 
+17x110 
+627
+SO343 
+4806.5
+77 
+17x110 
+677
+SO393 
+3956.5
+357 
+17x110 
+628
+SO344 
+4789.5
+217 
+17x110 
+678
+SO394 
+3939.5
+77 
+17x110 
+629
+SO345 
+4772.5
+357 
+17x110 
+679
+SO395 
+3922.5
+217 
+17x110 
+630
+SO346 
+4755.5
+77 
+17x110 
+680
+SO396 
+3905.5
+357 
+17x110 
+631
+SO347 
+4738.5
+217 
+17x110 
+681
+SO397 
+3888.5
+77 
+17x110 
+632
+SO348 
+4721.5
+357 
+17x110 
+682
+SO398 
+3871.5
+217 
+17x110 
+633
+SO349 
+4704.5
+77 
+17x110 
+683
+SO399 
+3854.5
+357 
+17x110 
+634
+SO350 
+4687.5
+217 
+17x110 
+684
+SO400 
+3837.5
+77 
+17x110 
+635
+SO351 
+4670.5
+357 
+17x110 
+685
+SO401 
+3820.5
+217 
+17x110 
+636
+SO352 
+4653.5
+77 
+17x110 
+686
+SO402 
+3803.5
+357 
+17x110 
+637
+SO353 
+4636.5
+217 
+17x110 
+687
+SO403 
+3786.5
+77 
+17x110 
+638
+SO354 
+4619.5
+357 
+17x110 
+688
+SO404 
+3769.5
+217 
+17x110 
+639
+SO355 
+4602.5
+77 
+17x110 
+689
+SO405 
+3752.5
+357 
+17x110 
+640
+SO356 
+4585.5
+217 
+17x110 
+690
+SO406 
+3735.5
+77 
+17x110 
+641
+SO357 
+4568.5
+357 
+17x110 
+691
+SO407 
+3718.5
+217 
+17x110 
+642
+SO358 
+4551.5
+77 
+17x110 
+692
+SO408 
+3701.5
+357 
+17x110 
+643
+SO359 
+4534.5
+217 
+17x110 
+693
+SO409 
+3684.5
+77 
+17x110 
+644
+SO360 
+4517.5
+357 
+17x110 
+694
+SO410 
+3667.5
+217 
+17x110 
+645
+SO361 
+4500.5
+77 
+17x110 
+695
+SO411 
+3650.5
+357 
+17x110 
+646
+SO362 
+4483.5
+217 
+17x110 
+696
+SO412 
+3633.5
+77 
+17x110 
+647
+SO363 
+4466.5
+357 
+17x110 
+697
+SO413 
+3616.5
+217 
+17x110 
+648
+SO364 
+4449.5
+77 
+17x110 
+698
+SO414 
+3599.5
+357 
+17x110 
+649
+SO365 
+4432.5
+217 
+17x110 
+699
+SO415 
+3582.5
+77 
+17x110 
+650
+SO366 
+4415.5
+357 
+17x110 
+700
+SO416 
+3565.5
+217 
+17x110 
+ 
+
+ 
+ 
+-P.75-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+701
+SO417 
+3548.5
+357 
+17x110 
+751
+SO467 
+2698.5
+217 
+17x110 
+702
+SO418 
+3531.5
+77 
+17x110 
+752
+SO468 
+2681.5
+357 
+17x110 
+703
+SO419 
+3514.5
+217 
+17x110 
+753
+SO469 
+2664.5
+77 
+17x110 
+704
+SO420 
+3497.5
+357 
+17x110 
+754
+SO470 
+2647.5
+217 
+17x110 
+705
+SO421 
+3480.5
+77 
+17x110 
+755
+SO471 
+2630.5
+357 
+17x110 
+706
+SO422 
+3463.5
+217 
+17x110 
+756
+SO472 
+2613.5
+77 
+17x110 
+707
+SO423 
+3446.5
+357 
+17x110 
+757
+SO473 
+2596.5
+217 
+17x110 
+708
+SO424 
+3429.5
+77 
+17x110 
+758
+SO474 
+2579.5
+357 
+17x110 
+709
+SO425 
+3412.5
+217 
+17x110 
+759
+SO475 
+2562.5
+77 
+17x110 
+710
+SO426 
+3395.5
+357 
+17x110 
+760
+SO476 
+2545.5
+217 
+17x110 
+711
+SO427 
+3378.5
+77 
+17x110 
+761
+SO477 
+2528.5
+357 
+17x110 
+712
+SO428 
+3361.5
+217 
+17x110 
+762
+SO478 
+2511.5 
+77 
+17x110 
+713
+SO429 
+3344.5
+357 
+17x110 
+763
+SO479 
+2494.5
+217 
+17x110 
+714
+SO430 
+3327.5
+77 
+17x110 
+764
+SO480 
+2477.5
+357 
+17x110 
+715
+SO431 
+3310.5
+217 
+17x110 
+765
+SO481 
+2460.5
+77 
+17x110 
+716
+SO432 
+3293.5
+357 
+17x110 
+766
+SO482 
+2443.5
+217 
+17x110 
+717
+SO433 
+3276.5
+77 
+17x110 
+767
+SO483 
+2426.5
+357 
+17x110 
+718
+SO434 
+3259.5
+217 
+17x110 
+768
+SO484 
+2409.5
+77 
+17x110 
+719
+SO435 
+3242.5
+357 
+17x110 
+769
+SO485 
+2392.5
+217 
+17x110 
+720
+SO436 
+3225.5
+77 
+17x110 
+770
+SO486 
+2375.5
+357 
+17x110 
+721
+SO437 
+3208.5
+217 
+17x110 
+771
+SO487 
+2358.5
+77 
+17x110 
+722
+SO438 
+3191.5
+357 
+17x110 
+772
+SO488 
+2341.5
+217 
+17x110 
+723
+SO439 
+3174.5
+77 
+17x110 
+773
+SO489 
+2324.5
+357 
+17x110 
+724
+SO440 
+3157.5
+217 
+17x110 
+774
+SO490 
+2307.5
+77 
+17x110 
+725
+SO441 
+3140.5
+357 
+17x110 
+775
+SO491 
+2290.5
+217 
+17x110 
+726
+SO442 
+3123.5
+77 
+17x110 
+776
+SO492 
+2273.5
+357 
+17x110 
+727
+SO443 
+3106.5
+217 
+17x110 
+777
+SO493 
+2256.5
+77 
+17x110 
+728
+SO444 
+3089.5
+357 
+17x110 
+778
+SO494 
+2239.5
+217 
+17x110 
+729
+SO445 
+3072.5
+77 
+17x110 
+779
+SO495 
+2222.5
+357 
+17x110 
+730
+SO446 
+3055.5
+217 
+17x110 
+780
+SO496 
+2205.5
+77 
+17x110 
+731
+SO447 
+3038.5
+357 
+17x110 
+781
+SO497 
+2188.5
+217 
+17x110 
+732
+SO448 
+3021.5
+77 
+17x110 
+782
+SO498 
+2171.5
+357 
+17x110 
+733
+SO449 
+3004.5
+217 
+17x110 
+783
+SO499 
+2154.5
+77 
+17x110 
+734
+SO450 
+2987.5
+357 
+17x110 
+784
+SO500 
+2137.5
+217 
+17x110 
+735
+SO451 
+2970.5
+77 
+17x110 
+785
+SO501 
+2120.5
+357 
+17x110 
+736
+SO452 
+2953.5
+217 
+17x110 
+786
+SO502 
+2103.5
+77 
+17x110 
+737
+SO453 
+2936.5
+357 
+17x110 
+787
+SO503 
+2086.5
+217 
+17x110 
+738
+SO454 
+2919.5
+77 
+17x110 
+788
+SO504 
+2069.5
+357 
+17x110 
+739
+SO455 
+2902.5
+217 
+17x110 
+789
+SO505 
+2052.5
+77 
+17x110 
+740
+SO456 
+2885.5
+357 
+17x110 
+790
+SO506 
+2035.5
+217 
+17x110 
+741
+SO457 
+2868.5
+77 
+17x110 
+791
+SO507 
+2018.5
+357 
+17x110 
+742
+SO458 
+2851.5
+217 
+17x110 
+792
+SO508 
+2001.5
+77 
+17x110 
+743
+SO459 
+2834.5
+357 
+17x110 
+793
+SO509 
+1984.5
+217 
+17x110 
+744
+SO460 
+2817.5
+77 
+17x110 
+794
+SO510 
+1967.5
+357 
+17x110 
+745
+SO461 
+2800.5
+217 
+17x110 
+795
+SO511 
+1950.5
+77 
+17x110 
+746
+SO462 
+2783.5
+357 
+17x110 
+796
+SO512 
+1933.5
+217 
+17x110 
+747
+SO463 
+2766.5
+77 
+17x110 
+797
+SO513 
+1916.5
+357 
+17x110 
+748
+SO464 
+2749.5
+217 
+17x110 
+798
+SO514 
+1899.5
+77 
+17x110 
+749
+SO465 
+2732.5
+357 
+17x110 
+799
+SO515 
+1882.5
+217 
+17x110 
+750
+SO466 
+2715.5
+77 
+17x110 
+800
+SO516 
+1865.5
+357 
+17x110 
+ 
+
+ 
+ 
+-P.76-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+801
+SO517 
+1848.5
+77 
+17x110 
+851
+SO567 
+998.5 
+357 
+17x110 
+802
+SO518 
+1831.5
+217 
+17x110 
+852
+SO568 
+981.5 
+77 
+17x110 
+803
+SO519 
+1814.5
+357 
+17x110 
+853
+SO569 
+964.5 
+217 
+17x110 
+804
+SO520 
+1797.5
+77 
+17x110 
+854
+SO570 
+947.5 
+357 
+17x110 
+805
+SO521 
+1780.5
+217 
+17x110 
+855
+SO571 
+930.5 
+77 
+17x110 
+806
+SO522 
+1763.5
+357 
+17x110 
+856
+SO572 
+913.5 
+217 
+17x110 
+807
+SO523 
+1746.5
+77 
+17x110 
+857
+SO573 
+896.5 
+357 
+17x110 
+808
+SO524 
+1729.5
+217 
+17x110 
+858
+SO574 
+879.5 
+77 
+17x110 
+809
+SO525 
+1712.5
+357 
+17x110 
+859
+SO575 
+862.5 
+217 
+17x110 
+810
+SO526 
+1695.5
+77 
+17x110 
+860
+SO576 
+845.5 
+357 
+17x110 
+811
+SO527 
+1678.5
+217 
+17x110 
+861
+SO577 
+828.5 
+77 
+17x110 
+812
+SO528 
+1661.5
+357 
+17x110 
+862
+SO578 
+811.5 
+217 
+17x110 
+813
+SO529 
+1644.5
+77 
+17x110 
+863
+SO579 
+794.5 
+357 
+17x110 
+814
+SO530 
+1627.5
+217 
+17x110 
+864
+SO580 
+777.5 
+77 
+17x110 
+815
+SO531 
+1610.5
+357 
+17x110 
+865
+SO581 
+760.5 
+217 
+17x110 
+816
+SO532 
+1593.5
+77 
+17x110 
+866
+SO582 
+743.5 
+357 
+17x110 
+817
+SO533 
+1576.5
+217 
+17x110 
+867
+SO583 
+726.5 
+77 
+17x110 
+818
+SO534 
+1559.5
+357 
+17x110 
+868
+SO584 
+709.5 
+217 
+17x110 
+819
+SO535 
+1542.5
+77 
+17x110 
+869
+SO585 
+692.5 
+357 
+17x110 
+820
+SO536 
+1525.5
+217 
+17x110 
+870
+SO586 
+675.5 
+77 
+17x110 
+821
+SO537 
+1508.5
+357 
+17x110 
+871
+SO587 
+658.5 
+217 
+17x110 
+822
+SO538 
+1491.5
+77 
+17x110 
+872
+SO588 
+641.5 
+357 
+17x110 
+823
+SO539 
+1474.5
+217 
+17x110 
+873
+SO589 
+624.5 
+77 
+17x110 
+824
+SO540 
+1457.5
+357 
+17x110 
+874
+SO590 
+607.5 
+217 
+17x110 
+825
+SO541 
+1440.5
+77 
+17x110 
+875
+SO591 
+590.5 
+357 
+17x110 
+826
+SO542 
+1423.5
+217 
+17x110 
+876
+SO592 
+573.5 
+77 
+17x110 
+827
+SO543 
+1406.5
+357 
+17x110 
+877
+SO593 
+556.5 
+217 
+17x110 
+828
+SO544 
+1389.5
+77 
+17x110 
+878
+SO594 
+539.5 
+357 
+17x110 
+829
+SO545 
+1372.5
+217 
+17x110 
+879
+SO595 
+522.5 
+77 
+17x110 
+830
+SO546 
+1355.5
+357 
+17x110 
+880
+SO596 
+505.5 
+217 
+17x110 
+831
+SO547 
+1338.5
+77 
+17x110 
+881
+SO597 
+488.5 
+357 
+17x110 
+832
+SO548 
+1321.5
+217 
+17x110 
+882
+SO598 
+471.5 
+77 
+17x110 
+833
+SO549 
+1304.5
+357 
+17x110 
+883
+SO599 
+454.5 
+217 
+17x110 
+834
+SO550 
+1287.5
+77 
+17x110 
+884
+SO600 
+437.5 
+357 
+17x110 
+835
+SO551 
+1270.5
+217 
+17x110 
+885
+SHIELDING
+403.5 
+357 
+17x110 
+836
+SO552 
+1253.5
+357 
+17x110 
+886
+SHIELDING
+369.5 
+357 
+17x110 
+837
+SO553 
+1236.5
+77 
+17x110 
+887
+SHIELDING
+335.5 
+357 
+17x110 
+838
+SO554 
+1219.5
+217 
+17x110 
+888
+SHIELDING
+301.5 
+357 
+17x110 
+839
+SO555 
+1202.5
+357 
+17x110 
+889
+SHIELDING
+267.5 
+357 
+17x110 
+840
+SO556 
+1185.5 
+77 
+17x110 
+890
+SHIELDING
+233.5 
+357 
+17x110 
+841
+SO557 
+1168.5 
+217 
+17x110 
+891
+SHIELDING
+-233.5 
+357 
+17x110 
+842
+SO558 
+1151.5 
+357 
+17x110 
+892
+SHIELDING
+-267.5 
+357 
+17x110 
+843
+SO559 
+1134.5 
+77 
+17x110 
+893
+SHIELDING
+-301.5 
+357 
+17x110 
+844
+SO560 
+1117.5 
+217 
+17x110 
+894
+SHIELDING
+-335.5 
+357 
+17x110 
+845
+SO561 
+1100.5 
+357 
+17x110 
+895
+SHIELDING
+-369.5 
+357 
+17x110 
+846
+SO562 
+1083.5
+77 
+17x110 
+896
+SHIELDING
+-403.5 
+357 
+17x110 
+847
+SO563 
+1066.5
+217 
+17x110 
+897
+SO601 
+-437.5 
+357 
+17x110 
+848
+SO564 
+1049.5
+357 
+17x110 
+898
+SO602 
+-454.5 
+217 
+17x110 
+849
+SO565 
+1032.5
+77 
+17x110 
+899
+SO603 
+-471.5 
+77 
+17x110 
+850
+SO566 
+1015.5
+217 
+17x110 
+900
+SO604 
+-488.5 
+357 
+17x110 
+ 
+
+ 
+ 
+-P.77-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+901
+SO605 
+-505.5 
+217 
+17x110 
+951
+SO655 
+-1355.5
+357 
+17x110 
+902
+SO606 
+-522.5 
+77 
+17x110 
+952
+SO656 
+-1372.5
+217 
+17x110 
+903
+SO607 
+-539.5 
+357 
+17x110 
+953
+SO657 
+-1389.5
+77 
+17x110 
+904
+SO608 
+-556.5 
+217 
+17x110 
+954
+SO658 
+-1406.5
+357 
+17x110 
+905
+SO609 
+-573.5 
+77 
+17x110 
+955
+SO659 
+-1423.5
+217 
+17x110 
+906
+SO610 
+-590.5 
+357 
+17x110 
+956
+SO660 
+-1440.5
+77 
+17x110 
+907
+SO611 
+-607.5 
+217 
+17x110 
+957
+SO661 
+-1457.5
+357 
+17x110 
+908
+SO612 
+-624.5 
+77 
+17x110 
+958
+SO662 
+-1474.5
+217 
+17x110 
+909
+SO613 
+-641.5 
+357 
+17x110 
+959
+SO663 
+-1491.5
+77 
+17x110 
+910
+SO614 
+-658.5 
+217 
+17x110 
+960
+SO664 
+-1508.5
+357 
+17x110 
+911
+SO615 
+-675.5 
+77 
+17x110 
+961
+SO665 
+-1525.5
+217 
+17x110 
+912
+SO616 
+-692.5 
+357 
+17x110 
+962
+SO666 
+-1542.5
+77 
+17x110 
+913
+SO617 
+-709.5 
+217 
+17x110 
+963
+SO667 
+-1559.5
+357 
+17x110 
+914
+SO618 
+-726.5 
+77 
+17x110 
+964
+SO668 
+-1576.5
+217 
+17x110 
+915
+SO619 
+-743.5 
+357 
+17x110 
+965
+SO669 
+-1593.5
+77 
+17x110 
+916
+SO620 
+-760.5 
+217 
+17x110 
+966
+SO670 
+-1610.5
+357 
+17x110 
+917
+SO621 
+-777.5 
+77 
+17x110 
+967
+SO671 
+-1627.5
+217 
+17x110 
+918
+SO622 
+-794.5 
+357 
+17x110 
+968
+SO672 
+-1644.5
+77 
+17x110 
+919
+SO623 
+-811.5 
+217 
+17x110 
+969
+SO673 
+-1661.5
+357 
+17x110 
+920
+SO624 
+-828.5 
+77 
+17x110 
+970
+SO674 
+-1678.5
+217 
+17x110 
+921
+SO625 
+-845.5 
+357 
+17x110 
+971
+SO675 
+-1695.5
+77 
+17x110 
+922
+SO626 
+-862.5 
+217 
+17x110 
+972
+SO676 
+-1712.5
+357 
+17x110 
+923
+SO627 
+-879.5 
+77 
+17x110 
+973
+SO677 
+-1729.5
+217 
+17x110 
+924
+SO628 
+-896.5 
+357 
+17x110 
+974
+SO678 
+-1746.5
+77 
+17x110 
+925
+SO629 
+-913.5 
+217 
+17x110 
+975
+SO679 
+-1763.5
+357 
+17x110 
+926
+SO630 
+-930.5 
+77 
+17x110 
+976
+SO680 
+-1780.5
+217 
+17x110 
+927
+SO631 
+-947.5 
+357 
+17x110 
+977
+SO681 
+-1797.5
+77 
+17x110 
+928
+SO632 
+-964.5 
+217 
+17x110 
+978
+SO682 
+-1814.5
+357 
+17x110 
+929
+SO633 
+-981.5 
+77 
+17x110 
+979
+SO683 
+-1831.5
+217 
+17x110 
+930
+SO634 
+-998.5 
+357 
+17x110 
+980
+SO684 
+-1848.5
+77 
+17x110 
+931
+SO635 
+-1015.5
+217 
+17x110 
+981
+SO685 
+-1865.5
+357 
+17x110 
+932
+SO636 
+-1032.5
+77 
+17x110 
+982
+SO686 
+-1882.5
+217 
+17x110 
+933
+SO637 
+-1049.5
+357 
+17x110 
+983
+SO687 
+-1899.5
+77 
+17x110 
+934
+SO638 
+-1066.5
+217 
+17x110 
+984
+SO688 
+-1916.5
+357 
+17x110 
+935
+SO639 
+-1083.5
+77 
+17x110 
+985
+SO689 
+-1933.5
+217 
+17x110 
+936
+SO640 
+-1100.5
+357 
+17x110 
+986
+SO690 
+-1950.5
+77 
+17x110 
+937
+SO641 
+-1117.5
+217 
+17x110 
+987
+SO691 
+-1967.5
+357 
+17x110 
+938
+SO642 
+-1134.5
+77 
+17x110 
+988
+SO692 
+-1984.5
+217 
+17x110 
+939
+SO643 
+-1151.5
+357 
+17x110 
+989
+SO693 
+-2001.5
+77 
+17x110 
+940
+SO644 
+-1168.5
+217 
+17x110 
+990
+SO694 
+-2018.5
+357 
+17x110 
+941
+SO645 
+-1185.5
+77 
+17x110 
+991
+SO695 
+-2035.5
+217 
+17x110 
+942
+SO646 
+-1202.5
+357 
+17x110 
+992
+SO696 
+-2052.5
+77 
+17x110 
+943
+SO647 
+-1219.5
+217 
+17x110 
+993
+SO697 
+-2069.5
+357 
+17x110 
+944
+SO648 
+-1236.5
+77 
+17x110 
+994
+SO698 
+-2086.5
+217 
+17x110 
+945
+SO649 
+-1253.5
+357 
+17x110 
+995
+SO699 
+-2103.5
+77 
+17x110 
+946
+SO650 
+-1270.5
+217 
+17x110 
+996
+SO700 
+-2120.5
+357 
+17x110 
+947
+SO651 
+-1287.5
+77 
+17x110 
+997
+SO701 
+-2137.5
+217 
+17x110 
+948
+SO652 
+-1304.5
+357 
+17x110 
+998
+SO702 
+-2154.5
+77 
+17x110 
+949
+SO653 
+-1321.5
+217 
+17x110 
+999
+SO703 
+-2171.5
+357 
+17x110 
+950
+SO654 
+-1338.5
+77 
+17x110 
+1000
+SO704 
+-2188.5
+217 
+17x110 
+ 
+
+ 
+ 
+-P.78-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size 
+No.
+Name 
+X 
+Y 
+Bump size
+1001
+SO705 
+-2205.5
+77 
+17x110 
+1051
+SO755 
+-3055.5
+217 
+17x110 
+1002
+SO706 
+-2222.5
+357 
+17x110 
+1052
+SO756 
+-3072.5
+77 
+17x110 
+1003
+SO707 
+-2239.5
+217 
+17x110 
+1053
+SO757 
+-3089.5
+357 
+17x110 
+1004
+SO708 
+-2256.5
+77 
+17x110 
+1054
+SO758 
+-3106.5
+217 
+17x110 
+1005
+SO709 
+-2273.5
+357 
+17x110 
+1055
+SO759 
+-3123.5
+77 
+17x110 
+1006
+SO710 
+-2290.5
+217 
+17x110 
+1056
+SO760 
+-3140.5
+357 
+17x110 
+1007
+SO711 
+-2307.5
+77 
+17x110 
+1057
+SO761 
+-3157.5
+217 
+17x110 
+1008
+SO712 
+-2324.5
+357 
+17x110 
+1058
+SO762 
+-3174.5
+77 
+17x110 
+1009
+SO713 
+-2341.5
+217 
+17x110 
+1059
+SO763 
+-3191.5
+357 
+17x110 
+1010
+SO714 
+-2358.5
+77 
+17x110 
+1060
+SO764 
+-3208.5
+217 
+17x110 
+1011
+SO715 
+-2375.5
+357 
+17x110 
+1061
+SO765 
+-3225.5
+77 
+17x110 
+1012
+SO716 
+-2392.5
+217 
+17x110 
+1062
+SO766 
+-3242.5
+357 
+17x110 
+1013
+SO717 
+-2409.5
+77 
+17x110 
+1063
+SO767 
+-3259.5
+217 
+17x110 
+1014
+SO718 
+-2426.5
+357 
+17x110 
+1064
+SO768 
+-3276.5
+77 
+17x110 
+1015
+SO719 
+-2443.5
+217 
+17x110 
+1065
+SO769 
+-3293.5
+357 
+17x110 
+1016
+SO720 
+-2460.5
+77 
+17x110 
+1066
+SO770 
+-3310.5
+217 
+17x110 
+1017
+SO721 
+-2477.5
+357 
+17x110 
+1067
+SO771 
+-3327.5
+77 
+17x110 
+1018
+SO722 
+-2494.5
+217 
+17x110 
+1068
+SO772 
+-3344.5
+357 
+17x110 
+1019
+SO723 
+-2511.5
+77 
+17x110 
+1069
+SO773 
+-3361.5
+217 
+17x110 
+1020
+SO724 
+-2528.5
+357 
+17x110 
+1070
+SO774 
+-3378.5
+77 
+17x110 
+1021
+SO725 
+-2545.5
+217 
+17x110 
+1071
+SO775 
+-3395.5
+357 
+17x110 
+1022
+SO726 
+-2562.5
+77 
+17x110 
+1072
+SO776 
+-3412.5
+217 
+17x110 
+1023
+SO727 
+-2579.5
+357 
+17x110 
+1073
+SO777 
+-3429.5
+77 
+17x110 
+1024
+SO728 
+-2596.5
+217 
+17x110 
+1074
+SO778 
+-3446.5
+357 
+17x110 
+1025
+SO729 
+-2613.5
+77 
+17x110 
+1075
+SO779 
+-3463.5
+217 
+17x110 
+1026
+SO730 
+-2630.5
+357 
+17x110 
+1076
+SO780 
+-3480.5
+77 
+17x110 
+1027
+SO731 
+-2647.5
+217 
+17x110 
+1077
+SO781 
+-3497.5
+357 
+17x110 
+1028
+SO732 
+-2664.5
+77 
+17x110 
+1078
+SO782 
+-3514.5
+217 
+17x110 
+1029
+SO733 
+-2681.5
+357 
+17x110 
+1079
+SO783 
+-3531.5
+77 
+17x110 
+1030
+SO734 
+-2698.5
+217 
+17x110 
+1080
+SO784 
+-3548.5
+357 
+17x110 
+1031
+SO735 
+-2715.5
+77 
+17x110 
+1081
+SO785 
+-3565.5
+217 
+17x110 
+1032
+SO736 
+-2732.5
+357 
+17x110 
+1082
+SO786 
+-3582.5
+77 
+17x110 
+1033
+SO737 
+-2749.5
+217 
+17x110 
+1083
+SO787 
+-3599.5
+357 
+17x110 
+1034
+SO738 
+-2766.5
+77 
+17x110 
+1084
+SO788 
+-3616.5
+217 
+17x110 
+1035
+SO739 
+-2783.5
+357 
+17x110 
+1085
+SO789 
+-3633.5
+77 
+17x110 
+1036
+SO740 
+-2800.5
+217 
+17x110 
+1086
+SO790 
+-3650.5
+357 
+17x110 
+1037
+SO741 
+-2817.5
+77 
+17x110 
+1087
+SO791 
+-3667.5
+217 
+17x110 
+1038
+SO742 
+-2834.5
+357 
+17x110 
+1088
+SO792 
+-3684.5
+77 
+17x110 
+1039
+SO743 
+-2851.5
+217 
+17x110 
+1089
+SO793 
+-3701.5
+357 
+17x110 
+1040
+SO744 
+-2868.5
+77 
+17x110 
+1090
+SO794 
+-3718.5
+217 
+17x110 
+1041
+SO745 
+-2885.5
+357 
+17x110 
+1091
+SO795 
+-3735.5
+77 
+17x110 
+1042
+SO746 
+-2902.5
+217 
+17x110 
+1092
+SO796 
+-3752.5
+357 
+17x110 
+1043
+SO747 
+-2919.5
+77 
+17x110 
+1093
+SO797 
+-3769.5
+217 
+17x110 
+1044
+SO748 
+-2936.5
+357 
+17x110 
+1094
+SO798 
+-3786.5
+77 
+17x110 
+1045
+SO749 
+-2953.5
+217 
+17x110 
+1095
+SO799 
+-3803.5
+357 
+17x110 
+1046
+SO750 
+-2970.5
+77 
+17x110 
+1096
+SO800 
+-3820.5
+217 
+17x110 
+1047
+SO751 
+-2987.5
+357 
+17x110 
+1097
+SO801 
+-3837.5
+77 
+17x110 
+1048
+SO752 
+-3004.5
+217 
+17x110 
+1098
+SO802 
+-3854.5
+357 
+17x110 
+1049
+SO753 
+-3021.5
+77 
+17x110 
+1099
+SO803 
+-3871.5
+217 
+17x110 
+1050
+SO754 
+-3038.5
+357 
+17x110 
+1100
+SO804 
+-3888.5
+77 
+17x110 
+ 
+ 
+
+ 
+ 
+-P.79-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size
+No.
+Name 
+X 
+Y 
+Bump size
+1101
+SO805 
+-3905.5
+357 
+17x110 
+1151
+SO855 
+-4755.5
+77 
+17x110 
+1102
+SO806 
+-3922.5
+217 
+17x110 
+1152
+SO856 
+-4772.5
+357 
+17x110 
+1103
+SO807 
+-3939.5
+77 
+17x110 
+1153
+SO857 
+-4789.5
+217 
+17x110 
+1104
+SO808 
+-3956.5
+357 
+17x110 
+1154
+SO858 
+-4806.5
+77 
+17x110 
+1105
+SO809 
+-3973.5
+217 
+17x110 
+1155
+SO859 
+-4823.5
+357 
+17x110 
+1106
+SO810 
+-3990.5
+77 
+17x110 
+1156
+SO860 
+-4840.5
+217 
+17x110 
+1107
+SO811 
+-4007.5
+357 
+17x110 
+1157
+SO861 
+-4857.5
+77 
+17x110 
+1108
+SO812 
+-4024.5
+217 
+17x110 
+1158
+SO862 
+-4874.5
+357 
+17x110 
+1109
+SO813 
+-4041.5
+77 
+17x110 
+1159
+SO863 
+-4891.5
+217 
+17x110 
+1110
+SO814 
+-4058.5
+357 
+17x110 
+1160
+SO864 
+-4908.5
+77 
+17x110 
+1111
+SO815 
+-4075.5
+217 
+17x110 
+1161
+SO865 
+-4925.5
+357 
+17x110 
+1112
+SO816 
+-4092.5
+77 
+17x110 
+1162
+SO866 
+-4942.5
+217 
+17x110 
+1113
+SO817 
+-4109.5
+357 
+17x110 
+1163
+SO867 
+-4959.5
+77 
+17x110 
+1114
+SO818 
+-4126.5
+217 
+17x110 
+1164
+SO868 
+-4976.5
+357 
+17x110 
+1115
+SO819 
+-4143.5
+77 
+17x110 
+1165
+SO869 
+-4993.5
+217 
+17x110 
+1116
+SO820 
+-4160.5
+357 
+17x110 
+1166
+SO870 
+-5010.5
+77 
+17x110 
+1117
+SO821 
+-4177.5
+217 
+17x110 
+1167
+SO871 
+-5027.5
+357 
+17x110 
+1118
+SO822 
+-4194.5
+77 
+17x110 
+1168
+SO872 
+-5044.5
+217 
+17x110 
+1119
+SO823 
+-4211.5
+357 
+17x110 
+1169
+SO873 
+-5061.5
+77 
+17x110 
+1120
+SO824 
+-4228.5
+217 
+17x110 
+1170
+SO874 
+-5078.5
+357 
+17x110 
+1121
+SO825 
+-4245.5
+77 
+17x110 
+1171
+SO875 
+-5095.5
+217 
+17x110 
+1122
+SO826 
+-4262.5
+357 
+17x110 
+1172
+SO876 
+-5112.5
+77 
+17x110 
+1123
+SO827 
+-4279.5
+217 
+17x110 
+1173
+SO877 
+-5129.5
+357 
+17x110 
+1124
+SO828 
+-4296.5
+77 
+17x110 
+1174
+SO878 
+-5146.5
+217 
+17x110 
+1125
+SO829 
+-4313.5
+357 
+17x110 
+1175
+SO879 
+-5163.5
+77 
+17x110 
+1126
+SO830 
+-4330.5
+217 
+17x110 
+1176
+SO880 
+-5180.5
+357 
+17x110 
+1127
+SO831 
+-4347.5
+77 
+17x110 
+1177
+SO881 
+-5197.5
+217 
+17x110 
+1128
+SO832 
+-4364.5
+357 
+17x110 
+1178
+SO882 
+-5214.5
+77 
+17x110 
+1129
+SO833 
+-4381.5
+217 
+17x110 
+1179
+SO883 
+-5231.5
+357 
+17x110 
+1130
+SO834 
+-4398.5
+77 
+17x110 
+1180
+SO884 
+-5248.5
+217 
+17x110 
+1131
+SO835 
+-4415.5
+357 
+17x110 
+1181
+SO885 
+-5265.5
+77 
+17x110 
+1132
+SO836 
+-4432.5
+217 
+17x110 
+1182
+SO886 
+-5282.5
+357 
+17x110 
+1133
+SO837 
+-4449.5
+77 
+17x110 
+1183
+SO887 
+-5299.5
+217 
+17x110 
+1134
+SO838 
+-4466.5
+357 
+17x110 
+1184
+SO888 
+-5316.5
+77 
+17x110 
+1135
+SO839 
+-4483.5
+217 
+17x110 
+1185
+SO889 
+-5333.5
+357 
+17x110 
+1136
+SO840 
+-4500.5
+77 
+17x110 
+1186
+SO890 
+-5350.5
+217 
+17x110 
+1137
+SO841 
+-4517.5
+357 
+17x110 
+1187
+SO891 
+-5367.5
+77 
+17x110 
+1138
+SO842 
+-4534.5
+217 
+17x110 
+1188
+SO892 
+-5384.5
+357 
+17x110 
+1139
+SO843 
+-4551.5
+77 
+17x110 
+1189
+SO893 
+-5401.5
+217 
+17x110 
+1140
+SO844 
+-4568.5
+357 
+17x110 
+1190
+SO894 
+-5418.5
+77 
+17x110 
+1141
+SO845 
+-4585.5
+217 
+17x110 
+1191
+SO895 
+-5435.5
+357 
+17x110 
+1142
+SO846 
+-4602.5
+77 
+17x110 
+1192
+SO896 
+-5452.5
+217 
+17x110 
+1143
+SO847 
+-4619.5
+357 
+17x110 
+1193
+SO897 
+-5469.5
+77 
+17x110 
+1144
+SO848 
+-4636.5
+217 
+17x110 
+1194
+SO898 
+-5486.5
+357 
+17x110 
+1145
+SO849 
+-4653.5
+77 
+17x110 
+1195
+SO899 
+-5503.5
+217 
+17x110 
+1146
+SO850 
+-4670.5
+357 
+17x110 
+1196
+SO900 
+-5520.5
+77 
+17x110 
+1147
+SO851 
+-4687.5
+217 
+17x110 
+1197
+SO901 
+-5537.5
+357 
+17x110 
+1148
+SO852 
+-4704.5
+77 
+17x110 
+1198
+SO902 
+-5554.5
+217 
+17x110 
+1149
+SO853 
+-4721.5
+357 
+17x110 
+1199
+SO903 
+-5571.5
+77 
+17x110 
+1150
+SO854 
+-4738.5
+217 
+17x110 
+1200
+SO904 
+-5588.5
+357 
+17x110 
+ 
+
+ 
+ 
+-P.80-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size
+No.
+Name 
+X 
+Y 
+Bump size
+1201
+SO905 
+-5605.5
+217 
+17x110 
+1251
+SO955 
+-6455.5
+357 
+17x110 
+1202
+SO906 
+-5622.5
+77 
+17x110 
+1252
+SO956 
+-6472.5
+217 
+17x110 
+1203
+SO907 
+-5639.5
+357 
+17x110 
+1253
+SO957 
+-6489.5
+77 
+17x110 
+1204
+SO908 
+-5656.5
+217 
+17x110 
+1254
+SO958 
+-6506.5
+357 
+17x110 
+1205
+SO909 
+-5673.5
+77 
+17x110 
+1255
+SO959 
+-6523.5
+217 
+17x110 
+1206
+SO910 
+-5690.5
+357 
+17x110 
+1256
+SO960 
+-6540.5
+77 
+17x110 
+1207
+SO911 
+-5707.5
+217 
+17x110 
+1257
+SO961 
+-6557.5
+357 
+17x110 
+1208
+SO912 
+-5724.5
+77 
+17x110 
+1258
+SO962 
+-6574.5
+217 
+17x110 
+1209
+SO913 
+-5741.5
+357 
+17x110 
+1259
+SO963 
+-6591.5
+77 
+17x110 
+1210
+SO914 
+-5758.5
+217 
+17x110 
+1260
+SO964 
+-6608.5
+357 
+17x110 
+1211
+SO915 
+-5775.5
+77 
+17x110 
+1261
+SO965 
+-6625.5
+217 
+17x110 
+1212
+SO916 
+-5792.5
+357 
+17x110 
+1262
+SO966 
+-6642.5
+77 
+17x110 
+1213
+SO917 
+-5809.5
+217 
+17x110 
+1263
+SO967 
+-6659.5
+357 
+17x110 
+1214
+SO918 
+-5826.5
+77 
+17x110 
+1264
+SO968 
+-6676.5
+217 
+17x110 
+1215
+SO919 
+-5843.5
+357 
+17x110 
+1265
+SO969 
+-6693.5
+77 
+17x110 
+1216
+SO920 
+-5860.5
+217 
+17x110 
+1266
+SO970 
+-6710.5
+357 
+17x110 
+1217
+SO921 
+-5877.5
+77 
+17x110 
+1267
+SO971 
+-6727.5
+217 
+17x110 
+1218
+SO922 
+-5894.5
+357 
+17x110 
+1268
+SO972 
+-6744.5
+77 
+17x110 
+1219
+SO923 
+-5911.5
+217 
+17x110 
+1269
+SO973 
+-6761.5
+357 
+17x110 
+1220
+SO924 
+-5928.5
+77 
+17x110 
+1270
+SO974 
+-6778.5
+217 
+17x110 
+1221
+SO925 
+-5945.5
+357 
+17x110 
+1271
+SO975 
+-6795.5
+77 
+17x110 
+1222
+SO926 
+-5962.5
+217 
+17x110 
+1272
+SO976 
+-6812.5
+357 
+17x110 
+1223
+SO927 
+-5979.5
+77 
+17x110 
+1273
+SO977 
+-6829.5
+217 
+17x110 
+1224
+SO928 
+-5996.5
+357 
+17x110 
+1274
+SO978 
+-6846.5
+77 
+17x110 
+1225
+SO929 
+-6013.5
+217 
+17x110 
+1275
+SO979 
+-6863.5
+357 
+17x110 
+1226
+SO930 
+-6030.5
+77 
+17x110 
+1276
+SO980 
+-6880.5
+217 
+17x110 
+1227
+SO931 
+-6047.5
+357 
+17x110 
+1277
+SO981 
+-6897.5
+77 
+17x110 
+1228
+SO932 
+-6064.5
+217 
+17x110 
+1278
+SO982 
+-6914.5
+357 
+17x110 
+1229
+SO933 
+-6081.5
+77 
+17x110 
+1279
+SO983 
+-6931.5
+217 
+17x110 
+1230
+SO934 
+-6098.5
+357 
+17x110 
+1280
+SO984 
+-6948.5
+77 
+17x110 
+1231
+SO935 
+-6115.5
+217 
+17x110 
+1281
+SO985 
+-6965.5
+357 
+17x110 
+1232
+SO936 
+-6132.5
+77 
+17x110 
+1282
+SO986 
+-6982.5
+217 
+17x110 
+1233
+SO937 
+-6149.5
+357 
+17x110 
+1283
+SO987 
+-6999.5
+77 
+17x110 
+1234
+SO938 
+-6166.5
+217 
+17x110 
+1284
+SO988 
+-7016.5
+357 
+17x110 
+1235
+SO939 
+-6183.5
+77 
+17x110 
+1285
+SO989 
+-7033.5
+217 
+17x110 
+1236
+SO940 
+-6200.5
+357 
+17x110 
+1286
+SO990 
+-7050.5
+77 
+17x110 
+1237
+SO941 
+-6217.5
+217 
+17x110 
+1287
+SO991 
+-7067.5
+357 
+17x110 
+1238
+SO942 
+-6234.5
+77 
+17x110 
+1288
+SO992 
+-7084.5
+217 
+17x110 
+1239
+SO943 
+-6251.5
+357 
+17x110 
+1289
+SO993 
+-7101.5
+77 
+17x110 
+1240
+SO944 
+-6268.5
+217 
+17x110 
+1290
+SO994 
+-7118.5
+357 
+17x110 
+1241
+SO945 
+-6285.5
+77 
+17x110 
+1291
+SO995 
+-7135.5
+217 
+17x110 
+1242
+SO946 
+-6302.5
+357 
+17x110 
+1292
+SO996 
+-7152.5
+77 
+17x110 
+1243
+SO947 
+-6319.5
+217 
+17x110 
+1293
+SO997 
+-7169.5
+357 
+17x110 
+1244
+SO948 
+-6336.5
+77 
+17x110 
+1294
+SO998 
+-7186.5
+217 
+17x110 
+1245
+SO949 
+-6353.5
+357 
+17x110 
+1295
+SO999 
+-7203.5
+77 
+17x110 
+1246
+SO950 
+-6370.5
+217 
+17x110 
+1296
+SO1000 
+-7220.5
+357 
+17x110 
+1247
+SO951 
+-6387.5
+77 
+17x110 
+1297
+SO1001 
+-7237.5
+217 
+17x110 
+1248
+SO952 
+-6404.5
+357 
+17x110 
+1298
+SO1002 
+-7254.5
+77 
+17x110 
+1249
+SO953 
+-6421.5
+217 
+17x110 
+1299
+SO1003 
+-7271.5
+357 
+17x110 
+1250
+SO954 
+-6438.5
+77 
+17x110 
+1300
+SO1004 
+-7288.5
+217 
+17x110 
+ 
+
+ 
+ 
+-P.81-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size
+No.
+Name 
+X 
+Y 
+Bump size
+1301
+SO1005
+-7305.5
+77 
+17x110 
+1351
+SO1055 
+-8155.5
+217 
+17x110 
+1302
+SO1006
+-7322.5
+357 
+17x110 
+1352
+SO1056 
+-8172.5
+77 
+17x110 
+1303
+SO1007
+-7339.5
+217 
+17x110 
+1353
+SO1057 
+-8189.5
+357 
+17x110 
+1304
+SO1008
+-7356.5
+77 
+17x110 
+1354
+SO1058 
+-8206.5
+217 
+17x110 
+1305
+SO1009
+-7373.5
+357 
+17x110 
+1355
+SO1059 
+-8223.5
+77 
+17x110 
+1306
+SO1010
+-7390.5
+217 
+17x110 
+1356
+SO1060 
+-8240.5
+357 
+17x110 
+1307
+SO1011
+-7407.5
+77 
+17x110 
+1357
+SO1061 
+-8257.5
+217 
+17x110 
+1308
+SO1012
+-7424.5
+357 
+17x110 
+1358
+SO1062 
+-8274.5
+77 
+17x110 
+1309
+SO1013
+-7441.5
+217 
+17x110 
+1359
+SO1063 
+-8291.5
+357 
+17x110 
+1310
+SO1014
+-7458.5
+77 
+17x110 
+1360
+SO1064 
+-8308.5
+217 
+17x110 
+1311
+SO1015
+-7475.5
+357 
+17x110 
+1361
+SO1065 
+-8325.5
+77 
+17x110 
+1312
+SO1016
+-7492.5
+217 
+17x110 
+1362
+SO1066 
+-8342.5
+357 
+17x110 
+1313
+SO1017
+-7509.5
+77 
+17x110 
+1363
+SO1067 
+-8359.5
+217 
+17x110 
+1314
+SO1018
+-7526.5
+357 
+17x110 
+1364
+SO1068 
+-8376.5
+77 
+17x110 
+1315
+SO1019
+-7543.5
+217 
+17x110 
+1365
+SO1069 
+-8393.5
+357 
+17x110 
+1316
+SO1020
+-7560.5
+77 
+17x110 
+1366
+SO1070 
+-8410.5
+217 
+17x110 
+1317
+SO1021
+-7577.5
+357 
+17x110 
+1367
+SO1071 
+-8427.5
+77 
+17x110 
+1318
+SO1022
+-7594.5
+217 
+17x110 
+1368
+SO1072 
+-8444.5
+357 
+17x110 
+1319
+SO1023
+-7611.5
+77 
+17x110 
+1369
+SO1073 
+-8461.5
+217 
+17x110 
+1320
+SO1024
+-7628.5
+357 
+17x110 
+1370
+SO1074 
+-8478.5
+77 
+17x110 
+1321
+SO1025
+-7645.5
+217 
+17x110 
+1371
+SO1075 
+-8495.5
+357 
+17x110 
+1322
+SO1026
+-7662.5
+77 
+17x110 
+1372
+SO1076 
+-8512.5
+217 
+17x110 
+1323
+SO1027
+-7679.5
+357 
+17x110 
+1373
+SO1077 
+-8529.5
+77 
+17x110 
+1324
+SO1028
+-7696.5
+217 
+17x110 
+1374
+SO1078 
+-8546.5
+357 
+17x110 
+1325
+SO1029
+-7713.5
+77 
+17x110 
+1375
+SO1079 
+-8563.5
+217 
+17x110 
+1326
+SO1030
+-7730.5
+357 
+17x110 
+1376
+SO1080 
+-8580.5
+77 
+17x110 
+1327
+SO1031
+-7747.5
+217 
+17x110 
+1377
+SO1081 
+-8597.5
+357 
+17x110 
+1328
+SO1032
+-7764.5
+77 
+17x110 
+1378
+SO1082 
+-8614.5
+217 
+17x110 
+1329
+SO1033
+-7781.5
+357 
+17x110 
+1379
+SO1083 
+-8631.5
+77 
+17x110 
+1330
+SO1034
+-7798.5
+217 
+17x110 
+1380
+SO1084 
+-8648.5
+357 
+17x110 
+1331
+SO1035
+-7815.5
+77 
+17x110 
+1381
+SO1085 
+-8665.5
+217 
+17x110 
+1332
+SO1036
+-7832.5
+357 
+17x110 
+1382
+SO1086 
+-8682.5
+77 
+17x110 
+1333
+SO1037
+-7849.5
+217 
+17x110 
+1383
+SO1087 
+-8699.5
+357 
+17x110 
+1334
+SO1038
+-7866.5
+77 
+17x110 
+1384
+SO1088 
+-8716.5
+217 
+17x110 
+1335
+SO1039
+-7883.5
+357 
+17x110 
+1385
+SO1089 
+-8733.5
+77 
+17x110 
+1336
+SO1040
+-7900.5
+217 
+17x110 
+1386
+SO1090 
+-8750.5
+357 
+17x110 
+1337
+SO1041
+-7917.5
+77 
+17x110 
+1387
+SO1091 
+-8767.5
+217 
+17x110 
+1338
+SO1042
+-7934.5
+357 
+17x110 
+1388
+SO1092 
+-8784.5
+77 
+17x110 
+1339
+SO1043
+-7951.5
+217 
+17x110 
+1389
+SO1093 
+-8801.5
+357 
+17x110 
+1340
+SO1044
+-7968.5
+77 
+17x110 
+1390
+SO1094 
+-8818.5
+217 
+17x110 
+1341
+SO1045
+-7985.5
+357 
+17x110 
+1391
+SO1095 
+-8835.5
+77 
+17x110 
+1342
+SO1046
+-8002.5
+217 
+17x110 
+1392
+SO1096 
+-8852.5
+357 
+17x110 
+1343
+SO1047
+-8019.5
+77 
+17x110 
+1393
+SO1097 
+-8869.5
+217 
+17x110 
+1344
+SO1048
+-8036.5
+357 
+17x110 
+1394
+SO1098 
+-8886.5
+77 
+17x110 
+1345
+SO1049
+-8053.5
+217 
+17x110 
+1395
+SO1099 
+-8903.5
+357 
+17x110 
+1346
+SO1050
+-8070.5
+77 
+17x110 
+1396
+SO1100 
+-8920.5
+217 
+17x110 
+1347
+SO1051
+-8087.5
+357 
+17x110 
+1397
+SO1101 
+-8937.5
+77 
+17x110 
+1348
+SO1052
+-8104.5
+217 
+17x110 
+1398
+SO1102 
+-8954.5
+357 
+17x110 
+1349
+SO1053
+-8121.5
+77 
+17x110 
+1399
+SO1103 
+-8971.5
+217 
+17x110 
+1350
+SO1054
+-8138.5
+357 
+17x110 
+1400
+SO1104 
+-8988.5
+77 
+17x110 
+ 
+
+ 
+ 
+-P.82-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No.
+Name 
+X 
+Y 
+Bump size
+No.
+Name 
+X 
+Y 
+Bump size
+1401
+SO1105 
+-9005.5
+357 
+17x110 
+1451
+SO1155 
+-9855.5 
+77 
+17x110 
+1402
+SO1106 
+-9022.5
+217 
+17x110 
+1452
+SO1156 
+-9872.5 
+357 
+17x110 
+1403
+SO1107 
+-9039.5
+77 
+17x110 
+1453
+SO1157 
+-9889.5 
+217 
+17x110 
+1404
+SO1108 
+-9056.5
+357 
+17x110 
+1454
+SO1158 
+-9906.5 
+77 
+17x110 
+1405
+SO1109 
+-9073.5
+217 
+17x110 
+1455
+SO1159 
+-9923.5 
+357 
+17x110 
+1406
+SO1110 
+-9090.5
+77 
+17x110 
+1456
+SO1160 
+-9940.5 
+217 
+17x110 
+1407
+SO1111 
+-9107.5
+357 
+17x110 
+1457
+SO1161 
+-9957.5 
+77 
+17x110 
+1408
+SO1112 
+-9124.5
+217 
+17x110 
+1458
+SO1162 
+-9974.5 
+357 
+17x110 
+1409
+SO1113 
+-9141.5
+77 
+17x110 
+1459
+SO1163 
+-9991.5 
+217 
+17x110 
+1410
+SO1114 
+-9158.5
+357 
+17x110 
+1460
+SO1164 
+-10008.5
+77 
+17x110 
+1411
+SO1115 
+-9175.5
+217 
+17x110 
+1461
+SO1165 
+-10025.5
+357 
+17x110 
+1412
+SO1116 
+-9192.5
+77 
+17x110 
+1462
+SO1166 
+-10042.5
+217 
+17x110 
+1413
+SO1117 
+-9209.5
+357 
+17x110 
+1463
+SO1167 
+-10059.5
+77 
+17x110 
+1414
+SO1118 
+-9226.5
+217 
+17x110 
+1464
+SO1168 
+-10076.5
+357 
+17x110 
+1415
+SO1119 
+-9243.5
+77 
+17x110 
+1465
+SO1169 
+-10093.5
+217 
+17x110 
+1416
+SO1120 
+-9260.5
+357 
+17x110 
+1466
+SO1170 
+-10110.5
+77 
+17x110 
+1417
+SO1121 
+-9277.5
+217 
+17x110 
+1467
+SO1171 
+-10127.5
+357 
+17x110 
+1418
+SO1122 
+-9294.5
+77 
+17x110 
+1468
+SO1172 
+-10144.5
+217 
+17x110 
+1419
+SO1123 
+-9311.5
+357 
+17x110 
+1469
+SO1173 
+-10161.5
+77 
+17x110 
+1420
+SO1124 
+-9328.5
+217 
+17x110 
+1470
+SO1174 
+-10178.5
+357 
+17x110 
+1421
+SO1125 
+-9345.5
+77 
+17x110 
+1471
+SO1175 
+-10195.5
+217 
+17x110 
+1422
+SO1126 
+-9362.5
+357 
+17x110 
+1472
+SO1176 
+-10212.5
+77 
+17x110 
+1423
+SO1127 
+-9379.5
+217 
+17x110 
+1473
+SO1177 
+-10229.5
+357 
+17x110 
+1424
+SO1128 
+-9396.5
+77 
+17x110 
+1474
+SO1178 
+-10246.5
+217 
+17x110 
+1425
+SO1129 
+-9413.5
+357 
+17x110 
+1475
+SO1179 
+-10263.5
+77 
+17x110 
+1426
+SO1130 
+-9430.5
+217 
+17x110 
+1476
+SO1180 
+-10280.5
+357 
+17x110 
+1427
+SO1131 
+-9447.5
+77 
+17x110 
+1477
+SO1181 
+-10297.5
+217 
+17x110 
+1428
+SO1132 
+-9464.5
+357 
+17x110 
+1478
+SO1182 
+-10314.5
+77 
+17x110 
+1429
+SO1133 
+-9481.5
+217 
+17x110 
+1479
+SO1183 
+-10331.5
+357 
+17x110 
+1430
+SO1134 
+-9498.5
+77 
+17x110 
+1480
+SO1184 
+-10348.5
+217 
+17x110 
+1431
+SO1135 
+-9515.5
+357 
+17x110 
+1481
+SO1185 
+-10365.5
+77 
+17x110 
+1432
+SO1136 
+-9532.5
+217 
+17x110 
+1482
+SO1186 
+-10382.5
+357 
+17x110 
+1433
+SO1137 
+-9549.5
+77 
+17x110 
+1483
+SO1187 
+-10399.5
+217 
+17x110 
+1434
+SO1138 
+-9566.5
+357 
+17x110 
+1484
+SO1188 
+-10416.5
+77 
+17x110 
+1435
+SO1139 
+-9583.5
+217 
+17x110 
+1485
+SO1189 
+-10433.5
+357 
+17x110 
+1436
+SO1140 
+-9600.5
+77 
+17x110 
+1486
+SO1190 
+-10450.5
+217 
+17x110 
+1437
+SO1141 
+-9617.5
+357 
+17x110 
+1487
+SO1191 
+-10467.5
+77 
+17x110 
+1438
+SO1142 
+-9634.5
+217 
+17x110 
+1488
+SO1192 
+-10484.5
+357 
+17x110 
+1439
+SO1143 
+-9651.5
+77 
+17x110 
+1489
+SO1193 
+-10501.5
+217 
+17x110 
+1440
+SO1144 
+-9668.5
+357 
+17x110 
+1490
+SO1194 
+-10518.5
+77 
+17x110 
+1441
+SO1145 
+-9685.5
+217 
+17x110 
+1491
+SO1195 
+-10535.5
+357 
+17x110 
+1442
+SO1146 
+-9702.5
+77 
+17x110 
+1492
+SO1196 
+-10552.5
+217 
+17x110 
+1443
+SO1147 
+-9719.5
+357 
+17x110 
+1493
+SO1197 
+-10569.5
+77 
+17x110 
+1444
+SO1148 
+-9736.5
+217 
+17x110 
+1494
+SO1198 
+-10586.5
+357 
+17x110 
+1445
+SO1149 
+-9753.5
+77 
+17x110 
+1495
+SO1199 
+-10603.5
+217 
+17x110 
+1446
+SO1150 
+-9770.5
+357 
+17x110 
+1496
+SO1200 
+-10620.5
+77 
+17x110 
+1447
+SO1151 
+-9787.5
+217 
+17x110 
+1497 SHIELDING
+-10664 
+377 
+30x70 
+1448
+SO1152 
+-9804.5
+77 
+17x110 
+1498
+COM1_T
+-10714 
+377 
+30x70 
+1449
+SO1153 
+-9821.5
+357 
+17x110 
+1499
+COM1_T
+-10764 
+377 
+30x70 
+1450
+SO1154 
+-9838.5
+217 
+17x110 
+1500
+SYNCR 
+-10814 
+377 
+30x70 
+ 
+
+ 
+ 
+-P.83-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+ 
+No. 
+Name 
+X 
+Y 
+Bump size
+ 
+ 
+ 
+ 
+ 
+1501 
+LDR 
+-10864
+377 
+30x70 
+ 
+ 
+ 
+ 
+1502 
+POLR 
+-10914
+377 
+30x70 
+ 
+ 
+ 
+ 
+1503 
+DATR0 
+-11179
+397 
+100x30 
+ 
+ 
+ 
+ 
+1504 
+DATR1 
+-11049
+357 
+100x30 
+ 
+ 
+ 
+ 
+1505 
+DATR2 
+-11179
+317 
+100x30 
+ 
+ 
+ 
+ 
+1506 
+DATR3 
+-11049
+277 
+100x30 
+ 
+ 
+ 
+ 
+1507 
+DATR4 
+-11179
+237 
+100x30 
+ 
+ 
+ 
+ 
+1508 
+DATR5 
+-11049
+197 
+100x30 
+ 
+ 
+ 
+ 
+1509 
+DATR6 
+-11179
+157 
+100x30 
+ 
+ 
+ 
+ 
+1510 
+DATR7 
+-11049
+117 
+100x30 
+ 
+ 
+ 
+ 
+1511 
+DATR8 
+-11179
+77 
+100x30 
+ 
+ 
+ 
+ 
+1512 
+DATR9 
+-11049
+37 
+100x30 
+ 
+ 
+ 
+ 
+1513 
+DATR10 
+-11179
+-3 
+100x30 
+ 
+ 
+ 
+ 
+1514 
+DATR11 
+-11049
+-43 
+100x30 
+ 
+ 
+ 
+ 
+1515 
+DATR12 
+-11179
+-83 
+100x30 
+ 
+ 
+ 
+ 
+1516 
+DATR13 
+-11049
+-123 
+100x30 
+ 
+ 
+ 
+ 
+1517 
+DATR14 
+-11179
+-163 
+100x30 
+ 
+ 
+ 
+ 
+1518 
+DATR15 
+-11049
+-203 
+100x30 
+ 
+ 
+ 
+ 
+1519 
+DATR16 
+-11179
+-243 
+100x30 
+ 
+ 
+ 
+ 
+1520 
+DATR17 
+-11049
+-283 
+100x30 
+ 
+ 
+ 
+ 
+1521 
+DIOR 
+-11179
+-323 
+100x30 
+ 
+ 
+ 
+ 
+1522 
+DCLKR 
+-11049
+-363 
+100x30 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ALIGNMENT_MARK_R
+10773 
+93 
+ 
+ 
+ 
+ 
+ALIGNMENT_MARK_L
+-10773 
+93 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+-P.84-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+15. Ordering Information 
+ 
+Part No. 
+Package Type 
+HX8264-D03XPDxxx 
+X: mean fab code 
+PD : mean COG 
+xxx : mean chip thickness (µm) (default 400µm) 
+ 
+16. Revision History 
+ 
+Version 
+Date 
+Description of changes 
+01 
+2010/05/13 
+New setup 
+02 
+2010/11/30 
+Page 64  
+Modify figure 13.1: Pin assignment 
+03 
+2012/01/09 
+Page 65 
+Modify Bump height: 12µm±3µm or 9µm±2µm 
+ 
+ 
+ 

@@ -4,7 +4,6 @@ import socket
 import struct
 import threading
 import time
-from collections import deque
 
 
 def crc8(data):
@@ -184,16 +183,13 @@ class TelemetryReceiver:
         self.lock = threading.Lock()
         self.snapshot = None
         self.phy_diagnostic = None
-        self.fusion_diagnostic = None
+        self.avoidance_diagnostic = None
         self.updated = None
         self.scan = ScanAssembler()
         self.errors = 0
         self.bytes = 0
         self.closed = threading.Event()
         self.thread = threading.Thread(target=self.run, daemon=True)
-        self.history = deque(maxlen=100)
-        self.mapping_queue = deque(maxlen=3)
-        self.mapping_dropped = 0
         self.thread.start()
 
     def run(self):
@@ -209,13 +205,6 @@ class TelemetryReceiver:
             with self.lock:
                 self.ingest(data)
 
-    def queue_mapping(self, sample, now):
-        if len(self.mapping_queue) == self.mapping_queue.maxlen:
-            self.mapping_dropped += 1
-            self.mapping_queue.clear()
-            self.mapping_queue.append(((None, None, (), None, "建图接收队列积压，跳过不完整输入"), now))
-        self.mapping_queue.append((sample, now))
-
     def ingest(self, data, now=None):
         """Called by the socket owner under lock; also usable without board I/O."""
         now = time.monotonic() if now is None else now
@@ -226,7 +215,6 @@ class TelemetryReceiver:
                 if self.snapshot and not 0 < ((snap.seq-self.snapshot.seq) & 0xffffffff) < 0x80000000:
                     return
                 self.snapshot, self.updated = snap, now
-                self.history.append((snap, now))
             elif data[:4] == b"EMP1":
                 if len(data) != 32 or struct.unpack_from("<HH", data, 4) != (1, 32):
                     raise ValueError("Invalid EMP1 PHY diagnostic")
@@ -243,27 +231,15 @@ class TelemetryReceiver:
                 }
             elif data[:4] == b"EMF1":
                 if len(data)!=48 or struct.unpack_from("<HH",data,4)!=(1,48) or data[16]!=1:
-                    raise ValueError("Invalid EMF1 fusion snapshot")
-                self.fusion_diagnostic={"seq":struct.unpack_from("<I",data,8)[0],"fpga_ms":struct.unpack_from("<I",data,12)[0],
+                    raise ValueError("Invalid EMF1 basic status")
+                self.avoidance_diagnostic={"seq":struct.unpack_from("<I",data,8)[0],"fpga_ms":struct.unpack_from("<I",data,12)[0],
                     "state":data[17],"fault":data[18],"geometry_verified":bool(data[19]),
-                    "x_mm":struct.unpack_from("<i",data,20)[0],"y_mm":struct.unpack_from("<i",data,24)[0],
+                    "roll_raw":struct.unpack_from("<h",data,20)[0],"pitch_raw":struct.unpack_from("<h",data,22)[0],
+                    "tilt_valid":bool(data[24]&1),
                     "yaw_raw":struct.unpack_from("<h",data,28)[0],"front_mm":struct.unpack_from("<H",data,30)[0],
-                    "map_revision":struct.unpack_from("<I",data,32)[0],"quality":data[36],"host_monotonic":now}
+                    "scan_valid":bool(data[36]),"host_monotonic":now}
             else:
-                previous = self.scan.completed_id
-                broken = self.scan.discontinuities
                 self.scan.feed(data, now)
-                if self.scan.discontinuities != broken:
-                    self.queue_mapping((None, None, (), None, self.scan.last_discontinuity), now)
-                if self.scan.completed_id != previous and self.scan.completed_stamp is not None:
-                    stamp = self.scan.completed_stamp
-                    difference = lambda s: abs(((s.ms-stamp+0x80000000) & 0xffffffff)-0x80000000)
-                    recent = [s for s, received in self.history if now-received <= .3]
-                    closest = min(recent, key=difference) if recent else None
-                    if closest is None or difference(closest) > 100:
-                        self.queue_mapping((None, None, (), None, "完整扫描没有100ms内有效遥测"), now)
-                    else:
-                        self.queue_mapping((self.scan.completed_id, stamp, tuple(self.scan.points), closest), now)
         except ValueError:
             self.errors += 1
 
@@ -271,10 +247,7 @@ class TelemetryReceiver:
         with self.lock:
             now = time.monotonic()
             snap = self.snapshot if self.updated is not None and now-self.updated < .15 else None
-            discontinuities = self.scan.discontinuities
             points = self.scan.visible(now)
-            if self.scan.discontinuities != discontinuities:
-                self.queue_mapping((None, None, (), None, self.scan.last_discontinuity), now)
             return snap, points
 
     def close(self):
@@ -282,19 +255,11 @@ class TelemetryReceiver:
         self.socket.close()
         self.thread.join(timeout=.5)
 
-    def mapping_samples(self):
-        with self.lock:
-            now = time.monotonic()
-            samples = [sample if now-received <= .3 else (None, None, (), None, "上位机处理队列中扫描已过期")
-                       for sample, received in self.mapping_queue]
-            self.mapping_queue.clear()
-            return samples
-
     def diagnostics(self):
         with self.lock:
             return {"host_bad_packets":self.scan.errors,"scan_gaps":self.scan.gaps,
                     "discontinuities":self.scan.discontinuities,"last_reason":self.scan.last_discontinuity,
-                    "completed_scans":self.scan.completed_id,"mapping_queue_dropped":self.mapping_dropped,
+                    "completed_scans":self.scan.completed_id,
                     "receive_buffer_bytes":self.socket.getsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF),
                     "phy":getattr(self,"phy_diagnostic",None),
-                    "fusion":getattr(self,"fusion_diagnostic",None)}
+                    "avoidance":getattr(self,"avoidance_diagnostic",None)}

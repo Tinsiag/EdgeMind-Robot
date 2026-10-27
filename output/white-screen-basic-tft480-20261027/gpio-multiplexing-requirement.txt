@@ -1,0 +1,70 @@
+3 配置接口 
+3.2 配置管脚 
+ 
+UG718-1.0.4 
+14(72) 
+ 
+用户模式，按照用户选择的复用选项重新分配管脚的功能。 
+注！ 
+用户设置管脚复用选项时，需确保管脚的外部初始连接状态不影响器件的配置过程。 
+配置管脚复用选项如表3-7 所示。  
+表3-7 配置管脚复用选项 
+设置名称 
+设置选项 
+说明 
+JTAG PORT[1] 
+默认状态 
+TMS，TCK，TDI，TDO 作为专用配置管脚。 
+设置为普通I/O 
+TMS，TCK，TDI，TDO 在配置结束后作为GPIO。 
+CPU PORT 
+默认状态 
+CSI_B，CSO_B，RDWR_B，D[0-31]和CCLK 作为专用
+配置管脚。 
+设置为普通I/O 
+CSI_B，CSO_B，RDWR_B，D[0-31]和CCLK 在配置结
+束后作为GPIO。 
+SSPI PORT 
+默认状态 
+SSPI_CS_N，SSPI_CLK， SI， SO，CLKHOLD_N 和
+SSPI_WPN 作为专用配置管脚。 
+设置为普通I/O 
+SSPI_CS_N，SSPI_CLK，SI，SO，CLKHOLD_N 和
+SSPI_WPN 在配置结束后作为GPIO。 
+MSPI PORT 
+默认状态 
+MCS_N，MISO，MOSI，D02，D03 和CCLK 作为专用
+配置管脚。 
+设置为普通I/O 
+MCS_N，MISO，MOSI，D02，D03 和CCLK 在配置结
+束后作为GPIO。 
+SERIAL 
+默认状态 
+DIN，DOUT 和CCLK 作为专用配置管脚。 
+设置为普通I/O 
+DIN，DOUT 和CCLK 在配置结束后作为GPIO。 
+RECONFIG_N 
+默认状态 
+专用配置管脚 
+READY 
+默认状态 
+专用配置管脚 
+设置为普通I/O 
+配置结束后作为GPIO 
+DONE 
+默认状态 
+专用配置管脚 
+设置为普通I/O 
+配置结束后作为GPIO 
+注！ 
+ 
+[1] 可以通过内部逻辑控制JTAG_SEL_N 信号，将JTAG 管脚恢复为配置 IO。 
+ 
+[1] JTAG 复用的情况下需确保上电加载过程中TCK 或者TMS 状态稳定，以防错误触
+发JTAG 指令影响正常加载. 
+高云半导体云源软件配置管脚复用 
+通过高云半导体云源软件配置管脚复用： 
+1. 打开高云半导体云源软件中相应的工程； 
+2. 在菜单栏中选择“Project > Configuration > Dual-Purpose Pin”，如图
+3-1 所示； 
+3. 勾选对应选项设置配置管脚的复用情况。 

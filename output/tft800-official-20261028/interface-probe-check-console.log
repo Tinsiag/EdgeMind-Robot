@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "bitstream_sha256": "b7cb31acf792c9650a6e99299a5a077af61f5b6976d7af662ca295d47f13510b",
+  "sdf_sha256": "f64491a1dc4b245e9a5570d2d2a9d0e9e7b78a33dcf3af395469d54d579c693e",
+  "vo_sha256": "f6f3f9df4476d11199c3749add18bd23edd13f3f76b5c9c415bd7389ecbd71e9",
+  "official_scanner_pll_colors_unchanged": true,
+  "top_reset_synchronized": true,
+  "main_project_replaced": false,
+  "includes_camera_ddr_imu_ethernet": false,
+  "motor_pads_grounded": true,
+  "pad_input_buffers_verified": {
+    "clock_pad": {
+      "input_net": "read_clk",
+      "first_sampler": "read_clk_sync_0_s0"
+    },
+    "de_pad": {
+      "input_net": "read_de",
+      "first_sampler": "read_de_sync_0_s0"
+    },
+    "bl_pad": {
+      "input_net": "read_bl",
+      "first_sampler": "read_bl_sync_0_s0"
+    }
+  },
+  "backlight_toggle_seconds": 0.67108864,
+  "sta_worst_slack_ns": {
+    "setup": 2.653,
+    "hold": 0.056,
+    "recovery": 28.995,
+    "removal": 0.356,
+    "mpw": 7.122
+  },
+  "minimum_setup_ns": 15.226515151515153,
+  "minimum_hold_ns": 15.030515151515152,
+  "lcd_margin_ns": 5.730515151515152,
+  "required_setup_hold_ns": 8,
+  "unmeasured_board_cable_budget_ns": 1,
+  "clock_reserve_ns": 0.3,
+  "clock_arrival_ns": [
+    [
+      1.975,
+      3.016,
+      4.056
+    ],
+    [
+      1.975,
+      3.016,
+      4.056
+    ]
+  ],
+  "hardware_programmed": false
+}
+PASS physicalIOBUF readback and backlight toggle plus official800x480 eight colour blocks,2 complete frames,33MHz falling launch/rising sample,motor pads low
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/tft800-official-20261028/interface-probe/interface_probe_tb.v:36: $finish called at 33665243920 (1ps)
+

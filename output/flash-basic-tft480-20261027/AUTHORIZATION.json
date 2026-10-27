@@ -1,0 +1,8 @@
+{
+  "recorded_utc": "2026-10-27T15:31:32.977606+00:00",
+  "authorization": "User requested FPGA programming and confirmed FPGA on, motor VM off, TFT and programmer on.",
+  "bitstream": "output/timing-fix-basic-tft480-20261027/build-evidence-final/a741.fs",
+  "sha256": "094862d12885cd786f3d5efb676205a9a999ff64e244b533e72ef538b4b2c8ee",
+  "operation": "External SPI Flash operation 54 at 0x000000, verify, Reprogram, status",
+  "motor_pads_grounded": true
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "groups": [
+      1,
+      62
+    ],
+    "destination_types": {
+      "IDES8_MEM": 16,
+      "OSER8_MEM": 20,
+      "DQS": 2,
+      "OSER8": 24
+    }
+  },
+  {
+    "groups": [
+      1,
+      4
+    ],
+    "destination_types": {
+      "DFFCE": 4
+    }
+  },
+  {
+    "groups": [
+      4,
+      2
+    ],
+    "destination_types": {
+      "DQS": 2
+    }
+  },
+  {
+    "groups": [
+      2,
+      16
+    ],
+    "destination_types": {
+      "IDES8_MEM": 16
+    }
+  },
+  {
+    "groups": [
+      1,
+      8
+    ],
+    "destination_types": {
+      "DFFCE": 8
+    }
+  },
+  {
+    "groups": [
+      1
+    ],
+    "destination_types": {
+      "DFFCE": 1
+    }
+  },
+  {
+    "groups": [
+      1
+    ],
+    "destination_types": {
+      "DFFCE": 1
+    }
+  },
+  {
+    "groups": [
+      1,
+      1
+    ],
+    "destination_types": {
+      "DFFCE": 1
+    }
+  },
+  {
+    "groups": [
+      1,
+      1
+    ],
+    "destination_types": {
+      "DFFCE": 1
+    }
+  }
+]

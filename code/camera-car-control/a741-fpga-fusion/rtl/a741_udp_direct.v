@@ -26,7 +26,7 @@ module a741_udp_direct #(parameter CLK_HZ=50000000,REPLY_TIMEOUT_MS=30)(
     wire parser_valid,parser_crc_error,parser_length_error;
     wire signed [31:0] difference=incoming_number-number;
     wire same_session=session_valid && incoming_session==session;
-    wire expects_reply=kind!=8'h05 && kind!=8'h11 && kind!=8'h45 && kind!=8'h47;
+    wire expects_reply=kind!=8'h05 && kind!=8'h11;
     // Reset at every packet boundary, including malformed/truncated packets.
     // Parser output is held throughout dispatch and reply transmission.
     a741_protocol parser(.clk(clk),.rstn(rst_n && parser_reset_n),.rx_data(rx_data),

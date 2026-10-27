@@ -1,4 +1,4 @@
-"""Build isolated A741 diagnostics, optionally with MPU6050 and motor lock."""
+"""Build the basic camera/TFT/IMU/LD06 profile; synthesis never programs hardware."""
 import argparse
 import hashlib
 import html
@@ -9,6 +9,7 @@ import re
 import subprocess
 import sys
 import time
+import threading
 import xml.etree.ElementTree as ET
 from zipfile import ZipFile
 
@@ -64,177 +65,52 @@ def pulse_width_slack(text):
     return min(map(float, values)) if values else None
 
 
-def prepare(examples, imu_test=False, motion_lidar=False, fusion=False, tft480=False):
-    out = ROOT / (".local/platform-tft480" if tft480 else ".local/platform-motion-lidar" if motion_lidar else ".local/platform-imu-test" if imu_test else ".local/platform")
-    out.mkdir(parents=True, exist_ok=True)
-    platform = CAMERA / ".local/platform"
-    if not (platform / "manifest.json").is_file():
-        subprocess.run([sys.executable, str(CAMERA / "scripts/prepare_platform.py"),
-                        "--examples", str(examples)], check=True)
-    archive = next(examples.glob("第38章*/*.zip"))
-    chapter47 = next(examples.glob("第47章*/*.zip"))
-    entries = ["src/ddr3_memory_interface/ddr3_memory_interface.v",
-               "src/ddr_pll/ddr_pll.v", "src/ddr_pll/ddr_pll_mod.v",
-               "src/pll_mDRP_intf.v", "src/dvi_encoder.v",
-               "src/gowin_pll/gowin_pll.v", "src/gowin_pll/gowin_pll_mod.v"]
-    files, record = [], {}
-    with ZipFile(archive) as z:
-        ddr_ipc_raw = z.read("src/ddr3_memory_interface/ddr3_memory_interface.ipc")
-        for name in entries:
-            raw = z.read(name)
-            data = raw
-            if "/gowin_pll/" in name:
-                data = raw.replace(b"Gowin_PLL", b"A741_Video_PLL")
-                if name.endswith("gowin_pll_mod.v"):
-                    # Keep 165 MHz TMDS and divide-by-5 pixel clocks unchanged.
-                    # Previously unused CLKOUT0 supplies a 55 MHz reset clock.
-                    for old, new in ((b"ODIV0_SEL = 16", b"ODIV0_SEL = 15"),
-                                     (b"ODIV0_FRAC_SEL = 4", b"ODIV0_FRAC_SEL = 0")):
-                        if data.count(old) != 1:
-                            raise RuntimeError("Unexpected video PLL divider configuration")
-                        data = data.replace(old, new)
-            if name == "src/dvi_encoder.v":
-                text = raw.decode("utf-8").replace("\r\n", "\n")
-                begin = text.index("module encode(")
-                end = text.index("module serdes_4b_10to1(")
-                original_dir = out / "original"
-                original_dir.mkdir(exist_ok=True)
-                write_bytes_if_changed(original_dir / "dvi_encoder.v", raw)
-                data = text[begin:end].replace("module encode(", "module a741_tmds_encode(").replace("`D", "").encode("utf-8")
-            dest = out / Path(name).name
-            write_bytes_if_changed(dest, data)
-            files.append(dest)
-            record[name] = {"original_sha256": hashlib.sha256(raw).hexdigest(), "sha256": sha(dest)}
-    cst = (CAMERA / "constraints/acg720_camera_car.cst").read_text(encoding="utf-8")
-    with ZipFile(chapter47) as z:
-        vendor = z.read("src/ov5640_ddr3_hdmi.cst").decode("utf-8-sig")
-    cst += "\n" + "\n".join(line for line in vendor.splitlines()
-                             if re.match(r'IO_(LOC|PORT) "(O_ddr_|IO_ddr_)', line))
-    for signal, balls in (("tmds_clk_p", "K4,J4"), ("tmds_data_p[0]", "L3,K3"),
-                          ("tmds_data_p[1]", "L5,L4"), ("tmds_data_p[2]", "M3,M2")):
-        cst += f'\nIO_LOC "{signal}" {balls};\nIO_PORT "{signal}" IO_TYPE=LVCMOS33D PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;\n'
-    if imu_test or motion_lidar:
-        pins = json.loads((ROOT / "config/sensor-pins.json").read_text(encoding="utf-8"))
-        expected = {"scl": "L18", "sda": "M20", "xda": "A1", "xcl": "B2", "ad0": "M17", "int": "B1"}
-        if any(pins["mpu6050"][name]["ball"] != ball for name, ball in expected.items()):
-            raise RuntimeError("IMU test wiring differs from the user's confirmed mapping")
-        for name, ball in expected.items():
-            cst += f'\nIO_LOC "imu_{name}" {ball};\nIO_PORT "imu_{name}" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;\n'
-    if motion_lidar:
-        for name, ball in (("lidar_control", "H20"), ("lidar_rx", "H14")):
-            cst += f'\nIO_LOC "{name}" {ball};\nIO_PORT "{name}" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;\n'
-    if tft480:
-        screen_pins = {"tft_clk":"AB20", "tft_de":"AB22", "tft_hsync":"V19",
-                       "tft_vsync":"Y19", "tft_bl":"AB21"}
-        for bit, ball in enumerate(("R18","R14","P14","U18","U17","N13","R16","P15","P17","N17","T18","L6","N15","R17","P16","N14")):
-            screen_pins[f"tft_rgb[{bit}]"]=ball
-        for signal,ball in screen_pins.items():
-            cst += f'\nIO_LOC "{signal}" {ball};\nIO_PORT "{signal}" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;\n'
-    if fusion:
-        cst += "\n" + (ROOT / "constraints/board.cst").read_text(encoding="utf-8")
-    assigned = {}
-    for signal, balls in re.findall(r'IO_LOC "([^"]+)" ([A-Z0-9,]+);', cst):
-        for ball in balls.split(","):
-            if ball in assigned:
-                raise ValueError(f"Pin conflict {ball}: {signal}/{assigned[ball]}")
-            assigned[ball] = signal
-    # The test maps only MPU6050. LD06/ToF remain absent; input-only auxiliary pins never drive.
-    write_text_if_changed(out / "a741.cst", cst)
-    sdc = (CAMERA / "constraints/acg720_camera_car.sdc").read_text(encoding="utf-8")
-    # Gowin creates its implicit PLL clocks after SDC parsing. Define the static
-    # parents first so CLKDIV sources resolve; values match the original IPCs.
-    sdc += "\ncreate_generated_clock -name video165m -source [get_ports {clk}] -multiply_by 33 -divide_by 10 -phase 0 -duty_cycle 50 [get_pins {video_pll/u_pll/PLLA_inst/CLKOUT1}]\n"
-    sdc += "create_generated_clock -name pixel33m -source [get_pins {video_pll/u_pll/PLLA_inst/CLKOUT1}] -master_clock video165m -divide_by 5 [get_pins {pixel_divider/CLKOUT}]\n"
-    sdc += "create_generated_clock -name hdmi_reset55m -source [get_ports {clk}] -multiply_by 11 -divide_by 10 -phase 0 -duty_cycle 50 [get_pins {video_pll/u_pll/PLLA_inst/CLKOUT0}]\n"
-    # Only asynchronous assertion at the reset synchronizer is excepted.
-    # Its synchronous output to OSER10 RESET remains fully timed.
-    sdc += "set_false_path -to [get_pins {hdmi/lanes*.serial_reset_pipe*/PRESET}]\n"
-    sdc += "create_generated_clock -name memory400m -source [get_ports {clk}] -multiply_by 8 -phase 0 -duty_cycle 50 [get_pins {memory_pll/u_pll/PLLA_inst/CLKOUT2}]\n"
-    sdc += "create_generated_clock -name ddr_ui100m -source [get_pins {memory_pll/u_pll/PLLA_inst/CLKOUT2}] -master_clock memory400m -divide_by 4 [get_pins {memory/gw3_top/u_ddr_phy_top/fclkdiv/CLKOUT}]\n"
-    sdc += (ROOT / "constraints/cdc.sdc").read_text(encoding="utf-8")
-    if tft480:
-        # All LCD outputs are sys_clk registers; minimum PCLK half-period is 40ns.
-        # Bound output routing to 10ns, leaving margin for the panel's 10ns setup.
-        sdc += '\nset_max_delay 10.000 -to [get_ports {tft_clk tft_de tft_hsync tft_vsync tft_bl tft_rgb[*]}]\n'
-    if imu_test or motion_lidar:
-        # Asynchronous I2C feedback enters two-stage input synchronizers.
-        sdc += '\nset_false_path -from [get_ports {imu_sda imu_scl}] -to [get_pins {core/sensors/imu_bus/sda_sync_0_s0/D core/sensors/imu_bus/scl_sync_0_s0/D}]\n'
-    if motion_lidar:
-        sdc += '\nset_false_path -from [get_ports {lidar_rx}] -to [get_pins {core/sensors/lu/sync_0_s0/D}]\n'
-    write_text_if_changed(out / "a741.sdc", sdc)
-    extra = [p for p in platform.glob("original/ch59/**/*.v")]
-    extra += [platform / "ov5640_init_table_rgb.v", CAMERA / "rtl/ov5640_board_init.v",
-              CAMERA / "rtl/acg720_rgmii_rx.v",
-              CAMERA.parent / "fpga/acg720-ddr3/rtl/camera_init/ov5640_ctrl.v",
-              CAMERA.parent / "fpga/acg720-ddr3/rtl/camera_init/sccb_master.v",
-              CAMERA / "rtl/video_udp_packetizer.v"]
-    extra += [VISION / n for n in ("reset_sync.v", "dvp_capture_continuous.v", "capture_tokens.v", "async_fifo.v",
-                                  "cdc_mailbox.v", "ddr_framebuffer.v", "video_pixels.v", "video_timing.v")]
-    manifest = {"chapter38": str(archive), "chapter38_sha256": sha(archive),
-                "chapter47": str(chapter47), "chapter47_sha256": sha(chapter47),
-                "files": record, "p4_enabled": False, "imu_enabled": imu_test or motion_lidar,
-                "motor_locked": imu_test, "motion_lidar": motion_lidar, "tof_enabled": False,
-                "tft480_enabled":tft480,
-                "ddr_ipc_sha256": hashlib.sha256(ddr_ipc_raw).hexdigest(),
-                "pin_assignments": assigned,
-                "adaptations": ["Rename chapter38 video PLL modules to avoid network PLL collision.",
-                                "Preserve TMDS encoder; use OSER10 serializers instead of fabric modulo-5 shifters.",
-                                "Use previously unused video PLL CLKOUT0 at 55 MHz for four local serializer resets; retain recovery/removal checks.",
-                                "Model pixel CLKDIV from the implemented video PLL output at divide-by-5.",
-                                "Model DDR UI clock from the memory PLL at divide-by-4, matching original IPC 400 MHz/1:4.",
-                                "Define static 0-degree/50-percent PLL parent clocks before CLKDIV constraints; dynamic DDR calibration still requires review.",
-                                "DDR mDRP bypass released after 16 locked cycles, per verified project correction."]}
-    write_text_if_changed(out / "provenance.json", json.dumps(manifest, indent=2, ensure_ascii=False))
-    top = (ROOT / "rtl/a741_top.v").read_text(encoding="utf-8")
-    if tft480:
-        top=top.replace("module a741_top(", "module a741_top(\n    output wire tft_clk,tft_de,tft_hsync,tft_vsync,tft_bl,\n    output wire [15:0] tft_rgb,")
-        top=top.replace("endmodule", "a741_tft480_panel status_panel(.clk(clk),.rst_n(control_n),.snapshot(snapshot),\n"
-                        ".fusion_snapshot(fusion_snapshot),.tft_clk(tft_clk),.tft_de(tft_de),.tft_hsync(tft_hsync),\n"
-                        ".tft_vsync(tft_vsync),.tft_bl(tft_bl),.tft_rgb(tft_rgb));\nendmodule")
-    if fusion:
-        geometry=json.loads((ROOT / "config/geometry.json").read_text(encoding="utf-8"))
-        sys.path.insert(0,str(ROOT / "host"))
-        from fusion_config import compiled_parameters
-        values,config_crc=compiled_parameters(geometry,json.loads((ROOT / "config/calibration.json").read_text(encoding="utf-8")))
-        parameters="defparam core.FUSION_ENABLED=1;\ndefparam video.FUSION_ENABLED=1;\n"
-        parameters+="".join(f"defparam core.{k}={v};\n" for k,v in values.items())
-        parameters+=f"defparam core.FUSION_CONFIG_CRC=32'h{config_crc:08x};\n"
-        write_text_if_changed(out / "fusion-parameters.json", json.dumps({"parameters":values,"crc32":config_crc},indent=2))
-        top=top.replace("endmodule",parameters+"endmodule")
-    if motion_lidar:
-        top = "`define A741_MOTION_LIDAR\n" + top
-    elif imu_test:
-        top = "`define A741_IMU_TEST\n" + top
-    write_text_if_changed(out / "a741_top.v", top)
-    base_sources = [p for p in sources() if p.name != "a741_top.v"]
-    return list(dict.fromkeys(base_sources+files+extra+[out / "a741_top.v"])), out
+def screen_test_top(top):
+    """Hard-wire the four motor pads low without removing video/sensor logic."""
+    for signal, raw in (("left_in1", "raw_l1"), ("left_in2", "raw_l2"),
+                        ("right_in1", "raw_r1"), ("right_in2", "raw_r2")):
+        original = f"assign {signal}=IMU_TEST ? 1'b0:global_n && {raw};"
+        if top.count(original) != 1:
+            raise RuntimeError("Cannot establish screen-test motor lock: " + signal)
+        top = top.replace(original, f"assign {signal}=1'b0;")
+    return top
+
+
+def prepare(examples, imu_test=False, motion_lidar=True, fusion=True, tft800=True, screen_test=False, display_diagnostic=False):
+    from prepare_basic import prepare as basic_platform
+    return basic_platform(examples, screen_test=screen_test, display_diagnostic=display_diagnostic)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("prepare", "synth", "build", "pnr", "report"))
-    parser.add_argument("--imu-test", action="store_true", help="Enable MPU6050 only; hard-disable motor outputs")
+    parser.set_defaults(imu_test=False,motion_lidar=True,fusion=True,tft800=True)
     parser.add_argument("--motion-lidar", action="store_true", help="Enable motors, IMU and LD06 H20/H14; ToF absent")
-    parser.add_argument("--fusion", action="store_true", help="Enable board-domain fusion/navigation RTL; geometry safety lock remains enforced")
-    parser.add_argument("--tft480", action="store_true", help="Enable confirmed J1/FPC 4.3-inch 480x272 RGB status panel; requires --fusion")
+    parser.add_argument("--fusion", action="store_true", help="Compatibility flag; basic camera/TFT/IMU/avoidance is the only profile")
+    parser.add_argument("--tft800", action="store_true", help="Official ACG720 800x480 RGB565 display at stable33MHz; current sole board profile")
+    parser.add_argument("--screen-test", action="store_true", help="Hard-wire all four motor output pads low")
+    parser.add_argument("--display-diagnostic", action="store_true", help="Startup colours, missing-video bars and activity/error LEDs; requires --screen-test")
     parser.add_argument("--in-place", action="store_true", help="Synthesize in the normal build directory to permit checked PNR reuse")
     parser.add_argument("--timeout", type=int, default=5400, help="Gowin tool wall-time limit in seconds")
     parser.add_argument("--route-option", type=int, choices=(0,1,2), default=1, help="Gowin routing algorithm; default 1 per user's 2026-10-25 choice")
-    parser.add_argument("--place-option", type=int, choices=(0,1,2,3,4), default=0, help="Documented Gowin placement algorithm; 1 prioritizes routability")
-    parser.add_argument("--examples", type=Path, default=CAMERA / ".local/environment/examples/GW5AT60K")
+    parser.add_argument("--place-option", type=int, choices=(0,1,2,3,4), default=1, help="Documented Gowin placement algorithm; 1 prioritizes routability")
+    parser.add_argument("--examples", type=Path, default=Path("C:/Users/sc/Documents/Dev/Hardware/fpga/小梅哥ACG720国产高云FPGA教学开发板资料/02_例程源码/GW5AT60K"))
     parser.add_argument("--gowin", default="C:/Gowin/Gowin_V1.9.12.04_x64/IDE/bin/gw_sh.exe")
     args = parser.parse_args()
+    args.fusion=args.tft800=args.motion_lidar=True
+    if args.display_diagnostic and not args.screen_test:
+        parser.error("--display-diagnostic requires --screen-test")
     if args.in_place and args.mode!="synth":
         parser.error("--in-place is only valid with synth")
-    if args.tft480 and not args.fusion:
-        parser.error("--tft480 requires --fusion")
     if args.timeout<1:
         parser.error("--timeout must be positive")
     if args.fusion:
         args.motion_lidar=True
     if args.imu_test and args.motion_lidar:
         parser.error("Choose exactly one hardware variant")
-    build_folder = "gowin-fusion-tft480" if args.tft480 else "gowin-fusion" if args.fusion else "gowin-motion-lidar" if args.motion_lidar else "gowin-imu-test" if args.imu_test else "gowin-board"
+    build_folder="gowin-basic-tft800"+("-screen-test" if args.screen_test else "")
+    if args.display_diagnostic:
+        build_folder+="-diagnostic"
     for folder in (build_folder, build_folder+"-synth"):
         running = ROOT / ".local" / folder / "result.json"
         if running.is_file() and json.loads(running.read_text(encoding="utf-8")).get("run_state")=="running":
@@ -261,7 +137,7 @@ def main():
     if args.fusion:
         from build_mission import build as build_mission
         build_mission()
-    files, platform = prepare(args.examples, args.imu_test, args.motion_lidar,args.fusion,args.tft480)
+    files, platform = prepare(args.examples, args.imu_test, args.motion_lidar,args.fusion,args.tft800,args.screen_test,args.display_diagnostic)
     if args.mode == "prepare":
         print("Prepared A741 platform; IMU test="+str(args.imu_test)+"; no hardware operation.")
         return
@@ -273,7 +149,7 @@ def main():
     listing = [(p, "file.verilog") for p in files]
     listing += [(platform / "a741.cst", "file.cst"), (platform / "a741.sdc", "file.sdc")]
     hashes = {str(p): sha(p) for p, _ in listing}
-    for path in (ROOT/"scripts/check.py",ROOT/"scripts/vendor.py",ROOT/"constraints/cdc.sdc",
+    for path in (ROOT/"scripts/check.py",ROOT/"scripts/vendor.py",ROOT/"scripts/prepare_basic.py",ROOT/"constraints/cdc.sdc",ROOT/"constraints/ddr_control.sdc",ROOT/"constraints/ethernet.sdc",
                  CAMERA/"constraints/acg720_camera_car.cst",CAMERA/"constraints/acg720_camera_car.sdc"):
         hashes[str(path)]=sha(path)
     if args.imu_test or args.motion_lidar:
@@ -283,7 +159,7 @@ def main():
         hashes[str(ROOT / "constraints/board.cst")]=sha(ROOT / "constraints/board.cst")
         hashes[str(ROOT / "config/geometry.json")]=sha(ROOT / "config/geometry.json")
         hashes[str(ROOT / "config/calibration.json")]=sha(ROOT / "config/calibration.json")
-        hashes[str(ROOT / "host/fusion_config.py")]=sha(ROOT / "host/fusion_config.py")
+        hashes[str(ROOT / "host/board_config.py")]=sha(ROOT / "host/board_config.py")
         for path in (ROOT / "firmware").iterdir():
             if path.is_file(): hashes[str(path)]=sha(path)
         hashes[str(out / "firmware/mission.hex")]=sha(out / "firmware/mission.hex")
@@ -324,11 +200,14 @@ def main():
         "set_option -use_cpu_as_gpio 1\nset_option -user_code 0000A741\nset_option -bit_security 0\n"
         + f"set_option -route_option {args.route_option}\n"
         + f"set_option -place_option {args.place_option}\n"
+        + "set_option -timing_driven 1\nset_option -correct_hold_violation 1\n"
+        + "set_option -gen_sdf 1\nset_option -gen_verilog_sim_netlist 1\n"
         + ("run syn\n" if args.mode == "synth" else "run pnr\n" if args.mode == "pnr" else "run all\n"))
     if args.mode == "pnr":
         previous_tcl = (out / "build.tcl").read_text(encoding="utf-8")
         def synthesis_options(script):
-            return re.sub(r"(?m)^set_option -(route_option|place_option) \d+\n?", "",script.rsplit("\nrun ",1)[0])
+            # SDF/plaintext netlist exports do not alter synthesis semantics.
+            return re.sub(r"(?m)^set_option -(route_option|place_option|gen_sdf|gen_verilog_sim_netlist) \d+\n?", "",script.rsplit("\nrun ",1)[0]).rstrip()
         if synthesis_options(previous_tcl)!=synthesis_options(tcl):
             raise RuntimeError("Synthesis options changed; run a complete build")
     write_text_if_changed(out / "build.tcl", tcl)
@@ -338,20 +217,40 @@ def main():
     # Save the inputs before launching the tool. An interrupted session must not
     # leave a previous run's completed result looking like the current build.
     (out / "result.json").write_text(json.dumps({
-        "variant":"A741-FPGA-FUSION-TFT480" if args.tft480 else build_folder,
+        "variant":"A741-FPGA-FUSION-TFT800",
         "mode":args.mode,"run_state":"running","pid":os.getpid(),"started_unix":started,
         "compile_passed":False,"seconds":0,"timed_out":False,"sources_changed":False,
         "hardware_programmed":False,"timing_signed_off":False,"route_option":args.route_option,
+        "screen_test":args.screen_test,"display_diagnostic":args.display_diagnostic,"motor_locked":args.imu_test or args.screen_test,
         "place_option":args.place_option,
         "platform_directory":str(platform),"source_sha256":hashes},indent=2),encoding="utf-8")
-    with (out / "build.log").open("w", encoding="utf-8") as log:
-        with subprocess.Popen([args.gowin, str(out / "build.tcl")], cwd=out, stdout=log, stderr=subprocess.STDOUT) as tool:
+    timeline_path=out/"build-timeline.jsonl"
+    with (out / "build.log").open("w", encoding="utf-8") as log, timeline_path.open("w",encoding="utf-8") as timeline:
+        with subprocess.Popen([args.gowin, str(out / "build.tcl")], cwd=out,
+                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                              text=True,encoding="utf-8",errors="replace") as tool:
+            def capture_output():
+                for line in tool.stdout:
+                    log.write(line);log.flush()
+                    timeline.write(json.dumps({"received_unix":time.time(),"elapsed_s":round(time.time()-started,3),
+                                               "line":line.rstrip()},ensure_ascii=False)+"\n")
+                    timeline.flush()
+            reader=threading.Thread(target=capture_output,daemon=True);reader.start()
+            def stop_tool_tree():
+                if os.name=="nt":
+                    subprocess.run(["taskkill","/PID",str(tool.pid),"/T","/F"],capture_output=True)
+                else:
+                    tool.kill()
+                tool.wait()
             try:
                 rc=tool.wait(timeout=args.timeout)
             except subprocess.TimeoutExpired:
-                tool.kill();tool.wait();timed_out,rc=True,-1
+                stop_tool_tree();timed_out,rc=True,-1
             except KeyboardInterrupt:
-                tool.terminate();tool.wait();interrupted,rc=True,130
+                stop_tool_tree();interrupted,rc=True,130
+            reader.join(timeout=10)
+            if reader.is_alive():
+                raise RuntimeError("Compiler output pipe remained open after tool exit; inspect child processes")
     log = (out / "build.log").read_text(encoding="utf-8", errors="replace")
     artifact = out / ("impl/gwsynthesis/a741.vg" if args.mode == "synth" else "impl/pnr/a741.fs")
     changed = any(sha(Path(p)) != h for p, h in hashes.items())
@@ -383,11 +282,16 @@ def main():
               "run_state":"interrupted" if interrupted else "timed_out" if timed_out else "completed" if passed else "failed",
               "started_unix":started,"route_option":args.route_option,
               "place_option":args.place_option,
-              "p4_enabled": False, "imu_enabled": args.imu_test or args.motion_lidar, "motor_locked": args.imu_test,
+              "p4_enabled": False, "imu_enabled": args.imu_test or args.motion_lidar, "motor_locked": args.imu_test or args.screen_test,
+              "screen_test":args.screen_test,"display_diagnostic":args.display_diagnostic,
               "motion_lidar": args.motion_lidar, "tof_enabled": False,
               "platform_directory": str(platform),
               "hardware_programmed": False, "timing_signed_off": False,
               "timing_violations": violations, "sources_changed": changed, "source_sha256": hashes}
+    record["timeline"]={"path":str(timeline_path),"sha256":sha(timeline_path),
+                        "meaning":"stdout receipt times; EDA output buffering can delay messages"}
+    record["timing_driven"]=True;record["correct_hold_violation"]=True
+    record["tcl_sha256"]=sha(out/"build.tcl")
     record["worst_reported_slack_ns"] = worst
     record["clock_frequencies"] = frequencies
     record["minimum_pulse_width_worst_slack_ns"] = pulse_width
@@ -410,10 +314,16 @@ def main():
         record["synthesis_timing"]=synthesis_timing(synth_report)
         record["synthesis_report_sha256"]=sha(synth_report)
     record["calibration_json_sha256"] = sha(ROOT / "config/calibration.json")
-    record["fusion_enabled"]=args.fusion
-    record["tft480_enabled"]=args.tft480
+    record["basic_enabled"]=True
+    record["hdmi_enabled"]=False
+    record["network_video_enabled"]=False
+    record["navigation_enabled"]=False
+    record["camera_size"]=[800,480]
+    record["tft800_enabled"]=args.tft800
     if args.fusion:
-        record["variant"]="A741-FPGA-FUSION-TFT480" if args.tft480 else "A741-FPGA-FUSION"
+        record["variant"]="A741-BASIC-CAMERA-TFT800-IMU-LD06"
+        if args.screen_test: record["variant"]="A741-TFT800-SCREEN-TEST-MOTOR-LOCKED"
+        if args.display_diagnostic: record["variant"]="A741-TFT800-DISPLAY-DIAGNOSTIC-MOTOR-LOCKED"
         record["geometry_verified"]=json.loads((ROOT / "config/geometry.json").read_text(encoding="utf-8")).get("navigation_geometry_verified") is True
         record["motion_release_allowed"]=False
     if passed:

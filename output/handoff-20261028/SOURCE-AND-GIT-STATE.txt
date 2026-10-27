@@ -1,0 +1,228 @@
+Pre-handoff base HEAD: 6a32a56ee1755c8353116ace9afed6631ba57d9c
+
+ M .gitattributes
+ M AGENTS.md
+ D HANDOFF-20261025.md
+ D NEXT-AI-PROMPT-20261025.md
+ M README.md
+ M code/camera-car-control/a741-fpga-fusion/README.md
+ M code/camera-car-control/a741-fpga-fusion/constraints/board.cst
+ M code/camera-car-control/a741-fpga-fusion/constraints/cdc.sdc
+ M code/camera-car-control/a741-fpga-fusion/display/rtl/a741_tft480_panel.v
+ M code/camera-car-control/a741-fpga-fusion/display/tests/tft480_panel_tb.v
+ M code/camera-car-control/a741-fpga-fusion/docs/FIRMWARE-GUIDE.md
+ M code/camera-car-control/a741-fpga-fusion/docs/FUSION-ARCHITECTURE.md
+ M code/camera-car-control/a741-fpga-fusion/docs/FUSION-PROTOCOL.md
+ M code/camera-car-control/a741-fpga-fusion/docs/MOTION-LIDAR-MAPPING.md
+ M code/camera-car-control/a741-fpga-fusion/docs/PROTOCOL.md
+ M code/camera-car-control/a741-fpga-fusion/docs/TASK3-4.md
+ M code/camera-car-control/a741-fpga-fusion/firmware/manifest.json
+ M code/camera-car-control/a741-fpga-fusion/firmware/mission.c
+ M code/camera-car-control/a741-fpga-fusion/firmware/mission.hex
+ M code/camera-car-control/a741-fpga-fusion/host/app.py
+ M code/camera-car-control/a741-fpga-fusion/host/calibration.py
+ M code/camera-car-control/a741-fpga-fusion/host/client.py
+ D code/camera-car-control/a741-fpga-fusion/host/fusion.py
+ D code/camera-car-control/a741-fpga-fusion/host/fusion_config.py
+ D code/camera-car-control/a741-fpga-fusion/host/fusion_view.py
+ D code/camera-car-control/a741-fpga-fusion/host/heading_control.py
+ D code/camera-car-control/a741-fpga-fusion/host/mapping.py
+ M code/camera-car-control/a741-fpga-fusion/host/telemetry.py
+ D code/camera-car-control/a741-fpga-fusion/host/video.py
+ D code/camera-car-control/a741-fpga-fusion/native/slam_bridge.c
+ D code/camera-car-control/a741-fpga-fusion/requirements-mapping-build.txt
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_autonomy.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_core.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_fusion_core.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_grid_map.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_hdmi.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_inflate.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_project.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_safety.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_map_udp.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_mission_cpu.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_motion.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_nav_guard.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_osd.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_path_planner.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_path_tracker.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_phy_init.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_pose_fusion.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_protocol.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_ray_mapper.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_router.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_scan_match.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_sensors.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_sincos.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_targets.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_top.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_travel.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_control.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_udp_direct.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/a741_video.v
+ D code/camera-car-control/a741-fpga-fusion/rtl/jy901_parser.v
+ M code/camera-car-control/a741-fpga-fusion/rtl/ld06_parser.v
+ D code/camera-car-control/a741-fpga-fusion/scripts/archive.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/build.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/build_mission.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/check.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/check_baseline.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/fusion_network_check.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/network_check.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/preview_fusion_gui.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/regress_related.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/report_fusion.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/report_task34.py
+ D code/camera-car-control/a741-fpga-fusion/scripts/setup_mapping.py
+ M code/camera-car-control/a741-fpga-fusion/scripts/vendor.py
+ M code/camera-car-control/a741-fpga-fusion/tests/async_fifo_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/autonomy_navigation_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/autonomy_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/cad_navigation_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/cad_stalled_navigation_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/continuous_navigation_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/control_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/fusion_core_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/fusion_network_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/grid_map_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/hdmi_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/imu_test_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/lidar_body_safety_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/lidar_projection_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/lidar_safety_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/local_lease_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/map_udp_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/mission_cpu_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/mission_navigation_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/motion_lidar_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/motion_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/nav_guard_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/network_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/osd_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/path_planner_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/path_tracker_directional_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/path_tracker_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/phy_init_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/pi_target_limit_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/pose_fusion_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/protocol_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/ray_mapper_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/router_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/scan_match_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/sensors_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/sincos_equivalence_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/targets_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/test_fusion.py
+ M code/camera-car-control/a741-fpga-fusion/tests/test_gui.py
+ M code/camera-car-control/a741-fpga-fusion/tests/test_host.py
+ D code/camera-car-control/a741-fpga-fusion/tests/test_mapping.py
+ D code/camera-car-control/a741-fpga-fusion/tests/test_mission.py
+ D code/camera-car-control/a741-fpga-fusion/tests/travel_tb.v
+ M code/camera-car-control/a741-fpga-fusion/tests/udp_direct_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/video_capture_tb.v
+ D code/camera-car-control/a741-fpga-fusion/tests/video_tb.v
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/GPL-3.0.txt
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/LICENSE.md
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/README.md
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam.c
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam.h
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam_internals.h
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/coreslam_sisd.c
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/provenance.json
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/random.c
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/random.h
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/ziggurat.c
+ D code/camera-car-control/a741-fpga-fusion/third_party/coreslam/ziggurat.h
+ M code/camera-car-control/dev.ps1
+ M code/camera-car-control/rtl/acg720_rgmii_rx.v
+ M scripts/fpga/program_flash.py
+ M scripts/fpga/test_program_flash.py
+?? FLASH-20261027.md
+?? HANDOFF-20261027.md
+?? HANDOFF-20261028.md
+?? NEXT-AI-PROMPT-20261027.md
+?? NEXT-AI-PROMPT-20261028.md
+?? PNR-20261027.md
+?? RESUME-20261027.md
+?? TFT800-20261028.md
+?? TIMING-FIX-20261027.md
+?? WHITE-SCREEN-20261028.md
+?? code/camera-car-control/a741-fpga-fusion/constraints/ddr_control.sdc
+?? code/camera-car-control/a741-fpga-fusion/constraints/ethernet.sdc
+?? code/camera-car-control/a741-fpga-fusion/display/reference/
+?? code/camera-car-control/a741-fpga-fusion/display/rtl/a741_display_cdc.v
+?? code/camera-car-control/a741-fpga-fusion/display/rtl/a741_display_diagnostic.v
+?? code/camera-car-control/a741-fpga-fusion/display/rtl/a741_tft800_panel.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/display800_diagnostic_tb.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/display_cdc_tb.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/display_diagnostic_tb.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/tft480_timing_tb.v
+?? code/camera-car-control/a741-fpga-fusion/display/tests/tft800_reference_tb.v
+?? code/camera-car-control/a741-fpga-fusion/docs/TIMING-CLOSURE.md
+?? code/camera-car-control/a741-fpga-fusion/host/avoidance.py
+?? code/camera-car-control/a741-fpga-fusion/host/board_config.py
+?? code/camera-car-control/a741-fpga-fusion/rtl/a741_attitude.v
+?? code/camera-car-control/a741-fpga-fusion/rtl/a741_avoidance.v
+?? code/camera-car-control/a741-fpga-fusion/rtl/a741_bare_cpu.v
+?? code/camera-car-control/a741-fpga-fusion/rtl/a741_lidar_guard.v
+?? code/camera-car-control/a741-fpga-fusion/rtl/a741_phy_config.v
+?? code/camera-car-control/a741-fpga-fusion/scripts/prepare_basic.py
+?? code/camera-car-control/a741-fpga-fusion/scripts/report_resources.py
+?? code/camera-car-control/a741-fpga-fusion/tests/attitude-vectors.hex
+?? code/camera-car-control/a741-fpga-fusion/tests/attitude_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/avoidance_core_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/avoidance_lite_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/bare_cpu_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/basic_safety_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/camera_tft800_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/camera_tft_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/ethernet_io_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/ld06_orientation_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/lidar_guard_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/phy_config_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/phy_powerup_tb.v
+?? code/camera-car-control/a741-fpga-fusion/tests/test_avoidance.py
+?? code/camera-car-control/a741-fpga-fusion/tests/test_firmware_cache.py
+?? code/camera-car-control/a741-fpga-fusion/tests/test_vendor.py
+?? output/EdgeMind-Robot-basic-tft480-handoff-20261027-VERIFY.json
+?? output/EdgeMind-Robot-basic-tft480-handoff-20261027.zip
+?? output/EdgeMind-Robot-basic-tft480-handoff-20261027.zip.sha256
+?? output/EdgeMind-Robot-handoff-20261028.zip
+?? output/camera-coldboot-deferred-20261028/
+?? output/cls-optimization-20261027/
+?? output/flash-basic-tft480-20261027/
+?? output/flash-control-mapping-20261028/
+?? output/flash-diagnostic-tft480-20261028/
+?? output/flash-falling-sample-20261028/
+?? output/flash-interface-probe-20261028/
+?? output/flash-interface-steady-20261028/
+?? output/flash-official-probe-20261028/
+?? output/flash-official480-9mhz-20261028/
+?? output/flash-rotation-probe-20261028/
+?? output/flash-rotation-swapped-20261028/
+?? output/flash-stable480-meter-20261028/
+?? output/flash-stable480-meter-detail-20261028/
+?? output/flash-tft800-20261028/
+?? output/flash-tft800-camera-restore-20261028/
+?? output/flash-tft800-reburn-20261028/
+?? output/flash-tft800-retry-20261028/
+?? output/flash-vendor-direct-20261028/
+?? output/handoff-20261028.zip
+?? output/handoff-20261028.zip.sha256
+?? output/handoff-20261028/
+?? output/handoff-basic-tft480-20261027/
+?? output/motion-tft800-20261028/
+?? output/pnr-basic-tft480-20261027/
+?? output/resume-basic-tft480-20261027/
+?? output/screen-repair-20261026/
+?? output/screen480-compat-20261026/
+?? output/screen480-reference-20261027/
+?? output/task34-resume-20261026/
+?? output/tft-interface-fix-20261028/
+?? output/tft800-official-20261028/
+?? output/timing-fix-basic-tft480-20261027/
+?? output/white-screen-basic-tft480-20261027/
+?? scripts/handoff/__pycache__/
+?? scripts/handoff/archive_evidence_20261028.py
+?? scripts/handoff/package_20261028.py

@@ -1,0 +1,229 @@
+`define A741_MOTION_LIDAR
+`define A741_DISPLAY_DIAGNOSTIC
+`timescale 1ns/1ps
+`default_nettype none
+module a741_top(
+    output wire tft_clk,tft_de,tft_hsync,tft_vsync,tft_bl,
+    output wire [15:0] tft_rgb,
+    input wire clk,stop_n,
+    input wire camera_pclk,camera_vsync,camera_href,input wire [7:0] camera_data,
+    output wire camera_reset_n,inout wire camera_sclk,camera_sdat,
+    input wire rgmii_rx_clk,input wire [3:0] rgmii_rxd,input wire rgmii_rx_ctl,
+    output wire rgmii_tx_clk,output wire [3:0] rgmii_txd,output wire rgmii_tx_ctl,
+    output wire eth_rst_n,eth_mdc,inout wire eth_mdio,
+    input wire left_enc_a,left_enc_b,right_enc_a,right_enc_b,
+    output wire left_in1,left_in2,right_in1,right_in2,output wire [7:0] led,
+    output wire [13:0] O_ddr_addr,output wire [2:0] O_ddr_ba,
+    output wire O_ddr_cs_n,O_ddr_ras_n,O_ddr_cas_n,O_ddr_we_n,O_ddr_clk,O_ddr_clk_n,
+    output wire O_ddr_cke,O_ddr_odt,O_ddr_reset_n,output wire [1:0] O_ddr_dqm,
+    inout wire [15:0] IO_ddr_dq,inout wire [1:0] IO_ddr_dqs,IO_ddr_dqs_n
+`ifdef A741_MOTION_LIDAR
+    ,input wire imu_int,imu_xda,imu_xcl,imu_ad0,lidar_rx,
+    inout wire imu_sda,imu_scl,
+    output wire lidar_control
+`elsif A741_IMU_TEST
+    ,input wire imu_int,imu_xda,imu_xcl,imu_ad0,
+    inout wire imu_sda,imu_scl
+`elsif A741_P4_VERIFIED
+    ,input wire imu_int,lidar_rx,
+    inout wire imu_sda,imu_scl,imu_xda,imu_xcl,imu_ad0,lidar_control,tof_sda,tof_scl,tof_xshut
+`endif
+);
+    wire pll50,pll250,pll125,unused24,locked;
+    // The prepared PLL emits 250 MHz; the dedicated /2 divider regenerates
+    // a full 125 MHz pulse at the MAC RAM clock instead of the long PLL path.
+    Gowin_PLL clocks(.clkin(clk),.clkout0(pll50),.clkout1(pll250),.clkout2(unused24),
+        .lock(locked),.mdclk(clk),.reset(!stop_n));
+    wire global_n=stop_n && locked;
+    wire display_clk,display_locked,display_n,display_sys_n;
+    // Unmodified 33MHz PLL parameters/init from ACG720 chapter28, renamed only
+    // to coexist with the Ethernet PLL. Control timers remain at 50MHz.
+    A741_TFT_PLL display_clocks(.clkin(clk),.clkout0(display_clk),.lock(display_locked),
+        .mdclk(clk),.reset(!stop_n));
+    wire display_global_n=global_n && display_locked;
+    reset_sync display_reset(.clk(display_clk),.async_n(display_global_n),.rst_n(display_n));
+    reset_sync display_sys_reset(.clk(clk),.async_n(display_global_n),.rst_n(display_sys_n));
+    CLKDIV #(.DIV_MODE("2")) tx_divider(.HCLKIN(pll250),.RESETN(global_n),
+        .CALIB(1'b0),.CLKOUT(pll125));
+    wire control_n,net_n,rx_n,tx_n;
+    reset_sync creset(.clk(clk),.async_n(global_n),.rst_n(control_n));
+    reset_sync nreset(.clk(pll50),.async_n(global_n),.rst_n(net_n));
+    reset_sync rxreset(.clk(rgmii_rx_clk),.async_n(global_n && eth_rst_n),.rst_n(rx_n));
+    reset_sync txreset(.clk(pll125),.async_n(global_n),.rst_n(tx_n));
+    wire camera_ready,camera_error,phy_ready,phy_error;
+    ov5640_board_init #(.WIDTH(800),.HEIGHT(480)) camera(.clk(clk),.rst_n(control_n),.camera_reset_n(camera_reset_n),
+        .scl(camera_sclk),.sda(camera_sdat),.ready(camera_ready),.error(camera_error));
+    // Enable and verify PHY-side RX/TX delays before accepting network traffic.
+    a741_phy_config phy(.clk(clk),.rst_n(control_n),.phy_rst_n(eth_rst_n),
+        .ready(phy_ready),.error(phy_error),.mdc(eth_mdc),.mdio(eth_mdio));
+    (* ASYNC_REG="TRUE" *) reg [1:0] camera_ready_sync;
+    always @(posedge camera_pclk or negedge global_n)
+        if(!global_n) camera_ready_sync<=0;
+        else camera_ready_sync<={camera_ready_sync[0],camera_ready};
+    (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_rx,phy_ready_tx;
+    always @(posedge rgmii_rx_clk or negedge rx_n)
+        if(!rx_n) phy_ready_rx<=0;
+        else phy_ready_rx<={phy_ready_rx[0],phy_ready};
+    always @(posedge pll125 or negedge tx_n)
+        if(!tx_n) phy_ready_tx<=0;
+        else phy_ready_tx<={phy_ready_tx[0],phy_ready};
+    wire [7:0] gmii_rxd,gmii_txd;
+    wire gmii_dv,gmii_er,gmii_en,gmii_txer;
+    acg720_rgmii_rx #(.INPUT_DELAY_TAPS(64)) receiver(.rx_clk(rgmii_rx_clk),.rxd(rgmii_rxd),.rx_ctl(rgmii_rx_ctl),
+        .gmii_data(gmii_rxd),.gmii_valid(gmii_dv),.gmii_error(gmii_er));
+    gmii_to_rgmii transmitter(.reset_n(global_n),.gmii_tx_clk(pll125),.gmii_txd(gmii_txd),
+        .gmii_txen(gmii_en),.gmii_txer(gmii_txer),.rgmii_tx_clk(rgmii_tx_clk),
+        .rgmii_txd(rgmii_txd),.rgmii_txen(rgmii_tx_ctl));
+    wire [7:0] rx_data,tx_data;
+    wire rx_valid,rx_last,rx_bad,rx_ready,tx_valid,tx_last,tx_bad,tx_ready;
+    wire rx_bad_fcs,rx_good_frame;
+    wire [7:0] mac_diagnostic;
+    a741_net_health net_health(.clk(clk),.rst_n(control_n),.rx_good_frame(rx_good_frame),
+        .rx_bad_fcs(rx_bad_fcs),.status(mac_diagnostic));
+    eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+        .logic_clk(clk),.logic_rst(!control_n),
+        .tx_axis_tdata(tx_data),.tx_axis_tkeep(1'b1),.tx_axis_tvalid(tx_valid),.tx_axis_tready(tx_ready),
+        .tx_axis_tlast(tx_last),.tx_axis_tuser(tx_bad),
+        .rx_axis_tdata(rx_data),.rx_axis_tvalid(rx_valid),.rx_axis_tready(rx_ready),
+        .rx_axis_tlast(rx_last),.rx_axis_tuser(rx_bad),
+        .gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
+        .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),
+        .rx_clk_enable(1'b1),.tx_clk_enable(1'b1),.rx_mii_select(1'b0),.tx_mii_select(1'b0),
+        .cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1]),
+        .rx_error_bad_fcs(rx_bad_fcs),.rx_fifo_good_frame(rx_good_frame));
+    wire raw_l1,raw_l2,raw_r1,raw_r2;
+`ifdef A741_MOTION_LIDAR
+    localparam SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=1;
+    wire tof_sda,tof_scl,tof_xshut;
+`elsif A741_IMU_TEST
+    localparam SENSOR_PINS_ENABLED=0,IMU_TEST=1,MOTION_LIDAR=0;
+    wire lidar_rx=1'b1;
+    wire tof_sda,tof_scl,tof_xshut;
+`elsif A741_P4_VERIFIED
+    localparam SENSOR_PINS_ENABLED=1,IMU_TEST=0,MOTION_LIDAR=0;
+    assign imu_xda=1'bz;assign imu_xcl=1'bz;assign imu_ad0=1'bz;assign lidar_control=1'bz;
+`else
+    localparam SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0;
+    wire imu_int=1'b0,lidar_rx=1'b1;
+    wire imu_sda,imu_scl,tof_sda,tof_scl,tof_xshut;
+`endif
+    wire video_n=display_global_n && ddr_lock;
+    wire display_video_n;
+    reset_sync display_video_reset(.clk(display_clk),.async_n(video_n),.rst_n(display_video_n));
+    wire memory_clk,ddr_lock,pll_stop,ui_clk,ui_rst,calibrated;
+    // IPUG281 4.4.3: release the IP reset synchronously to its reference clk.
+    // Keep PLL reset independent of LOCK so startup cannot depend on itself.
+    wire ddr_control_n;
+    reset_sync ddr_reset(.clk(clk),.async_n(stop_n),.rst_n(ddr_control_n));
+    wire [7:0] mdrp_data,mdrp_read;wire [1:0] mdrp_op;wire mdrp_inc;
+    reg [15:0] ddr_lock_sync;reg pll_stop_d,mdrp_write;
+    always @(posedge clk or negedge ddr_control_n)
+        if(!ddr_control_n) begin ddr_lock_sync<=0;pll_stop_d<=0;mdrp_write<=0;end
+        else begin
+            ddr_lock_sync<={ddr_lock_sync[14:0],ddr_lock};
+            pll_stop_d<=pll_stop;mdrp_write<=ddr_lock_sync[15] && (pll_stop_d!=pll_stop);
+        end
+    ddr_pll memory_pll(.clkin(clk),.clkout0(),.clkout1(),.clkout2(memory_clk),.lock(ddr_lock),
+        .mdopc(mdrp_op),.mdainc(mdrp_inc),.mdwdi(mdrp_data),.mdrdo(mdrp_read),
+        .pll_init_bypass(ddr_lock_sync[15]),.mdclk(clk),.reset(!stop_n));
+    pll_mDRP_intf mdrp(.clk(clk),.rst_n(ddr_control_n),.pll_lock(ddr_lock_sync[15]),.wr(mdrp_write),
+        .mdrp_inc(mdrp_inc),.mdrp_op(mdrp_op),.mdrp_wdata(mdrp_data),.mdrp_rdata(mdrp_read));
+    wire [27:0] app_addr;wire [2:0] app_cmd;wire app_en,app_rdy;
+    wire [127:0] app_wdata,app_rdata;wire app_wen,app_wend,app_wrdy,app_rvalid;
+    DDR3_Memory_Interface_Top memory(.clk(clk),.memory_clk(memory_clk),.pll_lock(ddr_lock),.rst_n(ddr_control_n),
+        .pll_stop(pll_stop),.cmd_ready(app_rdy),.cmd(app_cmd),.cmd_en(app_en),.addr(app_addr),
+        .wr_data_rdy(app_wrdy),.wr_data(app_wdata),.wr_data_en(app_wen),.wr_data_end(app_wend),.wr_data_mask(16'd0),
+        .rd_data(app_rdata),.rd_data_valid(app_rvalid),.rd_data_end(),
+        .sr_req(1'b0),.ref_req(1'b0),.sr_ack(),.ref_ack(),.init_calib_complete(calibrated),
+        .clk_out(ui_clk),.ddr_rst(ui_rst),.burst(1'b1),
+        .O_ddr_addr(O_ddr_addr),.O_ddr_ba(O_ddr_ba),.O_ddr_cs_n(O_ddr_cs_n),
+        .O_ddr_ras_n(O_ddr_ras_n),.O_ddr_cas_n(O_ddr_cas_n),.O_ddr_we_n(O_ddr_we_n),
+        .O_ddr_clk(O_ddr_clk),.O_ddr_clk_n(O_ddr_clk_n),.O_ddr_cke(O_ddr_cke),.O_ddr_odt(O_ddr_odt),
+        .O_ddr_reset_n(O_ddr_reset_n),.O_ddr_dqm(O_ddr_dqm),.IO_ddr_dq(IO_ddr_dq),
+        .IO_ddr_dqs(IO_ddr_dqs),.IO_ddr_dqs_n(IO_ddr_dqs_n));
+    wire ui_n;
+    reset_sync ui_reset(.clk(ui_clk),.async_n(video_n && !ui_rst),.rst_n(ui_n));
+    wire [15:0] camera_pixel,display_rgb;wire pixel_valid,pixel_request,frame_blank,active;
+    wire [10:0] display_x,display_y;
+    wire frame_ready,camera_bad,ddr_bad,overflow;
+    wire [31:0] frames;
+    wire [895:0] snapshot;wire [255:0] fusion_snapshot;wire [7:0] state;wire [15:0] faults;
+    a741_video #(.WIDTH(800),.HEIGHT(480)) video(.clk(display_clk),.rst_n(display_video_n),.cam_clk(camera_pclk),.cam_ready(camera_ready_sync[1]),
+        .cam_vsync(camera_vsync),.cam_href(camera_href),.cam_data(camera_data),
+        .ui_clk(ui_clk),.ui_rst_n(ui_n),.calibrated(calibrated),.pixel_request(pixel_request),.frame_blank(frame_blank),
+        .app_addr(app_addr),.app_cmd(app_cmd),.app_en(app_en),.app_rdy(app_rdy),
+        .app_wdf_data(app_wdata),.app_wdf_wren(app_wen),.app_wdf_end(app_wend),.app_wdf_rdy(app_wrdy),
+        .app_rd_data(app_rdata),.app_rd_valid(app_rvalid),.pixel(camera_pixel),.pixel_valid(pixel_valid),
+        .frame_available(frame_ready),.camera_error(camera_bad),.ddr_error(ddr_bad),.overflow(overflow),.frames(frames));
+    wire [15:0] overlay_pixel,panel_rgb;
+    wire overlay_pixel_valid;
+    wire [895:0] display_snapshot;wire [255:0] display_fusion;
+    wire [5:0] display_flags;wire display_update;
+    wire sys_frame_ready,sys_camera_bad,sys_ddr_bad,sys_overflow;wire [31:0] sys_frames;
+    a741_display_cdc display_cdc(.sys_clk(clk),.sys_rst_n(display_sys_n),
+        .disp_clk(display_clk),.disp_rst_n(display_n),.status_snapshot(snapshot),.fusion_snapshot(fusion_snapshot),
+        .system_flags({locked && display_locked,ddr_ready_sync[1],camera_ready,camera_error,phy_ready,phy_error}),
+        .display_status({frame_ready,camera_bad,ddr_bad,overflow,frames}),
+        .display_snapshot(display_snapshot),.display_fusion(display_fusion),.display_flags(display_flags),
+        .display_update(display_update),.system_display_status({sys_frame_ready,sys_camera_bad,sys_ddr_bad,sys_overflow,sys_frames}));
+`ifdef A741_DISPLAY_DIAGNOSTIC
+    wire [7:0] diagnostic_led;
+    a741_display_diagnostic #(.CLOCK_HZ(33000000),.FRAMES_PER_COLOR(60),.WIDTH(800)) display_diagnostic(.clk(display_clk),.rst_n(display_n),
+        .frame_blank(frame_blank),.x(display_x),.pixel(camera_pixel),.pixel_valid(pixel_valid),
+        .osd_rgb(display_rgb),.overlay_pixel(overlay_pixel),.overlay_pixel_valid(overlay_pixel_valid),
+        .panel_rgb(panel_rgb),.locked(display_flags[5]),.ddr_ready(display_flags[4]),
+        .camera_ready(display_flags[3]),.camera_error(display_flags[2]),.phy_ready(display_flags[1]),.phy_error(display_flags[0]),
+        .led(diagnostic_led));
+`else
+    assign overlay_pixel=camera_pixel;
+    assign overlay_pixel_valid=pixel_valid;
+    assign panel_rgb=display_rgb;
+`endif
+    a741_osd #(.WIDTH(800),.HEIGHT(480),.PIPELINED(1)) overlay(.clk(display_clk),.rst_n(display_n),.frame_blank(frame_blank),.de(active),
+        .x(display_x),.y(display_y),.pixel(overlay_pixel),.pixel_valid(overlay_pixel_valid),
+        .status_snapshot(display_snapshot),.fusion_snapshot(display_fusion),.status_update(display_update),.rgb(display_rgb));
+    a741_tft800_panel status_panel(.clk(display_clk),.rst_n(display_n),.rgb(panel_rgb),
+        .pixel_request(pixel_request),.frame_blank(frame_blank),.active(active),.x(display_x),.y(display_y),
+        .tft_clk(),.tft_de(tft_de),.tft_hsync(tft_hsync),.tft_vsync(tft_vsync),.tft_bl(tft_bl),.tft_rgb(tft_rgb));
+    // Forward a centered pixel clock using the dedicated DDR output primitive.
+    ODDR tft_clock(.CLK(display_clk),.D0(1'b0),.D1(1'b1),.TX(1'b1),.Q0(tft_clk),.Q1());
+    (* ASYNC_REG="TRUE" *) reg [1:0] ddr_ready_sync;
+    always @(posedge clk or negedge control_n)
+        if(!control_n) ddr_ready_sync<=0;else ddr_ready_sync<={ddr_ready_sync[0],calibrated};
+    wire lidar_pwm;
+`ifdef A741_MOTION_LIDAR
+    assign lidar_control=global_n && lidar_pwm;
+`endif
+    a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR)) core(.clk(clk),.rst_n(control_n),
+        .mac_diagnostic(mac_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
+        .phy_diagnostic(128'd0),
+        .lidar_control(lidar_pwm),
+        .imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),.lidar_rx(lidar_rx),
+        .tof_sda(tof_sda),.tof_scl(tof_scl),.tof_xshut(tof_xshut),
+        .left_a(left_enc_a),.left_b(left_enc_b),.right_a(right_enc_a),.right_b(right_enc_b),
+        .left_in1(raw_l1),.left_in2(raw_l2),.right_in1(raw_r1),.right_in2(raw_r2),
+        .eth_rx_data(rx_data),.eth_rx_valid(rx_valid),.eth_rx_last(rx_last),.eth_rx_bad(rx_bad),.eth_rx_ready(rx_ready),
+        .eth_tx_data(tx_data),.eth_tx_valid(tx_valid),.eth_tx_last(tx_last),.eth_tx_bad(tx_bad),.eth_tx_ready(tx_ready),
+        .ddr_ready(ddr_ready_sync[1]),.frame_ready(sys_frame_ready),.camera_error(sys_camera_bad),
+        .ddr_error(sys_ddr_bad),.video_overflow(sys_overflow),.video_frames(sys_frames),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.state(state),.faults(faults));
+    assign left_in1=1'b0;assign left_in2=1'b0;
+    assign right_in1=1'b0;assign right_in2=1'b0;
+`ifdef A741_DISPLAY_DIAGNOSTIC
+    assign led=diagnostic_led;
+`else
+    assign led={faults!=0,sys_overflow,sys_ddr_bad,sys_frame_ready,ddr_ready_sync[1],phy_ready,camera_ready,locked && display_locked};
+`endif
+defparam core.FUSION_ENABLED=1;
+defparam core.GEOMETRY_VERIFIED=1;
+defparam core.RADIUS_MM=257;
+defparam core.LIDAR_X=164;
+defparam core.LIDAR_Y=0;
+defparam core.TRACK_MM=234;
+defparam core.LIDAR_ZERO=27000;
+defparam core.LIDAR_CLOCKWISE=1;
+defparam core.FRONT_EXTENT=221;
+defparam core.REAR_EXTENT=70;
+defparam core.HALF_WIDTH=131;
+defparam core.FUSION_CONFIG_CRC=32'hc27751b8;
+endmodule
+`default_nettype wire

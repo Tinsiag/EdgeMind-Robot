@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "EX3801": 33,
+    "EX3073": 13,
+    "EX3670": 30,
+    "EX3791": 46,
+    "EX2565": 1008,
+    "EX3827": 8,
+    "EX3826": 13,
+    "EX2420": 1,
+    "EX0211": 32,
+    "CV0016": 4,
+    "NL0002": 6
+  },
+  "total": 1194,
+  "errors": 0,
+  "inferred_latch_warning": "EX2420 checksum_part[31] in generated vendor checksum adapter; final utilization reports zero register-as-latch",
+  "undriven_ports": "Mostly disabled PTP/pause/control side channels in vendor Ethernet, and unused PicoRV32 PCPI outputs; retained for future explicit wiring review",
+  "reviewed_as_not_timing_signoff": true
+}

@@ -4,7 +4,8 @@ module imu_test_tb;
     reg rst_n=0,cv=0,gu=0;reg [7:0] kind=0;reg [255:0] payload=0;
     wire armed,calibrated,calibrating,l1,l2,r1,r2;
     wire signed [31:0] tl,tr;
-    a741_motion #(.IMU_TEST(1)) dut(.clk(clk),.rst_n(rst_n),.uart_rx(1'b1),.ms_tick(1'b0),.tick(1'b0),
+    a741_motion #(.IMU_TEST(1)) dut(.clk(clk),.rst_n(rst_n),.direct_valid(cv),.direct_kind(kind),.direct_payload(payload),
+        .direct_ttl(16'd250),.direct_seq(8'd1),.direct_reply_ready(1'b1),.ms_tick(1'b0),.tick(1'b0),
         .imu_diagnostic(32'h07006869),.imu_errors(32'd2),.imu_sequence(32'd123),
         .imu_raw(96'h0066fffe01024000fffe0001),.imu_temperature(16'hfffe),
         .left_a(1'b0),.left_b(1'b0),.right_a(1'b0),.right_b(1'b0),
@@ -21,8 +22,6 @@ module imu_test_tb;
     end endtask
     integer n;
     initial begin
-        force dut.cv=cv;force dut.kind=kind;force dut.payload=payload;force dut.ttl=16'd250;
-        force dut.reply_ready=1'b1;
         #50;rst_n=1;
         cfg(0,1469);cfg(1,1471);cfg(2,66300);cfg(3,66300);
         cfg(5,200);cfg(6,74102);cfg(7,1);cfg(8,0);cfg(9,512);cfg(10,5);cfg(11,8);

@@ -1,0 +1,32 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS diagnostic display: five complete colour fields, no-camera OSD/bars, live video restore, system/frame LEDs, init errors and reset
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/display_diagnostic_tb.v:68: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 480ms; walltime 9.544 s; speed 50.387 ms/s
+- Verilator: cpu 9.530 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS TFT: two full RGB frames, pixel request/launch alignment, steady backlight
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_panel_tb.v:19: $finish called at 59744530000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS two complete480x272 frames match unmodified AC620 DE/HS/VS/RGB after BOTH edges; panel samples FALLING PCLK
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v:35: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 60ms; walltime 0.896 s; speed 67.377 ms/s
+- Verilator: cpu 0.891 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS fixed5MHz PCLK, reference525x286/480x272 boundaries, FALLING-edge100ns setup/hold, blanking, active-frame reset,180ms default and17frame backlight
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_timing_tb.v:72: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 542ms; walltime 7.654 s; speed 70.958 ms/s
+- Verilator: cpu 7.634 s on 1 threads; alloced 121 MB
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS full camera480x272 -> DDR with command/data stalls -> TFT RGB+attitude overlay; frame coherence; real CPU+avoidance cruise/turn/lidar stop; no Ethernet video
+- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/camera_tft_tb.v:122: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
+- Verilator: $finish at 90ms; walltime 9.781 s; speed 9.264 ms/s
+- Verilator: cpu 9.691 s on 1 threads; alloced 124 MB

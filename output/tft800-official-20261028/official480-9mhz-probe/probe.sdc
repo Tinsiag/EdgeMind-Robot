@@ -1,0 +1,6 @@
+create_clock -name sys_clk -period 20 [get_ports {clk50M}]
+create_generated_clock -name lcd9m -source [get_ports {clk50M}] -multiply_by 9 -divide_by 50 [get_pins {official/Gowin_PLL/u_pll/PLLA_inst/CLKOUT0}]
+set_max_delay 10 -to [get_ports {TFT_rgb[*] TFT_hs TFT_vs TFT_de TFT_pwm}]
+set_false_path -to [get_pins {official/tft_ready_*/CLEAR}]
+set_max_delay 10 -to [get_pins {read_clk_sync_0_s0/D read_de_sync_0_s0/D read_bl_sync_0_s0/D}]
+set_false_path -hold -to [get_pins {read_clk_sync_0_s0/D read_de_sync_0_s0/D read_bl_sync_0_s0/D}]

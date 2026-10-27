@@ -1,0 +1,19 @@
+{
+  "package": "EdgeMind-Robot-handoff-20261028.zip",
+  "zip_sha256": "2ce9a4c0e58be48f760706910bd4c2b3742f2a6534ae4e20a78be4b326159119",
+  "zip_bytes": 2139435852,
+  "file_count": 7710,
+  "uncompressed_bytes": 5319386850,
+  "zip_crc_and_all_file_hashes_verified": true,
+  "golden_d5_bitstream_verified": true,
+  "original_sources_verified_by_source_maps": true,
+  "source_snapshots": {
+    "output/motion-tft800-20261028/attempt1-pr0004/source-snapshot/SOURCE-MAP.json": 111,
+    "output/motion-tft800-20261028/attempt2-pr0004/source-snapshot/SOURCE-MAP.json": 111,
+    "output/motion-tft800-20261028/attempt3-local-clock-pr0004/source-snapshot/SOURCE-MAP.json": 111,
+    "output/tft800-official-20261028/source-snapshot-d5/SOURCE-MAP.json": 111
+  },
+  "base_git_commit": "6a32a56ee1755c8353116ace9afed6631ba57d9c",
+  "eda_or_hardware_executed_for_handoff": false,
+  "publication_status": "See Git commit and remote verification; this report describes package bytes only."
+}

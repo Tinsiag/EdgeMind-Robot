@@ -1,0 +1,16 @@
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS real calibration/ARM/PI, STOP/DISARM/avoidance-stop, manual arbitration, link TTL, CPU/IMU faults, no restart
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/basic_safety_tb.v:87: $finish called at 936440000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 embedded payload/timestamp header, CRC, missing byte and framing recovery
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/ld06_embedded_header_tb.v:58: $finish called at 2446640000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06270deg mounting CW/CCW front/left/right, raw-wrap minima, front obstacle and unchanged raw point/packet telemetry
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/ld06_orientation_tb.v:60: $finish called at 738560000 (1ps)
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+PASS LD06 bad-packet/stale recovery rejects false wrap and publishes only a complete continuous scan
+/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/tests/ld06_recovery_tb.v:94: $finish called at 441000000 (1ps)

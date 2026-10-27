@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "bitstream_sha256": "e645958d0acabcc83e419cc04dc3fd22ba1ae0144fe64db8746233147519ee7a",
+  "sdf_sha256": "8ccdb660461dfd99b22c41b4f6881a015a6b88273f765d5b7ecbee101e8110c3",
+  "vo_sha256": "bde8bab43f562b5d13ba65becfa041e9be4f9a265ca626ca84e539e27f358010",
+  "official_scanner_pll_colors_unchanged": true,
+  "top_reset_synchronized": true,
+  "main_project_replaced": false,
+  "includes_camera_ddr_imu_ethernet": false,
+  "motor_pads_grounded": true,
+  "pad_input_buffers_verified": {
+    "clock_pad": {
+      "input_net": "read_clk",
+      "first_sampler": "read_clk_sync_0_s0"
+    },
+    "de_pad": {
+      "input_net": "read_de",
+      "first_sampler": "read_de_sync_0_s0"
+    },
+    "bl_pad": {
+      "input_net": "read_bl",
+      "first_sampler": "read_bl_sync_0_s0"
+    }
+  },
+  "backlight_startup_seconds": 0.2,
+  "backlight_blinks": false,
+  "sta_worst_slack_ns": {
+    "setup": 0.393,
+    "hold": 0.183,
+    "recovery": 28.962,
+    "removal": 0.364,
+    "mpw": 7.122
+  },
+  "minimum_setup_ns": 15.226515151515153,
+  "minimum_hold_ns": 15.030515151515152,
+  "lcd_margin_ns": 5.730515151515152,
+  "required_setup_hold_ns": 8,
+  "unmeasured_board_cable_budget_ns": 1,
+  "clock_reserve_ns": 0.3,
+  "clock_arrival_ns": [
+    [
+      1.975,
+      3.016,
+      4.056
+    ],
+    [
+      1.975,
+      3.016,
+      4.056
+    ]
+  ],
+  "hardware_programmed": false
+}

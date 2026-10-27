@@ -45,43 +45,7 @@ class HostTests(unittest.TestCase):
                 c.arm(Calibration.load())
         c.command.assert_called_once_with(2)
 
-    def test_arc_reference_scaled_signed_and_wrapped(self):
-        calibration=Calibration.load()
-        for sign in (1,-1):
-            d=copy.deepcopy(calibration.data);d["imu_yaw_sign"]=sign
-            cfg=Calibration(d)
-            held=threading.Event();held.set()
-            c=object.__new__(client.Client);c.imu_motion=True
-            c.sensors=Mock(return_value={"yaw":32700})
-            c.arm=Mock();c.heartbeat=Mock()
-            c.status=Mock(return_value=Mock(faults=0,state=2))
-            c.settle=Mock(return_value="stopped")
-            c.command=Mock(side_effect=lambda *a,**k: held.clear())
-            with patch.object(client.time,"monotonic",side_effect=[10,11,11.1]),patch.object(client.time,"sleep"):
-                result=c.drive(cfg,200,180,held,threading.Event())
-                self.assertEqual(result["final_status"],"stopped")
-                self.assertEqual(result["stop_reason"],"released")
-                self.assertEqual(result["drive_seconds"],1.1)
-            args=c.command.call_args
-            self.assertEqual(args.args[0],0x47)
-            left,right,reference=struct.unpack("<iih",args.args[1])
-            self.assertEqual((left,right),cfg.arc(200,180))
-            half=__import__("math").radians(180)*234000/2000
-            scale=max(1,(200+half)/cfg.data["max_speed_mm_s"])
-            expected=(round(32700+sign*180/scale*65536/360)+32768)%65536-32768
-            self.assertEqual(reference,expected)
-            self.assertIsNone(args.kwargs["reply"])
 
-    def test_arc_runtime_encoder_fault_is_recoverable_not_transport_failure(self):
-        cfg=Calibration.load()
-        held=threading.Event();held.set()
-        c=object.__new__(client.Client);c.imu_motion=True
-        c.sensors=Mock(return_value={"yaw":0})
-        c.arm=Mock();c.heartbeat=Mock();c.wheels=Mock();c.command=Mock()
-        c.status=Mock(return_value=Mock(faults=4,state=3))
-        with self.assertRaisesRegex(client.CalibrationRejected,"连接保持"):
-            c.drive(cfg,100,30,held,threading.Event())
-        c.arm.assert_called_once()
 
     def test_phy_diagnostic_layout_does_not_touch_scan(self):
         receiver=object.__new__(TelemetryReceiver)
@@ -103,64 +67,28 @@ class HostTests(unittest.TestCase):
 
     def test_sensor_debug_blocks_motor_packets_before_socket_access(self):
         c=object.__new__(client.Client);c.sensors_only=True
-        for kind in (2,0x11,0x42,0x45,0x47,0x55):
+        for kind in (2,0x11,0x42,0x45,0x47):
             with self.assertRaisesRegex(ValueError,"禁止ARM"):
                 c.command(kind)
 
-    def test_front_left_raw_rotation_maps_to_forward_for_a741(self):
-        from app import lidar_display_angle
-        calibration=Calibration.load()
-        self.assertEqual(calibration.data["lidar_zero_offset_deg"],270)
-        self.assertAlmostEqual(lidar_display_angle(27000,calibration.data),0)
-        self.assertAlmostEqual(lidar_display_angle(0,calibration.data),270)
 
-    def test_mapping_pairing_rejects_stale_and_marks_packet_gaps(self):
-        receiver=object.__new__(TelemetryReceiver)
-        receiver.lock=threading.Lock()
-        receiver.bytes=0;receiver.errors=0;receiver.snapshot=None;receiver.updated=None
-        receiver.history=__import__("collections").deque(maxlen=100)
-        receiver.scan=ScanAssembler();receiver.mapping_queue=__import__("collections").deque(maxlen=3)
-        receiver.mapping_dropped=0
-        data=bytearray(112)
-        struct.pack_into("<4sHHIIIHBBH",data,0,b"EMS1",1,112,1,240,74103,0x11,0,0,0)
-        base=time.monotonic()
-        receiver.ingest(bytes(data),now=base)
-        for seq,angle in enumerate(range(0,72000,3000),1):
-            receiver.ingest(packet(angle%36000,(angle+3000)%36000,seq,seq*10),now=base+seq*.002)
-        samples=receiver.mapping_samples()
-        self.assertTrue(any(sample[0] is not None for sample in samples))
-        receiver.ingest(packet(100,200,100,130),now=base+.1)
-        invalid=next(sample for sample in receiver.mapping_samples() if sample[0] is None)
-        self.assertIn("序号缺口",invalid[4])
-        receiver.mapping_queue.clear()
-        receiver.queue_mapping((9,240,((0,1000,100),),receiver.snapshot),base-1)
-        self.assertEqual(receiver.mapping_samples(),[(None,None,(),None,"上位机处理队列中扫描已过期")])
-        receiver.mapping_queue.clear()
-        for number in range(5):
-            receiver.queue_mapping((number,240,((0,1000,100),),receiver.snapshot),base)
-        self.assertGreater(receiver.mapping_dropped,0)
-        overflow=next(sample for sample in receiver.mapping_samples() if sample[0] is None)
-        self.assertIn("积压",overflow[4])
-
-    def test_expired_visible_scan_freezes_mapping(self):
+    def test_expired_visible_scan_is_cleared(self):
         receiver=object.__new__(TelemetryReceiver)
         receiver.lock=threading.Lock();receiver.snapshot=None;receiver.updated=None
-        receiver.scan=ScanAssembler();receiver.mapping_queue=__import__("collections").deque(maxlen=3)
-        receiver.mapping_dropped=0
+        receiver.scan=ScanAssembler()
         receiver.scan.points=[(0,1000,100)];receiver.scan.completed_at=1;receiver.scan.received=1
         receiver.scan.last_angle=100
         self.assertEqual(receiver.read(),(None,()))
-        self.assertIn("断流",receiver.mapping_samples()[0][4])
+        self.assertIn("断流",receiver.scan.last_discontinuity)
         discontinuities=receiver.scan.discontinuities
         receiver.read()
         self.assertEqual(receiver.scan.discontinuities,discontinuities)
-        self.assertFalse(receiver.mapping_samples())
 
-    def test_unmeasured_track_blocks_arc(self):
+    def test_unmeasured_track_blocks_motion_configuration(self):
         data=copy.deepcopy(Calibration.load().data);data["mechanical_track_um"]=None
         c = Calibration(data)
         with self.assertRaises(ValueError):
-            c.arc(100, 30)
+            c.values()
         self.assertIsNone(c.values(False)[4])
         with self.assertRaises(ValueError):
             c.require_hardware()
@@ -181,16 +109,6 @@ class HostTests(unittest.TestCase):
         self.assertGreater(scan.completed_id,0)
         self.assertTrue(scan.visible(.109))
         self.assertIsNotNone(scan.completed_stamp)
-
-    def test_geometry_preserves_ratio(self):
-        d = copy.deepcopy(Calibration.load().data)
-        d["mechanical_track_um"] = 120000
-        c = Calibration(d)
-        left, right = c.arc(300, 90)
-        self.assertLess(left, right)
-        self.assertEqual(right, 394)
-        self.assertAlmostEqual(left/right, (300-94.2478)/(300+94.2478), delta=.01)
-        self.assertAlmostEqual(c.distance_mm(1469, 1471)[0], 66.3*3.14159265, places=4)
 
     def test_lidar_crc_and_wrap(self):
         p = packet(35900, 100)
@@ -244,7 +162,7 @@ class HostTests(unittest.TestCase):
         c.socket = Silent();c.seq = 0;c.session = 1;c.peer = ("192.168.0.2", 5000)
         c.diag = client.Diagnostics();c.timeout = .001
         with self.assertRaises(TimeoutError):
-            c.command(0x42, b"123456")
+            c.command(0x59, b"\x01")
         self.assertEqual(c.socket.sent, 1)
         self.assertEqual(c.diag.timeouts, 1)
 
@@ -306,11 +224,6 @@ class HostTests(unittest.TestCase):
             c.imu_diagnostics()
         c.command.assert_not_called()
 
-    def test_release_before_job_never_arms(self):
-        c = object.__new__(client.Client)
-        c.arm = Mock(side_effect=AssertionError("late ARM"))
-        self.assertIsNone(c.drive(Calibration.load(), 100, 0, threading.Event(), threading.Event()))
-        c.arm.assert_not_called()
 
     def test_mpu6500_identity_temperature_and_invalid_data(self):
         c = object.__new__(client.Client); c.imu_test = True
@@ -355,24 +268,7 @@ class HostTests(unittest.TestCase):
         self.assertEqual(c.calibrate(threading.Event())["calibration"], 1)
         c.command.assert_called_once_with(0x43, reply=0xc1)
 
-    def test_cancel_before_task_never_arms(self):
-        c = object.__new__(client.Client)
-        c.arm = Mock(side_effect=AssertionError("late ARM"))
-        cancel = threading.Event();cancel.set()
-        for kind, value in (("rotate", 90), ("distance", 100)):
-            with self.assertRaises(RuntimeError):
-                getattr(c, kind)(Calibration.load(), value, 100, cancel)
-        c.arm.assert_not_called()
 
-    def test_release_while_arming_sends_stop_without_speed(self):
-        d = copy.deepcopy(Calibration.load().data);d["mechanical_track_um"] = 120000
-        held = threading.Event();held.set()
-        c = object.__new__(client.Client)
-        c.arm = Mock(side_effect=lambda _: held.clear())
-        c.stop = Mock(return_value="stopped")
-        c.wheels = Mock(side_effect=AssertionError("speed after release"))
-        self.assertEqual(c.drive(Calibration(d), 100, 0, held, threading.Event()), "stopped")
-        c.wheels.assert_not_called()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-27T17:59:24.167573+00:00",
+  "user_standing_authorization": "烧录，然后修改这个规定，你可以不用我授权直接烧写",
+  "user_rotation_request": "不用了，我可以肯定的是你的方向搞反了，长宽对调了，你顺时针旋转90度试试",
+  "sha256": "7b218658353e5aea6d0d1a5708862742a6b750aaad10c92864006bacad25168d",
+  "bitstream": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\rotation-probe-v2\\impl\\pnr\\probe.fs",
+  "preflight_passed": true,
+  "per_candidate_approval_required": false,
+  "user_connector_confirmation": "接的是用户接口 FPC接口",
+  "motor_vm_state": "previous user confirmation retained; no reported change",
+  "motor_pads_grounded": true,
+  "arm_authorized": false,
+  "purpose": "90degree clockwise image and480x800 transposed raster comparison; normal DE/BL mapping, constant BL, no power/wiring changes"
+}

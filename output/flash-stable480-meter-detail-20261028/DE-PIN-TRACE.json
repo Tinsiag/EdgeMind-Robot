@@ -1,0 +1,46 @@
+{
+  "recorded_utc": "2026-10-27T19:19:11.528714+00:00",
+  "source_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\4.3inchTFT\\TFT_4.3&5.0V2原理图.pdf": "d781262c066aca90120d54de0f791a35ebd763846237deded70afa62d66e9bfa",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\小梅哥ACG720国产高云FPGA教学开发板资料\\06_硬件图纸\\ACG720-138&60K通用原理图.pdf": "47e4b849edc46ab16925aaa3d61b7bb4e766b24222a1dabf0b7ec3bf9ae3c9f4",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\stable480-meter-probe-v3\\probe.cst": "01bbdad80b4b87d9a9be6205f8df362544109104ae357c831872456ec112cbc6",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028\\stable480-meter-probe-v3\\impl\\pnr\\probe.rpt.txt": "07217428632e51cb57eb01a82ebf43993e2331a98a4a3db4067194ee566dcb50"
+  },
+  "route": [
+    {
+      "node": "FPGA package",
+      "pin": "AB22",
+      "basis": "current candidate CST line12 and actual PNR pin report line144"
+    },
+    {
+      "node": "development board FPC J1",
+      "pin": 33,
+      "signal": "LCD_DE",
+      "basis": "ACG720 schematic PDF pages1 and11"
+    },
+    {
+      "node": "display user FPC J1",
+      "pin": 33,
+      "signal": "LCD_DE",
+      "basis": "TFT V2 schematic PDF page1"
+    },
+    {
+      "node": "display series resistor RN7",
+      "pins": [
+        1,
+        8
+      ],
+      "ohms": 33,
+      "basis": "TFT V2 schematic PDF page1"
+    },
+    {
+      "node": "bare display J2",
+      "pin": 34,
+      "signal": "TFT_DE",
+      "basis": "TFT V2 schematic PDF page1"
+    }
+  ],
+  "parallel_user_header_warning": "V2 P1 diagram says signal positions may change during PCB routing; do not use P1 pin numbers for jumpers before identifying real board revision.",
+  "physical_board_revision_confirmed": false,
+  "new_flash_write_performed": false
+}

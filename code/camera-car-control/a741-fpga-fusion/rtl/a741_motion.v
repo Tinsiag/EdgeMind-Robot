@@ -1,57 +1,54 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,FUSION_ENABLED=0,DIRECT_CONTROL=0)(
+module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,FUSION_ENABLED=0)(
     input wire direct_valid,input wire [7:0] direct_kind,direct_seq,
     input wire [15:0] direct_ttl,input wire [255:0] direct_payload,
     output wire direct_reply_valid,output wire [7:0] direct_reply_kind,direct_reply_seq,direct_reply_length,
     output wire [255:0] direct_reply_payload,input wire direct_reply_ready,
-    input wire fusion_owns,fusion_stop,obstacle_stop,autonomy_alive,
+    input wire fusion_owns,fusion_stop,obstacle_stop,
     input wire signed [31:0] fusion_left,fusion_right,
     input wire [9:0] obstacle_limit,
     input wire fusion_reply_valid,input wire [255:0] fusion_reply,
     output wire fusion_command,output wire [7:0] fusion_kind,output wire [255:0] fusion_payload,
     output wire command_link_alive,output wire signed [31:0] manual_left,manual_right,
-    output wire travel_tick,travel_valid,heading_positive,
-    output wire signed [31:0] left_travel,right_travel,
     input wire [31:0] imu_diagnostic,imu_errors,imu_sequence,
     input wire [95:0] imu_raw,input wire [15:0] imu_temperature,
-    input wire clk,rst_n,uart_rx,ms_tick,tick,
+    input wire clk,rst_n,ms_tick,tick,
     input wire left_a,left_b,right_a,right_b,
     input wire imu_valid,gyro_valid,angle_update,gyro_update,
     input wire imu_stationary,
     input wire signed [15:0] yaw,gz,
     input wire tof_valid,input wire [15:0] tof_mm,
     input wire [31:0] now_ms,
-    output wire uart_tx,left_in1,left_in2,right_in1,right_in2,
+    output wire left_in1,left_in2,right_in1,right_in2,
     output wire lidar_control,
-    output reg armed,calibrated,calibrating,rotating,
+    output reg armed,calibrated,calibrating,
+    output wire rotating,
     output reg [15:0] faults,
     output wire signed [31:0] left_count,right_count,left_speed,right_speed,
     output wire [15:0] left_pwm,right_pwm,
     output reg signed [31:0] target_l,target_r,
     output wire [7:0] state_code,
     output reg [31:0] config_revision,
-    output reg signed [31:0] accumulated_yaw,
+    output wire signed [31:0] accumulated_yaw,
     output reg signed [15:0] gyro_bias,
     output reg [15:0] command_age,
     output reg [7:0] calibration_result
 );
-    wire [7:0] byte_data;wire byte_valid,uart_error;
-    wire cv,crc_error,length_error;wire [7:0] kind,seq;wire [15:0] ttl;wire [255:0] payload;
+    function is_board_command;
+        input [7:0] value;
+        begin is_board_command=value==8'h56 || value==8'h57 || value==8'h59;end
+    endfunction
+
+    wire cv=direct_valid;
+    wire [7:0] kind=direct_kind,seq=direct_seq;
+    wire [15:0] ttl=direct_ttl;
+    wire [255:0] payload=direct_payload;
     assign fusion_command=cv;assign fusion_kind=kind;assign fusion_payload=payload;
     assign manual_left=desired_l;assign manual_right=desired_r;
-    wire local_lease=FUSION_ENABLED!=0 && fusion_owns && autonomy_alive===1'b1;
-    assign command_link_alive=local_lease || command_age<effective_ttl;
-    generate if(DIRECT_CONTROL!=0) begin: direct_control
-        assign cv=direct_valid;assign kind=direct_kind;assign seq=direct_seq;
-        assign ttl=direct_ttl;assign payload=direct_payload;
-        assign crc_error=0;assign length_error=0;assign uart_error=0;
-        assign byte_data=0;assign byte_valid=0;
-    end else begin: serial_control
-        uart_rx #(.CLK_HZ(CLK_HZ)) receiver(.clk(clk),.rstn(rst_n),.rx(uart_rx),.data(byte_data),.valid(byte_valid),.framing_error(uart_error));
-        a741_protocol protocol(.clk(clk),.rstn(rst_n),.rx_data(byte_data),.rx_valid(byte_valid),.cmd_valid(cv),
-            .cmd_type(kind),.cmd_seq(seq),.cmd_ttl_ms(ttl),.cmd_payload(payload),.crc_error(crc_error),.length_error(length_error));
-    end endgenerate
+    assign command_link_alive=command_age<effective_ttl;
+    // Reserved legacy status fields; angle/heading tasks have been removed.
+    assign rotating=1'b0;assign accumulated_yaw=32'sd0;
     reg [31:0] cfg[0:11];reg [11:0] configured;
     wire config_ok=&configured;
     // Static IMU testing does not require a fabricated mechanical track.
@@ -68,38 +65,24 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
         .monitor_enable(active && target_r!=0),.count(right_count),.delta(rd),.invalid_count(ric),.feedback_timeout(rto));
     a741_speed sl(.clk(clk),.rst_n(rst_n),.tick(tick),.delta($signed(ld)),.cpr(cfg[0]),.diameter_um(cfg[2]),.speed(left_speed));
     a741_speed sr(.clk(clk),.rst_n(rst_n),.tick(tick),.delta($signed(rd)),.cpr(cfg[1]),.diameter_um(cfg[3]),.speed(right_speed));
-    reg travel_start;
-    wire ldone,rdone,lvalid,rvalid;
-    always @(posedge clk or negedge rst_n)
-        if(!rst_n) travel_start<=0;else travel_start<=tick;
-    a741_travel travel_l(.clk(clk),.rst_n(rst_n),.start(travel_start),.delta($signed(ld)),.cpr(cfg[0]),.diameter_um(cfg[2]),
-        .done(ldone),.valid(lvalid),.distance_q16(left_travel));
-    a741_travel travel_r(.clk(clk),.rst_n(rst_n),.start(travel_start),.delta($signed(rd)),.cpr(cfg[1]),.diameter_um(cfg[3]),
-        .done(rdone),.valid(rvalid),.distance_q16(right_travel));
-    assign travel_tick=ldone && rdone;
-    assign travel_valid=lvalid && rvalid;
-    assign heading_positive=cfg[7]==1;
     wire stop_cmd=cv && (kind==3 || kind==4 || (FUSION_ENABLED!=0 &&
-        (kind==8'h56 || (kind==8'h58 && payload[7:0]==3))));
+        (kind==8'h56 || (kind==8'h59 && payload[7:0]==0))));
     reg [15:0] effective_ttl;
-    reg imu_required,heading_hold;
-    reg signed [15:0] heading_origin,previous_yaw;
-    reg signed [31:0] turn_target;
-    reg [15:0] turn_speed,quiet_ms,calibration_age;
-    reg turn_braking;
+    reg imu_required;
+    reg signed [15:0] calibration_origin;
+    reg [15:0] calibration_age;
     reg [6:0] bias_count;reg signed [31:0] bias_sum;
-    reg [31:0] cal_start_ms;
     wire [31:0] clearance=tof_mm>cfg[8] ? tof_mm-cfg[8]:0;
-    wire moving=(target_l!=0 || target_r!=0 || rotating || applied_l!=0 || applied_r!=0 || pi_l!=0 || pi_r!=0);
-    wire forward=!rotating && ($signed(target_l)+$signed(target_r)>0 ||
+    wire moving=(target_l!=0 || target_r!=0 || applied_l!=0 || applied_r!=0 || pi_l!=0 || pi_r!=0);
+    wire forward=($signed(target_l)+$signed(target_r)>0 ||
         $signed(desired_l)+$signed(desired_r)>0 || $signed(applied_l)+$signed(applied_r)>0);
     wire feedback_fault=(target_l!=0 && lto)||(target_r!=0 && rto);
     wire imu_fault=(imu_required || moving) && (!imu_valid || !gyro_valid);
     wire tof_fault=MOTION_LIDAR==0 && forward && (!tof_valid || clearance<=250);
     // ARM itself expires, even before the first speed command arrives.
     wire ownership_released=FUSION_ENABLED!=0 && previous_fusion_owner && !fusion_owns;
-    wire timeout_fault=armed && !local_lease && !ownership_released && command_age>=effective_ttl;
-    wire fusion_fault=FUSION_ENABLED!=0 && ((moving && obstacle_stop && !fusion_owns) || (fusion_owns && fusion_stop));
+    wire timeout_fault=armed && !ownership_released && command_age>=effective_ttl;
+    wire fusion_fault=FUSION_ENABLED!=0 && ((moving && obstacle_stop && !fusion_owns) || fusion_stop);
     wire hard_fault=active && (feedback_fault || imu_fault || tof_fault || timeout_fault || fusion_fault);
     wire enable=active && !ownership_released && !stop_cmd && !hard_fault && !(FUSION_ENABLED!=0 && obstacle_stop);
     // Qualify the arithmetic pipeline with a local register. The final motor
@@ -114,9 +97,9 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     reg signed [10:0] desired_l,desired_r;
     reg signed [31:0] req_l,req_r;
     reg signed [15:0] delta_yaw;
-    wire targets_valid,targets_braking;
+    wire targets_valid;
     wire signed [31:0] next_target_l,next_target_r;
-    wire replace_targets=cv && (kind==8'h11 || kind==8'h45 || kind==8'h47 || kind==8'h42);
+    wire replace_targets=cv && kind==8'h11;
     wire manual_enable=enable && !(FUSION_ENABLED!=0 && fusion_owns);
     reg manual_enable_q;
     always @(posedge clk or negedge rst_n)
@@ -124,15 +107,11 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     // Avoid routing the full safety/ownership cone through every arithmetic CE.
     // Commit below still checks raw enable and the previous cycle's permission.
     a741_targets targets(.clk(clk),.rst_n(rst_n),.enable(FUSION_ENABLED!=0 ? manual_enable_q:manual_enable),.tick(tick),.cancel(replace_targets),
-        .rotating(rotating),.turn_braking(turn_braking),.heading_hold(heading_hold && imu_valid),
-        .heading_positive(cfg[7]==1),.desired_l(desired_l),.desired_r(desired_r),
-        .yaw(yaw),.heading_origin(heading_origin),.gz(gz),.gyro_bias(gyro_bias),
-        .turn_target(turn_target),.accumulated_yaw(accumulated_yaw),.left_speed(left_speed),.right_speed(right_speed),
-        .max_speed(cfg[5][8:0]),.turn_speed(turn_speed[8:0]),.speed_step(cfg[10][5:0]),
-        .tof_valid(MOTION_LIDAR!=0 || tof_valid),.clearance(MOTION_LIDAR!=0 ? 32'd1000:clearance),.valid(targets_valid),.braking(targets_braking),
+        .desired_l(desired_l),.desired_r(desired_r),.max_speed(cfg[5][8:0]),
+        .tof_valid(MOTION_LIDAR!=0 || tof_valid),.clearance(MOTION_LIDAR!=0 ? 32'd1000:clearance),.valid(targets_valid),
         .target_l(next_target_l),.target_r(next_target_r));
     wire signed [31:0] pi_l,pi_r,applied_l,applied_r;
-    // A zero planning/mission target reaches the PI directly. An older telemetry
+    // A zero avoidance target reaches the PI directly. An older telemetry
     // target register must never deliver a one-tick pulse after obstacle release.
     wire signed [31:0] selected_l=FUSION_ENABLED!=0 && fusion_owns ? fusion_left:target_l;
     wire signed [31:0] selected_r=FUSION_ENABLED!=0 && fusion_owns ? fusion_right:target_r;
@@ -144,7 +123,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
         .speed_step(cfg[10][15:0]),.pwm_step(cfg[11][15:0]),.limit(cfg[9][15:0]),.applied(applied_r),.command(pi_r));
     motor_pwm_safe #(.CLK_HZ(CLK_HZ)) ml(.clk(clk),.rst_n(rst_n),.enable(motor_enable),.command(pi_l),.in1(left_in1),.in2(left_in2),.pwm_abs(left_pwm));
     motor_pwm_safe #(.CLK_HZ(CLK_HZ),.INVERT(1)) mr(.clk(clk),.rst_n(rst_n),.enable(motor_enable),.command(pi_r),.in1(right_in1),.in2(right_in2),.pwm_abs(right_pwm));
-    assign state_code=faults!=0 ? 3 : rotating ? 4 : armed ? (moving || pi_l!=0 || pi_r!=0 ? 2:1):0;
+    assign state_code=faults!=0 ? 3 : armed ? (moving || pi_l!=0 || pi_r!=0 ? 2:1):0;
     reg reply_request;reg [7:0] reply_kind,reply_seq,reply_length;reg [255:0] reply_payload;wire reply_ready;
     reg [15:0] reply_left_pwm,reply_right_pwm;
     reg reply_command_delay;
@@ -161,17 +140,12 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     reg previous_fusion_owner;
     assign direct_reply_valid=reply_request;assign direct_reply_kind=reply_kind;
     assign direct_reply_seq=reply_seq;assign direct_reply_length=reply_length;assign direct_reply_payload=reply_payload;
-    generate if(DIRECT_CONTROL!=0) begin: direct_response
-        assign reply_ready=direct_reply_ready;assign uart_tx=1'b1;
-    end else begin: serial_response
-        vision_packet_tx #(.CLK_HZ(CLK_HZ)) responses(.clk(clk),.rst_n(rst_n),.request(reply_request),.kind(reply_kind),
-            .seq(reply_seq),.length(reply_length),.payload(reply_payload),.ready(reply_ready),.tx(uart_tx));
-    end endgenerate
+    assign reply_ready=direct_reply_ready;
     integer i;
     reg value_ok;reg [7:0] key;reg [31:0] value;
     reg [9:0] lidar_duty;
     wire [31:0] lidar_status;
-    wire lidar_renew=(cv && kind==8'h05) || (local_lease && ms_tick);
+    wire lidar_renew=(cv && kind==8'h05);
     wire lidar_update=cv && kind==8'h46 && MOTION_LIDAR!=0 &&
         (payload[15:0]==0 || (payload[15:0]>=200 && payload[15:0]<=600));
     wire lidar_stop=cv && kind==8'h04;
@@ -181,10 +155,10 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
             for(i=0;i<12;i=i+1) cfg[i]<=0;
-            configured<=0;armed<=0;faults<=0;calibrated<=0;calibrating<=0;rotating<=0;imu_required<=0;
-            target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;heading_hold<=0;heading_origin<=0;previous_yaw<=0;
-            turn_target<=0;turn_speed<=0;turn_braking<=0;quiet_ms<=0;accumulated_yaw<=0;command_age<=0;effective_ttl<=250;
-            bias_count<=0;bias_sum<=0;gyro_bias<=0;calibration_age<=0;cal_start_ms<=0;calibration_result<=0;config_revision<=0;
+            configured<=0;armed<=0;faults<=0;calibrated<=0;calibrating<=0;imu_required<=0;
+            target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;calibration_origin<=0;
+            command_age<=0;effective_ttl<=250;
+            bias_count<=0;bias_sum<=0;gyro_bias<=0;calibration_age<=0;calibration_result<=0;config_revision<=0;
             reply_request<=0;reply_kind<=0;reply_seq<=0;reply_length<=0;reply_payload<=0;
             request_pending<=0;saved_kind<=0;saved_seq<=0;saved_key<=0;lidar_duty<=0;
             fusion_response_pending<=0;fusion_response_data<=0;previous_fusion_owner<=0;
@@ -196,15 +170,6 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             if(ms_tick) begin
                 if(command_age!=65535) command_age<=command_age+1'b1;
                 if(calibrating && calibration_age!=65535) calibration_age<=calibration_age+1'b1;
-                if(rotating && turn_braking && target_l==0 && target_r==0 && left_speed<20 && left_speed>-20 && right_speed<20 && right_speed>-20 &&
-                    ($signed({{16{gz[15]}},gz})-$signed({{16{gyro_bias[15]}},gyro_bias}))<33 &&
-                    ($signed({{16{gz[15]}},gz})-$signed({{16{gyro_bias[15]}},gyro_bias}))> -33) begin
-                    if(quiet_ms<200) quiet_ms<=quiet_ms+1'b1;
-                    else begin
-                        rotating<=0;
-                        if(turn_target-accumulated_yaw>910 || turn_target-accumulated_yaw< -910) faults[9]<=1;
-                    end
-                end else quiet_ms<=0;
             end
             if(calibrating && gyro_update) begin
                 if(!imu_valid || !imu_stationary || gz>82 || gz < -82 || ls!=0 || rs!=0) begin calibrating<=0;calibration_result<=2;end
@@ -213,7 +178,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                 end else begin bias_sum<=bias_sum+$signed(gz);bias_count<=bias_count+1'b1;end
             end
             if(calibrating && angle_update) begin
-                delta_yaw=yaw-heading_origin;
+                delta_yaw=yaw-calibration_origin;
                 if(delta_yaw>364 || delta_yaw< -364) begin
                     calibrated<=0;calibrating<=0;calibration_result<=2;
                 end
@@ -221,19 +186,14 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             if(calibrating && (calibration_age>=12000 || !imu_valid || !gyro_valid || ls!=0 || rs!=0)) begin
                 calibrated<=0;calibrating<=0;calibration_result<=3;
             end
-            if(rotating && angle_update) begin
-                delta_yaw=yaw-previous_yaw;
-                accumulated_yaw<=accumulated_yaw+(cfg[7]==1 ? $signed(delta_yaw):-$signed(delta_yaw));previous_yaw<=yaw;
-            end
             if(FUSION_ENABLED!=0 && fusion_owns) begin
-                if(enable && tick) begin target_l<=fusion_left;target_r<=fusion_right;heading_hold<=0;end
+                if(enable && tick) begin target_l<=fusion_left;target_r<=fusion_right;end
             end else if(targets_valid && enable && !replace_targets && (FUSION_ENABLED==0 || manual_enable_q)) begin
                 target_l<=next_target_l;target_r<=next_target_r;
-                if(rotating && targets_braking) turn_braking<=1;
             end
             // Allow the registered PWM telemetry to reflect command updates.
             if(request_pending && reply_ready && !reply_request && !reply_command_delay &&
-                (!(saved_kind>=8'h50 && saved_kind<=8'h58) || fusion_response_pending || fusion_reply_valid)) begin
+                (!(is_board_command(saved_kind)) || fusion_response_pending || fusion_reply_valid)) begin
                 request_pending<=0;reply_request<=1;reply_kind<=8'h80;reply_seq<=saved_seq;reply_length<=25;reply_payload<=0;
                 reply_payload[7:0]<=state_code;reply_payload[23:8]<=faults;
                 reply_payload[55:24]<=left_count;reply_payload[87:56]<=right_count;
@@ -242,7 +202,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                 if(saved_kind==8'h40) begin
                     reply_kind<=8'hc0;reply_length<=8;
                     reply_payload<={192'd0,16'd400,(FUSION_ENABLED!=0 ? 16'h0f51:MOTION_LIDAR!=0 ? 16'h0751:IMU_TEST!=0 ? 16'h00d1:SENSOR_PINS_ENABLED!=0 ? 16'h0031:16'h0011),32'h314d5645};
-                end else if(saved_kind>=8'h50 && saved_kind<=8'h58 && FUSION_ENABLED!=0) begin
+                end else if(is_board_command(saved_kind) && FUSION_ENABLED!=0) begin
                     reply_kind<=8'hd0;reply_length<=32;reply_payload<=fusion_reply_valid ? fusion_reply:fusion_response_data;
                     fusion_response_pending<=0;
                 end
@@ -270,26 +230,23 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             end
             if(cv) begin
                 if(ttl!=0) effective_ttl<=ttl>1000 ? 1000 : ttl<50 ? 50:ttl;
-                if(kind!=8'h05 && kind!=8'h11 && kind!=8'h45 && kind!=8'h47) begin
+                if(kind!=8'h05 && kind!=8'h11) begin
                     request_pending<=1;saved_kind<=kind;saved_seq<=seq;saved_key<=payload[31:0];
                 end
                 case(kind)
                     8'h02: if(IMU_TEST==0 && calibration_config_ok && calibrated && !calibrating && imu_valid && gyro_valid && faults==0) begin armed<=1;command_age<=0;end
-                    8'h03,8'h04,8'h56,8'h58: if(kind!=8'h58 || (FUSION_ENABLED!=0 && payload[7:0]==3)) begin armed<=0;rotating<=0;heading_hold<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                    8'h03,8'h04,8'h56,8'h59: if(kind!=8'h59 ||
+                        (kind==8'h59 && payload[7:0]==0)) begin armed<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
                         calibrating<=0;if(calibrating) calibration_result<=4;
                     end
                     8'h05: command_age<=0;
                     8'h46: if(MOTION_LIDAR!=0 && (payload[15:0]==0 || (payload[15:0]>=200 && payload[15:0]<=600))) lidar_duty<=payload[9:0];
-                    8'h11,8'h45,8'h47: if(active && !rotating) begin
+                    8'h11: if(active) begin
                         req_l=$signed(payload[31:0]);req_r=$signed(payload[63:32]);
-                        // Reject out-of-range commands rather than overflow signed arithmetic.
-                    if(req_l>400 || req_l< -400 || req_r>400 || req_r< -400 || (FUSION_ENABLED!=0 && fusion_owns)) begin req_l=0;req_r=0;end
+                        // Raw wheel debugging cannot preempt autonomous ownership.
+                        if(req_l>400 || req_l< -400 || req_r>400 || req_r< -400 ||
+                            (FUSION_ENABLED!=0 && fusion_owns)) begin req_l=0;req_r=0;end
                         desired_l<=req_l;desired_r<=req_r;
-                        heading_hold<=(kind==8'h45 || kind==8'h47) && (req_l!=0 || req_r!=0);
-                        // Speed refreshes during a distance task must retain the
-                        // original heading. STOP/zero/raw mode ends that task.
-                        if(kind==8'h47) heading_origin<=payload[79:64];
-                        else if(!heading_hold || kind==8'h11 || (req_l==0 && req_r==0)) heading_origin<=yaw;
                         imu_required<=req_l!=0 || req_r!=0;command_age<=0;
                     end
                     8'h21: if(!armed && !moving && left_speed<20 && left_speed>-20 && right_speed<20 && right_speed>-20) faults<=0;
@@ -311,22 +268,14 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                         if(value_ok) begin cfg[key[3:0]]<=value;configured[key[3:0]]<=1;calibrated<=0;end
                         if(key==6 && value_ok) config_revision<=value;
                     end
-                    8'h42: if(active && !(FUSION_ENABLED!=0 && fusion_owns) && !moving && desired_l==0 && desired_r==0 &&
-                        left_speed<20 && left_speed> -20 && right_speed<20 && right_speed> -20 &&
-                        calibrated && imu_valid && gyro_valid && $signed(payload[31:0])!=0 &&
-                        $signed(payload[31:0])<=65536 && $signed(payload[31:0])>=-65536 && payload[47:32]>=40 && payload[47:32]<=cfg[5]) begin
-                        rotating<=1;imu_required<=1;turn_target<=payload[31:0];turn_speed<=payload[47:32];
-                        accumulated_yaw<=0;previous_yaw<=yaw;command_age<=0;quiet_ms<=0;turn_braking<=0;
-                        heading_hold<=0;desired_l<=0;desired_r<=0;
-                    end
                     8'h43: if(!armed && calibration_config_ok && imu_valid && gyro_valid && imu_stationary && left_speed==0 && right_speed==0) begin
-                        calibrated<=0;calibrating<=1;bias_count<=0;bias_sum<=0;calibration_age<=0;cal_start_ms<=now_ms;calibration_result<=0;heading_origin<=yaw;
+                        calibrated<=0;calibrating<=1;bias_count<=0;bias_sum<=0;calibration_age<=0;calibration_result<=0;calibration_origin<=yaw;
                     end
                     default:;
                 endcase
             end
-            if(hard_fault || faults[9]) begin
-                armed<=0;rotating<=0;heading_hold<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+            if(hard_fault) begin
+                armed<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
                 if(timeout_fault) faults[0]<=1;
                 if(feedback_fault) faults[2]<=1;
                 if(imu_fault) faults[4]<=1;
@@ -336,7 +285,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             // Releasing autonomous ownership always ends this armed session.
             // It also wins over a simultaneous host ARM/speed packet.
             if(ownership_released) begin
-                armed<=0;rotating<=0;heading_hold<=0;turn_braking<=0;
+                armed<=0;
                 target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
             end
         end

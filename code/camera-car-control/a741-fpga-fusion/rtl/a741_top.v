@@ -1,6 +1,8 @@
 `timescale 1ns/1ps
 `default_nettype none
 module a741_top(
+    output wire tft_clk,tft_de,tft_hsync,tft_vsync,tft_bl,
+    output wire [15:0] tft_rgb,
     input wire clk,stop_n,
     input wire camera_pclk,camera_vsync,camera_href,input wire [7:0] camera_data,
     output wire camera_reset_n,inout wire camera_sclk,camera_sdat,
@@ -9,7 +11,6 @@ module a741_top(
     output wire eth_rst_n,eth_mdc,inout wire eth_mdio,
     input wire left_enc_a,left_enc_b,right_enc_a,right_enc_b,
     output wire left_in1,left_in2,right_in1,right_in2,output wire [7:0] led,
-    output wire tmds_clk_p,tmds_clk_n,output wire [2:0] tmds_data_p,tmds_data_n,
     output wire [13:0] O_ddr_addr,output wire [2:0] O_ddr_ba,
     output wire O_ddr_cs_n,O_ddr_ras_n,O_ddr_cas_n,O_ddr_we_n,O_ddr_clk,O_ddr_clk_n,
     output wire O_ddr_cke,O_ddr_odt,O_ddr_reset_n,output wire [1:0] O_ddr_dqm,
@@ -26,22 +27,33 @@ module a741_top(
     inout wire imu_sda,imu_scl,imu_xda,imu_xcl,imu_ad0,lidar_control,tof_sda,tof_scl,tof_xshut
 `endif
 );
-    wire pll50,pll125,unused24,locked;
-    Gowin_PLL clocks(.clkin(clk),.clkout0(pll50),.clkout1(pll125),.clkout2(unused24),
+    wire pll50,pll250,pll125,unused24,locked;
+    // The prepared PLL emits 250 MHz; the dedicated /2 divider regenerates
+    // a full 125 MHz pulse at the MAC RAM clock instead of the long PLL path.
+    Gowin_PLL clocks(.clkin(clk),.clkout0(pll50),.clkout1(pll250),.clkout2(unused24),
         .lock(locked),.mdclk(clk),.reset(!stop_n));
     wire global_n=stop_n && locked;
+    wire display_clk,display_locked,display_n,display_sys_n;
+    // Unmodified 33MHz PLL parameters/init from ACG720 chapter28, renamed only
+    // to coexist with the Ethernet PLL. Control timers remain at 50MHz.
+    A741_TFT_PLL display_clocks(.clkin(clk),.clkout0(display_clk),.lock(display_locked),
+        .mdclk(clk),.reset(!stop_n));
+    wire display_global_n=global_n && display_locked;
+    reset_sync display_reset(.clk(display_clk),.async_n(display_global_n),.rst_n(display_n));
+    reset_sync display_sys_reset(.clk(clk),.async_n(display_global_n),.rst_n(display_sys_n));
+    CLKDIV #(.DIV_MODE("2")) tx_divider(.HCLKIN(pll250),.RESETN(global_n),
+        .CALIB(1'b0),.CLKOUT(pll125));
     wire control_n,net_n,rx_n,tx_n;
     reset_sync creset(.clk(clk),.async_n(global_n),.rst_n(control_n));
     reset_sync nreset(.clk(pll50),.async_n(global_n),.rst_n(net_n));
     reset_sync rxreset(.clk(rgmii_rx_clk),.async_n(global_n && eth_rst_n),.rst_n(rx_n));
     reset_sync txreset(.clk(pll125),.async_n(global_n),.rst_n(tx_n));
-    wire camera_ready,camera_error,phy_ready;
-    ov5640_board_init camera(.clk(clk),.rst_n(control_n),.camera_reset_n(camera_reset_n),
+    wire camera_ready,camera_error,phy_ready,phy_error;
+    ov5640_board_init #(.WIDTH(800),.HEIGHT(480)) camera(.clk(clk),.rst_n(control_n),.camera_reset_n(camera_reset_n),
         .scl(camera_sclk),.sda(camera_sdat),.ready(camera_ready),.error(camera_error));
-    // Preserve the PHY reset/autonegotiation sequence from the user-verified
-    // A741 image.  PHY diagnostics must not hold the Ethernet MAC disabled.
-    phy_reg_config phy(.Clk(clk),.Rst_n(control_n),.Phy_rst_n(eth_rst_n),
-        .Rd_Data(),.Phy_init_done(phy_ready),.mdc(eth_mdc),.mdio(eth_mdio));
+    // Enable and verify PHY-side RX/TX delays before accepting network traffic.
+    a741_phy_config phy(.clk(clk),.rst_n(control_n),.phy_rst_n(eth_rst_n),
+        .ready(phy_ready),.error(phy_error),.mdc(eth_mdc),.mdio(eth_mdio));
     (* ASYNC_REG="TRUE" *) reg [1:0] camera_ready_sync;
     always @(posedge camera_pclk or negedge global_n)
         if(!global_n) camera_ready_sync<=0;
@@ -55,7 +67,7 @@ module a741_top(
         else phy_ready_tx<={phy_ready_tx[0],phy_ready};
     wire [7:0] gmii_rxd,gmii_txd;
     wire gmii_dv,gmii_er,gmii_en,gmii_txer;
-    acg720_rgmii_rx receiver(.rx_clk(rgmii_rx_clk),.rxd(rgmii_rxd),.rx_ctl(rgmii_rx_ctl),
+    acg720_rgmii_rx #(.INPUT_DELAY_TAPS(64)) receiver(.rx_clk(rgmii_rx_clk),.rxd(rgmii_rxd),.rx_ctl(rgmii_rx_ctl),
         .gmii_data(gmii_rxd),.gmii_valid(gmii_dv),.gmii_error(gmii_er));
     gmii_to_rgmii transmitter(.reset_n(global_n),.gmii_tx_clk(pll125),.gmii_txd(gmii_txd),
         .gmii_txen(gmii_en),.gmii_txer(gmii_txer),.rgmii_tx_clk(rgmii_tx_clk),
@@ -93,12 +105,9 @@ module a741_top(
     wire imu_int=1'b0,lidar_rx=1'b1;
     wire imu_sda,imu_scl,tof_sda,tof_scl,tof_xshut;
 `endif
-    wire serial_clk,pixel_clk,hdmi_reset_clk,video_lock,video_n;
-    A741_Video_PLL video_pll(.clkin(clk),.clkout0(hdmi_reset_clk),.clkout1(serial_clk),
-        .lock(video_lock),.mdclk(clk),.reset(!stop_n));
-    CLKDIV pixel_divider(.HCLKIN(serial_clk),.RESETN(video_lock),.CLKOUT(pixel_clk),.CALIB(1'b1));
-    defparam pixel_divider.DIV_MODE="5";
-    assign video_n=global_n && video_lock;
+    wire video_n=display_global_n && ddr_lock;
+    wire display_video_n;
+    reset_sync display_video_reset(.clk(display_clk),.async_n(video_n),.rst_n(display_video_n));
     wire memory_clk,ddr_lock,pll_stop,ui_clk,ui_rst,calibrated;
     // IPUG281 4.4.3: release the IP reset synchronously to its reference clk.
     // Keep PLL reset independent of LOCK so startup cannot depend on itself.
@@ -132,20 +141,50 @@ module a741_top(
         .IO_ddr_dqs(IO_ddr_dqs),.IO_ddr_dqs_n(IO_ddr_dqs_n));
     wire ui_n;
     reset_sync ui_reset(.clk(ui_clk),.async_n(video_n && !ui_rst),.rst_n(ui_n));
-    wire [15:0] rgb;wire de,hs,vs,frame_ready,camera_bad,ddr_bad,overflow;
-    wire [7:0] vd;wire vv,vl,vr;wire [15:0] vlen;wire [31:0] frames;
+    wire [15:0] camera_pixel,display_rgb;wire pixel_valid,pixel_request,frame_blank,active;
+    wire [10:0] display_x,display_y;
+    wire frame_ready,camera_bad,ddr_bad,overflow;
+    wire [31:0] frames;
     wire [895:0] snapshot;wire [255:0] fusion_snapshot;wire [7:0] state;wire [15:0] faults;
-    a741_video video(.clk(clk),.rst_n(video_n),.cam_clk(camera_pclk),.cam_ready(camera_ready_sync[1]),
+    a741_video #(.WIDTH(800),.HEIGHT(480)) video(.clk(display_clk),.rst_n(display_video_n),.cam_clk(camera_pclk),.cam_ready(camera_ready_sync[1]),
         .cam_vsync(camera_vsync),.cam_href(camera_href),.cam_data(camera_data),
-        .ui_clk(ui_clk),.ui_rst_n(ui_n),.calibrated(calibrated),.pixel_clk(pixel_clk),
+        .ui_clk(ui_clk),.ui_rst_n(ui_n),.calibrated(calibrated),.pixel_request(pixel_request),.frame_blank(frame_blank),
         .app_addr(app_addr),.app_cmd(app_cmd),.app_en(app_en),.app_rdy(app_rdy),
         .app_wdf_data(app_wdata),.app_wdf_wren(app_wen),.app_wdf_end(app_wend),.app_wdf_rdy(app_wrdy),
-        .app_rd_data(app_rdata),.app_rd_valid(app_rvalid),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),
-        .rgb(rgb),.de(de),.hsync(hs),.vsync(vs),.video_data(vd),.video_valid(vv),.video_last(vl),.video_length(vlen),.video_ready(vr),
+        .app_rd_data(app_rdata),.app_rd_valid(app_rvalid),.pixel(camera_pixel),.pixel_valid(pixel_valid),
         .frame_available(frame_ready),.camera_error(camera_bad),.ddr_error(ddr_bad),.overflow(overflow),.frames(frames));
-    a741_hdmi hdmi(.pixel_clk(pixel_clk),.serial_clk(serial_clk),.reset_clk(hdmi_reset_clk),.rst_n(video_n),.rgb(rgb),
-        .hsync(hs),.vsync(vs),.de(de),.tmds_clk_p(tmds_clk_p),.tmds_clk_n(tmds_clk_n),
-        .tmds_data_p(tmds_data_p),.tmds_data_n(tmds_data_n));
+    wire [15:0] overlay_pixel,panel_rgb;
+    wire overlay_pixel_valid;
+    wire [895:0] display_snapshot;wire [255:0] display_fusion;
+    wire [5:0] display_flags;wire display_update;
+    wire sys_frame_ready,sys_camera_bad,sys_ddr_bad,sys_overflow;wire [31:0] sys_frames;
+    a741_display_cdc display_cdc(.sys_clk(clk),.sys_rst_n(display_sys_n),
+        .disp_clk(display_clk),.disp_rst_n(display_n),.status_snapshot(snapshot),.fusion_snapshot(fusion_snapshot),
+        .system_flags({locked && display_locked,ddr_ready_sync[1],camera_ready,camera_error,phy_ready,phy_error}),
+        .display_status({frame_ready,camera_bad,ddr_bad,overflow,frames}),
+        .display_snapshot(display_snapshot),.display_fusion(display_fusion),.display_flags(display_flags),
+        .display_update(display_update),.system_display_status({sys_frame_ready,sys_camera_bad,sys_ddr_bad,sys_overflow,sys_frames}));
+`ifdef A741_DISPLAY_DIAGNOSTIC
+    wire [7:0] diagnostic_led;
+    a741_display_diagnostic #(.CLOCK_HZ(33000000),.FRAMES_PER_COLOR(60),.WIDTH(800)) display_diagnostic(.clk(display_clk),.rst_n(display_n),
+        .frame_blank(frame_blank),.x(display_x),.pixel(camera_pixel),.pixel_valid(pixel_valid),
+        .osd_rgb(display_rgb),.overlay_pixel(overlay_pixel),.overlay_pixel_valid(overlay_pixel_valid),
+        .panel_rgb(panel_rgb),.locked(display_flags[5]),.ddr_ready(display_flags[4]),
+        .camera_ready(display_flags[3]),.camera_error(display_flags[2]),.phy_ready(display_flags[1]),.phy_error(display_flags[0]),
+        .led(diagnostic_led));
+`else
+    assign overlay_pixel=camera_pixel;
+    assign overlay_pixel_valid=pixel_valid;
+    assign panel_rgb=display_rgb;
+`endif
+    a741_osd #(.WIDTH(800),.HEIGHT(480),.PIPELINED(1)) overlay(.clk(display_clk),.rst_n(display_n),.frame_blank(frame_blank),.de(active),
+        .x(display_x),.y(display_y),.pixel(overlay_pixel),.pixel_valid(overlay_pixel_valid),
+        .status_snapshot(display_snapshot),.fusion_snapshot(display_fusion),.status_update(display_update),.rgb(display_rgb));
+    a741_tft800_panel status_panel(.clk(display_clk),.rst_n(display_n),.rgb(panel_rgb),
+        .pixel_request(pixel_request),.frame_blank(frame_blank),.active(active),.x(display_x),.y(display_y),
+        .tft_clk(),.tft_de(tft_de),.tft_hsync(tft_hsync),.tft_vsync(tft_vsync),.tft_bl(tft_bl),.tft_rgb(tft_rgb));
+    // Forward a centered pixel clock using the dedicated DDR output primitive.
+    ODDR tft_clock(.CLK(display_clk),.D0(1'b0),.D1(1'b1),.TX(1'b1),.Q0(tft_clk),.Q1());
     (* ASYNC_REG="TRUE" *) reg [1:0] ddr_ready_sync;
     always @(posedge clk or negedge control_n)
         if(!control_n) ddr_ready_sync<=0;else ddr_ready_sync<={ddr_ready_sync[0],calibrated};
@@ -154,7 +193,7 @@ module a741_top(
     assign lidar_control=global_n && lidar_pwm;
 `endif
     a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR)) core(.clk(clk),.rst_n(control_n),
-        .mac_diagnostic(mac_diagnostic),.phy_ready(phy_ready),.phy_error(1'b0),
+        .mac_diagnostic(mac_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
         .phy_diagnostic(128'd0),
         .lidar_control(lidar_pwm),
         .imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),.lidar_rx(lidar_rx),
@@ -163,11 +202,14 @@ module a741_top(
         .left_in1(raw_l1),.left_in2(raw_l2),.right_in1(raw_r1),.right_in2(raw_r2),
         .eth_rx_data(rx_data),.eth_rx_valid(rx_valid),.eth_rx_last(rx_last),.eth_rx_bad(rx_bad),.eth_rx_ready(rx_ready),
         .eth_tx_data(tx_data),.eth_tx_valid(tx_valid),.eth_tx_last(tx_last),.eth_tx_bad(tx_bad),.eth_tx_ready(tx_ready),
-        .video_data(vd),.video_valid(vv),.video_last(vl),.video_length(vlen),.video_ready(vr),
-        .ddr_ready(ddr_ready_sync[1]),.frame_ready(frame_ready),.camera_error(camera_bad),
-        .ddr_error(ddr_bad),.video_overflow(overflow),.video_frames(frames),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.state(state),.faults(faults));
+        .ddr_ready(ddr_ready_sync[1]),.frame_ready(sys_frame_ready),.camera_error(sys_camera_bad),
+        .ddr_error(sys_ddr_bad),.video_overflow(sys_overflow),.video_frames(sys_frames),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.state(state),.faults(faults));
     assign left_in1=IMU_TEST ? 1'b0:global_n && raw_l1;assign left_in2=IMU_TEST ? 1'b0:global_n && raw_l2;
     assign right_in1=IMU_TEST ? 1'b0:global_n && raw_r1;assign right_in2=IMU_TEST ? 1'b0:global_n && raw_r2;
-    assign led={faults!=0,overflow,ddr_bad,frame_ready,ddr_ready_sync[1],phy_ready,camera_ready,locked};
+`ifdef A741_DISPLAY_DIAGNOSTIC
+    assign led=diagnostic_led;
+`else
+    assign led={faults!=0,sys_overflow,sys_ddr_bad,sys_frame_ready,ddr_ready_sync[1],phy_ready,camera_ready,locked && display_locked};
+`endif
 endmodule
 `default_nettype wire

@@ -1,0 +1,17 @@
+{
+  "hypothesis": "Non-clock high-fanout lidar packet enable auto-promoted to PRIMARY spans TR/BR in failed motion PNR; force only this net to general routing.",
+  "net": "core/sensors/lidar/n7598_14",
+  "source": "LUT3 n7598_s6 INIT=8h10; inputs le/checking/checking_9",
+  "connections": {
+    "F": 1,
+    "I2": 3,
+    "CE": 376,
+    "I0": 9
+  },
+  "netlist_sha256": "1eedc07b5cff173af3ecb812975eece0873c521b1a33c225b32a3984ef9ff82b",
+  "document": "C:/Gowin/Gowin_V1.9.12.04_x64/IDE/doc/EN/SUG1541-1.0E_Gowin Software Physical Constraints User Guide.pdf",
+  "page": 29,
+  "section": "2.8.2 / 2.8.3, CLOCK_LOC net LOCAL_CLOCK",
+  "algorithm": "place1/route1, timing-driven, correct_hold; unchanged",
+  "confirmed_root_cause": false
+}

@@ -16,8 +16,6 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
     output wire eth_rx_ready,
     output wire [7:0] eth_tx_data,output wire eth_tx_valid,eth_tx_last,eth_tx_bad,
     input wire eth_tx_ready,
-    input wire [7:0] video_data,input wire video_valid,video_last,
-    input wire [15:0] video_length,output wire video_ready,
     input wire ddr_ready,frame_ready,camera_error,ddr_error,video_overflow,
     input wire [31:0] video_frames,
     output reg [895:0] snapshot,
@@ -32,7 +30,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         if(!rst_n) begin divider<=0;period<=0;end
         else if(ms_tick) begin divider<=0;period<=period==9 ? 0:period+1'b1;end
         else divider<=divider+1'b1;
-    wire iv,gv,au,gu,tv,lv,lpv,imu_stationary;
+    wire iv,gv,au,gu,tv,lv,lpv,imu_stationary,tilt_valid;
     wire armed,calibrated,calibrating,rotating;
     wire signed [15:0] bias;
     wire signed [15:0] yaw,roll,pitch,gx,gy,gz;
@@ -41,10 +39,10 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
     wire [375:0] lpacket;
     wire [31:0] imu_diagnostic;wire [95:0] imu_raw;wire [15:0] imu_temperature;
     wire lidar_point;wire [15:0] lidar_angle,lidar_distance;wire [7:0] lidar_confidence;
-    a741_sensors #(.CLK_HZ(CLK_HZ),.AUX_ENABLED(IMU_TEST==0),.LIDAR_ENABLED(MOTION_LIDAR!=0 || IMU_TEST==0),
+    a741_sensors #(.CLK_HZ(CLK_HZ),.LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE),.AUX_ENABLED(IMU_TEST==0),.LIDAR_ENABLED(MOTION_LIDAR!=0 || IMU_TEST==0),
         .TOF_ENABLED(MOTION_LIDAR==0 && IMU_TEST==0),.ALLOW_MPU6500(IMU_TEST!=0 || MOTION_LIDAR!=0)) sensors(
         .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),
-        .calibrated(calibrated),.gyro_bias(bias),.imu_stationary(imu_stationary),.lidar_rx(lidar_rx),
+        .calibrated(calibrated),.gyro_bias(bias),.imu_stationary(imu_stationary),.tilt_valid(tilt_valid),.lidar_rx(lidar_rx),
         .tof_sda(tof_sda),.tof_scl(tof_scl),.tof_xshut(tof_xshut),
         .imu_valid(iv),.angle_update(au),.gyro_valid(gv),.gyro_update(gu),
         .yaw(yaw),.roll(roll),.pitch(pitch),.gx(gx),.gy(gy),.gz(gz),
@@ -72,90 +70,49 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
     wire [31:0] revision;wire [7:0] cal_result;
     wire fcommand,fowns,fstop,fobstacle,freply_valid,flink;
     wire [7:0] fkind;wire [255:0] fpayload,freply;wire [9:0] flimit;
-    wire signed [31:0] fl,fr,manual_l,manual_r,pose_x,pose_y;
-    wire travel_tick,travel_valid,heading_positive;
-    wire signed [31:0] left_travel,right_travel;
-    wire signed [15:0] pose_heading;wire [7:0] nav_state,nav_fault,quality;wire [15:0] ffront;wire [31:0] map_revision;
-    wire [7:0] mrd,mtd,mkind;wire mrv,mrl,mrb,mrr,mtv,mtl,mtr,mcommand,mwaiting;
-    wire [15:0] mlen;wire [255:0] mpayload;
-    reg map_owner,pending_control;reg [7:0] pending_kind;reg [255:0] pending_payload;
-    wire control_is_nav=fkind>=8'h50 && fkind<=8'h58;
-    wire deferred=pending_control && !mwaiting && !map_owner;
-    wire acmd=mcommand || deferred || (fcommand && (!control_is_nav || !map_owner));
-    wire [7:0] akind=mcommand ? mkind:deferred ? pending_kind:fkind;
-    wire [255:0] apayload=mcommand ? mpayload:deferred ? pending_payload:fpayload;
-    always @(posedge clk or negedge rst_n)
-        if(!rst_n) begin map_owner<=0;pending_control<=0;pending_kind<=0;pending_payload<=0;end
-        else begin
-            if(mcommand) map_owner<=1;
-            if(freply_valid) map_owner<=0;
-            if(fcommand && control_is_nav && map_owner) begin pending_control<=1;pending_kind<=fkind;pending_payload<=fpayload;end
-            if(deferred) pending_control<=0;
-        end
-    a741_map_udp map_transport(.clk(clk),.rst_n(rst_n),.rx_data(mrd),.rx_valid(mrv),.rx_last(mrl),.rx_bad(mrb),.rx_ready(mrr),
-        .tx_data(mtd),.tx_valid(mtv),.tx_last(mtl),.tx_length(mlen),.tx_ready(mtr),.command(mcommand),
-        .command_ready(FUSION_ENABLED!=0 && bridge_state==0 && !fcommand && !pending_control),.kind(mkind),.payload(mpayload),
-        .reply_done(freply_valid && map_owner),.reply(freply),.waiting(mwaiting));
-    wire [39:0] mission_display;
-    generate if(FUSION_ENABLED!=0) begin: fusion_enabled
-        wire cpu_owns,cpu_alive,cpu_fault,cpu_reply_done,cpu_command,autonomy_owns,autonomy_stop,autonomy_reply_done;
-        wire [7:0] cpu_kind;wire [255:0] cpu_payload,cpu_reply,autonomy_reply;
-        wire [31:0] mission_progress;
-        wire nav_busy,nav_arrived,nav_failed;
-        reg mission_reply_owner,rejected_nav_reply,mission_session;
-        wire rejected_nav=acmd && akind>=8'h50 && akind<=8'h57 && akind!=8'h56 &&
-            ((cpu_owns && akind<=8'h55) || mission_reply_owner || cpu_command);
-        wire external_nav=acmd && akind!=8'h58 && !rejected_nav;
-        a741_mission_cpu mission(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),
-            .geometry_verified(GEOMETRY_VERIFIED!=0),.nav_busy(nav_busy),.nav_arrived(nav_arrived),.nav_failed(nav_failed),
-            .host_command(acmd),.host_kind(akind),.host_payload(apayload),.host_reply_done(cpu_reply_done),.host_reply(cpu_reply),
-            .nav_command(cpu_command),.nav_kind(cpu_kind),.nav_payload(cpu_payload),
-            .nav_reply_done(autonomy_reply_done && mission_reply_owner),.nav_reply(autonomy_reply),
-            .owns(cpu_owns),.alive(cpu_alive),.fault(cpu_fault),.progress(mission_progress));
-        always @(posedge clk or negedge rst_n)
-            if(!rst_n) begin mission_reply_owner<=0;rejected_nav_reply<=0;mission_session<=0;end
-            else begin
-                rejected_nav_reply<=rejected_nav;
-                if(cpu_owns) mission_session<=1;
-                else if(!armed || !autonomy_owns) mission_session<=0;
-                if(cpu_command) mission_reply_owner<=1;
-                else if(autonomy_reply_done) mission_reply_owner<=0;
-            end
-        assign fowns=autonomy_owns || cpu_owns;
-        assign fstop=autonomy_stop || cpu_fault || (mission_session && !cpu_owns && autonomy_owns);
-        assign freply_valid=cpu_reply_done || rejected_nav_reply || (autonomy_reply_done && !mission_reply_owner);
-        assign freply=cpu_reply_done ? cpu_reply:rejected_nav_reply ? 256'd2:autonomy_reply;
-        a741_autonomy #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.RADIUS_MM(RADIUS_MM),.LIDAR_X(LIDAR_X),.LIDAR_Y(LIDAR_Y),
-            .LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE),.TRACK_MM(TRACK_MM),.CONFIG_CRC(FUSION_CONFIG_CRC),
-            .FRONT_EXTENT(FRONT_EXTENT),.REAR_EXTENT(REAR_EXTENT),.HALF_WIDTH(HALF_WIDTH)) autonomy(
-            .clk(clk),.rst_n(rst_n),.tick(tick),.ms_tick(ms_tick),.imu_valid(iv && gv),
-            .lidar_valid(lv && front!=65535 && lside!=65535 && rside!=65535),.calibrated(calibrated),
-            .armed(armed),.link_alive(flink),.travel_tick(travel_tick),.travel_valid(travel_valid),.left_travel(left_travel),.right_travel(right_travel),
-            .manual_left(manual_l),.manual_right(manual_r),.yaw(heading_positive ? yaw:-yaw),.motor_faults(faults),
-            .lidar_point(lidar_point),.lidar_angle(lidar_angle),.lidar_distance(lidar_distance),.lidar_confidence(lidar_confidence),
-            .command(external_nav || cpu_command),.kind(cpu_command ? cpu_kind:akind),.payload(cpu_command ? cpu_payload:apayload),
-            .reply_done(autonomy_reply_done),.reply(autonomy_reply),.drive_enabled(autonomy_owns),.force_stop(autonomy_stop),
-            .mission_busy(nav_busy),.mission_arrived(nav_arrived),.mission_failed(nav_failed),
-            .drive_left(fl),.drive_right(fr),.sensor_stop(fobstacle),.sensor_limit(flimit),.pose_x(pose_x),.pose_y(pose_y),.pose_heading(pose_heading),
-            .nav_state(nav_state),.nav_fault(nav_fault),.localization_quality(quality),.front_distance(ffront),.map_revision(map_revision));
-        assign mission_alive=cpu_owns && cpu_alive;
-        assign mission_display={5'd0,cpu_fault,cpu_alive,cpu_owns,mission_progress};
+    wire signed [31:0] fl,fr,manual_l,manual_r,attitude_pair,reserved_status;
+    wire signed [15:0] display_yaw;wire [7:0] avoid_state,avoid_fault,quality;wire [15:0] ffront;wire [31:0] reserved_revision;
+    wire [39:0] cpu_display;
+    generate if(FUSION_ENABLED!=0) begin: basic_enabled
+        wire cpu_alive,cpu_fault;wire [31:0] cpu_progress;
+        wire manual_stop,manual_scan_valid;wire [9:0] manual_limit;
+        wire [15:0] manual_front,manual_rear,manual_nearest;
+        wire avoidance_stop,avoidance_reply;
+        a741_bare_cpu supervisor(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),
+            .alive(cpu_alive),.fault(cpu_fault),.progress(cpu_progress));
+        a741_lidar_guard #(.LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE),
+            .ROTATION_CLEAR_MM(RADIUS_MM+(LIDAR_X<0 ? -LIDAR_X:LIDAR_X)+(LIDAR_Y<0 ? -LIDAR_Y:LIDAR_Y)+100)) manual_guard(
+            .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lv),.point_valid(lidar_point),
+            .angle(lidar_angle),.distance(lidar_distance),.confidence(lidar_confidence),
+            .requested_left(manual_l),.requested_right(manual_r),.stop(manual_stop),.limit(manual_limit),
+            .scan_valid(manual_scan_valid),.front(manual_front),.rear(manual_rear),.nearest(manual_nearest));
+        a741_avoidance #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.CONFIG_CRC(FUSION_CONFIG_CRC)) avoidance(
+            .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),.link_alive(flink),
+            .motor_faults(faults),.imu_valid(iv),.tilt_valid(tilt_valid),.manual_left(manual_l),.manual_right(manual_r),
+            .yaw(yaw),.roll(roll),.pitch(pitch),.lidar_valid(lv),
+            .lidar_front(front),.lidar_left(lside),.lidar_right(rside),
+            .manual_stop(manual_stop),.manual_limit(manual_limit),.manual_scan_valid(manual_scan_valid),
+            .supervisor_alive(cpu_alive),.supervisor_fault(cpu_fault),.supervisor_uptime(cpu_progress),
+            .command(fcommand),.kind(fkind),.payload(fpayload),.reply_done(freply_valid),.reply(freply),
+            .drive_enabled(fowns),.force_stop(avoidance_stop),.drive_left(fl),.drive_right(fr),
+            .sensor_stop(fobstacle),.sensor_limit(flimit),.state(avoid_state),.fault(avoid_fault),.front_distance(ffront));
+        assign attitude_pair={pitch,roll};assign reserved_status={31'd0,tilt_valid};assign display_yaw=yaw;
+        assign quality={7'd0,manual_scan_valid};assign reserved_revision=0;
+        assign fstop=avoidance_stop || cpu_fault || (armed && !cpu_alive);
+        assign cpu_display={5'd0,cpu_fault,cpu_alive,1'b0,cpu_progress};
     end else begin
         assign freply_valid=0;assign freply=0;assign fowns=0;assign fstop=0;assign fobstacle=0;assign flimit=400;
-        assign fl=0;assign fr=0;assign pose_x=0;assign pose_y=0;assign pose_heading=0;assign nav_state=0;assign nav_fault=0;assign quality=0;assign ffront=0;assign map_revision=0;
-        assign mission_alive=0;
-        assign mission_display=0;
+        assign fl=0;assign fr=0;assign attitude_pair=0;assign reserved_status=0;assign display_yaw=0;assign avoid_state=0;assign avoid_fault=0;assign quality=0;assign ffront=0;assign reserved_revision=0;
+        assign cpu_display=0;
     end endgenerate
-    assign fusion_snapshot={48'd0,mission_display,quality,map_revision,ffront,pose_heading,pose_y,pose_x,8'(GEOMETRY_VERIFIED),nav_fault,nav_state,8'd1};
-    wire mission_alive;
-    a741_motion #(.CLK_HZ(CLK_HZ),.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR),.FUSION_ENABLED(FUSION_ENABLED),.DIRECT_CONTROL(1)) motion(.clk(clk),.rst_n(rst_n),.uart_rx(1'b1),.uart_tx(),
+    assign fusion_snapshot={48'd0,cpu_display,quality,reserved_revision,ffront,display_yaw,reserved_status,attitude_pair,8'(GEOMETRY_VERIFIED),avoid_fault,avoid_state,8'd1};
+    a741_motion #(.CLK_HZ(CLK_HZ),.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR),.FUSION_ENABLED(FUSION_ENABLED)) motion(.clk(clk),.rst_n(rst_n),
         .direct_valid(command_valid),.direct_kind(command_kind),.direct_seq(command_seq),.direct_ttl(command_ttl),.direct_payload(command_payload),
         .direct_reply_valid(reply_valid),.direct_reply_kind(reply_kind),.direct_reply_seq(reply_seq),.direct_reply_length(reply_length),
         .direct_reply_payload(reply_payload),.direct_reply_ready(reply_ready),
-        .fusion_owns(fowns),.fusion_stop(fstop),.obstacle_stop(fobstacle),.autonomy_alive(mission_alive),.fusion_left(fl),.fusion_right(fr),.obstacle_limit(flimit),
-        .fusion_reply_valid(freply_valid && !map_owner),.fusion_reply(freply),.fusion_command(fcommand),.fusion_kind(fkind),.fusion_payload(fpayload),
+        .fusion_owns(fowns),.fusion_stop(fstop),.obstacle_stop(fobstacle),.fusion_left(fl),.fusion_right(fr),.obstacle_limit(flimit),
+        .fusion_reply_valid(freply_valid),.fusion_reply(freply),.fusion_command(fcommand),.fusion_kind(fkind),.fusion_payload(fpayload),
         .command_link_alive(flink),.manual_left(manual_l),.manual_right(manual_r),
-        .travel_tick(travel_tick),.travel_valid(travel_valid),.heading_positive(heading_positive),.left_travel(left_travel),.right_travel(right_travel),
         .lidar_control(lidar_control),
         .imu_diagnostic(imu_diagnostic),.imu_errors(ie),.imu_sequence(isq),.imu_raw(imu_raw),.imu_temperature(imu_temperature),
         .ms_tick(ms_tick),.tick(tick),.left_a(left_a),.left_b(left_b),.right_a(right_a),.right_b(right_b),
@@ -194,14 +151,11 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         .fusion_snapshot(fusion_snapshot),
         .lidar_update(lpv),.lidar_packet(lpacket),.lidar_time(lt),.lidar_seq(lsq),
         .data(td),.valid(tvld),.last(tlast),.length(tlen),.ready(trdy),.dropped(dropped));
-    a741_router #(.MAP_ENABLED(FUSION_ENABLED)) router(.clk(clk),.rst_n(rst_n),.eth_rx_data(eth_rx_data),.eth_rx_valid(eth_rx_valid),
+    a741_router router(.clk(clk),.rst_n(rst_n),.eth_rx_data(eth_rx_data),.eth_rx_valid(eth_rx_valid),
         .eth_rx_last(eth_rx_last),.eth_rx_bad(eth_rx_bad),.eth_rx_ready(eth_rx_ready),
         .eth_tx_data(eth_tx_data),.eth_tx_valid(eth_tx_valid),.eth_tx_last(eth_tx_last),.eth_tx_bad(eth_tx_bad),.eth_tx_ready(eth_tx_ready),
         .control_rx_data(crd),.control_rx_valid(crv),.control_rx_last(crl),.control_rx_bad(crb),.control_rx_ready(crr),
         .control_tx_data(ctd),.control_tx_valid(ctv),.control_tx_last(ctl),.control_tx_length(ctlen),.control_tx_ready(ctr),
-        .telemetry_data(td),.telemetry_valid(tvld),.telemetry_last(tlast),.telemetry_length(tlen),.telemetry_ready(trdy),
-        .video_data(video_data),.video_valid(video_valid),.video_last(video_last),.video_length(video_length),.video_ready(video_ready),
-        .map_rx_data(mrd),.map_rx_valid(mrv),.map_rx_last(mrl),.map_rx_bad(mrb),.map_rx_ready(mrr),
-        .map_tx_data(mtd),.map_tx_valid(mtv),.map_tx_last(mtl),.map_tx_length(mlen),.map_tx_ready(mtr));
+        .telemetry_data(td),.telemetry_valid(tvld),.telemetry_last(tlast),.telemetry_length(tlen),.telemetry_ready(trdy));
 endmodule
 `default_nettype wire

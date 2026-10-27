@@ -1,0 +1,12 @@
+{
+  "recorded_utc": "2026-10-27T16:07:30.044232+00:00",
+  "user_reply": "同意烧录，VM 关闭且设备已通电",
+  "authorization": "Program, verify and reload the reviewed motor-locked display diagnostic image once",
+  "vm_off_confirmed": true,
+  "fpga_screen_programmer_powered_confirmed": true,
+  "bitstream": "output/white-screen-basic-tft480-20261027/build-evidence-final/a741.fs",
+  "sha256": "7434d07af48de4ad1814326e26c67485aca8da5b7e4f4eed5064a1f84fddf2ea",
+  "motor_pads_grounded": true,
+  "automatic_arm_allowed": false,
+  "retry_on_failure_allowed": false
+}

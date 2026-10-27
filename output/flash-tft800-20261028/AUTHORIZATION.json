@@ -1,0 +1,12 @@
+{
+  "scope": "Program and verify full800x480/33MHz diagnostic bitstream in external SPI Flash at0, then Reprogram and Read Status",
+  "user_confirmation": "同意烧录，VM 关闭且设备已通电",
+  "question_candidate_sha256": "d5e558ad68ac665f889fcec651262714e52e40774853e5368c51f0fc2a1ad62b",
+  "bitstream": "output/tft800-official-20261028/build-evidence-final/a741.fs",
+  "motor_vm_off": true,
+  "fpga_panel_programmer_powered": true,
+  "motor_output_pads_grounded": true,
+  "arm_or_motion_authorized": false,
+  "no_automatic_retry_or_sram_fallback": true,
+  "cold_boot_or_application_passed": false
+}

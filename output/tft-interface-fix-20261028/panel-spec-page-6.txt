@@ -1,0 +1,114 @@
+INNOLUX                                   SPEC NO.: A043-24-TT-11  Date : 2008/04/07 
+     Page : 3/24 
+The copyright belongs to InnoLux. Any unauthorized use is prohibited. 
+20 
+G7 
+I 
+Green data (MSB) 
+ 
+21 
+B0 
+I 
+Blue data (LSB) 
+ 
+22 
+B1 
+I 
+Blue data 
+ 
+23 
+B2 
+I 
+Blue data 
+ 
+24 
+B3 
+I 
+Blue data 
+ 
+25 
+B4 
+I 
+Blue data 
+ 
+26 
+B5 
+I 
+Blue data 
+ 
+27 
+B6 
+I 
+Blue data 
+ 
+28 
+B7 
+I 
+Blue data (MSB) 
+ 
+29 
+GND 
+P 
+Power ground 
+ 
+30 
+PCLK 
+I 
+Pixel clock 
+ 
+31 
+DISP 
+I 
+Display on/off 
+ 
+32 
+HSYNC 
+I 
+Horizontal Sync Signal 
+ 
+33 
+VSYNC 
+I 
+Vertical Sync Signal 
+ 
+34 
+DE 
+I 
+Data Enable 
+ 
+35 
+NC 
+- 
+No Connector  
+ 
+36 
+GND 
+P 
+Power ground 
+ 
+37 
+X1 
+I/O 
+Right electrode – differential analog 
+ 
+38 
+Y1 
+I/O 
+Bottom electrode – differential analog 
+ 
+39 
+X2 
+I/O 
+Left electrode – differential analog 
+ 
+40 
+Y2 
+I/O 
+Top electrode – differential analog 
+ 
+     I: input, O: output, P: Power 
+ 
+ 
+ 
+ 
+ 

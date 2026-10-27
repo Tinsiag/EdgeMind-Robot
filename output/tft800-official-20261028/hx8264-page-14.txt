@@ -1,0 +1,150 @@
+ 
+ 
+-P.14-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+f. 640(RGB) x 480 (Gate driver on right side) 
+ 
+RES [1:0]=10 (Master and slave IC must be setup) 
+DBGATE=0 
+Channel 481~720 is disable 
+ 
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           L
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            H   S1  S1200
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+HX8264-D03
+HX8264-D03
+(1,1)
+MASLOC      L
+MASL            L
+SHLR            L   S1200  S1
+UPDN           H
+MASLOC      L
+MASL            H
+HX8678
+G1
+G480
+(1,480)
+(640,480)
+(640,1)
+640(RGB) x 480
+S1
+S1200
+S1200
+S1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+OEV
+UD
+CKV
+STV2
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+L/R
+OE
+CPV
+PATH
+STV1
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+STV2
+PATH
+ 
+Figure 3.9: HX8264-D03 Two Chip Cascade 640(RGB) x 480 Application Block Diagram-2 
+ 
+ 
+ 
+ 

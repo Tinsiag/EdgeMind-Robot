@@ -1,0 +1,33 @@
+{
+  "recorded_local": "2026-10-27T19:08:42.179902+08:00",
+  "user_confirmed_compatibility": true,
+  "project": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\4.3inchTFT\\demos\\ac620\\AC620_TFT43",
+  "source_sha256": {
+    "rtl/TFT_CTRL_480_270_16b.v": "50ec82be5dc9429658eea27730f271833d527af08014a0c42b1434e74f02ed9e",
+    "NIOS_TFT43.v": "98585819344886808dc8c78669b822f5fa84952a14873e88a05adfa36cc86454",
+    "mysystem/synthesis/mysystem.v": "dd65506c4a435488847077f3936d57a0720a472308f4aa611d64ed910f8dd242",
+    "mysystem/synthesis/submodules/mysystem_altpll_0.v": "fe3b689d9e2ce16b12de678beead15bd55b0f2a19403d4e53bf512d7101a982c"
+  },
+  "reference_controller_pinned_byte_identically": true,
+  "clock_chain": "NIOS_TFT43.Clk9M <- clk9m_clk <- mysystem.altpll0.c2",
+  "pll_parameters": {
+    "inclk0_input_frequency": 20000,
+    "clk2_multiply_by": 1,
+    "clk2_divide_by": 10
+  },
+  "actual_static_pixel_hz": 5000000.0,
+  "scan_parameters": {
+    "TFT_HS_end": 40,
+    "hdat_begin": 42,
+    "hdat_end": 522,
+    "hpixel_end": 524,
+    "TFT_VS_end": 9,
+    "vdat_begin": 11,
+    "vdat_end": 283,
+    "vline_end": 285
+  },
+  "implemented_scan_matches": true,
+  "frame_rate_hz": 33.3000333000333,
+  "no_dynamic_pll_reconfiguration_reference_found_in_application_sources": true,
+  "model_note": "Physical480x272 confirmed; exact panel part number not assumed from older model/PDF files."
+}

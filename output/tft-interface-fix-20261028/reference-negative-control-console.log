@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 152, in <module>
+    main()
+  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a741-fpga-fusion\scripts\check.py", line 120, in main
+    raise RuntimeError(run_log)
+RuntimeError: wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+[8331000] %Fatal: tft480_reference_tb.v:21: Assertion failed in tft480_reference_tb: Official waveform mismatch at sample41 clock1: actual 000/0000 ref 010/0000
+%Error: /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v:21: Verilog $stop
+Aborting...
+

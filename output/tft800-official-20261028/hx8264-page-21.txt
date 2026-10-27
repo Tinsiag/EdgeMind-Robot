@@ -1,0 +1,89 @@
+ 
+ 
+-P.21-
+Himax Confidential 
+January, 2012
+This information contained herein is the exclusive property of Himax and shall not be distributed, reproduced, or disclosed 
+in whole or in part without prior written permission of Himax.  
+HX8264-D03
+1200CH TFT LCD Source Driver with TCON 
+ DATA SHEET V03
+4. Pin Description 
+ 
+HX8264-D03 pin description 
+Pin name 
+I/O
+Description 
+D07~D00 
+D17~D10 
+D27~D20 
+I 
+Parallel data input. For TTL 24-bit parallel RGB image data input. 
+D[07:00]=R[7:0] data; D[17:10]=G[7:0] data; D[27:20]=B[7:0] data. 
+For 18-bit RGB interface, connect two LSB bits of all the R/G/B data 
+buses to VSS. 
+CLKIN 
+I 
+Clock for input data. Data latched at rising/falling edge of this signal. 
+Default falling edge. Normally pull low. 
+HSD 
+I 
+Horizontal sync input. Negative polarity. Normally pull high. 
+VSD 
+I 
+Vertical sync input. Negative polarity. Normally pull high. 
+DEN 
+I 
+Data input enable. Active high to enable the data input bus under “DE 
+Mode “. Normally pull low.  
+MODE 
+I 
+DE/SYNC mode select. Normally pull high.  
+MODE=“1”: DE mode. (Default) 
+MODE=“0”: HSD/VSD mode. 
+REV 
+I 
+Data inverted control. Normally pull low 
+REV=”1”: Data inverted for normally black LCD 
+REV=”0”: Data not inverted for normally white LCD. (Default) 
+RES[1:0] 
+I 
+Display resolution selection. Normally pull low 
+RES[1:0]=“00”: For 800(RGB)*480 display resolution. (Default) 
+RES[1:0]=”01”: For 800(RGB)*600 display resolution. 
+RES[1:0]=“10”: For 640(RGB)*480 display resolution. 
+RES[1:0]=“11”: For 400(RGB)*240 display resolution. 
+Note: When RES[1:0]=”10” , channel 481~720 is disable 
+SCEN 
+I 
+Serial Interface chip enable signal. Normally pull high 
+SCEN=”0”: The chip is selected (accessible) 
+SCEN=”1”: The chip is not selected (inaccessible) (Default) 
+Note: Fix to the VDD level if no used 
+SCL/DBCM[0]
+I 
+Multi function I/O pin. Normally pull high 
+When DBC3=”1”, this pin is SCL function (Default) 
+When DBC3=”0”, this pin is DBCM[0]function 
+Note: Fix to the VDD level if no used 
+SDA/DBCM[1]
+I/O
+Multi function I/O pin. Normally pull high 
+When DBC3=”1”, this pin is SDA function (Default) 
+When DBC3=”0”, this pin is DBCM[1] function 
+Note: Fix to the VDD level if no used 
+DBC3 
+I 
+CABC control by hardware or SPI selection. Normally pull high 
+DBC3=”0”: CABC control by hardware  
+DBC3=”1”: CABC control by SPI software (Default) 
+DITHB 
+I 
+Dithering function enable control. Normally pull high. 
+DITHB=“1”: Disable internal dithering function. (Default) 
+DITHB=“0”: Enable internal dithering function. 
+CLKPOL 
+I 
+Input clock edge selection. Normally pull low. 
+CLKPOL=“1”: Latch data at CLKIN rising edge.  
+CLKPOL=“0”: Latch data at CLKIN falling edge. (Default) 

@@ -1,0 +1,5448 @@
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-PnR Verilog Simulation Model file
+//Tool Version: V1.9.12.04 (64-bit)
+//Created Time: Wed Oct 28 01:58:01 2026
+
+`timescale 100 ps/100 ps
+module official_probe(
+	clk50M,
+	reset_n,
+	TFT_rgb,
+	TFT_hs,
+	TFT_vs,
+	led,
+	left_in1,
+	left_in2,
+	right_in1,
+	right_in2,
+	TFT_clk,
+	TFT_de,
+	TFT_pwm
+);
+input clk50M;
+input reset_n;
+output [15:0] TFT_rgb;
+output TFT_hs;
+output TFT_vs;
+output [7:0] led;
+output left_in1;
+output left_in2;
+output right_in1;
+output right_in2;
+inout TFT_clk;
+inout TFT_de;
+inout TFT_pwm;
+wire GND;
+wire TFT_clk;
+wire TFT_de;
+wire TFT_hs;
+wire TFT_pwm;
+wire [15:0] TFT_rgb;
+wire TFT_vs;
+wire VCC;
+wire clk50M;
+wire clk50M_d;
+wire de;
+wire [21:0] edge_count;
+wire [3:0] frames;
+wire [15:0] gowin_add_pROM_net_rRomDReg_0_8;
+wire hs;
+wire [7:0] led;
+wire [5:1] led_d;
+wire [6:6] led_d_0;
+wire left_in1;
+wire left_in2;
+wire n160_0_COUT;
+wire n160_1;
+wire n161_1;
+wire n161_2;
+wire n162_1;
+wire n162_2;
+wire n163_1;
+wire n163_2;
+wire n164_1;
+wire n164_2;
+wire n165_1;
+wire n165_2;
+wire n166_1;
+wire n166_2;
+wire n167_1;
+wire n167_2;
+wire n168_1;
+wire n168_2;
+wire n169_1;
+wire n169_2;
+wire n170_1;
+wire n170_2;
+wire n171_1;
+wire n171_2;
+wire n172_1;
+wire n172_2;
+wire n173_1;
+wire n173_2;
+wire n174_1;
+wire n174_2;
+wire n175_1;
+wire n175_2;
+wire n176_1;
+wire n176_2;
+wire n177_1;
+wire n177_2;
+wire n178_1;
+wire n178_2;
+wire n179_1;
+wire n179_2;
+wire n180_1;
+wire n180_2;
+wire n181_1;
+wire n181_2;
+wire n182_1;
+wire n182_2;
+wire n183_1;
+wire n183_2;
+wire n184_6;
+wire n215_5;
+wire n217_0_COUT;
+wire n217_1;
+wire n218_1;
+wire n218_2;
+wire n219_1;
+wire n219_2;
+wire n220_1;
+wire n220_2;
+wire n221_8;
+wire n26_6;
+wire n70_6;
+wire n72_6;
+wire n75_0_COUT;
+wire n75_1;
+wire n76_1;
+wire n76_2;
+wire n77_1;
+wire n77_2;
+wire n78_1;
+wire n78_2;
+wire n79_1;
+wire n79_2;
+wire n80_1;
+wire n80_2;
+wire n81_1;
+wire n81_2;
+wire n82_1;
+wire n82_2;
+wire n83_1;
+wire n83_2;
+wire n84_1;
+wire n84_2;
+wire n85_1;
+wire n85_2;
+wire n86_1;
+wire n86_2;
+wire n87_1;
+wire n87_2;
+wire n88_1;
+wire n88_2;
+wire n89_1;
+wire n89_2;
+wire n90_1;
+wire n90_2;
+wire n91_1;
+wire n91_2;
+wire n92_1;
+wire n92_2;
+wire n93_1;
+wire n93_2;
+wire n94_1;
+wire n94_2;
+wire n95_1;
+wire n95_2;
+wire n96_1;
+wire n96_2;
+wire n97_11;
+wire old_vs;
+wire pclk;
+wire [18:0] pins;
+wire [15:0] rRomDReg_0_s4_rRomDReg_0_8;
+wire read_bl;
+wire [0:0] read_bl_sync;
+wire read_clk;
+wire read_clk_old;
+wire [1:0] read_clk_sync;
+wire read_de;
+wire [1:0] read_de_sync;
+wire reset_n;
+wire reset_n_d;
+wire [15:4] rgb_Z;
+wire right_in1;
+wire right_in2;
+wire [23:0] sys_count;
+wire vs;
+wire \official/active ;
+wire \official/n653_3 ;
+wire \official/n303_4 ;
+wire \official/n669_4 ;
+wire \official/n492_5 ;
+wire \official/n498_5 ;
+wire \official/n241_49 ;
+wire \official/n242_52 ;
+wire \official/n216_55 ;
+wire \official/n401_7 ;
+wire \official/n400_7 ;
+wire \official/n399_7 ;
+wire \official/n398_7 ;
+wire \official/n397_7 ;
+wire \official/n394_7 ;
+wire \official/n393_7 ;
+wire \official/n392_7 ;
+wire \official/n391_7 ;
+wire \official/n373_7 ;
+wire \official/n372_7 ;
+wire \official/n371_7 ;
+wire \official/n370_7 ;
+wire \official/n369_7 ;
+wire \official/active_4 ;
+wire \official/active_5 ;
+wire \official/n303_5 ;
+wire \official/n659_4 ;
+wire \official/n668_4 ;
+wire \official/n668_5 ;
+wire \official/n492_6 ;
+wire \official/n498_6 ;
+wire \official/n241_50 ;
+wire \official/n241_51 ;
+wire \official/n242_53 ;
+wire \official/n242_54 ;
+wire \official/n398_8 ;
+wire \official/n397_8 ;
+wire \official/n396_8 ;
+wire \official/n393_8 ;
+wire \official/n391_8 ;
+wire \official/n375_8 ;
+wire \official/n369_8 ;
+wire \official/active_6 ;
+wire \official/active_7 ;
+wire \official/active_8 ;
+wire \official/active_9 ;
+wire \official/active_10 ;
+wire \official/n653_5 ;
+wire \official/n303_6 ;
+wire \official/n303_7 ;
+wire \official/n659_5 ;
+wire \official/n659_6 ;
+wire \official/n492_7 ;
+wire \official/n492_8 ;
+wire \official/n241_52 ;
+wire \official/n242_55 ;
+wire \official/active_11 ;
+wire \official/active_12 ;
+wire \official/active_13 ;
+wire \official/active_14 ;
+wire \official/active_15 ;
+wire \official/active_16 ;
+wire \official/n653_6 ;
+wire \official/n659_7 ;
+wire \official/n492_9 ;
+wire \official/n492_10 ;
+wire \official/n492_11 ;
+wire \official/active_17 ;
+wire \official/active_18 ;
+wire \official/active_19 ;
+wire \official/active_20 ;
+wire \official/active_21 ;
+wire \official/active_22 ;
+wire \official/n492_12 ;
+wire \official/n492_13 ;
+wire \official/n374_9 ;
+wire \official/n375_10 ;
+wire \official/n395_9 ;
+wire \official/n396_10 ;
+wire \official/n668_7 ;
+wire \official/n376_10 ;
+wire \official/n659_10 ;
+wire \official/n377_11 ;
+wire \official/n653_9 ;
+wire \official/n653_10 ;
+wire \official/n205_2 ;
+wire \official/n206_2 ;
+wire \official/n207_2 ;
+wire \official/n208_2 ;
+wire \official/n209_2 ;
+wire \official/n210_2 ;
+wire \official/n211_2 ;
+wire \official/n212_2 ;
+wire \official/n213_2 ;
+wire \official/n214_2 ;
+wire \official/n215_3 ;
+wire \official/n422_1 ;
+wire \official/n422_2 ;
+wire \official/n421_1 ;
+wire \official/n421_2 ;
+wire \official/n420_1 ;
+wire \official/n420_2 ;
+wire \official/n419_1 ;
+wire \official/n419_2 ;
+wire \official/n418_1 ;
+wire \official/n418_2 ;
+wire \official/n417_1 ;
+wire \official/n417_2 ;
+wire \official/n416_1 ;
+wire \official/n416_2 ;
+wire \official/n415_1 ;
+wire \official/n415_2 ;
+wire \official/n414_1 ;
+wire \official/n414_2 ;
+wire \official/n413_1 ;
+wire \official/n413_0_COUT ;
+wire \official/x_0_3 ;
+wire \official/x_1_3 ;
+wire \official/x_2_3 ;
+wire \official/x_3_3 ;
+wire \official/x_4_3 ;
+wire \official/x_6_3 ;
+wire \official/x_7_3 ;
+wire \official/x_8_3 ;
+wire \official/x_9_3 ;
+wire \official/x_10_0_COUT ;
+wire \official/y_1_3 ;
+wire \official/y_3_3 ;
+wire \official/y_5_3 ;
+wire \official/y_8_3 ;
+wire \official/y_9_3 ;
+wire \official/n216_29_SUM ;
+wire \official/n216_35 ;
+wire \official/n216_30_SUM ;
+wire \official/n216_37 ;
+wire \official/n216_31_SUM ;
+wire \official/n216_39 ;
+wire \official/n216_32_SUM ;
+wire \official/n216_41 ;
+wire \official/n216_33_SUM ;
+wire \official/n216_43 ;
+wire \official/n216_34_SUM ;
+wire \official/n216_45 ;
+wire \official/n216_35_SUM ;
+wire \official/n216_47 ;
+wire \official/n216_36_SUM ;
+wire \official/n216_49 ;
+wire \official/n216_37_SUM ;
+wire \official/n216_51 ;
+wire \official/n216_38_SUM ;
+wire \official/n216_53 ;
+wire \official/x_5_6 ;
+wire \official/y_0_6 ;
+wire \official/y_2_6 ;
+wire \official/y_4_6 ;
+wire \official/y_6_6 ;
+wire \official/y_7_6 ;
+wire \official/n10_6 ;
+wire \official/n467_5 ;
+wire \official/n455_5 ;
+wire \official/n423_6 ;
+wire \official/rLockOut ;
+wire [1:0] \official/tft_ready ;
+wire [10:0] \official/h ;
+wire [10:0] \official/v ;
+wire [8:0] \official/mode_frames ;
+wire [10:0] \official/x ;
+wire [9:0] \official/y ;
+wire [23:11] \official/DOUT ;
+wire \official/Gowin_PLL/pll_lock ;
+wire \official/Gowin_PLL/rMdInc ;
+wire \official/Gowin_PLL/rRstOut ;
+wire [7:0] \official/Gowin_PLL/wMdQOut ;
+wire [1:0] \official/Gowin_PLL/rMdOpc ;
+wire [7:0] \official/Gowin_PLL/rMdDOut ;
+wire \official/Gowin_PLL/u_pll/clkout1 ;
+wire \official/Gowin_PLL/u_pll/clkout2 ;
+wire \official/Gowin_PLL/u_pll/clkout3 ;
+wire \official/Gowin_PLL/u_pll/clkout4 ;
+wire \official/Gowin_PLL/u_pll/clkout5 ;
+wire \official/Gowin_PLL/u_pll/clkout6 ;
+wire \official/Gowin_PLL/u_pll/clkfbout ;
+wire \official/Gowin_PLL/u_pll_init/wIsStep5 ;
+wire \official/Gowin_PLL/u_pll_init/wIsStep8 ;
+wire \official/Gowin_PLL/u_pll_init/n3880_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6404_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3904_3 ;
+wire \official/Gowin_PLL/u_pll_init/n3932_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3944_3 ;
+wire \official/Gowin_PLL/u_pll_init/n3945_3 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_3 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4004_4 ;
+wire \official/Gowin_PLL/u_pll_init/n6420_4 ;
+wire \official/Gowin_PLL/u_pll_init/n6436_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6437_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6438_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6439_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6440_3 ;
+wire \official/Gowin_PLL/u_pll_init/n6441_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_4 ;
+wire \official/Gowin_PLL/u_pll_init/n4385_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4389_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4390_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4391_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4392_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4394_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4395_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4396_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4410_3 ;
+wire \official/Gowin_PLL/u_pll_init/n4327_37 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_0_10 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_1_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_2_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_3_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_5_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_6_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_7_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_8_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_9_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_10_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_11_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_12_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_13_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_14_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_15_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_16_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_17_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_18_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_19_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_20_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_24_9 ;
+wire \official/Gowin_PLL/u_pll_init/n4329_33 ;
+wire \official/Gowin_PLL/u_pll_init/n4328_36 ;
+wire \official/Gowin_PLL/u_pll_init/n4111_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4110_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4109_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4108_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4107_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4105_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4104_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4103_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4099_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4098_6 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_15_17 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_12_17 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_11_17 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_10_17 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_6_20 ;
+wire \official/Gowin_PLL/u_pll_init/n4330_36 ;
+wire \official/Gowin_PLL/u_pll_init/rLocked_8 ;
+wire \official/Gowin_PLL/u_pll_init/n3972_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3971_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3988_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3987_4 ;
+wire \official/Gowin_PLL/u_pll_init/wIsStep3_6 ;
+wire \official/Gowin_PLL/u_pll_init/n3880_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3904_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3944_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3944_5 ;
+wire \official/Gowin_PLL/u_pll_init/n3945_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_5 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_4 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_5 ;
+wire \official/Gowin_PLL/u_pll_init/n6436_4 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_5 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4410_4 ;
+wire \official/Gowin_PLL/u_pll_init/n4327_38 ;
+wire \official/Gowin_PLL/u_pll_init/n4327_39 ;
+wire \official/Gowin_PLL/u_pll_init/n4327_40 ;
+wire \official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ;
+wire \official/Gowin_PLL/u_pll_init/wMdAddrNext_7_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4329_34 ;
+wire \official/Gowin_PLL/u_pll_init/n4328_37 ;
+wire \official/Gowin_PLL/u_pll_init/n4112_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4109_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4108_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4105_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4104_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4099_7 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_15_18 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_12_18 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_11_18 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_10_18 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_6_21 ;
+wire \official/Gowin_PLL/u_pll_init/n4330_37 ;
+wire \official/Gowin_PLL/u_pll_init/n4330_38 ;
+wire \official/Gowin_PLL/u_pll_init/rLocked_9 ;
+wire \official/Gowin_PLL/u_pll_init/n3944_6 ;
+wire \official/Gowin_PLL/u_pll_init/n3944_7 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_7 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_8 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_9 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_10 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_6 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_7 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_8 ;
+wire \official/Gowin_PLL/u_pll_init/n4329_35 ;
+wire \official/Gowin_PLL/u_pll_init/n4328_38 ;
+wire \official/Gowin_PLL/u_pll_init/n4112_8 ;
+wire \official/Gowin_PLL/u_pll_init/n4104_8 ;
+wire \official/Gowin_PLL/u_pll_init/n4099_8 ;
+wire \official/Gowin_PLL/u_pll_init/n4330_39 ;
+wire \official/Gowin_PLL/u_pll_init/rLocked_10 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_8 ;
+wire \official/Gowin_PLL/u_pll_init/n3947_9 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_9 ;
+wire \official/Gowin_PLL/u_pll_init/n4346_10 ;
+wire \official/Gowin_PLL/u_pll_init/n4006_64 ;
+wire \official/Gowin_PLL/u_pll_init/n3946_12 ;
+wire \official/Gowin_PLL/u_pll_init/n3945_7 ;
+wire \official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ;
+wire \official/Gowin_PLL/u_pll_init/wIsStep3 ;
+wire \official/Gowin_PLL/u_pll_init/n3948_9 ;
+wire \official/Gowin_PLL/u_pll_init/n3949_9 ;
+wire \official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ;
+wire \official/Gowin_PLL/u_pll_init/n4341_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4112_11 ;
+wire \official/Gowin_PLL/u_pll_init/wIsStep7 ;
+wire \official/Gowin_PLL/u_pll_init/rMdInc_8 ;
+wire \official/Gowin_PLL/u_pll_init/rRomRd ;
+wire \official/Gowin_PLL/u_pll_init/rLockReg ;
+wire \official/Gowin_PLL/u_pll_init/rLastStep ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ;
+wire \official/Gowin_PLL/u_pll_init/rLocked ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_24_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_20_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_19_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_18_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_17_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_16_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_15_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_14_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_13_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_12_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_11_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_10_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_9_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_8_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_7_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_6_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_5_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_3_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_2_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_1_7 ;
+wire \official/Gowin_PLL/u_pll_init/rRomDReg_0_8 ;
+wire \official/Gowin_PLL/u_pll_init/n4298_20_SUM ;
+wire \official/Gowin_PLL/u_pll_init/n4298_26 ;
+wire \official/Gowin_PLL/u_pll_init/n4298_21_SUM ;
+wire \official/Gowin_PLL/u_pll_init/n4298_28 ;
+wire \official/Gowin_PLL/u_pll_init/n4298_22_SUM ;
+wire \official/Gowin_PLL/u_pll_init/n4298_30 ;
+wire \official/Gowin_PLL/u_pll_init/n4298_23_SUM ;
+wire \official/Gowin_PLL/u_pll_init/n4298_32 ;
+wire \official/Gowin_PLL/u_pll_init/n4298_24_SUM ;
+wire \official/Gowin_PLL/u_pll_init/n4298_34 ;
+wire \official/Gowin_PLL/u_pll_init/n4020_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4020_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4019_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4019_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4018_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4018_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4017_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4017_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4016_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4016_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4015_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4015_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4014_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4014_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4013_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4013_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4012_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4012_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4011_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4011_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4010_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4010_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4009_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4009_2 ;
+wire \official/Gowin_PLL/u_pll_init/n4008_1 ;
+wire \official/Gowin_PLL/u_pll_init/n4008_0_COUT ;
+wire \official/Gowin_PLL/u_pll_init/n104_5 ;
+wire \official/Gowin_PLL/u_pll_init/wMdAddrNext_0_10 ;
+wire \official/Gowin_PLL/u_pll_init/n3973_6 ;
+wire \official/Gowin_PLL/u_pll_init/n3989_6 ;
+wire \official/Gowin_PLL/u_pll_init/n4021_6 ;
+wire [7:1] \official/Gowin_PLL/u_pll_init/wMdAddrNext ;
+wire [1:0] \official/Gowin_PLL/u_pll_init/rEnable ;
+wire [3:0] \official/Gowin_PLL/u_pll_init/rInitFsmC ;
+wire [24:0] \official/Gowin_PLL/u_pll_init/rRomData ;
+wire [2:0] \official/Gowin_PLL/u_pll_init/rReqCnt ;
+wire [2:0] \official/Gowin_PLL/u_pll_init/rLoopCnt ;
+wire [13:0] \official/Gowin_PLL/u_pll_init/rLockCnt ;
+wire [15:0] \official/Gowin_PLL/u_pll_init/rWaitCnt ;
+wire [5:0] \official/Gowin_PLL/u_pll_init/rChkFlag ;
+wire [7:0] \official/Gowin_PLL/u_pll_init/rMdAddr ;
+wire [5:0] \official/Gowin_PLL/u_pll_init/rRomAddr ;
+wire [31:21] \official/Gowin_PLL/u_pll_init/DO ;
+VCC VCC_cZ (
+  .V(VCC)
+);
+GND GND_cZ (
+  .G(GND)
+);
+GSR GSR (
+	.GSRI(VCC)
+);
+IOBUF clock_pad (
+	.I(pclk),
+	.OEN(GND),
+	.IO(TFT_clk),
+	.O(read_clk)
+);
+IOBUF de_pad (
+	.I(pins[18]),
+	.OEN(GND),
+	.IO(TFT_de),
+	.O(read_de)
+);
+IOBUF bl_pad (
+	.I(VCC),
+	.OEN(GND),
+	.IO(TFT_pwm),
+	.O(read_bl)
+);
+IBUF clk50M_ibuf (
+	.I(clk50M),
+	.O(clk50M_d)
+);
+IBUF reset_n_ibuf (
+	.I(reset_n),
+	.O(reset_n_d)
+);
+OBUF TFT_rgb_0_obuf (
+	.I(pins[0]),
+	.O(TFT_rgb[0])
+);
+OBUF TFT_rgb_1_obuf (
+	.I(pins[1]),
+	.O(TFT_rgb[1])
+);
+OBUF TFT_rgb_2_obuf (
+	.I(pins[2]),
+	.O(TFT_rgb[2])
+);
+OBUF TFT_rgb_3_obuf (
+	.I(pins[3]),
+	.O(TFT_rgb[3])
+);
+OBUF TFT_rgb_4_obuf (
+	.I(pins[4]),
+	.O(TFT_rgb[4])
+);
+OBUF TFT_rgb_5_obuf (
+	.I(pins[5]),
+	.O(TFT_rgb[5])
+);
+OBUF TFT_rgb_6_obuf (
+	.I(pins[6]),
+	.O(TFT_rgb[6])
+);
+OBUF TFT_rgb_7_obuf (
+	.I(pins[7]),
+	.O(TFT_rgb[7])
+);
+OBUF TFT_rgb_8_obuf (
+	.I(pins[8]),
+	.O(TFT_rgb[8])
+);
+OBUF TFT_rgb_9_obuf (
+	.I(pins[9]),
+	.O(TFT_rgb[9])
+);
+OBUF TFT_rgb_10_obuf (
+	.I(pins[10]),
+	.O(TFT_rgb[10])
+);
+OBUF TFT_rgb_11_obuf (
+	.I(pins[11]),
+	.O(TFT_rgb[11])
+);
+OBUF TFT_rgb_12_obuf (
+	.I(pins[12]),
+	.O(TFT_rgb[12])
+);
+OBUF TFT_rgb_13_obuf (
+	.I(pins[13]),
+	.O(TFT_rgb[13])
+);
+OBUF TFT_rgb_14_obuf (
+	.I(pins[14]),
+	.O(TFT_rgb[14])
+);
+OBUF TFT_rgb_15_obuf (
+	.I(pins[15]),
+	.O(TFT_rgb[15])
+);
+OBUF TFT_hs_obuf (
+	.I(pins[17]),
+	.O(TFT_hs)
+);
+OBUF TFT_vs_obuf (
+	.I(pins[16]),
+	.O(TFT_vs)
+);
+OBUF led_0_obuf (
+	.I(VCC),
+	.O(led[0])
+);
+OBUF led_1_obuf (
+	.I(led_d[1]),
+	.O(led[1])
+);
+OBUF led_2_obuf (
+	.I(led_d[2]),
+	.O(led[2])
+);
+OBUF led_3_obuf (
+	.I(led_d[3]),
+	.O(led[3])
+);
+OBUF led_4_obuf (
+	.I(led_d[4]),
+	.O(led[4])
+);
+OBUF led_5_obuf (
+	.I(led_d[5]),
+	.O(led[5])
+);
+OBUF led_6_obuf (
+	.I(led_d_0[6]),
+	.O(led[6])
+);
+OBUF led_7_obuf (
+	.I(GND),
+	.O(led[7])
+);
+OBUF left_in1_obuf (
+	.I(GND),
+	.O(left_in1)
+);
+OBUF left_in2_obuf (
+	.I(GND),
+	.O(left_in2)
+);
+OBUF right_in1_obuf (
+	.I(GND),
+	.O(right_in1)
+);
+OBUF right_in2_obuf (
+	.I(GND),
+	.O(right_in2)
+);
+LUT3 n97_s3 (
+	.I0(read_clk_old),
+	.I1(read_clk_sync[1]),
+	.I2(edge_count[0]),
+	.F(n97_11)
+);
+defparam n97_s3.INIT=8'hB4;
+LUT2 n72_s1 (
+	.I0(read_clk_old),
+	.I1(read_clk_sync[1]),
+	.F(n72_6)
+);
+defparam n72_s1.INIT=4'h4;
+LUT3 n221_s3 (
+	.I0(old_vs),
+	.I1(vs),
+	.I2(frames[0]),
+	.F(n221_8)
+);
+defparam n221_s3.INIT=8'hB4;
+LUT2 n215_s1 (
+	.I0(old_vs),
+	.I1(vs),
+	.F(n215_5)
+);
+defparam n215_s1.INIT=4'h4;
+DFFRE pins_17_s1 (
+	.D(hs),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[17])
+);
+defparam pins_17_s1.INIT=1'b0;
+DFFRE pins_16_s1 (
+	.D(vs),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[16])
+);
+defparam pins_16_s1.INIT=1'b0;
+DFFRE pins_15_s1 (
+	.D(rgb_Z[15]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[15])
+);
+defparam pins_15_s1.INIT=1'b0;
+DFFRE pins_14_s1 (
+	.D(rgb_Z[15]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[14])
+);
+defparam pins_14_s1.INIT=1'b0;
+DFFRE pins_13_s1 (
+	.D(rgb_Z[15]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[13])
+);
+defparam pins_13_s1.INIT=1'b0;
+DFFRE pins_12_s1 (
+	.D(rgb_Z[15]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[12])
+);
+defparam pins_12_s1.INIT=1'b0;
+DFFRE pins_11_s1 (
+	.D(rgb_Z[15]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[11])
+);
+defparam pins_11_s1.INIT=1'b0;
+DFFRE pins_10_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[10])
+);
+defparam pins_10_s1.INIT=1'b0;
+DFFRE pins_9_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[9])
+);
+defparam pins_9_s1.INIT=1'b0;
+DFFRE pins_8_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[8])
+);
+defparam pins_8_s1.INIT=1'b0;
+DFFRE pins_7_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[7])
+);
+defparam pins_7_s1.INIT=1'b0;
+DFFRE pins_6_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[6])
+);
+defparam pins_6_s1.INIT=1'b0;
+DFFRE pins_5_s1 (
+	.D(rgb_Z[10]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[5])
+);
+defparam pins_5_s1.INIT=1'b0;
+DFFRE pins_4_s1 (
+	.D(rgb_Z[4]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[4])
+);
+defparam pins_4_s1.INIT=1'b0;
+DFFRE pins_3_s1 (
+	.D(rgb_Z[4]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[3])
+);
+defparam pins_3_s1.INIT=1'b0;
+DFFRE pins_2_s1 (
+	.D(rgb_Z[4]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[2])
+);
+defparam pins_2_s1.INIT=1'b0;
+DFFRE pins_1_s1 (
+	.D(rgb_Z[4]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[1])
+);
+defparam pins_1_s1.INIT=1'b0;
+DFFRE pins_0_s1 (
+	.D(rgb_Z[4]),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[0])
+);
+defparam pins_0_s1.INIT=1'b0;
+DFFCE read_clk_sync_1_s0 (
+	.D(read_clk_sync[0]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_clk_sync[1])
+);
+defparam read_clk_sync_1_s0.INIT=1'b0;
+DFFCE read_clk_sync_0_s0 (
+	.D(read_clk),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_clk_sync[0])
+);
+defparam read_clk_sync_0_s0.INIT=1'b0;
+DFFCE read_de_sync_1_s0 (
+	.D(read_de_sync[0]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_de_sync[1])
+);
+defparam read_de_sync_1_s0.INIT=1'b0;
+DFFCE read_de_sync_0_s0 (
+	.D(read_de),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_de_sync[0])
+);
+defparam read_de_sync_0_s0.INIT=1'b0;
+DFFCE read_bl_sync_1_s0 (
+	.D(read_bl_sync[0]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(led_d[3])
+);
+defparam read_bl_sync_1_s0.INIT=1'b0;
+DFFCE read_bl_sync_0_s0 (
+	.D(read_bl),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_bl_sync[0])
+);
+defparam read_bl_sync_0_s0.INIT=1'b0;
+DFFCE read_clk_old_s0 (
+	.D(read_clk_sync[1]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(read_clk_old)
+);
+defparam read_clk_old_s0.INIT=1'b0;
+DFFCE edge_count_22_s0 (
+	.D(n75_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(led_d[4])
+);
+defparam edge_count_22_s0.INIT=1'b0;
+DFFCE edge_count_21_s0 (
+	.D(n76_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[21])
+);
+defparam edge_count_21_s0.INIT=1'b0;
+DFFCE edge_count_20_s0 (
+	.D(n77_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[20])
+);
+defparam edge_count_20_s0.INIT=1'b0;
+DFFCE edge_count_19_s0 (
+	.D(n78_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[19])
+);
+defparam edge_count_19_s0.INIT=1'b0;
+DFFCE edge_count_18_s0 (
+	.D(n79_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[18])
+);
+defparam edge_count_18_s0.INIT=1'b0;
+DFFCE edge_count_17_s0 (
+	.D(n80_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[17])
+);
+defparam edge_count_17_s0.INIT=1'b0;
+DFFCE edge_count_16_s0 (
+	.D(n81_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[16])
+);
+defparam edge_count_16_s0.INIT=1'b0;
+DFFCE edge_count_15_s0 (
+	.D(n82_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[15])
+);
+defparam edge_count_15_s0.INIT=1'b0;
+DFFCE edge_count_14_s0 (
+	.D(n83_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[14])
+);
+defparam edge_count_14_s0.INIT=1'b0;
+DFFCE edge_count_13_s0 (
+	.D(n84_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[13])
+);
+defparam edge_count_13_s0.INIT=1'b0;
+DFFCE edge_count_12_s0 (
+	.D(n85_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[12])
+);
+defparam edge_count_12_s0.INIT=1'b0;
+DFFCE edge_count_11_s0 (
+	.D(n86_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[11])
+);
+defparam edge_count_11_s0.INIT=1'b0;
+DFFCE edge_count_10_s0 (
+	.D(n87_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[10])
+);
+defparam edge_count_10_s0.INIT=1'b0;
+DFFCE edge_count_9_s0 (
+	.D(n88_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[9])
+);
+defparam edge_count_9_s0.INIT=1'b0;
+DFFCE edge_count_8_s0 (
+	.D(n89_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[8])
+);
+defparam edge_count_8_s0.INIT=1'b0;
+DFFCE edge_count_7_s0 (
+	.D(n90_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[7])
+);
+defparam edge_count_7_s0.INIT=1'b0;
+DFFCE edge_count_6_s0 (
+	.D(n91_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[6])
+);
+defparam edge_count_6_s0.INIT=1'b0;
+DFFCE edge_count_5_s0 (
+	.D(n92_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[5])
+);
+defparam edge_count_5_s0.INIT=1'b0;
+DFFCE edge_count_4_s0 (
+	.D(n93_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[4])
+);
+defparam edge_count_4_s0.INIT=1'b0;
+DFFCE edge_count_3_s0 (
+	.D(n94_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[3])
+);
+defparam edge_count_3_s0.INIT=1'b0;
+DFFCE edge_count_2_s0 (
+	.D(n95_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[2])
+);
+defparam edge_count_2_s0.INIT=1'b0;
+DFFCE edge_count_1_s0 (
+	.D(n96_1),
+	.CLK(clk50M_d),
+	.CE(n72_6),
+	.CLEAR(n70_6),
+	.Q(edge_count[1])
+);
+defparam edge_count_1_s0.INIT=1'b0;
+DFFCE seen_de_s0 (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(read_de_sync[1]),
+	.CLEAR(n70_6),
+	.Q(led_d[5])
+);
+defparam seen_de_s0.INIT=1'b0;
+DFFCE sys_count_24_s0 (
+	.D(n160_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(led_d[1])
+);
+defparam sys_count_24_s0.INIT=1'b0;
+DFFCE sys_count_23_s0 (
+	.D(n161_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[23])
+);
+defparam sys_count_23_s0.INIT=1'b0;
+DFFCE sys_count_22_s0 (
+	.D(n162_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[22])
+);
+defparam sys_count_22_s0.INIT=1'b0;
+DFFCE sys_count_21_s0 (
+	.D(n163_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[21])
+);
+defparam sys_count_21_s0.INIT=1'b0;
+DFFCE sys_count_20_s0 (
+	.D(n164_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[20])
+);
+defparam sys_count_20_s0.INIT=1'b0;
+DFFCE sys_count_19_s0 (
+	.D(n165_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[19])
+);
+defparam sys_count_19_s0.INIT=1'b0;
+DFFCE sys_count_18_s0 (
+	.D(n166_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[18])
+);
+defparam sys_count_18_s0.INIT=1'b0;
+DFFCE sys_count_17_s0 (
+	.D(n167_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[17])
+);
+defparam sys_count_17_s0.INIT=1'b0;
+DFFCE sys_count_16_s0 (
+	.D(n168_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[16])
+);
+defparam sys_count_16_s0.INIT=1'b0;
+DFFCE sys_count_15_s0 (
+	.D(n169_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[15])
+);
+defparam sys_count_15_s0.INIT=1'b0;
+DFFCE sys_count_14_s0 (
+	.D(n170_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[14])
+);
+defparam sys_count_14_s0.INIT=1'b0;
+DFFCE sys_count_13_s0 (
+	.D(n171_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[13])
+);
+defparam sys_count_13_s0.INIT=1'b0;
+DFFCE sys_count_12_s0 (
+	.D(n172_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[12])
+);
+defparam sys_count_12_s0.INIT=1'b0;
+DFFCE sys_count_11_s0 (
+	.D(n173_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[11])
+);
+defparam sys_count_11_s0.INIT=1'b0;
+DFFCE sys_count_10_s0 (
+	.D(n174_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[10])
+);
+defparam sys_count_10_s0.INIT=1'b0;
+DFFCE sys_count_9_s0 (
+	.D(n175_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[9])
+);
+defparam sys_count_9_s0.INIT=1'b0;
+DFFCE sys_count_8_s0 (
+	.D(n176_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[8])
+);
+defparam sys_count_8_s0.INIT=1'b0;
+DFFCE sys_count_7_s0 (
+	.D(n177_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[7])
+);
+defparam sys_count_7_s0.INIT=1'b0;
+DFFCE sys_count_6_s0 (
+	.D(n178_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[6])
+);
+defparam sys_count_6_s0.INIT=1'b0;
+DFFCE sys_count_5_s0 (
+	.D(n179_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[5])
+);
+defparam sys_count_5_s0.INIT=1'b0;
+DFFCE sys_count_4_s0 (
+	.D(n180_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[4])
+);
+defparam sys_count_4_s0.INIT=1'b0;
+DFFCE sys_count_3_s0 (
+	.D(n181_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[3])
+);
+defparam sys_count_3_s0.INIT=1'b0;
+DFFCE sys_count_2_s0 (
+	.D(n182_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[2])
+);
+defparam sys_count_2_s0.INIT=1'b0;
+DFFCE sys_count_1_s0 (
+	.D(n183_1),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[1])
+);
+defparam sys_count_1_s0.INIT=1'b0;
+DFFCE sys_count_0_s0 (
+	.D(n184_6),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(sys_count[0])
+);
+defparam sys_count_0_s0.INIT=1'b0;
+DFFCE frames_4_s0 (
+	.D(n217_1),
+	.CLK(pclk),
+	.CE(n215_5),
+	.CLEAR(n70_6),
+	.Q(led_d[2])
+);
+defparam frames_4_s0.INIT=1'b0;
+DFFCE frames_3_s0 (
+	.D(n218_1),
+	.CLK(pclk),
+	.CE(n215_5),
+	.CLEAR(n70_6),
+	.Q(frames[3])
+);
+defparam frames_3_s0.INIT=1'b0;
+DFFCE frames_2_s0 (
+	.D(n219_1),
+	.CLK(pclk),
+	.CE(n215_5),
+	.CLEAR(n70_6),
+	.Q(frames[2])
+);
+defparam frames_2_s0.INIT=1'b0;
+DFFCE frames_1_s0 (
+	.D(n220_1),
+	.CLK(pclk),
+	.CE(n215_5),
+	.CLEAR(n70_6),
+	.Q(frames[1])
+);
+defparam frames_1_s0.INIT=1'b0;
+DFFCE old_vs_s0 (
+	.D(vs),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(old_vs)
+);
+defparam old_vs_s0.INIT=1'b0;
+DFFRE pins_18_s1 (
+	.D(de),
+	.CLK(n26_6),
+	.CE(VCC),
+	.RESET(GND),
+	.Q(pins[18])
+);
+defparam pins_18_s1.INIT=1'b0;
+DFFCE edge_count_0_s1 (
+	.D(n97_11),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(edge_count[0])
+);
+defparam edge_count_0_s1.INIT=1'b0;
+DFFCE frames_0_s1 (
+	.D(n221_8),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(frames[0])
+);
+defparam frames_0_s1.INIT=1'b0;
+ALU n96_s (
+	.I0(edge_count[1]),
+	.I1(edge_count[0]),
+	.I3(VCC),
+	.CIN(GND),
+	.COUT(n96_2),
+	.SUM(n96_1)
+);
+defparam n96_s.ALU_MODE=0;
+ALU n95_s (
+	.I0(GND),
+	.I1(edge_count[2]),
+	.I3(VCC),
+	.CIN(n96_2),
+	.COUT(n95_2),
+	.SUM(n95_1)
+);
+defparam n95_s.ALU_MODE=0;
+ALU n94_s (
+	.I0(GND),
+	.I1(edge_count[3]),
+	.I3(VCC),
+	.CIN(n95_2),
+	.COUT(n94_2),
+	.SUM(n94_1)
+);
+defparam n94_s.ALU_MODE=0;
+ALU n93_s (
+	.I0(GND),
+	.I1(edge_count[4]),
+	.I3(VCC),
+	.CIN(n94_2),
+	.COUT(n93_2),
+	.SUM(n93_1)
+);
+defparam n93_s.ALU_MODE=0;
+ALU n92_s (
+	.I0(GND),
+	.I1(edge_count[5]),
+	.I3(VCC),
+	.CIN(n93_2),
+	.COUT(n92_2),
+	.SUM(n92_1)
+);
+defparam n92_s.ALU_MODE=0;
+ALU n91_s (
+	.I0(GND),
+	.I1(edge_count[6]),
+	.I3(VCC),
+	.CIN(n92_2),
+	.COUT(n91_2),
+	.SUM(n91_1)
+);
+defparam n91_s.ALU_MODE=0;
+ALU n90_s (
+	.I0(GND),
+	.I1(edge_count[7]),
+	.I3(VCC),
+	.CIN(n91_2),
+	.COUT(n90_2),
+	.SUM(n90_1)
+);
+defparam n90_s.ALU_MODE=0;
+ALU n89_s (
+	.I0(GND),
+	.I1(edge_count[8]),
+	.I3(VCC),
+	.CIN(n90_2),
+	.COUT(n89_2),
+	.SUM(n89_1)
+);
+defparam n89_s.ALU_MODE=0;
+ALU n88_s (
+	.I0(GND),
+	.I1(edge_count[9]),
+	.I3(VCC),
+	.CIN(n89_2),
+	.COUT(n88_2),
+	.SUM(n88_1)
+);
+defparam n88_s.ALU_MODE=0;
+ALU n87_s (
+	.I0(GND),
+	.I1(edge_count[10]),
+	.I3(VCC),
+	.CIN(n88_2),
+	.COUT(n87_2),
+	.SUM(n87_1)
+);
+defparam n87_s.ALU_MODE=0;
+ALU n86_s (
+	.I0(GND),
+	.I1(edge_count[11]),
+	.I3(VCC),
+	.CIN(n87_2),
+	.COUT(n86_2),
+	.SUM(n86_1)
+);
+defparam n86_s.ALU_MODE=0;
+ALU n85_s (
+	.I0(GND),
+	.I1(edge_count[12]),
+	.I3(VCC),
+	.CIN(n86_2),
+	.COUT(n85_2),
+	.SUM(n85_1)
+);
+defparam n85_s.ALU_MODE=0;
+ALU n84_s (
+	.I0(GND),
+	.I1(edge_count[13]),
+	.I3(VCC),
+	.CIN(n85_2),
+	.COUT(n84_2),
+	.SUM(n84_1)
+);
+defparam n84_s.ALU_MODE=0;
+ALU n83_s (
+	.I0(GND),
+	.I1(edge_count[14]),
+	.I3(VCC),
+	.CIN(n84_2),
+	.COUT(n83_2),
+	.SUM(n83_1)
+);
+defparam n83_s.ALU_MODE=0;
+ALU n82_s (
+	.I0(GND),
+	.I1(edge_count[15]),
+	.I3(VCC),
+	.CIN(n83_2),
+	.COUT(n82_2),
+	.SUM(n82_1)
+);
+defparam n82_s.ALU_MODE=0;
+ALU n81_s (
+	.I0(GND),
+	.I1(edge_count[16]),
+	.I3(VCC),
+	.CIN(n82_2),
+	.COUT(n81_2),
+	.SUM(n81_1)
+);
+defparam n81_s.ALU_MODE=0;
+ALU n80_s (
+	.I0(GND),
+	.I1(edge_count[17]),
+	.I3(VCC),
+	.CIN(n81_2),
+	.COUT(n80_2),
+	.SUM(n80_1)
+);
+defparam n80_s.ALU_MODE=0;
+ALU n79_s (
+	.I0(GND),
+	.I1(edge_count[18]),
+	.I3(VCC),
+	.CIN(n80_2),
+	.COUT(n79_2),
+	.SUM(n79_1)
+);
+defparam n79_s.ALU_MODE=0;
+ALU n78_s (
+	.I0(GND),
+	.I1(edge_count[19]),
+	.I3(VCC),
+	.CIN(n79_2),
+	.COUT(n78_2),
+	.SUM(n78_1)
+);
+defparam n78_s.ALU_MODE=0;
+ALU n77_s (
+	.I0(GND),
+	.I1(edge_count[20]),
+	.I3(VCC),
+	.CIN(n78_2),
+	.COUT(n77_2),
+	.SUM(n77_1)
+);
+defparam n77_s.ALU_MODE=0;
+ALU n76_s (
+	.I0(GND),
+	.I1(edge_count[21]),
+	.I3(VCC),
+	.CIN(n77_2),
+	.COUT(n76_2),
+	.SUM(n76_1)
+);
+defparam n76_s.ALU_MODE=0;
+ALU n75_s (
+	.I0(GND),
+	.I1(led_d[4]),
+	.I3(VCC),
+	.CIN(n76_2),
+	.COUT(n75_0_COUT),
+	.SUM(n75_1)
+);
+defparam n75_s.ALU_MODE=0;
+ALU n183_s (
+	.I0(sys_count[1]),
+	.I1(sys_count[0]),
+	.I3(VCC),
+	.CIN(GND),
+	.COUT(n183_2),
+	.SUM(n183_1)
+);
+defparam n183_s.ALU_MODE=0;
+ALU n182_s (
+	.I0(GND),
+	.I1(sys_count[2]),
+	.I3(VCC),
+	.CIN(n183_2),
+	.COUT(n182_2),
+	.SUM(n182_1)
+);
+defparam n182_s.ALU_MODE=0;
+ALU n181_s (
+	.I0(GND),
+	.I1(sys_count[3]),
+	.I3(VCC),
+	.CIN(n182_2),
+	.COUT(n181_2),
+	.SUM(n181_1)
+);
+defparam n181_s.ALU_MODE=0;
+ALU n180_s (
+	.I0(GND),
+	.I1(sys_count[4]),
+	.I3(VCC),
+	.CIN(n181_2),
+	.COUT(n180_2),
+	.SUM(n180_1)
+);
+defparam n180_s.ALU_MODE=0;
+ALU n179_s (
+	.I0(GND),
+	.I1(sys_count[5]),
+	.I3(VCC),
+	.CIN(n180_2),
+	.COUT(n179_2),
+	.SUM(n179_1)
+);
+defparam n179_s.ALU_MODE=0;
+ALU n178_s (
+	.I0(GND),
+	.I1(sys_count[6]),
+	.I3(VCC),
+	.CIN(n179_2),
+	.COUT(n178_2),
+	.SUM(n178_1)
+);
+defparam n178_s.ALU_MODE=0;
+ALU n177_s (
+	.I0(GND),
+	.I1(sys_count[7]),
+	.I3(VCC),
+	.CIN(n178_2),
+	.COUT(n177_2),
+	.SUM(n177_1)
+);
+defparam n177_s.ALU_MODE=0;
+ALU n176_s (
+	.I0(GND),
+	.I1(sys_count[8]),
+	.I3(VCC),
+	.CIN(n177_2),
+	.COUT(n176_2),
+	.SUM(n176_1)
+);
+defparam n176_s.ALU_MODE=0;
+ALU n175_s (
+	.I0(GND),
+	.I1(sys_count[9]),
+	.I3(VCC),
+	.CIN(n176_2),
+	.COUT(n175_2),
+	.SUM(n175_1)
+);
+defparam n175_s.ALU_MODE=0;
+ALU n174_s (
+	.I0(GND),
+	.I1(sys_count[10]),
+	.I3(VCC),
+	.CIN(n175_2),
+	.COUT(n174_2),
+	.SUM(n174_1)
+);
+defparam n174_s.ALU_MODE=0;
+ALU n173_s (
+	.I0(GND),
+	.I1(sys_count[11]),
+	.I3(VCC),
+	.CIN(n174_2),
+	.COUT(n173_2),
+	.SUM(n173_1)
+);
+defparam n173_s.ALU_MODE=0;
+ALU n172_s (
+	.I0(GND),
+	.I1(sys_count[12]),
+	.I3(VCC),
+	.CIN(n173_2),
+	.COUT(n172_2),
+	.SUM(n172_1)
+);
+defparam n172_s.ALU_MODE=0;
+ALU n171_s (
+	.I0(GND),
+	.I1(sys_count[13]),
+	.I3(VCC),
+	.CIN(n172_2),
+	.COUT(n171_2),
+	.SUM(n171_1)
+);
+defparam n171_s.ALU_MODE=0;
+ALU n170_s (
+	.I0(GND),
+	.I1(sys_count[14]),
+	.I3(VCC),
+	.CIN(n171_2),
+	.COUT(n170_2),
+	.SUM(n170_1)
+);
+defparam n170_s.ALU_MODE=0;
+ALU n169_s (
+	.I0(GND),
+	.I1(sys_count[15]),
+	.I3(VCC),
+	.CIN(n170_2),
+	.COUT(n169_2),
+	.SUM(n169_1)
+);
+defparam n169_s.ALU_MODE=0;
+ALU n168_s (
+	.I0(GND),
+	.I1(sys_count[16]),
+	.I3(VCC),
+	.CIN(n169_2),
+	.COUT(n168_2),
+	.SUM(n168_1)
+);
+defparam n168_s.ALU_MODE=0;
+ALU n167_s (
+	.I0(GND),
+	.I1(sys_count[17]),
+	.I3(VCC),
+	.CIN(n168_2),
+	.COUT(n167_2),
+	.SUM(n167_1)
+);
+defparam n167_s.ALU_MODE=0;
+ALU n166_s (
+	.I0(GND),
+	.I1(sys_count[18]),
+	.I3(VCC),
+	.CIN(n167_2),
+	.COUT(n166_2),
+	.SUM(n166_1)
+);
+defparam n166_s.ALU_MODE=0;
+ALU n165_s (
+	.I0(GND),
+	.I1(sys_count[19]),
+	.I3(VCC),
+	.CIN(n166_2),
+	.COUT(n165_2),
+	.SUM(n165_1)
+);
+defparam n165_s.ALU_MODE=0;
+ALU n164_s (
+	.I0(GND),
+	.I1(sys_count[20]),
+	.I3(VCC),
+	.CIN(n165_2),
+	.COUT(n164_2),
+	.SUM(n164_1)
+);
+defparam n164_s.ALU_MODE=0;
+ALU n163_s (
+	.I0(GND),
+	.I1(sys_count[21]),
+	.I3(VCC),
+	.CIN(n164_2),
+	.COUT(n163_2),
+	.SUM(n163_1)
+);
+defparam n163_s.ALU_MODE=0;
+ALU n162_s (
+	.I0(GND),
+	.I1(sys_count[22]),
+	.I3(VCC),
+	.CIN(n163_2),
+	.COUT(n162_2),
+	.SUM(n162_1)
+);
+defparam n162_s.ALU_MODE=0;
+ALU n161_s (
+	.I0(GND),
+	.I1(sys_count[23]),
+	.I3(VCC),
+	.CIN(n162_2),
+	.COUT(n161_2),
+	.SUM(n161_1)
+);
+defparam n161_s.ALU_MODE=0;
+ALU n160_s (
+	.I0(GND),
+	.I1(led_d[1]),
+	.I3(VCC),
+	.CIN(n161_2),
+	.COUT(n160_0_COUT),
+	.SUM(n160_1)
+);
+defparam n160_s.ALU_MODE=0;
+ALU n220_s (
+	.I0(frames[1]),
+	.I1(frames[0]),
+	.I3(VCC),
+	.CIN(GND),
+	.COUT(n220_2),
+	.SUM(n220_1)
+);
+defparam n220_s.ALU_MODE=0;
+ALU n219_s (
+	.I0(GND),
+	.I1(frames[2]),
+	.I3(VCC),
+	.CIN(n220_2),
+	.COUT(n219_2),
+	.SUM(n219_1)
+);
+defparam n219_s.ALU_MODE=0;
+ALU n218_s (
+	.I0(GND),
+	.I1(frames[3]),
+	.I3(VCC),
+	.CIN(n219_2),
+	.COUT(n218_2),
+	.SUM(n218_1)
+);
+defparam n218_s.ALU_MODE=0;
+ALU n217_s (
+	.I0(GND),
+	.I1(led_d[2]),
+	.I3(VCC),
+	.CIN(n218_2),
+	.COUT(n217_0_COUT),
+	.SUM(n217_1)
+);
+defparam n217_s.ALU_MODE=0;
+INV n26_s2 (
+	.I(pclk),
+	.O(n26_6)
+);
+INV n70_s2 (
+	.I(reset_n_d),
+	.O(n70_6)
+);
+LUT1 n184_s2 (
+	.I0(sys_count[0]),
+	.F(n184_6)
+);
+defparam n184_s2.INIT=2'h1;
+LUT3 \official/active_s0  (
+	.I0(\official/v [10]),
+	.I1(\official/active_4 ),
+	.I2(\official/active_5 ),
+	.F(\official/active )
+);
+defparam \official/active_s0 .INIT=8'h40;
+LUT4 \official/n653_s0  (
+	.I0(\official/n653_9 ),
+	.I1(\official/v [10]),
+	.I2(\official/active_4 ),
+	.I3(\official/active_5 ),
+	.F(\official/n653_3 )
+);
+defparam \official/n653_s0 .INIT=16'h1000;
+LUT4 \official/n303_s1  (
+	.I0(\official/h [4]),
+	.I1(\official/h [10]),
+	.I2(\official/h [0]),
+	.I3(\official/n303_5 ),
+	.F(\official/n303_4 )
+);
+defparam \official/n303_s1 .INIT=16'h8100;
+LUT2 \official/n669_s1  (
+	.I0(\official/n303_4 ),
+	.I1(\official/tft_ready [1]),
+	.F(\official/n669_4 )
+);
+defparam \official/n669_s1 .INIT=4'hB;
+LUT4 \official/n492_s1  (
+	.I0(\official/v [10]),
+	.I1(\official/active_4 ),
+	.I2(\official/active_5 ),
+	.I3(\official/n492_6 ),
+	.F(\official/n492_5 )
+);
+defparam \official/n492_s1 .INIT=16'h4000;
+LUT4 \official/n498_s1  (
+	.I0(\official/v [10]),
+	.I1(\official/n498_6 ),
+	.I2(\official/active_4 ),
+	.I3(\official/active_5 ),
+	.F(\official/n498_5 )
+);
+defparam \official/n498_s1 .INIT=16'h4000;
+LUT4 \official/n241_s33  (
+	.I0(\official/h [7]),
+	.I1(\official/h [10]),
+	.I2(\official/n241_50 ),
+	.I3(\official/n241_51 ),
+	.F(\official/n241_49 )
+);
+defparam \official/n241_s33 .INIT=16'hFEFF;
+LUT4 \official/n242_s35  (
+	.I0(\official/v [10]),
+	.I1(\official/v [7]),
+	.I2(\official/n242_53 ),
+	.I3(\official/n242_54 ),
+	.F(\official/n242_52 )
+);
+defparam \official/n242_s35 .INIT=16'hFEFF;
+LUT2 \official/n216_s38  (
+	.I0(\official/x [0]),
+	.I1(\official/n215_3 ),
+	.F(\official/n216_55 )
+);
+defparam \official/n216_s38 .INIT=4'h4;
+LUT2 \official/n401_s2  (
+	.I0(\official/v [0]),
+	.I1(\official/n659_4 ),
+	.F(\official/n401_7 )
+);
+defparam \official/n401_s2 .INIT=4'h1;
+LUT2 \official/n400_s2  (
+	.I0(\official/v [0]),
+	.I1(\official/v [1]),
+	.F(\official/n400_7 )
+);
+defparam \official/n400_s2 .INIT=4'h6;
+LUT4 \official/n399_s2  (
+	.I0(\official/v [0]),
+	.I1(\official/v [1]),
+	.I2(\official/n659_4 ),
+	.I3(\official/v [2]),
+	.F(\official/n399_7 )
+);
+defparam \official/n399_s2 .INIT=16'h0708;
+LUT3 \official/n398_s2  (
+	.I0(\official/n659_4 ),
+	.I1(\official/v [3]),
+	.I2(\official/n398_8 ),
+	.F(\official/n398_7 )
+);
+defparam \official/n398_s2 .INIT=8'h14;
+LUT2 \official/n397_s2  (
+	.I0(\official/v [4]),
+	.I1(\official/n397_8 ),
+	.F(\official/n397_7 )
+);
+defparam \official/n397_s2 .INIT=4'h6;
+LUT4 \official/n394_s2  (
+	.I0(\official/v [5]),
+	.I1(\official/v [6]),
+	.I2(\official/n396_8 ),
+	.I3(\official/v [7]),
+	.F(\official/n394_7 )
+);
+defparam \official/n394_s2 .INIT=16'h7F80;
+LUT2 \official/n393_s2  (
+	.I0(\official/v [8]),
+	.I1(\official/n393_8 ),
+	.F(\official/n393_7 )
+);
+defparam \official/n393_s2 .INIT=4'h6;
+LUT4 \official/n392_s2  (
+	.I0(\official/v [8]),
+	.I1(\official/n393_8 ),
+	.I2(\official/n659_4 ),
+	.I3(\official/v [9]),
+	.F(\official/n392_7 )
+);
+defparam \official/n392_s2 .INIT=16'h0708;
+LUT3 \official/n391_s2  (
+	.I0(\official/n659_4 ),
+	.I1(\official/n391_8 ),
+	.I2(\official/v [10]),
+	.F(\official/n391_7 )
+);
+defparam \official/n391_s2 .INIT=8'h14;
+LUT4 \official/n373_s2  (
+	.I0(\official/mode_frames [2]),
+	.I1(\official/mode_frames [3]),
+	.I2(\official/n375_8 ),
+	.I3(\official/mode_frames [4]),
+	.F(\official/n373_7 )
+);
+defparam \official/n373_s2 .INIT=16'h7F80;
+LUT3 \official/n372_s2  (
+	.I0(\official/n668_5 ),
+	.I1(\official/mode_frames [5]),
+	.I2(\official/n668_4 ),
+	.F(\official/n372_7 )
+);
+defparam \official/n372_s2 .INIT=8'h14;
+LUT4 \official/n371_s2  (
+	.I0(\official/n668_5 ),
+	.I1(\official/n668_4 ),
+	.I2(\official/mode_frames [5]),
+	.I3(\official/mode_frames [6]),
+	.F(\official/n371_7 )
+);
+defparam \official/n371_s2 .INIT=16'h3740;
+LUT4 \official/n370_s2  (
+	.I0(\official/n372_7 ),
+	.I1(\official/mode_frames [6]),
+	.I2(\official/n668_4 ),
+	.I3(\official/mode_frames [7]),
+	.F(\official/n370_7 )
+);
+defparam \official/n370_s2 .INIT=16'hBF40;
+LUT3 \official/n369_s2  (
+	.I0(\official/mode_frames [5]),
+	.I1(\official/mode_frames [8]),
+	.I2(\official/n369_8 ),
+	.F(\official/n369_7 )
+);
+defparam \official/n369_s2 .INIT=8'h2C;
+LUT4 \official/active_s1  (
+	.I0(\official/active_6 ),
+	.I1(\official/active_7 ),
+	.I2(\official/active_8 ),
+	.I3(\official/v [9]),
+	.F(\official/active_4 )
+);
+defparam \official/active_s1 .INIT=16'hEE0F;
+LUT4 \official/active_s2  (
+	.I0(\official/active_9 ),
+	.I1(\official/h [9]),
+	.I2(\official/h [10]),
+	.I3(\official/active_10 ),
+	.F(\official/active_5 )
+);
+defparam \official/active_s2 .INIT=16'h0007;
+LUT4 \official/n303_s2  (
+	.I0(\official/n303_6 ),
+	.I1(\official/h [2]),
+	.I2(\official/h [3]),
+	.I3(\official/n303_7 ),
+	.F(\official/n303_5 )
+);
+defparam \official/n303_s2 .INIT=16'h4000;
+LUT4 \official/n659_s1  (
+	.I0(\official/n659_5 ),
+	.I1(\official/v [2]),
+	.I2(\official/v [3]),
+	.I3(\official/n659_6 ),
+	.F(\official/n659_4 )
+);
+defparam \official/n659_s1 .INIT=16'h4000;
+LUT4 \official/n668_s1  (
+	.I0(\official/mode_frames [2]),
+	.I1(\official/mode_frames [3]),
+	.I2(\official/mode_frames [4]),
+	.I3(\official/n375_8 ),
+	.F(\official/n668_4 )
+);
+defparam \official/n668_s1 .INIT=16'h8000;
+LUT4 \official/n668_s2  (
+	.I0(\official/mode_frames [5]),
+	.I1(\official/mode_frames [6]),
+	.I2(\official/mode_frames [7]),
+	.I3(\official/mode_frames [8]),
+	.F(\official/n668_5 )
+);
+defparam \official/n668_s2 .INIT=16'h4000;
+LUT4 \official/n492_s2  (
+	.I0(\official/n492_7 ),
+	.I1(\official/n216_53 ),
+	.I2(\official/n492_8 ),
+	.I3(\official/tft_ready [1]),
+	.F(\official/n492_6 )
+);
+defparam \official/n492_s2 .INIT=16'hF400;
+LUT2 \official/n498_s2  (
+	.I0(\official/tft_ready [1]),
+	.I1(\official/n492_7 ),
+	.F(\official/n498_6 )
+);
+defparam \official/n498_s2 .INIT=4'h8;
+LUT4 \official/n241_s34  (
+	.I0(\official/h [2]),
+	.I1(\official/h [1]),
+	.I2(\official/n241_52 ),
+	.I3(led_d_0[6]),
+	.F(\official/n241_50 )
+);
+defparam \official/n241_s34 .INIT=16'hEF00;
+LUT2 \official/n241_s35  (
+	.I0(\official/h [9]),
+	.I1(\official/h [8]),
+	.F(\official/n241_51 )
+);
+defparam \official/n241_s35 .INIT=4'h1;
+LUT4 \official/n242_s36  (
+	.I0(\official/v [2]),
+	.I1(\official/v [1]),
+	.I2(\official/n242_55 ),
+	.I3(led_d_0[6]),
+	.F(\official/n242_53 )
+);
+defparam \official/n242_s36 .INIT=16'h00EF;
+LUT2 \official/n242_s37  (
+	.I0(\official/v [8]),
+	.I1(\official/v [9]),
+	.F(\official/n242_54 )
+);
+defparam \official/n242_s37 .INIT=4'h1;
+LUT3 \official/n398_s3  (
+	.I0(\official/v [0]),
+	.I1(\official/v [2]),
+	.I2(\official/v [1]),
+	.F(\official/n398_8 )
+);
+defparam \official/n398_s3 .INIT=8'h80;
+LUT4 \official/n397_s3  (
+	.I0(\official/v [0]),
+	.I1(\official/v [2]),
+	.I2(\official/v [3]),
+	.I3(\official/v [1]),
+	.F(\official/n397_8 )
+);
+defparam \official/n397_s3 .INIT=16'h8000;
+LUT2 \official/n396_s3  (
+	.I0(\official/v [4]),
+	.I1(\official/n397_8 ),
+	.F(\official/n396_8 )
+);
+defparam \official/n396_s3 .INIT=4'h8;
+LUT4 \official/n393_s3  (
+	.I0(\official/v [5]),
+	.I1(\official/v [6]),
+	.I2(\official/v [7]),
+	.I3(\official/n396_8 ),
+	.F(\official/n393_8 )
+);
+defparam \official/n393_s3 .INIT=16'h8000;
+LUT3 \official/n391_s3  (
+	.I0(\official/v [8]),
+	.I1(\official/v [9]),
+	.I2(\official/n393_8 ),
+	.F(\official/n391_8 )
+);
+defparam \official/n391_s3 .INIT=8'h80;
+LUT2 \official/n375_s3  (
+	.I0(\official/mode_frames [0]),
+	.I1(\official/mode_frames [1]),
+	.F(\official/n375_8 )
+);
+defparam \official/n375_s3 .INIT=4'h8;
+LUT3 \official/n369_s3  (
+	.I0(\official/mode_frames [6]),
+	.I1(\official/mode_frames [7]),
+	.I2(\official/n668_4 ),
+	.F(\official/n369_8 )
+);
+defparam \official/n369_s3 .INIT=8'h80;
+LUT4 \official/active_s3  (
+	.I0(\official/v [3]),
+	.I1(\official/n398_8 ),
+	.I2(\official/active_11 ),
+	.I3(led_d_0[6]),
+	.F(\official/active_6 )
+);
+defparam \official/active_s3 .INIT=16'h1F00;
+LUT4 \official/active_s4  (
+	.I0(\official/v [7]),
+	.I1(led_d_0[6]),
+	.I2(\official/v [8]),
+	.I3(\official/n242_53 ),
+	.F(\official/active_7 )
+);
+defparam \official/active_s4 .INIT=16'h000D;
+LUT4 \official/active_s5  (
+	.I0(\official/active_12 ),
+	.I1(led_d_0[6]),
+	.I2(\official/active_13 ),
+	.I3(\official/v [8]),
+	.F(\official/active_8 )
+);
+defparam \official/active_s5 .INIT=16'h00E8;
+LUT4 \official/active_s6  (
+	.I0(\official/active_14 ),
+	.I1(\official/h [3]),
+	.I2(led_d_0[6]),
+	.I3(\official/active_15 ),
+	.F(\official/active_9 )
+);
+defparam \official/active_s6 .INIT=16'hE4F5;
+LUT4 \official/active_s7  (
+	.I0(led_d_0[6]),
+	.I1(\official/h [7]),
+	.I2(\official/active_16 ),
+	.I3(\official/n241_51 ),
+	.F(\official/active_10 )
+);
+defparam \official/active_s7 .INIT=16'h7100;
+LUT4 \official/n653_s2  (
+	.I0(\official/y [8]),
+	.I1(led_d_0[6]),
+	.I2(\official/n653_6 ),
+	.I3(\official/y [7]),
+	.F(\official/n653_5 )
+);
+defparam \official/n653_s2 .INIT=16'h5CDD;
+LUT4 \official/n303_s3  (
+	.I0(\official/h [9]),
+	.I1(led_d_0[6]),
+	.I2(\official/h [4]),
+	.I3(\official/h [1]),
+	.F(\official/n303_6 )
+);
+defparam \official/n303_s3 .INIT=16'hEFF7;
+LUT4 \official/n303_s4  (
+	.I0(\official/h [5]),
+	.I1(\official/h [6]),
+	.I2(\official/h [7]),
+	.I3(\official/h [8]),
+	.F(\official/n303_7 )
+);
+defparam \official/n303_s4 .INIT=16'h0001;
+LUT4 \official/n659_s2  (
+	.I0(\official/n659_7 ),
+	.I1(\official/v [10]),
+	.I2(\official/v [1]),
+	.I3(\official/v [9]),
+	.F(\official/n659_5 )
+);
+defparam \official/n659_s2 .INIT=16'hFDBF;
+LUT4 \official/n659_s3  (
+	.I0(\official/v [5]),
+	.I1(\official/v [6]),
+	.I2(\official/v [7]),
+	.I3(\official/v [8]),
+	.F(\official/n659_6 )
+);
+defparam \official/n659_s3 .INIT=16'h0001;
+LUT4 \official/n492_s3  (
+	.I0(\official/n492_9 ),
+	.I1(\official/x [8]),
+	.I2(led_d_0[6]),
+	.I3(\official/n492_10 ),
+	.F(\official/n492_7 )
+);
+defparam \official/n492_s3 .INIT=16'h1F00;
+LUT4 \official/n492_s4  (
+	.I0(\official/x [10]),
+	.I1(\official/x [9]),
+	.I2(\official/x [8]),
+	.I3(\official/n492_11 ),
+	.F(\official/n492_8 )
+);
+defparam \official/n492_s4 .INIT=16'h0100;
+LUT4 \official/n241_s36  (
+	.I0(\official/h [3]),
+	.I1(\official/h [5]),
+	.I2(\official/h [6]),
+	.I3(\official/h [4]),
+	.F(\official/n241_52 )
+);
+defparam \official/n241_s36 .INIT=16'h0001;
+LUT4 \official/n242_s38  (
+	.I0(\official/v [3]),
+	.I1(\official/v [5]),
+	.I2(\official/v [6]),
+	.I3(\official/v [4]),
+	.F(\official/n242_55 )
+);
+defparam \official/n242_s38 .INIT=16'h0001;
+LUT4 \official/active_s8  (
+	.I0(\official/v [5]),
+	.I1(\official/v [6]),
+	.I2(\official/v [7]),
+	.I3(\official/v [4]),
+	.F(\official/active_11 )
+);
+defparam \official/active_s8 .INIT=16'h8000;
+LUT4 \official/active_s9  (
+	.I0(led_d_0[6]),
+	.I1(\official/v [5]),
+	.I2(\official/v [4]),
+	.I3(\official/v [7]),
+	.F(\official/active_12 )
+);
+defparam \official/active_s9 .INIT=16'h00BF;
+LUT4 \official/active_s10  (
+	.I0(\official/v [3]),
+	.I1(\official/active_17 ),
+	.I2(\official/active_18 ),
+	.I3(\official/active_19 ),
+	.F(\official/active_13 )
+);
+defparam \official/active_s10 .INIT=16'h00F4;
+LUT4 \official/active_s11  (
+	.I0(\official/active_20 ),
+	.I1(\official/h [6]),
+	.I2(\official/h [8]),
+	.I3(\official/h [4]),
+	.F(\official/active_14 )
+);
+defparam \official/active_s11 .INIT=16'h7FFE;
+LUT4 \official/active_s12  (
+	.I0(\official/h [0]),
+	.I1(led_d_0[6]),
+	.I2(\official/h [2]),
+	.I3(\official/h [1]),
+	.F(\official/active_15 )
+);
+defparam \official/active_s12 .INIT=16'h133F;
+LUT4 \official/active_s13  (
+	.I0(\official/h [3]),
+	.I1(\official/active_15 ),
+	.I2(\official/active_21 ),
+	.I3(\official/active_22 ),
+	.F(\official/active_16 )
+);
+defparam \official/active_s13 .INIT=16'hF400;
+LUT4 \official/n653_s3  (
+	.I0(led_d_0[6]),
+	.I1(\official/y [4]),
+	.I2(\official/y [5]),
+	.I3(\official/y [6]),
+	.F(\official/n653_6 )
+);
+defparam \official/n653_s3 .INIT=16'hBFFD;
+LUT4 \official/n659_s4  (
+	.I0(led_d_0[6]),
+	.I1(\official/v [0]),
+	.I2(\official/v [4]),
+	.I3(\official/v [10]),
+	.F(\official/n659_7 )
+);
+defparam \official/n659_s4 .INIT=16'h7F01;
+LUT4 \official/n492_s5  (
+	.I0(\official/x [4]),
+	.I1(\official/x [5]),
+	.I2(\official/x [6]),
+	.I3(\official/x [7]),
+	.F(\official/n492_9 )
+);
+defparam \official/n492_s5 .INIT=16'h8000;
+LUT4 \official/n492_s6  (
+	.I0(\official/x [8]),
+	.I1(\official/n492_12 ),
+	.I2(\official/x [9]),
+	.I3(\official/x [10]),
+	.F(\official/n492_10 )
+);
+defparam \official/n492_s6 .INIT=16'h0007;
+LUT4 \official/n492_s7  (
+	.I0(led_d_0[6]),
+	.I1(\official/x [7]),
+	.I2(\official/x [6]),
+	.I3(\official/n492_13 ),
+	.F(\official/n492_11 )
+);
+defparam \official/n492_s7 .INIT=16'h7717;
+LUT4 \official/active_s14  (
+	.I0(\official/v [0]),
+	.I1(led_d_0[6]),
+	.I2(\official/v [2]),
+	.I3(\official/v [1]),
+	.F(\official/active_17 )
+);
+defparam \official/active_s14 .INIT=16'h4CCF;
+LUT4 \official/active_s15  (
+	.I0(\official/v [4]),
+	.I1(\official/v [5]),
+	.I2(led_d_0[6]),
+	.I3(\official/v [6]),
+	.F(\official/active_18 )
+);
+defparam \official/active_s15 .INIT=16'h50F3;
+LUT3 \official/active_s16  (
+	.I0(\official/v [7]),
+	.I1(\official/v [5]),
+	.I2(\official/v [6]),
+	.F(\official/active_19 )
+);
+defparam \official/active_s16 .INIT=8'hD0;
+LUT4 \official/active_s17  (
+	.I0(\official/h [5]),
+	.I1(\official/h [7]),
+	.I2(led_d_0[6]),
+	.I3(\official/h [6]),
+	.F(\official/active_20 )
+);
+defparam \official/active_s17 .INIT=16'h08EF;
+LUT4 \official/active_s18  (
+	.I0(\official/h [6]),
+	.I1(\official/h [4]),
+	.I2(led_d_0[6]),
+	.I3(\official/h [5]),
+	.F(\official/active_21 )
+);
+defparam \official/active_s18 .INIT=16'h0777;
+LUT4 \official/active_s19  (
+	.I0(\official/h [4]),
+	.I1(\official/h [6]),
+	.I2(\official/h [7]),
+	.I3(\official/h [5]),
+	.F(\official/active_22 )
+);
+defparam \official/active_s19 .INIT=16'h31F3;
+LUT4 \official/n492_s8  (
+	.I0(\official/x [5]),
+	.I1(\official/x [6]),
+	.I2(\official/x [4]),
+	.I3(\official/x [7]),
+	.F(\official/n492_12 )
+);
+defparam \official/n492_s8 .INIT=16'hFE00;
+LUT4 \official/n492_s9  (
+	.I0(\official/x [4]),
+	.I1(\official/x [3]),
+	.I2(\official/x [5]),
+	.I3(led_d_0[6]),
+	.F(\official/n492_13 )
+);
+defparam \official/n492_s9 .INIT=16'h7F01;
+LUT4 \official/n374_s3  (
+	.I0(\official/mode_frames [2]),
+	.I1(\official/mode_frames [0]),
+	.I2(\official/mode_frames [1]),
+	.I3(\official/mode_frames [3]),
+	.F(\official/n374_9 )
+);
+defparam \official/n374_s3 .INIT=16'h7F80;
+LUT3 \official/n375_s4  (
+	.I0(\official/mode_frames [2]),
+	.I1(\official/mode_frames [0]),
+	.I2(\official/mode_frames [1]),
+	.F(\official/n375_10 )
+);
+defparam \official/n375_s4 .INIT=8'h6A;
+LUT4 \official/n395_s3  (
+	.I0(\official/v [5]),
+	.I1(\official/v [4]),
+	.I2(\official/n397_8 ),
+	.I3(\official/v [6]),
+	.F(\official/n395_9 )
+);
+defparam \official/n395_s3 .INIT=16'h7F80;
+LUT4 \official/n396_s4  (
+	.I0(\official/n659_4 ),
+	.I1(\official/v [5]),
+	.I2(\official/v [4]),
+	.I3(\official/n397_8 ),
+	.F(\official/n396_10 )
+);
+defparam \official/n396_s4 .INIT=16'h1444;
+LUT4 \official/n668_s3  (
+	.I0(\official/n303_4 ),
+	.I1(\official/n659_4 ),
+	.I2(\official/n668_4 ),
+	.I3(\official/n668_5 ),
+	.F(\official/n668_7 )
+);
+defparam \official/n668_s3 .INIT=16'h8000;
+LUT4 \official/n376_s4  (
+	.I0(\official/mode_frames [0]),
+	.I1(\official/n303_4 ),
+	.I2(\official/n659_4 ),
+	.I3(\official/mode_frames [1]),
+	.F(\official/n376_10 )
+);
+defparam \official/n376_s4 .INIT=16'h7F80;
+LUT2 \official/n659_s5  (
+	.I0(\official/n303_4 ),
+	.I1(\official/n659_4 ),
+	.F(\official/n659_10 )
+);
+defparam \official/n659_s5 .INIT=4'h8;
+LUT3 \official/n377_s5  (
+	.I0(\official/n303_4 ),
+	.I1(\official/n659_4 ),
+	.I2(\official/mode_frames [0]),
+	.F(\official/n377_11 )
+);
+defparam \official/n377_s5 .INIT=8'h78;
+LUT3 \official/n653_s4  (
+	.I0(\official/y [9]),
+	.I1(\official/n653_10 ),
+	.I2(\official/n653_5 ),
+	.F(\official/n653_9 )
+);
+defparam \official/n653_s4 .INIT=8'h10;
+LUT3 \official/n653_s5  (
+	.I0(\official/v [10]),
+	.I1(VCC),
+	.I2(\official/y_9_3 ),
+	.F(\official/n653_10 )
+);
+defparam \official/n653_s5 .INIT=8'h96;
+DFFCE \official/tft_ready_0_s0  (
+	.D(VCC),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(\official/n10_6 ),
+	.Q(\official/tft_ready [0])
+);
+defparam \official/tft_ready_0_s0 .INIT=1'b0;
+DFFRE \official/h_10_s0  (
+	.D(\official/n413_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [10])
+);
+defparam \official/h_10_s0 .INIT=1'b0;
+DFFRE \official/h_9_s0  (
+	.D(\official/n414_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [9])
+);
+defparam \official/h_9_s0 .INIT=1'b0;
+DFFRE \official/h_8_s0  (
+	.D(\official/n415_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [8])
+);
+defparam \official/h_8_s0 .INIT=1'b0;
+DFFRE \official/h_7_s0  (
+	.D(\official/n416_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [7])
+);
+defparam \official/h_7_s0 .INIT=1'b0;
+DFFRE \official/h_6_s0  (
+	.D(\official/n417_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [6])
+);
+defparam \official/h_6_s0 .INIT=1'b0;
+DFFRE \official/h_5_s0  (
+	.D(\official/n418_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [5])
+);
+defparam \official/h_5_s0 .INIT=1'b0;
+DFFRE \official/h_4_s0  (
+	.D(\official/n419_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [4])
+);
+defparam \official/h_4_s0 .INIT=1'b0;
+DFFRE \official/h_3_s0  (
+	.D(\official/n420_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [3])
+);
+defparam \official/h_3_s0 .INIT=1'b0;
+DFFRE \official/h_2_s0  (
+	.D(\official/n421_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [2])
+);
+defparam \official/h_2_s0 .INIT=1'b0;
+DFFRE \official/h_1_s0  (
+	.D(\official/n422_1 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [1])
+);
+defparam \official/h_1_s0 .INIT=1'b0;
+DFFRE \official/h_0_s0  (
+	.D(\official/n423_6 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n669_4 ),
+	.Q(\official/h [0])
+);
+defparam \official/h_0_s0 .INIT=1'b0;
+DFFRE \official/v_10_s0  (
+	.D(\official/n391_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [10])
+);
+defparam \official/v_10_s0 .INIT=1'b0;
+DFFRE \official/v_9_s0  (
+	.D(\official/n392_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [9])
+);
+defparam \official/v_9_s0 .INIT=1'b0;
+DFFRE \official/v_8_s0  (
+	.D(\official/n393_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [8])
+);
+defparam \official/v_8_s0 .INIT=1'b0;
+DFFRE \official/v_7_s0  (
+	.D(\official/n394_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [7])
+);
+defparam \official/v_7_s0 .INIT=1'b0;
+DFFRE \official/v_6_s0  (
+	.D(\official/n395_9 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [6])
+);
+defparam \official/v_6_s0 .INIT=1'b0;
+DFFRE \official/v_5_s0  (
+	.D(\official/n396_10 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [5])
+);
+defparam \official/v_5_s0 .INIT=1'b0;
+DFFRE \official/v_4_s0  (
+	.D(\official/n397_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [4])
+);
+defparam \official/v_4_s0 .INIT=1'b0;
+DFFRE \official/v_3_s0  (
+	.D(\official/n398_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [3])
+);
+defparam \official/v_3_s0 .INIT=1'b0;
+DFFRE \official/v_2_s0  (
+	.D(\official/n399_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [2])
+);
+defparam \official/v_2_s0 .INIT=1'b0;
+DFFRE \official/v_1_s0  (
+	.D(\official/n400_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [1])
+);
+defparam \official/v_1_s0 .INIT=1'b0;
+DFFRE \official/v_0_s0  (
+	.D(\official/n401_7 ),
+	.CLK(pclk),
+	.CE(\official/n303_4 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/v [0])
+);
+defparam \official/v_0_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_8_s0  (
+	.D(\official/n369_7 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [8])
+);
+defparam \official/mode_frames_8_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_7_s0  (
+	.D(\official/n370_7 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [7])
+);
+defparam \official/mode_frames_7_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_6_s0  (
+	.D(\official/n371_7 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [6])
+);
+defparam \official/mode_frames_6_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_5_s0  (
+	.D(\official/n372_7 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [5])
+);
+defparam \official/mode_frames_5_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_4_s0  (
+	.D(\official/n373_7 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [4])
+);
+defparam \official/mode_frames_4_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_3_s0  (
+	.D(\official/n374_9 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [3])
+);
+defparam \official/mode_frames_3_s0 .INIT=1'b0;
+DFFRE \official/mode_frames_2_s0  (
+	.D(\official/n375_10 ),
+	.CLK(pclk),
+	.CE(\official/n659_10 ),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [2])
+);
+defparam \official/mode_frames_2_s0 .INIT=1'b0;
+DFFCE \official/rgb_15_s0  (
+	.D(\official/n492_5 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(GND),
+	.Q(rgb_Z[15])
+);
+defparam \official/rgb_15_s0 .INIT=1'b0;
+DFFCE \official/rgb_10_s0  (
+	.D(\official/n498_5 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(GND),
+	.Q(rgb_Z[10])
+);
+defparam \official/rgb_10_s0 .INIT=1'b0;
+DFFRE \official/rgb_4_s0  (
+	.D(\official/n653_3 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(rgb_Z[4])
+);
+defparam \official/rgb_4_s0 .INIT=1'b0;
+DFFRE \official/TFT_de_s0  (
+	.D(\official/active ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(de)
+);
+defparam \official/TFT_de_s0 .INIT=1'b0;
+DFFRE \official/TFT_hs_s0  (
+	.D(\official/n241_49 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(hs)
+);
+defparam \official/TFT_hs_s0 .INIT=1'b0;
+DFFRE \official/TFT_vs_s0  (
+	.D(\official/n242_52 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(vs)
+);
+defparam \official/TFT_vs_s0 .INIT=1'b0;
+DFFCE \official/tft_ready_1_s0  (
+	.D(\official/tft_ready [0]),
+	.CLK(pclk),
+	.CE(VCC),
+	.CLEAR(\official/n10_6 ),
+	.Q(\official/tft_ready [1])
+);
+defparam \official/tft_ready_1_s0 .INIT=1'b0;
+DFFRE \official/portrait_q_s1  (
+	.D(\official/n455_5 ),
+	.CLK(pclk),
+	.CE(\official/n668_7 ),
+	.RESET(\official/n467_5 ),
+	.Q(led_d_0[6])
+);
+defparam \official/portrait_q_s1 .INIT=1'b0;
+DFFRE \official/mode_frames_1_s1  (
+	.D(\official/n376_10 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [1])
+);
+defparam \official/mode_frames_1_s1 .INIT=1'b0;
+DFFRE \official/mode_frames_0_s1  (
+	.D(\official/n377_11 ),
+	.CLK(pclk),
+	.CE(VCC),
+	.RESET(\official/n467_5 ),
+	.Q(\official/mode_frames [0])
+);
+defparam \official/mode_frames_0_s1 .INIT=1'b0;
+MULT12X12 \official/n215_s  (
+	.DOUT({\official/DOUT [23:11], \official/n205_2 , \official/n206_2 , \official/n207_2 , \official/n208_2 , \official/n209_2 , \official/n210_2 , \official/n211_2 , \official/n212_2 , \official/n213_2 , \official/n214_2 , \official/n215_3 }),
+	.A({GND, GND, GND, GND, \official/n455_5 , VCC, led_d_0[6], led_d_0[6], VCC, GND, GND, GND}),
+	.B({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, VCC, VCC}),
+	.CLK({GND, GND}),
+	.CE({VCC, VCC}),
+	.RESET({GND, GND})
+);
+defparam \official/n215_s .OREG_CLK="BYPASS";
+defparam \official/n215_s .OREG_CE="CE0";
+defparam \official/n215_s .OREG_RESET="RESET0";
+defparam \official/n215_s .MULT_RESET_MODE="SYNC";
+defparam \official/n215_s .AREG_CLK="BYPASS";
+defparam \official/n215_s .AREG_CE="CE0";
+defparam \official/n215_s .AREG_RESET="RESET0";
+defparam \official/n215_s .BREG_CLK="BYPASS";
+defparam \official/n215_s .BREG_CE="CE0";
+defparam \official/n215_s .BREG_RESET="RESET0";
+defparam \official/n215_s .PREG_CLK="BYPASS";
+defparam \official/n215_s .PREG_CE="CE0";
+defparam \official/n215_s .PREG_RESET="RESET0";
+ALU \official/n422_s  (
+	.I0(\official/h [1]),
+	.I1(\official/h [0]),
+	.I3(VCC),
+	.CIN(GND),
+	.COUT(\official/n422_2 ),
+	.SUM(\official/n422_1 )
+);
+defparam \official/n422_s .ALU_MODE=0;
+ALU \official/n421_s  (
+	.I0(GND),
+	.I1(\official/h [2]),
+	.I3(VCC),
+	.CIN(\official/n422_2 ),
+	.COUT(\official/n421_2 ),
+	.SUM(\official/n421_1 )
+);
+defparam \official/n421_s .ALU_MODE=0;
+ALU \official/n420_s  (
+	.I0(GND),
+	.I1(\official/h [3]),
+	.I3(VCC),
+	.CIN(\official/n421_2 ),
+	.COUT(\official/n420_2 ),
+	.SUM(\official/n420_1 )
+);
+defparam \official/n420_s .ALU_MODE=0;
+ALU \official/n419_s  (
+	.I0(GND),
+	.I1(\official/h [4]),
+	.I3(VCC),
+	.CIN(\official/n420_2 ),
+	.COUT(\official/n419_2 ),
+	.SUM(\official/n419_1 )
+);
+defparam \official/n419_s .ALU_MODE=0;
+ALU \official/n418_s  (
+	.I0(GND),
+	.I1(\official/h [5]),
+	.I3(VCC),
+	.CIN(\official/n419_2 ),
+	.COUT(\official/n418_2 ),
+	.SUM(\official/n418_1 )
+);
+defparam \official/n418_s .ALU_MODE=0;
+ALU \official/n417_s  (
+	.I0(GND),
+	.I1(\official/h [6]),
+	.I3(VCC),
+	.CIN(\official/n418_2 ),
+	.COUT(\official/n417_2 ),
+	.SUM(\official/n417_1 )
+);
+defparam \official/n417_s .ALU_MODE=0;
+ALU \official/n416_s  (
+	.I0(GND),
+	.I1(\official/h [7]),
+	.I3(VCC),
+	.CIN(\official/n417_2 ),
+	.COUT(\official/n416_2 ),
+	.SUM(\official/n416_1 )
+);
+defparam \official/n416_s .ALU_MODE=0;
+ALU \official/n415_s  (
+	.I0(GND),
+	.I1(\official/h [8]),
+	.I3(VCC),
+	.CIN(\official/n416_2 ),
+	.COUT(\official/n415_2 ),
+	.SUM(\official/n415_1 )
+);
+defparam \official/n415_s .ALU_MODE=0;
+ALU \official/n414_s  (
+	.I0(GND),
+	.I1(\official/h [9]),
+	.I3(VCC),
+	.CIN(\official/n415_2 ),
+	.COUT(\official/n414_2 ),
+	.SUM(\official/n414_1 )
+);
+defparam \official/n414_s .ALU_MODE=0;
+ALU \official/n413_s  (
+	.I0(GND),
+	.I1(\official/h [10]),
+	.I3(VCC),
+	.CIN(\official/n414_2 ),
+	.COUT(\official/n413_0_COUT ),
+	.SUM(\official/n413_1 )
+);
+defparam \official/n413_s .ALU_MODE=0;
+ALU \official/x_0_s  (
+	.I0(\official/h [0]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(VCC),
+	.COUT(\official/x_0_3 ),
+	.SUM(\official/x [0])
+);
+defparam \official/x_0_s .ALU_MODE=0;
+ALU \official/x_1_s  (
+	.I0(GND),
+	.I1(\official/h [1]),
+	.I3(VCC),
+	.CIN(\official/x_0_3 ),
+	.COUT(\official/x_1_3 ),
+	.SUM(\official/x [1])
+);
+defparam \official/x_1_s .ALU_MODE=0;
+ALU \official/x_2_s  (
+	.I0(\official/h [2]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/x_1_3 ),
+	.COUT(\official/x_2_3 ),
+	.SUM(\official/x [2])
+);
+defparam \official/x_2_s .ALU_MODE=0;
+ALU \official/x_3_s  (
+	.I0(VCC),
+	.I1(\official/h [3]),
+	.I3(VCC),
+	.CIN(\official/x_2_3 ),
+	.COUT(\official/x_3_3 ),
+	.SUM(\official/x [3])
+);
+defparam \official/x_3_s .ALU_MODE=0;
+ALU \official/x_4_s  (
+	.I0(\official/h [4]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/x_3_3 ),
+	.COUT(\official/x_4_3 ),
+	.SUM(\official/x [4])
+);
+defparam \official/x_4_s .ALU_MODE=0;
+ALU \official/x_6_s  (
+	.I0(\official/h [6]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/x_5_6 ),
+	.COUT(\official/x_6_3 ),
+	.SUM(\official/x [6])
+);
+defparam \official/x_6_s .ALU_MODE=0;
+ALU \official/x_7_s  (
+	.I0(\official/h [7]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/x_6_3 ),
+	.COUT(\official/x_7_3 ),
+	.SUM(\official/x [7])
+);
+defparam \official/x_7_s .ALU_MODE=0;
+ALU \official/x_8_s  (
+	.I0(VCC),
+	.I1(\official/h [8]),
+	.I3(VCC),
+	.CIN(\official/x_7_3 ),
+	.COUT(\official/x_8_3 ),
+	.SUM(\official/x [8])
+);
+defparam \official/x_8_s .ALU_MODE=0;
+ALU \official/x_9_s  (
+	.I0(VCC),
+	.I1(\official/h [9]),
+	.I3(VCC),
+	.CIN(\official/x_8_3 ),
+	.COUT(\official/x_9_3 ),
+	.SUM(\official/x [9])
+);
+defparam \official/x_9_s .ALU_MODE=0;
+ALU \official/x_10_s  (
+	.I0(VCC),
+	.I1(\official/h [10]),
+	.I3(VCC),
+	.CIN(\official/x_9_3 ),
+	.COUT(\official/x_10_0_COUT ),
+	.SUM(\official/x [10])
+);
+defparam \official/x_10_s .ALU_MODE=0;
+ALU \official/y_1_s  (
+	.I0(GND),
+	.I1(\official/v [1]),
+	.I3(VCC),
+	.CIN(\official/y_0_6 ),
+	.COUT(\official/y_1_3 ),
+	.SUM(\official/y [1])
+);
+defparam \official/y_1_s .ALU_MODE=0;
+ALU \official/y_3_s  (
+	.I0(VCC),
+	.I1(\official/v [3]),
+	.I3(VCC),
+	.CIN(\official/y_2_6 ),
+	.COUT(\official/y_3_3 ),
+	.SUM(\official/y [3])
+);
+defparam \official/y_3_s .ALU_MODE=0;
+ALU \official/y_5_s  (
+	.I0(\official/v [5]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/y_4_6 ),
+	.COUT(\official/y_5_3 ),
+	.SUM(\official/y [5])
+);
+defparam \official/y_5_s .ALU_MODE=0;
+ALU \official/y_8_s  (
+	.I0(VCC),
+	.I1(\official/v [8]),
+	.I3(VCC),
+	.CIN(\official/y_7_6 ),
+	.COUT(\official/y_8_3 ),
+	.SUM(\official/y [8])
+);
+defparam \official/y_8_s .ALU_MODE=0;
+ALU \official/y_9_s  (
+	.I0(VCC),
+	.I1(\official/v [9]),
+	.I3(VCC),
+	.CIN(\official/y_8_3 ),
+	.COUT(\official/y_9_3 ),
+	.SUM(\official/y [9])
+);
+defparam \official/y_9_s .ALU_MODE=0;
+ALU \official/n216_s28  (
+	.I0(\official/n216_55 ),
+	.I1(\official/x [1]),
+	.I3(GND),
+	.CIN(\official/n214_2 ),
+	.COUT(\official/n216_35 ),
+	.SUM(\official/n216_29_SUM )
+);
+defparam \official/n216_s28 .ALU_MODE=1;
+ALU \official/n216_s29  (
+	.I0(\official/n213_2 ),
+	.I1(\official/x [2]),
+	.I3(GND),
+	.CIN(\official/n216_35 ),
+	.COUT(\official/n216_37 ),
+	.SUM(\official/n216_30_SUM )
+);
+defparam \official/n216_s29 .ALU_MODE=1;
+ALU \official/n216_s30  (
+	.I0(\official/n212_2 ),
+	.I1(\official/x [3]),
+	.I3(GND),
+	.CIN(\official/n216_37 ),
+	.COUT(\official/n216_39 ),
+	.SUM(\official/n216_31_SUM )
+);
+defparam \official/n216_s30 .ALU_MODE=1;
+ALU \official/n216_s31  (
+	.I0(\official/n211_2 ),
+	.I1(\official/x [4]),
+	.I3(GND),
+	.CIN(\official/n216_39 ),
+	.COUT(\official/n216_41 ),
+	.SUM(\official/n216_32_SUM )
+);
+defparam \official/n216_s31 .ALU_MODE=1;
+ALU \official/n216_s32  (
+	.I0(\official/n210_2 ),
+	.I1(\official/x [5]),
+	.I3(GND),
+	.CIN(\official/n216_41 ),
+	.COUT(\official/n216_43 ),
+	.SUM(\official/n216_33_SUM )
+);
+defparam \official/n216_s32 .ALU_MODE=1;
+ALU \official/n216_s33  (
+	.I0(\official/n209_2 ),
+	.I1(\official/x [6]),
+	.I3(GND),
+	.CIN(\official/n216_43 ),
+	.COUT(\official/n216_45 ),
+	.SUM(\official/n216_34_SUM )
+);
+defparam \official/n216_s33 .ALU_MODE=1;
+ALU \official/n216_s34  (
+	.I0(\official/n208_2 ),
+	.I1(\official/x [7]),
+	.I3(GND),
+	.CIN(\official/n216_45 ),
+	.COUT(\official/n216_47 ),
+	.SUM(\official/n216_35_SUM )
+);
+defparam \official/n216_s34 .ALU_MODE=1;
+ALU \official/n216_s35  (
+	.I0(\official/n207_2 ),
+	.I1(\official/x [8]),
+	.I3(GND),
+	.CIN(\official/n216_47 ),
+	.COUT(\official/n216_49 ),
+	.SUM(\official/n216_36_SUM )
+);
+defparam \official/n216_s35 .ALU_MODE=1;
+ALU \official/n216_s36  (
+	.I0(\official/n206_2 ),
+	.I1(\official/x [9]),
+	.I3(GND),
+	.CIN(\official/n216_49 ),
+	.COUT(\official/n216_51 ),
+	.SUM(\official/n216_37_SUM )
+);
+defparam \official/n216_s36 .ALU_MODE=1;
+ALU \official/n216_s37  (
+	.I0(\official/n205_2 ),
+	.I1(\official/x [10]),
+	.I3(GND),
+	.CIN(\official/n216_51 ),
+	.COUT(\official/n216_53 ),
+	.SUM(\official/n216_38_SUM )
+);
+defparam \official/n216_s37 .ALU_MODE=1;
+ALU \official/x_5_s1  (
+	.I0(\official/h [5]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/x_4_3 ),
+	.COUT(\official/x_5_6 ),
+	.SUM(\official/x [5])
+);
+defparam \official/x_5_s1 .ALU_MODE=1;
+ALU \official/y_0_s1  (
+	.I0(\official/v [0]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(VCC),
+	.COUT(\official/y_0_6 ),
+	.SUM(\official/y [0])
+);
+defparam \official/y_0_s1 .ALU_MODE=1;
+ALU \official/y_2_s1  (
+	.I0(\official/v [2]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/y_1_3 ),
+	.COUT(\official/y_2_6 ),
+	.SUM(\official/y [2])
+);
+defparam \official/y_2_s1 .ALU_MODE=1;
+ALU \official/y_4_s1  (
+	.I0(\official/v [4]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/y_3_3 ),
+	.COUT(\official/y_4_6 ),
+	.SUM(\official/y [4])
+);
+defparam \official/y_4_s1 .ALU_MODE=1;
+ALU \official/y_6_s1  (
+	.I0(\official/v [6]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/y_5_3 ),
+	.COUT(\official/y_6_6 ),
+	.SUM(\official/y [6])
+);
+defparam \official/y_6_s1 .ALU_MODE=1;
+ALU \official/y_7_s1  (
+	.I0(\official/v [7]),
+	.I1(led_d_0[6]),
+	.I3(VCC),
+	.CIN(\official/y_6_6 ),
+	.COUT(\official/y_7_6 ),
+	.SUM(\official/y [7])
+);
+defparam \official/y_7_s1 .ALU_MODE=1;
+INV \official/n10_s2  (
+	.I(\official/rLockOut ),
+	.O(\official/n10_6 )
+);
+INV \official/n467_s2  (
+	.I(\official/tft_ready [1]),
+	.O(\official/n467_5 )
+);
+LUT1 \official/n455_s2  (
+	.I0(led_d_0[6]),
+	.F(\official/n455_5 )
+);
+defparam \official/n455_s2 .INIT=2'h1;
+LUT1 \official/n423_s2  (
+	.I0(\official/h [0]),
+	.F(\official/n423_6 )
+);
+defparam \official/n423_s2 .INIT=2'h1;
+PLLA \official/Gowin_PLL/u_pll/PLLA_inst  (
+	.RESET(\official/Gowin_PLL/rRstOut ),
+	.RESET_I(GND),
+	.CLKIN(clk50M_d),
+	.CLKFB(GND),
+	.PSDIR(GND),
+	.PSPULSE(GND),
+	.PLLPWD(GND),
+	.RESET_O(GND),
+	.SSCPOL(GND),
+	.SSCON(GND),
+	.MDCLK(clk50M_d),
+	.MDAINC(\official/Gowin_PLL/rMdInc ),
+	.PSSEL({GND, GND, GND}),
+	.SSCMDSEL({GND, GND, GND, GND, GND, GND, GND}),
+	.SSCMDSEL_FRAC({GND, GND, GND}),
+	.MDOPC({\official/Gowin_PLL/rMdOpc [1:0]}),
+	.MDWDI({\official/Gowin_PLL/rMdDOut [7:0]}),
+	.MDRDO({\official/Gowin_PLL/wMdQOut [7:0]}),
+	.LOCK(\official/Gowin_PLL/pll_lock ),
+	.CLKOUT0(pclk),
+	.CLKOUT1(\official/Gowin_PLL/u_pll/clkout1 ),
+	.CLKOUT2(\official/Gowin_PLL/u_pll/clkout2 ),
+	.CLKOUT3(\official/Gowin_PLL/u_pll/clkout3 ),
+	.CLKOUT4(\official/Gowin_PLL/u_pll/clkout4 ),
+	.CLKOUT5(\official/Gowin_PLL/u_pll/clkout5 ),
+	.CLKOUT6(\official/Gowin_PLL/u_pll/clkout6 ),
+	.CLKFBOUT(\official/Gowin_PLL/u_pll/clkfbout )
+);
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKFB_SEL="INTERNAL";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .IDIV_SEL=2;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .FBDIV_SEL=1;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .FCLKIN="50";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_DPA_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ICP_SEL=6'bXXXXXX;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .RESET_I_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV0_SEL=25;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV1_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV2_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV3_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV4_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV5_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV6_SEL=128;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .MDIV_SEL=33;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .MDIV_FRAC_SEL=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .ODIV0_FRAC_SEL=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT0_EN="TRUE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT1_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT2_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT3_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT4_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT5_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT6_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT0_DT_DIR=1'b1;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT1_DT_DIR=1'b1;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT2_DT_DIR=1'b1;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT3_DT_DIR=1'b1;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT0_DT_STEP=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT1_DT_STEP=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT2_DT_STEP=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT3_DT_STEP=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK0_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK0_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK1_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK1_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK2_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK2_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK3_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK3_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK4_IN_SEL=2'b00;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK4_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK5_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK5_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK6_IN_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLK6_OUT_SEL=1'b0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT0_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT0_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT1_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT1_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT2_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT2_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT3_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT3_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT4_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT4_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT5_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT5_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT6_PE_COARSE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .CLKOUT6_PE_FINE=0;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE0_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE1_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE2_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE3_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE4_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE5_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DYN_PE6_SEL="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE0_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE1_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE2_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE3_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE4_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE5_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .DE6_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .RESET_O_EN="FALSE";
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .LPF_RES=3'bXXX;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .LPF_CAP=2'b00;
+defparam \official/Gowin_PLL/u_pll/PLLA_inst .SSC_EN="FALSE";
+LUT4 \official/Gowin_PLL/u_pll_init/wIsStep5_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.F(\official/Gowin_PLL/u_pll_init/wIsStep5 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wIsStep5_s2 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/wIsStep8_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.F(\official/Gowin_PLL/u_pll_init/wIsStep8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wIsStep8_s1 .INIT=16'h0100;
+LUT4 \official/Gowin_PLL/u_pll_init/n3880_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/n3880_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3880_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3880_s0 .INIT=16'h0100;
+LUT2 \official/Gowin_PLL/u_pll_init/n6404_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rEnable [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n6404_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6404_s1 .INIT=4'hB;
+LUT2 \official/Gowin_PLL/u_pll_init/n3904_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3904_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n3904_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3904_s0 .INIT=4'h1;
+LUT2 \official/Gowin_PLL/u_pll_init/n3932_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I1(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3932_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3932_s1 .INIT=4'h4;
+LUT4 \official/Gowin_PLL/u_pll_init/n3944_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3944_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n3944_5 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomAddr [5]),
+	.I3(\official/Gowin_PLL/u_pll_init/n3932_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3944_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3944_s0 .INIT=16'hAA3C;
+LUT4 \official/Gowin_PLL/u_pll_init/n3945_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3945_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomAddr [4]),
+	.I2(\official/Gowin_PLL/u_pll_init/n3945_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n3932_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3945_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3945_s0 .INIT=16'hAA3C;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3946_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n3946_5 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n3946_12 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n3932_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s0 .INIT=16'h440F;
+LUT4 \official/Gowin_PLL/u_pll_init/n3947_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3947_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomAddr [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/n3947_5 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n3932_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s0 .INIT=16'hAA3C;
+LUT4 \official/Gowin_PLL/u_pll_init/n4004_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4004_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4004_s1 .INIT=16'hE7FF;
+LUT3 \official/Gowin_PLL/u_pll_init/n6420_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4004_4 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockReg ),
+	.I2(\official/Gowin_PLL/u_pll_init/rEnable [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n6420_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6420_s1 .INIT=8'hBF;
+LUT4 \official/Gowin_PLL/u_pll_init/n6436_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6436_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6436_s0 .INIT=16'h4000;
+LUT4 \official/Gowin_PLL/u_pll_init/n6437_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6437_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6437_s0 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/n6438_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6438_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6438_s0 .INIT=16'h4000;
+LUT4 \official/Gowin_PLL/u_pll_init/n6439_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6439_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6439_s0 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/n6440_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6440_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6440_s0 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/n6441_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/n6436_4 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6441_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6441_s0 .INIT=16'h0100;
+LUT4 \official/Gowin_PLL/u_pll_init/n4346_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/wMdAddrNext [5]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4346_5 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4346_6 ),
+	.I3(\official/Gowin_PLL/rMdInc ),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s1 .INIT=16'h44F0;
+LUT2 \official/Gowin_PLL/u_pll_init/n4385_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [12]),
+	.I1(\official/Gowin_PLL/wMdQOut [4]),
+	.F(\official/Gowin_PLL/u_pll_init/n4385_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4385_s0 .INIT=4'h4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4389_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [8]),
+	.I1(\official/Gowin_PLL/wMdQOut [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4389_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4389_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4390_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [9]),
+	.I1(\official/Gowin_PLL/wMdQOut [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n4390_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4390_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4391_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [10]),
+	.I1(\official/Gowin_PLL/wMdQOut [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4391_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4391_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4392_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [11]),
+	.I1(\official/Gowin_PLL/wMdQOut [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n4392_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4392_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4394_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [13]),
+	.I1(\official/Gowin_PLL/wMdQOut [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n4394_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4394_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4395_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [14]),
+	.I1(\official/Gowin_PLL/wMdQOut [6]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [6]),
+	.F(\official/Gowin_PLL/u_pll_init/n4395_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4395_s0 .INIT=8'hF4;
+LUT3 \official/Gowin_PLL/u_pll_init/n4396_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [15]),
+	.I1(\official/Gowin_PLL/wMdQOut [7]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [7]),
+	.F(\official/Gowin_PLL/u_pll_init/n4396_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4396_s0 .INIT=8'hF4;
+LUT4 \official/Gowin_PLL/u_pll_init/n4410_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4410_4 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4410_3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4410_s0 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/n4327_s21  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4327_38 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4327_39 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n4327_40 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4327_37 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4327_s21 .INIT=16'hFF10;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_0_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_0_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_0_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s5 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_1_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_1_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_1_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_1_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_2_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_2_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_2_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_2_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_3_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_3_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_3_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_3_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_5_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_5_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_5_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_5_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_6_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_6_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_6_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_6_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_7_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_7_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_7_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_7_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_8_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_8_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_8_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_8_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_9_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_9_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_9_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_9_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_10_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_10_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_10_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_10_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_11_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_11_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_11_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_11_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_12_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_12_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_12_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_12_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_13_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_13_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_13_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_13_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_14_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_14_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_14_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_14_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_15_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_15_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_15_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_15_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_16_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_16_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_16_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_16_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_17_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_17_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_17_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_17_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_18_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_18_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_18_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_18_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_19_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_19_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_19_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_19_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_20_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_20_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_20_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_20_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/rRomDReg_24_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomDReg_24_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomDReg_24_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_24_s4 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/wMdAddrNext_1_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_1_s3 .INIT=4'h6;
+LUT3 \official/Gowin_PLL/u_pll_init/wMdAddrNext_2_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [2]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_2_s3 .INIT=8'h78;
+LUT4 \official/Gowin_PLL/u_pll_init/wMdAddrNext_3_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [3]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_3_s3 .INIT=16'h7F80;
+LUT2 \official/Gowin_PLL/u_pll_init/wMdAddrNext_4_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_4_s3 .INIT=4'h6;
+LUT3 \official/Gowin_PLL/u_pll_init/wMdAddrNext_5_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [5]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_5_s3 .INIT=8'h78;
+LUT4 \official/Gowin_PLL/u_pll_init/wMdAddrNext_6_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [5]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I2(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [6]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_6_s3 .INIT=16'h7F80;
+LUT2 \official/Gowin_PLL/u_pll_init/wMdAddrNext_7_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/wMdAddrNext_7_6 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [7]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_7_s2 .INIT=4'h6;
+LUT4 \official/Gowin_PLL/u_pll_init/n4329_s21  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4329_34 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n4329_33 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4329_s21 .INIT=16'h070C;
+LUT4 \official/Gowin_PLL/u_pll_init/n4328_s22  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4327_38 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4328_37 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n4328_36 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4328_s22 .INIT=16'h008F;
+LUT3 \official/Gowin_PLL/u_pll_init/n4111_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4111_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4111_s1 .INIT=8'h41;
+LUT4 \official/Gowin_PLL/u_pll_init/n4110_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4110_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4110_s1 .INIT=16'h0E01;
+LUT3 \official/Gowin_PLL/u_pll_init/n4109_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4109_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n4109_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4109_s1 .INIT=8'h14;
+LUT3 \official/Gowin_PLL/u_pll_init/n4108_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [4]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4108_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4108_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4108_s1 .INIT=8'h14;
+LUT4 \official/Gowin_PLL/u_pll_init/n4107_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4108_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n4107_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4107_s1 .INIT=16'h0B04;
+LUT3 \official/Gowin_PLL/u_pll_init/n4105_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4105_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [7]),
+	.F(\official/Gowin_PLL/u_pll_init/n4105_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4105_s1 .INIT=8'h14;
+LUT3 \official/Gowin_PLL/u_pll_init/n4104_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4104_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4104_s1 .INIT=8'h14;
+LUT4 \official/Gowin_PLL/u_pll_init/n4103_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [9]),
+	.F(\official/Gowin_PLL/u_pll_init/n4103_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4103_s1 .INIT=16'h0B04;
+LUT3 \official/Gowin_PLL/u_pll_init/n4099_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [13]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4099_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4099_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4099_s1 .INIT=8'h14;
+LUT4 \official/Gowin_PLL/u_pll_init/n4098_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [15]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [13]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4099_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [14]),
+	.F(\official/Gowin_PLL/u_pll_init/n4098_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4098_s1 .INIT=16'hCF20;
+LUT3 \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s9  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt_15_18 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [15]),
+	.I2(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_15_17 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s9 .INIT=8'hF4;
+LUT4 \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s9  (
+	.I0(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt_12_18 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [12]),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_12_17 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s9 .INIT=16'hABBA;
+LUT4 \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s9  (
+	.I0(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [11]),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt_11_18 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_11_17 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s9 .INIT=16'hABBA;
+LUT4 \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s9  (
+	.I0(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt_10_18 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [10]),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_10_17 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s9 .INIT=16'hABBA;
+LUT4 \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s11  (
+	.I0(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_21 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [6]),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_20 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s11 .INIT=16'hABBA;
+LUT4 \official/Gowin_PLL/u_pll_init/n4330_s22  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4330_37 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I3(\official/Gowin_PLL/u_pll_init/n4330_38 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4330_36 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4330_s22 .INIT=16'hFFF4;
+LUT3 \official/Gowin_PLL/u_pll_init/rLocked_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLockCnt [11]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [12]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLocked_9 ),
+	.F(\official/Gowin_PLL/u_pll_init/rLocked_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLocked_s3 .INIT=8'h01;
+LUT2 \official/Gowin_PLL/u_pll_init/n3972_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rReqCnt [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n3972_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3972_s0 .INIT=4'h6;
+LUT3 \official/Gowin_PLL/u_pll_init/n3971_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rReqCnt [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n3971_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3971_s0 .INIT=8'h78;
+LUT2 \official/Gowin_PLL/u_pll_init/n3988_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3988_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3988_s0 .INIT=4'h6;
+LUT3 \official/Gowin_PLL/u_pll_init/n3987_s0  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLoopCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n3987_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3987_s0 .INIT=8'h78;
+LUT2 \official/Gowin_PLL/u_pll_init/wIsStep3_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/wIsStep3_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wIsStep3_s3 .INIT=4'h8;
+LUT3 \official/Gowin_PLL/u_pll_init/n3880_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n3880_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3880_s1 .INIT=8'h01;
+LUT4 \official/Gowin_PLL/u_pll_init/n3904_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n3904_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3904_s1 .INIT=16'hEFF3;
+LUT3 \official/Gowin_PLL/u_pll_init/n3944_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3944_6 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/n3944_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3944_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3944_s1 .INIT=8'h10;
+LUT2 \official/Gowin_PLL/u_pll_init/n3944_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomAddr [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/n3945_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3944_5 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3944_s2 .INIT=4'h8;
+LUT4 \official/Gowin_PLL/u_pll_init/n3945_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/n3944_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n3945_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3945_s1 .INIT=16'h008F;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.I1(\official/Gowin_PLL/u_pll_init/n3946_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/n3946_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s1 .INIT=16'h0ECC;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3946_9 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n3946_10 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_5 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s2 .INIT=16'h3CF5;
+LUT2 \official/Gowin_PLL/u_pll_init/n3947_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3947_6 ),
+	.I1(\official/Gowin_PLL/u_pll_init/n3947_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s1 .INIT=4'h4;
+LUT2 \official/Gowin_PLL/u_pll_init/n3947_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_5 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s2 .INIT=4'h8;
+LUT2 \official/Gowin_PLL/u_pll_init/n6436_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLocked ),
+	.I1(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n6436_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n6436_s1 .INIT=4'h8;
+LUT4 \official/Gowin_PLL/u_pll_init/n4346_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [20]),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext [4]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4346_7 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n4346_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_5 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s2 .INIT=16'h002B;
+LUT4 \official/Gowin_PLL/u_pll_init/n4346_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4298_34 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [6]),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [7]),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s3 .INIT=16'h0001;
+LUT2 \official/Gowin_PLL/u_pll_init/n4410_s1  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLocked ),
+	.F(\official/Gowin_PLL/u_pll_init/n4410_4 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4410_s1 .INIT=4'h8;
+LUT3 \official/Gowin_PLL/u_pll_init/n4327_s22  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLocked ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4327_38 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4327_s22 .INIT=8'h10;
+LUT4 \official/Gowin_PLL/u_pll_init/n4327_s23  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLastStep ),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4327_39 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4327_s23 .INIT=16'h00EF;
+LUT4 \official/Gowin_PLL/u_pll_init/n4327_s24  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLastStep ),
+	.I1(\official/Gowin_PLL/u_pll_init/n3880_3 ),
+	.I2(\official/Gowin_PLL/u_pll_init/wIsStep8 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n4327_40 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4327_s24 .INIT=16'h8F00;
+LUT4 \official/Gowin_PLL/u_pll_init/wMdAddrNext_4_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [3]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_4_s4 .INIT=16'h8000;
+LUT4 \official/Gowin_PLL/u_pll_init/wMdAddrNext_7_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [5]),
+	.I1(\official/Gowin_PLL/u_pll_init/rMdAddr [6]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I3(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext_7_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_7_s3 .INIT=16'h8000;
+LUT4 \official/Gowin_PLL/u_pll_init/n4329_s22  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLocked ),
+	.I1(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4329_35 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4329_34 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4329_s22 .INIT=16'hEEF0;
+LUT4 \official/Gowin_PLL/u_pll_init/n4328_s23  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4328_38 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n4328_37 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4328_s23 .INIT=16'hFB0F;
+LUT4 \official/Gowin_PLL/u_pll_init/n4112_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [13]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4112_8 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4112_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4112_s2 .INIT=16'h1000;
+LUT3 \official/Gowin_PLL/u_pll_init/n4109_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4109_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4109_s2 .INIT=8'h01;
+LUT4 \official/Gowin_PLL/u_pll_init/n4108_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n4108_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4108_s2 .INIT=16'h0001;
+LUT4 \official/Gowin_PLL/u_pll_init/n4105_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [6]),
+	.I3(\official/Gowin_PLL/u_pll_init/n4108_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4105_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4105_s2 .INIT=16'h0100;
+LUT4 \official/Gowin_PLL/u_pll_init/n4104_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4104_8 ),
+	.I3(\official/Gowin_PLL/u_pll_init/n4108_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4104_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4104_s2 .INIT=16'h1000;
+LUT3 \official/Gowin_PLL/u_pll_init/n4099_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4099_8 ),
+	.I2(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4099_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4099_s2 .INIT=8'h40;
+LUT3 \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s10  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [13]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [14]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4099_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_15_18 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s10 .INIT=8'h10;
+LUT2 \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s10  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [11]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt_11_18 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_12_18 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s10 .INIT=4'h4;
+LUT4 \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s10  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [9]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [10]),
+	.I3(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_11_18 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s10 .INIT=16'h0100;
+LUT3 \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s10  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [8]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [9]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4104_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_10_18 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s10 .INIT=8'h10;
+LUT3 \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s12  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4108_7 ),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_21 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s12 .INIT=8'h10;
+LUT4 \official/Gowin_PLL/u_pll_init/n4330_s23  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLastStep ),
+	.I1(\official/Gowin_PLL/u_pll_init/rLocked ),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/wIsStep3_6 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4330_37 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4330_s23 .INIT=16'hB000;
+LUT4 \official/Gowin_PLL/u_pll_init/n4330_s24  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4330_39 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n4330_38 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4330_s24 .INIT=16'h0733;
+LUT4 \official/Gowin_PLL/u_pll_init/rLocked_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLocked_10 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [8]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLockCnt [9]),
+	.I3(\official/Gowin_PLL/u_pll_init/rLockCnt [10]),
+	.F(\official/Gowin_PLL/u_pll_init/rLocked_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLocked_s4 .INIT=16'h4000;
+LUT4 \official/Gowin_PLL/u_pll_init/n3944_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n3944_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3944_s3 .INIT=16'hCBF5;
+LUT4 \official/Gowin_PLL/u_pll_init/n3944_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3946_10 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n3944_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3944_s4 .INIT=16'h3DDF;
+LUT2 \official/Gowin_PLL/u_pll_init/n3946_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s4 .INIT=4'h4;
+LUT2 \official/Gowin_PLL/u_pll_init/n3946_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s5 .INIT=4'h8;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s6  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s6 .INIT=16'h2BBB;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s7  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s7 .INIT=16'h72C3;
+LUT4 \official/Gowin_PLL/u_pll_init/n3947_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/n3947_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s3 .INIT=16'h030A;
+LUT4 \official/Gowin_PLL/u_pll_init/n3947_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/n3947_9 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/n3946_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s4 .INIT=16'h6CF5;
+LUT3 \official/Gowin_PLL/u_pll_init/n4346_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4346_9 ),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [19]),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s4 .INIT=8'h8E;
+LUT4 \official/Gowin_PLL/u_pll_init/n4346_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext_4_8 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [6]),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [7]),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s5 .INIT=16'h7FF8;
+LUT3 \official/Gowin_PLL/u_pll_init/n4329_s23  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4346_6 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I2(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4329_35 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4329_s23 .INIT=8'h07;
+LUT3 \official/Gowin_PLL/u_pll_init/n4328_s24  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4346_6 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I2(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.F(\official/Gowin_PLL/u_pll_init/n4328_38 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4328_s24 .INIT=8'h0B;
+LUT3 \official/Gowin_PLL/u_pll_init/n4112_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [14]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [15]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4099_8 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4112_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4112_s3 .INIT=8'h10;
+LUT2 \official/Gowin_PLL/u_pll_init/n4104_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [6]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [7]),
+	.F(\official/Gowin_PLL/u_pll_init/n4104_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4104_s3 .INIT=4'h1;
+LUT4 \official/Gowin_PLL/u_pll_init/n4099_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rWaitCnt [9]),
+	.I1(\official/Gowin_PLL/u_pll_init/rWaitCnt [10]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt [11]),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [12]),
+	.F(\official/Gowin_PLL/u_pll_init/n4099_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4099_s3 .INIT=16'h0001;
+LUT3 \official/Gowin_PLL/u_pll_init/n4330_s25  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/n4346_6 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.F(\official/Gowin_PLL/u_pll_init/n4330_39 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4330_s25 .INIT=8'h10;
+LUT4 \official/Gowin_PLL/u_pll_init/rLocked_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLockCnt [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [5]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLockCnt [6]),
+	.I3(\official/Gowin_PLL/u_pll_init/rLockCnt [7]),
+	.F(\official/Gowin_PLL/u_pll_init/rLocked_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLocked_s5 .INIT=16'h0001;
+LUT4 \official/Gowin_PLL/u_pll_init/n3947_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [3]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s5 .INIT=16'hB033;
+LUT4 \official/Gowin_PLL/u_pll_init/n3947_s6  (
+	.I0(\official/Gowin_PLL/u_pll_init/rChkFlag [5]),
+	.I1(\official/Gowin_PLL/u_pll_init/rChkFlag [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rChkFlag [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rChkFlag [1]),
+	.F(\official/Gowin_PLL/u_pll_init/n3947_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3947_s6 .INIT=16'hC5CC;
+LUT3 \official/Gowin_PLL/u_pll_init/n4346_s6  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [18]),
+	.I1(\official/Gowin_PLL/u_pll_init/wMdAddrNext [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/n4346_10 ),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s6 .INIT=8'h4D;
+LUT4 \official/Gowin_PLL/u_pll_init/n4346_s7  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [16]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [17]),
+	.I2(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4346_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4346_s7 .INIT=16'hE80C;
+LUT4 \official/Gowin_PLL/u_pll_init/n4006_s39  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLockCnt [11]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [12]),
+	.I2(\official/Gowin_PLL/u_pll_init/rLocked_9 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rLockCnt [13]),
+	.F(\official/Gowin_PLL/u_pll_init/n4006_64 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4006_s39 .INIT=16'h01FF;
+LUT4 \official/Gowin_PLL/u_pll_init/n3946_s8  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomAddr [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomAddr [1]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomAddr [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/rRomAddr [3]),
+	.F(\official/Gowin_PLL/u_pll_init/n3946_12 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3946_s8 .INIT=16'h807F;
+LUT4 \official/Gowin_PLL/u_pll_init/n3945_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomAddr [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomAddr [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomAddr [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/rRomAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3945_7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3945_s3 .INIT=16'h8000;
+LUT3 \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s13  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s13 .INIT=8'h40;
+LUT4 \official/Gowin_PLL/u_pll_init/wIsStep3_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/wIsStep3 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wIsStep3_s4 .INIT=16'h1000;
+LUT4 \official/Gowin_PLL/u_pll_init/n3948_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I1(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.I2(\official/Gowin_PLL/u_pll_init/rRomAddr [1]),
+	.I3(\official/Gowin_PLL/u_pll_init/rRomAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3948_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3948_s3 .INIT=16'h0BB0;
+LUT3 \official/Gowin_PLL/u_pll_init/n3949_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomAddr [0]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I2(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.F(\official/Gowin_PLL/u_pll_init/n3949_9 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3949_s3 .INIT=8'h45;
+LUT3 \official/Gowin_PLL/u_pll_init/rRomAddr_7_s4  (
+	.I0(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [24]),
+	.I2(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.F(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_7_s4 .INIT=8'hBA;
+LUT4 \official/Gowin_PLL/u_pll_init/n4341_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4341_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4341_s2 .INIT=16'hEFFF;
+LUT4 \official/Gowin_PLL/u_pll_init/n4112_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/n4112_7 ),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I2(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.I3(\official/Gowin_PLL/u_pll_init/rWaitCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4112_11 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4112_s5 .INIT=16'h3F40;
+LUT4 \official/Gowin_PLL/u_pll_init/wIsStep7_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/wIsStep7 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wIsStep7_s5 .INIT=16'h2000;
+LUT4 \official/Gowin_PLL/u_pll_init/rMdInc_s3  (
+	.I0(\official/Gowin_PLL/u_pll_init/rInitFsmC [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rInitFsmC [3]),
+	.I2(\official/Gowin_PLL/u_pll_init/rInitFsmC [0]),
+	.I3(\official/Gowin_PLL/u_pll_init/rInitFsmC [1]),
+	.F(\official/Gowin_PLL/u_pll_init/rMdInc_8 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdInc_s3 .INIT=16'hEFFF;
+DFFCE \official/Gowin_PLL/u_pll_init/rEnable_0_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(\official/Gowin_PLL/u_pll_init/rEnable [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rEnable_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rInitFsmC_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4327_37 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rInitFsmC [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rInitFsmC_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rInitFsmC_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4328_36 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rInitFsmC [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rInitFsmC_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rInitFsmC_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4329_33 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rInitFsmC [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rInitFsmC_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rInitFsmC_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4330_36 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rInitFsmC [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rInitFsmC_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomRd_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3904_3 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomRd )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomRd_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_24_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_24_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [24])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_24_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_20_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_20_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [20])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_20_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_19_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_19_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [19])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_19_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_18_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_18_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [18])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_18_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_17_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_17_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [17])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_17_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_16_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_16_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [16])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_16_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_15_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_15_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [15])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_15_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_14_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_14_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [14])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_14_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_13_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_13_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [13])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_13_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_12_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_12_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [12])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_12_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_11_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_11_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [11])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_11_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_10_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_10_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [10])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_10_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_9_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_9_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [9])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_9_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_8_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_8_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [8])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_8_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_7_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_7_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_7_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_6_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_6_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_6_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_5_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_5_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_3_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_2_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_1_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomData_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rRomDReg_0_10 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomRd ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomData [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomData_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rReqCnt_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3971_4 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rReqCnt [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rReqCnt_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rReqCnt_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3972_4 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rReqCnt [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rReqCnt_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rReqCnt_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3973_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rReqCnt [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rReqCnt_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLoopCnt_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3987_4 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep8 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLoopCnt [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLoopCnt_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLoopCnt_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3988_4 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep8 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLoopCnt [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLoopCnt_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLoopCnt_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n3989_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep8 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLoopCnt [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLoopCnt_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockReg_s0  (
+	.D(\official/Gowin_PLL/pll_lock ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockReg )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockReg_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_13_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4008_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [13])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_13_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_12_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4009_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [12])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_12_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_11_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4010_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [11])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_11_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_10_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4011_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [10])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_10_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_9_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4012_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [9])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_9_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_8_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4013_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [8])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_8_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_7_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4014_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_7_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_6_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4015_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_6_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_5_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4016_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_4_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4017_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_4_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4018_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4019_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4020_1 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockCnt_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4021_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n4006_64 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6420_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLockCnt [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockCnt_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_14_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4098_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [14])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_14_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_13_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4099_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [13])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_13_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_9_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4103_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [9])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_9_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_8_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4104_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [8])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_8_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_7_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4105_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_7_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_5_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4107_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_4_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4108_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_4_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4109_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4110_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4111_6 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep7 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_5_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6436_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_4_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6437_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_4_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_3_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6438_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_2_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6439_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_1_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6440_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rChkFlag_0_s0  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n6441_3 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rChkFlag [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rChkFlag_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdOpc_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4341_6 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/rMdOpc [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdOpc_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdOpc_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/rMdOpc [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdOpc_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdInc_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4346_4 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/rMdInc_8 ),
+	.Q(\official/Gowin_PLL/rMdInc )
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdInc_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_7_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [7]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_7_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_6_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [6]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_6_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_5_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [5]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_4_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [4]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_4_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [3]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [2]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext [1]),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdAddr_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/wMdAddrNext_0_10 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/rMdInc ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n6404_4 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rMdAddr [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdAddr_0_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_7_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4396_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [7])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_7_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_6_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4395_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_6_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_5_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4394_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_5_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_4_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4385_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_4_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_3_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4392_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_3_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_2_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4391_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_2_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4390_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rMdDOut_0_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4389_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/wIsStep5 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/rMdDOut [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rMdDOut_0_s0 .INIT=1'b0;
+DFFSE \official/Gowin_PLL/u_pll_init/rRstOut_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4004_4 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.SET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/rRstOut )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRstOut_s0 .INIT=1'b1;
+DFFRE \official/Gowin_PLL/u_pll_init/rLockOut_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/n4410_3 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n3880_3 ),
+	.Q(\official/rLockOut )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLockOut_s0 .INIT=1'b0;
+DFFCE \official/Gowin_PLL/u_pll_init/rEnable_1_s0  (
+	.D(\official/Gowin_PLL/u_pll_init/rEnable [0]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.CLEAR(n70_6),
+	.Q(\official/Gowin_PLL/u_pll_init/rEnable [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rEnable_1_s0 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_5_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3944_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [5])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_5_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_4_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3945_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [4])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_4_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_3_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3946_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [3])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_3_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_2_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3947_3 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [2])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_2_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_1_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3948_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [1])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_1_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomAddr_0_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n3949_9 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rRomAddr_7_10 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomAddr [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomAddr_0_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLastStep_s2  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/n3932_4 ),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLastStep )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLastStep_s2 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s6  (
+	.D(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_20 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [6])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_6_s6 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s6  (
+	.D(\official/Gowin_PLL/u_pll_init/rWaitCnt_10_17 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [10])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_10_s6 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s6  (
+	.D(\official/Gowin_PLL/u_pll_init/rWaitCnt_11_17 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [11])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_11_s6 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s6  (
+	.D(\official/Gowin_PLL/u_pll_init/rWaitCnt_12_17 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [12])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_12_s6 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s6  (
+	.D(\official/Gowin_PLL/u_pll_init/rWaitCnt_15_17 ),
+	.CLK(clk50M_d),
+	.CE(\official/Gowin_PLL/u_pll_init/rWaitCnt_6_23 ),
+	.RESET(GND),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [15])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_15_s6 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rRomDReg_0_s2  (
+	.D(VCC),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/n104_5 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rRomDReg_0_12 )
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s2 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rLocked_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/rLockCnt [13]),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/rLocked_8 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rLocked )
+);
+defparam \official/Gowin_PLL/u_pll_init/rLocked_s1 .INIT=1'b0;
+DFFRE \official/Gowin_PLL/u_pll_init/rWaitCnt_0_s1  (
+	.D(\official/Gowin_PLL/u_pll_init/n4112_11 ),
+	.CLK(clk50M_d),
+	.CE(VCC),
+	.RESET(\official/Gowin_PLL/u_pll_init/wIsStep3 ),
+	.Q(\official/Gowin_PLL/u_pll_init/rWaitCnt [0])
+);
+defparam \official/Gowin_PLL/u_pll_init/rWaitCnt_0_s1 .INIT=1'b0;
+pROM \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4  (
+	.CLK(clk50M_d),
+	.OCE(GND),
+	.CE(VCC),
+	.RESET(GND),
+	.AD({GND, GND, GND, \official/Gowin_PLL/u_pll_init/rRomAddr [5:0], GND, GND, GND, GND, GND}),
+	.DO({rRomDReg_0_s4_rRomDReg_0_8[15:0], \official/Gowin_PLL/u_pll_init/rRomDReg_16_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_15_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_14_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_13_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_12_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_11_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_10_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_9_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_8_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_7_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_6_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_5_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_3_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_2_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_1_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_0_8 })
+);
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_00=256'h00190608001883830016704000159F8100190608001883810016704000159F81;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_01=256'h00190608001883870016705000159F8100190608001883830016705000159F81;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_02=256'h00190608001883870016706000159F8200190608001883870016705000159F83;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_03=256'h00190608001883820016704000159F8100000000000000000000000000000000;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_04=256'h00190608001883840016705000159F8100190608001883830016704000159F82;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .INIT_RAM_05=256'h00190608001883870016706000159F8100190608001883870016705000159F82;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .READ_MODE=1'b0;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .BIT_WIDTH=16;
+defparam \official/Gowin_PLL/u_pll_init/rRomDReg_0_s4 .RESET_MODE="SYNC";
+ALU \official/Gowin_PLL/u_pll_init/n4298_s19  (
+	.I0(VCC),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [16]),
+	.I3(GND),
+	.CIN(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4298_26 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4298_20_SUM )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4298_s19 .ALU_MODE=1;
+ALU \official/Gowin_PLL/u_pll_init/n4298_s20  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [17]),
+	.I3(GND),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4298_26 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4298_28 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4298_21_SUM )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4298_s20 .ALU_MODE=1;
+ALU \official/Gowin_PLL/u_pll_init/n4298_s21  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [2]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [18]),
+	.I3(GND),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4298_28 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4298_30 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4298_22_SUM )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4298_s21 .ALU_MODE=1;
+ALU \official/Gowin_PLL/u_pll_init/n4298_s22  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [3]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [19]),
+	.I3(GND),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4298_30 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4298_32 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4298_23_SUM )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4298_s22 .ALU_MODE=1;
+ALU \official/Gowin_PLL/u_pll_init/n4298_s23  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [4]),
+	.I1(\official/Gowin_PLL/u_pll_init/rRomData [20]),
+	.I3(GND),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4298_32 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4298_34 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4298_24_SUM )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4298_s23 .ALU_MODE=1;
+ALU \official/Gowin_PLL/u_pll_init/n4020_s  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLockCnt [1]),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [0]),
+	.I3(VCC),
+	.CIN(GND),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4020_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4020_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4020_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4019_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [2]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4020_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4019_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4019_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4019_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4018_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [3]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4019_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4018_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4018_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4018_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4017_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [4]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4018_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4017_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4017_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4017_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4016_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [5]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4017_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4016_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4016_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4016_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4015_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [6]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4016_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4015_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4015_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4015_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4014_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [7]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4015_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4014_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4014_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4014_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4013_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [8]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4014_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4013_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4013_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4013_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4012_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [9]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4013_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4012_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4012_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4012_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4011_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [10]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4012_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4011_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4011_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4011_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4010_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [11]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4011_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4010_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4010_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4010_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4009_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [12]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4010_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4009_2 ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4009_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4009_s .ALU_MODE=0;
+ALU \official/Gowin_PLL/u_pll_init/n4008_s  (
+	.I0(GND),
+	.I1(\official/Gowin_PLL/u_pll_init/rLockCnt [13]),
+	.I3(VCC),
+	.CIN(\official/Gowin_PLL/u_pll_init/n4009_2 ),
+	.COUT(\official/Gowin_PLL/u_pll_init/n4008_0_COUT ),
+	.SUM(\official/Gowin_PLL/u_pll_init/n4008_1 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4008_s .ALU_MODE=0;
+INV \official/Gowin_PLL/u_pll_init/n104_s2  (
+	.I(\official/Gowin_PLL/u_pll_init/rEnable [1]),
+	.O(\official/Gowin_PLL/u_pll_init/n104_5 )
+);
+LUT1 \official/Gowin_PLL/u_pll_init/wMdAddrNext_0_s5  (
+	.I0(\official/Gowin_PLL/u_pll_init/rMdAddr [0]),
+	.F(\official/Gowin_PLL/u_pll_init/wMdAddrNext_0_10 )
+);
+defparam \official/Gowin_PLL/u_pll_init/wMdAddrNext_0_s5 .INIT=2'h1;
+LUT1 \official/Gowin_PLL/u_pll_init/n3973_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rReqCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3973_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3973_s2 .INIT=2'h1;
+LUT1 \official/Gowin_PLL/u_pll_init/n3989_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLoopCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n3989_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n3989_s2 .INIT=2'h1;
+LUT1 \official/Gowin_PLL/u_pll_init/n4021_s2  (
+	.I0(\official/Gowin_PLL/u_pll_init/rLockCnt [0]),
+	.F(\official/Gowin_PLL/u_pll_init/n4021_6 )
+);
+defparam \official/Gowin_PLL/u_pll_init/n4021_s2 .INIT=2'h1;
+pROM \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4  (
+	.CLK(clk50M_d),
+	.OCE(GND),
+	.CE(VCC),
+	.RESET(GND),
+	.AD({GND, GND, GND, \official/Gowin_PLL/u_pll_init/rRomAddr [5:0], VCC, GND, GND, GND, GND}),
+	.DO({gowin_add_pROM_net_rRomDReg_0_8[15:0], \official/Gowin_PLL/u_pll_init/DO [31:21], \official/Gowin_PLL/u_pll_init/rRomDReg_24_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_20_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_19_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_18_7 , \official/Gowin_PLL/u_pll_init/rRomDReg_17_7 })
+);
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_00=256'h00190608001883830016704000159F8100190608001883810016704000159F81;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_01=256'h00190608001883870016705000159F8100190608001883830016705000159F81;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_02=256'h00190608001883870016706000159F8200190608001883870016705000159F83;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_03=256'h00190608001883820016704000159F8100000000000000000000000000000000;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_04=256'h00190608001883840016705000159F8100190608001883830016704000159F82;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .INIT_RAM_05=256'h00190608001883870016706000159F8100190608001883870016705000159F82;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .READ_MODE=1'b0;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .BIT_WIDTH=16;
+defparam \official/Gowin_PLL/u_pll_init/gowin_add_rRomDReg_0_s4 .RESET_MODE="SYNC";
+endmodule

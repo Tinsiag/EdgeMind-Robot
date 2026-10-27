@@ -1,0 +1,43 @@
+# Preserve supplied model and conversion files byte-for-byte on every platform.
+model/hardware/** -text
+model/hardware/**/*.step -diff
+model/hardware/**/*.stp -diff
+model/hardware/**/*.dxf -diff
+model/hardware/SIPEED_LPi4A_51601.step filter=lfs diff=lfs merge=lfs -text
+# Keep archived FPGA evidence hashes stable across Windows/Linux checkouts.
+code/fpga/acg720-vision-motion/verification/** -text
+code/camera-car-control/release/** -text
+code/camera-car-control/a741/release/** -text -whitespace
+code/camera-car-control/a741/third_party/coreslam/** -text -whitespace
+code/camera-car-control/a741-imu-motion/third_party/coreslam/** text eol=lf -whitespace
+code/camera-car-control/a741-fpga-fusion/third_party/coreslam/** text eol=lf -whitespace
+code/camera-car-control/a741/docs/hardware/*.csv -text -whitespace
+code/camera-car-control/third_party/** -text
+code/fpga/acg720-motion-control/release/** -text
+code/fpga/acg720-motion-control/verification/** -text
+# Preserve CAD input identities and archived evidence on fresh clones.
+model/chassis/** -text
+output/** -text
+code/camera-car-control/a741-fpga-fusion/third_party/picorv32/** -text
+code/camera-car-control/a741-fpga-fusion/verification/handoff-20261025/** -text
+code/camera-car-control/a741-fpga-fusion/firmware/** text eol=lf
+# Keep the user-supplied official controller byte-identical for equivalence tests.
+code/camera-car-control/a741-fpga-fusion/display/reference/** -text -whitespace
+model/chassis/v5-rgb-touch-display/EdgeMind_Chassis.FCStd filter=lfs diff=lfs merge=lfs -text
+model/chassis/v5-rgb-touch-display/preview-meshes.json filter=lfs diff=lfs merge=lfs -text
+model/chassis/EdgeMind_Chassis_v4_Sensors.zip filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/EdgeMind_Assembly.step filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/preview-meshes.json filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/EdgeMind_Assembly.glb filter=lfs diff=lfs merge=lfs -text
+model/chassis/v5-rgb-touch-display/EdgeMind_Exploded.FCStd filter=lfs diff=lfs merge=lfs -text
+model/chassis/v5-rgb-touch-display/查看模型.html filter=lfs diff=lfs merge=lfs -text
+output/handoff/EdgeMind-Task34-20261024-204917.zip filter=lfs diff=lfs merge=lfs -text
+output/handoff/EdgeMind-Task34-20261024-204917/workspace/model/chassis/v4-lidar-imu/EdgeMind_Assembly.step filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/EdgeMind_Chassis.FCStd filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/查看模型.html filter=lfs diff=lfs merge=lfs -text
+model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.glb filter=lfs diff=lfs merge=lfs -text
+output/handoff/EdgeMind-Task34-20261024-204917-updated.zip filter=lfs diff=lfs merge=lfs -text
+output/handoff/EdgeMind-Task34-20261024-204917/workspace/model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step filter=lfs diff=lfs merge=lfs -text
+output/task34-resume-20261024/tool-docs/DDR3-RefDesign-5.8E.zip filter=lfs diff=lfs merge=lfs -text
+model/chassis/v4-lidar-imu/EdgeMind_Exploded.FCStd filter=lfs diff=lfs merge=lfs -text
+model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step filter=lfs diff=lfs merge=lfs -text
