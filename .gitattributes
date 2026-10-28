@@ -19,6 +19,9 @@ code/fpga/acg720-motion-control/verification/** -text
 model/chassis/** -text
 output/** -text
 output/EdgeMind-Robot-handoff-20261028.zip filter=lfs diff=lfs merge=lfs -text
+output/EdgeMind-Robot-motion-sequence-5s-final2-20261029.zip filter=lfs diff=lfs merge=lfs -text
+output/EdgeMind-Robot-button-autonomous-avoidance-final2-20261029.zip filter=lfs diff=lfs merge=lfs -text
+output/EdgeMind-Robot-display-recovery-final2-20261029.zip filter=lfs diff=lfs merge=lfs -text
 code/camera-car-control/a741-fpga-fusion/third_party/picorv32/** -text
 code/camera-car-control/a741-fpga-fusion/verification/handoff-20261025/** -text
 code/camera-car-control/a741-fpga-fusion/firmware/** text eol=lf

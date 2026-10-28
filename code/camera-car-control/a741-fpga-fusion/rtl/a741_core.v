@@ -2,8 +2,9 @@
 `default_nettype none
 module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,PHY_DIAGNOSTICS=0,
     FUSION_ENABLED=0,GEOMETRY_VERIFIED=0,RADIUS_MM=0,LIDAR_X=0,LIDAR_Y=0,
-    LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1,TRACK_MM=234,FUSION_CONFIG_CRC=0,FRONT_EXTENT=220,REAR_EXTENT=70,HALF_WIDTH=131)(
-    input wire clk,rst_n,imu_int,lidar_rx,
+    LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1,TRACK_MM=234,FUSION_CONFIG_CRC=0,FRONT_EXTENT=220,REAR_EXTENT=70,HALF_WIDTH=131,
+    SEQUENCE_TEST=0,BUTTON_AUTONOMOUS=0)(
+    input wire clk,rst_n,button_start,imu_int,lidar_rx,
     input wire [7:0] mac_diagnostic,
     input wire phy_ready,phy_error,
     input wire [127:0] phy_diagnostic,
@@ -86,14 +87,15 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
             .angle(lidar_angle),.distance(lidar_distance),.confidence(lidar_confidence),
             .requested_left(manual_l),.requested_right(manual_r),.stop(manual_stop),.limit(manual_limit),
             .scan_valid(manual_scan_valid),.front(manual_front),.rear(manual_rear),.nearest(manual_nearest));
-        a741_avoidance #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.CONFIG_CRC(FUSION_CONFIG_CRC)) avoidance(
-            .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.armed(armed),.link_alive(flink),
+        a741_avoidance #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.CONFIG_CRC(FUSION_CONFIG_CRC),
+            .SEQUENCE_TEST(SEQUENCE_TEST),.BUTTON_AUTONOMOUS(BUTTON_AUTONOMOUS)) avoidance(
+            .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.tick(tick),.armed(armed),.link_alive(flink),
             .motor_faults(faults),.imu_valid(iv),.tilt_valid(tilt_valid),.manual_left(manual_l),.manual_right(manual_r),
             .yaw(yaw),.roll(roll),.pitch(pitch),.lidar_valid(lv),
             .lidar_front(front),.lidar_left(lside),.lidar_right(rside),
             .manual_stop(manual_stop),.manual_limit(manual_limit),.manual_scan_valid(manual_scan_valid),
             .supervisor_alive(cpu_alive),.supervisor_fault(cpu_fault),.supervisor_uptime(cpu_progress),
-            .command(fcommand),.kind(fkind),.payload(fpayload),.reply_done(freply_valid),.reply(freply),
+            .command(fcommand),.kind(fkind),.payload(fpayload),.button_start(button_start),.reply_done(freply_valid),.reply(freply),
             .drive_enabled(fowns),.force_stop(avoidance_stop),.drive_left(fl),.drive_right(fr),
             .sensor_stop(fobstacle),.sensor_limit(flimit),.state(avoid_state),.fault(avoid_fault),.front_distance(ffront));
         assign attitude_pair={pitch,roll};assign reserved_status={31'd0,tilt_valid};assign display_yaw=yaw;
@@ -106,7 +108,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         assign cpu_display=0;
     end endgenerate
     assign fusion_snapshot={48'd0,cpu_display,quality,reserved_revision,ffront,display_yaw,reserved_status,attitude_pair,8'(GEOMETRY_VERIFIED),avoid_fault,avoid_state,8'd1};
-    a741_motion #(.CLK_HZ(CLK_HZ),.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR),.FUSION_ENABLED(FUSION_ENABLED)) motion(.clk(clk),.rst_n(rst_n),
+    a741_motion #(.CLK_HZ(CLK_HZ),.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR),.FUSION_ENABLED(FUSION_ENABLED),.BUTTON_AUTONOMOUS(BUTTON_AUTONOMOUS)) motion(.clk(clk),.rst_n(rst_n),
         .direct_valid(command_valid),.direct_kind(command_kind),.direct_seq(command_seq),.direct_ttl(command_ttl),.direct_payload(command_payload),
         .direct_reply_valid(reply_valid),.direct_reply_kind(reply_kind),.direct_reply_seq(reply_seq),.direct_reply_length(reply_length),
         .direct_reply_payload(reply_payload),.direct_reply_ready(reply_ready),
@@ -115,7 +117,7 @@ module a741_core #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MO
         .command_link_alive(flink),.manual_left(manual_l),.manual_right(manual_r),
         .lidar_control(lidar_control),
         .imu_diagnostic(imu_diagnostic),.imu_errors(ie),.imu_sequence(isq),.imu_raw(imu_raw),.imu_temperature(imu_temperature),
-        .ms_tick(ms_tick),.tick(tick),.left_a(left_a),.left_b(left_b),.right_a(right_a),.right_b(right_b),
+        .ms_tick(ms_tick),.tick(tick),.button_start(button_start),.left_a(left_a),.left_b(left_b),.right_a(right_a),.right_b(right_b),
         .imu_valid(iv),.gyro_valid(gv),.imu_stationary(imu_stationary),.angle_update(au),.gyro_update(gu),.yaw(yaw),.gz(gz),
         .tof_valid(tv),.tof_mm(tof),.now_ms(now_ms),.left_in1(left_in1),.left_in2(left_in2),.right_in1(right_in1),.right_in2(right_in2),
         .armed(armed),.calibrated(calibrated),.calibrating(calibrating),.rotating(rotating),.faults(faults),

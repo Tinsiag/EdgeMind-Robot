@@ -4,7 +4,9 @@ module board_platform_tb;
     always #10 clk=~clk;
     tri1 scl,sda;
     wire camera_reset_n,ready,error;
-    ov5640_board_init #(.CLK_HZ(1000000)) dut(.*);
+    // Keep the retry interval short in this transaction-level model; the
+    // hardware default remains 50 ms at the 50 MHz board clock.
+    ov5640_board_init #(.CLK_HZ(1000000),.RETRY_DELAY_MS(1)) dut(.*);
     task restart;
         begin
             @(negedge clk);rst_n=0;
@@ -33,7 +35,7 @@ module board_platform_tb;
         $display("PASS board camera: 254 actual ROM writes, ID/readbacks, bad ID/config rejection");
         $finish;
     end
-    initial begin #3000000;$fatal(1,"FAIL camera test timeout");end
+    initial begin #20000000;$fatal(1,"FAIL camera test timeout");end
 endmodule
 
 // Transaction model checks controller sequencing, not electrical SCCB timing.

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,FUSION_ENABLED=0)(
+module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=0,FUSION_ENABLED=0,BUTTON_AUTONOMOUS=0)(
     input wire direct_valid,input wire [7:0] direct_kind,direct_seq,
     input wire [15:0] direct_ttl,input wire [255:0] direct_payload,
     output wire direct_reply_valid,output wire [7:0] direct_reply_kind,direct_reply_seq,direct_reply_length,
@@ -13,7 +13,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     output wire command_link_alive,output wire signed [31:0] manual_left,manual_right,
     input wire [31:0] imu_diagnostic,imu_errors,imu_sequence,
     input wire [95:0] imu_raw,input wire [15:0] imu_temperature,
-    input wire clk,rst_n,ms_tick,tick,
+    input wire clk,rst_n,ms_tick,tick,button_start,
     input wire left_a,left_b,right_a,right_b,
     input wire imu_valid,gyro_valid,angle_update,gyro_update,
     input wire imu_stationary,
@@ -37,7 +37,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
 );
     function is_board_command;
         input [7:0] value;
-        begin is_board_command=value==8'h56 || value==8'h57 || value==8'h59;end
+        begin is_board_command=value==8'h56 || value==8'h57 || value==8'h58 || value==8'h59;end
     endfunction
 
     wire cv=direct_valid;
@@ -46,7 +46,16 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     wire [255:0] payload=direct_payload;
     assign fusion_command=cv;assign fusion_kind=kind;assign fusion_payload=payload;
     assign manual_left=desired_l;assign manual_right=desired_r;
-    assign command_link_alive=command_age<effective_ttl;
+    reg button_session,button_request;
+    reg [15:0] button_wait_age;
+    reg auto_lidar_update;
+    reg [6:0] auto_bias_count;
+    reg signed [31:0] auto_bias_sum;
+    // The local S1 controller renews the same bounded lease used by the
+    // network controller.  A pending start is also leased while sensors
+    // calibrate, so a slow boot cannot leave LD06 running without supervision.
+    wire local_session=(BUTTON_AUTONOMOUS!=0) && (button_session || button_request);
+    assign command_link_alive=local_session || command_age<effective_ttl;
     // Reserved legacy status fields; angle/heading tasks have been removed.
     assign rotating=1'b0;assign accumulated_yaw=32'sd0;
     reg [31:0] cfg[0:11];reg [11:0] configured;
@@ -66,7 +75,8 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     a741_speed sl(.clk(clk),.rst_n(rst_n),.tick(tick),.delta($signed(ld)),.cpr(cfg[0]),.diameter_um(cfg[2]),.speed(left_speed));
     a741_speed sr(.clk(clk),.rst_n(rst_n),.tick(tick),.delta($signed(rd)),.cpr(cfg[1]),.diameter_um(cfg[3]),.speed(right_speed));
     wire stop_cmd=cv && (kind==3 || kind==4 || (FUSION_ENABLED!=0 &&
-        (kind==8'h56 || (kind==8'h59 && payload[7:0]==0))));
+        (kind==8'h56 || (kind==8'h58 && payload[7:0]==0) || (kind==8'h59 && payload[7:0]==0))));
+    wire button_stop=(BUTTON_AUTONOMOUS!=0) && button_start && button_session;
     reg [15:0] effective_ttl;
     reg imu_required;
     reg signed [15:0] calibration_origin;
@@ -84,7 +94,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     wire timeout_fault=armed && !ownership_released && command_age>=effective_ttl;
     wire fusion_fault=FUSION_ENABLED!=0 && ((moving && obstacle_stop && !fusion_owns) || fusion_stop);
     wire hard_fault=active && (feedback_fault || imu_fault || tof_fault || timeout_fault || fusion_fault);
-    wire enable=active && !ownership_released && !stop_cmd && !hard_fault && !(FUSION_ENABLED!=0 && obstacle_stop);
+    wire enable=active && !ownership_released && !stop_cmd && !button_stop && !hard_fault && !(FUSION_ENABLED!=0 && obstacle_stop);
     // Qualify the arithmetic pipeline with a local register. The final motor
     // gate still includes raw enable, so STOP/fault/obstacle disable immediately.
     // Requiring both on re-entry also prevents an old PI command leaking out
@@ -145,30 +155,66 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
     reg value_ok;reg [7:0] key;reg [31:0] value;
     reg [9:0] lidar_duty;
     wire [31:0] lidar_status;
-    wire lidar_renew=(cv && kind==8'h05);
-    wire lidar_update=cv && kind==8'h46 && MOTION_LIDAR!=0 &&
-        (payload[15:0]==0 || (payload[15:0]>=200 && payload[15:0]<=600));
+    wire lidar_renew=(cv && kind==8'h05) || local_session;
+    wire lidar_update=(cv && kind==8'h46 && MOTION_LIDAR!=0 &&
+        (payload[15:0]==0 || (payload[15:0]>=200 && payload[15:0]<=600)));
+    wire lidar_auto_update=BUTTON_AUTONOMOUS!=0 && auto_lidar_update;
     wire lidar_stop=cv && kind==8'h04;
+    wire lidar_local_stop=(BUTTON_AUTONOMOUS!=0) && !local_session && !button_start;
     ld06_control #(.CLK_HZ(CLK_HZ)) lidar_motor(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),
-        .enabled(MOTION_LIDAR!=0),.update(lidar_update),.renew(lidar_renew),.stop(lidar_stop),.duty_request(lidar_duty),
+        .enabled(MOTION_LIDAR!=0),.update(lidar_update || lidar_auto_update),.renew(lidar_renew),
+        .stop(lidar_stop || lidar_local_stop || hard_fault),.duty_request(lidar_duty),
         .pwm(lidar_control),.status(lidar_status));
     always @(posedge clk or negedge rst_n)
         if(!rst_n) begin
             for(i=0;i<12;i=i+1) cfg[i]<=0;
-            configured<=0;armed<=0;faults<=0;calibrated<=0;calibrating<=0;imu_required<=0;
+            configured<=BUTTON_AUTONOMOUS!=0 ? 12'hfff:0;armed<=0;faults<=0;calibrated<=0;calibrating<=0;imu_required<=0;
             target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;calibration_origin<=0;
             command_age<=0;effective_ttl<=250;
             bias_count<=0;bias_sum<=0;gyro_bias<=0;calibration_age<=0;calibration_result<=0;config_revision<=0;
             reply_request<=0;reply_kind<=0;reply_seq<=0;reply_length<=0;reply_payload<=0;
-            request_pending<=0;saved_kind<=0;saved_seq<=0;saved_key<=0;lidar_duty<=0;
+            request_pending<=0;saved_kind<=0;saved_seq<=0;saved_key<=0;lidar_duty<=0;button_wait_age<=0;
             fusion_response_pending<=0;fusion_response_data<=0;previous_fusion_owner<=0;
+            button_session<=0;button_request<=0;auto_lidar_update<=0;auto_bias_count<=0;auto_bias_sum<=0;
+            if(BUTTON_AUTONOMOUS!=0) begin
+                cfg[0]<=32'd1469;cfg[1]<=32'd1471;cfg[2]<=32'd66300;cfg[3]<=32'd66300;
+                cfg[4]<=32'd234000;cfg[5]<=32'd200;cfg[6]<=32'd74106;cfg[7]<=32'd1;
+                cfg[8]<=0;cfg[9]<=32'd512;cfg[10]<=32'd5;cfg[11]<=32'd8;config_revision<=32'd74106;
+            end
         end else begin
             reply_request<=0;
+            auto_lidar_update<=0;
             previous_fusion_owner<=FUSION_ENABLED!=0 && fusion_owns;
+            if(BUTTON_AUTONOMOUS!=0 && !armed && !calibrated && imu_valid && gyro_valid && imu_stationary && gyro_update) begin
+                if(auto_bias_count==7'd63) begin
+                    gyro_bias<=($signed(auto_bias_sum)+$signed(gz))/64;
+                    calibrated<=1;calibration_result<=1;auto_bias_count<=0;auto_bias_sum<=0;
+                end else begin
+                    auto_bias_sum<=auto_bias_sum+$signed(gz);auto_bias_count<=auto_bias_count+1'b1;
+                end
+            end
+            if(BUTTON_AUTONOMOUS!=0 && (!imu_valid || !gyro_valid || !imu_stationary)) begin
+                auto_bias_count<=0;auto_bias_sum<=0;
+            end
+            if(BUTTON_AUTONOMOUS!=0 && button_start) begin
+                if(button_session || armed) begin
+                    button_session<=0;armed<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                    lidar_duty<=0;button_wait_age<=0;
+                end else begin button_request<=1;button_wait_age<=0;lidar_duty<=10'd400;auto_lidar_update<=1;end
+            end
+            if(BUTTON_AUTONOMOUS!=0 && button_request && ms_tick) begin
+                if(button_wait_age==16'd10000) begin button_request<=0;button_wait_age<=0;lidar_duty<=0;end
+                else button_wait_age<=button_wait_age+1'b1;
+            end
+            if(BUTTON_AUTONOMOUS!=0 && button_request && calibrated && calibration_config_ok &&
+                imu_valid && gyro_valid && imu_stationary && faults==0) begin
+                armed<=1;button_session<=1;button_request<=0;button_wait_age<=0;command_age<=0;imu_required<=1;
+            end
             if(FUSION_ENABLED!=0 && fusion_reply_valid) begin fusion_response_pending<=1;fusion_response_data<=fusion_reply;end
             if(!imu_valid || !gyro_valid) calibrated<=0;
             if(ms_tick) begin
-                if(command_age!=65535) command_age<=command_age+1'b1;
+                if(local_session) command_age<=0;
+                else if(command_age!=65535) command_age<=command_age+1'b1;
                 if(calibrating && calibration_age!=65535) calibration_age<=calibration_age+1'b1;
             end
             if(calibrating && gyro_update) begin
@@ -237,6 +283,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
                     8'h02: if(IMU_TEST==0 && calibration_config_ok && calibrated && !calibrating && imu_valid && gyro_valid && faults==0) begin armed<=1;command_age<=0;end
                     8'h03,8'h04,8'h56,8'h59: if(kind!=8'h59 ||
                         (kind==8'h59 && payload[7:0]==0)) begin armed<=0;imu_required<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                        button_session<=0;button_request<=0;auto_lidar_update<=0;lidar_duty<=0;button_wait_age<=0;
                         calibrating<=0;if(calibrating) calibration_result<=4;
                     end
                     8'h05: command_age<=0;
@@ -276,6 +323,7 @@ module a741_motion #(parameter CLK_HZ=50000000,SENSOR_PINS_ENABLED=0,IMU_TEST=0,
             end
             if(hard_fault) begin
                 armed<=0;target_l<=0;target_r<=0;desired_l<=0;desired_r<=0;
+                button_session<=0;button_request<=0;auto_lidar_update<=0;lidar_duty<=0;button_wait_age<=0;
                 if(timeout_fault) faults[0]<=1;
                 if(feedback_fault) faults[2]<=1;
                 if(imu_fault) faults[4]<=1;

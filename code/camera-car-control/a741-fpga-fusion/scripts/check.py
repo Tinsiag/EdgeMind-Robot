@@ -20,6 +20,8 @@ PRIMITIVES = Path(os.environ.get("GOWIN_SIMLIB", "C:/Gowin/Gowin_V1.9.12.04_x64/
 def bench_sources(bench):
     if bench.stem == "tft800_reference_tb":
         return [ROOT / "display/reference/acg720-ch28/disp_driver.v"]
+    if bench.stem == "tft_clock_reset_tb":
+        return [PRIMITIVES]
     if bench.stem == "ethernet_io_tb":
         return [CAMERA / "rtl/acg720_rgmii_rx.v", PRIMITIVES]
     return []

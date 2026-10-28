@@ -1,0 +1,3057 @@
+{
+  "resources": [
+    {
+      "resource": "Resources",
+      "usage": "Usage",
+      "utilization": "Utilization"
+    },
+    {
+      "resource": "Logic",
+      "usage": "23811/59904",
+      "utilization": "40%"
+    },
+    {
+      "resource": "--LUT,ALU,ROM16",
+      "usage": "23811(20665 LUT, 3146 ALU, 0 ROM16)",
+      "utilization": "-"
+    },
+    {
+      "resource": "--SSRAM(RAM16)",
+      "usage": "0",
+      "utilization": "-"
+    },
+    {
+      "resource": "Register",
+      "usage": "18103/60780",
+      "utilization": "30%"
+    },
+    {
+      "resource": "--Logic Register as Latch",
+      "usage": "0/59904",
+      "utilization": "0%"
+    },
+    {
+      "resource": "--Logic Register as FF",
+      "usage": "18071/59904",
+      "utilization": "31%"
+    },
+    {
+      "resource": "--I/O Register as Latch",
+      "usage": "0/876",
+      "utilization": "0%"
+    },
+    {
+      "resource": "--I/O Register as FF",
+      "usage": "32/876",
+      "utilization": "4%"
+    },
+    {
+      "resource": "CLS",
+      "usage": "18443/29952",
+      "utilization": "62%"
+    },
+    {
+      "resource": "I/O Port",
+      "usage": "125/297",
+      "utilization": "43%"
+    },
+    {
+      "resource": "I/O Buf",
+      "usage": "118",
+      "utilization": "-"
+    },
+    {
+      "resource": "--Input Buf",
+      "usage": "25",
+      "utilization": "-"
+    },
+    {
+      "resource": "--Output Buf",
+      "usage": "70",
+      "utilization": "-"
+    },
+    {
+      "resource": "--Inout Buf",
+      "usage": "23",
+      "utilization": "-"
+    },
+    {
+      "resource": "IOLOGIC",
+      "usage": "72/293",
+      "utilization": "25%"
+    },
+    {
+      "resource": "BSRAM",
+      "usage": "62/118",
+      "utilization": "53%"
+    },
+    {
+      "resource": "DSP",
+      "usage": "28/118",
+      "utilization": "24%"
+    },
+    {
+      "resource": "I/O Bank",
+      "usage": "Usage",
+      "utilization": "Utilization"
+    },
+    {
+      "resource": "bank 1",
+      "usage": "21/25",
+      "utilization": "84%"
+    },
+    {
+      "resource": "bank 2",
+      "usage": "3/26",
+      "utilization": "12%"
+    },
+    {
+      "resource": "bank 3",
+      "usage": "0/8",
+      "utilization": "0%"
+    },
+    {
+      "resource": "bank 4",
+      "usage": "1/16",
+      "utilization": "7%"
+    },
+    {
+      "resource": "bank 5",
+      "usage": "12/34",
+      "utilization": "36%"
+    },
+    {
+      "resource": "bank 6",
+      "usage": "13/20",
+      "utilization": "65%"
+    },
+    {
+      "resource": "bank 7",
+      "usage": "7/24",
+      "utilization": "30%"
+    },
+    {
+      "resource": "bank 8",
+      "usage": "16/24",
+      "utilization": "67%"
+    },
+    {
+      "resource": "bank 9",
+      "usage": "48/66",
+      "utilization": "73%"
+    },
+    {
+      "resource": "bank 10",
+      "usage": "1/25",
+      "utilization": "4%"
+    },
+    {
+      "resource": "bank 11",
+      "usage": "3/25",
+      "utilization": "12%"
+    },
+    {
+      "resource": "bank 12",
+      "usage": "0/4",
+      "utilization": "0%"
+    },
+    {
+      "resource": "Clock Resource",
+      "usage": "Usage",
+      "utilization": "Utilization"
+    },
+    {
+      "resource": "PRIMARY",
+      "usage": "8/8",
+      "utilization": "100%"
+    },
+    {
+      "resource": "LW",
+      "usage": "8/8",
+      "utilization": "100%"
+    },
+    {
+      "resource": "GCLK_PIN",
+      "usage": "16/40",
+      "utilization": "40%"
+    },
+    {
+      "resource": "CLKDIV",
+      "usage": "2/20",
+      "utilization": "10%"
+    },
+    {
+      "resource": "DDRDLL",
+      "usage": "1/5",
+      "utilization": "20%"
+    },
+    {
+      "resource": "DQS",
+      "usage": "2/13",
+      "utilization": "16%"
+    },
+    {
+      "resource": "PLLA",
+      "usage": "3/8",
+      "utilization": "38%"
+    },
+    {
+      "resource": "Signal",
+      "usage": "Global Clock",
+      "utilization": "Location"
+    },
+    {
+      "resource": "clk_d",
+      "usage": "PRIMARY",
+      "utilization": "TR BR BL"
+    },
+    {
+      "resource": "camera_pclk_d",
+      "usage": "PRIMARY",
+      "utilization": "BL"
+    },
+    {
+      "resource": "rgmii_rx_clk_d",
+      "usage": "PRIMARY",
+      "utilization": "BR BL"
+    },
+    {
+      "resource": "pll125",
+      "usage": "PRIMARY",
+      "utilization": "BR BL"
+    },
+    {
+      "resource": "pll250",
+      "usage": "PRIMARY",
+      "utilization": "BL"
+    },
+    {
+      "resource": "display_clk",
+      "usage": "PRIMARY",
+      "utilization": "BR BL"
+    },
+    {
+      "resource": "ui_clk",
+      "usage": "PRIMARY",
+      "utilization": "BL"
+    },
+    {
+      "resource": "core/sensors/lidar/n7974_14",
+      "usage": "PRIMARY",
+      "utilization": "TR BR"
+    },
+    {
+      "resource": "display_n",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "control_n",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "ui_rst",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "core/ms_tick",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "core/lpv",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "core/freply_valid",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "core/sensors/lidar/n5303_9",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "core/telemetry/tx_buffer_127_7",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "pll250",
+      "usage": "HCLK",
+      "utilization": "BANK10_BANK11_HCLK0"
+    },
+    {
+      "resource": "memory_clk",
+      "usage": "HCLK",
+      "utilization": "BANK9_HCLK2"
+    },
+    {
+      "resource": "Port Name",
+      "usage": "Diff Pair",
+      "utilization": "Loc./Bank     | Constraint | Dir.  | Site     | CFG             | IO Type    | Drive | Pull Mode | PCI Clamp | Hysteresis | Open Drain | Slew Rate | Vref       | Single Resistor | Diff Resistor | BankVccio  | Pull Strength | Ctle          | Threshold Offset | ADC_INPUT"
+    },
+    {
+      "resource": "clk",
+      "usage": "-",
+      "utilization": "Y18/8         | Y          | in    | IOB87[A] | GCLKT_10        | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "stop_n",
+      "usage": "-",
+      "utilization": "F15/1         | Y          | in    | IOT91[A] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "s1_n",
+      "usage": "-",
+      "utilization": "A20/2         | Y          | in    | IOT122[B] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "camera_pclk",
+      "usage": "-",
+      "utilization": "B18/1         | Y          | in    | IOT104[B] | GCLKC_1         | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "camera_vsync",
+      "usage": "-",
+      "utilization": "C13/1         | Y          | in    | IOT93[A] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "camera_href",
+      "usage": "-",
+      "utilization": "D14/1         | Y          | in    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "rgmii_rx_clk",
+      "usage": "-",
+      "utilization": "W19/8         | Y          | in    | IOB93[A] | GCLKT_9         | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "rgmii_rx_ctl",
+      "usage": "-",
+      "utilization": "AB18/8        | Y          | in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "left_enc_a",
+      "usage": "-",
+      "utilization": "A15/1         | Y          | in    | IOT99[A] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "left_enc_b",
+      "usage": "-",
+      "utilization": "A16/1         | Y          | in    | IOT99[B] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "right_enc_a",
+      "usage": "-",
+      "utilization": "E13/1         | Y          | in    | IOT78[A] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "right_enc_b",
+      "usage": "-",
+      "utilization": "E14/1         | Y          | in    | IOT78[B] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "imu_int",
+      "usage": "-",
+      "utilization": "B1/11         | Y          | in    | IOL23[A] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "imu_xda",
+      "usage": "-",
+      "utilization": "A1/11         | Y          | in    | IOL23[B] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "imu_xcl",
+      "usage": "-",
+      "utilization": "B2/11         | Y          | in    | IOL25[B] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "imu_ad0",
+      "usage": "-",
+      "utilization": "M17/5         | Y          | in    | IOR56[A] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "lidar_rx",
+      "usage": "-",
+      "utilization": "H14/4         | Y          | in    | IOR26[B] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "tft_clk",
+      "usage": "-",
+      "utilization": "AB20/8        | Y          | out   | IOB85[B] | CSO_B/DOUT      | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "tft_de",
+      "usage": "-",
+      "utilization": "AB22/8        | Y          | out   | IOB97[B] | D15             | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "tft_hsync",
+      "usage": "-",
+      "utilization": "V19/8         | Y          | out   | IOB81[B] | GCLKC_11        | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "tft_vsync",
+      "usage": "-",
+      "utilization": "Y19/8         | Y          | out   | IOB87[B] | GCLKC_10        | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "tft_bl",
+      "usage": "-",
+      "utilization": "AB21/8        | Y          | out   | IOB97[A] | D14             | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "camera_reset_n",
+      "usage": "-",
+      "utilization": "C14/1         | Y          | out   | IOT85[A] | -               | LVCMOS33   | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "rgmii_tx_clk",
+      "usage": "-",
+      "utilization": "U22/7         | Y          | out   | IOB117[A] | PUDC_B          | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "rgmii_tx_ctl",
+      "usage": "-",
+      "utilization": "AA19/8        | Y          | out   | IOB85[A] | RDWR_B          | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "eth_rst_n",
+      "usage": "-",
+      "utilization": "V22/7         | Y          | out   | IOB117[B] | EMCCLK          | LVCMOS33   | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "eth_mdc",
+      "usage": "-",
+      "utilization": "AA18/8        | Y          | out   | IOB77[A] | BPLL1_T_IN2/BPLL1_T_FB0 | LVCMOS33   | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "left_in1",
+      "usage": "-",
+      "utilization": "A18/2         | Y          | out   | IOT113[A] | Q0REF_T_IN1     | LVCMOS33   | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus1"
+    },
+    {
+      "resource": "left_in2",
+      "usage": "-",
+      "utilization": "A19/2         | Y          | out   | IOT113[B] | Q0REF_C_IN1     | LVCMOS33   | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus1"
+    },
+    {
+      "resource": "right_in1",
+      "usage": "-",
+      "utilization": "F13/1         | Y          | out   | IOT80[A] | TPLL0_T_IN1/TPLL0_T_FB1 | LVCMOS33   | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus2"
+    },
+    {
+      "resource": "right_in2",
+      "usage": "-",
+      "utilization": "F14/1         | Y          | out   | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33   | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus2"
+    },
+    {
+      "resource": "O_ddr_cs_n",
+      "usage": "-",
+      "utilization": "T3/9          | Y          | out   | IOB3[A]  | BPLL0_T_IN1/BPLL0_T_FB0 | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_ras_n",
+      "usage": "-",
+      "utilization": "Y6/9          | Y          | out   | IOB50[A] | -               | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_cas_n",
+      "usage": "-",
+      "utilization": "W6/9          | Y          | out   | IOB44[A] | -               | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_we_n",
+      "usage": "-",
+      "utilization": "W5/9          | Y          | out   | IOB44[B] | -               | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_clk",
+      "usage": "O_ddr_clk_n",
+      "utilization": "R3/9          | Y          | out   | IOB12[A] | -               | SSTL15D_I  | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "O_ddr_clk_n",
+      "usage": "O_ddr_clk",
+      "utilization": "R2/9          | Y          | out   | IOB12[B] | -               | SSTL15D_I  | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "O_ddr_cke",
+      "usage": "-",
+      "utilization": "Y2/9          | Y          | out   | IOB9[B]  | -               | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_odt",
+      "usage": "-",
+      "utilization": "V5/9          | Y          | out   | IOB42[B] | -               | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "O_ddr_reset_n",
+      "usage": "-",
+      "utilization": "U7/9          | Y          | out   | IOB71[A] | BPLL1_T_IN1/BPLL1_T_FB1 | SSTL15_I   | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "lidar_control",
+      "usage": "-",
+      "utilization": "H20/5         | Y          | out   | IOR43[A] | -               | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "camera_sclk",
+      "usage": "-",
+      "utilization": "B13/1         | Y          | io    | IOT93[B] | -               | LVCMOS33   | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "camera_sdat",
+      "usage": "-",
+      "utilization": "D15/1         | Y          | io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33   | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "eth_mdio",
+      "usage": "-",
+      "utilization": "W17/8         | Y          | io    | IOB79[B] | -               | LVCMOS33   | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "imu_sda",
+      "usage": "-",
+      "utilization": "M20/5         | Y          | io    | IOR70[B] | CLKHOLD_N/SSI3  | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "imu_scl",
+      "usage": "-",
+      "utilization": "L18/5         | Y          | io    | IOR66[B] | SSPI_CLK/RPLL1_C_IN1/RPLL1_C_FB1 | LVCMOS33   | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "E13/1",
+      "usage": "right_enc_a",
+      "utilization": "in    | IOT78[A] | -               | LVCMOS33 | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "E14/1",
+      "usage": "right_enc_b",
+      "utilization": "in    | IOT78[B] | -               | LVCMOS33 | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "F13/1",
+      "usage": "right_in1",
+      "utilization": "out   | IOT80[A] | TPLL0_T_IN1/TPLL0_T_FB1 | LVCMOS33 | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus2"
+    },
+    {
+      "resource": "F14/1",
+      "usage": "right_in2",
+      "utilization": "out   | IOT80[B] | TPLL0_C_IN1/TPLL0_C_FB1 | LVCMOS33 | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus2"
+    },
+    {
+      "resource": "D14/1",
+      "usage": "camera_href",
+      "utilization": "in    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "D15/1",
+      "usage": "camera_sdat",
+      "utilization": "io    | IOT82[B] | TPLL0_C_IN2/TPLL0_C_FB0 | LVCMOS33 | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "C14/1",
+      "usage": "camera_reset_n",
+      "utilization": "out   | IOT85[A] | -               | LVCMOS33 | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "C15/1",
+      "usage": "camera_data[0]",
+      "utilization": "in    | IOT85[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "E16/1",
+      "usage": "camera_data[5]",
+      "utilization": "in    | IOT87[A] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "D16/1",
+      "usage": "camera_data[6]",
+      "utilization": "in    | IOT87[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "F16/1",
+      "usage": "-",
+      "utilization": "in    | IOT89[A] | Q0REF_T_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "E17/1",
+      "usage": "-",
+      "utilization": "in    | IOT89[B] | Q0REF_C_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "F15/1",
+      "usage": "stop_n",
+      "utilization": "in    | IOT91[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "C13/1",
+      "usage": "camera_vsync",
+      "utilization": "in    | IOT93[A] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B13/1",
+      "usage": "camera_sclk",
+      "utilization": "io    | IOT93[B] | -               | LVCMOS33 | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "A13/1",
+      "usage": "-",
+      "utilization": "in    | IOT95[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "A14/1",
+      "usage": "-",
+      "utilization": "in    | IOT95[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B15/1",
+      "usage": "camera_data[1]",
+      "utilization": "in    | IOT97[A] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B16/1",
+      "usage": "camera_data[2]",
+      "utilization": "in    | IOT97[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "A15/1",
+      "usage": "left_enc_a",
+      "utilization": "in    | IOT99[A] | -               | LVCMOS33 | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "A16/1",
+      "usage": "left_enc_b",
+      "utilization": "in    | IOT99[B] | -               | LVCMOS33 | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B17/1",
+      "usage": "camera_data[7]",
+      "utilization": "in    | IOT104[A] | GCLKT_1         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B18/1",
+      "usage": "camera_pclk",
+      "utilization": "in    | IOT104[B] | GCLKC_1         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "D17/1",
+      "usage": "camera_data[3]",
+      "utilization": "in    | IOT106[A] | GCLKT_0         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "C17/1",
+      "usage": "camera_data[4]",
+      "utilization": "in    | IOT106[B] | GCLKC_0         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "A18/2",
+      "usage": "left_in1",
+      "utilization": "out   | IOT113[A] | Q0REF_T_IN1     | LVCMOS33 | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus1"
+    },
+    {
+      "resource": "A19/2",
+      "usage": "left_in2",
+      "utilization": "out   | IOT113[B] | Q0REF_C_IN1     | LVCMOS33 | 4     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus1"
+    },
+    {
+      "resource": "C18/2",
+      "usage": "-",
+      "utilization": "in    | IOT115[A] | GCLKT_3         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "C19/2",
+      "usage": "-",
+      "utilization": "in    | IOT115[B] | GCLKC_3         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "F18/2",
+      "usage": "-",
+      "utilization": "in    | IOT117[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "E18/2",
+      "usage": "-",
+      "utilization": "in    | IOT117[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "E19/2",
+      "usage": "-",
+      "utilization": "in    | IOT120[A] | GCLKT_2         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "D19/2",
+      "usage": "-",
+      "utilization": "in    | IOT120[B] | GCLKC_2         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "B20/2",
+      "usage": "-",
+      "utilization": "in    | IOT122[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "A20/2",
+      "usage": "s1_n",
+      "utilization": "in    | IOT122[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "F19/2",
+      "usage": "-",
+      "utilization": "in    | IOT124[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "F20/2",
+      "usage": "-",
+      "utilization": "in    | IOT124[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "D20/2",
+      "usage": "-",
+      "utilization": "in    | IOT131[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "C20/2",
+      "usage": "-",
+      "utilization": "in    | IOT131[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "C22/2",
+      "usage": "-",
+      "utilization": "in    | IOT133[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "B22/2",
+      "usage": "-",
+      "utilization": "in    | IOT133[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "B21/2",
+      "usage": "-",
+      "utilization": "in    | IOT135[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "A21/2",
+      "usage": "-",
+      "utilization": "in    | IOT135[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "E21/2",
+      "usage": "-",
+      "utilization": "in    | IOT138[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "D21/2",
+      "usage": "-",
+      "utilization": "in    | IOT138[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "E22/2",
+      "usage": "-",
+      "utilization": "in    | IOT140[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "D22/2",
+      "usage": "-",
+      "utilization": "in    | IOT140[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "F21/2",
+      "usage": "-",
+      "utilization": "in    | IOT142[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "G21/2",
+      "usage": "-",
+      "utilization": "in    | IOT144[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "G22/2",
+      "usage": "-",
+      "utilization": "in    | IOT144[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "T16/2",
+      "usage": "-",
+      "utilization": "in    | IOT146[A] | TPLL1_T_IN1/TPLL1_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
+    },
+    {
+      "resource": "AA9/9",
+      "usage": "-",
+      "utilization": "in    | IOB1[A]  | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA10/9",
+      "usage": "-",
+      "utilization": "in    | IOB1[B]  | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T3/9",
+      "usage": "O_ddr_cs_n",
+      "utilization": "out   | IOB3[A]  | BPLL0_T_IN1/BPLL0_T_FB0 | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB10/9",
+      "usage": "-",
+      "utilization": "in    | IOB3[B]  | BPLL0_C_IN1/BPLL0_C_FB0 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T1/9",
+      "usage": "O_ddr_addr[6]",
+      "utilization": "out   | IOB5[A]  | BPLL0_T_IN2/BPLL0_T_FB1 | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U1/9",
+      "usage": "O_ddr_addr[4]",
+      "utilization": "out   | IOB5[B]  | BPLL0_C_IN2/BPLL0_C_FB1 | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U2/9",
+      "usage": "O_ddr_addr[1]",
+      "utilization": "out   | IOB7[A]  | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "V2/9",
+      "usage": "O_ddr_addr[0]",
+      "utilization": "out   | IOB7[B]  | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "W2/9",
+      "usage": "O_ddr_addr[12]",
+      "utilization": "out   | IOB9[A]  | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "Y2/9",
+      "usage": "O_ddr_cke",
+      "utilization": "out   | IOB9[B]  | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "R3/9",
+      "usage": "O_ddr_clk",
+      "utilization": "out   | IOB12[A] | -               | SSTL15D_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "R2/9",
+      "usage": "O_ddr_clk_n",
+      "utilization": "out   | IOB12[B] | -               | SSTL15D_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "W1/9",
+      "usage": "O_ddr_ba[2]",
+      "utilization": "out   | IOB14[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "Y1/9",
+      "usage": "O_ddr_ba[1]",
+      "utilization": "out   | IOB14[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "U3/9",
+      "usage": "O_ddr_addr[8]",
+      "utilization": "out   | IOB16[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "V3/9",
+      "usage": "O_ddr_addr[2]",
+      "utilization": "out   | IOB16[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB12/9",
+      "usage": "-",
+      "utilization": "in    | IOB18[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB11/9",
+      "usage": "-",
+      "utilization": "in    | IOB18[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA11/9",
+      "usage": "-",
+      "utilization": "in    | IOB20[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y11/9",
+      "usage": "-",
+      "utilization": "in    | IOB20[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA1/9",
+      "usage": "IO_ddr_dq[15]",
+      "utilization": "io    | IOB22[A] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AB1/9",
+      "usage": "IO_ddr_dq[14]",
+      "utilization": "io    | IOB22[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AB3/9",
+      "usage": "O_ddr_dqm[1]",
+      "utilization": "out   | IOB24[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB2/9",
+      "usage": "IO_ddr_dq[10]",
+      "utilization": "io    | IOB24[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "Y3/9",
+      "usage": "IO_ddr_dqs[1]",
+      "utilization": "io    | IOB26[A] | -               | SSTL15D_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | OFF        | OFF             | ON            | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AA3/9",
+      "usage": "IO_ddr_dqs_n[1]",
+      "utilization": "io    | IOB26[B] | -               | SSTL15D_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | OFF        | OFF             | ON            | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AA5/9",
+      "usage": "IO_ddr_dq[9]",
+      "utilization": "io    | IOB29[A] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AB5/9",
+      "usage": "IO_ddr_dq[8]",
+      "utilization": "io    | IOB29[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "Y4/9",
+      "usage": "IO_ddr_dq[13]",
+      "utilization": "io    | IOB31[A] | GCLKT_14        | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AA4/9",
+      "usage": "IO_ddr_dq[12]",
+      "utilization": "io    | IOB31[B] | GCLKC_14        | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "V4/9",
+      "usage": "IO_ddr_dq[11]",
+      "utilization": "io    | IOB33[A] | GCLKT_15        | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "W4/9",
+      "usage": "-",
+      "utilization": "in    | IOB33[B] | GCLKC_15        | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W11/9",
+      "usage": "-",
+      "utilization": "in    | IOB35[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W10/9",
+      "usage": "-",
+      "utilization": "in    | IOB35[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "R4/9",
+      "usage": "O_ddr_addr[11]",
+      "utilization": "out   | IOB38[A] | GCLKT_13        | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "T4/9",
+      "usage": "O_ddr_addr[3]",
+      "utilization": "out   | IOB38[B] | GCLKC_13        | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "T5/9",
+      "usage": "O_ddr_addr[5]",
+      "utilization": "out   | IOB40[A] | GCLKT_12        | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U5/9",
+      "usage": "O_ddr_ba[0]",
+      "utilization": "out   | IOB40[B] | GCLKC_12        | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U6/9",
+      "usage": "O_ddr_addr[9]",
+      "utilization": "out   | IOB42[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "V5/9",
+      "usage": "O_ddr_odt",
+      "utilization": "out   | IOB42[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "W6/9",
+      "usage": "O_ddr_cas_n",
+      "utilization": "out   | IOB44[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "W5/9",
+      "usage": "O_ddr_we_n",
+      "utilization": "out   | IOB44[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "R6/9",
+      "usage": "O_ddr_addr[7]",
+      "utilization": "out   | IOB48[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "T6/9",
+      "usage": "O_ddr_addr[13]",
+      "utilization": "out   | IOB48[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "Y6/9",
+      "usage": "O_ddr_ras_n",
+      "utilization": "out   | IOB50[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AA6/9",
+      "usage": "O_ddr_addr[10]",
+      "utilization": "out   | IOB50[B] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "Y12/9",
+      "usage": "-",
+      "utilization": "in    | IOB52[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W12/9",
+      "usage": "-",
+      "utilization": "in    | IOB52[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB13/9",
+      "usage": "-",
+      "utilization": "in    | IOB54[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA13/9",
+      "usage": "-",
+      "utilization": "in    | IOB54[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y13/9",
+      "usage": "-",
+      "utilization": "in    | IOB56[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y14/9",
+      "usage": "-",
+      "utilization": "in    | IOB56[B] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V7/9",
+      "usage": "IO_ddr_dq[7]",
+      "utilization": "io    | IOB58[A] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "W7/9",
+      "usage": "IO_ddr_dq[4]",
+      "utilization": "io    | IOB58[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AB7/9",
+      "usage": "IO_ddr_dq[0]",
+      "utilization": "io    | IOB60[A] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AB6/9",
+      "usage": "IO_ddr_dq[3]",
+      "utilization": "io    | IOB60[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "V9/9",
+      "usage": "IO_ddr_dqs[0]",
+      "utilization": "io    | IOB62[A] | -               | SSTL15D_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | OFF        | OFF             | ON            | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "V8/9",
+      "usage": "IO_ddr_dqs_n[0]",
+      "utilization": "io    | IOB62[B] | -               | SSTL15D_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | OFF        | OFF             | ON            | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "AA8/9",
+      "usage": "-",
+      "utilization": "in    | IOB65[A] | -               | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB8/9",
+      "usage": "IO_ddr_dq[1]",
+      "utilization": "io    | IOB65[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "Y8/9",
+      "usage": "IO_ddr_dq[6]",
+      "utilization": "io    | IOB67[A] | BPLL1_T_IN0     | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "Y7/9",
+      "usage": "IO_ddr_dq[2]",
+      "utilization": "io    | IOB67[B] | BPLL1_C_IN0     | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "W9/9",
+      "usage": "O_ddr_dqm[0]",
+      "utilization": "out   | IOB69[A] | -               | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "Y9/9",
+      "usage": "IO_ddr_dq[5]",
+      "utilization": "io    | IOB69[B] | -               | SSTL15_I | 8     | NONE      | OFF       | NONE       | OFF        | FAST      | INTERNAL   | OFF             | OFF           | 1.5   | MEDIUM        | OFF           | OFF           | bus4"
+    },
+    {
+      "resource": "U7/9",
+      "usage": "O_ddr_reset_n",
+      "utilization": "out   | IOB71[A] | BPLL1_T_IN1/BPLL1_T_FB1 | SSTL15_I | 8     | NONE      | OFF       | OFF        | OFF        | FAST      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "V10/9",
+      "usage": "-",
+      "utilization": "in    | IOB71[B] | BPLL1_C_IN1/BPLL1_C_FB1 | LVCMOS15 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 1.5   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "U17/8",
+      "usage": "tft_rgb[4]",
+      "utilization": "out   | IOB75[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U18/8",
+      "usage": "tft_rgb[3]",
+      "utilization": "out   | IOB75[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AA18/8",
+      "usage": "eth_mdc",
+      "utilization": "out   | IOB77[A] | BPLL1_T_IN2/BPLL1_T_FB0 | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB18/8",
+      "usage": "rgmii_rx_ctl",
+      "utilization": "in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V17/8",
+      "usage": "rgmii_rxd[0]",
+      "utilization": "in    | IOB79[A] | CSI_B           | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W17/8",
+      "usage": "eth_mdio",
+      "utilization": "io    | IOB79[B] | -               | LVCMOS33 | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V18/8",
+      "usage": "rgmii_rxd[1]",
+      "utilization": "in    | IOB81[A] | GCLKT_11        | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "V19/8",
+      "usage": "tft_hsync",
+      "utilization": "out   | IOB81[B] | GCLKC_11        | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "AA19/8",
+      "usage": "rgmii_tx_ctl",
+      "utilization": "out   | IOB85[A] | RDWR_B          | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "AB20/8",
+      "usage": "tft_clk",
+      "utilization": "out   | IOB85[B] | CSO_B/DOUT      | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "Y18/8",
+      "usage": "clk",
+      "utilization": "in    | IOB87[A] | GCLKT_10        | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y19/8",
+      "usage": "tft_vsync",
+      "utilization": "out   | IOB87[B] | GCLKC_10        | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB15/8",
+      "usage": "-",
+      "utilization": "in    | IOB89[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA14/8",
+      "usage": "-",
+      "utilization": "in    | IOB89[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W14/8",
+      "usage": "-",
+      "utilization": "in    | IOB91[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V14/8",
+      "usage": "-",
+      "utilization": "in    | IOB91[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W19/8",
+      "usage": "rgmii_rx_clk",
+      "utilization": "in    | IOB93[A] | GCLKT_9         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W20/8",
+      "usage": "-",
+      "utilization": "in    | IOB93[B] | GCLKC_9         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "U20/8",
+      "usage": "-",
+      "utilization": "in    | IOB95[A] | GCLKT_8         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V20/8",
+      "usage": "-",
+      "utilization": "in    | IOB95[B] | GCLKC_8         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB21/8",
+      "usage": "tft_bl",
+      "utilization": "out   | IOB97[A] | D14             | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AB22/8",
+      "usage": "tft_de",
+      "utilization": "out   | IOB97[B] | D15             | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "Y21/8",
+      "usage": "-",
+      "utilization": "in    | IOB99[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y22/8",
+      "usage": "rgmii_txd[3]",
+      "utilization": "out   | IOB99[B] | D13             | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AA20/7",
+      "usage": "-",
+      "utilization": "in    | IOB102[A] | D11             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA21/7",
+      "usage": "-",
+      "utilization": "in    | IOB102[B] | D12             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W21/7",
+      "usage": "rgmii_txd[2]",
+      "utilization": "out   | IOB104[A] | D09             | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "W22/7",
+      "usage": "rgmii_txd[1]",
+      "utilization": "out   | IOB104[B] | D10             | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "AA16/7",
+      "usage": "-",
+      "utilization": "in    | IOB106[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AA15/7",
+      "usage": "-",
+      "utilization": "in    | IOB106[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB17/7",
+      "usage": "-",
+      "utilization": "in    | IOB108[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "AB16/7",
+      "usage": "-",
+      "utilization": "in    | IOB108[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T19/7",
+      "usage": "-",
+      "utilization": "in    | IOB111[A] | MCS_N           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T20/7",
+      "usage": "-",
+      "utilization": "in    | IOB111[B] | D08             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "P19/7",
+      "usage": "rgmii_rxd[2]",
+      "utilization": "in    | IOB113[A] | D06             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "R19/7",
+      "usage": "rgmii_rxd[3]",
+      "utilization": "in    | IOB113[B] | D07             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T21/7",
+      "usage": "-",
+      "utilization": "in    | IOB115[A] | D04             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "U21/7",
+      "usage": "rgmii_txd[0]",
+      "utilization": "out   | IOB115[B] | D05             | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "U22/7",
+      "usage": "rgmii_tx_clk",
+      "utilization": "out   | IOB117[A] | PUDC_B          | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "V22/7",
+      "usage": "eth_rst_n",
+      "utilization": "out   | IOB117[B] | EMCCLK          | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "P21/7",
+      "usage": "-",
+      "utilization": "in    | IOB120[A] | D02/MI2         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "R21/7",
+      "usage": "-",
+      "utilization": "in    | IOB120[B] | D03/MI3         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y17/7",
+      "usage": "-",
+      "utilization": "in    | IOB122[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "Y16/7",
+      "usage": "-",
+      "utilization": "in    | IOB122[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "P20/7",
+      "usage": "-",
+      "utilization": "in    | IOB124[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V13/7",
+      "usage": "-",
+      "utilization": "in    | IOB124[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W16/7",
+      "usage": "-",
+      "utilization": "in    | IOB126[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "W15/7",
+      "usage": "-",
+      "utilization": "in    | IOB126[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "P22/6",
+      "usage": "-",
+      "utilization": "in    | IOB128[A] | D00/MOSI/MI0    | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "R22/6",
+      "usage": "-",
+      "utilization": "in    | IOB128[B] | D01/DIN/MISO/MI1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "V15/6",
+      "usage": "-",
+      "utilization": "in    | IOB130[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "U15/6",
+      "usage": "-",
+      "utilization": "in    | IOB130[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T15/6",
+      "usage": "-",
+      "utilization": "in    | IOB132[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "T14/6",
+      "usage": "-",
+      "utilization": "in    | IOB132[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "U16/6",
+      "usage": "-",
+      "utilization": "in    | IOB134[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "N15/6",
+      "usage": "tft_rgb[12]",
+      "utilization": "out   | IOB134[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "P16/6",
+      "usage": "tft_rgb[14]",
+      "utilization": "out   | IOB136[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "R17/6",
+      "usage": "tft_rgb[13]",
+      "utilization": "out   | IOB136[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "N13/6",
+      "usage": "tft_rgb[5]",
+      "utilization": "out   | IOB138[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "N14/6",
+      "usage": "tft_rgb[15]",
+      "utilization": "out   | IOB138[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "N17/6",
+      "usage": "tft_rgb[9]",
+      "utilization": "out   | IOB140[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "P17/6",
+      "usage": "tft_rgb[8]",
+      "utilization": "out   | IOB140[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "P15/6",
+      "usage": "tft_rgb[7]",
+      "utilization": "out   | IOB142[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "R16/6",
+      "usage": "tft_rgb[6]",
+      "utilization": "out   | IOB142[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "R18/6",
+      "usage": "tft_rgb[0]",
+      "utilization": "out   | IOB144[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "T18/6",
+      "usage": "tft_rgb[10]",
+      "utilization": "out   | IOB144[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "P14/6",
+      "usage": "tft_rgb[2]",
+      "utilization": "out   | IOB146[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "R14/6",
+      "usage": "tft_rgb[1]",
+      "utilization": "out   | IOB146[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "F4/11",
+      "usage": "-",
+      "utilization": "in    | IOL21[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "B1/11",
+      "usage": "imu_int",
+      "utilization": "in    | IOL23[A] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "A1/11",
+      "usage": "imu_xda",
+      "utilization": "in    | IOL23[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "C2/11",
+      "usage": "-",
+      "utilization": "in    | IOL25[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "B2/11",
+      "usage": "imu_xcl",
+      "utilization": "in    | IOL25[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "E1/11",
+      "usage": "-",
+      "utilization": "in    | IOL27[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "D1/11",
+      "usage": "-",
+      "utilization": "in    | IOL27[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "E2/11",
+      "usage": "-",
+      "utilization": "in    | IOL29[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "D2/11",
+      "usage": "-",
+      "utilization": "in    | IOL29[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "G1/11",
+      "usage": "-",
+      "utilization": "in    | IOL31[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "F1/11",
+      "usage": "-",
+      "utilization": "in    | IOL31[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "F3/11",
+      "usage": "-",
+      "utilization": "in    | IOL33[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "E3/11",
+      "usage": "-",
+      "utilization": "in    | IOL33[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "K1/11",
+      "usage": "-",
+      "utilization": "in    | IOL35[A] | LPLL0_T_IN0/LPLL0_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "J1/11",
+      "usage": "-",
+      "utilization": "in    | IOL35[B] | LPLL0_C_IN0/LPLL0_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "H2/11",
+      "usage": "-",
+      "utilization": "in    | IOL37[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "G2/11",
+      "usage": "-",
+      "utilization": "in    | IOL37[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "K2/11",
+      "usage": "-",
+      "utilization": "in    | IOL39[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "J2/11",
+      "usage": "-",
+      "utilization": "in    | IOL39[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "J5/11",
+      "usage": "-",
+      "utilization": "in    | IOL41[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "H5/11",
+      "usage": "-",
+      "utilization": "in    | IOL41[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "H3/11",
+      "usage": "-",
+      "utilization": "in    | IOL43[A] | GCLKT_19/LPLL0_T_IN1/LPLL0_T_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "G3/11",
+      "usage": "-",
+      "utilization": "in    | IOL43[B] | GCLKC_19/LPLL0_C_IN1/LPLL0_C_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "H4/11",
+      "usage": "-",
+      "utilization": "in    | IOL45[A] | GCLKT_18        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "G4/11",
+      "usage": "-",
+      "utilization": "in    | IOL45[B] | GCLKC_18        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "K4/10",
+      "usage": "-",
+      "utilization": "in    | IOL48[A] | GCLKT_17        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "J4/10",
+      "usage": "-",
+      "utilization": "in    | IOL48[B] | GCLKC_17        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "L3/10",
+      "usage": "-",
+      "utilization": "in    | IOL50[A] | GCLKT_16        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "K3/10",
+      "usage": "-",
+      "utilization": "in    | IOL50[B] | GCLKC_16        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "M1/10",
+      "usage": "-",
+      "utilization": "in    | IOL52[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "L1/10",
+      "usage": "-",
+      "utilization": "in    | IOL52[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "M3/10",
+      "usage": "-",
+      "utilization": "in    | IOL54[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "M2/10",
+      "usage": "-",
+      "utilization": "in    | IOL54[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "K6/10",
+      "usage": "-",
+      "utilization": "in    | IOL57[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "J6/10",
+      "usage": "-",
+      "utilization": "in    | IOL57[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "L5/10",
+      "usage": "-",
+      "utilization": "in    | IOL59[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "L4/10",
+      "usage": "-",
+      "utilization": "in    | IOL59[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "N4/10",
+      "usage": "-",
+      "utilization": "in    | IOL61[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "N3/10",
+      "usage": "-",
+      "utilization": "in    | IOL61[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "R1/10",
+      "usage": "-",
+      "utilization": "in    | IOL63[A] | LPLL1_T_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "P1/10",
+      "usage": "-",
+      "utilization": "in    | IOL63[B] | LPLL1_C_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "L6/10",
+      "usage": "tft_rgb[11]",
+      "utilization": "out   | IOL65[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus2"
+    },
+    {
+      "resource": "P5/10",
+      "usage": "-",
+      "utilization": "in    | IOL66[A] | LPLL1_T_IN1/LPLL1_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "P4/10",
+      "usage": "-",
+      "utilization": "in    | IOL66[B] | LPLL1_C_IN1/LPLL1_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "P2/10",
+      "usage": "-",
+      "utilization": "in    | IOL68[A] | LPLL1_T_IN2/LPLL1_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "N2/10",
+      "usage": "-",
+      "utilization": "in    | IOL68[B] | LPLL1_C_IN2/LPLL1_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "M6/10",
+      "usage": "-",
+      "utilization": "in    | IOL70[A] | BPLL0_T_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "M5/10",
+      "usage": "-",
+      "utilization": "in    | IOL70[B] | BPLL0_C_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "P6/10",
+      "usage": "-",
+      "utilization": "in    | IOL72[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "N5/10",
+      "usage": "-",
+      "utilization": "in    | IOL72[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "V12/12",
+      "usage": "-",
+      "utilization": "in    | IOR1[A]  | TCK             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "R13/12",
+      "usage": "-",
+      "utilization": "in    | IOR1[B]  | TDI             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "T13/12",
+      "usage": "-",
+      "utilization": "in    | IOR3[A]  | TMS             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "U13/12",
+      "usage": "-",
+      "utilization": "out   | IOR3[B]  | TDO             | LVCMOS33 | 8     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "L12/3",
+      "usage": "-",
+      "utilization": "in    | IOR5[A]  | CCLK            | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "U12/3",
+      "usage": "-",
+      "utilization": "in    | IOR5[B]  | READY           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "U10/3",
+      "usage": "-",
+      "utilization": "in    | IOR7[A]  | MODE1           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "U11/3",
+      "usage": "-",
+      "utilization": "in    | IOR7[B]  | MODE0           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "G11/3",
+      "usage": "-",
+      "utilization": "in    | IOR9[A]  | DONE            | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "N12/3",
+      "usage": "-",
+      "utilization": "in    | IOR9[B]  | RECONFIG_N      | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "U8/3",
+      "usage": "-",
+      "utilization": "in    | IOR11[A] | TPLL1_T_IN0/TPLL1_T_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus3"
+    },
+    {
+      "resource": "U9/3",
+      "usage": "-",
+      "utilization": "in    | IOR11[B] | MODE2/TPLL1_C_IN0/TPLL1_C_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus3"
+    },
+    {
+      "resource": "H13/4",
+      "usage": "-",
+      "utilization": "in    | IOR20[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "G13/4",
+      "usage": "-",
+      "utilization": "in    | IOR20[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J15/4",
+      "usage": "-",
+      "utilization": "in    | IOR22[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "H15/4",
+      "usage": "-",
+      "utilization": "in    | IOR22[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "G15/4",
+      "usage": "-",
+      "utilization": "in    | IOR24[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "G16/4",
+      "usage": "-",
+      "utilization": "in    | IOR24[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J14/4",
+      "usage": "-",
+      "utilization": "in    | IOR26[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "H14/4",
+      "usage": "lidar_rx",
+      "utilization": "in    | IOR26[B] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "G17/4",
+      "usage": "-",
+      "utilization": "in    | IOR30[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "G18/4",
+      "usage": "-",
+      "utilization": "in    | IOR30[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "H17/4",
+      "usage": "-",
+      "utilization": "in    | IOR32[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "H18/4",
+      "usage": "-",
+      "utilization": "in    | IOR32[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "L16/4",
+      "usage": "-",
+      "utilization": "in    | IOR34[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "K16/4",
+      "usage": "-",
+      "utilization": "in    | IOR34[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "K13/4",
+      "usage": "-",
+      "utilization": "in    | IOR36[A] | RPLL0_T_IN1/RPLL0_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "K14/4",
+      "usage": "-",
+      "utilization": "in    | IOR36[B] | RPLL0_C_IN1/RPLL0_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "K17/5",
+      "usage": "-",
+      "utilization": "in    | IOR39[A] | RPLL0_T_IN0/RPLL0_T_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J17/5",
+      "usage": "-",
+      "utilization": "in    | IOR39[B] | RPLL0_C_IN0/RPLL0_C_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J19/5",
+      "usage": "-",
+      "utilization": "in    | IOR41[A] | GCLKT_7         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "H19/5",
+      "usage": "-",
+      "utilization": "in    | IOR41[B] | GCLKC_7         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "H20/5",
+      "usage": "lidar_control",
+      "utilization": "out   | IOR43[A] | -               | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "G20/5",
+      "usage": "-",
+      "utilization": "in    | IOR43[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "J22/5",
+      "usage": "led[5]",
+      "utilization": "out   | IOR45[A] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "H22/5",
+      "usage": "led[6]",
+      "utilization": "out   | IOR45[B] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "J16/5",
+      "usage": "-",
+      "utilization": "in    | IOR47[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "L14/5",
+      "usage": "-",
+      "utilization": "in    | IOR48[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "L15/5",
+      "usage": "-",
+      "utilization": "in    | IOR48[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "M13/5",
+      "usage": "-",
+      "utilization": "in    | IOR50[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "L13/5",
+      "usage": "-",
+      "utilization": "in    | IOR50[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "M15/5",
+      "usage": "-",
+      "utilization": "in    | IOR52[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "M16/5",
+      "usage": "-",
+      "utilization": "in    | IOR52[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J20/5",
+      "usage": "-",
+      "utilization": "in    | IOR54[A] | GCLKT_5         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "J21/5",
+      "usage": "-",
+      "utilization": "in    | IOR54[B] | GCLKC_5         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "M17/5",
+      "usage": "imu_ad0",
+      "utilization": "in    | IOR56[A] | -               | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "K18/5",
+      "usage": "-",
+      "utilization": "in    | IOR57[A] | GCLKT_6         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "K19/5",
+      "usage": "-",
+      "utilization": "in    | IOR57[B] | GCLKC_6         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "K21/5",
+      "usage": "led[3]",
+      "utilization": "out   | IOR59[A] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "K22/5",
+      "usage": "led[4]",
+      "utilization": "out   | IOR59[B] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "L19/5",
+      "usage": "-",
+      "utilization": "in    | IOR61[A] | SDA/GCLKT_4/RPLL1_T_IN2/RPLL1_T_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "L20/5",
+      "usage": "-",
+      "utilization": "in    | IOR61[B] | SCL/GCLKC_4/RPLL1_C_IN2/RPLL1_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "N22/5",
+      "usage": "led[1]",
+      "utilization": "out   | IOR63[A] | SI/SSI0         | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "M22/5",
+      "usage": "led[0]",
+      "utilization": "out   | IOR63[B] | SSPI_CS_N       | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "M18/5",
+      "usage": "-",
+      "utilization": "in    | IOR66[A] | SO/SSI1/RPLL1_T_IN1/RPLL1_T_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "L18/5",
+      "usage": "imu_scl",
+      "utilization": "io    | IOR66[B] | SSPI_CLK/RPLL1_C_IN1/RPLL1_C_FB1 | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "M21/5",
+      "usage": "led[7]",
+      "utilization": "out   | IOR68[A] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "L21/5",
+      "usage": "led[2]",
+      "utilization": "out   | IOR68[B] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "N20/5",
+      "usage": "-",
+      "utilization": "in    | IOR70[A] | SSPI_WPN/SSI2   | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "M20/5",
+      "usage": "imu_sda",
+      "utilization": "io    | IOR70[B] | CLKHOLD_N/SSI3  | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "N18/5",
+      "usage": "-",
+      "utilization": "in    | IOR72[A] | RPLL1_T_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "N19/5",
+      "usage": "-",
+      "utilization": "in    | IOR72[B] | RPLL1_C_IN0     | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+    },
+    {
+      "resource": "N9/ADC",
+      "usage": "-",
+      "utilization": "in    | ADCTN  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "N10/ADC",
+      "usage": "-",
+      "utilization": "in    | ADCTP  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "M9/ADC",
+      "usage": "-",
+      "utilization": "in    | ADCVN  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "L10/ADC",
+      "usage": "-",
+      "utilization": "in    | ADCVP  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "F8/Q0",
+      "usage": "-",
+      "utilization": "inout | Q0_ATEST_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "A8/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN0_RXM_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "B8/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN0_RXP_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "A4/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN0_TXM_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "B4/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN0_TXP_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "C11/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN1_RXM_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "D11/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN1_RXP_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "C5/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN1_TXM_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "D5/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN1_TXP_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "A10/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN2_RXM_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "B10/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN2_RXP_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "A6/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN2_TXM_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "B6/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN2_TXP_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "C9/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN3_RXM_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "D9/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_LN3_RXP_I  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "C7/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN3_TXM_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "D7/Q0",
+      "usage": "-",
+      "utilization": "out   | Q0_LN3_TXP_O  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "E6/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_REFCLKM_0  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "E10/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_REFCLKM_1  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "F6/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_REFCLKP_0  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    },
+    {
+      "resource": "F10/Q0",
+      "usage": "-",
+      "utilization": "in    | Q0_REFCLKP_1  | -               | -          | -     | -         | -         | -          | -          | -         | -          | -               | -             | -          | -             | -             | -             | -"
+    }
+  ],
+  "motor_obufs": {
+    "left_in1": "OBUF left_in1_obuf (\n    .O(left_in1),\n    .I(left_in1_d) \n);",
+    "left_in2": "OBUF left_in2_obuf (\n    .O(left_in2),\n    .I(left_in2_d) \n);",
+    "right_in1": "OBUF right_in1_obuf (\n    .O(right_in1),\n    .I(right_in1_d) \n);",
+    "right_in2": "OBUF right_in2_obuf (\n    .O(right_in2),\n    .I(right_in2_d) \n);"
+  },
+  "pin_assignments": {
+    "left_in1": [
+      "left_in1",
+      "-",
+      "A18/2",
+      "Y",
+      "out",
+      "IOT113[A]",
+      "Q0REF_T_IN1",
+      "LVCMOS33",
+      "4",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus1"
+    ],
+    "left_in2": [
+      "left_in2",
+      "-",
+      "A19/2",
+      "Y",
+      "out",
+      "IOT113[B]",
+      "Q0REF_C_IN1",
+      "LVCMOS33",
+      "4",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus1"
+    ],
+    "left_enc_a": [
+      "left_enc_a",
+      "-",
+      "A15/1",
+      "Y",
+      "in",
+      "IOT99[A]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "DOWN",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus2"
+    ],
+    "left_enc_b": [
+      "left_enc_b",
+      "-",
+      "A16/1",
+      "Y",
+      "in",
+      "IOT99[B]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "DOWN",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus2"
+    ],
+    "right_in1": [
+      "right_in1",
+      "-",
+      "F13/1",
+      "Y",
+      "out",
+      "IOT80[A]",
+      "TPLL0_T_IN1/TPLL0_T_FB1",
+      "LVCMOS33",
+      "4",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus2"
+    ],
+    "right_in2": [
+      "right_in2",
+      "-",
+      "F14/1",
+      "Y",
+      "out",
+      "IOT80[B]",
+      "TPLL0_C_IN1/TPLL0_C_FB1",
+      "LVCMOS33",
+      "4",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus2"
+    ],
+    "right_enc_a": [
+      "right_enc_a",
+      "-",
+      "E13/1",
+      "Y",
+      "in",
+      "IOT78[A]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "DOWN",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus2"
+    ],
+    "right_enc_b": [
+      "right_enc_b",
+      "-",
+      "E14/1",
+      "Y",
+      "in",
+      "IOT78[B]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "DOWN",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus2"
+    ],
+    "imu_scl": [
+      "imu_scl",
+      "-",
+      "L18/5",
+      "Y",
+      "io",
+      "IOR66[B]",
+      "SSPI_CLK/RPLL1_C_IN1/RPLL1_C_FB1",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "imu_sda": [
+      "imu_sda",
+      "-",
+      "M20/5",
+      "Y",
+      "io",
+      "IOR70[B]",
+      "CLKHOLD_N/SSI3",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "-"
+    ],
+    "imu_xda": [
+      "imu_xda",
+      "-",
+      "A1/11",
+      "Y",
+      "in",
+      "IOL23[B]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "-"
+    ],
+    "imu_xcl": [
+      "imu_xcl",
+      "-",
+      "B2/11",
+      "Y",
+      "in",
+      "IOL25[B]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "-"
+    ],
+    "imu_ad0": [
+      "imu_ad0",
+      "-",
+      "M17/5",
+      "Y",
+      "in",
+      "IOR56[A]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "imu_int": [
+      "imu_int",
+      "-",
+      "B1/11",
+      "Y",
+      "in",
+      "IOL23[A]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "-"
+    ],
+    "lidar_control": [
+      "lidar_control",
+      "-",
+      "H20/5",
+      "Y",
+      "out",
+      "IOR43[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "lidar_rx": [
+      "lidar_rx",
+      "-",
+      "H14/4",
+      "Y",
+      "in",
+      "IOR26[B]",
+      "-",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "tft_clk": [
+      "tft_clk",
+      "-",
+      "AB20/8",
+      "Y",
+      "out",
+      "IOB85[B]",
+      "CSO_B/DOUT",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_de": [
+      "tft_de",
+      "-",
+      "AB22/8",
+      "Y",
+      "out",
+      "IOB97[B]",
+      "D15",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_hsync": [
+      "tft_hsync",
+      "-",
+      "V19/8",
+      "Y",
+      "out",
+      "IOB81[B]",
+      "GCLKC_11",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_vsync": [
+      "tft_vsync",
+      "-",
+      "Y19/8",
+      "Y",
+      "out",
+      "IOB87[B]",
+      "GCLKC_10",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_bl": [
+      "tft_bl",
+      "-",
+      "AB21/8",
+      "Y",
+      "out",
+      "IOB97[A]",
+      "D14",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[0]": [
+      "tft_rgb[0]",
+      "-",
+      "R18/6",
+      "Y",
+      "out",
+      "IOB144[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_rgb[1]": [
+      "tft_rgb[1]",
+      "-",
+      "R14/6",
+      "Y",
+      "out",
+      "IOB146[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_rgb[2]": [
+      "tft_rgb[2]",
+      "-",
+      "P14/6",
+      "Y",
+      "out",
+      "IOB146[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_rgb[3]": [
+      "tft_rgb[3]",
+      "-",
+      "U18/8",
+      "Y",
+      "out",
+      "IOB75[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[4]": [
+      "tft_rgb[4]",
+      "-",
+      "U17/8",
+      "Y",
+      "out",
+      "IOB75[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[5]": [
+      "tft_rgb[5]",
+      "-",
+      "N13/6",
+      "Y",
+      "out",
+      "IOB138[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[6]": [
+      "tft_rgb[6]",
+      "-",
+      "R16/6",
+      "Y",
+      "out",
+      "IOB142[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[7]": [
+      "tft_rgb[7]",
+      "-",
+      "P15/6",
+      "Y",
+      "out",
+      "IOB142[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[8]": [
+      "tft_rgb[8]",
+      "-",
+      "P17/6",
+      "Y",
+      "out",
+      "IOB140[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[9]": [
+      "tft_rgb[9]",
+      "-",
+      "N17/6",
+      "Y",
+      "out",
+      "IOB140[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[10]": [
+      "tft_rgb[10]",
+      "-",
+      "T18/6",
+      "Y",
+      "out",
+      "IOB144[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "tft_rgb[11]": [
+      "tft_rgb[11]",
+      "-",
+      "L6/10",
+      "Y",
+      "out",
+      "IOL65[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus2"
+    ],
+    "tft_rgb[12]": [
+      "tft_rgb[12]",
+      "-",
+      "N15/6",
+      "Y",
+      "out",
+      "IOB134[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[13]": [
+      "tft_rgb[13]",
+      "-",
+      "R17/6",
+      "Y",
+      "out",
+      "IOB136[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[14]": [
+      "tft_rgb[14]",
+      "-",
+      "P16/6",
+      "Y",
+      "out",
+      "IOB136[A]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "tft_rgb[15]": [
+      "tft_rgb[15]",
+      "-",
+      "N14/6",
+      "Y",
+      "out",
+      "IOB138[B]",
+      "-",
+      "LVCMOS33",
+      "8",
+      "DOWN",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ]
+  },
+  "cmd_do_options": {
+    "route_1": true,
+    "place_1": true,
+    "timing_driven": true,
+    "correct_hold": true
+  },
+  "source_inputs_match": true,
+  "netlist_sha256": "83f294490c042ed221960343012d2f41d4b686b4b1434ca0da1b7f1107a2eb25",
+  "pnr_phase_times": [
+    "Placement Phase 0: CPU time = 0h 0m 25s, Elapsed time = 0h 0m 25s",
+    "Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s",
+    "Placement Phase 2: CPU time = 0h 1m 3s, Elapsed time = 0h 1m 3s",
+    "Placement Phase 3: CPU time = 0h 0m 53s, Elapsed time = 0h 0m 53s",
+    "Total Placement: CPU time = 0h 2m 24s, Elapsed time = 0h 2m 24s",
+    "Routing Phase 0: CPU time = 0h 0m 0.021s, Elapsed time = 0h 0m 0.021s",
+    "Routing Phase 1: CPU time = 0h 1m 26s, Elapsed time = 0h 1m 26s",
+    "Routing Phase 2: CPU time = 0h 0m 0.739s, Elapsed time = 0h 0m 0.739s",
+    "Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s",
+    "Total Routing: CPU time = 0h 1m 27s, Elapsed time = 0h 1m 27s",
+    "CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s",
+    "Total Time and Memory Usage: CPU time = 0h 3m 57s, Elapsed time = 0h 3m 57s, Peak memory usage = 1826MB"
+  ]
+}

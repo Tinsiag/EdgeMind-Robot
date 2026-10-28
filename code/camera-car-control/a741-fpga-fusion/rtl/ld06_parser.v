@@ -11,7 +11,16 @@ module ld06_parser #(parameter STALE_MS=300,LIDAR_ZERO=0,LIDAR_CLOCKWISE=0)(
     output reg [31:0] sample_time,sequence_id,errors,dropped,
     output reg [15:0] front_mm,left_mm,right_mm
 );
-    reg [375:0] window,candidate,checked_packet;
+    reg [375:0] window,candidate;
+    // Keep the packet capture enable local to eight register banks.  A single
+    // 376-bit register made Gowin promote the capture CE to a PRIMARY clock
+    // resource because it fanned out to every bit.  The banks are equivalent
+    // state: the concatenated wire below preserves the original packet layout
+    // for CRC and telemetry logic while limiting CE fanout to eight loads.
+    reg [46:0] checked_packet_0,checked_packet_1,checked_packet_2,checked_packet_3;
+    reg [46:0] checked_packet_4,checked_packet_5,checked_packet_6,checked_packet_7;
+    wire [375:0] checked_packet={checked_packet_7,checked_packet_6,checked_packet_5,checked_packet_4,
+                                 checked_packet_3,checked_packet_2,checked_packet_1,checked_packet_0};
     reg [5:0] filled,packet_guard;
     reg [7:0] crc;
     reg checking,interpolation_ready,divide_start;
@@ -56,7 +65,9 @@ module ld06_parser #(parameter STALE_MS=300,LIDAR_ZERO=0,LIDAR_CLOCKWISE=0)(
             angle_cdeg<=0;distance_mm<=0;confidence<=0;sample_time<=0;sequence_id<=0;
             errors<=0;dropped<=0;age<=65535;now_ms<=0;emitting<=0;point_index<=0;
             start_angle<=0;span<=0;scan_front<=65535;scan_left<=65535;scan_right<=65535;
-            checked_packet<=0;checking<=0;crc_index<=0;crc<=0;interpolation_ready<=0;divide_start<=0;
+            checked_packet_0<=0;checked_packet_1<=0;checked_packet_2<=0;checked_packet_3<=0;
+            checked_packet_4<=0;checked_packet_5<=0;checked_packet_6<=0;checked_packet_7<=0;
+            checking<=0;crc_index<=0;crc<=0;interpolation_ready<=0;divide_start<=0;
             point_step<=0;point_remainder<=0;point_offset<=0;residue<=0;emitted_first<=0;
             front_mm<=65535;left_mm<=65535;right_mm<=65535;last_angle<=0;scan_started<=0;have_last<=0;last_step<=0;
         end else begin
@@ -140,7 +151,21 @@ module ld06_parser #(parameter STALE_MS=300,LIDAR_ZERO=0,LIDAR_CLOCKWISE=0)(
                 if(packet_guard!=0) packet_guard<=packet_guard-1'b1;
                 else if(filled>=46 && candidate[15:0]==16'h2c54) begin
                     if(checking) dropped<=dropped+1'b1;
-                    else begin checked_packet<=candidate;checking<=1;crc_index<=0;crc<=0;end
+                    else begin
+                        // Use an explicit D-side hold mux instead of one
+                        // shared CE across all 376 capture flops.  Gowin then
+                        // keeps this packet token on ordinary data routing;
+                        // the packet layout and byte ordering are unchanged.
+                        checked_packet_0 <= candidate[46:0];
+                        checked_packet_1 <= candidate[93:47];
+                        checked_packet_2 <= candidate[140:94];
+                        checked_packet_3 <= candidate[187:141];
+                        checked_packet_4 <= candidate[234:188];
+                        checked_packet_5 <= candidate[281:235];
+                        checked_packet_6 <= candidate[328:282];
+                        checked_packet_7 <= candidate[375:329];
+                        checking<=1;crc_index<=0;crc<=0;
+                    end
                 end
             end
         end

@@ -3,7 +3,7 @@
 module a741_top(
     output wire tft_clk,tft_de,tft_hsync,tft_vsync,tft_bl,
     output wire [15:0] tft_rgb,
-    input wire clk,stop_n,
+    input wire clk,stop_n,s1_n,
     input wire camera_pclk,camera_vsync,camera_href,input wire [7:0] camera_data,
     output wire camera_reset_n,inout wire camera_sclk,camera_sdat,
     input wire rgmii_rx_clk,input wire [3:0] rgmii_rxd,input wire rgmii_rx_ctl,
@@ -183,8 +183,14 @@ module a741_top(
     a741_tft800_panel status_panel(.clk(display_clk),.rst_n(display_n),.rgb(panel_rgb),
         .pixel_request(pixel_request),.frame_blank(frame_blank),.active(active),.x(display_x),.y(display_y),
         .tft_clk(),.tft_de(tft_de),.tft_hsync(tft_hsync),.tft_vsync(tft_vsync),.tft_bl(tft_bl),.tft_rgb(tft_rgb));
-    // Forward a centered pixel clock using the dedicated DDR output primitive.
-    ODDR tft_clock(.CLK(display_clk),.D0(1'b0),.D1(1'b1),.TX(1'b1),.Q0(tft_clk),.Q1());
+    // Keep the external panel clock at a deterministic low level while the
+    // display domain is in reset.  The previous plain ODDR continued to
+    // toggle PCLK while display_n was low; after FPGA Reprogram the powered
+    // panel could then resume from an arbitrary scan phase and show snow.
+    // ODDRC.CLEAR is the device primitive's asynchronous output clear, so
+    // this also covers the unconfigured/GSR interval before display_n rises.
+    ODDRC tft_clock(.CLK(display_clk),.D0(1'b0),.D1(1'b1),.TX(1'b1),
+        .CLEAR(!display_n),.Q0(tft_clk),.Q1());
     (* ASYNC_REG="TRUE" *) reg [1:0] ddr_ready_sync;
     always @(posedge clk or negedge control_n)
         if(!control_n) ddr_ready_sync<=0;else ddr_ready_sync<={ddr_ready_sync[0],calibrated};
@@ -192,7 +198,13 @@ module a741_top(
 `ifdef A741_MOTION_LIDAR
     assign lidar_control=global_n && lidar_pwm;
 `endif
-    a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR)) core(.clk(clk),.rst_n(control_n),
+    wire s1_start;
+`ifdef A741_BUTTON_AUTONOMOUS
+    a741_button_debounce #(.CLK_HZ(50000000)) s1_filter(.clk(clk),.rst_n(control_n),.button_n(s1_n),.press(s1_start));
+`else
+    assign s1_start=1'b0;
+`endif
+    a741_core #(.SENSOR_PINS_ENABLED(SENSOR_PINS_ENABLED),.IMU_TEST(IMU_TEST),.MOTION_LIDAR(MOTION_LIDAR)) core(.clk(clk),.rst_n(control_n),.button_start(s1_start),
         .mac_diagnostic(mac_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
         .phy_diagnostic(128'd0),
         .lidar_control(lidar_pwm),
@@ -204,8 +216,21 @@ module a741_top(
         .eth_tx_data(tx_data),.eth_tx_valid(tx_valid),.eth_tx_last(tx_last),.eth_tx_bad(tx_bad),.eth_tx_ready(tx_ready),
         .ddr_ready(ddr_ready_sync[1]),.frame_ready(sys_frame_ready),.camera_error(sys_camera_bad),
         .ddr_error(sys_ddr_bad),.video_overflow(sys_overflow),.video_frames(sys_frames),.snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.state(state),.faults(faults));
-    assign left_in1=IMU_TEST ? 1'b0:global_n && raw_l1;assign left_in2=IMU_TEST ? 1'b0:global_n && raw_l2;
-    assign right_in1=IMU_TEST ? 1'b0:global_n && raw_r1;assign right_in2=IMU_TEST ? 1'b0:global_n && raw_r2;
+`ifdef A741_MOTION_LIDAR
+`ifdef A741_MOTOR_PADS_UNLOCKED
+    assign left_in1=global_n && raw_l1;assign left_in2=global_n && raw_l2;
+    assign right_in1=global_n && raw_r1;assign right_in2=global_n && raw_r2;
+`else
+    // Physical motor headers may still be hard-wired to GND during display
+    // bring-up. Keep the pads at a safe constant until the build explicitly
+    // opts into the unlocked motor pinout after that wiring is removed.
+    assign left_in1=1'b0;assign left_in2=1'b0;
+    assign right_in1=1'b0;assign right_in2=1'b0;
+`endif
+`else
+    assign left_in1=1'b0;assign left_in2=1'b0;
+    assign right_in1=1'b0;assign right_in2=1'b0;
+`endif
 `ifdef A741_DISPLAY_DIAGNOSTIC
     assign led=diagnostic_led;
 `else

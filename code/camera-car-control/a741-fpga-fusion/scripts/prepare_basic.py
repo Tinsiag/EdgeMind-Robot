@@ -20,10 +20,14 @@ def write(path, data):
         path.write_bytes(data)
 
 
-def prepare(examples, screen_test=False, display_diagnostic=False):
-    if display_diagnostic and not screen_test:
-        raise ValueError("Display diagnostic requires grounded motor pads (--screen-test)")
-    out=ROOT/(".local/platform-basic-tft800-screen-test" if screen_test else ".local/platform-basic-tft800")
+def prepare(examples, screen_test=False, display_diagnostic=False, unlock_motor_pads=False,
+            sequence_test=False, button_autonomous=False):
+    if display_diagnostic and unlock_motor_pads:
+        raise ValueError("Display diagnostic cannot be combined with unlocked motor pads")
+    if sequence_test and button_autonomous:
+        raise ValueError("Sequence test and button autonomous are separate variants")
+    suffix = "-sequence-test" if sequence_test else "-button-autonomous" if button_autonomous else ""
+    out=ROOT/(".local/platform-basic-tft800-screen-test" if screen_test else ".local/platform-basic-tft800"+suffix)
     if display_diagnostic:
         out=out.with_name(out.name+"-diagnostic")
     out.mkdir(parents=True,exist_ok=True)
@@ -56,6 +60,11 @@ def prepare(examples, screen_test=False, display_diagnostic=False):
             write(dest,raw);files.append(dest)
             record[name]={"original_sha256":hashlib.sha256(raw).hexdigest(),"sha256":sha(dest)}
     cst=(CAMERA/"constraints/acg720_camera_car.cst").read_text(encoding="utf-8")
+    # During FPGA Reprogram the camera-reset PAD is briefly high impedance.
+    # Hold it low with the I/O keeper so a powered OV5640 cannot continue its
+    # old frame stream while the FPGA is being configured.
+    cst=re.sub(r'IO_PORT "camera_reset_n" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;',
+               'IO_PORT "camera_reset_n" IO_TYPE=LVCMOS33 PULL_MODE=DOWN DRIVE=4;', cst)
     if chapter47_cst.is_file():
         vendor=chapter47_cst.read_text(encoding="utf-8-sig")
         chapter47_source=chapter47_cst
@@ -73,8 +82,14 @@ def prepare(examples, screen_test=False, display_diagnostic=False):
         screen[f"tft_rgb[{bit}]"]=ball
     for signal,ball in {**{"imu_"+n:b for n,b in imu.items()},"lidar_control":"H20","lidar_rx":"H14",**screen}.items():
         drive=" DRIVE=8" if signal in screen else ""
-        cst+=f'\nIO_LOC "{signal}" {ball};\nIO_PORT "{signal}" IO_TYPE=LVCMOS33 PULL_MODE=NONE{drive} BANK_VCCIO=3.3;\n'
+        # All TFT pads are low-safe while the panel remains powered and the
+        # FPGA is unconfigured.  This prevents floating PCLK/DE/HS/VS/RGB/BL
+        # edges during a live Reprogram.  Other board I/O retains its prior
+        # pull configuration.
+        pull="DOWN" if signal in screen else "NONE"
+        cst+=f'\nIO_LOC "{signal}" {ball};\nIO_PORT "{signal}" IO_TYPE=LVCMOS33 PULL_MODE={pull}{drive} BANK_VCCIO=3.3;\n'
     cst+="\n"+(ROOT/"constraints/board.cst").read_text(encoding="utf-8")
+    cst+='\nIO_LOC "s1_n" A20;\nIO_PORT "s1_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;\n'
     assigned={}
     for signal,balls in re.findall(r'IO_LOC "([^"]+)" ([A-Z0-9,]+);',cst):
         for ball in balls.split(","):
@@ -123,16 +138,25 @@ def prepare(examples, screen_test=False, display_diagnostic=False):
         # Literal pad assignments, independent of every controller register.
         for signal,raw in (("left_in1","raw_l1"),("left_in2","raw_l2"),("right_in1","raw_r1"),("right_in2","raw_r2")):
             old=f"assign {signal}=IMU_TEST ? 1'b0:global_n && {raw};"
-            if top.count(old)!=1:
+            if top.count(old)==1:
+                top=top.replace(old,f"assign {signal}=1'b0;")
+            elif f"assign {signal}=1'b0;" not in top:
                 raise RuntimeError("Motor pad hard-disable injection failed: "+signal)
-            top=top.replace(old,f"assign {signal}=1'b0;")
     sys.path.insert(0,str(ROOT/"host"))
     from board_config import compiled_parameters
     values,crc=compiled_parameters(json.loads((ROOT/"config/geometry.json").read_text(encoding="utf-8")),
                                    json.loads((ROOT/"config/calibration.json").read_text(encoding="utf-8")))
     parameters="defparam core.FUSION_ENABLED=1;\n"+"".join(f"defparam core.{k}={v};\n" for k,v in values.items())
+    parameters+=f"defparam core.SEQUENCE_TEST={int(sequence_test)};\n"
+    parameters+=f"defparam core.BUTTON_AUTONOMOUS={int(button_autonomous)};\n"
     parameters+=f"defparam core.FUSION_CONFIG_CRC=32'h{crc:08x};\n"
-    defines="`define A741_MOTION_LIDAR\n"+("`define A741_DISPLAY_DIAGNOSTIC\n" if display_diagnostic else "")
+    defines="`define A741_MOTION_LIDAR\n"
+    if unlock_motor_pads and not screen_test:
+        defines += "`define A741_MOTOR_PADS_UNLOCKED\n"
+    if display_diagnostic:
+        defines += "`define A741_DISPLAY_DIAGNOSTIC\n"
+    if button_autonomous:
+        defines += "`define A741_BUTTON_AUTONOMOUS\n"
     write(out/"a741_top.v",defines+top.replace("endmodule",parameters+"endmodule"))
     write(out/"basic-parameters.json",json.dumps({"parameters":values,"crc32":crc},indent=2))
     write(out/"provenance.json",json.dumps({"chapter38":str(archive),"chapter38_sha256":sha(archive),
@@ -141,6 +165,7 @@ def prepare(examples, screen_test=False, display_diagnostic=False):
         "ethernet_pll":{"original_sha256":sha(ethernet_pll),"prepared_sha256":sha(prepared_pll),"change":"ODIV1_SEL 6->3; 250MHz feeds CLKDIV/2 for 125MHz MAC"},
         "camera_size":[800,480],"display_pll":display_pll_record,
         "hdmi_enabled":False,"network_video_enabled":False,"navigation_enabled":False,
-        "motor_locked":screen_test,"display_diagnostic":display_diagnostic,
+        "motor_locked":(screen_test or not unlock_motor_pads),"motor_pads_unlocked":(unlock_motor_pads and not screen_test),"display_diagnostic":display_diagnostic,
+        "sequence_test":sequence_test,"button_autonomous":button_autonomous,
         "panel":"ACG720 ch28/TFT V3:33MHz,1056x525,800x480; rising-edge sample, half-cycle data setup; J1 unchanged"},indent=2))
     return list(dict.fromkeys([p for p in sources() if p.name!="a741_top.v"]+files+extra+[out/"a741_top.v"])),out

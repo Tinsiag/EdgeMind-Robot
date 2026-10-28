@@ -76,9 +76,11 @@ def screen_test_top(top):
     return top
 
 
-def prepare(examples, imu_test=False, motion_lidar=True, fusion=True, tft800=True, screen_test=False, display_diagnostic=False):
+def prepare(examples, imu_test=False, motion_lidar=True, fusion=True, tft800=True, screen_test=False, display_diagnostic=False, unlock_motor_pads=False, sequence_test=False, button_autonomous=False):
     from prepare_basic import prepare as basic_platform
-    return basic_platform(examples, screen_test=screen_test, display_diagnostic=display_diagnostic)
+    return basic_platform(examples, screen_test=screen_test, display_diagnostic=display_diagnostic,
+                          unlock_motor_pads=unlock_motor_pads, sequence_test=sequence_test,
+                          button_autonomous=button_autonomous)
 
 
 def main():
@@ -89,6 +91,9 @@ def main():
     parser.add_argument("--fusion", action="store_true", help="Compatibility flag; basic camera/TFT/IMU/avoidance is the only profile")
     parser.add_argument("--tft800", action="store_true", help="Official ACG720 800x480 RGB565 display at stable33MHz; current sole board profile")
     parser.add_argument("--screen-test", action="store_true", help="Hard-wire all four motor output pads low")
+    parser.add_argument("--unlock-motor-pads", action="store_true", help="Enable dynamic motor pads; use only after removing physical GND locks")
+    parser.add_argument("--sequence-test", action="store_true", help="Build host-commanded 5-second forward/reverse/left/right sequence")
+    parser.add_argument("--button-autonomous", action="store_true", help="Build S1-started autonomous LD06 avoidance")
     parser.add_argument("--display-diagnostic", action="store_true", help="Startup colours, missing-video bars and activity/error LEDs; requires --screen-test")
     parser.add_argument("--in-place", action="store_true", help="Synthesize in the normal build directory to permit checked PNR reuse")
     parser.add_argument("--timeout", type=int, default=5400, help="Gowin tool wall-time limit in seconds")
@@ -98,8 +103,14 @@ def main():
     parser.add_argument("--gowin", default="C:/Gowin/Gowin_V1.9.12.04_x64/IDE/bin/gw_sh.exe")
     args = parser.parse_args()
     args.fusion=args.tft800=args.motion_lidar=True
-    if args.display_diagnostic and not args.screen_test:
-        parser.error("--display-diagnostic requires --screen-test")
+    if args.display_diagnostic and args.unlock_motor_pads:
+        parser.error("--display-diagnostic cannot be combined with --unlock-motor-pads")
+    if args.screen_test and args.unlock_motor_pads:
+        parser.error("--screen-test and --unlock-motor-pads are mutually exclusive")
+    if args.sequence_test and args.button_autonomous:
+        parser.error("--sequence-test and --button-autonomous are separate projects")
+    if (args.sequence_test or args.button_autonomous) and not args.unlock_motor_pads:
+        parser.error("motion projects require --unlock-motor-pads")
     if args.in_place and args.mode!="synth":
         parser.error("--in-place is only valid with synth")
     if args.timeout<1:
@@ -108,9 +119,10 @@ def main():
         args.motion_lidar=True
     if args.imu_test and args.motion_lidar:
         parser.error("Choose exactly one hardware variant")
-    build_folder="gowin-basic-tft800"+("-screen-test" if args.screen_test else "")
+    build_folder="gowin-basic-tft800"+("-screen-test" if args.screen_test else "-sequence-test" if args.sequence_test else "-button-autonomous" if args.button_autonomous else "")
     if args.display_diagnostic:
         build_folder+="-diagnostic"
+    user_code = "0000A742" if args.sequence_test else "0000A743" if args.button_autonomous else "0000A741"
     for folder in (build_folder, build_folder+"-synth"):
         running = ROOT / ".local" / folder / "result.json"
         if running.is_file() and json.loads(running.read_text(encoding="utf-8")).get("run_state")=="running":
@@ -137,7 +149,7 @@ def main():
     if args.fusion:
         from build_mission import build as build_mission
         build_mission()
-    files, platform = prepare(args.examples, args.imu_test, args.motion_lidar,args.fusion,args.tft800,args.screen_test,args.display_diagnostic)
+    files, platform = prepare(args.examples, args.imu_test, args.motion_lidar,args.fusion,args.tft800,args.screen_test,args.display_diagnostic,args.unlock_motor_pads,args.sequence_test,args.button_autonomous)
     if args.mode == "prepare":
         print("Prepared A741 platform; IMU test="+str(args.imu_test)+"; no hardware operation.")
         return
@@ -197,7 +209,7 @@ def main():
         "cd [file dirname [file normalize [info script]]]\nopen_project a741.gprj\n"
         "set_option -top_module a741_top\nset_option -output_base_name a741\n"
         "set_option -verilog_std sysv2017\nset_option -use_sspi_as_gpio 1\n"
-        "set_option -use_cpu_as_gpio 1\nset_option -user_code 0000A741\nset_option -bit_security 0\n"
+        "set_option -use_cpu_as_gpio 1\nset_option -user_code " + user_code + "\nset_option -bit_security 0\n"
         + f"set_option -route_option {args.route_option}\n"
         + f"set_option -place_option {args.place_option}\n"
         + "set_option -timing_driven 1\nset_option -correct_hold_violation 1\n"
@@ -217,11 +229,12 @@ def main():
     # Save the inputs before launching the tool. An interrupted session must not
     # leave a previous run's completed result looking like the current build.
     (out / "result.json").write_text(json.dumps({
-        "variant":"A741-FPGA-FUSION-TFT800",
+        "variant":"A741-FPGA-FUSION-TFT800-SEQUENCE" if args.sequence_test else "A741-FPGA-FUSION-TFT800-BUTTON-AUTONOMOUS" if args.button_autonomous else "A741-FPGA-FUSION-TFT800",
         "mode":args.mode,"run_state":"running","pid":os.getpid(),"started_unix":started,
         "compile_passed":False,"seconds":0,"timed_out":False,"sources_changed":False,
         "hardware_programmed":False,"timing_signed_off":False,"route_option":args.route_option,
-        "screen_test":args.screen_test,"display_diagnostic":args.display_diagnostic,"motor_locked":args.imu_test or args.screen_test,
+        "screen_test":args.screen_test,"display_diagnostic":args.display_diagnostic,"sequence_test":args.sequence_test,"button_autonomous":args.button_autonomous,"motor_locked":args.imu_test or args.screen_test or not args.unlock_motor_pads,
+        "motor_pads_unlocked":args.unlock_motor_pads and not args.screen_test,
         "place_option":args.place_option,
         "platform_directory":str(platform),"source_sha256":hashes},indent=2),encoding="utf-8")
     timeline_path=out/"build-timeline.jsonl"
@@ -282,8 +295,10 @@ def main():
               "run_state":"interrupted" if interrupted else "timed_out" if timed_out else "completed" if passed else "failed",
               "started_unix":started,"route_option":args.route_option,
               "place_option":args.place_option,
-              "p4_enabled": False, "imu_enabled": args.imu_test or args.motion_lidar, "motor_locked": args.imu_test or args.screen_test,
+              "p4_enabled": False, "imu_enabled": args.imu_test or args.motion_lidar, "motor_locked": args.imu_test or args.screen_test or not args.unlock_motor_pads,
+              "motor_pads_unlocked": args.unlock_motor_pads and not args.screen_test,
               "screen_test":args.screen_test,"display_diagnostic":args.display_diagnostic,
+              "sequence_test":args.sequence_test,"button_autonomous":args.button_autonomous,"user_code":user_code,
               "motion_lidar": args.motion_lidar, "tof_enabled": False,
               "platform_directory": str(platform),
               "hardware_programmed": False, "timing_signed_off": False,
@@ -321,9 +336,11 @@ def main():
     record["camera_size"]=[800,480]
     record["tft800_enabled"]=args.tft800
     if args.fusion:
-        record["variant"]="A741-BASIC-CAMERA-TFT800-IMU-LD06"
+        record["variant"]="A741-BASIC-CAMERA-TFT800-IMU-LD06" if args.unlock_motor_pads else "A741-BASIC-CAMERA-TFT800-IMU-LD06-MOTOR-PADS-LOCKED"
         if args.screen_test: record["variant"]="A741-TFT800-SCREEN-TEST-MOTOR-LOCKED"
         if args.display_diagnostic: record["variant"]="A741-TFT800-DISPLAY-DIAGNOSTIC-MOTOR-LOCKED"
+        if args.sequence_test: record["variant"]="A741-TFT800-MOTION-SEQUENCE-5S"
+        if args.button_autonomous: record["variant"]="A741-TFT800-S1-AUTONOMOUS-AVOIDANCE"
         record["geometry_verified"]=json.loads((ROOT / "config/geometry.json").read_text(encoding="utf-8")).get("navigation_geometry_verified") is True
         record["motion_release_allowed"]=False
     if passed:

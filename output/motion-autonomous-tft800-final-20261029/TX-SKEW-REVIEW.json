@@ -1,0 +1,557 @@
+{
+  "passed": true,
+  "sdf_sha256": "faf65a2c3e3d2301633c09f9a52a5e437e0bb4323bc29e47f738381cdb42ea25",
+  "physical_netlist_sha256": "ff45a2abbc275dd59fb32a44622b44ce0268ffd9c89bbc1d4c85f224b06b9358",
+  "bitstream_sha256": "8bb2a55b64316265266d31831af6d3fc10583bb53cbf7291c38df016cd914710",
+  "corner_order": [
+    "fast",
+    "typical",
+    "slow"
+  ],
+  "edge_model": "one or two SDF triples; all four launch-clock / data-transition combinations, three PVT corners",
+  "method": "shared tx_divider origin; sum clock route + ODDR CLK/Q0 + pad route + OBUF I/O, subtract forwarded clock in each corner",
+  "arrival_delay_ns": {
+    "rgmii_tx_clk": {
+      "riseCLK_riseDATA": [
+        2.878,
+        3.803,
+        4.726
+      ],
+      "fallCLK_fallDATA": [
+        2.864,
+        3.789,
+        4.712
+      ]
+    },
+    "rgmii_tx_ctl": {
+      "riseCLK_riseDATA": [
+        2.878,
+        3.803,
+        4.726
+      ],
+      "riseCLK_fallDATA": [
+        2.864,
+        3.789,
+        4.712
+      ],
+      "fallCLK_riseDATA": [
+        2.878,
+        3.803,
+        4.726
+      ],
+      "fallCLK_fallDATA": [
+        2.864,
+        3.789,
+        4.712
+      ]
+    },
+    "rgmii_txd[0]": {
+      "riseCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "riseCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ],
+      "fallCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "fallCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ]
+    },
+    "rgmii_txd[1]": {
+      "riseCLK_riseDATA": [
+        2.878,
+        3.803,
+        4.726
+      ],
+      "riseCLK_fallDATA": [
+        2.864,
+        3.789,
+        4.712
+      ],
+      "fallCLK_riseDATA": [
+        2.878,
+        3.803,
+        4.726
+      ],
+      "fallCLK_fallDATA": [
+        2.864,
+        3.789,
+        4.712
+      ]
+    },
+    "rgmii_txd[2]": {
+      "riseCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "riseCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ],
+      "fallCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "fallCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ]
+    },
+    "rgmii_txd[3]": {
+      "riseCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "riseCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ],
+      "fallCLK_riseDATA": [
+        2.874,
+        3.797,
+        4.718
+      ],
+      "fallCLK_fallDATA": [
+        2.86,
+        3.783,
+        4.704
+      ]
+    }
+  },
+  "path_components_ns": {
+    "rgmii_tx_clk": {
+      "clock_route": [
+        [
+          0.606,
+          1.248,
+          1.889
+        ],
+        [
+          0.606,
+          1.248,
+          1.889
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    },
+    "rgmii_tx_ctl": {
+      "clock_route": [
+        [
+          0.606,
+          1.248,
+          1.889
+        ],
+        [
+          0.606,
+          1.248,
+          1.889
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    },
+    "rgmii_txd[0]": {
+      "clock_route": [
+        [
+          0.602,
+          1.242,
+          1.881
+        ],
+        [
+          0.602,
+          1.242,
+          1.881
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    },
+    "rgmii_txd[1]": {
+      "clock_route": [
+        [
+          0.606,
+          1.248,
+          1.889
+        ],
+        [
+          0.606,
+          1.248,
+          1.889
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    },
+    "rgmii_txd[2]": {
+      "clock_route": [
+        [
+          0.602,
+          1.242,
+          1.881
+        ],
+        [
+          0.602,
+          1.242,
+          1.881
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    },
+    "rgmii_txd[3]": {
+      "clock_route": [
+        [
+          0.602,
+          1.242,
+          1.881
+        ],
+        [
+          0.602,
+          1.242,
+          1.881
+        ]
+      ],
+      "clock_to_q": [
+        [
+          1.16,
+          1.16,
+          1.16
+        ],
+        [
+          1.146,
+          1.146,
+          1.146
+        ]
+      ],
+      "output_route": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "output_buffer": [
+        [
+          1.112,
+          1.395,
+          1.677
+        ],
+        [
+          1.112,
+          1.395,
+          1.677
+        ]
+      ]
+    }
+  },
+  "data_minus_clock_ns": {
+    "rgmii_tx_ctl": {
+      "riseCLK_riseDATA": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "riseCLK_fallDATA": [
+        -0.014,
+        -0.014,
+        -0.014
+      ],
+      "fallCLK_riseDATA": [
+        0.014,
+        0.014,
+        0.014
+      ],
+      "fallCLK_fallDATA": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "rgmii_txd[0]": {
+      "riseCLK_riseDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ],
+      "riseCLK_fallDATA": [
+        -0.018,
+        -0.02,
+        -0.022
+      ],
+      "fallCLK_riseDATA": [
+        0.01,
+        0.008,
+        0.006
+      ],
+      "fallCLK_fallDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ]
+    },
+    "rgmii_txd[1]": {
+      "riseCLK_riseDATA": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "riseCLK_fallDATA": [
+        -0.014,
+        -0.014,
+        -0.014
+      ],
+      "fallCLK_riseDATA": [
+        0.014,
+        0.014,
+        0.014
+      ],
+      "fallCLK_fallDATA": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "rgmii_txd[2]": {
+      "riseCLK_riseDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ],
+      "riseCLK_fallDATA": [
+        -0.018,
+        -0.02,
+        -0.022
+      ],
+      "fallCLK_riseDATA": [
+        0.01,
+        0.008,
+        0.006
+      ],
+      "fallCLK_fallDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ]
+    },
+    "rgmii_txd[3]": {
+      "riseCLK_riseDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ],
+      "riseCLK_fallDATA": [
+        -0.018,
+        -0.02,
+        -0.022
+      ],
+      "fallCLK_riseDATA": [
+        0.01,
+        0.008,
+        0.006
+      ],
+      "fallCLK_fallDATA": [
+        -0.004,
+        -0.006,
+        -0.008
+      ]
+    }
+  },
+  "worst_abs_skew_ns": 0.022,
+  "uncertainty_reserve_ns": 0.035,
+  "board_skew_budget_ns": 0.2,
+  "allowed_total_skew_ns": 0.5,
+  "margin_ns": 0.243,
+  "board_skew_measured": false
+}
