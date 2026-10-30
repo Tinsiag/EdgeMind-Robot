@@ -1,0 +1,8 @@
+{
+  "reproduced": true,
+  "old_source_sha256": "ab29968241e8992e903c5f2c7d3b6cb9e3815aab6a1f1f187e8835d0edd2ebdf",
+  "test": "attitude_session_tb real CORDIC + autonomy",
+  "failure": "fresh valid sample update caused FAULT 0x0001 after ARM",
+  "imu_wire_errors_observed": 0,
+  "real_tilt_within_limit": true
+}

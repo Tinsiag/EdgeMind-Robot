@@ -1,0 +1,156 @@
+{
+  "recorded_utc": "2026-10-30T17:32:17.941644+00:00",
+  "revision": 74504,
+  "artifact_sha256": "74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df",
+  "state": "74504_cold_boot_passed_forward_ok_turn_block_under_diagnosis",
+  "initial_failure": {
+    "audit": "flash/20261030T172050.141553Z/audit.json",
+    "returncode": 50,
+    "cable_enumerated": false,
+    "reload_not_attempted": true
+  },
+  "reconnection_user_confirmation": "下载器已重新连接，FPGA通电，VM关闭、轮子架空",
+  "readonly_scan": {
+    "cable": "Gowin USB Cable(FT2CH)/0/548/null",
+    "usb_location": 548,
+    "device_count": 1,
+    "device_id": "0x0001481B",
+    "cable_scan_returncode": 0,
+    "device_scan_returncode": 0
+  },
+  "checks": {
+    "rtl_tests": 23,
+    "protocol": true,
+    "cpu_gate_same_input_hashes": true,
+    "navigation_primitive_models": [
+      "navigation_scan_tb",
+      "autonomy_tb",
+      "motion_feedback_tb"
+    ],
+    "geometry_rotated_edge_points": 122536,
+    "timing_violated_endpoints": {
+      "setup": 0,
+      "hold": 0,
+      "recovery": 0,
+      "removal": 0
+    },
+    "worst_slack_ns": {
+      "setup": 1.135,
+      "hold": 0.051,
+      "recovery": 3.952,
+      "removal": 0.325,
+      "minimum_pulse_width": 1.551
+    },
+    "tft_pad": true,
+    "tx_pad": true,
+    "camera_inputs": true,
+    "current_sources_match": true
+  },
+  "policy": {
+    "recorded_utc": "2026-10-30T17:13:43.529044+00:00",
+    "candidate_revision": 74504,
+    "current_hardware_revision": 74503,
+    "state": "74504_checks_passed_programming_failed_no_download_cable",
+    "user_requirement": "仅把前方停车线改为50cm，侧后方按车身转弯空间检查",
+    "gyro_requirement": "转弯后直行借助陀螺仪；角度闭环和转后航向保持",
+    "vm_off_wheels_raised_user_confirmed": true,
+    "front_stop_mm": 500,
+    "resume_and_side_path_mm": 600,
+    "slowdown_mm": 800,
+    "speeds_mm_s": [
+      120,
+      60
+    ],
+    "turn_target_degrees": 90,
+    "turn_brake_degrees": 87,
+    "turn_speed_mm_s": [
+      80,
+      40
+    ],
+    "turn_timeout_seconds": 4.5,
+    "pre_turn_stop_ms": 100,
+    "post_turn_settle_ms": 150,
+    "both_sides_blocked": "stationary wait; no automatic reverse",
+    "geometry": "Separate left/right 0..90 degree CAD swept hulls; 40mm base margin plus sampling/rounding allowance",
+    "kalman_filter_implemented": false,
+    "network": "TX only",
+    "automatic_arm": false,
+    "artifact_sha256": "74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df",
+    "rtl_tests_passed": 23,
+    "navigation_gate_passed": true,
+    "geometry_points_checked": 122536,
+    "timing_violations": {
+      "setup": 0,
+      "hold": 0,
+      "recovery": 0,
+      "removal": 0
+    },
+    "last_programming_attempt": "output/refactor-autonomous-20261030/flash/20261030T172050.141553Z/audit.json"
+  },
+  "physical_turning_verified": false,
+  "cold_boot_verified": true,
+  "kalman_implemented": false,
+  "packets_sent": 0,
+  "programming_audit": "output\\refactor-autonomous-20261030\\flash\\20261030T172515.341214Z\\audit.json",
+  "configuration_ready": true,
+  "final_status_register": "0x70022020",
+  "actual_revision_verified": 74504,
+  "health_telemetry": "output/refactor-autonomous-20261030/TURNING-74504-HEALTH.json",
+  "health_last_status": {
+    "seq": 22299,
+    "ms": 22299,
+    "revision": 74504,
+    "flags": 41739,
+    "state": 0,
+    "faults": 0,
+    "armed": false,
+    "targets": [
+      0,
+      0
+    ],
+    "speeds": [
+      0,
+      0
+    ],
+    "counts": [
+      0,
+      0
+    ],
+    "yaw": 0.0,
+    "ranges": [
+      352,
+      678,
+      740
+    ],
+    "camera_error": 0,
+    "camera_phase": 11,
+    "camera_attempt": 1,
+    "camera_register": 18241,
+    "camera_expected": 0,
+    "camera_value": 0,
+    "video_frames": 1286,
+    "frame_ready": true,
+    "ddr_ready": true,
+    "video_error": false,
+    "camera_ready": true,
+    "rear": 616,
+    "left_clear": true,
+    "right_clear": true,
+    "scan_sequence": 223
+  },
+  "health_last_attitude": {
+    "roll": 2.911376953125,
+    "pitch": 0.5712890625,
+    "tilt_valid": true,
+    "cpu_alive": true,
+    "cpu_fault": false,
+    "cpu_progress": 22300
+  },
+  "cold_boot_user_report": "冷启动后都正常",
+  "hardware_display_verified": true,
+  "forward_user_verified": true,
+  "latest_user_motion_report": "能前进，但是没有转弯，显示BLOCK",
+  "status": "74504_cold_boot_passed_forward_ok_turn_block_under_diagnosis",
+  "diagnostic_state": "awaiting fixed scene F/L/R, VM-off confirmation and telemetry connection",
+  "latest_diagnostic_packets": 0
+}

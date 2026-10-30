@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "main_netlist_sha256": "643a3d9e780f8ab8262575ddfe2a62f93846a6b5b1dbaca820f435c6060a7626",
+  "tests": [
+    {
+      "module": "a745_navigation_scan",
+      "test": "navigation_scan_tb",
+      "netlist_sha256": "dd91d9364a9e2dea803fff7a3112de7549a133da98749e215419a38662f72623"
+    },
+    {
+      "module": "a745_autonomy",
+      "test": "autonomy_tb",
+      "netlist_sha256": "aae51b3c9fde7767b634b5dbf635b0fbe26b448a49939d2330a0251c6181d7ff"
+    },
+    {
+      "module": "a741_motion_feedback",
+      "test": "motion_feedback_tb",
+      "netlist_sha256": "c4e8a82e3e1693e259623e00e226f7f74fbbf2b422474fb13b545259ec1ed4d8"
+    }
+  ],
+  "model_scope": "Independent synthesis of current leaf inputs with full observable ports; main board optimizer crosses hierarchy boundaries. Main envelope separately checked for asynchronous ROM mapping.",
+  "asynchronous_turn_rom_synchronous_ram_count": 0,
+  "actual_board_tested": false,
+  "input_sha256": {
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\check_navigation_gate.py": "6d90d8f23f84396fbb7ed58be5ea70421b490b267b5d4c61623f47ade8db618b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "d4b38f9cc73d23ecf5da48548ab2e9d969f2e3e46ba01fcfb107c8c2573ca104",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_motion_feedback.v": "26f294b0a23072e4eecaccbca71d60cdb7eb98c9568894d6d3ee4f3f3a0e5a22",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\navigation_scan_tb.v": "d2fe61aa996d71138c4a11044ce47703c24142bac4b27565c66407e282569eaf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\autonomy_tb.v": "bc88741da793ea20c1b4f29f3305b9d0fad9432382706780855b6c773e13b288",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\motion_feedback_tb.v": "b21f2634571888e16c7657ff7587defda751cd69d6983572c25c5725456497ed"
+  }
+}

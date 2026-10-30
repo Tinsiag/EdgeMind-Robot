@@ -1,30 +1,10 @@
-# Keep other manufacturer-supplied packages local. User-selected mechanical
-# models are explicitly included under model/hardware/.
-/doc/电机/WHEELTEC 直流电机附送资料/
-/doc/fpga/**
-!/doc/fpga/**/
-!/doc/fpga/*.md
-!/doc/fpga/**/*.md
-/doc/123.txt
-/doc/技术文档模板.docx
-
-# KiCad local UI state and generated backups.
+**/__pycache__/
+**/.venv/
+**/.local/
 *.kicad_prl
 *-backups/
 **/.history/
-
-# CAD conversion runtimes and scratch meshes used for chassis concept previews.
-/tmp/chassis-concept/
-/tmp/vision-motion-tools/
-
-# Local simulation scratch files and desktop preview logs.
-/core.hex
-/uart.hex
-/tmp/ld06-demo-error.log
-/tmp/ld06-demo-out.log
-
-# Rebuildable diagnostic implementation databases and simulation executables.
-# Keep source snapshots, CAD, constraints, reports and failure logs in Git.
+/tmp/
 /output/**/*.pr
 /output/**/*.p
 /output/**/*.vg
@@ -33,5 +13,4 @@
 /output/**/*.binx
 /output/**/*.db
 /output/**/*.vvp
-/output/**/__pycache__/
-/tmp/cad-preview-v4/.local/
+!/output/releases/fw74504/a745.fs

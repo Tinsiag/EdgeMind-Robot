@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "removed_targets": 351,
+  "removed_files": 18685,
+  "removed_bytes": 15918936378,
+  "current_compiler_inputs_match": true,
+  "navigation_cad_hashes_match": true,
+  "git_metadata_retained": true,
+  "pcb_source_retained": true,
+  "current_cad_source_retained": true,
+  "remaining_targets": [],
+  "compiler_inputs_count": 58,
+  "scope": "All 351 reviewed planned targets removed; subsequent programming staging is separate.",
+  "later_cleanup_exceptions": [
+    {
+      "path": "output/refactor-autonomous-20261030/flash/20261030T161323.218749Z/image.fs",
+      "sha256": "9f63a98f972becf73a2fa8bdc09823f1888df2ebf93e26edb506037971b8cc87",
+      "state": "retained_automatic_approval_rejected",
+      "reason": "blocked by policy",
+      "no_retry_attempted": true
+    }
+  ]
+}

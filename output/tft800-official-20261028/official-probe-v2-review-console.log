@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\output\tft800-official-20261028\review_official_probe.py", line 17, in <module>
-    assert all(v is None or v>=0 for v in timing.values()),timing
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: {'setup': 2.835, 'hold': 0.188, 'recovery': 1.076, 'removal': -0.267, 'mpw': 7.122}

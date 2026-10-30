@@ -1,0 +1,50 @@
+{
+  "schema": 2,
+  "started_utc": "20261030T172050.141553Z",
+  "device": "GW5AT-60B",
+  "original_bitstream": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.fs",
+  "sha256": "74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df",
+  "flash_address": "0x000000",
+  "flash_program_verify_completed": false,
+  "reload_command_completed": false,
+  "status_read_completed": false,
+  "configuration_ready": false,
+  "user_code_verified": false,
+  "expected_user_code": "0x0000A745",
+  "cold_boot_verified": false,
+  "application_verified": false,
+  "state": "failed",
+  "steps": [
+    {
+      "name": "flash_program_verify",
+      "command": [
+        "C:\\Gowin\\Gowin_V1.9.12.04_x64\\Programmer\\bin\\programmer_cli.exe",
+        "--device",
+        "GW5AT-60B",
+        "--cable-index",
+        "1",
+        "--chain_index",
+        "0",
+        "--chain_size",
+        "1",
+        "--frequency",
+        "2.5MHz",
+        "--channel",
+        "0",
+        "--run",
+        "54",
+        "--spiaddr",
+        "0x000000",
+        "--fsFile",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T172050.141553Z\\image.fs",
+        "--output",
+        "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T172050.141553Z\\flash_program_verify.vendor.log"
+      ],
+      "state": "failed",
+      "returncode": 50
+    }
+  ],
+  "staged_bitstream": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T172050.141553Z\\image.fs",
+  "programmer_sha256": "ca28fe178b04fd99780267787f61b0e0ec3729d579fe237ff454c1a0353e8ef6",
+  "error": "flash_program_verify failed; see logs. No retry or SRAM fallback was attempted"
+}

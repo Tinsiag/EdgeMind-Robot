@@ -1,6 +1,0 @@
-wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
-PASS diagnostic display: five complete colour fields, no-camera OSD/bars, live video restore, system/frame LEDs, init errors and reset
-- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/display_diagnostic_tb.v:68: Verilog $finish
-- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
-- Verilator: $finish at 480ms; walltime 8.972 s; speed 53.559 ms/s
-- Verilator: cpu 8.965 s on 1 threads; alloced 121 MB

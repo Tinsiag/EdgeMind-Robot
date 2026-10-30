@@ -1,0 +1,119 @@
+{
+  "note": "Application state machines and network path are new; only validated leaf drivers, RAM/CDC and manufacturer IP are reused.",
+  "files": [
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_speed.v",
+      "copy": "lib\\a741_speed.v",
+      "sha256": "4f8339447e4a4e13cd4c42a4adbad0389192bcaa2f8a3d7c5793c2a4c8483073"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_pi.v",
+      "copy": "lib\\a741_pi.v",
+      "sha256": "e6cb58f1f0f6a45bee6c1eca17ba42e4da92f8bcf557df7a8c3b2e4a016f7926"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_motion_feedback.v",
+      "copy": "lib\\a741_motion_feedback.v",
+      "sha256": "c55249a1ff81fa85220d0e1de06b2f2d55b13ec67e240f73a572d8017c6678f5"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_sensors.v",
+      "copy": "lib\\a741_sensors.v",
+      "sha256": "0e735ca4818242e255b0f4153dbebbbbdb05210adde3aa5056b8f6baa368355e"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_imu_i2c.v",
+      "copy": "lib\\a741_imu_i2c.v",
+      "sha256": "ca08c56ac95ce852383183481dedbc54d99776dc08aff2298222d95c4c1fca8a"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\mpu6050_driver.v",
+      "copy": "lib\\mpu6050_driver.v",
+      "sha256": "f6b011f3a689b9a5a647ad8a782030738e2e0a29eae7dcdadbff1dba12b02bd7"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\mpu6050_heading.v",
+      "copy": "lib\\mpu6050_heading.v",
+      "sha256": "94fb9cf33db57551369a0e8f53424d20b133d86dcc7eb3d9409552871f8b69b3"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_attitude.v",
+      "copy": "lib\\a741_attitude.v",
+      "sha256": "ab29968241e8992e903c5f2c7d3b6cb9e3815aab6a1f1f187e8835d0edd2ebdf",
+      "modified": true,
+      "current_sha256": "70afbfb05c6a84c6085d42dd07ceb86b234af3ec8a8a749cb142af3447a746f0",
+      "reason": "Hold latest published angle validity during a normal CORDIC update; still invalidate bad or stale samples immediately"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\ld06_parser.v",
+      "copy": "lib\\ld06_parser.v",
+      "sha256": "e6017c8a45366711b40f8726dad68768c0d8debd26d717484e4d79e2bc8ae1c3"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\ld06_control.v",
+      "copy": "lib\\ld06_control.v",
+      "sha256": "49eb9e849e8d53195db99e31e44ce06b98fef2bdb9e3c5387ddca8c073c05501"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_divider.v",
+      "copy": "lib\\a741_divider.v",
+      "sha256": "6ef116a71b94c4df50b5213effc10a5232da82eb801741f5aa3e37d7a369eea0"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_lidar_guard.v",
+      "copy": "lib\\a741_lidar_guard.v",
+      "sha256": "6020866db8a187aae3b4580ab0d9ad87ba8726d258486abe4a8b18c58e6bae37"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_bare_cpu.v",
+      "copy": "lib\\a741_bare_cpu.v",
+      "sha256": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_button_debounce.v",
+      "copy": "lib\\a741_button_debounce.v",
+      "sha256": "f488dfc0e0586989e4bd5b43ca705a6e413e7ce57fbb0d8bdd332d6dff689565"
+    },
+    {
+      "source": "code\\camera-car-control\\a741-fpga-fusion\\rtl\\a741_phy_config.v",
+      "copy": "lib\\a741_phy_config.v",
+      "sha256": "d73925ae4645df7e468ac1d27139ed443fa4db24fbbedde4e019b01faf5d8a59"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\reset_sync.v",
+      "copy": "lib/reset_sync.v",
+      "sha256": "60e6e8bfc0e234d148b3ad61eb99d6f17de93ce52666eb6e5f0773d92709cd97"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\capture_tokens.v",
+      "copy": "lib/capture_tokens.v",
+      "sha256": "c49cb5ba089440725f154e5481a1440ead0c96662947ea12d02126f23b2cdd66"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\async_fifo.v",
+      "copy": "lib/async_fifo.v",
+      "sha256": "db89ce7888807448a39a3507fe6adf25161927e401167d1c505d736368edbf8e"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\cdc_mailbox.v",
+      "copy": "lib/cdc_mailbox.v",
+      "sha256": "954e842cf8ea0640d7ccf599b8a7c2be2d963f2a2fe5ad9bd70e12b24007c629"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\ddr_framebuffer.v",
+      "copy": "lib/ddr_framebuffer.v",
+      "sha256": "b8edbb251fcd21a1e2e187a54ab83191f2c41d1ea1f4401a56efbf284fa792f9"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\video_pixels.v",
+      "copy": "lib/video_pixels.v",
+      "sha256": "53e24d9d37886d049cb4d65f0f703f00d75307130fa5443a1a4a2c3788791bd4"
+    },
+    {
+      "source": "code\\fpga\\acg720-vision-motion\\rtl\\motor_pwm_safe.v",
+      "copy": "lib/motor_pwm_safe.v",
+      "sha256": "d524b51acc85c9757497141b7891599c734c90421a05c35ee74d1874a5d24f89"
+    }
+  ],
+  "historical_source_paths_removed_by_authorized_cleanup": true
+}

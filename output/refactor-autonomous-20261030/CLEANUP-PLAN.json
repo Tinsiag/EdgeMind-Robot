@@ -1,0 +1,2197 @@
+{
+  "workspace": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot",
+  "authorization": "User explicitly requested deleting obsolete projects, backups, abandoned variants and unused files on 2026-10-30. Current A745 inputs and hardware design sources retained. No backup archive is created.",
+  "targets": [
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\CLONE-VERIFICATION-20261025.md",
+      "relative": "CLONE-VERIFICATION-20261025.md",
+      "files": 1,
+      "bytes": 2154
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\FLASH-20261027.md",
+      "relative": "FLASH-20261027.md",
+      "files": 1,
+      "bytes": 2080
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\HANDOFF-20261027.md",
+      "relative": "HANDOFF-20261027.md",
+      "files": 1,
+      "bytes": 16744
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\HANDOFF-20261028.md",
+      "relative": "HANDOFF-20261028.md",
+      "files": 1,
+      "bytes": 19515
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\HANDOFF-20261029.md",
+      "relative": "HANDOFF-20261029.md",
+      "files": 1,
+      "bytes": 7701
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\NEXT-AI-PROMPT-20261027.md",
+      "relative": "NEXT-AI-PROMPT-20261027.md",
+      "files": 1,
+      "bytes": 6328
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\NEXT-AI-PROMPT-20261028.md",
+      "relative": "NEXT-AI-PROMPT-20261028.md",
+      "files": 1,
+      "bytes": 4515
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\NEXT-AI-PROMPT-20261029.md",
+      "relative": "NEXT-AI-PROMPT-20261029.md",
+      "files": 1,
+      "bytes": 4780
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\PNR-20261027.md",
+      "relative": "PNR-20261027.md",
+      "files": 1,
+      "bytes": 4818
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\RESUME-20261027.md",
+      "relative": "RESUME-20261027.md",
+      "files": 1,
+      "bytes": 5881
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\TFT800-20261028.md",
+      "relative": "TFT800-20261028.md",
+      "files": 1,
+      "bytes": 14126
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\TIMING-FIX-20261027.md",
+      "relative": "TIMING-FIX-20261027.md",
+      "files": 1,
+      "bytes": 4934
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\WHITE-SCREEN-20261028.md",
+      "relative": "WHITE-SCREEN-20261028.md",
+      "files": 1,
+      "bytes": 5564
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\README.md",
+      "relative": "code/README.md",
+      "files": 1,
+      "bytes": 5851
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local",
+      "relative": "code/camera-car-control/.local",
+      "files": 54,
+      "bytes": 1164001425
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\BUILD-2026-10-19.md",
+      "relative": "code/camera-car-control/BUILD-2026-10-19.md",
+      "files": 1,
+      "bytes": 5163
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\CURRENT-STATUS.md",
+      "relative": "code/camera-car-control/CURRENT-STATUS.md",
+      "files": 1,
+      "bytes": 5877
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\DEVELOPMENT-WINDOWS.md",
+      "relative": "code/camera-car-control/DEVELOPMENT-WINDOWS.md",
+      "files": 1,
+      "bytes": 6326
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\PROTOCOL.md",
+      "relative": "code/camera-car-control/PROTOCOL.md",
+      "files": 1,
+      "bytes": 3718
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\VALIDATION.md",
+      "relative": "code/camera-car-control/VALIDATION.md",
+      "files": 1,
+      "bytes": 3817
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741",
+      "relative": "code/camera-car-control/a741",
+      "files": 347,
+      "bytes": 29766146
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-fpga-fusion",
+      "relative": "code/camera-car-control/a741-fpga-fusion",
+      "files": 1525,
+      "bytes": 2272125855
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741-imu-motion",
+      "relative": "code/camera-car-control/a741-imu-motion",
+      "files": 315,
+      "bytes": 179251849
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\__pycache__",
+      "relative": "code/camera-car-control/a745-autonomous/host/__pycache__",
+      "files": 2,
+      "bytes": 12709
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\__pycache__",
+      "relative": "code/camera-car-control/a745-autonomous/scripts/__pycache__",
+      "files": 1,
+      "bytes": 5964
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\constraints",
+      "relative": "code/camera-car-control/constraints",
+      "files": 2,
+      "bytes": 5241
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\demo.cmd",
+      "relative": "code/camera-car-control/demo.cmd",
+      "files": 1,
+      "bytes": 42
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\dev.cmd",
+      "relative": "code/camera-car-control/dev.cmd",
+      "files": 1,
+      "bytes": 114
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\dev.ps1",
+      "relative": "code/camera-car-control/dev.ps1",
+      "files": 1,
+      "bytes": 4557
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\host",
+      "relative": "code/camera-car-control/host",
+      "files": 8,
+      "bytes": 57468
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\release",
+      "relative": "code/camera-car-control/release",
+      "files": 20,
+      "bytes": 20844863
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\requirements-dev-lock.txt",
+      "relative": "code/camera-car-control/requirements-dev-lock.txt",
+      "files": 1,
+      "bytes": 117
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\requirements.txt",
+      "relative": "code/camera-car-control/requirements.txt",
+      "files": 1,
+      "bytes": 51
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\rtl",
+      "relative": "code/camera-car-control/rtl",
+      "files": 9,
+      "bytes": 39150
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\run.ps1",
+      "relative": "code/camera-car-control/run.ps1",
+      "files": 1,
+      "bytes": 385
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\scripts",
+      "relative": "code/camera-car-control/scripts",
+      "files": 9,
+      "bytes": 41621
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\tests",
+      "relative": "code/camera-car-control/tests",
+      "files": 8,
+      "bytes": 32865
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arbiter.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/arbiter.v",
+      "files": 1,
+      "bytes": 5152
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp.v",
+      "files": 1,
+      "bytes": 18389
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_cache.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_cache.v",
+      "files": 1,
+      "bytes": 7199
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_eth_rx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_rx.v",
+      "files": 1,
+      "bytes": 12005
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\arp_eth_tx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/arp_eth_tx.v",
+      "files": 1,
+      "bytes": 13865
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_adapter.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_adapter.v",
+      "files": 1,
+      "bytes": 12975
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_async_fifo_adapter.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v",
+      "files": 1,
+      "bytes": 13345
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_fifo.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo.v",
+      "files": 1,
+      "bytes": 22221
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_fifo_adapter.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_fifo_adapter.v",
+      "files": 1,
+      "bytes": 12456
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_gmii_rx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_rx.v",
+      "files": 1,
+      "bytes": 10951
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_arb_mux.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_arb_mux.v",
+      "files": 1,
+      "bytes": 13561
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_axis_rx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_rx.v",
+      "files": 1,
+      "bytes": 15788
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_axis_tx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_axis_tx.v",
+      "files": 1,
+      "bytes": 15518
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v",
+      "files": 1,
+      "bytes": 22097
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g_fifo.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v",
+      "files": 1,
+      "bytes": 10549
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip.v",
+      "files": 1,
+      "bytes": 11839
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_arb_mux.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_arb_mux.v",
+      "files": 1,
+      "bytes": 18175
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_complete.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_complete.v",
+      "files": 1,
+      "bytes": 16137
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_eth_rx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_rx.v",
+      "files": 1,
+      "bytes": 23082
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\ip_eth_tx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/ip_eth_tx.v",
+      "files": 1,
+      "bytes": 19556
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\priority_encoder.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/priority_encoder.v",
+      "files": 1,
+      "bytes": 3345
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp.v",
+      "files": 1,
+      "bytes": 15764
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_checksum_gen.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_checksum_gen.v",
+      "files": 1,
+      "bytes": 21357
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_complete.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_complete.v",
+      "files": 1,
+      "bytes": 24075
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_ip_rx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_rx.v",
+      "files": 1,
+      "bytes": 20623
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\udp_ip_tx.v",
+      "relative": "code/camera-car-control/third_party/verilog-ethernet/rtl/udp_ip_tx.v",
+      "files": 1,
+      "bytes": 18915
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\verification-2026-10-19-user-run.md",
+      "relative": "code/camera-car-control/verification-2026-10-19-user-run.md",
+      "files": 1,
+      "bytes": 1672
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\fpga",
+      "relative": "code/fpga",
+      "files": 5681,
+      "bytes": 2560301025
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\fpga",
+      "relative": "doc/fpga",
+      "files": 6,
+      "bytes": 105449
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\模块资料",
+      "relative": "doc/模块资料",
+      "files": 7,
+      "bytes": 253251
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\电机\\ACG720与现有电源板接线_2026-10-10.md",
+      "relative": "doc/电机/ACG720与现有电源板接线_2026-10-10.md",
+      "files": 1,
+      "bytes": 13566
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\自主导航方案调研_2026-10-24.md",
+      "relative": "doc/自主导航方案调研_2026-10-24.md",
+      "files": 1,
+      "bytes": 14852
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\BE11300D28AD57C96EC11B6DEDBB3751.bmp",
+      "relative": "model/BE11300D28AD57C96EC11B6DEDBB3751.bmp",
+      "files": 1,
+      "bytes": 2714662
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\EDE6B28DC4BC051CA18BC4B2684486C0.png",
+      "relative": "model/EDE6B28DC4BC051CA18BC4B2684486C0.png",
+      "files": 1,
+      "bytes": 245481
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\EdgeMind_Chassis_v1.zip",
+      "relative": "model/chassis/EdgeMind_Chassis_v1.zip",
+      "files": 1,
+      "bytes": 16916414
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\EdgeMind_Chassis_v2_R3X.zip",
+      "relative": "model/chassis/EdgeMind_Chassis_v2_R3X.zip",
+      "files": 1,
+      "bytes": 89762718
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\EdgeMind_Chassis_v3_Camera.zip",
+      "relative": "model/chassis/EdgeMind_Chassis_v3_Camera.zip",
+      "files": 1,
+      "bytes": 75084665
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\EdgeMind_Chassis_v4_Sensors.zip",
+      "relative": "model/chassis/EdgeMind_Chassis_v4_Sensors.zip",
+      "files": 1,
+      "bytes": 97560826
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\build_chassis.py",
+      "relative": "model/chassis/build_chassis.py",
+      "files": 1,
+      "bytes": 22051
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\create_preview.py",
+      "relative": "model/chassis/create_preview.py",
+      "files": 1,
+      "bytes": 6366
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\package_model.py",
+      "relative": "model/chassis/package_model.py",
+      "files": 1,
+      "bytes": 2146
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\parameters.json",
+      "relative": "model/chassis/parameters.json",
+      "files": 1,
+      "bytes": 992
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v1-fixed-front-wheels",
+      "relative": "model/chassis/v1-fixed-front-wheels",
+      "files": 46,
+      "bytes": 67332822
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v2-r3x-casters",
+      "relative": "model/chassis/v2-r3x-casters",
+      "files": 90,
+      "bytes": 260282143
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v3-camera-closed-rails",
+      "relative": "model/chassis/v3-camera-closed-rails",
+      "files": 41,
+      "bytes": 191817240
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_Assembly.glb",
+      "relative": "model/chassis/v4-lidar-imu/EdgeMind_Assembly.glb",
+      "files": 1,
+      "bytes": 28707504
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_Chassis.20261020-200500.FCBak",
+      "relative": "model/chassis/v4-lidar-imu/EdgeMind_Chassis.20261020-200500.FCBak",
+      "files": 1,
+      "bytes": 22793458
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_Exploded.20261020-200506.FCBak",
+      "relative": "model/chassis/v4-lidar-imu/EdgeMind_Exploded.20261020-200506.FCBak",
+      "files": 1,
+      "bytes": 22790542
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_Exploded.FCStd",
+      "relative": "model/chassis/v4-lidar-imu/EdgeMind_Exploded.FCStd",
+      "files": 1,
+      "bytes": 22803382
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\EdgeMind_ThirdAssembly.step",
+      "relative": "model/chassis/v4-lidar-imu/EdgeMind_ThirdAssembly.step",
+      "files": 1,
+      "bytes": 4160854
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\README.md",
+      "relative": "model/chassis/v4-lidar-imu/README.md",
+      "files": 1,
+      "bytes": 4990
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\ThirdDeck-drawing.svg",
+      "relative": "model/chassis/v4-lidar-imu/ThirdDeck-drawing.svg",
+      "files": 1,
+      "bytes": 9305
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\ThirdDeck.step",
+      "relative": "model/chassis/v4-lidar-imu/ThirdDeck.step",
+      "files": 1,
+      "bytes": 327418
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\ThirdDeck.stl",
+      "relative": "model/chassis/v4-lidar-imu/ThirdDeck.stl",
+      "files": 1,
+      "bytes": 651284
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\build_model.py",
+      "relative": "model/chassis/v4-lidar-imu/build_model.py",
+      "files": 1,
+      "bytes": 14792
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\draw_plate.py",
+      "relative": "model/chassis/v4-lidar-imu/draw_plate.py",
+      "files": 1,
+      "bytes": 4890
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\export_model.py",
+      "relative": "model/chassis/v4-lidar-imu/export_model.py",
+      "files": 1,
+      "bytes": 3622
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\extract_reference.py",
+      "relative": "model/chassis/v4-lidar-imu/extract_reference.py",
+      "files": 1,
+      "bytes": 1445
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\generate_viewer.py",
+      "relative": "model/chassis/v4-lidar-imu/generate_viewer.py",
+      "files": 1,
+      "bytes": 7898
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\package-manifest.json",
+      "relative": "model/chassis/v4-lidar-imu/package-manifest.json",
+      "files": 1,
+      "bytes": 6213
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\package_model.py",
+      "relative": "model/chassis/v4-lidar-imu/package_model.py",
+      "files": 1,
+      "bytes": 1788
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-assembled.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-assembled.png",
+      "files": 1,
+      "bytes": 338192
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-drawing.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-drawing.png",
+      "files": 1,
+      "bytes": 84474
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-exploded.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-exploded.png",
+      "files": 1,
+      "bytes": 303342
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-sensors.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-sensors.png",
+      "files": 1,
+      "bytes": 501299
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-third-top.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-third-top.png",
+      "files": 1,
+      "bytes": 179304
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\preview-viewer.png",
+      "relative": "model/chassis/v4-lidar-imu/preview-viewer.png",
+      "files": 1,
+      "bytes": 409079
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\reference-extraction.json",
+      "relative": "model/chassis/v4-lidar-imu/reference-extraction.json",
+      "files": 1,
+      "bytes": 55401
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\references",
+      "relative": "model/chassis/v4-lidar-imu/references",
+      "files": 7,
+      "bytes": 5159970
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\vendor",
+      "relative": "model/chassis/v4-lidar-imu/vendor",
+      "files": 2,
+      "bytes": 670993
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\verify_model.py",
+      "relative": "model/chassis/v4-lidar-imu/verify_model.py",
+      "files": 1,
+      "bytes": 8648
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\verify_viewer.cjs",
+      "relative": "model/chassis/v4-lidar-imu/verify_viewer.cjs",
+      "files": 1,
+      "bytes": 4224
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\viewer-verification.json",
+      "relative": "model/chassis/v4-lidar-imu/viewer-verification.json",
+      "files": 1,
+      "bytes": 79367
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v4-lidar-imu\\查看模型.html",
+      "relative": "model/chassis/v4-lidar-imu/查看模型.html",
+      "files": 1,
+      "bytes": 53357832
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\v5-rgb-touch-display\\package_model.py",
+      "relative": "model/chassis/v5-rgb-touch-display/package_model.py",
+      "files": 1,
+      "bytes": 1783
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\verify_model.py",
+      "relative": "model/chassis/verify_model.py",
+      "files": 1,
+      "bytes": 2573
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\chassis\\verify_preview.cjs",
+      "relative": "model/chassis/verify_preview.cjs",
+      "files": 1,
+      "bytes": 3376
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\model\\hardware\\ACX720-V3机械文件\\converted",
+      "relative": "model/hardware/ACX720-V3机械文件/converted",
+      "files": 18,
+      "bytes": 17469872
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\20261029-release-sha256.json",
+      "relative": "output/20261029-release-sha256.json",
+      "files": 1,
+      "bytes": 1790
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-basic-tft480-handoff-20261027-VERIFY.json",
+      "relative": "output/EdgeMind-Robot-basic-tft480-handoff-20261027-VERIFY.json",
+      "files": 1,
+      "bytes": 692
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-basic-tft480-handoff-20261027.zip",
+      "relative": "output/EdgeMind-Robot-basic-tft480-handoff-20261027.zip",
+      "files": 1,
+      "bytes": 12602206
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-basic-tft480-handoff-20261027.zip.sha256",
+      "relative": "output/EdgeMind-Robot-basic-tft480-handoff-20261027.zip.sha256",
+      "files": 1,
+      "bytes": 116
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-button-autonomous-avoidance-20261029.zip",
+      "relative": "output/EdgeMind-Robot-button-autonomous-avoidance-20261029.zip",
+      "files": 1,
+      "bytes": 8619570
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-button-autonomous-avoidance-final2-20261029.zip",
+      "relative": "output/EdgeMind-Robot-button-autonomous-avoidance-final2-20261029.zip",
+      "files": 1,
+      "bytes": 8665770
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-chip-local-sequence-a744-20261029-v2.zip",
+      "relative": "output/EdgeMind-Robot-chip-local-sequence-a744-20261029-v2.zip",
+      "files": 1,
+      "bytes": 8112618
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-chip-local-sequence-a744-20261029-v2.zip.sha256",
+      "relative": "output/EdgeMind-Robot-chip-local-sequence-a744-20261029-v2.zip.sha256",
+      "files": 1,
+      "bytes": 123
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-chip-local-sequence-a744-20261029-v3.zip",
+      "relative": "output/EdgeMind-Robot-chip-local-sequence-a744-20261029-v3.zip",
+      "files": 1,
+      "bytes": 8129173
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-chip-local-sequence-a744-20261029-v3.zip.sha256",
+      "relative": "output/EdgeMind-Robot-chip-local-sequence-a744-20261029-v3.zip.sha256",
+      "files": 1,
+      "bytes": 123
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-display-recovery-20261029.zip",
+      "relative": "output/EdgeMind-Robot-display-recovery-20261029.zip",
+      "files": 1,
+      "bytes": 1339725
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-display-recovery-final2-20261029.zip",
+      "relative": "output/EdgeMind-Robot-display-recovery-final2-20261029.zip",
+      "files": 1,
+      "bytes": 1339763
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-handoff-20261028-PUBLICATION.json",
+      "relative": "output/EdgeMind-Robot-handoff-20261028-PUBLICATION.json",
+      "files": 1,
+      "bytes": 1629
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-handoff-20261028-VERIFY.json",
+      "relative": "output/EdgeMind-Robot-handoff-20261028-VERIFY.json",
+      "files": 1,
+      "bytes": 976
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-handoff-20261028.zip",
+      "relative": "output/EdgeMind-Robot-handoff-20261028.zip",
+      "files": 1,
+      "bytes": 2139435852
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-handoff-20261028.zip.sha256",
+      "relative": "output/EdgeMind-Robot-handoff-20261028.zip.sha256",
+      "files": 1,
+      "bytes": 103
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-motion-feedback-a744-20261029-r1.zip",
+      "relative": "output/EdgeMind-Robot-motion-feedback-a744-20261029-r1.zip",
+      "files": 1,
+      "bytes": 16057532
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-motion-feedback-a744-20261029-r1.zip.sha256",
+      "relative": "output/EdgeMind-Robot-motion-feedback-a744-20261029-r1.zip.sha256",
+      "files": 1,
+      "bytes": 119
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-motion-sequence-5s-20261029.zip",
+      "relative": "output/EdgeMind-Robot-motion-sequence-5s-20261029.zip",
+      "files": 1,
+      "bytes": 8578991
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\EdgeMind-Robot-motion-sequence-5s-final2-20261029.zip",
+      "relative": "output/EdgeMind-Robot-motion-sequence-5s-final2-20261029.zip",
+      "files": 1,
+      "bytes": 8605103
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\camera-coldboot-deferred-20261028",
+      "relative": "output/camera-coldboot-deferred-20261028",
+      "files": 2,
+      "bytes": 6430
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\chassis-concept-2026-10-12",
+      "relative": "output/chassis-concept-2026-10-12",
+      "files": 20,
+      "bytes": 6450754
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\cls-optimization-20261027",
+      "relative": "output/cls-optimization-20261027",
+      "files": 126,
+      "bytes": 1617734
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\display-autonomous-fix-20261030",
+      "relative": "output/display-autonomous-fix-20261030",
+      "files": 77,
+      "bytes": 463549
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\display-recovery-final-20261029",
+      "relative": "output/display-recovery-final-20261029",
+      "files": 19,
+      "bytes": 21003246
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\display-recovery-final2-20261029",
+      "relative": "output/display-recovery-final2-20261029",
+      "files": 19,
+      "bytes": 21003246
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\display-reprogram-recovery-20261028",
+      "relative": "output/display-reprogram-recovery-20261028",
+      "files": 3,
+      "bytes": 20276976
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-basic-tft480-20261027",
+      "relative": "output/flash-basic-tft480-20261027",
+      "files": 8,
+      "bytes": 20691529
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-control-mapping-20261028",
+      "relative": "output/flash-control-mapping-20261028",
+      "files": 9,
+      "bytes": 18079251
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-diagnostic-tft480-20261028",
+      "relative": "output/flash-diagnostic-tft480-20261028",
+      "files": 9,
+      "bytes": 20767405
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-display-reprogram-recovery-20261028",
+      "relative": "output/flash-display-reprogram-recovery-20261028",
+      "files": 17,
+      "bytes": 21001839
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-falling-sample-20261028",
+      "relative": "output/flash-falling-sample-20261028",
+      "files": 19,
+      "bytes": 18092493
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-interface-probe-20261028",
+      "relative": "output/flash-interface-probe-20261028",
+      "files": 9,
+      "bytes": 18079823
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-interface-steady-20261028",
+      "relative": "output/flash-interface-steady-20261028",
+      "files": 9,
+      "bytes": 18078230
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-motion-sequence-20261029",
+      "relative": "output/flash-motion-sequence-20261029",
+      "files": 16,
+      "bytes": 20701068
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-motion-tft800-20261028",
+      "relative": "output/flash-motion-tft800-20261028",
+      "files": 16,
+      "bytes": 20551844
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-official-probe-20261028",
+      "relative": "output/flash-official-probe-20261028",
+      "files": 11,
+      "bytes": 18096823
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-official480-9mhz-20261028",
+      "relative": "output/flash-official480-9mhz-20261028",
+      "files": 19,
+      "bytes": 18096254
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-rotation-probe-20261028",
+      "relative": "output/flash-rotation-probe-20261028",
+      "files": 9,
+      "bytes": 18079713
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-rotation-swapped-20261028",
+      "relative": "output/flash-rotation-swapped-20261028",
+      "files": 9,
+      "bytes": 18079611
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-stable480-meter-20261028",
+      "relative": "output/flash-stable480-meter-20261028",
+      "files": 19,
+      "bytes": 18094571
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-stable480-meter-detail-20261028",
+      "relative": "output/flash-stable480-meter-detail-20261028",
+      "files": 23,
+      "bytes": 18347288
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-20261028",
+      "relative": "output/flash-tft800-20261028",
+      "files": 9,
+      "bytes": 20992172
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-camera-restore-20261028",
+      "relative": "output/flash-tft800-camera-restore-20261028",
+      "files": 19,
+      "bytes": 21003275
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-camera-retry-20261028",
+      "relative": "output/flash-tft800-camera-retry-20261028",
+      "files": 16,
+      "bytes": 21000044
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-motor-locked-recover-20261028",
+      "relative": "output/flash-tft800-motor-locked-recover-20261028",
+      "files": 16,
+      "bytes": 21000169
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-reburn-20261028",
+      "relative": "output/flash-tft800-reburn-20261028",
+      "files": 18,
+      "bytes": 21003115
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-recover-after-motion-20261028",
+      "relative": "output/flash-tft800-recover-after-motion-20261028",
+      "files": 16,
+      "bytes": 21000131
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-retry-20261028",
+      "relative": "output/flash-tft800-retry-20261028",
+      "files": 19,
+      "bytes": 21005477
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-tft800-screen-recover-after-bars-20261028",
+      "relative": "output/flash-tft800-screen-recover-after-bars-20261028",
+      "files": 16,
+      "bytes": 21000209
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\flash-vendor-direct-20261028",
+      "relative": "output/flash-vendor-direct-20261028",
+      "files": 9,
+      "bytes": 18005249
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\fpga-diagnostics",
+      "relative": "output/fpga-diagnostics",
+      "files": 83,
+      "bytes": 48229888
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\handoff",
+      "relative": "output/handoff",
+      "files": 1228,
+      "bytes": 299806685
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\handoff-20261028",
+      "relative": "output/handoff-20261028",
+      "files": 75,
+      "bytes": 11018085
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\handoff-20261028.zip",
+      "relative": "output/handoff-20261028.zip",
+      "files": 1,
+      "bytes": 9302406
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\handoff-20261028.zip.sha256",
+      "relative": "output/handoff-20261028.zip.sha256",
+      "files": 1,
+      "bytes": 88
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\handoff-basic-tft480-20261027",
+      "relative": "output/handoff-basic-tft480-20261027",
+      "files": 292,
+      "bytes": 28372832
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-autonomous-tft800-20261029",
+      "relative": "output/motion-autonomous-tft800-20261029",
+      "files": 47,
+      "bytes": 91914312
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-autonomous-tft800-final-20261029",
+      "relative": "output/motion-autonomous-tft800-final-20261029",
+      "files": 47,
+      "bytes": 92130194
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-chip-local-tft800-20261029",
+      "relative": "output/motion-chip-local-tft800-20261029",
+      "files": 47,
+      "bytes": 85682632
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-chip-local-tft800-20261029-r2",
+      "relative": "output/motion-chip-local-tft800-20261029-r2",
+      "files": 47,
+      "bytes": 86013463
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-feedback-chip-local-tft800-20261029",
+      "relative": "output/motion-feedback-chip-local-tft800-20261029",
+      "files": 45,
+      "bytes": 86086331
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-sequence-tft800-20261029",
+      "relative": "output/motion-sequence-tft800-20261029",
+      "files": 47,
+      "bytes": 91450338
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-sequence-tft800-final-20261029",
+      "relative": "output/motion-sequence-tft800-final-20261029",
+      "files": 47,
+      "bytes": 91645386
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-tft800-20261028",
+      "relative": "output/motion-tft800-20261028",
+      "files": 502,
+      "bytes": 193179151
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\pdf",
+      "relative": "output/pdf",
+      "files": 25,
+      "bytes": 9153979
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\pnr-basic-tft480-20261027",
+      "relative": "output/pnr-basic-tft480-20261027",
+      "files": 48,
+      "bytes": 36098243
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\power-diagnostics",
+      "relative": "output/power-diagnostics",
+      "files": 6,
+      "bytes": 2648672
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\attempt1-camera-hold",
+      "relative": "output/refactor-autonomous-20261030/attempt1-camera-hold",
+      "files": 7,
+      "bytes": 20350726
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\build-evidence-final",
+      "relative": "output/refactor-autonomous-20261030/build-evidence-final",
+      "files": 26,
+      "bytes": 71171338
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\official-ch45",
+      "relative": "output/refactor-autonomous-20261030/official-ch45",
+      "files": 3,
+      "bytes": 43040
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-button-autonomous-avoidance-20261029",
+      "relative": "output/release-button-autonomous-avoidance-20261029",
+      "files": 164,
+      "bytes": 90324144
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-button-autonomous-avoidance-final2-20261029",
+      "relative": "output/release-button-autonomous-avoidance-final2-20261029",
+      "files": 164,
+      "bytes": 90582790
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-chip-local-sequence-a744-20261029",
+      "relative": "output/release-chip-local-sequence-a744-20261029",
+      "files": 15,
+      "bytes": 72258228
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-chip-local-sequence-a744-20261029-r3",
+      "relative": "output/release-chip-local-sequence-a744-20261029-r3",
+      "files": 166,
+      "bytes": 84500593
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-chip-local-sequence-a744-20261029-v2",
+      "relative": "output/release-chip-local-sequence-a744-20261029-v2",
+      "files": 166,
+      "bytes": 84204069
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-motion-feedback-a744-20261029-r1",
+      "relative": "output/release-motion-feedback-a744-20261029-r1",
+      "files": 193,
+      "bytes": 174986418
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-motion-sequence-5s-20261029",
+      "relative": "output/release-motion-sequence-5s-20261029",
+      "files": 161,
+      "bytes": 81574703
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\release-motion-sequence-5s-final2-20261029",
+      "relative": "output/release-motion-sequence-5s-final2-20261029",
+      "files": 164,
+      "bytes": 90076149
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\resume-basic-tft480-20261027",
+      "relative": "output/resume-basic-tft480-20261027",
+      "files": 351,
+      "bytes": 28044771
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\screen-repair-20261026",
+      "relative": "output/screen-repair-20261026",
+      "files": 19,
+      "bytes": 1270975
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\screen480-compat-20261026",
+      "relative": "output/screen480-compat-20261026",
+      "files": 36,
+      "bytes": 2993252
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\screen480-reference-20261027",
+      "relative": "output/screen480-reference-20261027",
+      "files": 32,
+      "bytes": 1700180
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\task34-code-review-20261024",
+      "relative": "output/task34-code-review-20261024",
+      "files": 124,
+      "bytes": 46617938
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\task34-lightweight-20261025",
+      "relative": "output/task34-lightweight-20261025",
+      "files": 1550,
+      "bytes": 1347711735
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\task34-recheck-20261025",
+      "relative": "output/task34-recheck-20261025",
+      "files": 114,
+      "bytes": 2582891
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\task34-resume-20261024",
+      "relative": "output/task34-resume-20261024",
+      "files": 192,
+      "bytes": 95643327
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\task34-resume-20261026",
+      "relative": "output/task34-resume-20261026",
+      "files": 7,
+      "bytes": 408786
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft-interface-fix-20261028",
+      "relative": "output/tft-interface-fix-20261028",
+      "files": 163,
+      "bytes": 2522798
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-official-20261028",
+      "relative": "output/tft800-official-20261028",
+      "files": 1172,
+      "bytes": 950968522
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\tft800-screen-retry-20261028",
+      "relative": "output/tft800-screen-retry-20261028",
+      "files": 4,
+      "bytes": 54762
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\timing-fix-basic-tft480-20261027",
+      "relative": "output/timing-fix-basic-tft480-20261027",
+      "files": 352,
+      "bytes": 437833151
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\white-screen-basic-tft480-20261027",
+      "relative": "output/white-screen-basic-tft480-20261027",
+      "files": 196,
+      "bytes": 95014755
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\.history",
+      "relative": "pcb/power/kicad/.history",
+      "files": 71,
+      "bytes": 4687705
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\ProPrj_power_2026-10-02.kicad_prl",
+      "relative": "pcb/power/kicad/ProPrj_power_2026-10-02.kicad_prl",
+      "files": 1,
+      "bytes": 2666
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\.gitignore",
+      "relative": "pcb/power/kicad/review/.gitignore",
+      "files": 1,
+      "bytes": 136
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\3d-binding-validation.json",
+      "relative": "pcb/power/kicad/review/3d-binding-validation.json",
+      "files": 1,
+      "bytes": 2213
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\3d-model-bindings.json",
+      "relative": "pcb/power/kicad/review/3d-model-bindings.json",
+      "files": 1,
+      "bytes": 24049
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\3d-model-mesh-validation.json",
+      "relative": "pcb/power/kicad/review/3d-model-mesh-validation.json",
+      "files": 1,
+      "bytes": 3222
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\PCB同步说明_R2.md",
+      "relative": "pcb/power/kicad/review/PCB同步说明_R2.md",
+      "files": 1,
+      "bytes": 4027
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\add_external_main_fuse.py",
+      "relative": "pcb/power/kicad/review/add_external_main_fuse.py",
+      "files": 1,
+      "bytes": 6144
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\add_native_junctions.py",
+      "relative": "pcb/power/kicad/review/add_native_junctions.py",
+      "files": 1,
+      "bytes": 5727
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\after-3d-drc.json",
+      "relative": "pcb/power/kicad/review/after-3d-drc.json",
+      "files": 1,
+      "bytes": 86476
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\after-drc.json",
+      "relative": "pcb/power/kicad/review/after-drc.json",
+      "files": 1,
+      "bytes": 85613
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\after-erc.json",
+      "relative": "pcb/power/kicad/review/after-erc.json",
+      "files": 1,
+      "bytes": 23743
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\after.net.xml",
+      "relative": "pcb/power/kicad/review/after.net.xml",
+      "files": 1,
+      "bytes": 132981
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\all-layout",
+      "relative": "pcb/power/kicad/review/all-layout",
+      "files": 4,
+      "bytes": 124122
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\all-layout-current.json",
+      "relative": "pcb/power/kicad/review/all-layout-current.json",
+      "files": 1,
+      "bytes": 68169
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\all-layout-current.net.xml",
+      "relative": "pcb/power/kicad/review/all-layout-current.net.xml",
+      "files": 1,
+      "bytes": 344999
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\ascii-net-drc.json",
+      "relative": "pcb/power/kicad/review/ascii-net-drc.json",
+      "files": 1,
+      "bytes": 436254
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\ascii-net-review-state.json",
+      "relative": "pcb/power/kicad/review/ascii-net-review-state.json",
+      "files": 1,
+      "bytes": 360
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\ascii-net-verification.json",
+      "relative": "pcb/power/kicad/review/ascii-net-verification.json",
+      "files": 1,
+      "bytes": 81223
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\at8236-interface-audit.json",
+      "relative": "pcb/power/kicad/review/at8236-interface-audit.json",
+      "files": 1,
+      "bytes": 8668
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\audit_all_layout.py",
+      "relative": "pcb/power/kicad/review/audit_all_layout.py",
+      "files": 1,
+      "bytes": 2004
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before-ascii-nets.net.xml",
+      "relative": "pcb/power/kicad/review/before-ascii-nets.net.xml",
+      "files": 1,
+      "bytes": 345633
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before-drc.json",
+      "relative": "pcb/power/kicad/review/before-drc.json",
+      "files": 1,
+      "bytes": 531450
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before-erc.json",
+      "relative": "pcb/power/kicad/review/before-erc.json",
+      "files": 1,
+      "bytes": 182356
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before-fuse-label.net.xml",
+      "relative": "pcb/power/kicad/review/before-fuse-label.net.xml",
+      "files": 1,
+      "bytes": 347022
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before-fuse-removal.net.xml",
+      "relative": "pcb/power/kicad/review/before-fuse-removal.net.xml",
+      "files": 1,
+      "bytes": 347207
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\before.net.xml",
+      "relative": "pcb/power/kicad/review/before.net.xml",
+      "files": 1,
+      "bytes": 136856
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\bind_3d_models.py",
+      "relative": "pcb/power/kicad/review/bind_3d_models.py",
+      "files": 1,
+      "bytes": 6436
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\bind_f1_on_board.py",
+      "relative": "pcb/power/kicad/review/bind_f1_on_board.py",
+      "files": 1,
+      "bytes": 12226
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\build_layout_atlas.py",
+      "relative": "pcb/power/kicad/review/build_layout_atlas.py",
+      "files": 1,
+      "bytes": 15396
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\component-map.json",
+      "relative": "pcb/power/kicad/review/component-map.json",
+      "files": 1,
+      "bytes": 15397
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\connection-repair-trial",
+      "relative": "pcb/power/kicad/review/connection-repair-trial",
+      "files": 21,
+      "bytes": 1435444
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\draw_all_layout.py",
+      "relative": "pcb/power/kicad/review/draw_all_layout.py",
+      "files": 1,
+      "bytes": 33272
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\draw_input_layout.py",
+      "relative": "pcb/power/kicad/review/draw_input_layout.py",
+      "files": 1,
+      "bytes": 24435
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\draw_lm393_layout.py",
+      "relative": "pcb/power/kicad/review/draw_lm393_layout.py",
+      "files": 1,
+      "bytes": 17605
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\draw_usb_layout.py",
+      "relative": "pcb/power/kicad/review/draw_usb_layout.py",
+      "files": 1,
+      "bytes": 23366
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\export_footprints.py",
+      "relative": "pcb/power/kicad/review/export_footprints.py",
+      "files": 1,
+      "bytes": 875
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\f1-board-current.net.xml",
+      "relative": "pcb/power/kicad/review/f1-board-current.net.xml",
+      "files": 1,
+      "bytes": 345633
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\f1-board-drc.json",
+      "relative": "pcb/power/kicad/review/f1-board-drc.json",
+      "files": 1,
+      "bytes": 442269
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\f1-board-review-state.json",
+      "relative": "pcb/power/kicad/review/f1-board-review-state.json",
+      "files": 1,
+      "bytes": 361
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\f1-board-verification.json",
+      "relative": "pcb/power/kicad/review/f1-board-verification.json",
+      "files": 1,
+      "bytes": 2174
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\finalize_bindings.py",
+      "relative": "pcb/power/kicad/review/finalize_bindings.py",
+      "files": 1,
+      "bytes": 2137
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\finish_visual_checks.py",
+      "relative": "pcb/power/kicad/review/finish_visual_checks.py",
+      "files": 1,
+      "bytes": 2316
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\footprint-model-audit.json",
+      "relative": "pcb/power/kicad/review/footprint-model-audit.json",
+      "files": 1,
+      "bytes": 60135
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\functional-erc.json",
+      "relative": "pcb/power/kicad/review/functional-erc.json",
+      "files": 1,
+      "bytes": 23749
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\functional-review-evidence.json",
+      "relative": "pcb/power/kicad/review/functional-review-evidence.json",
+      "files": 1,
+      "bytes": 1903
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\functional.net.xml",
+      "relative": "pcb/power/kicad/review/functional.net.xml",
+      "files": 1,
+      "bytes": 132981
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\fuse-review-state.json",
+      "relative": "pcb/power/kicad/review/fuse-review-state.json",
+      "files": 1,
+      "bytes": 318
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\input-layout",
+      "relative": "pcb/power/kicad/review/input-layout",
+      "files": 2,
+      "bytes": 13880
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\input-layout-current-courtyards.json",
+      "relative": "pcb/power/kicad/review/input-layout-current-courtyards.json",
+      "files": 1,
+      "bytes": 1492
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\input-layout-current-drc.json",
+      "relative": "pcb/power/kicad/review/input-layout-current-drc.json",
+      "files": 1,
+      "bytes": 409384
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\input-layout-current-parts.json",
+      "relative": "pcb/power/kicad/review/input-layout-current-parts.json",
+      "files": 1,
+      "bytes": 25300
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\input-layout-current.net.xml",
+      "relative": "pcb/power/kicad/review/input-layout-current.net.xml",
+      "files": 1,
+      "bytes": 344999
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\inspect_netlist.py",
+      "relative": "pcb/power/kicad/review/inspect_netlist.py",
+      "files": 1,
+      "bytes": 1743
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\junction-repair.json",
+      "relative": "pcb/power/kicad/review/junction-repair.json",
+      "files": 1,
+      "bytes": 1026
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\kicad_tools.py",
+      "relative": "pcb/power/kicad/review/kicad_tools.py",
+      "files": 1,
+      "bytes": 3427
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\lm393-layout",
+      "relative": "pcb/power/kicad/review/lm393-layout",
+      "files": 2,
+      "bytes": 6046
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\lm393-layout-current-parts.json",
+      "relative": "pcb/power/kicad/review/lm393-layout-current-parts.json",
+      "files": 1,
+      "bytes": 22706
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\lm393-layout-current.net.xml",
+      "relative": "pcb/power/kicad/review/lm393-layout-current.net.xml",
+      "files": 1,
+      "bytes": 344999
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\net-map.json",
+      "relative": "pcb/power/kicad/review/net-map.json",
+      "files": 1,
+      "bytes": 988
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\no-fuse-review-state.json",
+      "relative": "pcb/power/kicad/review/no-fuse-review-state.json",
+      "files": 1,
+      "bytes": 874
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-completion-2026-10-12",
+      "relative": "pcb/power/kicad/review/pcb-completion-2026-10-12",
+      "files": 56,
+      "bytes": 14780480
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-after-drc.json",
+      "relative": "pcb/power/kicad/review/pcb-sync-after-drc.json",
+      "files": 1,
+      "bytes": 442291
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-before-drc.json",
+      "relative": "pcb/power/kicad/review/pcb-sync-before-drc.json",
+      "files": 1,
+      "bytes": 446434
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-current.net.xml",
+      "relative": "pcb/power/kicad/review/pcb-sync-current.net.xml",
+      "files": 1,
+      "bytes": 345019
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-final.net.xml",
+      "relative": "pcb/power/kicad/review/pcb-sync-final.net.xml",
+      "files": 1,
+      "bytes": 345079
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pcb-sync-verification.json",
+      "relative": "pcb/power/kicad/review/pcb-sync-verification.json",
+      "files": 1,
+      "bytes": 3183
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\pin-map.csv",
+      "relative": "pcb/power/kicad/review/pin-map.csv",
+      "files": 1,
+      "bytes": 25135
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\recheck-2026-10-04",
+      "relative": "pcb/power/kicad/review/recheck-2026-10-04",
+      "files": 6,
+      "bytes": 395476
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign-components.json",
+      "relative": "pcb/power/kicad/review/redesign-components.json",
+      "files": 1,
+      "bytes": 95485
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign-erc.json",
+      "relative": "pcb/power/kicad/review/redesign-erc.json",
+      "files": 1,
+      "bytes": 2952
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign-verification.json",
+      "relative": "pcb/power/kicad/review/redesign-verification.json",
+      "files": 1,
+      "bytes": 4636
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign.net.xml",
+      "relative": "pcb/power/kicad/review/redesign.net.xml",
+      "files": 1,
+      "bytes": 344999
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign_budget.py",
+      "relative": "pcb/power/kicad/review/redesign_budget.py",
+      "files": 1,
+      "bytes": 31978
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\redesign_schematic.py",
+      "relative": "pcb/power/kicad/review/redesign_schematic.py",
+      "files": 1,
+      "bytes": 52289
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\remove_board_fuses.py",
+      "relative": "pcb/power/kicad/review/remove_board_fuses.py",
+      "files": 1,
+      "bytes": 6819
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\render_all_layout.cjs",
+      "relative": "pcb/power/kicad/review/render_all_layout.cjs",
+      "files": 1,
+      "bytes": 973
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\render_input_layout.cjs",
+      "relative": "pcb/power/kicad/review/render_input_layout.cjs",
+      "files": 1,
+      "bytes": 574
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\render_lm393_layout.cjs",
+      "relative": "pcb/power/kicad/review/render_lm393_layout.cjs",
+      "files": 1,
+      "bytes": 542
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\render_usb_layout.cjs",
+      "relative": "pcb/power/kicad/review/render_usb_layout.cjs",
+      "files": 1,
+      "bytes": 658
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\repair_import.py",
+      "relative": "pcb/power/kicad/review/repair_import.py",
+      "files": 1,
+      "bytes": 9122
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\restore_ascii_nets.py",
+      "relative": "pcb/power/kicad/review/restore_ascii_nets.py",
+      "files": 1,
+      "bytes": 9491
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\schematic_chinese.py",
+      "relative": "pcb/power/kicad/review/schematic_chinese.py",
+      "files": 1,
+      "bytes": 13396
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\schematic_overview.py",
+      "relative": "pcb/power/kicad/review/schematic_overview.py",
+      "files": 1,
+      "bytes": 7409
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\stock-model-supplement",
+      "relative": "pcb/power/kicad/review/stock-model-supplement",
+      "files": 3,
+      "bytes": 426581
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\sync_pcb_from_schematic.py",
+      "relative": "pcb/power/kicad/review/sync_pcb_from_schematic.py",
+      "files": 1,
+      "bytes": 8655
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\usb-current-parts.json",
+      "relative": "pcb/power/kicad/review/usb-current-parts.json",
+      "files": 1,
+      "bytes": 35278
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\usb-layout",
+      "relative": "pcb/power/kicad/review/usb-layout",
+      "files": 2,
+      "bytes": 39878
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\usb-schematic-current.net.xml",
+      "relative": "pcb/power/kicad/review/usb-schematic-current.net.xml",
+      "files": 1,
+      "bytes": 344999
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\verification.json",
+      "relative": "pcb/power/kicad/review/verification.json",
+      "files": 1,
+      "bytes": 2550
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\verify_bindings.py",
+      "relative": "pcb/power/kicad/review/verify_bindings.py",
+      "files": 1,
+      "bytes": 5968
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\verify_f1_board.py",
+      "relative": "pcb/power/kicad/review/verify_f1_board.py",
+      "files": 1,
+      "bytes": 4827
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\verify_redesign.py",
+      "relative": "pcb/power/kicad/review/verify_redesign.py",
+      "files": 1,
+      "bytes": 16234
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\visible-text-audit.json",
+      "relative": "pcb/power/kicad/review/visible-text-audit.json",
+      "files": 1,
+      "bytes": 79449
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\原理图修改说明_R2.md",
+      "relative": "pcb/power/kicad/review/原理图修改说明_R2.md",
+      "files": 1,
+      "bytes": 13624
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\电源板审查与修改清单.md",
+      "relative": "pcb/power/kicad/review/电源板审查与修改清单.md",
+      "files": 1,
+      "bytes": 16773
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\kicad\\review\\网络命名修复说明.md",
+      "relative": "pcb/power/kicad/review/网络命名修复说明.md",
+      "files": 1,
+      "bytes": 1917
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\pcb\\power\\power——1_backup",
+      "relative": "pcb/power/power——1_backup",
+      "files": 1,
+      "bytes": 205793
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\resources",
+      "relative": "resources",
+      "files": 5,
+      "bytes": 9335612
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\scripts\\fpga\\__pycache__",
+      "relative": "scripts/fpga/__pycache__",
+      "files": 2,
+      "bytes": 36035
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\scripts\\handoff",
+      "relative": "scripts/handoff",
+      "files": 4,
+      "bytes": 26718
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\scripts\\package_motion_feedback_a744.py",
+      "relative": "scripts/package_motion_feedback_a744.py",
+      "files": 1,
+      "bytes": 5052
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\scripts\\render_motor_wiring.py",
+      "relative": "scripts/render_motor_wiring.py",
+      "files": 1,
+      "bytes": 7534
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\tmp",
+      "relative": "tmp",
+      "files": 1318,
+      "bytes": 676001695
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\HANDOFF-20261030.md",
+      "relative": "HANDOFF-20261030.md",
+      "files": 1,
+      "bytes": 5434
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\NEXT-AI-PROMPT-20261030.md",
+      "relative": "NEXT-AI-PROMPT-20261030.md",
+      "files": 1,
+      "bytes": 1775
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\CLEAN-PROJECT.ps1",
+      "relative": "CLEAN-PROJECT.ps1",
+      "files": 1,
+      "bytes": 3728
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\cpu-gate-probe",
+      "relative": "code/camera-car-control/a745-autonomous/.local/cpu-gate-probe",
+      "files": 13,
+      "bytes": 1160124
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\CPU-GATE.vcd",
+      "relative": "output/refactor-autonomous-20261030/CPU-GATE.vcd",
+      "files": 1,
+      "bytes": 7207637
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\cpu_synth.v",
+      "relative": "output/refactor-autonomous-20261030/cpu_synth.v",
+      "files": 1,
+      "bytes": 439212
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\cpu_gate_tb.v",
+      "relative": "output/refactor-autonomous-20261030/cpu_gate_tb.v",
+      "files": 1,
+      "bytes": 599
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\CPU-GATE-RESULT.json",
+      "relative": "output/refactor-autonomous-20261030/CPU-GATE-RESULT.json",
+      "files": 1,
+      "bytes": 572
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\CPU-GATE-RESULT.log",
+      "relative": "output/refactor-autonomous-20261030/CPU-GATE-RESULT.log",
+      "files": 1,
+      "bytes": 194
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\HUD-PREVIEW.png",
+      "relative": "output/refactor-autonomous-20261030/HUD-PREVIEW.png",
+      "files": 1,
+      "bytes": 10191
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\HARDWARE-TELEMETRY-HUD.json",
+      "relative": "output/refactor-autonomous-20261030/HARDWARE-TELEMETRY-HUD.json",
+      "files": 1,
+      "bytes": 124047
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\HARDWARE-TELEMETRY-FINAL.json",
+      "relative": "output/refactor-autonomous-20261030/HARDWARE-TELEMETRY-FINAL.json",
+      "files": 1,
+      "bytes": 372672
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\build-evidence-current\\a745.fs",
+      "relative": "output/refactor-autonomous-20261030/build-evidence-current/a745.fs",
+      "files": 1,
+      "bytes": 19551926
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\build-evidence-current\\a745.bin",
+      "relative": "output/refactor-autonomous-20261030/build-evidence-current/a745.bin",
+      "files": 1,
+      "bytes": 2437525
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\build-evidence-current\\a745.binx",
+      "relative": "output/refactor-autonomous-20261030/build-evidence-current/a745.binx",
+      "files": 1,
+      "bytes": 2438142
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T111925.856482Z\\image.fs",
+      "relative": "output/refactor-autonomous-20261030/flash/20261030T111925.856482Z/image.fs",
+      "files": 1,
+      "bytes": 19696854
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T113629.149573Z\\image.fs",
+      "relative": "output/refactor-autonomous-20261030/flash/20261030T113629.149573Z/image.fs",
+      "files": 1,
+      "bytes": 19335366
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\flash\\20261030T115252.140396Z\\image.fs",
+      "relative": "output/refactor-autonomous-20261030/flash/20261030T115252.140396Z/image.fs",
+      "files": 1,
+      "bytes": 19696846
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\async_fifo_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/async_fifo_tb.vvp",
+      "files": 1,
+      "bytes": 37528
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\attitude_session_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/attitude_session_tb.vvp",
+      "files": 1,
+      "bytes": 71520
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\autonomy_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/autonomy_tb.vvp",
+      "files": 1,
+      "bytes": 59704
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\bare_cpu_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/bare_cpu_tb.vvp",
+      "files": 1,
+      "bytes": 188244
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\button_debounce_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/button_debounce_tb.vvp",
+      "files": 1,
+      "bytes": 7082
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\camera_boot_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/camera_boot_tb.vvp",
+      "files": 1,
+      "bytes": 113969
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\camera_pads_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/camera_pads_tb.vvp",
+      "files": 1,
+      "bytes": 93982
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\cpu_regs_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/cpu_regs_tb.vvp",
+      "files": 1,
+      "bytes": 36235
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\dvp_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/dvp_tb.vvp",
+      "files": 1,
+      "bytes": 25834
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\imu_sensor_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/imu_sensor_tb.vvp",
+      "files": 1,
+      "bytes": 174076
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\ld06_embedded_header_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/ld06_embedded_header_tb.vvp",
+      "files": 1,
+      "bytes": 52769
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\ld06_recovery_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/ld06_recovery_tb.vvp",
+      "files": 1,
+      "bytes": 57755
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\lidar_guard_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/lidar_guard_tb.vvp",
+      "files": 1,
+      "bytes": 35361
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\motion_feedback_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/motion_feedback_tb.vvp",
+      "files": 1,
+      "bytes": 24876
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\mpu_driver_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/mpu_driver_tb.vvp",
+      "files": 1,
+      "bytes": 43323
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\mpu_heading_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/mpu_heading_tb.vvp",
+      "files": 1,
+      "bytes": 46322
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\mpu_i2c_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/mpu_i2c_tb.vvp",
+      "files": 1,
+      "bytes": 33084
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\osd_layout_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/osd_layout_tb.vvp",
+      "files": 1,
+      "bytes": 89306
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\pi_target_limit_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/pi_target_limit_tb.vvp",
+      "files": 1,
+      "bytes": 32594
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\speed_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/speed_tb.vvp",
+      "files": 1,
+      "bytes": 15573
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\udp_tx_tb.vvp",
+      "relative": "code/camera-car-control/a745-autonomous/.local/tests/udp_tx_tb.vvp",
+      "files": 1,
+      "bytes": 27562
+    }
+  ],
+  "protected_current_inputs": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "72cb82aae306c03383b1c4a4e2cfad1d8aad6d3895d88fb098dca64b569bae69",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_camera_boot.v": "7026647fc25ad6e397b634aa077ca2bea750e7913920de216485c471e6a3af17",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_camera_pads.v": "521e98ab11b64f11ef7f1c2de5ab20b02c41d9b524c2f2d4038e93a8b2103740",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "7423b03b518c086d79f6acf6ec0d5abb32c45c2d5f1ef6ef54dc3ac0b9912f48",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_cpu_regs.v": "c3936a74e7f44cefab246cf4f59f51cb0c75641605fe189ca0d03ca3835b7da0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_dvp_capture.v": "f2050bbaf858d766e83105eccd71b62e7749a22c061d9bd20a0ba536b09ac501",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_osd.v": "95f953e5a80b2da3905ae5a81fddb5a024dc7523fab911ee10dfcf33af0336cf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_udp_tx.v": "9a6c73bdb231a20479fd37c951b4fe2fb51ae91e09a56495fa5561381cccf2e1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_video.v": "9dbf563bd8b18e640d4fcc8d22edfbafc4e9b207d1e0d439cf250888d585373e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_attitude.v": "70afbfb05c6a84c6085d42dd07ceb86b234af3ec8a8a749cb142af3447a746f0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_bare_cpu.v": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_button_debounce.v": "f488dfc0e0586989e4bd5b43ca705a6e413e7ce57fbb0d8bdd332d6dff689565",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_display_cdc.v": "504670def8a6a9e3a6c138998832ab30f15be29a2a70a4fe2910595bb7065302",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_divider.v": "6ef116a71b94c4df50b5213effc10a5232da82eb801741f5aa3e37d7a369eea0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_imu_i2c.v": "ca08c56ac95ce852383183481dedbc54d99776dc08aff2298222d95c4c1fca8a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_lidar_guard.v": "6020866db8a187aae3b4580ab0d9ad87ba8726d258486abe4a8b18c58e6bae37",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_motion_feedback.v": "c55249a1ff81fa85220d0e1de06b2f2d55b13ec67e240f73a572d8017c6678f5",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_phy_config.v": "d73925ae4645df7e468ac1d27139ed443fa4db24fbbedde4e019b01faf5d8a59",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_pi.v": "e6cb58f1f0f6a45bee6c1eca17ba42e4da92f8bcf557df7a8c3b2e4a016f7926",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_sensors.v": "0e735ca4818242e255b0f4153dbebbbbdb05210adde3aa5056b8f6baa368355e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_speed.v": "4f8339447e4a4e13cd4c42a4adbad0389192bcaa2f8a3d7c5793c2a4c8483073",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_tft800_panel.v": "f61486291a68e7f4596aaf24c55b249a389bcdcddadf58af9db10bd6b4702fd2",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\async_fifo.v": "db89ce7888807448a39a3507fe6adf25161927e401167d1c505d736368edbf8e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\capture_tokens.v": "c49cb5ba089440725f154e5481a1440ead0c96662947ea12d02126f23b2cdd66",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\cdc_mailbox.v": "954e842cf8ea0640d7ccf599b8a7c2be2d963f2a2fe5ad9bd70e12b24007c629",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\ddr_framebuffer.v": "b8edbb251fcd21a1e2e187a54ab83191f2c41d1ea1f4401a56efbf284fa792f9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\encoder_counter.v": "d6c8aa44bc0c878ae10748a75b6aee1cc3ac5dac341cf8c6d91aaa8412407c5c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\ld06_control.v": "49eb9e849e8d53195db99e31e44ce06b98fef2bdb9e3c5387ddca8c073c05501",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\ld06_parser.v": "e6017c8a45366711b40f8726dad68768c0d8debd26d717484e4d79e2bc8ae1c3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\motor_pwm_safe.v": "d524b51acc85c9757497141b7891599c734c90421a05c35ee74d1874a5d24f89",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\mpu6050_driver.v": "f6b011f3a689b9a5a647ad8a782030738e2e0a29eae7dcdadbff1dba12b02bd7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\mpu6050_heading.v": "94fb9cf33db57551369a0e8f53424d20b133d86dcc7eb3d9409552871f8b69b3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\quadrature_decoder.v": "859f1eac7cab9c34102d398e4a846733cdd41061587b254f9efc88ff7e340cf9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\reset_sync.v": "60e6e8bfc0e234d148b3ad61eb99d6f17de93ce52666eb6e5f0773d92709cd97",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\uart_rx.v": "c2607eb819bf48e5a3e6f1057b1eb8233aab95d9e7a68288510dc6fe127e01d1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\video_pixels.v": "53e24d9d37886d049cb4d65f0f703f00d75307130fa5443a1a4a2c3788791bd4",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\i2c_bit_shift.v": "00ffafdc833bda4ea094bcff65ec74ac25c0cd4215559457482e29119540338a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\i2c_control.v": "7d8106cd3e377afbfe03e1a959903a6ae409c061cd06da4d1c1650f550bad829",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\ov5640_init_table_rgb.v": "43347654e874c60e18589b323f82fe753a099092e0797b1297b16d6ccf0063a0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\picorv32.v": "1c472ed01f23f6b0b1541009c8060a923e19dfe4d48c08ffdf598ded22318bde",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr3_memory_interface.v": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr_pll.v": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr_pll_mod.v": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ethernet_pll_mod.v": "d421976ffbaf0f307c72f65d13a8ef18ec91d732a433c2efee89bb34c743eb00",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\gmii_to_rgmii.v": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\gowin_pll.v": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\pll_mDRP_intf.v": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_gowin_pll.v": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_gowin_pll_mod.v": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_pll_init.v": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_async_fifo.v": "65f3c86ee1fcb1470fd43291fa80598117e3d7a694e52695c80cb31682113cb2",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\axis_gmii_tx.v": "0afecab08286491137c605b306b034232eb136aa3ba5aec2885027ab3fb02668",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\lfsr.v": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745_top.v": "e815fa00def003fd7430e4a04c4ba5c83ea34e9fc176a3604fcb70efbe1aa3eb",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.cst": "bf5dcb4012ed02991fb34ae441e00754d55738ff4c770c2d5cf7a8ca86eebc46",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.sdc": "841dd029e3242b6a91d0919c45e89b6baf7b721474a37c0a733e689108d5c830",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44"
+  },
+  "total_files": 18685,
+  "total_bytes": 15918936378,
+  "execution_status": "completed",
+  "rejections": [
+    {
+      "action": "validated manifest deletion of 312 targets",
+      "reason": "blocked by policy; no more specific reason provided"
+    },
+    {
+      "action": "validated removal of workspace tmp only",
+      "reason": "blocked by policy; no more specific reason provided"
+    }
+  ],
+  "no_files_deleted": false,
+  "latest_user_authorization": "2026-10-31 user explicitly requested retry with force deletion",
+  "preflight_cache_changes_reviewed": [
+    {
+      "path": "code/camera-car-control/a745-autonomous/host/__pycache__",
+      "old_files": 2,
+      "new_files": 2,
+      "old_bytes": 12424,
+      "new_bytes": 12709
+    }
+  ],
+  "execution_result": "CLEANUP-RESULT.json"
+}

@@ -1,0 +1,207 @@
+{
+  "recorded_utc": "2026-10-30T16:48:19.164365+00:00",
+  "revision": 74503,
+  "bitstream_sha256": "f72910d5ab0a7a4a49b076d78085ec9a6372bd9aa478eed33d0471e8169670cd",
+  "user_confirmation": "能转动且S1能停止",
+  "wheels_raised_start_stop_user_verified": true,
+  "ground_autonomous_avoidance_verified": false,
+  "latest_image_cold_boot_verified": false,
+  "telemetry_source": "output\\refactor-autonomous-20261030\\ATTITUDE-FIX-MOTION-RETEST.json",
+  "capture_started_utc": "2026-10-30T16:42:32.443215+00:00",
+  "capture_ended_utc": "2026-10-30T16:43:17.434194+00:00",
+  "status_packets": 450,
+  "attitude_packets": 450,
+  "invalid_packets": 0,
+  "packets_sent": 0,
+  "state_transitions": [
+    {
+      "index": 0,
+      "ms": 223099,
+      "state": 0,
+      "armed": false,
+      "faults": 0,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 214,
+      "ms": 244499,
+      "state": 1,
+      "armed": false,
+      "faults": 0,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 223,
+      "ms": 245399,
+      "state": 2,
+      "armed": true,
+      "faults": 0,
+      "targets": [
+        120,
+        120
+      ],
+      "speeds": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 285,
+      "ms": 251599,
+      "state": 8,
+      "armed": false,
+      "faults": 1,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        113,
+        99
+      ]
+    },
+    {
+      "index": 309,
+      "ms": 253999,
+      "state": 1,
+      "armed": false,
+      "faults": 0,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 320,
+      "ms": 255099,
+      "state": 2,
+      "armed": true,
+      "faults": 0,
+      "targets": [
+        120,
+        120
+      ],
+      "speeds": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 384,
+      "ms": 261499,
+      "state": 0,
+      "armed": false,
+      "faults": 0,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        85,
+        84
+      ]
+    }
+  ],
+  "armed_packets": 126,
+  "target_spans_mm_s": [
+    [
+      0,
+      120
+    ],
+    [
+      0,
+      120
+    ]
+  ],
+  "speed_spans_mm_s": [
+    [
+      -14,
+      155
+    ],
+    [
+      -14,
+      155
+    ]
+  ],
+  "encoder_counts_first": [
+    0,
+    0
+  ],
+  "encoder_counts_last": [
+    9643,
+    10028
+  ],
+  "last_status": {
+    "seq": 267999,
+    "ms": 267999,
+    "revision": 74503,
+    "flags": 41755,
+    "state": 0,
+    "faults": 0,
+    "armed": false,
+    "targets": [
+      0,
+      0
+    ],
+    "speeds": [
+      0,
+      0
+    ],
+    "counts": [
+      9643,
+      10028
+    ],
+    "yaw": 7.6300048828125,
+    "ranges": [
+      1205,
+      2140,
+      583
+    ],
+    "camera_error": 0,
+    "camera_phase": 11,
+    "camera_attempt": 1,
+    "camera_register": 18241,
+    "camera_expected": 0,
+    "camera_value": 0,
+    "video_frames": 15911,
+    "frame_ready": true,
+    "ddr_ready": true,
+    "video_error": false,
+    "camera_ready": true
+  },
+  "last_attitude": {
+    "roll": 2.603759765625,
+    "pitch": 1.197509765625,
+    "tilt_valid": true,
+    "cpu_alive": true,
+    "cpu_fault": false,
+    "cpu_progress": 268000
+  },
+  "observed_protection_event": {
+    "ms": 251599,
+    "faults": 1,
+    "roll_deg": 23.5546875,
+    "tilt_valid": true,
+    "cpu_alive": true,
+    "interpretation": "Tilt limit exceeded; controller dropped targets to zero and latched FAULT. A later user restart ran and returned to IDLE via S1. Physical cause of tilt is not established by telemetry."
+  },
+  "note": "User confirmed wheels raised start/stop. Both wheel speeds were positive during positive targets. Capture also records one tilt-limit stop; do not describe the entire capture as fault-free."
+}

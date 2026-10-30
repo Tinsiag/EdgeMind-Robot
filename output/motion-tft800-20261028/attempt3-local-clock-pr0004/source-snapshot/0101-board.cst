@@ -1,8 +1,0 @@
-// CLKDIV/2 drives the Ethernet 125 MHz clock. Allow the clock router to use
-// its dedicated connection; forcing BUFG=CLK introduced PR1014 detours.
-
-// LD06 packet-buffer enable (LUT3 n7598_s6), not a clock. Automatic promotion
-// filled the eighth PRIMARY resource and spanned TR/BR in both PR0004 runs.
-// SUG1541-1.0E section 2.8: keep this enable on general routing for comparison.
-// Recheck this synthesis-generated name if ld06_parser RTL changes.
-CLOCK_LOC "core/sensors/lidar/n7598_14" LOCAL_CLOCK;

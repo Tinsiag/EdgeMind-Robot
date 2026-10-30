@@ -1,0 +1,60 @@
+{
+  "description": "Byte-identical board PLL/DDR/RGMII TX IP preserved from the reviewed A744 platform. These are vendor drivers, not the prior application top or control path.",
+  "files": [
+    {
+      "file": "ddr3_memory_interface.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr3_memory_interface.v",
+      "sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7"
+    },
+    {
+      "file": "ddr_pll.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr_pll.v",
+      "sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251"
+    },
+    {
+      "file": "ddr_pll_mod.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ddr_pll_mod.v",
+      "sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7"
+    },
+    {
+      "file": "pll_mDRP_intf.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\pll_mDRP_intf.v",
+      "sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad"
+    },
+    {
+      "file": "tft_gowin_pll.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_gowin_pll.v",
+      "sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8"
+    },
+    {
+      "file": "tft_gowin_pll_mod.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_gowin_pll_mod.v",
+      "sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794"
+    },
+    {
+      "file": "tft_pll_init.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\tft_pll_init.v",
+      "sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e"
+    },
+    {
+      "file": "ethernet_pll_mod.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\ethernet_pll_mod.v",
+      "sha256": "d421976ffbaf0f307c72f65d13a8ef18ec91d732a433c2efee89bb34c743eb00"
+    },
+    {
+      "file": "gowin_pll.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\gowin_pll\\gowin_pll.v",
+      "sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0"
+    },
+    {
+      "file": "pll_init.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\pll_init.v",
+      "sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258"
+    },
+    {
+      "file": "gmii_to_rgmii.v",
+      "reference_path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\.local\\platform\\original\\ch59\\src\\gmii_rgmii_gmii\\gmii_to_rgmii.v",
+      "sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91"
+    }
+  ]
+}

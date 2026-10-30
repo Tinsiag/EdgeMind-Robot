@@ -45,7 +45,8 @@ document.getElementById('third-only').onclick=()=>{thirdOnly=!thirdOnly;document
 html=html.replace('window.chassisViewerState={rendered:true,parts:meshes.length','window.chassisViewerState={rendered:true,thirdOnly,layer_parts:meshes.map(m=>({name:m.name,layer:m.userData.layer,lift:m.position.z,visible:m.visible})),parts:meshes.length')
 (HERE/'查看模型.html').write_text(html.replace('@@MODEL_DATA@@',json.dumps(data,ensure_ascii=False,separators=(',',':'))),encoding='utf-8')
 (HERE/'vendor').mkdir(exist_ok=True)
-for n in ('three.min.js','three.LICENSE.txt'):shutil.copyfile(HERE.parent/'v1-fixed-front-wheels/vendor'/n,HERE/'vendor'/n)
+# The required Three.js runtime and license are maintained in this version's vendor/.
+for n in ('three.min.js','three.LICENSE.txt'):assert (HERE/'vendor'/n).is_file()
 scene={'asset':{'version':'2.0','generator':'EdgeMind V5 FreeCAD geometry and documented screen installation reference'},'scene':0,'scenes':[{'nodes':[]}],
        'nodes':[],'meshes':[],'materials':[],'buffers':[{}],'bufferViews':[],'accessors':[]}
 blob=bytearray()

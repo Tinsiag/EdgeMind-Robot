@@ -1,6 +1,0 @@
-wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
-PASS fixed5MHz PCLK, reference525x286/480x272 boundaries, setup/hold, blanking, active-frame reset,180ms default and17frame backlight
-- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_timing_tb.v:72: Verilog $finish
-- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
-- Verilator: $finish at 542ms; walltime 7.424 s; speed 73.016 ms/s
-- Verilator: cpu 7.419 s on 1 threads; alloced 121 MB

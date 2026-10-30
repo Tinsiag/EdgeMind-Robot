@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-10-30T16:53:28.546405+00:00",
+  "passed": true,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\blocked_recovery_repro_tb.v": "b6296029bd64cbd953f4169675445cf3663a2263d04f08dd1fc8ab8b7f9a8587",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "72cb82aae306c03383b1c4a4e2cfad1d8aad6d3895d88fb098dca64b569bae69"
+  },
+  "controlled_ranges_mm": {
+    "front": 424,
+    "left": 991,
+    "right": 235,
+    "rear": 800,
+    "nearest": 235
+  },
+  "rear_note": "800 mm is a controlled test value, not a physical measurement.",
+  "logs": [
+    {
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu-26.04",
+        "--cd",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030",
+        "--exec",
+        "iverilog",
+        "-g2012",
+        "-s",
+        "blocked_recovery_repro_tb",
+        "-o",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030/blocked-recovery-repro.vvp",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030/blocked_recovery_repro_tb.v",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a745-autonomous/rtl/a745_autonomy.v"
+      ],
+      "returncode": 0,
+      "output": "w\u0000s\u0000l\u0000:\u0000 \u0000\ufffdhKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006tM\ufffdn\u007f\f\ufffdFO*g\\\ufffd\ufffdP0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN\ufffdv \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006t\u00020\r\u0000\n\u0000"
+    },
+    {
+      "command": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu-26.04",
+        "--cd",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030",
+        "--exec",
+        "vvp",
+        "/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030/blocked-recovery-repro.vvp"
+      ],
+      "returncode": 0,
+      "output": "w\u0000s\u0000l\u0000:\u0000 \u0000\ufffdhKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006tM\ufffdn\u007f\f\ufffdFO*g\\\ufffd\ufffdP0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN\ufffdv \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006t\u00020\r\u0000\n\u0000PASS repeated cold reset: near-range ERR0020, no unsafe turn, fault latched, clear-space fresh S1 start and stop\n/mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/output/refactor-autonomous-20261030/blocked_recovery_repro_tb.v:52: $finish called at 9060000 (1ps)\n"
+    }
+  ]
+}

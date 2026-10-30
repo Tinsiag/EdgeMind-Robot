@@ -1,0 +1,11 @@
+{
+  "reproduced": true,
+  "test": "Gowin-synthesized supervisor with manufacturer GW5A primitives",
+  "alive": false,
+  "fault": false,
+  "progress": 0,
+  "exit_code": 1,
+  "rtl_source_sha256": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
+  "netlist_sha256": "b56885e7b5cd3afa6b66f4779af6ea0dca318cafe8655aeefb32311a3681b522",
+  "observation": "Behavioral CPU test passed but synthesized netlist did not execute heartbeat, matching the real board."
+}

@@ -1,4 +1,0 @@
-(version 1)
-(rule "TSOT23-8 原生焊盘间距"
- (condition "A.Type == 'Pad' && B.Type == 'Pad' && ((A.memberOfFootprint('U1') && B.memberOfFootprint('U1')) || (A.memberOfFootprint('U5') && B.memberOfFootprint('U5')) || (A.memberOfFootprint('U7') && B.memberOfFootprint('U7')) || (A.memberOfFootprint('U8') && B.memberOfFootprint('U8')))")
- (constraint clearance (min 0.15mm)))

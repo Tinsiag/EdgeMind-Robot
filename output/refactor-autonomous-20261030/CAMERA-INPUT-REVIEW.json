@@ -1,0 +1,202 @@
+{
+  "passed": true,
+  "input_setup_budget_ns": 4,
+  "input_hold_budget_ns": 0,
+  "bitstream_sha256": "74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df",
+  "camera_pclk_constraint_mhz": 100,
+  "sdf_sha256": "6c703cd24f65a042739ba7f2c7c062cc2afeedba5309325a1a812d34cb307439",
+  "method": "ten pad-to-delay-to-capture-FF paths; STA validates all paths at original budgets",
+  "board_signals_measured": false,
+  "inputs": [
+    {
+      "port": "camera_data[0]",
+      "input_buffer": "camera_data_0_ibuf",
+      "delay_cell": "camera_pads/pads[0].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_0_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[1]",
+      "input_buffer": "camera_data_1_ibuf",
+      "delay_cell": "camera_pads/pads[1].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_1_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[2]",
+      "input_buffer": "camera_data_2_ibuf",
+      "delay_cell": "camera_pads/pads[2].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_2_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[3]",
+      "input_buffer": "camera_data_3_ibuf",
+      "delay_cell": "camera_pads/pads[3].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_3_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[4]",
+      "input_buffer": "camera_data_4_ibuf",
+      "delay_cell": "camera_pads/pads[4].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_4_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[5]",
+      "input_buffer": "camera_data_5_ibuf",
+      "delay_cell": "camera_pads/pads[5].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_5_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[6]",
+      "input_buffer": "camera_data_6_ibuf",
+      "delay_cell": "camera_pads/pads[6].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_6_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_data[7]",
+      "input_buffer": "camera_data_7_ibuf",
+      "delay_cell": "camera_pads/pads[7].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/d_7_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_href",
+      "input_buffer": "camera_href_ibuf",
+      "delay_cell": "camera_pads/pads[8].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/hs_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    },
+    {
+      "port": "camera_vsync",
+      "input_buffer": "camera_vsync_ibuf",
+      "delay_cell": "camera_pads/pads[9].delay",
+      "taps": 96,
+      "capture_ff": "video/capture/vs_s0",
+      "sdf_delay_ns": [
+        [
+          1.176,
+          1.47,
+          1.764
+        ],
+        [
+          1.176,
+          1.47,
+          1.764
+        ]
+      ]
+    }
+  ]
+}

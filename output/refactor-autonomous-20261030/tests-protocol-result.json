@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "frames": [
+    {
+      "magic": "EMS1",
+      "payload_bytes": 112,
+      "ipv4_checksum_valid": true,
+      "sha256": "df333cf98c7e9ed45bb2e490bde79fd997aed48bc9d8ae838ad56040f3623783"
+    },
+    {
+      "magic": "EMF1",
+      "payload_bytes": 48,
+      "ipv4_checksum_valid": true,
+      "sha256": "e9d2821d09ed7708aceba891062b61d7731ff60401f81128b7c958ddf23abee8"
+    },
+    {
+      "magic": "EML1",
+      "payload_bytes": 64,
+      "ipv4_checksum_valid": true,
+      "sha256": "66bfd754d17ec092b705db960e95f6b136ecd24f1539d5911f9285c3f2fed31a"
+    }
+  ],
+  "decoder_camera_and_signed_values": true,
+  "malformed_length_magic_version_rejected": true,
+  "packets_sent": 0,
+  "export_sha256": "5aa816a4e9b987d91582a28c9ec2197bcc6d2608a20ffc447998c1f57a0e57a3",
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\receiver.py": "322d0332f374fcb9cb8c6a50cee0f7670615b117bd33ecab6b11c4d7bc4866bc",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_protocol.py": "3da1ed6afd6a903732b9f047a120904a524b8f2dc6936dd7563d395eece46302",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\tests\\udp-frames.hex": "5aa816a4e9b987d91582a28c9ec2197bcc6d2608a20ffc447998c1f57a0e57a3"
+  }
+}

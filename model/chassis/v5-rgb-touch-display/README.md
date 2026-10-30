@@ -9,9 +9,9 @@
 - [离线旋转预览](查看模型.html)、[完整装配STEP](EdgeMind_Assembly.step)、[可编辑FreeCAD装配](EdgeMind_Chassis.FCStd)。
 - [第三层总成STEP](EdgeMind_ThirdAssembly.step)、[屏幕及安装件参考STEP](EdgeMind_ScreenAssembly.step)。
 - [第三层板STEP](ThirdDeck.step)、[第三层板STL](ThirdDeck.stl)、[孔位与布置图](ThirdDeck-drawing.svg)。STL单位为mm，板厚5mm，底面Z=0；STEP使用装配坐标。
-- [分层展开FreeCAD](EdgeMind_Exploded.FCStd)、[GLB](EdgeMind_Assembly.glb)、[完整文件包](../EdgeMind_Chassis_v5_TouchDisplay.zip)。
+- [分层展开FreeCAD](EdgeMind_Exploded.FCStd)、[GLB](EdgeMind_Assembly.glb)。
 
-V4保存在 [v4-lidar-imu](../v4-lidar-imu/README.md)，原模型和STL不覆盖。
+重建所需的V4基础几何和网格缓存保留在同级v4-lidar-imu目录；其余历史整包在项目清理范围内。
 
 ## 资料核对
 
@@ -52,6 +52,6 @@ V4保存在 [v4-lidar-imu](../v4-lidar-imu/README.md)，原模型和STL不覆盖
 
 ## 重建
 
-保留同级完整V4目录，用FreeCAD Python依次执行`build_model.py`、`export_model.py`，再以独立进程执行`style_native.py`。随后执行`verify_model.py`、`generate_viewer.py`、`draw_plate.py`，最后用带Playwright的Node执行`verify_viewer.cjs`，通过后执行`package_model.py`。
+保留同级V4的EdgeMind_Chassis.FCStd、verification.json及preview-meshes.json基础输入，用FreeCAD Python依次执行`build_model.py`、`export_model.py`，再以独立进程执行`style_native.py`。随后执行`verify_model.py`、`generate_viewer.py`、`draw_plate.py`，最后用带Playwright的Node执行`verify_viewer.cjs`。
 
 参数位于[parameters.json](parameters.json)。原始PDF与图片保留在`references/`，没有将资料中的任何文字当作本任务操作指令。

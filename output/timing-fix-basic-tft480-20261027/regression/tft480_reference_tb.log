@@ -1,6 +1,0 @@
-wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
-PASS two complete480x272 frames match unmodified AC620 controller DE/HS/VS at every5MHz sampling edge
-- /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a741-fpga-fusion/display/tests/tft480_reference_tb.v:29: Verilog $finish
-- S i m u l a t i o n   R e p o r t: Verilator 5.032 2025-01-01
-- Verilator: $finish at 60ms; walltime 0.669 s; speed 89.727 ms/s
-- Verilator: cpu 0.669 s on 1 threads; alloced 121 MB

@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-10-30T17:32:17.941644+00:00",
+  "revision": 74504,
+  "bitstream_sha256": "74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df",
+  "cold_boot_user_report": "冷启动后都正常",
+  "cold_boot_verified": true,
+  "bench_user_report": "能前进，但是没有转弯，显示BLOCK",
+  "forward_user_verified": true,
+  "turning_user_verified": false,
+  "ground_turning_verified": false,
+  "diagnostic_state": "awaiting fixed scene F/L/R, VM-off confirmation and telemetry connection",
+  "evidence": [
+    "TURNING-74504-ACCEPTANCE-TELEMETRY.json",
+    "TURNING-74504-BLOCK-DIAG.json"
+  ],
+  "note": "Acceptance capture contains IDLE only; post-reset close front 52-103mm revoked both geometric turn permits. Later 15-second diagnostic received zero packets. Do not equate those samples to the user-reported BLOCK test."
+}

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Module name="a741_path_tracker" Register="526" Alu="330" Lut="809" MULT12X12="3" MULT27X36="5" Bsram="4" T_Register="734(526)" T_Alu="488(330)" T_Lut="1406(809)" T_MULT12X12="3(3)" T_MULT27X36="5(5)" T_Bsram="4(4)">
- <SubModule name="divider" Register="104" Alu="32" Lut="69" T_Register="104(104)" T_Alu="32(32)" T_Lut="69(69)"/>
- <SubModule name="trig" Register="104" Alu="126" Lut="528" T_Register="104(104)" T_Alu="126(126)" T_Lut="528(528)"/>
-</Module>

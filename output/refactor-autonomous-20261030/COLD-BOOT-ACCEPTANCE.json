@@ -1,0 +1,167 @@
+{
+  "recorded_utc": "2026-10-30T16:55:25.375497+00:00",
+  "revision": 74503,
+  "bitstream_sha256": "f72910d5ab0a7a4a49b076d78085ec9a6372bd9aa478eed33d0471e8169670cd",
+  "programming_audit": "output\\refactor-autonomous-20261030\\flash\\20261030T164714.625252Z\\audit.json",
+  "user_cold_boot_confirmation": "断电重启后都正常，IDLE / ERR 0000",
+  "requested_physical_procedure": "VM off; FPGA and display fully off at least 10 seconds, eliminate USB/programmer backfeed, power on without programming.",
+  "display_and_idle_cold_boot_user_verified": true,
+  "subsequent_user_report": "但是断电后电机有问题，按下s1后显示ERR0020，MODE为FAULT",
+  "initial_motion_fault_telemetry": "output/refactor-autonomous-20261030/COLD-BOOT-FINAL-TELEMETRY.json",
+  "diagnosis": "CPU, camera and IMU healthy. Near front about 410-438 mm and right about 210-235 mm caused BLOCKED -> bounded BACK -> FAULT0020 as turn clearance was insufficient.",
+  "controlled_rtl_reproduction": "output/refactor-autonomous-20261030/BLOCKED-RECOVERY-REPRO.json",
+  "front_clear_retest_telemetry": "output/refactor-autonomous-20261030/COLD-BOOT-CLEARANCE-RETEST.json",
+  "front_clear_retest_telemetry_verified": true,
+  "front_clear_retest_user_confirmation": "能跑了，能识别前面障碍停下来了",
+  "retest_state_transitions": [
+    {
+      "ms": 3799,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        0,
+        0
+      ],
+      "ranges": [
+        1576,
+        419,
+        375
+      ]
+    },
+    {
+      "ms": 10499,
+      "state": 1,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        0,
+        0
+      ],
+      "ranges": [
+        1528,
+        334,
+        374
+      ]
+    },
+    {
+      "ms": 11099,
+      "state": 2,
+      "faults": 0,
+      "armed": true,
+      "targets": [
+        120,
+        120
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        0,
+        0
+      ],
+      "ranges": [
+        1528,
+        337,
+        373
+      ]
+    },
+    {
+      "ms": 15399,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        113,
+        113
+      ],
+      "counts": [
+        3389,
+        3388
+      ],
+      "ranges": [
+        1528,
+        337,
+        388
+      ]
+    }
+  ],
+  "retest_fault_codes": [
+    0
+  ],
+  "retest_encoder_counts_final": [
+    3460,
+    3458
+  ],
+  "retest_last_status": {
+    "seq": 22399,
+    "ms": 22399,
+    "revision": 74503,
+    "flags": 41755,
+    "state": 0,
+    "faults": 0,
+    "armed": false,
+    "targets": [
+      0,
+      0
+    ],
+    "speeds": [
+      0,
+      0
+    ],
+    "counts": [
+      3460,
+      3458
+    ],
+    "yaw": -44.3408203125,
+    "ranges": [
+      1013,
+      305,
+      186
+    ],
+    "camera_error": 0,
+    "camera_phase": 11,
+    "camera_attempt": 1,
+    "camera_register": 18241,
+    "camera_expected": 0,
+    "camera_value": 0,
+    "video_frames": 1292,
+    "frame_ready": true,
+    "ddr_ready": true,
+    "video_error": false,
+    "camera_ready": true
+  },
+  "retest_last_attitude": {
+    "roll": 0.186767578125,
+    "pitch": 6.624755859375,
+    "tilt_valid": true,
+    "cpu_alive": true,
+    "cpu_fault": false,
+    "cpu_progress": 22400
+  },
+  "ground_autonomous_avoidance_verified": false,
+  "firmware_changes_this_retest": false,
+  "note": "Straight-motion retest succeeded. Side ranges were below the turning clearance, so do not call the site all-around clear. No assistant control packets were sent; all start/stop actions were local.",
+  "front_clear_retest_user_verified": true
+}

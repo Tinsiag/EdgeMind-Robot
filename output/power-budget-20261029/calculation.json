@@ -1,0 +1,42 @@
+{
+  "date_local": "2026-10-29",
+  "kind": "engineering_capacity_budget_not_measured",
+  "electronics_output_budget_w": 34.15,
+  "assumed_external_conversion_efficiency": 0.9,
+  "motor_voltage_v": 12,
+  "motor_count": 2,
+  "motor_rated_current_each_a": 0.36,
+  "motor_stall_current_each_a": 3.2,
+  "rated_scenario_input_w_excluding_driver_loss": 46.58444444444444,
+  "stall_scenario_input_w_excluding_driver_loss": 114.74444444444445,
+  "rated_scenario_equivalent_12v_a": 3.882037037037037,
+  "stall_scenario_equivalent_12v_a": 9.562037037037038,
+  "continuous_capacity_target_w": 60,
+  "short_duration_capacity_target_w": 150,
+  "capacity_targets_at_nominal_11p1v_a": [
+    5.405405405405405,
+    13.513513513513514
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\小梅哥ACG720国产高云FPGA教学开发板资料\\06_硬件图纸\\ACG720-138&60K通用原理图.pdf",
+      "sha256": "47e4b849edc46ab16925aaa3d61b7bb4e766b24222a1dabf0b7ec3bf9ae3c9f4"
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\fpga\\4.3inchTFT\\TFT_4.3&5.0V2原理图.pdf",
+      "sha256": "d781262c066aca90120d54de0f791a35ebd763846237deded70afa62d66e9bfa"
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\电机\\拟用电机资料核对.md",
+      "sha256": "b6498530be9adec2486bd0962b324b1b750f2e069dfa56390f6d2913c6912d6e"
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\doc\\电源板\\电源预算与架构初稿.md",
+      "sha256": "0c940ad7e134977e710d3535fbea9a204d6150350492d49775ad7ea277108c45"
+    },
+    {
+      "path": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a741\\docs\\MPU6050.md",
+      "sha256": "aab8fd1ebcffe40ac88a119ecdad44ad4aa1863bf32c5ed9543aeef3fc9c70ec"
+    }
+  ]
+}

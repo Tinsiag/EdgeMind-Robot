@@ -1,0 +1,280 @@
+*** GOWIN Tcl Command Line Console  *** 
+Open project C:/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/a745.gprj finished
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_camera_boot.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_camera_pads.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_cpu_regs.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_dvp_capture.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_navigation_scan.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_osd.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_turn_envelope.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_udp_tx.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_video.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_attitude.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_bare_cpu.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_button_debounce.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_display_cdc.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_divider.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_imu_i2c.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_lidar_guard.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_motion_feedback.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_phy_config.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_pi.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_sensors.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_speed.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_tft800_panel.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\async_fifo.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\capture_tokens.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\cdc_mailbox.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ddr_framebuffer.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\encoder_counter.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_control.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\motor_pwm_safe.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_driver.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_heading.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\quadrature_decoder.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\reset_sync.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\uart_rx.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\video_pixels.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\i2c_bit_shift.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\i2c_control.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\ov5640_init_table_rgb.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr3_memory_interface.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr_pll.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr_pll_mod.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ethernet_pll_mod.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gowin_pll.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\pll_init.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\pll_mDRP_intf.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_gowin_pll.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_gowin_pll_mod.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_pll_init.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v'
+WARN  (EX3801) : Parameter 'ADDR_WIDTH' becomes localparam in 'axis_async_fifo' with formal parameter declaration list("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":145)
+WARN  (EX3801) : Parameter 'OUTPUT_FIFO_ADDR_WIDTH' becomes localparam in 'axis_async_fifo' with formal parameter declaration list("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":147)
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v'
+WARN  (EX3801) : Parameter 'MIN_LEN_WIDTH' becomes localparam in 'axis_gmii_tx' with formal parameter declaration list("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":93)
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\lfsr.v'
+WARN  (EX3801) : Parameter 'STYLE_INT' becomes localparam in 'lfsr' with formal parameter declaration list("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\lfsr.v":355)
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v'
+WARN  (EX3073) : Port 'm_axis_tkeep' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":59)
+WARN  (EX3073) : Port 'm_axis_ptp_ts' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":66)
+Compiling module 'a745_top'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":3)
+Compiling module 'Gowin_PLL'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gowin_pll.v":1)
+Compiling module 'Gowin_PLL_MOD'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ethernet_pll_mod.v":10)
+Compiling module 'PLL_INIT(MULTI_FAC=15)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\pll_init.v":4)
+Compiling module 'A741_TFT_PLL'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_gowin_pll.v":1)
+Compiling module 'A741_TFT_PLL_MOD'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_gowin_pll_mod.v":10)
+Compiling module 'A741_TFT_PLL_INIT(MULTI_FAC=33)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\tft_pll_init.v":4)
+Compiling module 'reset_sync'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\reset_sync.v":3)
+Compiling module 'a745_camera_boot'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_camera_boot.v":6)
+Compiling module 'ov5640_init_table_rgb(IMAGE_WIDTH=800,IMAGE_HEIGHT=480)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\ov5640_init_table_rgb.v":18)
+Compiling module 'i2c_control(SCL_CLOCK=100000)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\i2c_control.v":18)
+Compiling module 'i2c_bit_shift(SCL_CLOCK=100000)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\i2c_bit_shift.v":18)
+Compiling module 'a741_phy_config'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_phy_config.v":7)
+Compiling module 'a741_mdio'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_phy_config.v":77)
+Compiling module 'axis_async_fifo(DEPTH=512,KEEP_ENABLE=0,FRAME_FIFO=1,DROP_BAD_FRAME=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":34)
+Extracting RAM for identifier 'mem'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":255)
+WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":431)
+WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":445)
+WARN  (EX3791) : Expression size 11 truncated to fit in target size 10("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":670)
+Compiling module 'axis_gmii_tx'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":34)
+Compiling module 'lfsr(LFSR_WIDTH=32,LFSR_POLY=32'h4c11db7,LFSR_CONFIG="GALOIS",REVERSE=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\lfsr.v":34)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":266)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 6("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":302)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 6("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":332)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 6("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":353)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":365)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_gmii_tx.v":388)
+Compiling module 'gmii_to_rgmii'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":20)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":55)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":55)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":55)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":55)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":67)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'D0'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":76)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'D1'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":77)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'TX'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gmii_to_rgmii.v":78)
+Compiling module 'ddr_pll'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr_pll.v":1)
+Compiling module 'ddr_pll_MOD'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr_pll_mod.v":10)
+Compiling module 'PLL_INIT(MULTI_FAC=16)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\pll_init.v":4)
+Compiling module '**'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\pll_mDRP_intf.v":76)
+Compiling module 'DDR3_Memory_Interface_Top'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr3_memory_interface.v":19103)
+Compiling module '**'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ddr3_memory_interface.v":19102)
+Compiling module 'a745_camera_pads'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_camera_pads.v":6)
+WARN  (EX3073) : Port 'read_bank' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_video.v":46)
+Compiling module 'a745_video(WIDTH=800,HEIGHT=480)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_video.v":6)
+Compiling module 'a745_dvp_capture'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_dvp_capture.v":5)
+Compiling module 'capture_tokens'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\capture_tokens.v":3)
+Compiling module 'async_fifo(WIDTH=18,ADDR_BITS=12)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\async_fifo.v":5)
+Extracting RAM for identifier 'mem'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\async_fifo.v":10)
+Compiling module 'cdc_mailbox(WIDTH=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\cdc_mailbox.v":5)
+Compiling module 'ddr_framebuffer'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ddr_framebuffer.v":6)
+Compiling module 'async_fifo(WIDTH=128,ADDR_BITS=6)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\async_fifo.v":5)
+Extracting RAM for identifier 'mem'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\async_fifo.v":10)
+Compiling module 'video_pixels'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\video_pixels.v":3)
+Compiling module 'a741_display_cdc'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_display_cdc.v":6)
+Compiling module 'cdc_mailbox(WIDTH=1158)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\cdc_mailbox.v":5)
+Compiling module 'cdc_mailbox(WIDTH=36)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\cdc_mailbox.v":5)
+Compiling module 'a745_osd(PIPELINED=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_osd.v":6)
+Compiling module 'a741_tft800_panel'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_tft800_panel.v":7)
+Compiling module 'a741_button_debounce'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_button_debounce.v":5)
+WARN  (EX3073) : Port 'tof_valid' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v":40)
+Compiling module 'a745_core(GEOMETRY_VERIFIED=1,FUSION_CONFIG_CRC=32'hc27751b8)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v":3)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v":24)
+Compiling module 'a741_sensors(LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1,ALLOW_MPU6500=1,TOF_ENABLED=0)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_sensors.v":3)
+Compiling module 'uart_rx(BAUD=230400)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\uart_rx.v":3)
+Compiling module 'a741_imu_i2c'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_imu_i2c.v":5)
+Compiling module 'mpu6050_driver(ALLOW_MPU6500=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_driver.v":5)
+Compiling module 'mpu6050_heading'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_heading.v":5)
+Compiling module 'a741_attitude'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_attitude.v":8)
+Compiling module 'ld06_parser(LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":5)
+Compiling module 'a741_divider'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_divider.v":4)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":89)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":97)
+WARN  (EX3791) : Expression size 16 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":98)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":106)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":130)
+WARN  (EX3073) : Port 'mem_la_read' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_bare_cpu.v":19)
+Compiling module 'a741_bare_cpu'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_bare_cpu.v":4)
+Extracting RAM for identifier 'ram'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_bare_cpu.v":11)
+Compiling module 'picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":63)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":404)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1121)
+WARN  (EX3791) : Expression size 33 truncated to fit in target size 32("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1237)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 1("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1251)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1253)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1253)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1270)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1270)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1316)
+Compiling module 'a745_cpu_regs'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_cpu_regs.v":6)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1389)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1405)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1499)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1585)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1732)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1737)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1762)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1768)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1838)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1838)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1843)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1846)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1846)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 5("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1851)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1861)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1861)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1886)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1886)
+WARN  (EX3827) : Synthesis - simulation differences may occur when using full_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1903)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":1903)
+Compiling module 'quadrature_decoder'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\quadrature_decoder.v":3)
+Compiling module 'encoder_counter(TIMEOUT_MS=1000)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\encoder_counter.v":3)
+Compiling module 'a741_speed'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_speed.v":4)
+Compiling module 'a745_navigation_scan'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_navigation_scan.v":5)
+Compiling module 'a745_turn_envelope'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_turn_envelope.v":7)
+Compiling module 'a745_autonomy(GEOMETRY_VERIFIED=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":74)
+Compiling module 'ld06_control'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_control.v":5)
+Compiling module 'a741_motion_feedback'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_motion_feedback.v":11)
+WARN  (EX3791) : Expression size 29 truncated to fit in target size 11("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_motion_feedback.v":39)
+Compiling module 'a741_pi(TARGET_LIMIT_ENABLED=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_pi.v":4)
+Compiling module 'motor_pwm_safe'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\motor_pwm_safe.v":3)
+Compiling module 'motor_pwm_safe(INVERT=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\motor_pwm_safe.v":3)
+Compiling module 'a745_udp_tx'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_udp_tx.v":6)
+NOTE  (EX0101) : Current top module is "a745_top"
+WARN  (EX0211) : The output port "pcpi_insn[31]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[30]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[29]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[28]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[27]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[26]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[25]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[24]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[23]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[22]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[21]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[20]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[19]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[18]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[17]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[16]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[15]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[14]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[13]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[12]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[11]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[10]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[9]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[8]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[7]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[6]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[5]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[4]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[3]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[2]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[1]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+WARN  (EX0211) : The output port "pcpi_insn[0]" of module "picorv32(ENABLE_COUNTERS=0,ENABLE_COUNTERS64=0,BARREL_SHIFTER=1,TWO_CYCLE_COMPARE=1,TWO_CYCLE_ALU=1,PROGADDR_RESET=0,STACKADDR=8192)" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\vendor\picorv32.v":112)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input imu_int is unused("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":18)
+WARN  (CV0016) : Input imu_xda is unused("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":18)
+WARN  (CV0016) : Input imu_xcl is unused("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":18)
+WARN  (CV0016) : Input imu_ad0 is unused("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":18)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "reset_sync" instantiated to "nreset" is swept in optimizing("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":40)
+[95%] Generate netlist file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\gwsynthesis\a745.vg" completed
+[100%] Generate report file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\gwsynthesis\a745_syn.rpt.html" completed
+GowinSynthesis finish
+Reading netlist file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\gwsynthesis\a745.vg"
+Parsing netlist file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\gwsynthesis\a745.vg" completed
+Processing netlist completed
+Reading constraint file: "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.power.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.pin.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.rpt.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.rpt.txt" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.sdf" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.vo" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr.html" completed
+Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr" completed
+Sat Oct 31 01:19:26 2026
+

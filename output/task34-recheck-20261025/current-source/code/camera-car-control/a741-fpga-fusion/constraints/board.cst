@@ -1,5 +1,0 @@
-// Gowin SUG1541 section 2.8: dedicated global clock routing to fabric loads.
-// Preserve the original PLL frequencies and the OSER10 dedicated HCLK path.
-// The 165 MHz branch feeds HDMI reset FFs; the 125 MHz branch feeds MAC RAM.
-CLOCK_LOC "serial_clk" BUFG = CLK;
-CLOCK_LOC "pll125" BUFG = CLK;

@@ -1,1 +1,0 @@
-Stopped duplicate synthesis after Gowin did not recognize a standalone copied netlist without its project flow metadata. Original PNR was not stopped. Copy verified synthesis outputs and their matching project metadata before restarting isolated PNR. No HDL, constraints or netlist edits.

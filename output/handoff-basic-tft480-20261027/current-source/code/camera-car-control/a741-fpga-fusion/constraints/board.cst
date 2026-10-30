@@ -1,2 +1,0 @@
-// Existing Ethernet PLL125 global routing; no HDMI clock exists.
-CLOCK_LOC "pll125" BUFG = CLK;
