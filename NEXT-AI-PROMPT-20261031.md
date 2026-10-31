@@ -1,9 +1,19 @@
-请接手 EdgeMind-Robot，项目目录 C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot，GitHub 为 Tinsiag/EdgeMind-Robot，main 分支。
+请继续维护 EdgeMind-Robot，项目目录 C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot，活动工程 code/camera-car-control/a745-autonomous。
 
-先读 AGENTS.md、.agent/main/handoff.md、output/refactor-autonomous-20261030/STATUS.json。当前 FW74504 已固化且用户确认真实断电重启正常，位流 SHA-256 为 74cef81a075feb78f9c5bc70a91384a368dc81e080ad65a3eccbb867f01719df，发布文件 output/releases/fw74504/a745.fs（Git LFS）。
+先读 AGENTS.md、.agent/main/handoff.md、output/refactor-autonomous-20261030/STATUS.json 和 imu-fault-20261031/DIAGNOSTICS.md。
 
-用户最终要求仅前方50cm停车，侧后方按车身转弯空间；左右择路后用陀螺仪完成转角，再锁新航向直行。当前能前进，但用户报告没有转弯、MODE为BLOCK，问题尚未解决。先恢复只读遥测，取得固定场景F/L/R、左右转向许可及实际阻挡雷达点，使用 output/refactor-autonomous-20261030/capture_turn_blocks.py 定位；此前待机时F一度约10cm不能冒充BLOCK测试的根因。
+本次已继续开发源码候选FW74507，还须读output/refactor-autonomous-20261030/CHANGE-74507.md。用户明确覆盖旧约定：前方停车线改300mm；编码器连续1秒无脉冲仅TX提示、不再ERR0004停车，非法四相跳变仍停车、PI和PWM上限保留；三方都堵时选择短退后重新择路，后方>350mm才后退，任一轮约100mm或约2秒止，停稳150ms，同一堵塞阶段只尝试一次。新增MODE10/11及EMS flags bit2/bit7提示。实板是否加载候选、实际SHA与签核以STATUS.json和真实审计为准，不能将下文74506签核借给新RTL。ERR0001仍未复现定位。
 
-保留安全联锁、上电未ARM、S1启停和S0急停，网口仅传数据。当前未实现卡尔曼滤波。不要盲降几何门槛或直接重烧。VM当前状态未确认，任何烧录前先核实关闭；持续烧录授权有效，不重复索取权限。先架空验证左右选向和约2秒S1停止，再受控低速验证落地约90度转弯及转后直行。架空时车身不转，超过4.5秒ERR0080是无航向进度保护。
+当前实板FW74506，SHA-256 b5cb8e927ebd07fccbaa1dde327acde91f565e7d8b698bc2862bd7a9c93d3a1a，Flash写入/校验/重载/就绪/版本比对通过，被动健康确认实际74506、CPU/摄像头/DDR正常、IDLE/ERR0000、未ARM。审计为output/refactor-autonomous-20261030/flash/20261031T075334.673715Z/audit.json。74506是故障快照诊断版，尚未修复或复现新的ERR0001，真实冷启动与运动也未验收。旧output/releases/fw74504不是当前镜像。
 
-源码、交接、必要证据和旧文件删除记录已随本次提交上传，远端main当前目录同步清理；不恢复旧备份、不拆公共GND。不要自动关机。只在有真实证据时更新验收结论。
+用户已确认74505能跑能转，问题是落地平地直行偶发ERR0001，架空正常，再按S1可恢复。车太重是猜测，不能直接归因或盲增PWM。先用capture_imu_fault.py只接收记录，用户受控短程复现后关VM、保留FAULT、不按S1，读imu_fault_sources、触发角度和有效标志，再修对应路径。原因bit0..3依次为IMU航向无效、原始gyro采样无效、倾角无效、超倾角；故障后正常角度不能代替触发角度。
+
+保留侧后方CAD扫掠空间、择路转弯、gyro转角/转后航向锁定、编码器PI及未被用户明确改变的联锁。没有卡尔曼。上电不ARM，S1本地启停、S0急停，网口只有TX，不发送运动控制。用户此前确认VM关闭、轮子架空，接手180秒被动记录后答复尚未测试；下一次重载前更新VM关闭确认。持续Flash授权有效，不重复问权限；失败停查，不盲重试、不降级SRAM。架空转向约2秒S1停止，避免4.5秒无航向进度保护ERR0080。
+
+26项回归、实测雷达回放、几何检查、4个导航叶模块5项原语检查及同次PNR/STA/SDF通过。新RTL变更后重建完整证据，再Flash和真实冷启动/负载运动验收。当前HEAD ac56a9e，本次74505/74506修改尚未提交推送；先修复并按真实结果更新交接，不把诊断版写成已解决。不恢复旧备份、不拆公共GND、不关机。
+
+## 最新状态：FW74508（2026-10-31）
+
+FW74508 已完成外部 Flash 写入/校验、重载、就绪和 UserCode 比对。实板 SHA-256 `899034472dc21c4f39669929d592031e9521faabf2b6718ffb9ee83ab8813690`；审计 `output/refactor-autonomous-20261030/flash/20261031T092737.270324Z/audit.json`；最终状态 `0x70022020`。被动健康 `output/refactor-autonomous-20261030/imu-fault-20261031/74508-health-20261031.json` 有 300 状态/300 姿态，均 FW74508、IDLE/ERR0000、未 ARM、目标为零，CPU/IMU/摄像头/DDR 正常。
+
+姿态层新增最近三个完整 roll/pitch 对按最大绝对倾角取中值，抑制单次加速度/振动尖峰；22.5° 阈值、valid 和真实倾斜停车保留。29 项 RTL/协议、回放、几何、CPU、8 项导航/姿态原语模型和同次 PNR/STA/SDF/PAD 已通过。运动、显示和真实冷启动未验收，`application_verified`、`err0001_fixed`、`root_cause_confirmed` 仍为 false。用户已确认 VM 关闭，烧录后未 ARM。

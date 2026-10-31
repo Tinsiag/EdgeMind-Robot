@@ -8,6 +8,7 @@ Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\c
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v'
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_cpu_regs.v'
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_dvp_capture.v'
+Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_lidar_filter.v'
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_navigation_scan.v'
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_osd.v'
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_turn_envelope.v'
@@ -133,7 +134,7 @@ Compiling module 'uart_rx(BAUD=230400)'("C:\Users\sc\Documents\Dev\Hardware\Edge
 Compiling module 'a741_imu_i2c'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_imu_i2c.v":5)
 Compiling module 'mpu6050_driver(ALLOW_MPU6500=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_driver.v":5)
 Compiling module 'mpu6050_heading'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\mpu6050_heading.v":5)
-Compiling module 'a741_attitude'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_attitude.v":8)
+Compiling module 'a741_attitude'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_attitude.v":12)
 Compiling module 'ld06_parser(LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":5)
 Compiling module 'a741_divider'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_divider.v":4)
 WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_parser.v":89)
@@ -178,10 +179,11 @@ WARN  (EX3826) : Synthesis - simulation differences may occur when using paralle
 Compiling module 'quadrature_decoder'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\quadrature_decoder.v":3)
 Compiling module 'encoder_counter(TIMEOUT_MS=1000)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\encoder_counter.v":3)
 Compiling module 'a741_speed'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_speed.v":4)
+Compiling module 'a745_lidar_filter'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_lidar_filter.v":8)
 Compiling module 'a745_navigation_scan'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_navigation_scan.v":5)
 Compiling module 'a745_turn_envelope'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_turn_envelope.v":7)
-Compiling module 'a745_autonomy(GEOMETRY_VERIFIED=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":5)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":74)
+Compiling module 'a745_autonomy(GEOMETRY_VERIFIED=1,REVERSE_LEFT_COUNTS=64'b0000000000000000000000000000000000000000000000000000001011000001,REVERSE_RIGHT_COUNTS=64'b0000000000000000000000000000000000000000000000000000001011000010)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":5)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_autonomy.v":99)
 Compiling module 'ld06_control'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\ld06_control.v":5)
 Compiling module 'a741_motion_feedback'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_motion_feedback.v":11)
 WARN  (EX3791) : Expression size 29 truncated to fit in target size 11("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_motion_feedback.v":39)
@@ -276,5 +278,5 @@ Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.vo" completed
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr.html" completed
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr" completed
-Sat Oct 31 01:19:26 2026
+Sat Oct 31 17:24:17 2026
 

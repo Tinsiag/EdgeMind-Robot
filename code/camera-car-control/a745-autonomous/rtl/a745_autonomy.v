@@ -1,36 +1,51 @@
 `timescale 1ns/1ps
 `default_nettype none
-// Local S1 owns calibration/ARM. Obstacles cause a measured quarter-turn or
-// a stationary wait; CPU/IMU/encoder faults always revoke motor permission.
-module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=500,CLEAR_MM=600,SLOW_MM=800)(
+// Local S1 owns calibration/ARM. Obstacles cause a measured quarter-turn,
+// a guarded 180-degree U-turn, or a stationary wait; CPU/IMU/encoder faults
+// always revoke motor permission.
+module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SLOW_MM=800,
+ REAR_STOP_MM=350)(
  input wire clk,rst_n,ms_tick,tick,button_start,
  input wire imu_valid,gyro_valid,stationary,gyro_update,tilt_valid,
  input wire signed [15:0] raw_gz,roll,pitch,yaw,
+ input wire signed [31:0] left_count,right_count,
  input wire wheels_stationary,encoder_fault,cpu_alive,cpu_fault,lidar_valid,scan_valid,
- input wire [15:0] front,left,right,input wire left_clear,right_clear,
+ input wire [15:0] front,left,right,rear,input wire left_clear,right_clear,
  output reg armed,calibrated,output reg signed [15:0] bias,
  output wire lidar_enabled,motor_enable,output reg [7:0] state,
- output reg [15:0] faults,output reg signed [31:0] target_l,target_r
+ output reg [15:0] faults,output reg signed [31:0] target_l,target_r,
+ output reg [7:0] imu_fault_sources,imu_fault_valid_flags,
+ output reg signed [15:0] imu_fault_roll,imu_fault_pitch
 );
- localparam IDLE=0,CALIBRATE=1,FORWARD=2,LEFT=3,RIGHT=4,BLOCKED=5,FAULT=8,SETTLE=9;
+ localparam IDLE=0,CALIBRATE=1,FORWARD=2,LEFT=3,RIGHT=4,BLOCKED=5,FAULT=8,SETTLE=9,UTURN_LEFT=12,UTURN_RIGHT=13;
  reg [13:0] age;reg [6:0] samples;reg signed [31:0] bias_sum;
  reg [8:0] turn_ticks;reg [3:0] wait_ticks;reg signed [15:0] turn_origin;
- wire running=state==FORWARD || state==LEFT || state==RIGHT || state==BLOCKED || state==SETTLE;
- wire turning=state==LEFT || state==RIGHT;
+ wire running=state==FORWARD || state==LEFT || state==RIGHT || state==BLOCKED || state==SETTLE || state==UTURN_LEFT || state==UTURN_RIGHT;
+ wire turning=state==LEFT || state==RIGHT || state==UTURN_LEFT || state==UTURN_RIGHT;
+ wire uturning=state==UTURN_LEFT || state==UTURN_RIGHT;
+ wire rear_clear=rear>REAR_STOP_MM && rear!=65535;
  wire sensors_ok=imu_valid && gyro_valid && tilt_valid && lidar_valid && scan_valid;
  wire tilt_bad=roll>4096 || roll < -4096 || pitch>4096 || pitch < -4096;
+ wire [7:0] imu_sources={4'd0,tilt_bad,!tilt_valid,!gyro_valid,!imu_valid};
+ wire [7:0] imu_flags={scan_valid,lidar_valid,cpu_alive,stationary,tilt_bad,tilt_valid,gyro_valid,imu_valid};
  wire safe=armed && sensors_ok && !encoder_fault && cpu_alive && !cpu_fault && !tilt_bad && faults==0;
  // Subtract in 16 bits first: the gyro wraps at +/-180 degrees.
  wire signed [15:0] wrapped_delta=yaw-turn_origin;
- wire signed [16:0] turn_progress=state==RIGHT ? -$signed({wrapped_delta[15],wrapped_delta}):$signed({wrapped_delta[15],wrapped_delta});
- wire signed [16:0] turn_remaining=17'sd16384-turn_progress;
+ wire signed [16:0] turn_progress=(state==RIGHT || state==UTURN_RIGHT) ?
+  -$signed({wrapped_delta[15],wrapped_delta}):$signed({wrapped_delta[15],wrapped_delta});
+ // A signed Q15 half-turn cannot represent +180 after wrap. Stop just short
+ // of the wrap so a U-turn remains observable and locks the actual new yaw.
+ wire signed [16:0] turn_remaining=(uturning ? 17'sd32600:17'sd16384)-turn_progress;
  wire signed [16:0] proportional_speed=turn_remaining >>> 7;
  wire signed [31:0] turn_speed=proportional_speed>80 ? 32'sd80:proportional_speed<40 ? 32'sd40:32'(proportional_speed);
  // 87 degrees is the braking boundary for a 90-degree target, not a timer.
- wire turn_reached=turn_progress>=17'sd15838;
- wire direction_clear=state==LEFT ? left_clear:right_clear;
+ wire turn_reached=turn_progress>=(uturning ? 17'sd32600:17'sd15838);
+ wire direction_clear=state==LEFT ? left_clear:state==RIGHT ? right_clear:rear_clear;
  wire can_left=left_clear && left>=CLEAR_MM && left!=65535;
  wire can_right=right_clear && right>=CLEAR_MM && right!=65535;
+ wire [15:0] left_score=left==65535 ? 0:left,right_score=right==65535 ? 0:right;
+ wire uturn_left_choice=left_score>=right_score;
+ wire turn_timeout=uturning ? turn_ticks>=899:turn_ticks>=449;
  wire clearance_ok=turning ? direction_clear && !turn_reached:front>STOP_MM && front!=65535;
  assign motor_enable=rst_n && safe && (state==FORWARD || turning) && clearance_ok && !button_start;
  assign lidar_enabled=state!=IDLE && state!=FAULT;
@@ -40,19 +55,26 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=500,CLEAR_MM=600,SL
    FORWARD:begin target_l=front>SLOW_MM ? 120:60;target_r=target_l;end
    LEFT:begin target_l=-turn_speed;target_r=turn_speed;end
    RIGHT:begin target_l=turn_speed;target_r=-turn_speed;end
+   UTURN_LEFT:begin target_l=-turn_speed;target_r=turn_speed;end
+   UTURN_RIGHT:begin target_l=turn_speed;target_r=-turn_speed;end
    default:begin end
   endcase
  end
  always @(posedge clk or negedge rst_n)
   if(!rst_n) begin state<=IDLE;armed<=0;calibrated<=0;bias<=0;faults<=0;
-   age<=0;samples<=0;bias_sum<=0;turn_ticks<=0;wait_ticks<=0;turn_origin<=0;end
+   age<=0;samples<=0;bias_sum<=0;turn_ticks<=0;wait_ticks<=0;turn_origin<=0;
+   imu_fault_sources<=0;imu_fault_valid_flags<=0;imu_fault_roll<=0;imu_fault_pitch<=0;end
   else if(button_start) begin
    armed<=0;age<=0;samples<=0;bias_sum<=0;turn_ticks<=0;wait_ticks<=0;
+   imu_fault_sources<=0;imu_fault_valid_flags<=0;imu_fault_roll<=0;imu_fault_pitch<=0;
    if(state==IDLE || state==FAULT) begin state<=CALIBRATE;calibrated<=0;faults<=0;end
    else state<=IDLE;
   end else if(running && (!sensors_ok || encoder_fault || cpu_fault || !cpu_alive || tilt_bad)) begin
    armed<=0;state<=FAULT;
-   if(!imu_valid || !gyro_valid || !tilt_valid || tilt_bad) faults[0]<=1;
+   if(!imu_valid || !gyro_valid || !tilt_valid || tilt_bad) begin
+    faults[0]<=1;imu_fault_sources<=imu_sources;imu_fault_valid_flags<=imu_flags;
+    imu_fault_roll<=roll;imu_fault_pitch<=pitch;
+   end
    if(!lidar_valid || !scan_valid) faults[1]<=1;
    if(encoder_fault) faults[2]<=1;
    if(cpu_fault || !cpu_alive) faults[3]<=1;
@@ -63,7 +85,10 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=500,CLEAR_MM=600,SL
     else if(age>=10000 || GEOMETRY_VERIFIED==0) begin
      state<=FAULT;faults[4]<=1;
      if(GEOMETRY_VERIFIED==0) faults[6]<=1;
-     if(!calibrated || !imu_valid || !gyro_valid || !tilt_valid || tilt_bad) faults[0]<=1;
+     if(!calibrated || !imu_valid || !gyro_valid || !tilt_valid || tilt_bad) begin
+      faults[0]<=1;imu_fault_sources<=imu_sources | {2'b0,!calibrated,!stationary,4'b0};
+      imu_fault_valid_flags<=imu_flags;imu_fault_roll<=roll;imu_fault_pitch<=pitch;
+     end
      if(!lidar_valid || !scan_valid) faults[1]<=1;
      if(encoder_fault) faults[2]<=1;
      if(!cpu_alive) faults[3]<=1;
@@ -80,19 +105,27 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=500,CLEAR_MM=600,SL
     end
    end
    if(running && tick) case(state)
-    FORWARD:if(front<=STOP_MM) begin state<=BLOCKED;wait_ticks<=0;end
+    FORWARD:begin
+     if(front<=STOP_MM) begin state<=BLOCKED;wait_ticks<=0;end
+    end
     BLOCKED:begin
      if(wait_ticks<9) wait_ticks<=wait_ticks+1'b1;
      else if(front>=CLEAR_MM && front!=65535) state<=FORWARD;
      else if(can_left && (!can_right || left>=right)) begin
       state<=LEFT;turn_origin<=yaw;turn_ticks<=0;
      end else if(can_right) begin state<=RIGHT;turn_origin<=yaw;turn_ticks<=0;end
-     // Both directions blocked is an ordinary stationary wait, not a fault.
+     else if(front<=STOP_MM && rear_clear) begin
+      // Three sides are blocked: use the open rear sector for a guarded
+      // in-place U-turn. The larger measured side chooses rotation direction;
+      // rear_clear is the minimum CAD-derived swept-space guard.
+      state<=uturn_left_choice ? UTURN_LEFT:UTURN_RIGHT;
+      turn_origin<=yaw;turn_ticks<=0;
+     end
     end
     LEFT,RIGHT:begin
      if(!direction_clear) begin state<=BLOCKED;wait_ticks<=0;end
      else if(turn_reached) begin state<=SETTLE;wait_ticks<=0;end
-     else if(turn_ticks>=449 || turn_progress < -17'sd2731) begin
+    else if(turn_timeout || turn_progress < -17'sd2731) begin
       state<=FAULT;armed<=0;faults[7]<=1;
      end else turn_ticks<=turn_ticks+1'b1;
     end
@@ -103,6 +136,13 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=500,CLEAR_MM=600,SL
       if(front>=CLEAR_MM && front!=65535) state<=FORWARD;
       else state<=BLOCKED;
      end
+    end
+    UTURN_LEFT,UTURN_RIGHT:begin
+     if(!rear_clear) begin state<=BLOCKED;wait_ticks<=0;end
+     else if(turn_reached) begin state<=SETTLE;wait_ticks<=0;end
+     else if(turn_timeout || turn_progress < -17'sd2731) begin
+      state<=FAULT;armed<=0;faults[7]<=1;
+     end else turn_ticks<=turn_ticks+1'b1;
     end
     default:begin end
    endcase

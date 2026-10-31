@@ -92,7 +92,10 @@ def main():
             'arrival_delay_ns':totals,'path_components_ns':details,'data_minus_clock_ns':skews,
             'worst_abs_skew_ns':worst,'uncertainty_reserve_ns':0.035,'board_skew_budget_ns':0.2,
             'allowed_total_skew_ns':0.5,'margin_ns':margin,'board_skew_measured':False}
-    (OUT/'TX-SKEW-REVIEW.json').write_text(json.dumps(record,indent=2)+'\n')
+    report=OUT/'TX-SKEW-REVIEW.json'
+    temporary=report.with_suffix('.tmp')
+    temporary.write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+    temporary.replace(report)
     print(json.dumps(record,indent=2))
     assert record['passed'],'TX pad skew exceeds Table58 budget'
 

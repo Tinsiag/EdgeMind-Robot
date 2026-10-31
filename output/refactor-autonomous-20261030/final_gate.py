@@ -29,7 +29,8 @@ def main():
         assert sha(Path(name)) == expected, name
     assert set(map(str, files)) <= set(result['source_sha256'])
     tests = json.loads((PROJECT / '.local/tests/result.json').read_text())
-    assert len(tests['passed']) == 23
+    expected_benches = {p.stem for p in (PROJECT / 'tests').glob('*_tb.v')}
+    assert set(tests['passed']) == expected_benches and len(tests['passed']) == len(expected_benches)
     for name, expected in tests['input_sha256'].items():
         assert sha(Path(name)) == expected, name
     protocol = json.loads((PROJECT / '.local/tests/protocol-result.json').read_text())
@@ -44,9 +45,18 @@ def main():
     assert geometry['passed']
     for name, expected in geometry['input_sha256'].items():
         assert sha(Path(name)) == expected, name
+    reverse_geometry = json.loads((OUT / 'reverse-clearance-74508.json').read_text())
+    assert reverse_geometry['generated_by'] == str(OUT / 'check_reverse_clearance.py')
+    assert reverse_geometry['passed'] and reverse_geometry['rear_stop_mm'] > reverse_geometry['inflated_rear_corner_radius_mm']
+    for name, expected in reverse_geometry['inputs_sha256'].items():
+        assert sha(Path(name)) == expected, name
     navigation = json.loads((PROJECT / '.local/tests/navigation-gate-result.json').read_text())
     assert navigation['passed'] and navigation['main_netlist_sha256'] == result['synthesis_netlist_sha256']
     for name, expected in navigation['input_sha256'].items():
+        assert sha(Path(name)) == expected, name
+    replay = json.loads((PROJECT / '.local/tests/lidar-replay-result.json').read_text())
+    assert replay['passed'] and replay['metrics']['filtered_clear'] >= 100
+    for name, expected in replay['input_sha256'].items():
         assert sha(Path(name)) == expected, name
     assert 'SDPB cpuregs_cpuregs' not in (BUILD / 'impl/gwsynthesis/a745.vg').read_text()
     timing = json.loads((OUT / 'TIMING-REVIEW.json').read_text())
@@ -64,22 +74,25 @@ def main():
     assert sha(artifact) == result['artifact_sha256']
     assert artifact.stat().st_mtime >= result['evidence_freshness_lower_bound_unix']
     revision = int(re.search(r"snapshot\[159:128\]<=32'd(\d+)", (PROJECT/'rtl/a745_core.v').read_text())[1])
+    front_stop_mm = int(re.search(r'\bSTOP_MM=(\d+)', (PROJECT/'rtl/a745_autonomy.v').read_text())[1])
     record = {'status': 'review_passed_pending_programming', 'timing_signed_off': True, 'firmware_revision': revision,
               'artifact': str(artifact), 'artifact_sha256': result['artifact_sha256'], 'usercode': '0xA745',
               'hardware_programmed': False, 'hardware_display_verified': False, 'cold_boot_verified': False,
-              'armed': False, 'rtl_tests_passed': 23, 'protocol_checks_passed': True,
-              'network_control_enabled': False, 'vm_off_confirmed': True,
+              'armed': False, 'rtl_tests_passed': len(expected_benches), 'protocol_checks_passed': True,
+              'network_control_enabled': False, 'vm_off_confirmed': False,
+              'application_verified': False,
               'motor_pads_dynamic': True, 'common_ground_must_remain_connected': True,
-              'turn_geometry_verified': True, 'navigation_gate_checks_passed': True, 'front_stop_mm': 500,
+              'turn_geometry_verified': True, 'navigation_gate_checks_passed': True, 'front_stop_mm': front_stop_mm,
               'recorded_utc': datetime.now(timezone.utc).isoformat()}
     (OUT / 'STATUS.json').write_text(json.dumps(record, indent=2) + '\n')
     result.update(timing_signed_off=True, review_record=str(OUT / 'STATUS.json'))
     (BUILD / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
     shutil.copy2(BUILD / 'result.json', OUT / 'build-evidence-current/result.json')
-    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json']:
+    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json', 'lidar-replay-result.json']:
         shutil.copy2(PROJECT / '.local/tests' / name, OUT / ('tests-' + name))
     print(json.dumps(record, indent=2))
 
 
 if __name__ == '__main__':
     main()
+

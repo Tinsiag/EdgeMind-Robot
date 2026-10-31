@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "rear_stop_mm": 350,
+  "inflated_rear_extent_from_lidar_mm": 274.000002,
+  "inflated_half_width_mm": 171.0,
+  "inflated_rear_corner_radius_mm": 322.98142531111597,
+  "rear_sector_covers_new_rear_edge": true,
+  "reverse_wheel_count_limits": [
+    705,
+    706
+  ],
+  "reverse_nominal_mm": 100,
+  "model_only": true,
+  "physical_measurement": false,
+  "inputs_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\config\\geometry.json": "c71338aebce07b9a977c1ff0d38e809a9b523da03e42fb0a3c9a404bd97c5ad3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\config\\calibration.json": "6b39e64f1deda838df1edf8a56c45f2eb04653277672a4f46c9ff7d02532a0ae",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "c74db5314b3cef999bfbc04340c8677c7b33a6692312dd1c27c6dd77c6c74c1d",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "095a3c762e79d8403ab9afd2cc0cf7bd1a8a5a226714d8b567f26892549f29fe"
+  }
+}

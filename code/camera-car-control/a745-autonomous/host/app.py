@@ -24,6 +24,8 @@ class App:
             else:
                 text=f"ARM {'ON' if s['armed'] else 'OFF'}   状态 {s['state']}   故障 0x{s['faults']:04X}\n"
                 text+=f"目标 {s['targets']} mm/s\n轮速 {s['speeds']} mm/s   编码器 {s['counts']}\n"
+                if s['revision']>=74507:
+                    text+=f"无脉冲提示 左 {'有' if s['encoder_no_pulse_left'] else '无'} / 右 {'有' if s['encoder_no_pulse_right'] else '无'}\n"
                 text+=f"前 / 左 / 右 {s['ranges']} mm\nDDR {'OK' if s['ddr_ready'] else 'WAIT'}   完整视频帧 {s['video_frames']}\n"
                 if s['revision']>=74504:
                     text+=f"转弯空间 左 {'通' if s['left_clear'] else '阻'} / 右 {'通' if s['right_clear'] else '阻'}  后方 {s['rear']} mm\n"

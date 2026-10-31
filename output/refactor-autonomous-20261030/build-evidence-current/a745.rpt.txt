@@ -12,27 +12,27 @@
   <Part Number>: GW5AT-LV60PG484AC1/I0
   <Device>: GW5AT-60
   <Device Version>: B
-  <Created Time>:Sat Oct 31 01:19:18 2026
+  <Created Time>:Sat Oct 31 17:24:10 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 31s, Elapsed time = 0h 0m 31s
+    Placement Phase 0: CPU time = 0h 0m 37s, Elapsed time = 0h 0m 37s
     Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
-    Placement Phase 2: CPU time = 0h 0m 59s, Elapsed time = 0h 0m 59s
-    Placement Phase 3: CPU time = 0h 1m 36s, Elapsed time = 0h 1m 36s
-    Total Placement: CPU time = 0h 3m 9s, Elapsed time = 0h 3m 9s
+    Placement Phase 2: CPU time = 0h 1m 15s, Elapsed time = 0h 1m 15s
+    Placement Phase 3: CPU time = 0h 1m 24s, Elapsed time = 0h 1m 24s
+    Total Placement: CPU time = 0h 3m 19s, Elapsed time = 0h 3m 19s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.025s, Elapsed time = 0h 0m 0.025s
-    Routing Phase 1: CPU time = 0h 2m 14s, Elapsed time = 0h 2m 14s
-    Routing Phase 2: CPU time = 0h 0m 0.602s, Elapsed time = 0h 0m 0.603s
+    Routing Phase 0: CPU time = 0h 0m 0.022s, Elapsed time = 0h 0m 0.022s
+    Routing Phase 1: CPU time = 0h 2m 15s, Elapsed time = 0h 2m 15s
+    Routing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 2m 15s, Elapsed time = 0h 2m 15s
+    Total Routing: CPU time = 0h 2m 16s, Elapsed time = 0h 2m 16s
  Generate output files:
-    CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
+    CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
 
- Total Time and Memory Usage: CPU time = 0h 5m 33s, Elapsed time = 0h 5m 33s, Peak memory usage = 1778MB
+ Total Time and Memory Usage: CPU time = 0h 5m 48s, Elapsed time = 0h 5m 48s, Peak memory usage = 1783MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 18642/59904                         |  32%
-    --LUT,ALU,ROM16           | 18642(16157 LUT, 2485 ALU, 0 ROM16) | -
+  Logic                       | 19797/59904                         |  34%
+    --LUT,ALU,ROM16           | 19797(17122 LUT, 2675 ALU, 0 ROM16) | -
     --SSRAM(RAM16)            | 0                                   | -
-  Register                    | 14999/60780                         |  25%
+  Register                    | 15314/60780                         |  26%
     --Logic Register as Latch | 0/59904                             |  0%
-    --Logic Register as FF    | 14959/59904                         |  25%
+    --Logic Register as FF    | 15274/59904                         |  26%
     --I/O Register as Latch   | 0/876                               |  0%
     --I/O Register as FF      | 40/876                              |  5%
-  CLS                         | 14718/29952                         |  50%
+  CLS                         | 15475/29952                         |  52%
   I/O Port                    | 119/297                             |  41%
   I/O Buf                     | 112                                 | -
     --Input Buf               | 19                                  | -
@@ -65,10 +65,10 @@
     --SDPB                    | 29
     --SDPX9B                  | 9
     --pROM                    | 8
-  DSP                         | 26.5/118                            | 23%
+  DSP                         | 28.5/118                            | 25%
     --MULT12X12               | 3
     --MULT27X36               | 8
-    --MULTALU27X18            | 9
+    --MULTALU27X18            | 11
   ================================================================================
 
 
@@ -126,8 +126,8 @@
   ui_rst         | LW             |  -
   core/ms_tick   | LW             |  -
   core/lpv       | LW             |  -
-  core/sensors/lidar/n5303_9| LW             |  -
-  core/sensors/lidar/n7974_12| LW             |  -
+  core/sensors/lidar/n7974_9| LW             |  -
+  core/sensors/lidar/n5303_7| LW             |  -
   core/telemetry/bytes_511_59| LW             |  -
   pll250         | HCLK           | BANK10_BANK11_HCLK0
   memory_clk     | HCLK           | BANK9_HCLK2

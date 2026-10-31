@@ -1,0 +1,24 @@
+{
+  "current_board_revision": 74506,
+  "user_reports": [
+    "现在能跑也能转弯了，但是小车跑的过程中总是突然不跑然后ERR0001，再按S1又能继续跑",
+    "平地直行",
+    "感觉像是车子太重了，刚刚架空跑没事，一放到地上就出现ERR了"
+  ],
+  "latest_reproduction_condition": "Wheels-raised normal; loaded ground straight-line motion triggers ERR0001. This clarification supersedes interpreting the earlier combined-choice reply as a wheels-raised failure.",
+  "fault_capture": "74505-straight-repro-02.json",
+  "capture_status_count": 900,
+  "all_statuses_fault_0001": true,
+  "imu_bus_error_count": 0,
+  "fault_transition_captured": false,
+  "root_cause_confirmed": false,
+  "candidate_revision": 74506,
+  "candidate_scope": "Latch exact IMU invalid/gyro invalid/attitude invalid/excessive inclination causes and fault-time angles; preserve motion stop logic.",
+  "current_vm_last_user_confirmed_off": true,
+  "packets_sent": 0,
+  "diagnostic_flash_verified": true,
+  "diagnostic_flash_sha256": "b5cb8e927ebd07fccbaa1dde327acde91f565e7d8b698bc2862bd7a9c93d3a1a",
+  "diagnostic_health_status_packets": 120,
+  "diagnostic_loaded_reproduction_done": false,
+  "user_requested_handoff_first": true
+}

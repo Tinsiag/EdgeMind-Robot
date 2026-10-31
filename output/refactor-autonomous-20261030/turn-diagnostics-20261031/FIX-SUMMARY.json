@@ -1,0 +1,60 @@
+{
+  "firmware_revision": 74505,
+  "bitstream_sha256": "df8fae1d19ab9f6a6a4f1d954d1db33e6598ceab8d33805a57a044843be43e9b",
+  "programming_audit": "output/refactor-autonomous-20261030/flash/20261031T073013.687427Z/audit.json",
+  "photo_reading": {
+    "front_mm": 501,
+    "left_mm": 106,
+    "right_mm": 711,
+    "mode": "BLOCK",
+    "error": "0000"
+  },
+  "user_static_scene_cleared": true,
+  "static_capture": "static-clear-raw.json",
+  "raw_points": 91080,
+  "static_original_status_count": 200,
+  "static_original_both_turns_blocked_statuses": 197,
+  "replay": {
+    "passed": true,
+    "capture": "output\\refactor-autonomous-20261030\\turn-diagnostics-20261031\\static-clear-raw.json",
+    "packets_sent": 0,
+    "physical_turning_tested": false,
+    "metrics": {
+      "points": 91080,
+      "raw_scans": 201,
+      "raw_clear": 4,
+      "filtered_scans": 201,
+      "filtered_clear": 200,
+      "front": 2066,
+      "left": 649,
+      "right": 1147
+    },
+    "weak_returns_rejected": 3672,
+    "input_sha256": {
+      "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_lidar_filter.v": "47a95b0960d13204f615d840aedbb267d4b00e0f6676c1d869bb80f23eb27854",
+      "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
+      "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
+      "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_lidar_replay.py": "02140edb1b03744e68ba0fceffcf5e9ba69ae4548b4ac27ddfa26fb9b1377608",
+      "output\\refactor-autonomous-20261030\\turn-diagnostics-20261031\\static-clear-raw.json": "63471b1c731d0d3c0c0a73bc611142546221ddcb8751841f61f5da1f95596c1d"
+    }
+  },
+  "new_board_health": {
+    "status_count": 200,
+    "both_turns_clear_count": 197,
+    "qualified_blocked_scans": 2,
+    "all_states_idle": true,
+    "all_faults_zero": true,
+    "packets_sent": 0
+  },
+  "rtl_tests_passed": 25,
+  "gate_leaf_modules_passed": 4,
+  "cold_boot_verified": false,
+  "physical_turning_verified": false,
+  "prior_published_commit": "ac56a9e2fff37c3db84be713505248ef39f75f0d",
+  "new_changes_pushed": false,
+  "bench_capture_observed_states": [
+    0
+  ],
+  "user_bench_answer_pending": true,
+  "latest_motion_watch_status_packets": 0
+}

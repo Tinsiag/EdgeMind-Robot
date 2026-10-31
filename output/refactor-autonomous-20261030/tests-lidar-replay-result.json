@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "capture": "output\\refactor-autonomous-20261030\\turn-diagnostics-20261031\\static-clear-raw.json",
+  "packets_sent": 0,
+  "physical_turning_tested": false,
+  "metrics": {
+    "points": 91080,
+    "raw_scans": 201,
+    "raw_clear": 4,
+    "filtered_scans": 201,
+    "filtered_clear": 200,
+    "front": 2066,
+    "left": 649,
+    "right": 1147
+  },
+  "weak_returns_rejected": 3672,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_lidar_filter.v": "47a95b0960d13204f615d840aedbb267d4b00e0f6676c1d869bb80f23eb27854",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_lidar_replay.py": "02140edb1b03744e68ba0fceffcf5e9ba69ae4548b4ac27ddfa26fb9b1377608",
+    "output\\refactor-autonomous-20261030\\turn-diagnostics-20261031\\static-clear-raw.json": "63471b1c731d0d3c0c0a73bc611142546221ddcb8751841f61f5da1f95596c1d"
+  }
+}

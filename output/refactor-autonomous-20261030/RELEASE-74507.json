@@ -1,0 +1,29 @@
+{
+  "revision": 74507,
+  "sha256": "cde3af917fd0c4e711633a7b4d6fa020129aeec50fd3b0832ec5974bd066063f",
+  "state": "final_gate_passed_pending_vm_condition",
+  "rtl_benches": 28,
+  "navigation_primitive_cases": 6,
+  "geometry_edge_points": 122536,
+  "lidar_replay_points": 91080,
+  "flash_programmed": true,
+  "application_verified": false,
+  "err0001_fixed": false,
+  "timing_worst_slack_ns": {
+    "setup": 1.273,
+    "hold": 0.043,
+    "recovery": 2.693,
+    "removal": 0.353,
+    "minimum_pulse_width": 1.547
+  },
+  "blocked_cleanup_note": "Automatic approval rejected deletion of .local/navigation-gate-check; it remains. A distinct generated gate directory navigation-gate-check-74507 was used successfully. No deletion retry or backup restore.",
+  "hardware_revision": 74507,
+  "hardware_sha256": "cde3af917fd0c4e711633a7b4d6fa020129aeec50fd3b0832ec5974bd066063f",
+  "flash_audit": "output/refactor-autonomous-20261030/flash/20261031T084753.897504Z/audit.json",
+  "passive_health": "output/refactor-autonomous-20261030/imu-fault-20261031/74507-health-20261031.json",
+  "passive_health_status": "IDLE/ERR0000/ARM_OFF/targets_zero/CPU_camera_DDR_OK",
+  "display_verified": false,
+  "cold_boot_verified": false,
+  "motion_verified": false,
+  "root_cause_confirmed": false
+}

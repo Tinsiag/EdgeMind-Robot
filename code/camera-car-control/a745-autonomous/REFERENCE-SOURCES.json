@@ -115,5 +115,13 @@
       "sha256": "d524b51acc85c9757497141b7891599c734c90421a05c35ee74d1874a5d24f89"
     }
   ],
-  "historical_source_paths_removed_by_authorized_cleanup": true
+  "historical_source_paths_removed_by_authorized_cleanup": true,
+  "algorithm_references": [
+    {
+      "implementation": "rtl/a745_lidar_filter.v",
+      "reference": "https://github.com/ldrobotSensorTeam/ldlidar_sdk/blob/master/src/tofbf.cpp",
+      "reviewed_date": "2026-10-31",
+      "scope": "Independent streaming implementation inspired by LD06 NearFilter adjacency, 3% range consistency, >=3 weak points and strong singleton acceptance. Uses fixed 2.5-degree gap and per-point strong intensity, rather than complete vendor group-average algorithm. No vendor source copied."
+    }
+  ]
 }

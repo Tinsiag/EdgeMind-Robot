@@ -1,0 +1,48 @@
+{
+  "captured_utc": "2026-10-31T08:57:14.358062+00:00",
+  "ended_utc": "2026-10-31T08:57:26.358093+00:00",
+  "revision": 74507,
+  "state": 8,
+  "faults": 1,
+  "first_fault_ms": 111199,
+  "imu_fault_sources": 8,
+  "cause_bits": {
+    "bit0_imu_invalid": false,
+    "bit1_gyro_invalid": false,
+    "bit2_tilt_invalid": false,
+    "bit3_overtilt": true
+  },
+  "imu_fault_valid_flags": 239,
+  "valid_bits_at_trigger": {
+    "imu": true,
+    "gyro": true,
+    "tilt": true,
+    "overtilt": true,
+    "stationary": false,
+    "cpu": true,
+    "lidar": true,
+    "scan": true
+  },
+  "fault_roll_deg": 27.960205078125,
+  "fault_pitch_deg": -1.900634765625,
+  "current_roll_after_fault_deg": 2.911376953125,
+  "current_pitch_after_fault_deg": 1.307373046875,
+  "current_attitude_samples": {
+    "roll_min": 2.142333984375,
+    "roll_max": 3.14208984375,
+    "pitch_min": 0.955810546875,
+    "pitch_max": 1.9775390625
+  },
+  "imu_time_ms": 111195,
+  "imu_age_ms": 4,
+  "imu_errors": 0,
+  "imu_seq": 11111,
+  "imu_diagnostic_current": 117469288,
+  "user_motion_context": "User reports flat-ground straight motion with no obvious side tilt; VM closed after fault; FAULT preserved and S1 not pressed.",
+  "interpretation": "Confirmed trigger path is accelerometer-derived roll over 22.5 degrees. IMU/gyro/tilt-valid bits were all valid; stationary bit was false at the triggering sample. This is consistent with a transient linear-acceleration/vibration-induced apparent tilt, but raw ax/ay/az at the trigger were not transmitted and the physical cause is not confirmed.",
+  "do_not_claim": "Do not treat the recovered ~3 degree attitude as the trigger angle; do not raise the threshold or mask validity.",
+  "next_diagnostic": "A follow-up diagnostic build should atomically lock raw ax/ay/az and raw gyro at the same fault edge, plus acceleration magnitude/axis validity, before any proposed filter or threshold change.",
+  "input_sha256": {
+    "output\\refactor-autonomous-20261030\\imu-fault-20261031\\74507-fault-20261031T085714Z.json": "f8c824c40364d30d4eab525de1aa28eb666381dbde9d67ad232b71b5add70669"
+  }
+}

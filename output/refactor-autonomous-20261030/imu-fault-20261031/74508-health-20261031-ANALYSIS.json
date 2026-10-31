@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "hardware_revision": 74508,
+  "hardware_sha256": "899034472dc21c4f39669929d592031e9521faabf2b6718ffb9ee83ab8813690",
+  "status_packets": 300,
+  "attitude_packets": 300,
+  "states": [
+    0
+  ],
+  "faults": [
+    0
+  ],
+  "packets_sent": 0,
+  "imu_errors": 0,
+  "max_imu_age_ms": 10,
+  "cpu_progress_delta": 29900,
+  "video_frame_delta": 1780,
+  "physical_motion_verified": false,
+  "cold_boot_verified": false,
+  "input_sha256": {
+    "output/refactor-autonomous-20261030/imu-fault-20261031/74508-health-20261031.json": "f473c159390dd0621a1ebf8d1dffc91f8357e048340e52259a8d2918a90fb9d6",
+    "output/refactor-autonomous-20261030/flash/20261031T092737.270324Z/audit.json": "4feb6c5ccb46b1098af7366da8f95b35c7287e3186b3f386958b4c1b0035745e",
+    "output/refactor-autonomous-20261030/record_74508.py": "636fe65dfc1b9b1ab996ea8c67f86416b12b297487fe2985d6ccc2bf444783f1"
+  }
+}

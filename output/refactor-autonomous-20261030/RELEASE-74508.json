@@ -1,0 +1,26 @@
+{
+  "revision": 74508,
+  "state": "74508_flash_verified_passive_health_healthy_loaded_motion_pending",
+  "sha256": "899034472dc21c4f39669929d592031e9521faabf2b6718ffb9ee83ab8813690",
+  "rtl_benches": 29,
+  "navigation_primitive_cases": 8,
+  "geometry_edge_points": 122536,
+  "lidar_replay_points": 91080,
+  "flash_programmed": true,
+  "flash_audit": "output/refactor-autonomous-20261030/flash/20261031T092737.270324Z/audit.json",
+  "passive_health": "output/refactor-autonomous-20261030/imu-fault-20261031/74508-health-20261031.json",
+  "application_verified": false,
+  "err0001_fixed": false,
+  "root_cause_confirmed": false,
+  "display_verified": false,
+  "cold_boot_verified": false,
+  "motion_verified": false,
+  "isolated_attitude_spike_mitigation_implemented": true,
+  "timing_worst_slack_ns": {
+    "setup": 0.553,
+    "hold": 0.05,
+    "recovery": 3.879,
+    "removal": 0.215,
+    "minimum_pulse_width": 1.551
+  }
+}

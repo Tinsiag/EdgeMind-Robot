@@ -53,24 +53,33 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
  a741_speed sl(.clk(clk),.rst_n(rst_n),.tick(tick),.delta(delta_l),.cpr(32'(LEFT_CPR)),.diameter_um(32'(LEFT_DIAMETER)),.speed(speed_l));
  a741_speed sr(.clk(clk),.rst_n(rst_n),.tick(tick),.delta(delta_r),.cpr(32'(RIGHT_CPR)),.diameter_um(32'(RIGHT_DIAMETER)),.speed(speed_r));
  wire scan_valid,left_clear,right_clear;wire [15:0] rear;wire [7:0] scan_sequence;
+ wire [7:0] imu_fault_sources,imu_fault_valid_flags;wire signed [15:0] imu_fault_roll,imu_fault_pitch;
+ wire filtered_point;wire [15:0] filtered_angle,filtered_distance;wire [7:0] filtered_confidence;
+ a745_lidar_filter return_filter(.clk(clk),.rst_n(rst_n),.stream_valid(lv),.point_valid(point),
+  .angle(angle),.distance(distance),.confidence(confidence),.filtered_valid(filtered_point),
+  .filtered_angle(filtered_angle),.filtered_distance(filtered_distance),.filtered_confidence(filtered_confidence));
  a745_navigation_scan #(.LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE)) scan_guard(
-  .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lv),.point_valid(point),.angle(angle),
-  .distance(distance),.confidence(confidence),.scan_valid(scan_valid),.front(front),.left(left),.right(right),
+  .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lv),.point_valid(filtered_point),.angle(filtered_angle),
+  .distance(filtered_distance),.confidence(filtered_confidence),.scan_valid(scan_valid),.front(front),.left(left),.right(right),
   .rear(rear),.left_clear(left_clear),.right_clear(right_clear),.scan_sequence(scan_sequence));
- a745_autonomy #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED)) autonomy(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.tick(tick),
+ a745_autonomy #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.REAR_STOP_MM(350)) autonomy(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.tick(tick),
   .button_start(button_start),.imu_valid(iv),.gyro_valid(gv),.stationary(stationary),.gyro_update(gu),.tilt_valid(tilt),
   .raw_gz($signed(raw[95:80])),.roll(roll),.pitch(pitch),.yaw(yaw),.wheels_stationary(ls==0 && rs==0),
-  .encoder_fault(lto || rto || invalid_l>64 || invalid_r>64),.cpu_alive(cpu_alive),.cpu_fault(cpu_fault),
-  .lidar_valid(lv),.scan_valid(scan_valid),.front(front),.left(left),.right(right),.left_clear(left_clear),.right_clear(right_clear),
+  // User requested no-pulse timeout as telemetry only. Bad quadrature still
+  // stops; counts, wheel-speed feedback and the original PI remain active.
+  .encoder_fault(invalid_l>64 || invalid_r>64),.left_count(lc),.right_count(rc),.cpu_alive(cpu_alive),.cpu_fault(cpu_fault),
+  .lidar_valid(lv),.scan_valid(scan_valid),.front(front),.left(left),.right(right),.rear(rear),.left_clear(left_clear),.right_clear(right_clear),
   .armed(armed),.calibrated(calibrated),.bias(bias),.lidar_enabled(laser_enable),.motor_enable(motor_enable),
-  .state(state),.faults(faults),.target_l(target_l),.target_r(target_r));
+  .state(state),.faults(faults),.target_l(target_l),.target_r(target_r),
+  .imu_fault_sources(imu_fault_sources),.imu_fault_valid_flags(imu_fault_valid_flags),
+  .imu_fault_roll(imu_fault_roll),.imu_fault_pitch(imu_fault_pitch));
  ld06_control #(.CLK_HZ(CLK_HZ)) laser(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.enabled(laser_enable),
   .update(ms_tick && laser_enable),.renew(ms_tick && laser_enable),.stop(!laser_enable),.duty_request(10'd400),.pwm(lidar_control),.status());
  wire signed [31:0] corrected_l,corrected_r,pi_l,pi_r,applied_l,applied_r;
  a741_motion_feedback feedback(.clk(clk),.rst_n(rst_n),.tick(tick),.enable(motor_enable),.imu_valid(iv),
   .target_l(target_l),.target_r(target_r),.left_speed(speed_l),.right_speed(speed_r),.yaw(yaw),
   .corrected_l(corrected_l),.corrected_r(corrected_r),.heading_active(),.heading_error(),.speed_error());
- wire [9:0] speed_limit=state==2 ? (front>800 ? 10'd120:10'd60):10'd80;
+ wire [9:0] speed_limit=state==2 ? (front>800 ? 10'd120:10'd60):state==10 ? 10'd60:10'd80;
  a741_pi #(.TARGET_LIMIT_ENABLED(1)) pl(.clk(clk),.rst_n(rst_n),.tick(tick),.enable(motor_enable),
   .target(corrected_l),.measured(speed_l),.target_limit(speed_limit),.speed_step(16'd5),.pwm_step(16'd32),.limit(16'd512),.applied(applied_l),.command(pi_l));
  a741_pi #(.TARGET_LIMIT_ENABLED(1)) pr(.clk(clk),.rst_n(rst_n),.tick(tick),.enable(motor_enable),
@@ -79,17 +88,19 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
  motor_pwm_safe #(.CLK_HZ(CLK_HZ)) ml(.clk(clk),.rst_n(rst_n),.enable(motor_enable),.command(pi_l),.in1(left_in1),.in2(left_in2),.pwm_abs(pwm_l));
  motor_pwm_safe #(.CLK_HZ(CLK_HZ),.INVERT(1)) mr(.clk(clk),.rst_n(rst_n),.enable(motor_enable),.command(pi_r),.in1(right_in1),.in2(right_in2),.pwm_abs(pwm_r));
  reg [31:0] seq;wire [31:0] dropped;
- assign fusion_snapshot={48'd0,{5'd0,cpu_fault,cpu_alive,1'b0,cpu_progress},8'(scan_valid),32'd0,front,yaw,
+ assign fusion_snapshot={imu_fault_pitch,imu_fault_roll,imu_fault_valid_flags,imu_fault_sources,
+  {5'd0,cpu_fault,cpu_alive,1'b0,cpu_progress},8'(scan_valid),imu_diagnostic,front,yaw,
   {31'd0,tilt},pitch,roll,8'(GEOMETRY_VERIFIED),faults[7:0],state,8'd1};
  always @(posedge clk or negedge rst_n)
   if(!rst_n) begin snapshot<=0;seq<=0;end
   else if(ms_tick) begin
    seq<=seq+1'b1;snapshot<=0;
    snapshot[31:0]<=32'h31534d45;snapshot[47:32]<=1;snapshot[63:48]<=112;
-   snapshot[95:64]<=seq;snapshot[127:96]<=now_ms;snapshot[159:128]<=32'd74504;
+   snapshot[95:64]<=seq;snapshot[127:96]<=now_ms;snapshot[159:128]<=32'd74509;
    snapshot[175:160]<={1'b1,phy_error,phy_ready,video_overflow,ddr_error,camera_error,frame_ready,ddr_ready,
-    1'b0,(state==1),armed,calibrated,lv,1'b0,gv,iv};
+    rto,(state==1),armed,calibrated,lv,lto,gv,iv};
    snapshot[183:176]<=state;snapshot[191:184]<=255;snapshot[207:192]<=faults;
+   snapshot[215:208]<=imu_fault_sources;snapshot[223:216]<=imu_fault_valid_flags;
    snapshot[255:224]<=target_l;snapshot[287:256]<=target_r;snapshot[319:288]<=speed_l;snapshot[351:320]<=speed_r;
    snapshot[383:352]<=lc;snapshot[415:384]<=rc;snapshot[431:416]<=yaw;snapshot[447:432]<=gz;snapshot[463:448]<=65535;
    snapshot[479:464]<=front;snapshot[495:480]<=left;snapshot[511:496]<=right;

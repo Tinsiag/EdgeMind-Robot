@@ -45,19 +45,38 @@ def main():
     assert value['video_frames'] == 12345 and not value['camera_ready']
     status[98], status[99] = 0, (11 << 3) | 1
     assert decode_status(status)['camera_ready']
-    struct.pack_into('<I',status,16,74504)
+    struct.pack_into('<I',status,16,74506)
     struct.pack_into('<HBB',status,104,750,1,123)
     value=decode_status(status)
     assert value['rear']==750 and value['left_clear'] and not value['right_clear'] and value['scan_sequence']==123
+    status[26],status[27]=8,0xe7
+    struct.pack_into('<III',status,64,777,0x300A5640,0)
+    struct.pack_into('<I',status,76,9)
+    struct.pack_into('<I',status,100,123)
+    value=decode_status(status)
+    assert (value['imu_fault_sources'],value['imu_fault_valid_flags'],value['imu_time_ms'],value['imu_errors'],value['imu_seq'])==(8,0xe7,777,9,123)
+    assert value['encoder_no_pulse_left'] is None and value['encoder_no_pulse_right'] is None
+    struct.pack_into('<I',status,16,74507)
+    for bits,left_warning,right_warning in [(0,False,False),(4,True,False),(128,False,True),(132,True,True)]:
+        struct.pack_into('<H',status,20,0x320|bits)
+        value=decode_status(status)
+        assert (value['encoder_no_pulse_left'],value['encoder_no_pulse_right'])==(left_warning,right_warning)
+        assert value['armed'] and value['frame_ready'] and value['ddr_ready']
     fusion = bytearray(48)
     struct.pack_into('<4sHH', fusion, 0, b'EMF1', 1, 48)
     fusion[16] = 1
     struct.pack_into('<hh', fusion, 20, -16384, 8192)
     fusion[24], fusion[41] = 1, 2
-    assert decode_attitude(fusion) == dict(roll=-90, pitch=45, tilt_valid=True, cpu_alive=True,cpu_fault=False,cpu_progress=0)
+    value=decode_attitude(fusion)
+    assert all(value[k]==v for k,v in dict(roll=-90,pitch=45,tilt_valid=True,cpu_alive=True,cpu_fault=False,cpu_progress=0).items())
     struct.pack_into('<I', fusion, 37, 123456)
     fusion[41] = 4
     assert decode_attitude(fusion)['cpu_progress'] == 123456 and decode_attitude(fusion)['cpu_fault']
+    struct.pack_into('<I',fusion,32,0x07007068)
+    struct.pack_into('<BBhh',fusion,42,8,0xe7,-5000,4097)
+    value=decode_attitude(fusion)
+    assert value['imu_diagnostic']==0x07007068 and value['imu_fault_sources']==8 and value['imu_fault_valid_flags']==0xe7
+    assert value['fault_roll']==-5000*180/32768 and value['fault_pitch']==4097*180/32768
     for decoder, packet in [(decode_status, status), (decode_attitude, fusion)]:
         for invalid in [packet[:-1], packet + b'\0', b'xxxx' + packet[4:], packet[:4] + b'\x02\0' + packet[6:]]:
             try:

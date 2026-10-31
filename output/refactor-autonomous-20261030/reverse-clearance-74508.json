@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "firmware_revision": 74508,
+  "generated_by": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\check_reverse_clearance.py",
+  "recorded_utc": "2026-10-31T09:27:07.747187+00:00",
+  "rear_stop_mm": 350,
+  "inflated_rear_extent_from_lidar_mm": 274.000002,
+  "inflated_half_width_mm": 171.0,
+  "inflated_rear_corner_radius_mm": 322.98142531111597,
+  "rear_sector_covers_new_rear_edge": true,
+  "checked_rear_sector_points": 10201,
+  "reverse_wheel_count_limits": [
+    705,
+    706
+  ],
+  "reverse_nominal_mm": 100,
+  "model_only": true,
+  "physical_measurement": false,
+  "inputs_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\config\\geometry.json": "c71338aebce07b9a977c1ff0d38e809a9b523da03e42fb0a3c9a404bd97c5ad3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\config\\calibration.json": "6b39e64f1deda838df1edf8a56c45f2eb04653277672a4f46c9ff7d02532a0ae",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "c74db5314b3cef999bfbc04340c8677c7b33a6692312dd1c27c6dd77c6c74c1d",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "7347b05144071d8729c42e28c4ab2d90169db1a85e2a5741c2c715f8393edce3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\check_reverse_clearance.py": "4438f35fda72ea55e0ff41a0460052c61eb1f33f669f2c84f551d808d88e2296"
+  }
+}

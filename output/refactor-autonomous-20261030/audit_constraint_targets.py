@@ -69,5 +69,8 @@ result={'netlist_sha256':hashlib.sha256((BUILD/'impl/gwsynthesis/a745.vg').read_
         'routed_netlist_sha256':hashlib.sha256(physical.read_bytes()).hexdigest() if physical_current else None,
         'ddr_exception_targets':records,'rx_iodelay64_count':len(delays),
         'hardware_programmed':False}
-(OUT/'CONSTRAINT-TARGETS.json').write_text(json.dumps(result,indent=2)+'\n')
+report=OUT/'CONSTRAINT-TARGETS.json'
+temporary=report.with_suffix('.tmp')
+temporary.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+temporary.replace(report)
 print(json.dumps([{'groups':[len(g) for g in row['groups']], 'destination_types':dict(Counter(p['type'] for p in row['groups'][-1]))} for row in records],indent=2))

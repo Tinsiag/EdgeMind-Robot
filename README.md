@@ -14,4 +14,4 @@
 
 用户已授权本次交接提交、推送 GitHub，并同步清理远端 main 当前目录；不关机。重新加载后的显示、真正断电冷启动、轮子运动和落地避障分别验收，具体结论见交接。
 
-当前固化FW74504，真实冷启动已通过；用户确认能前进，但转弯仍停在BLOCK，尚未验收。可重用固化文件见[当前发布位流](output/releases/fw74504/manifest.json)，完整交接见[接手文档](.agent/main/handoff.md)。
+当前固化FW74506故障快照诊断版，Flash校验和被动健康通过；74505的前进/转弯已由用户确认，但落地ERR0001仍未解决。接手先读[当前交接](.agent/main/handoff.md)和[诊断字段](output/refactor-autonomous-20261030/imu-fault-20261031/DIAGNOSTICS.md)。本次修改尚未推送，上次[fw74504发布](output/releases/fw74504/manifest.json)为历史镜像。

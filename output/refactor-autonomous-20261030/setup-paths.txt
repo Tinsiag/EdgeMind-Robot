@@ -1,29 +1,29 @@
 <Report Command>:report_timing -setup -max_paths 25 -max_common_paths 1
-  Path Number   Path Slack                               From Node                                               To Node                     From Clock        To Clock      Relation   Clock Skew   Data Delay  
- ============= ============ ==================================================================== ======================================== ================ ================ ========== ============ ============ 
-  1             1.135        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_addr_12_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.585       
-  2             1.135        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_addr_13_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.585       
-  3             1.135        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_addr_16_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.585       
-  4             1.273        transmitter/U_ODDR_clk1/Q0                                           rgmii_tx_clk_obuf/O                      tx125m:[R]       N/A              6.000      1.889        2.837       
-  5             1.273        transmitter/U_ODDR_en1/Q0                                            rgmii_tx_ctl_obuf/O                      tx125m:[R]       N/A              6.000      1.889        2.837       
-  6             1.273        transmitter/[1].U_ODDR_dq1/Q0                                        rgmii_txd_1_obuf/O                       tx125m:[R]       N/A              6.000      1.889        2.837       
-  7             1.280        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_24_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.440       
-  8             1.280        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_25_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.440       
-  9             1.280        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_56_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.440       
-  10            1.280        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_121_s0/CE   ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.440       
-  11            1.282        transmitter/[3].U_ODDR_dq1/Q0                                        rgmii_txd_3_obuf/O                       tx125m:[R]       N/A              6.000      1.881        2.837       
-  12            1.282        transmitter/[2].U_ODDR_dq1/Q0                                        rgmii_txd_2_obuf/O                       tx125m:[R]       N/A              6.000      1.881        2.837       
-  13            1.282        transmitter/[0].U_ODDR_dq1/Q0                                        rgmii_txd_0_obuf/O                       tx125m:[R]       N/A              6.000      1.881        2.837       
-  14            1.284        core/sensors/inclination/pitch_3_s0/Q                                core/feedback/corrected_r_5_s1/D         sys_clk:[R]      sys_clk:[R]      20.000     -0.008       18.667      
-  15            1.308        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_addr_10_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.412       
-  16            1.308        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_addr_11_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.412       
-  17            1.376        net_fifo/wr_ptr_sync_commit_reg_3_s1/Q                               net_fifo/wr_ptr_commit_sync_reg_3_s0/D   sys_clk:[R]      tx125m:[R]       4.000      1.297        1.235       
-  18            1.422        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_23_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.298       
-  19            1.451        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_8_s0/CE     ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.269       
-  20            1.451        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_26_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.269       
-  21            1.451        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_55_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.269       
-  22            1.451        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_71_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     0.000        8.269       
-  23            1.464        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_41_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     -0.008       8.264       
-  24            1.464        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_57_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     -0.008       8.264       
-  25            1.466        memory/gw3_top/u_ddr_phy_top/u_ddr_init/ddr_init_complete_d_3_s0/Q   video/framebuffer/write_data_73_s0/CE    ddr_ui100m:[R]   ddr_ui100m:[R]   10.000     -0.008       8.262       
+  Path Number   Path Slack                 From Node                                 To Node                   From Clock     To Clock     Relation   Clock Skew   Data Delay  
+ ============= ============ ======================================== ======================================== ============= ============= ========== ============ ============ 
+  1             0.553        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_0_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        19.373      
+  2             0.772        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_1_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.162      
+  3             0.858        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_6_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.077      
+  4             0.878        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_7_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.056      
+  5             0.878        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_8_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.056      
+  6             0.895        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_2_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.040      
+  7             0.919        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_3_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        19.007      
+  8             0.959        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_4_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.975      
+  9             0.960        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_6_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        18.965      
+  10            1.029        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_1_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        18.897      
+  11            1.029        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_2_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        18.897      
+  12            1.070        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_5_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.873      
+  13            1.087        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_l_3_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.847      
+  14            1.216        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_5_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        18.710      
+  15            1.238        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_7_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.704      
+  16            1.238        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_8_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.704      
+  17            1.242        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_4_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.017        18.684      
+  18            1.273        transmitter/U_ODDR_clk1/Q0               rgmii_tx_clk_obuf/O                      tx125m:[R]    N/A           6.000      1.889        2.837       
+  19            1.273        transmitter/U_ODDR_en1/Q0                rgmii_tx_ctl_obuf/O                      tx125m:[R]    N/A           6.000      1.889        2.837       
+  20            1.273        transmitter/[1].U_ODDR_dq1/Q0            rgmii_txd_1_obuf/O                       tx125m:[R]    N/A           6.000      1.889        2.837       
+  21            1.282        transmitter/[3].U_ODDR_dq1/Q0            rgmii_txd_3_obuf/O                       tx125m:[R]    N/A           6.000      1.881        2.837       
+  22            1.282        transmitter/[2].U_ODDR_dq1/Q0            rgmii_txd_2_obuf/O                       tx125m:[R]    N/A           6.000      1.881        2.837       
+  23            1.282        transmitter/[0].U_ODDR_dq1/Q0            rgmii_txd_0_obuf/O                       tx125m:[R]    N/A           6.000      1.881        2.837       
+  24            1.381        core/sensors/heading/yaw_0_s0/Q          core/feedback/corrected_r_0_s1/D         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.554      
+  25            1.476        net_fifo/wr_ptr_sync_commit_reg_7_s1/Q   net_fifo/wr_ptr_commit_sync_reg_7_s0/D   sys_clk:[R]   tx125m:[R]    4.000      1.288        0.938       
 
