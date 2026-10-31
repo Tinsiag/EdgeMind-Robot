@@ -50,11 +50,16 @@ module a745_top(
     always @(posedge camera_pclk or negedge global_n)
         if(!global_n) camera_ready_sync<=0;
         else camera_ready_sync<={camera_ready_sync[0],camera_ready};
-    wire [7:0] tx_data,net_data,gmii_txd;
-    wire tx_valid,tx_last,tx_ready,net_valid,net_last,net_ready,gmii_en,gmii_txer;
+    wire [7:0] tx_data,video_tx_data,net_data,gmii_txd;
+    wire tx_valid,tx_last,tx_ready,video_tx_valid,video_tx_last,net_valid,net_last,net_ready,net_fifo_ready,gmii_en,gmii_txer;
+    wire tx_selected_video = video_tx_valid;
+    wire tx_mux_valid = tx_selected_video ? video_tx_valid : tx_valid;
+    wire tx_mux_last = tx_selected_video ? video_tx_last : tx_last;
+    wire [7:0] tx_mux_data = tx_selected_video ? video_tx_data : tx_data;
+    assign tx_ready = !tx_selected_video && net_fifo_ready;
     axis_async_fifo #(.DEPTH(512),.DATA_WIDTH(8),.KEEP_ENABLE(0),.FRAME_FIFO(1),.DROP_BAD_FRAME(1)) net_fifo(
-      .s_clk(clk),.s_rst(!control_n),.s_axis_tdata(tx_data),.s_axis_tkeep(1'b1),.s_axis_tvalid(tx_valid),
-      .s_axis_tready(tx_ready),.s_axis_tlast(tx_last),.s_axis_tuser(1'b0),.s_axis_tid(8'd0),.s_axis_tdest(8'd0),
+      .s_clk(clk),.s_rst(!control_n),.s_axis_tdata(tx_mux_data),.s_axis_tkeep(1'b1),.s_axis_tvalid(tx_mux_valid),
+      .s_axis_tready(net_fifo_ready),.s_axis_tlast(tx_mux_last),.s_axis_tuser(1'b0),.s_axis_tid(8'd0),.s_axis_tdest(8'd0),
       .m_clk(pll125),.m_rst(!tx_n),.m_axis_tdata(net_data),.m_axis_tvalid(net_valid),.m_axis_tready(net_ready),
       .m_axis_tlast(net_last),.s_pause_req(1'b0),.m_pause_req(1'b0));
     (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_tx;
@@ -121,6 +126,15 @@ module a745_top(
         .app_wdf_data(app_wdata),.app_wdf_wren(app_wen),.app_wdf_end(app_wend),.app_wdf_rdy(app_wrdy),
         .app_rd_data(app_rdata),.app_rd_valid(app_rvalid),.pixel(camera_pixel),.pixel_valid(pixel_valid),
         .frame_available(frame_ready),.camera_error(camera_bad),.ddr_error(ddr_bad),.overflow(overflow),.frames(frames));
+    wire [17:0] video_token; wire video_token_valid; wire [17:0] video_net_token; wire video_net_empty,video_net_pop;
+    a745_video_capture_tx capture_tx(.clk(display_clk),.rst_n(display_video_n),.active(active),.pixel_valid(pixel_valid),
+        .x(display_x),.y(display_y),.pixel(camera_pixel),.token(video_token),.valid(video_token_valid));
+    async_fifo #(.WIDTH(18),.ADDR_BITS(13)) video_net_fifo(
+        .wr_clk(display_clk),.wr_rst_n(display_video_n),.wr_en(video_token_valid),.wr_data(video_token),.full(),
+        .rd_clk(clk),.rd_rst_n(control_n),.rd_en(video_net_pop),.rd_data(video_net_token),.empty(video_net_empty));
+    a745_video_udp_tx video_tx(.clk(clk),.rst_n(control_n),.phy_ready(phy_ready),.fifo_data(video_net_token),
+        .fifo_empty(video_net_empty),.fifo_pop(video_net_pop),.data(video_tx_data),.valid(video_tx_valid),
+        .last(video_tx_last),.ready(net_fifo_ready),.dropped());
     wire [15:0] overlay_pixel,panel_rgb;
     wire overlay_pixel_valid;
     wire [895:0] display_snapshot;wire [255:0] display_fusion;
