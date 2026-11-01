@@ -29,13 +29,15 @@ module ld06_parser #(parameter STALE_MS=300,LIDAR_ZERO=0,LIDAR_CLOCKWISE=0)(
     reg [4:0] residue;
     wire divide_done,divide_busy;
     wire [31:0] divide_result;
+    // Declared before first use: ModelSim rejects forward variable references
+    // that iverilog accepted. Declaration order only; logic is unchanged.
+    reg [15:0] start_angle,span,offset,candidate_span;
     a741_divider interpolation(.clk(clk),.rst_n(rst_n),.cancel(framing_error),.start(divide_start),
         .numerator({16'd0,span}),.denominator(16'd11),.busy(divide_busy),.done(divide_done),.quotient(divide_result));
     reg [15:0] age;
     reg [31:0] now_ms;
     reg emitting;
     reg [3:0] point_index;
-    reg [15:0] start_angle,span,offset,candidate_span;
     reg [31:0] angle_sum;
     reg [15:0] p_angle,p_dist;
     reg [7:0] p_conf;

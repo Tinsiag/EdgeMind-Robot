@@ -14,3 +14,10 @@
 /output/**/*.db
 /output/**/*.vvp
 !/output/releases/fw74504/a745.fs
+
+# Large model binaries stay out of git (regenerate with host/convert_onnx_fp16_to_fp32.py
+# or an ultralytics export; see host/README-video.md).
+*.onnx
+*.pt
+*.mbs.bin
+*.deb

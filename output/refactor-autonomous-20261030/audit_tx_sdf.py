@@ -37,11 +37,12 @@ def main():
         kind=re.search(r'\(CELLTYPE "([^"]+)"\)',block)[1]
         name=clean(re.search(r'\(INSTANCE\s*([^)]*)\)',block)[1])
         cells[name]=(kind,block)
-    nets={}
+    nets={};driver={}
     for source,dest,delays in re.findall(r'\(INTERCONNECT\s+(\S+)\s+(\S+)\s+((?:\([^()]*\)\s*)+)\)',sdf):
         key=(clean(source),clean(dest))
         assert key not in nets,key
         nets[key]=edge_values(delays)
+        driver[clean(dest)]=clean(source)
     logical={}
     for kind,name,body in re.findall(r'(?m)^\s*(\w+)\s+(\\?[^\s(]+)\s*\((.*?)\);',vo,re.S):
         logical[clean(name)]=(kind,{p:clean(n) for p,n in re.findall(r'\.(\w+)\((.*?)\)(?:,|\s*$)',body,re.S)})
@@ -55,14 +56,19 @@ def main():
     endpoints={'rgmii_tx_clk':('transmitter/U_ODDR_clk1','rgmii_tx_clk_obuf'),
                'rgmii_tx_ctl':('transmitter/U_ODDR_en1','rgmii_tx_ctl_obuf')}
     endpoints.update({f'rgmii_txd[{i}]':(f'transmitter/[{i}].U_ODDR_dq1',f'rgmii_txd_{i}_obuf') for i in range(4)})
-    totals={};details={};clocknets=set()
+    totals={};details={};clocknets=set();clockorigins=set()
     for port,(ddr,buf) in endpoints.items():
         assert logical[ddr][0]=='ODDR' and logical[buf][0]=='OBUF'
         assert logical[ddr][1]['Q0']==logical[buf][1]['I']
         assert logical[buf][1]['O']==port,(port,logical[buf])
         clocknets.add(logical[ddr][1]['CLK'])
+        # The forwarded-clock origin is taken from the routed SDF rather than
+        # assumed: the MAC/RGMII clock is now the PLL CLKOUT1 pin directly,
+        # not the removed CLKDIV. All six ODDRs must still share one origin
+        # for the subtraction below to be a true skew.
+        origin=driver[ddr+'/CLK'];clockorigins.add(origin)
         routes={
-            'clock_route':nets[('tx_divider/CLKOUT',ddr+'/CLK')],
+            'clock_route':nets[(origin,ddr+'/CLK')],
             'clock_to_q':arc(ddr,'CLK','Q0','ODDR'),
             'output_route':nets[(ddr+'/Q0',buf+'/I')],
             'output_buffer':arc(buf,'I','O','OBUF')}
@@ -75,6 +81,7 @@ def main():
                     for k in ('clock_to_q','output_route','output_buffer')),6) for i in range(3)]
         details[port]=routes
     assert len(clocknets)==1
+    assert len(clockorigins)==1,clockorigins
     clock=totals['rgmii_tx_clk'];skews={}
     for port,values in totals.items():
         if port!='rgmii_tx_clk':
@@ -88,7 +95,8 @@ def main():
     record={'passed':margin>=0,'sdf_sha256':sha(sdf_path),'physical_netlist_sha256':sha(vo_path),
             'bitstream_sha256':result['artifact_sha256'],'corner_order':['fast','typical','slow'],
             'edge_model':'one or two SDF triples; all four launch-clock / data-transition combinations, three PVT corners',
-            'method':'shared tx_divider origin; sum clock route + ODDR CLK/Q0 + pad route + OBUF I/O, subtract forwarded clock in each corner',
+            'method':'shared forwarded-clock origin read from the routed SDF; sum clock route + ODDR CLK/Q0 + pad route + OBUF I/O, subtract forwarded clock in each corner',
+            'clock_origin':sorted(clockorigins)[0],
             'arrival_delay_ns':totals,'path_components_ns':details,'data_minus_clock_ns':skews,
             'worst_abs_skew_ns':worst,'uncertainty_reserve_ns':0.035,'board_skew_budget_ns':0.2,
             'allowed_total_skew_ns':0.5,'margin_ns':margin,'board_skew_measured':False}

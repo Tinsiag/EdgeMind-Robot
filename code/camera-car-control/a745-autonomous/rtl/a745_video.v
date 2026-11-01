@@ -48,10 +48,12 @@ module a745_video #(parameter WIDTH=480,HEIGHT=272,SKIP_FRAMES=10,INPUT_FIFO_BIT
   .wr_clk(ui_clk),.wr_rst_n(ui_fifo_n),.wr_en(display_push && ui_rst_n),.wr_data(display_data),.full(display_full),
   .rd_clk(clk),.rd_rst_n(rst_n),.rd_en(display_pop),.rd_data(display_q),.empty(display_empty));
  wire underrun;
+ // Declared before first use: ModelSim rejects forward variable references
+ // that iverilog accepted. Declaration order only; logic is unchanged.
+ (* ASYNC_REG="TRUE" *) reg [1:0] av_sync,er_sync,ce_sync,co_sync;
  video_pixels pixels(.clk(clk),.rst_n(rst_n),.de(pixel_request && av_sync[1]),.frame_blank(frame_blank),.flush(flush_sys),
   .fifo_data(display_q),.fifo_empty(display_empty),.fifo_pop(display_pop),.flush_done(done_sys),
   .pixel(pixel),.pixel_valid(pixel_valid),.underrun(underrun));
- (* ASYNC_REG="TRUE" *) reg [1:0] av_sync,er_sync,ce_sync,co_sync;
  always @(posedge clk or negedge rst_n)
   if(!rst_n) begin av_sync<=0;er_sync<=0;ce_sync<=0;co_sync<=0;frames<=0;end
   else begin

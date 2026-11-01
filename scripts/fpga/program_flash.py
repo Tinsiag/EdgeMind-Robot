@@ -98,8 +98,19 @@ def commands(args, image):
         common += ["--location", str(args.location)]
     else:
         common += ["--channel", str(args.channel)]
+    help_output = subprocess.run([str(args.programmer.resolve()), "--help"],
+                                 cwd=args.programmer.resolve().parent,
+                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                 text=True, encoding="utf-8", errors="replace",
+                                 check=False, timeout=15).stdout
+    if re.search(r"\b54:\s*exFlash Erase,Program,Verify(?:\s+Arora\s+V)?\b", help_output, re.I):
+        flash_run = "54"
+    elif re.search(r"\b9:\s*exFlash Erase,Program,Verify\b", help_output, re.I):
+        flash_run = "9"
+    else:
+        raise RuntimeError("Programmer help exposes neither external Flash operation 54 nor 9")
     return [
-        ("flash_program_verify", common + ["--run", "54", "--spiaddr", "0x000000", "--fsFile", str(image)]),
+        ("flash_program_verify", common + ["--run", flash_run, "--spiaddr", "0x000000", "--fsFile", str(image)]),
         ("reprogram", common + ["--run", "1"]),
         ("read_status", common + ["--run", "74"]),
         ("read_user_code", common + ["--run", "73"]),

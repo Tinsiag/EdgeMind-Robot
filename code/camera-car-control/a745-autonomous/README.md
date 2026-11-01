@@ -72,3 +72,16 @@ RTL 仿真使用 WSL Ubuntu-26.04 的 Icarus / Verilator，EDA 为 Gowin V1.9.12
 当前FW74506诊断版已写入外部SPI Flash并校验，SHA-256为b5cb8e927ebd07fccbaa1dde327acde91f565e7d8b698bc2862bd7a9c93d3a1a。实际遥测74506、CPU/摄像头/DDR正常，IDLE/ERR0000。74505前进/转弯已由用户确认，但落地ERR0001根因未定；74506只增加故障快照，未改变停车保护，不宣称已修复。新SHA真实冷启动、实屏和运动尚未验收。审计output/refactor-autonomous-20261030/flash/20261031T075334.673715Z/audit.json。
 
 FW74506保留包长度，EMS1的26/27字节为锁存原因/有效标志；EMF1的42/43相同，44..45为故障roll、46..47为故障pitch（Q15半周），32..35为实时IMU驱动诊断。原因bit0..3分别为航向IMU无效、原始采样无效、倾角无效、超倾角。首次故障后保留，不被实时恢复覆盖，S1才清除。详见仓库output/refactor-autonomous-20261030/imu-fault-20261031/DIAGNOSTICS.md。
+
+## 最新状态（2026-11-01，覆盖本文旧视频说明）
+
+FPGA 视频链路的现场故障已经定位：原来的共享 Ethernet 帧 FIFO 只有 512 字节，而 EV10 视频单个 Ethernet 帧约 1334 字节，帧 FIFO 会把超长视频帧丢弃；因此 UDP 6104 无视频包，而 UDP 6103 的 EMS1/EMF1/EML1 遥测仍可正常接收。
+
+当前最后一次成功写入 Flash 的调试位流 SHA-256 为 `5085c51dee4d1d3a79c5c9124b67db34b5915da29756b1b11102861fdb5d6607`。Flash54、Reprogram、配置状态 `0x70022020` 和 UserCode `0xA745` 通过；该位流没有完成真实视频现场验收。后续视频 FIFO/分片修复候选仍有 PNR setup/hold 违例，禁止烧录违例位流。
+
+Lichee Pi 4A 已配置有线 `end1=192.168.0.3/24`。视频服务安装在 `/home/debian/fpga`，服务名为 `fpga-video.service`。系统控制中心占用 TCP 8080，本项目视频/YOLO 服务使用 TCP 8090；浏览器地址为 `http://10.0.0.237:8090/`，状态接口为 `/status.json`，FPGA 视频端口仍为 UDP 6104。
+
+Lichee 已安装 NumPy、OpenCV、Pillow 和 `shl-python`，并部署 YOLOv5n FP32 ONNX。TH1520 NPU 驱动模块/设备节点尚未出现；OpenCV CPU 推理会使板端过载，因此实时 YOLO 必须等待 HHB/SHL NPU 可执行模型和驱动验收。软件合成 EV10 测试帧已经通过分片重组、RGB565 转换和 MJPEG 输出验证；这不等于 FPGA 实时视频已验收。
+
+软件链路最近一次合成 EV10 验收：frames=1、packets=686、bad_packets=0；测试帧来自开发机，不代表实板 UDP6104 已恢复。
+

@@ -11,7 +11,8 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
  output wire [7:0] eth_tx_data,output wire eth_tx_valid,eth_tx_last,
  input wire eth_tx_ready,
  input wire ddr_ready,frame_ready,camera_error,ddr_error,video_overflow,
- input wire [31:0] video_frames,input wire [47:0] camera_diagnostic,
+ input wire [31:0] video_frames,
+ input wire [47:0] camera_diagnostic,
  output reg [895:0] snapshot,output wire [255:0] fusion_snapshot,
  output wire [7:0] state,output wire [15:0] faults
 );
@@ -105,7 +106,8 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
    snapshot[383:352]<=lc;snapshot[415:384]<=rc;snapshot[431:416]<=yaw;snapshot[447:432]<=gz;snapshot[463:448]<=65535;
    snapshot[479:464]<=front;snapshot[495:480]<=left;snapshot[511:496]<=right;
    snapshot[543:512]<=it;snapshot[575:544]<=camera_diagnostic[31:0];snapshot[607:576]<=lt;
-   snapshot[639:608]<=ie;snapshot[671:640]<=video_frames;snapshot[703:672]<=le;snapshot[735:704]<=dropped+ld;
+   snapshot[639:608]<=ie;snapshot[671:640]<=video_frames;snapshot[703:672]<=le;
+   snapshot[735:704]<=dropped+ld;
    snapshot[767:736]<=gt;snapshot[783:768]<=bias;snapshot[791:784]<=camera_diagnostic[47:40];
    snapshot[799:792]<=camera_diagnostic[39:32];snapshot[831:800]<=isq;snapshot[895:864]<=lsq;
    snapshot[847:832]<=rear;snapshot[855:848]<={6'd0,right_clear,left_clear};snapshot[863:856]<=scan_sequence;

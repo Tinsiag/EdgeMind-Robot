@@ -14,7 +14,7 @@ class Store:
   with self.lock:
    if self.frame_id!=fid:self.parts={};self.frame_id=fid
    self.parts[seq]=body
-   if len(self.parts)*1280>=WIDTH*HEIGHT*2:
+   if sum(len(part) for part in self.parts.values())>=WIDTH*HEIGHT*2:
     raw=b''.join(self.parts[k] for k in sorted(self.parts))[:WIDTH*HEIGHT*2]
     if len(raw)==WIDTH*HEIGHT*2:self.frame=raw;self.total+=1
  def jpeg(self):

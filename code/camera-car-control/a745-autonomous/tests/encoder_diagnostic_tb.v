@@ -32,7 +32,7 @@ module encoder_diagnostic_tb;
   repeat(101) control_tick;
   if(!dut.lto || !dut.rto || faults || state!=2 || !dut.motor_enable || !snapshot[162] || !snapshot[167])
    $fatal(1,"no-pulse timeout still stopped core or telemetry missing");
-  if(snapshot[159:128]!=74508 || dut.lc!=0 || dut.rc!=0 || dut.pl.command<=0 || dut.pr.command<=0)
+  if(snapshot[159:128]!=74509 || dut.lc!=0 || dut.rc!=0 || dut.pl.command<=0 || dut.pr.command<=0)
    $fatal(1,"identity/counter/PI path changed");
   // One real, valid AB edge clears only the left warning and updates count.
   left_b=1;repeat(10) @(negedge clk);control_tick;

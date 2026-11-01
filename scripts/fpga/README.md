@@ -1,5 +1,17 @@
 # ACG720 完整程序固化
 
+## 2026-11-01 工具链与当前边界
+
+本机 Gowin 安装路径为 `F:\Gowin\Gowin_V1.9.12_x64`。烧录前设置：
+
+```powershell
+$env:GOWIN_HOME = 'F:\Gowin\Gowin_V1.9.12_x64'
+```
+
+`program_flash.py` 会读取 Programmer `--help`，自动识别旧版外部 Flash 操作号 54 或新版 Arora V 操作号 9；不能把 Programmer 版本号或 UserCode 当作视频功能验收。
+
+当前视频调试边界：原共享 Ethernet 帧 FIFO 为 512 字节，EV10 视频帧约 1334 字节时会被超长帧规则丢弃。任何修复都必须重新完成同次 PNR/STA/SDF/PAD，setup/hold/recovery/removal 违例不为零时禁止 Flash。当前最后一次成功写入实板的调试位流 SHA 为 `5085c51dee4d1d3a79c5c9124b67db34b5915da29756b1b11102861fdb5d6607`，视频功能尚未现场验收。
+
 2026-10-24 起，后续 FPGA 程序交付使用外部 SPI Flash 固化，要求断电保留。
 本脚本只适用于当前 **ACG720 / GW5AT-60B**，不适用于其他系列或 138K 板。
 

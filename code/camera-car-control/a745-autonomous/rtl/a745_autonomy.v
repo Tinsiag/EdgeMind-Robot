@@ -30,16 +30,40 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  wire [7:0] imu_flags={scan_valid,lidar_valid,cpu_alive,stationary,tilt_bad,tilt_valid,gyro_valid,imu_valid};
  wire safe=armed && sensors_ok && !encoder_fault && cpu_alive && !cpu_fault && !tilt_bad && faults==0;
  // Subtract in 16 bits first: the gyro wraps at +/-180 degrees.
+ wire right_turn=(state==RIGHT || state==UTURN_RIGHT);
  wire signed [15:0] wrapped_delta=yaw-turn_origin;
- wire signed [16:0] turn_progress=(state==RIGHT || state==UTURN_RIGHT) ?
+ wire signed [16:0] turn_progress=right_turn ?
   -$signed({wrapped_delta[15],wrapped_delta}):$signed({wrapped_delta[15],wrapped_delta});
  // A signed Q15 half-turn cannot represent +180 after wrap. Stop just short
  // of the wrap so a U-turn remains observable and locks the actual new yaw.
  wire signed [16:0] turn_remaining=(uturning ? 17'sd32600:17'sd16384)-turn_progress;
  wire signed [16:0] proportional_speed=turn_remaining >>> 7;
- wire signed [31:0] turn_speed=proportional_speed>80 ? 32'sd80:proportional_speed<40 ? 32'sd40:32'(proportional_speed);
+ // Clamp in 17 bits (the result is always 40..80) and register it. This
+ // breaks the yaw -> wrapped_delta -> turn_progress -> turn_remaining ->
+ // target_l/target_r -> motion_feedback chain that failed sys_clk setup as
+ // one combinational path. Value-identical to the former 32-bit expression.
+ // Safety interlocks (turn_reached, clearance_ok, motor_enable, the stop and
+ // revocation paths) still read turn_progress combinationally and gain no
+ // latency; only the turn speed magnitude is one 20 ns clock behind the gyro,
+ // which is sampled by the 100 Hz control tick.
+ wire signed [16:0] turn_speed_next=proportional_speed>17'sd80 ? 17'sd80:
+  proportional_speed<17'sd40 ? 17'sd40:proportional_speed;
+ reg signed [31:0] turn_speed;
+ always @(posedge clk or negedge rst_n)
+  if(!rst_n) turn_speed<=32'sd40;
+  else turn_speed<={{15{turn_speed_next[16]}},turn_speed_next};
  // 87 degrees is the braking boundary for a 90-degree target, not a timer.
- wire turn_reached=turn_progress>=(uturning ? 17'sd32600:17'sd15838);
+ // Evaluated on the 16-bit wrapped delta instead of the negated 17-bit
+ // turn_progress: for a right turn, turn_progress>=T is exactly
+ // wrapped_delta<=-T, and turn_progress<-2731 is exactly wrapped_delta>2731,
+ // both including the -32768 half-turn endpoint. Value-identical, but it
+ // keeps the 17-bit negate off the combinational path from the gyro into
+ // target_l/target_r, which failed sys_clk setup. The gating itself stays
+ // combinational so the stop boundaries still apply in the same cycle.
+ wire signed [15:0] reached_threshold=uturning ? 16'sd32600:16'sd15838;
+ wire turn_reached=right_turn ? wrapped_delta<=-reached_threshold
+                              : wrapped_delta>=reached_threshold;
+ wire turn_reversed=right_turn ? wrapped_delta>16'sd2731:wrapped_delta<-16'sd2731;
  wire direction_clear=state==LEFT ? left_clear:state==RIGHT ? right_clear:rear_clear;
  wire can_left=left_clear && left>=CLEAR_MM && left!=65535;
  wire can_right=right_clear && right>=CLEAR_MM && right!=65535;
@@ -49,6 +73,9 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  wire clearance_ok=turning ? direction_clear && !turn_reached:front>STOP_MM && front!=65535;
  assign motor_enable=rst_n && safe && (state==FORWARD || turning) && clearance_ok && !button_start;
  assign lidar_enabled=state!=IDLE && state!=FAULT;
+ // The commanded-speed gate stays combinational on purpose: autonomy_tb and
+ // reverse_escape_tb require the 300mm front boundary and the stop paths to
+ // gate target_l/target_r in the same cycle. Do not register this.
  always @* begin
   target_l=0;target_r=0;
   if(safe && clearance_ok) case(state)
@@ -125,7 +152,7 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
     LEFT,RIGHT:begin
      if(!direction_clear) begin state<=BLOCKED;wait_ticks<=0;end
      else if(turn_reached) begin state<=SETTLE;wait_ticks<=0;end
-    else if(turn_timeout || turn_progress < -17'sd2731) begin
+    else if(turn_timeout || turn_reversed) begin
       state<=FAULT;armed<=0;faults[7]<=1;
      end else turn_ticks<=turn_ticks+1'b1;
     end
@@ -140,7 +167,7 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
     UTURN_LEFT,UTURN_RIGHT:begin
      if(!rear_clear) begin state<=BLOCKED;wait_ticks<=0;end
      else if(turn_reached) begin state<=SETTLE;wait_ticks<=0;end
-     else if(turn_timeout || turn_progress < -17'sd2731) begin
+     else if(turn_timeout || turn_reversed) begin
       state<=FAULT;armed<=0;faults[7]<=1;
      end else turn_ticks<=turn_ticks+1'b1;
     end

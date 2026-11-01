@@ -1,5 +1,5 @@
 """Build the sole A745 autonomous profile. Never invokes board operations."""
-import argparse,hashlib,json,re,shutil,subprocess,threading,time
+import argparse,hashlib,html,json,os,re,shutil,subprocess,threading,time
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from prepare import prepare,ROOT
@@ -21,13 +21,16 @@ def main():
  ET.SubElement(project,'Device',name='GW5AT-60B',pn='GW5AT-LV60PG484AC1/I0').text='gw5at60b-002';listing=ET.SubElement(project,'FileList')
  for p in inputs[:-1]:ET.SubElement(listing,'File',path=p.as_posix(),type={'.v':'file.verilog','.cst':'file.cst','.sdc':'file.sdc'}[p.suffix],enable='1')
  (out/'a745.gprj').write_bytes(ET.tostring(project,encoding='utf-8',xml_declaration=True))
- options={'top_module':'a745_top','output_base_name':'a745','verilog_std':'sysv2017','use_sspi_as_gpio':1,'use_cpu_as_gpio':1,'user_code':'0000A745','bit_security':0,'route_option':1,'place_option':1,'timing_driven':1,'correct_hold_violation':1,'gen_sdf':1,'gen_verilog_sim_netlist':1}
+ options={'top_module':'a745_top','output_base_name':'a745','verilog_std':'sysv2017','use_sspi_as_gpio':1,'use_cpu_as_gpio':1,'user_code':'0000A745','bit_security':0,'route_option':int(os.environ.get('GOWIN_ROUTE_OPTION','1')),'place_option':int(os.environ.get('GOWIN_PLACE_OPTION','1')),'timing_driven':1,'correct_hold_violation':1,'gen_sdf':1,'gen_verilog_sim_netlist':1}
  tcl='cd [file dirname [file normalize [info script]]]\nopen_project a745.gprj\n'+''.join(f'set_option -{k} {v}\n' for k,v in options.items())+('run syn\n' if args.mode=='synth' else 'run pnr\n' if args.mode=='pnr' else 'run all\n')
  (out/'build.tcl').write_bytes(tcl.encode());record={'profile':'A745-S1-AUTONOMOUS-TX-ONLY','run_state':'running','mode':args.mode,'source_sha256':hashes,'compile_passed':False,'synthesis_passed':False,'timing_signed_off':False,'hardware_programmed':False,'route_option':1,'place_option':1,'network_control_enabled':False,'motor_pads_dynamic':True,'motor_locked':False,'screen_test':False,'motion_lidar':True,'camera_size':[800,480],'platform_directory':str(platform),'evidence_freshness_lower_bound_unix':(out/'build.tcl').stat().st_mtime}
  def save():(out/'result.json').write_bytes((json.dumps(record,indent=2)+'\n').encode())
  save();started=time.monotonic();timed_out=False
  with (out/'build.log').open('w',encoding='utf-8') as log:
-  p=subprocess.Popen(['C:/Gowin/Gowin_V1.9.12.04_x64/IDE/bin/gw_sh.exe',str(out/'build.tcl')],cwd=out,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace')
+  gowin=Path(os.environ.get('GOWIN_HOME',r'C:\Gowin\Gowin_V1.9.12.04_x64'))
+  gw_sh=gowin/'IDE/bin/gw_sh.exe'
+  if not gw_sh.is_file(): raise FileNotFoundError(f'Gowin Shell not found: {gw_sh}')
+  p=subprocess.Popen([str(gw_sh),str(out/'build.tcl')],cwd=out,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,encoding='utf-8',errors='replace')
   def reader():
    for line in p.stdout:log.write(line);log.flush()
   worker=threading.Thread(target=reader);worker.start()
@@ -39,13 +42,41 @@ def main():
  record.update(returncode=rc,seconds=time.monotonic()-started,timed_out=timed_out,run_state='completed' if rc==0 else 'failed',sources_changed=changed,synthesis_passed=netlist.is_file() and 'GowinSynthesis finish' in text,compile_passed=rc==0 and not changed and not timed_out and (args.mode=='synth' or artifact.is_file()))
  if netlist.is_file():record['synthesis_netlist_sha256']=sha(netlist)
  if artifact.is_file() and args.mode!='synth':record.update(artifact=str(artifact),artifact_sha256=sha(artifact))
- report=out/'impl/pnr/a745.tr'
- if args.mode!='synth' and report.is_file() and report.stat().st_mtime>=record['evidence_freshness_lower_bound_unix']:
-  tr=report.read_text(encoding='utf-8',errors='replace');frequency={}
+ # Gowin 1.9.12 writes the timing report as HTML (a745_tr_content.html) and
+ # leaves a745.tr absent; accept either and flatten the tables to text.
+ report=next((p for p in [out/'impl/pnr/a745.tr',out/'impl/pnr/a745_tr_content.html'] if p.is_file()),None)
+ if args.mode!='synth' and report is not None and report.stat().st_mtime>=record['evidence_freshness_lower_bound_unix']:
+  tr=report.read_text(encoding='utf-8',errors='replace')
+  if report.suffix=='.html':
+   tr=re.sub(r'<[^>]+>','\n',tr);tr=html.unescape(tr)
+   tr=re.sub(r'[ \t]+',' ',tr);tr=re.sub(r'\n\s*\n+','\n',tr)
+   # Re-join each summary row onto one line so the table regexes below match.
+   tr=re.sub(r'(?m)^ ?(\d+) \n',r'\1 ',tr)
+   tr=re.sub(r'(?m)^ ?(\S+) \n ?(setup|hold|recovery|removal|Setup|Hold|Recovery|Removal) \n ?(-?[\d.]+) \n ?(\d+)$',r'\1 \2 \3 \4',tr)
+   tr=re.sub(r'(?m)^(\S+) \n ?([\d.]+)\(MHz\) \n ?([\d.]+)\(MHz\)',r'\1 \2(MHz) \3(MHz)',tr)
+  frequency={}
   for name,limit,actual in re.findall(r'(?m)^\s*\d+\s+(\S+)\s+([\d.]+)\(MHz\)\s+([\d.]+)\(MHz\)',tr):frequency[name]={'constraint_mhz':float(limit),'actual_mhz':float(actual)}
-  tns=tr.split('2.4 Total Negative Slack Summary\n')[-1].split('3. Timing Details')[0];violations={k:0 for k in ['setup','hold','recovery','removal']}
-  for kind,count in re.findall(r'(?m)^\s*\S+\s+(setup|hold|recovery|removal)\s+-?[\d.]+\s+(\d+)\s*$',tns):violations[kind]+=int(count)
-  record.update(clock_frequencies=frequency,timing_violations=violations)
+  tns=re.split(r'Total Negative Slack Summary',tr)[-1];tns=re.split(r'Timing Details',tns)[0]
+  violations={k:0 for k in ['setup','hold','recovery','removal']};endpoints={}
+  for name,kind,slack,count in re.findall(r'(?mi)^\s*(\S+)\s+(setup|hold|recovery|removal)\s+(-?[\d.]+)\s+(\d+)\s*$',tns):
+   violations[kind.lower()]+=int(count)
+   if int(count):endpoints.setdefault(name,{})[kind.lower()]={'tns_ns':float(slack),'endpoints':int(count)}
+  record.update(clock_frequencies=frequency,timing_violations=violations,timing_violation_clocks=endpoints,
+   timing_report=str(report))
+  # The per-clock TNS summary counts only clock-to-clock checks. set_max_delay
+  # endpoints report "N/A" as the capture clock and are invisible there, so
+  # scan the path tables too and record every negative slack separately.
+  paths={}
+  for table,kind in [('Setup Paths Table','setup'),('Hold Paths Table','hold')]:
+   i=tr.find(table)
+   if i<0:continue
+   seg=tr[i:i+40000]
+   rows=re.findall(r'(?m)^ ?\d+ \n ?(-?[\d.]+) \n ?(\S+) \n ?(\S+) \n ?(\S+) \n ?(\S+) \n',seg)
+   bad=[{'slack_ns':float(s),'from':f,'to':t,'from_clock':fc,'to_clock':tc} for s,f,t,fc,tc in rows if float(s)<0]
+   if bad:paths[kind]=bad
+  record['path_slack_violations']=paths
+  record['max_delay_violations']=[p for p in paths.get('setup',[]) if p['to_clock']=='N/A']
+  record['timing_signed_off']=sum(violations.values())==0 and not paths
  save();print(json.dumps({k:v for k,v in record.items() if k!='source_sha256'},indent=2))
  if not record['compile_passed']:raise SystemExit(1)
 if __name__=='__main__':main()

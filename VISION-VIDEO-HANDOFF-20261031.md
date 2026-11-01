@@ -41,13 +41,13 @@ python3 fpga_video_web.py
 
 ```text
 UDP 6104：FPGA 视频
-TCP 8080：浏览器 MJPEG 页面
+TCP 8090：浏览器 MJPEG 页面
 ```
 
 浏览器访问：
 
 ```text
-http://<lichee-pi-ip>:8080/
+http://<lichee-pi-ip>:8090/
 ```
 
 也可以先检查端口是否收到 UDP：
@@ -94,3 +94,17 @@ python code/camera-car-control/a745-autonomous/scripts/build.py build --timeout 
 - 视频和原有遥测共享 FPGA 以太网发送路径，需要实测确认 30fps 时遥测周期和丢包情况。
 - UDP 没有重传，丢包时当前帧会被丢弃。
 - 本次没有烧录 FPGA，也没有改变电机控制、ARM、故障联锁或网络控制边界。
+
+## 最新状态（2026-11-01，覆盖本文旧视频说明）
+
+FPGA 视频链路的现场故障已经定位：原来的共享 Ethernet 帧 FIFO 只有 512 字节，而 EV10 视频单个 Ethernet 帧约 1334 字节，帧 FIFO 会把超长视频帧丢弃；因此 UDP 6104 无视频包，而 UDP 6103 的 EMS1/EMF1/EML1 遥测仍可正常接收。
+
+当前最后一次成功写入 Flash 的调试位流 SHA-256 为 `5085c51dee4d1d3a79c5c9124b67db34b5915da29756b1b11102861fdb5d6607`。Flash54、Reprogram、配置状态 `0x70022020` 和 UserCode `0xA745` 通过；该位流没有完成真实视频现场验收。后续视频 FIFO/分片修复候选仍有 PNR setup/hold 违例，禁止烧录违例位流。
+
+Lichee Pi 4A 已配置有线 `end1=192.168.0.3/24`。视频服务安装在 `/home/debian/fpga`，服务名为 `fpga-video.service`。系统控制中心占用 TCP 8080，本项目视频/YOLO 服务使用 TCP 8090；浏览器地址为 `http://10.0.0.237:8090/`，状态接口为 `/status.json`，FPGA 视频端口仍为 UDP 6104。
+
+Lichee 已安装 NumPy、OpenCV、Pillow 和 `shl-python`，并部署 YOLOv5n FP32 ONNX。TH1520 NPU 驱动模块/设备节点尚未出现；OpenCV CPU 推理会使板端过载，因此实时 YOLO 必须等待 HHB/SHL NPU 可执行模型和驱动验收。软件合成 EV10 测试帧已经通过分片重组、RGB565 转换和 MJPEG 输出验证；这不等于 FPGA 实时视频已验收。
+
+软件链路最近一次合成 EV10 验收：frames=1、packets=686、bad_packets=0；测试帧来自开发机，不代表实板 UDP6104 已恢复。
+
+��ǰ��֤��¼��2026-11-01������λ������� PNR ��д���ⲿ Flash��SHA-256 `00f0a246a8e2380237b72d4025f12fc4db41c2d5caf088b438eb702e2dd3157e`��UserCode `0xA745`����������״̬ `0x70022020`����ǰ��ҳ��������ʾ `frames=0`��˵����Ҫ�� FPGA ����ͷ��ɳ�ʼ����������Ч��ʾ���غ����� UDP ���գ��ⲻ�� NPU ��������4A �Ѽ��� `/dev/vha0`���� `fpga_video_yolo_web.py` �� YOLOv5 ONNX ·������ OpenCV CPU ��ˣ����ܵ��� NPU �ѽ��롣��һ��Ӧʹ�ùٷ� `imgdnn` MBS ģ��ת����·�滻 CPU DNN��

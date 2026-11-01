@@ -1,53 +1,134 @@
-# FPGA 视频接收与 Web 预览
+# FPGA 摄像头 → Lichee Pi 4A → 浏览器实时识别
 
-Lichee Pi 4A 与 FPGA 通过同一局域网连接。FPGA 视频使用 UDP `6104`，网页服务使用 TCP `8090`（系统控制中心占用 8080）。
+FPGA 采集 800×480 摄像头画面，裁出中心 640×480 窗口，经千兆以太网以 UDP
+发到 Lichee Pi 4A；4A 组帧后用 MJPEG 把画面推到浏览器，并叠加 YOLO 检测框。
+
+## 链路
+
+```
+OV5640 → a745_video(DDR3 缓冲) → a745_video_capture_tx（取中心 640×480，隔帧）
+       → async_fifo(2048×28, display33m→sys_clk, LEVELS=1)
+       → a745_video_udp_tx（每行一个 UDP 包）
+       → 包锁定仲裁器 → axis_async_fifo → eth_mac_1g_fifo → RGMII 125 MHz
+       → 4A end1 192.168.0.3  UDP 6104
+       → fpga_video_yolo_web.py（组帧 + YOLO + MJPEG）→ 浏览器 8090
+```
+
+## EV10 包格式（`rtl/a745_video_udp_tx.v`）
+
+每个 UDP 数据报正好一行 640 像素 RGB565，共 1334 字节以太网帧：
+
+| 偏移 | 长度 | 内容 |
+|---|---|---|
+| 0 | 14 | 以太网头（广播 DA，SA 02:00:00:00:00:02，0x0800）|
+| 14 | 20 | IPv4，总长 1320，192.168.0.2 → 192.168.0.3 |
+| 34 | 8 | UDP，6104 → 6104，长度 1300，校验和 0 |
+| 42 | 4 | 魔数 `EV10` |
+| 46 | 4 | frame_id u32 LE |
+| 50 | 2 | line u16 LE：图像绝对行号 0..479 |
+| 52 | 2 | bytes u16 LE = 1280 |
+| 54 | 1280 | 640 × RGB565 小端 |
+
+行号是绝对行号，所以丢包只会让该行保持旧内容，不会让画面错位。
+
+## 实板验收结果（2026-11-01）
+
+位流 SHA-256 `82affbef06d0e16d9959dbfd9822c8311873014bb0cf9586e4654dcf35845a02`
+烧录后（UserCode `0x0000A745`，配置状态 `0x70022020`），在 4A 上实测：
+
+```
+packets 2,031,598   bad_packets 0   frames 2974   fps 28.6
+UDP 6104 抓包：100,669 包全部为 EV10，全部 1292 字节，行号 0..479 齐全
+ip -s link 的 end1：errors 0  dropped 0
+```
+
+并已两次从浏览器流中取下真实画面解码确认（640×480，构图正常、无错行，
+两次场景不同，确认是实时流而非缓存帧）。
+
+**视频服务当前在跑**（纯视频，未开推理）：
+
+```
+http://10.0.0.237:8090/            网页
+http://10.0.0.237:8090/video.mjpg  纯 MJPEG 流
+http://10.0.0.237:8090/status.json 状态
+```
+
+走 4A 的 wlan0，局域网任意设备可访问；FPGA↔4A 是另一条网线
+（192.168.0.2 → 192.168.0.3），互不影响。
+
+开机不会自动拉起，重启后需手动执行：
 
 ```bash
-python3 -m pip install -r requirements-video.txt
-python3 fpga_video_web.py
+ssh debian@10.0.0.237 'sh /home/debian/fpga/start_video.sh 0'
 ```
 
-浏览器访问 `http://lichee-pi-ip:8090/`。视频格式为中心裁剪的 `640x480 RGB565`，网页服务转换为 MJPEG。
-
-脚本只接收视频，不发送 ARM、速度或配置命令。丢失或不完整的帧会被丢弃。
-
-## 当前状态（2026-11-01）
-
-FPGA UDP6104 视频目前仍受共享帧 FIFO 超长丢弃问题影响，修复候选尚未通过完整 PNR 时序门，不能烧录。Lichee 使用 `end1=192.168.0.3/24`，服务由 `fpga-video.service` 管理，网页端口为 `8090`（8080 属于系统控制中心），地址为 `http://10.0.0.237:8090/`。
-
-服务脚本 `fpga_video_yolo_web.py` 支持 frame_id、分片长度检查、RGB565 转换、MJPEG 和检测框输出。4A 已加载 `/dev/vha0`，并安装 `onnxruntime` 的 `ShlExecutionProvider`；`LD_LIBRARY_PATH=/usr/lib python` 可看到 `['ShlExecutionProvider', 'CPUExecutionProvider']`。服务会优先尝试 SHL/NPU 后端，失败才回退 OpenCV CPU。当前原始 FP32 YOLOv5n 会被运行库拒绝为非量化模型，必须提供量化 ONNX 或 HHB 生成的 MBS。
-
-已验证真实 NPU 执行：
+## 4A 端部署
 
 ```bash
-sudo /sbin/modprobe img_mem
-sudo /sbin/modprobe vha onchipmem_phys_start=0xffe0001000 onchipmem_size=0x100000 freq_khz=792000
-sudo /sbin/modprobe vha_info
-sudo chmod a+rw /dev/vha0 /dev/vha_scope
-python3 host/th1520_npu_infer.py \
-  --model /usr/share/npu/test/resource/cnn_testbench/lenet/OCM_1M5/model.mbs.bin \
-  --input /usr/share/npu/test/resource/cnn_testbench/lenet/m1.tensor.bin
+scp fpga_video_yolo_web.py start_video.sh debian@<4A>:/home/debian/fpga/
+ssh debian@<4A> 'sh /home/debian/fpga/start_video.sh 1 /home/debian/fpga/yolov5nu_320.onnx'
 ```
 
-该测试在 4A 上实际经过 VHA/NPU，网络执行约 1.45 ms。原始 FP32 YOLOv5n 不能直接作为 NPU 模型，转换工具 HHB/imgdnn 编译器不在当前系统中。
+浏览器打开 `http://<4A地址>:8090/`，状态接口 `/status.json`。
+（8080 已被系统控制中心占用，本服务固定用 8090。）
+`start_video.sh <YOLO_ENABLE> <YOLO_MODEL>`；传 `0` 可只看视频不推理。
 
-2026-11-01 ���£�FPGA ���緢����������֤�ύ `49959551ad26e8011566e6acc13b46314c95b3e4` �ָ� `eth_mac_1g_fifo + 125 MHz` ����ʱ�Ӽܹ���TH1520 NPU �ѳ��� `/dev/vha0`���ٷ� MBS ���� NPU ��ʵ��Լ 1.45 ms����ͨ FP32 ��̬���� ONNX ������Ϊ NPU ģ�ͣ�YOLOv5n �����ڿ����� `F:\conda-env\test` �о���ƥ�� HHB/imgdnn ת����
+必须用 `venv-system/bin/python`（系统 numpy 1.24 + OpenCV 4.6 + onnxruntime 1.14）。
+`venv/` 里没有 numpy。
 
-## 视频链路诊断记录（2026-11-01）
+服务内部三个线程互不阻塞：UDP 收包组帧、推理（只跑最新整帧）、渲染出 JPEG。
+**推理慢不会拖慢视频流**，只是框会滞后。
 
-本次调查针对“Lichee Pi 4A 网页服务正常但收不到 FPGA 摄像头 UDP 视频”的问题。4A 网页服务、UDP 6104 监听和 Python 接收线程均可正常启动；轻量 UDP 监听脚本持续 8～10 秒的结果为 `packets=0`、`EV10=0`。4A `end1` 的 `rx_errors` 在旧位流下持续增加，原始二层抓包为 `total=0`，因此坏帧在 Linux UDP 层之前已经被 PHY/网卡丢弃。
+### 不带 FPGA 自测
 
-已确认的 FPGA 错误有两项：
-
-- 网络时钟路径错误。A745 原先使用 PLL 250 MHz 再经过 `CLKDIV/2` 得到 RGMII 125 MHz；已验证的旧提交使用 PLL 直接输出 125 MHz。当前已改为 `Gowin_PLL clkout1` 直接作为 MAC/RGMII 125 MHz，并移除网络时钟路径中的 `CLKDIV`。
-- IPv4 校验和错误。视频 payload 改为 896 字节后，IP 总长度为 `0x03a8`，源地址 `192.168.0.2`，目的地址 `192.168.0.3`，正确 checksum 为 `0x75ef`；旧值 `0x756b` 已修正。
-
-修正时钟后的位流已完成 PNR、Flash 写入、校验和重载：
-
-```text
-SHA-256: debabe9345cae64e4b39368358f0378a20e5cf5f0cf57845bf6bdb74d7a19b5c
-UserCode: 0x0000A745
-配置状态: 0x70022020
+```bash
+python3 ev10_test_sender.py --host 127.0.0.1 --image any.jpg --frames 40 --drop 0.01
+curl -s localhost:8090/status.json
 ```
 
-时钟修正后 4A 的 CRC/frame 错误不再继续增长，说明原先的 RGMII 时钟路径确实会产生坏帧。当前仍未收到合法 EV10 包，剩余排查边界为：`a741_phy_config` 是否发布 `phy_ready`、`eth_mac_1g_fifo` 的 TX enable 是否打开、`video_tx` 是否产生 valid，以及真实摄像头/显示 FIFO 是否产生视频 token。4A 网页服务和 UDP 监听已排除为首要根因。
+## NPU / 推理现状（未打通，视频不受影响）
+
+`/dev/vha0` 存在，已 `chmod a+rw`。但四条路都断了：
+
+- `ShlExecutionProvider` 对 fp32 模型报 *"current model is not quantization, use cpu
+  install of npu"*，随后在 CPU 回退路径上 **SIGILL** 崩溃。
+- `yolov5n_int8.onnx` 是动态量化（`ConvInteger`），SHL 不认，本版 onnxruntime 也
+  `NOT_IMPLEMENTED: ConvInteger(10)`。
+- `yolov5n_th1520.mbs.bin` **文件本身损坏**：`invalid magic number 65746548
+  (expecting 42beef42)`，vendor `cnn_testbench` 拒绝加载。
+- 开发机 `F:\conda-env\test\Scripts\hhb.exe` 存在，但 `import hhb` 失败
+  （`tvm.contrib` 缺 `graph_executor`），无法重新编译 MBS。
+
+CPU 推理同样不可用：
+
+- `yolov5n_cpu_fp32.onnx` 640×640 在本板 onnxruntime 上是**分钟级**单帧，不可用。
+- 换 `yolov5nu_320.onnx`（320×320、opset 12）后，服务进程在首次推理时**静默消失**，
+  内存充足（15.8G 总 / 14.7G 空闲）、无 OOM 记录，特征与 onnxruntime CPU EP 的
+  SIGILL 一致。
+
+因此 **4A 上的实时识别尚未打通**，当前服务以 `YOLO_ENABLE=0` 运行，只做视频。
+要恢复推理，需先修好 HHB/imgdnn 工具链生成合法 NPU 模型，或换一个在 RISC-V
+上可用的推理运行时。
+
+注意：在板子上跑多线程推理测速会把这块 4 核 RISC-V 压垮（出现过 ping 丢包 75%、
+SSH 超时，最终需要手动重启）。后续测速请限制线程数并避开视频服务运行时段。
+
+## 模型与后端（踩过的坑）
+
+`Detector` 先试 onnxruntime，失败再退回 OpenCV DNN，并自动识别两种输出头：
+
+- v5：`[1,N,85]`（cx,cy,w,h,obj + 80 类）
+- v5u/v8：`[1,84,N]`（cx,cy,w,h + 80 类，无 objectness）
+
+4A 上 **OpenCV 4.6 装不下**下列模型：
+
+| 模型 | 问题 |
+|---|---|
+| 板上原 `yolov5n.onnx` | v5u/DFL 头，`model.24/dfl/Reshape` 报错 |
+| 仓库 `yolov5n.onnx` | 权重是 **FLOAT16**，OpenCV 4.6 不支持（本机 4.8 可以，所以本地测试没暴露） |
+| 仓库 `yolov5n_fp32.onnx` | 半成品：initializer 是 fp32，但图 I/O 和 18 个 Constant 仍是 fp16，onnxruntime 报 Conv 类型不一致 |
+| `yolov5n_cpu_fp32.onnx`（`convert_onnx_fp16_to_fp32.py` 生成） | 类型一致了，但 opset 17 的 `Split`（split 走输入而非属性）OpenCV 4.6 仍解析不了；onnxruntime 可以 |
+
+`yolov5nu_320.onnx`（ultralytics 导出，imgsz=320、opset 12、全 fp32，输出
+`[1,84,2100]`）在**开发机**上实测正确：4 person + bus 0.54。板上则见上节。
+

@@ -64,7 +64,10 @@ defparam PLLA_inst.FCLKIN = "50";
 defparam PLLA_inst.IDIV_SEL = 1;
 defparam PLLA_inst.FBDIV_SEL = 1;
 defparam PLLA_inst.ODIV0_SEL = 15;
-defparam PLLA_inst.ODIV1_SEL = 3;
+// VCO = 50 MHz x FBDIV(1) x MDIV(15) / IDIV(1) = 750 MHz.
+// CLKOUT0 = 750/15 = 50 MHz; CLKOUT1 = 750/6 = 125 MHz (RGMII/MAC);
+// CLKOUT2 = 750/31 = 24.2 MHz. ODIV1=7 would give 107.1 MHz (wrong).
+defparam PLLA_inst.ODIV1_SEL = 6;
 defparam PLLA_inst.ODIV2_SEL = 31;
 defparam PLLA_inst.ODIV3_SEL = 8;
 defparam PLLA_inst.ODIV4_SEL = 8;

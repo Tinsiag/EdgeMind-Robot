@@ -15,7 +15,10 @@ def main():
     assert result['compile_passed'] and result['run_state'] == 'completed'
     assert all(v == 0 for v in result['timing_violations'].values())
     vo, sdf = [(PNR / ('a745.' + suffix)).read_text() for suffix in ['vo', 'sdf']]
-    assert min((PNR / ('a745.' + s)).stat().st_mtime for s in ['vo', 'sdf', 'tr']) >= result['evidence_freshness_lower_bound_unix']
+    # Gowin 1.9.12 emits the timing report as a745_tr_content.html and no
+    # longer writes a745.tr; require whichever of the two this run produced.
+    report = next(p for p in (PNR / 'a745.tr', PNR / 'a745_tr_content.html') if p.is_file())
+    assert min([(PNR / ('a745.' + s)).stat().st_mtime for s in ['vo', 'sdf']] + [report.stat().st_mtime]) >= result['evidence_freshness_lower_bound_unix']
     logic = {clean(n): (k, {p: clean(v) for p, v in re.findall(r'\.(\w+)\((.*?)\)(?:,|\s*$)', body, re.S)})
              for k, n, body in re.findall(r'(?m)^\s*(\w+)\s+(\\?[^\s(]+)\s*\((.*?)\);', vo, re.S)}
     cells = {}

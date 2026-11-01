@@ -7,8 +7,7 @@ set_input_delay -clock camera_pclk -min 0.000 [get_ports {camera_data[*] camera_
 # Reset and encoder inputs are asynchronous; encoders enter synchronizers.
 set_false_path -from [get_ports {stop_n left_enc_a left_enc_b right_enc_a right_enc_b}]
 # Keep CDC paths visible in this initial build for explicit report review.
-create_generated_clock -name tx250m -source [get_ports {clk}] -multiply_by 5 [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}]
-create_generated_clock -name tx125m -source [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}] -master_clock tx250m -divide_by 2 [get_pins {tx_divider/CLKOUT}]
+create_generated_clock -name tx125m -source [get_ports {clk}] -multiply_by 5 -divide_by 2 [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}]
 create_generated_clock -name display33m -source [get_ports {clk}] -multiply_by 33 -divide_by 50 [get_pins {display_clocks/u_pll/PLLA_inst/CLKOUT0}]
 
 create_generated_clock -name memory400m -source [get_ports {clk}] -multiply_by 8 -phase 0 -duty_cycle 50 [get_pins {memory_pll/u_pll/PLLA_inst/CLKOUT2}]
@@ -17,6 +16,9 @@ create_generated_clock -name ddr_ui100m -source [get_pins {memory_pll/u_pll/PLLA
 # Gray pointers are registered; 10 ns bounds skew to the fastest source period.
 set_max_delay -to [get_pins {video/*fifo/rg1_*/D video/*fifo/wg1_*/D}] 10
 set_false_path -hold -to [get_pins {video/*fifo/rg1_*/D video/*fifo/wg1_*/D}]
+# EV10 network token FIFO (display33m -> sys_clk) uses the same async_fifo.
+set_max_delay -to [get_pins {video_net_fifo/rg1_*/D video_net_fifo/wg1_*/D}] 10
+set_false_path -hold -to [get_pins {video_net_fifo/rg1_*/D video_net_fifo/wg1_*/D}]
 # Mailbox request/ack toggles pass two flip-flops before use.
 set_max_delay -to [get_pins {video/*/req_sync_0_s0/D video/*/ack_sync_0_s0/D}] 10
 set_false_path -hold -to [get_pins {video/*/req_sync_0_s0/D video/*/ack_sync_0_s0/D}]

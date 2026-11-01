@@ -5,3 +5,6 @@
 A745已重构摄像头启动、完整帧采集、本地自主会话、UDP发送和屏幕状态栏。真实状态、位流SHA和实物验收见 [交接](../../HANDOFF-20261031.md)；运行方法与当前引脚见新工程说明。
 
 目录维护范围：`a745-autonomous/` 当前源码、`third_party/verilog-ethernet/` 三个TX相关库文件及许可、`.venv/` 运行环境、此入口和launch.cmd。旧工程、备份和历史产物已按用户要求删除，清理及保留校验记录见根目录PROJECT-CLEANUP.md。
+# 当前接手补充（2026-11-01）
+
+视频链路当前仍以根目录 `README.md`、`VISION-VIDEO-HANDOFF-20261031.md` 和 `code/camera-car-control/a745-autonomous/host/README-video.md` 的最新状态为准。Lichee 网页服务使用 `http://10.0.0.237:8090/`，UDP 视频端口为 `6104`；系统控制中心占用 `8080`。FPGA 视频 FIFO 修复候选尚未通过完整时序签核，不得烧录或宣称视频已验收。

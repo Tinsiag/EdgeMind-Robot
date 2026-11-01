@@ -7,6 +7,7 @@ module attitude_filter_tb;
  a741_attitude dut(.*);
  integer updates=0,commits=0;
  always @(negedge clk) if(done) commits=commits+1;
+ function real rabs(input real v); rabs=v<0.0 ? -v:v; endfunction
  function unsafe(input signed [15:0] r,p);
   begin unsafe=r>4096 || r< -4096 || p>4096 || p< -4096;end
  endfunction
@@ -42,7 +43,8 @@ module attitude_filter_tb;
    if(!unsafe(roll,pitch)) $fatal(1,"sustained true tilt delayed beyond second sample");
    expected_roll=$atan2($itor(y),$itor(z))*32768.0/3.141592653589793;
    expected_pitch=$atan2(-$itor(x),$sqrt($itor(y)*$itor(y)+$itor(z)*$itor(z)))*32768.0/3.141592653589793;
-   if($abs($itor(roll)-expected_roll)>8.0 || $abs($itor(pitch)-expected_pitch)>8.0)
+   // Use an explicit real magnitude: $abs is unavailable in some simulators.
+   if(rabs($itor(roll)-expected_roll)>8.0 || rabs($itor(pitch)-expected_pitch)>8.0)
     $fatal(1,"filtered steady angle differs from analytic gravity angle: %d/%d",roll,pitch);
   end
  endtask
