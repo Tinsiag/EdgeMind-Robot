@@ -8,7 +8,7 @@ def prepare():
  out=ROOT/'.local/platform';out.mkdir(parents=True,exist_ok=True);previous=ROOT/'vendor/board';vendor=[];origins=[]
  for name in sorted(p.name for p in previous.glob('*.v')):
   src=previous/name;dst=out/name;raw=src.read_bytes();put(dst,raw);vendor.append(dst);origins.append({'source':str(src),'sha256':hashlib.sha256(raw).hexdigest()})
- eth=CAMERA/'third_party/verilog-ethernet/rtl';vendor += [eth/n for n in ['axis_async_fifo.v','axis_gmii_tx.v','lfsr.v']]
+ eth=CAMERA/'third_party/verilog-ethernet/rtl';vendor += [eth/n for n in ['axis_async_fifo.v','axis_async_fifo_adapter.v','axis_gmii_rx.v','axis_gmii_tx.v','eth_mac_1g.v','eth_mac_1g_fifo.v','lfsr.v']]
  files=sorted((ROOT/'rtl').glob('*.v'))+sorted((ROOT/'lib').glob('*.v'))+sorted((ROOT/'vendor').glob('*.v'))+vendor
  for source,name in [('board.cst','a745.cst'),('timing.sdc','a745.sdc')]:put(out/name,(ROOT/'constraints'/source).read_bytes())
  sys.path.insert(0,str(ROOT/'host'));from board_config import compiled_parameters

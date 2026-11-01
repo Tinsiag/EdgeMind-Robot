@@ -52,23 +52,31 @@ module a745_top(
         else camera_ready_sync<={camera_ready_sync[0],camera_ready};
     wire [7:0] tx_data,video_tx_data,net_data,gmii_txd;
     wire tx_valid,tx_last,tx_ready,video_tx_valid,video_tx_last,net_valid,net_last,net_ready,net_fifo_ready,gmii_en,gmii_txer;
-    wire tx_selected_video = video_tx_valid;
-    wire tx_mux_valid = tx_selected_video ? video_tx_valid : tx_valid;
-    wire tx_mux_last = tx_selected_video ? video_tx_last : tx_last;
-    wire [7:0] tx_mux_data = tx_selected_video ? video_tx_data : tx_data;
-    assign tx_ready = !tx_selected_video && net_fifo_ready;
-    axis_async_fifo #(.DEPTH(512),.DATA_WIDTH(8),.KEEP_ENABLE(0),.FRAME_FIFO(1),.DROP_BAD_FRAME(1)) net_fifo(
+    wire tx_selected_video=video_tx_valid;
+    wire tx_mux_valid=tx_selected_video ? video_tx_valid:tx_valid;
+    wire tx_mux_last=tx_selected_video ? video_tx_last:tx_last;
+    wire [7:0] tx_mux_data=tx_selected_video ? video_tx_data:tx_data;
+    // Control UDP is paused while the direct EV10 diagnostic stream runs.
+    axis_async_fifo #(.DEPTH(1024),.DATA_WIDTH(8),.KEEP_ENABLE(0),.FRAME_FIFO(1),.DROP_BAD_FRAME(1)) net_fifo(
       .s_clk(clk),.s_rst(!control_n),.s_axis_tdata(tx_mux_data),.s_axis_tkeep(1'b1),.s_axis_tvalid(tx_mux_valid),
       .s_axis_tready(net_fifo_ready),.s_axis_tlast(tx_mux_last),.s_axis_tuser(1'b0),.s_axis_tid(8'd0),.s_axis_tdest(8'd0),
       .m_clk(pll125),.m_rst(!tx_n),.m_axis_tdata(net_data),.m_axis_tvalid(net_valid),.m_axis_tready(net_ready),
       .m_axis_tlast(net_last),.s_pause_req(1'b0),.m_pause_req(1'b0));
+    assign tx_ready=!tx_selected_video && net_fifo_ready;
     (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_tx;
     always @(posedge pll125 or negedge tx_n)
       if(!tx_n) phy_ready_tx<=0;else phy_ready_tx<={phy_ready_tx[0],phy_ready};
-    axis_gmii_tx mac(.clk(pll125),.rst(!tx_n),.s_axis_tdata(net_data),.s_axis_tvalid(net_valid),
-      .s_axis_tready(net_ready),.s_axis_tlast(net_last),.s_axis_tuser(1'b0),.ptp_ts(96'd0),
-      .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),.clk_enable(1'b1),
-      .mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]));
+    wire [7:0] gmii_rxd=8'd0; wire gmii_dv=1'b0,gmii_er=1'b0;
+    wire [0:0] net_keep=1'b1; wire [0:0] rx_keep; wire rx_valid,rx_last,rx_user;
+    eth_mac_1g_fifo mac(.rx_clk(pll125),.rx_rst(!tx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+      .logic_clk(pll125),.logic_rst(!tx_n),.tx_axis_tdata(net_data),.tx_axis_tkeep(net_keep),
+      .tx_axis_tvalid(net_valid),.tx_axis_tready(net_ready),.tx_axis_tlast(net_last),.tx_axis_tuser(1'b0),
+      .rx_axis_tdata(),.rx_axis_tkeep(rx_keep),.rx_axis_tvalid(rx_valid),.rx_axis_tready(1'b0),
+      .rx_axis_tlast(rx_last),.rx_axis_tuser(rx_user),.gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
+      .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),.rx_clk_enable(1'b1),.tx_clk_enable(1'b1),
+      .rx_mii_select(1'b0),.tx_mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(1'b0),
+      .tx_error_underflow(),.tx_fifo_overflow(),.tx_fifo_bad_frame(),.tx_fifo_good_frame(),.rx_error_bad_frame(),
+      .rx_error_bad_fcs(),.rx_fifo_overflow(),.rx_fifo_bad_frame(),.rx_fifo_good_frame());
     gmii_to_rgmii transmitter(.reset_n(global_n),.gmii_tx_clk(pll125),.gmii_txd(gmii_txd),
       .gmii_txen(gmii_en),.gmii_txer(gmii_txer),.rgmii_tx_clk(rgmii_tx_clk),
       .rgmii_txd(rgmii_txd),.rgmii_txen(rgmii_tx_ctl));
@@ -132,7 +140,7 @@ module a745_top(
     async_fifo #(.WIDTH(18),.ADDR_BITS(13)) video_net_fifo(
         .wr_clk(display_clk),.wr_rst_n(display_video_n),.wr_en(video_token_valid),.wr_data(video_token),.full(),
         .rd_clk(clk),.rd_rst_n(control_n),.rd_en(video_net_pop),.rd_data(video_net_token),.empty(video_net_empty));
-    a745_video_udp_tx video_tx(.clk(clk),.rst_n(control_n),.phy_ready(phy_ready),.fifo_data(video_net_token),
+    a745_video_udp_tx #(.FRAME_PIXELS(7168)) video_tx(.clk(clk),.rst_n(control_n),.phy_ready(1'b1),.fifo_data(video_net_token),
         .fifo_empty(video_net_empty),.fifo_pop(video_net_pop),.data(video_tx_data),.valid(video_tx_valid),
         .last(video_tx_last),.ready(net_fifo_ready),.dropped());
     wire [15:0] overlay_pixel,panel_rgb;
