@@ -32,3 +32,22 @@ python3 host/th1520_npu_infer.py \
 该测试在 4A 上实际经过 VHA/NPU，网络执行约 1.45 ms。原始 FP32 YOLOv5n 不能直接作为 NPU 模型，转换工具 HHB/imgdnn 编译器不在当前系统中。
 
 2026-11-01 ���£�FPGA ���緢����������֤�ύ `49959551ad26e8011566e6acc13b46314c95b3e4` �ָ� `eth_mac_1g_fifo + 125 MHz` ����ʱ�Ӽܹ���TH1520 NPU �ѳ��� `/dev/vha0`���ٷ� MBS ���� NPU ��ʵ��Լ 1.45 ms����ͨ FP32 ��̬���� ONNX ������Ϊ NPU ģ�ͣ�YOLOv5n �����ڿ����� `F:\conda-env\test` �о���ƥ�� HHB/imgdnn ת����
+
+## 视频链路诊断记录（2026-11-01）
+
+本次调查针对“Lichee Pi 4A 网页服务正常但收不到 FPGA 摄像头 UDP 视频”的问题。4A 网页服务、UDP 6104 监听和 Python 接收线程均可正常启动；轻量 UDP 监听脚本持续 8～10 秒的结果为 `packets=0`、`EV10=0`。4A `end1` 的 `rx_errors` 在旧位流下持续增加，原始二层抓包为 `total=0`，因此坏帧在 Linux UDP 层之前已经被 PHY/网卡丢弃。
+
+已确认的 FPGA 错误有两项：
+
+- 网络时钟路径错误。A745 原先使用 PLL 250 MHz 再经过 `CLKDIV/2` 得到 RGMII 125 MHz；已验证的旧提交使用 PLL 直接输出 125 MHz。当前已改为 `Gowin_PLL clkout1` 直接作为 MAC/RGMII 125 MHz，并移除网络时钟路径中的 `CLKDIV`。
+- IPv4 校验和错误。视频 payload 改为 896 字节后，IP 总长度为 `0x03a8`，源地址 `192.168.0.2`，目的地址 `192.168.0.3`，正确 checksum 为 `0x75ef`；旧值 `0x756b` 已修正。
+
+修正时钟后的位流已完成 PNR、Flash 写入、校验和重载：
+
+```text
+SHA-256: debabe9345cae64e4b39368358f0378a20e5cf5f0cf57845bf6bdb74d7a19b5c
+UserCode: 0x0000A745
+配置状态: 0x70022020
+```
+
+时钟修正后 4A 的 CRC/frame 错误不再继续增长，说明原先的 RGMII 时钟路径确实会产生坏帧。当前仍未收到合法 EV10 包，剩余排查边界为：`a741_phy_config` 是否发布 `phy_ready`、`eth_mac_1g_fifo` 的 TX enable 是否打开、`video_tx` 是否产生 valid，以及真实摄像头/显示 FIFO 是否产生视频 token。4A 网页服务和 UDP 监听已排除为首要根因。
