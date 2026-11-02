@@ -10,7 +10,7 @@ Threads: UDP receive/assemble (never blocks), detector (runs on the newest
 complete frame, slow is fine), renderer (overlay newest boxes, JPEG at a
 fixed rate). Browser: http://<4a-ip>:8090/   status: /status.json
 """
-import http.server, json, os, socket, struct, threading, time
+import http.server, json, os, socket, struct, subprocess, threading, time
 import numpy as np
 import cv2
 
@@ -22,6 +22,19 @@ MODEL = os.environ.get('YOLO_MODEL', os.path.expanduser('~/fpga/yolov5n.onnx'))
 CONF = float(os.environ.get('YOLO_CONF', '0.30'))
 NMS = float(os.environ.get('YOLO_NMS', '0.45'))
 STREAM_FPS = float(os.environ.get('STREAM_FPS', '15'))
+# NPU backend (the only one fast enough on the TH1520). Talks to the HHB
+# yolov5_daemon subprocess; falls back to video-only if it cannot start.
+NPU_MODEL = os.environ.get('YOLO_NPU_MODEL', os.path.expanduser('~/fpga/npu/hhb.bm'))
+NPU_DAEMON = os.environ.get('YOLO_NPU_DAEMON', os.path.expanduser('~/fpga/npu/yolov5_daemon'))
+NPU_H, NPU_W = 384, 640          # model input; the FPGA frame is 640x480
+NPU_MIN_GAP = float(os.environ.get('YOLO_NPU_MIN_GAP', '0.2'))
+NPU_TIMEOUT = float(os.environ.get('YOLO_NPU_TIMEOUT', '5.0'))
+# Inference guardrails for the 4-core TH1520: run at most one detection every
+# DETECT_MIN_GAP seconds, always rest at least DETECT_DUTY_REST x the time the
+# last run took, and keep the detector thread at a lower scheduling priority.
+DETECT_MIN_GAP = float(os.environ.get('YOLO_MIN_GAP', '0.5'))
+DETECT_DUTY_REST = float(os.environ.get('YOLO_DUTY_REST', '0.5'))
+DETECT_NICE = int(os.environ.get('YOLO_NICE', '10'))
 COMPLETE_RATIO = 0.95  # publish a frame when >=95% of its rows arrived
 
 COCO = ('person bicycle car motorcycle airplane bus train truck boat traffic_light fire_hydrant stop_sign '
@@ -128,17 +141,28 @@ class Detector:
 
     def loop(self):
         seen = 0
+        # Lower the detector thread's priority so inference can never starve
+        # the UDP receive / JPEG render threads on this 4-core board, and
+        # leave a gap between runs so the CPU is not pinned continuously.
+        try:
+            os.nice(DETECT_NICE)
+        except (OSError, AttributeError):
+            pass
         while self.sess is not None or self.net is not None:
             with self.asm.lock:
                 self.asm.lock.wait_for(lambda: self.asm.seq != seen)
                 seen = self.asm.seq; raw = self.asm.frame
             try:
                 t = time.monotonic(); boxes = self.detect(rgb565_to_bgr(raw))
+                took = time.monotonic() - t
                 with self.lock:
-                    self.boxes = boxes; self.ms = (time.monotonic() - t) * 1000; self.runs += 1
+                    self.boxes = boxes; self.ms = took * 1000; self.runs += 1
+                gap = max(DETECT_MIN_GAP - took, DETECT_DUTY_REST * took)
+                if gap > 0:
+                    time.sleep(gap)
             except Exception as exc:
                 with self.lock: self.error = f'inference: {str(exc)[:200]}'
-                time.sleep(2)
+                time.sleep(5)
 
     def detect(self, bgr):
         n = self.size
@@ -181,6 +205,148 @@ class Detector:
         return res
 
 
+class NpuDetector:
+    """TH1520 NPU backend driving the HHB yolov5_daemon subprocess.
+
+    The daemon loads hhb.bm once and services one float32 CHW blob per line
+    on stdin, replying "TIME <ms>" then "DET n" / n box lines / "END" on
+    stdout. If the subprocess dies or a call times out it is restarted; if it
+    never comes up, inference disables itself and the video keeps streaming.
+    """
+    def __init__(self, asm):
+        self.asm = asm; self.boxes = []; self.ms = 0.0; self.runs = 0; self.error = ''
+        self.lock = threading.Lock(); self.backend = 'npu'; self.size = NPU_W
+        self.proc = None; self.failures = 0; self._io_lock = threading.Lock()
+        # letterbox: NPU is 384 tall, 640 wide; frame 640x480 -> scale 0.8,
+        # pad top/bottom only, so x maps 1:1 and y /= 0.8.
+        self.scale = NPU_H / HEIGHT
+        self.ox = 0
+        self.oy = 0
+        self._start()
+
+    def _start(self):
+        try:
+            self.proc = subprocess.Popen(
+                ['stdbuf', '-oL', NPU_DAEMON, NPU_MODEL, '0.25', '0.45'],
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT, bufsize=0)
+            try:
+                open('/home/debian/fpga/.npu.pid', 'w').write(str(self.proc.pid))
+            except OSError:
+                pass
+            # The daemon prints NNA/Heap INFO lines before READY; skip them.
+            deadline = time.monotonic() + 120
+            seen = []
+            while time.monotonic() < deadline:
+                line = self.proc.stdout.readline().decode()
+                if not line:
+                    break
+                if line.startswith('READY'):
+                    self.error = ''
+                    return
+                seen.append(line.strip())
+            raise RuntimeError('daemon did not reach READY: ' + ' | '.join(seen[-3:])[:200])
+        except Exception as exc:
+            self.proc = None
+            self.error = f'npu start: {str(exc)[:160]}'
+
+    def loop(self):
+        seen = 0
+        if os.environ.get('YOLO_ENABLE', '1') != '1':
+            self.backend = 'npu-disabled'
+            self.error = 'disabled by YOLO_ENABLE=0'
+            return
+        while True:
+            with self.asm.lock:
+                self.asm.lock.wait_for(lambda: self.asm.seq != seen)
+                seen = self.asm.seq; raw = self.asm.frame
+            if self.proc is None:
+                time.sleep(2)
+                self._start()
+                continue
+            try:
+                t = time.monotonic()
+                boxes = self.detect(rgb565_to_bgr(raw))
+                took = time.monotonic() - t
+                with self.lock:
+                    self.boxes = boxes; self.ms = took * 1000; self.runs += 1
+                    self.failures = 0
+                gap = NPU_MIN_GAP - took
+                if gap > 0:
+                    time.sleep(gap)
+            except Exception as exc:
+                with self.lock:
+                    self.failures += 1
+                    self.error = f'npu: {str(exc)[:160]}'
+                self._shutdown()
+                if self.failures > 3:
+                    # Give up on inference rather than let a crashing NPU
+                    # subprocess loop forever; the video stream stays up.
+                    self.proc = None
+                    self.backend = 'npu-disabled'
+                    with self.lock: self.boxes = []
+                    return
+                time.sleep(2)
+                self._start()
+
+    def _shutdown(self):
+        try:
+            if self.proc and self.proc.stdin:
+                self.proc.stdin.write(b'QUIT\n'); self.proc.stdin.flush()
+                self.proc.stdin.close()
+            if self.proc:
+                self.proc.wait(timeout=3)
+        except Exception:
+            pass
+        try:
+            if self.proc: self.proc.kill()
+        except Exception:
+            pass
+        self.proc = None
+
+    def detect(self, bgr):
+        if self.proc is None or self.proc.stdin is None:
+            raise RuntimeError('daemon not running')
+        # RGB, normalize, letterbox height to NPU_H (pad vertical grey 114).
+        rh = int(round(HEIGHT * self.scale))
+        r = cv2.resize(bgr, (WIDTH, rh), interpolation=cv2.INTER_LINEAR)
+        canvas = np.full((NPU_H, NPU_W, 3), 114, np.uint8)
+        canvas[self.oy:self.oy + rh, :] = r
+        blob = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
+        blob = np.ascontiguousarray(blob.transpose(2, 0, 1))
+        with self._io_lock:
+            self.proc.stdin.write(blob.tobytes())
+            self.proc.stdin.flush()
+            ms = None; n = None; dets = []
+            while True:
+                line = self.proc.stdout.readline().decode().strip()
+                if not line:
+                    raise RuntimeError('daemon EOF')
+                if line.startswith('TIME'):
+                    ms = float(line.split()[1])
+                elif line.startswith('DET'):
+                    n = int(line.split()[1])
+                elif line == 'END':
+                    break
+                else:
+                    p = line.split()
+                    if len(p) == 6:
+                        dets.append((int(p[0]), float(p[1]), float(p[2]),
+                                     float(p[3]), float(p[4]), float(p[5])))
+        if ms is not None:
+            self.ms = ms
+        res = []
+        for label, score, x1, y1, x2, y2 in dets:
+            # map letterboxed coords back to the 640x480 frame
+            X1 = max(0, int(x1)); Y1 = max(0, int((y1 - self.oy) / self.scale))
+            X2 = min(WIDTH - 1, int(x2)); Y2 = min(HEIGHT - 1, int((y2 - self.oy) / self.scale))
+            if X2 <= X1 or Y2 <= Y1:
+                continue
+            res.append(dict(cls=COCO[label] if label < len(COCO) else str(label),
+                            score=round(score, 3), box=[X1, Y1, X2, Y2]))
+        return res
+
+
 class Renderer:
     def __init__(self, asm, det):
         self.asm = asm; self.det = det; self.jpeg = None; self.cond = threading.Condition()
@@ -205,7 +371,10 @@ class Renderer:
             time.sleep(max(0.0, period - (time.monotonic() - t)))
 
 
-asm = Assembler(); det = Detector(asm); ren = Renderer(asm, det)
+asm = Assembler()
+_backend = os.environ.get('YOLO_BACKEND', 'npu')
+det = NpuDetector(asm) if _backend == 'npu' else Detector(asm)
+ren = Renderer(asm, det)
 
 
 def receive():
@@ -269,5 +438,5 @@ class Server(http.server.ThreadingHTTPServer):
 if __name__ == '__main__':
     for fn in (receive, det.loop, ren.loop):
         threading.Thread(target=fn, daemon=True).start()
-    print(f'EV10 UDP {UDP_PORT} -> http://0.0.0.0:{HTTP_PORT}/  model={MODEL if det.net else det.error}', flush=True)
+    print(f'EV10 UDP {UDP_PORT} -> http://0.0.0.0:{HTTP_PORT}/  backend={det.backend}', flush=True)
     Server(('', HTTP_PORT), Handler).serve_forever()
