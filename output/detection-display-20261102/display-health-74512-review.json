@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "firmware_revision": 74512,
+  "status_count": 600,
+  "attitude_count": 600,
+  "elapsed_seconds": 60.00010900700181,
+  "accepted_delta": 298,
+  "return_frames": 299,
+  "camera_hz": 29.76661258718013,
+  "inference_hz": 4.983324279712687,
+  "web_hz": 14.916639566364063,
+  "inference_runs": 299,
+  "checksum_offload_pending": 299,
+  "checksum_note": "Outgoing local capture may precede NIC checksum completion. FPGA acceptance validates nonzero UDP checksum and MAC FCS.",
+  "armed": false,
+  "motion_packets_sent": 0,
+  "hardware_display_observed": false,
+  "capture_sha256": "e2c896c3beb55fd3fd4673903177ff35a9ca82806d17ad697eefa396d542adad",
+  "audit_script_sha256": "c81a535b92376167a0ea067d4bedb97476ebc8de9e8ae348a2592398291065f6"
+}

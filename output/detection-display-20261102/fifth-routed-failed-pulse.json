@@ -1,0 +1,156 @@
+{
+  "profile": "A745-S1-AUTONOMOUS-DISPLAY-RX",
+  "run_state": "completed",
+  "mode": "pnr",
+  "compile_passed": true,
+  "synthesis_passed": true,
+  "timing_signed_off": false,
+  "hardware_programmed": false,
+  "route_option": 2,
+  "place_option": 2,
+  "network_control_enabled": false,
+  "motor_pads_dynamic": true,
+  "motor_locked": false,
+  "screen_test": false,
+  "motion_lidar": true,
+  "camera_size": [
+    800,
+    480
+  ],
+  "platform_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform",
+  "evidence_freshness_lower_bound_unix": 1793627565.324713,
+  "clock_route_order": 1,
+  "synthesis_netlist_reused": true,
+  "reused_synthesis_netlist_sha256": "dba1ec5815154bae811f6590d624ef8be3bb84be0fcb763e83ad5dbd2cbd8565",
+  "timing_only_changed_inputs": [],
+  "returncode": 0,
+  "seconds": 652.9679999999935,
+  "timed_out": false,
+  "sources_changed": [],
+  "synthesis_netlist_sha256": "dba1ec5815154bae811f6590d624ef8be3bb84be0fcb763e83ad5dbd2cbd8565",
+  "artifact": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.fs",
+  "artifact_sha256": "1f0de97d9858ba4ee919b7de480813e1f5955eb51dc3dde73c3bf3b6d63e06fb",
+  "clock_frequencies": {
+    "sys_clk": {
+      "constraint_mhz": 50.0,
+      "actual_mhz": 52.323
+    },
+    "camera_pclk": {
+      "constraint_mhz": 100.0,
+      "actual_mhz": 108.003
+    },
+    "rx125m": {
+      "constraint_mhz": 125.0,
+      "actual_mhz": 167.1
+    },
+    "tx125m": {
+      "constraint_mhz": 125.0,
+      "actual_mhz": 151.713
+    },
+    "display33m": {
+      "constraint_mhz": 33.0,
+      "actual_mhz": 54.963
+    },
+    "memory400m": {
+      "constraint_mhz": 400.0,
+      "actual_mhz": 2240.144
+    },
+    "ddr_ui100m": {
+      "constraint_mhz": 100.0,
+      "actual_mhz": 136.041
+    }
+  },
+  "timing_violations": {
+    "setup": 0,
+    "hold": 0,
+    "recovery": 0,
+    "removal": 0
+  },
+  "timing_violation_clocks": {},
+  "timing_report": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.tr",
+  "path_slack_violations": {
+    "minimum_pulse_width": [
+      {
+        "slack_ns": -0.068,
+        "actual_ns": 0.832,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "net_fifo/mem_mem_0_0_s"
+      },
+      {
+        "slack_ns": -0.068,
+        "actual_ns": 0.832,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "mac/tx_fifo/fifo_inst/mem_mem_0_1_s"
+      },
+      {
+        "slack_ns": -0.068,
+        "actual_ns": 0.832,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "mac/tx_fifo/fifo_inst/mem_mem_0_2_s"
+      },
+      {
+        "slack_ns": -0.068,
+        "actual_ns": 0.832,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "mac/rx_fifo/fifo_inst/mem_mem_0_1_s"
+      },
+      {
+        "slack_ns": -0.067,
+        "actual_ns": 0.833,
+        "required_ns": 0.9,
+        "type": "High",
+        "clock": "tx125m",
+        "object": "net_fifo/mem_mem_0_0_s"
+      },
+      {
+        "slack_ns": -0.067,
+        "actual_ns": 0.833,
+        "required_ns": 0.9,
+        "type": "High",
+        "clock": "tx125m",
+        "object": "mac/tx_fifo/fifo_inst/mem_mem_0_1_s"
+      },
+      {
+        "slack_ns": -0.067,
+        "actual_ns": 0.833,
+        "required_ns": 0.9,
+        "type": "High",
+        "clock": "tx125m",
+        "object": "mac/tx_fifo/fifo_inst/mem_mem_0_2_s"
+      },
+      {
+        "slack_ns": -0.067,
+        "actual_ns": 0.833,
+        "required_ns": 0.9,
+        "type": "High",
+        "clock": "tx125m",
+        "object": "mac/rx_fifo/fifo_inst/mem_mem_0_1_s"
+      },
+      {
+        "slack_ns": -0.064,
+        "actual_ns": 0.836,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "mac/rx_fifo/fifo_inst/mem_mem_0_0_s"
+      },
+      {
+        "slack_ns": -0.064,
+        "actual_ns": 0.836,
+        "required_ns": 0.9,
+        "type": "Low",
+        "clock": "tx125m",
+        "object": "mac/tx_fifo/fifo_inst/mem_mem_0_0_s"
+      }
+    ]
+  },
+  "max_delay_violations": []
+}

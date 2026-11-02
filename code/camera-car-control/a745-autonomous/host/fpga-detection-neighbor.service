@@ -1,0 +1,14 @@
+[Unit]
+Description=Static neighbor for FPGA detection display return
+After=NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/ip neigh replace 192.168.0.2 lladdr 02:00:00:00:00:02 nud permanent dev end1
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

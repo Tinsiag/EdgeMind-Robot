@@ -75,6 +75,13 @@ module reverse_escape_tb;
   right_count=-706;assert_stopped;control_tick;
   if(state!=11) $fatal(1,"right distance did not stop");
 
+  // Wrong-sign or physically reversed encoder wiring is still a travel
+  // bound: never continue for the full timer after 100mm has been observed.
+  start_session;enter_reverse;left_count=705;assert_stopped;control_tick;
+  if(state!=11) $fatal(1,"positive left travel defeated reverse distance bound");
+  start_session;enter_reverse;right_count=706;assert_stopped;control_tick;
+  if(state!=11) $fatal(1,"positive right travel defeated reverse distance bound");
+
   start_session;left_count=32'h80000030;enter_reverse;
   left_count=left_count-705;assert_stopped;control_tick;
   if(state!=11) $fatal(1,"encoder wrap broke reverse distance");

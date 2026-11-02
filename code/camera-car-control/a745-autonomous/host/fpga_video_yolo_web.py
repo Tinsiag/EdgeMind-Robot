@@ -216,6 +216,8 @@ class NpuDetector:
         self.runs = 0; self.error = ''; self.lock = threading.Lock()
         self.backend = 'npu'; self.size = NPU_W; self.model = NPU_MODEL
         self.last_result = 0.0; self.result_seq = 0; self.failures = 0
+        from detection_return import DetectionReturn
+        self.display_return = DetectionReturn(COCO)
         self.client = NpuDaemon(['stdbuf', '-oL', NPU_DAEMON, NPU_MODEL,
                                  str(CONF), str(NMS)], timeout=NPU_TIMEOUT,
                                 start_timeout=float(os.environ.get('YOLO_NPU_START_TIMEOUT', '120')),
@@ -245,6 +247,7 @@ class NpuDetector:
                     self.boxes = boxes; self.ms = took * 1000; self.runs += 1
                     self.failures = 0; self.error = ''
                     self.last_result = time.monotonic(); self.result_seq = seen
+                self.display_return.send(boxes)
                 time.sleep(max(0, NPU_MIN_GAP - took))
             except Exception as exc:
                 with self.lock:
@@ -345,6 +348,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
                           video_age_ms=round((time.monotonic()-asm.last_frame)*1000, 1)
                               if asm.last_frame else None,
                           boxes=det.boxes, error=det.error,
+                          display_sent=getattr(getattr(det, 'display_return', None), 'sent', 0),
+                          display_error=getattr(getattr(det, 'display_return', None), 'error', ''),
                           npu_ms=getattr(det, 'npu_ms', None),
                           result_seq=getattr(det, 'result_seq', None),
                           result_age_ms=round((time.monotonic()-det.last_result)*1000, 1)

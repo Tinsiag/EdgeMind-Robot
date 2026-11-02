@@ -1,6 +1,6 @@
 # A745 片上自主避障
 
-2026-10-30 新活动工程。应用控制、摄像头初始化、DVP 帧采集、网口发送与主机入口已重构；旧版本只在来源清单和Git历史中记录，活动目录已清理。验证与烧录结果以仓库根目录 `HANDOFF-20261031.md` 和 `output/refactor-autonomous-20261030/` 为准。
+当前活动工程。摄像头通过 EV10 UDP 向 Lichee Pi 4A 发送 640×480 画面，4A 使用 TH1520 NPU 运行 YOLOv5n，并提供网页预览。FW74512新增检测框回传与 TFT 叠加，原参数 HUD 保留。实际已烧录版本、SHA 和验收状态以仓库根 `output/refactor-autonomous-20261030/STATUS.json` 及真实 Flash 审计为准。
 
 ## 操作
 
@@ -8,7 +8,7 @@
 
 旧测试固件的“GND锁”是FPGA内部固定低电平，A745已解除；不要为此拆掉公共地。左轮LAIN1/2对应A18/A19，右轮RAIN1/2对应F13/F14。VM关闭、完全断电时核对原接线；轮子架空、小车静止、停止条件可用后才给VM上电，短按S1校准启动。先验收架空轮子和停止，再做低速落地避障。
 
-本次用户追加要求对应源码 FW74508 候选：屏幕 F≤300mm 停止前进，301～800mm 为60mm/s，F>800mm巡航120mm/s。先停轮100ms，选择距离≥600mm且车身转弯包络安全的一侧；两侧都可走时选更远一侧。前方≤300mm且左右均不通时，后方>350mm才以60mm/s后退，每轮约100mm或约2秒即停，再停稳150ms后重新择路；后方近障/未知禁止后退，同一堵塞阶段只后退一次。姿态发布对单次加速度/振动尖峰采用三点中值，22.5°阈值和真实倾斜联锁保留。距离均是雷达原点读数，不是外壳间距。雷达量程及远点遥测不变。详见仓库 `output/refactor-autonomous-20261030/CHANGE-74507.md`；实板当前是否已加载候选，以STATUS.json及Flash审计为准。
+当前运动逻辑沿用 FW74511：屏幕 F≤300mm 停止前进，301～800mm 为60mm/s，F>800mm巡航120mm/s。先停轮100ms，选择距离≥600mm且车身转弯包络安全的一侧；两侧都可走时选更远一侧。前方≤300mm且左右均不通时，后方>350mm才以60mm/s后退，每轮约100mm或约2秒即停，再停稳150ms后重新择路；后方近障/未知禁止后退，同一堵塞阶段只后退一次。姿态发布对单次加速度/振动尖峰采用三点中值，22.5°阈值和真实倾斜联锁保留。距离均是雷达原点读数，不是外壳间距。雷达量程及远点遥测不变。详见仓库 `output/refactor-autonomous-20261030/CHANGE-74507.md`；实板当前是否已加载候选，以STATUS.json及Flash审计为准。
 
 FW74507将编码器连续1秒无脉冲改为诊断提示，按用户要求取消此项停车。真实计数、轮速PI和PWM上限保留；累计>64非法四相跳变仍ERR0004锁存。EMS1 flags bit2/bit7分别为左/右无脉冲提示，只有revision≥74507时解释。MODE10为后退、MODE11为后退后停稳；原MODE9含义不变。此修改不是ERR0001修复，也没有证实机械堵转。
 
@@ -44,7 +44,7 @@ FW74505在导航扫描前加入LD06近距离散点滤波，修复静止时弱单
 
 ## 网口
 
-只发送 EMS1 状态、EMF1 姿态、EML1 雷达数据。源 `192.168.0.2:6103`，目标 IPv4 / MAC 广播、UDP 6103；状态和姿态每 100 ms 发送一次。无 Ethernet RX 引脚/接收模块、ARP 缓存、控制命令、配置下发、ARM、心跳续约或网口视频。PHY 的 MDIO 初始化保留，用于建立物理数据链路。
+发送 EMS1 状态、EMF1 姿态、EML1 雷达数据，源 `192.168.0.2:6103`，目标广播 UDP 6103；状态和姿态每 100 ms 发送一次。另通过 UDP 6104 发送 640×480 RGB565，EV10 每行一包。FW74512接收限定来源的 UDP 6105 ED10 检测框，只用于显示，不接收 ARM、调速、配置、故障清除或心跳续约。FPGA 无 ARP 应答，4A 维护静态邻居。部署与协议见 [README-video.md](host/README-video.md)。
 
 电脑直连网卡设为 `192.168.0.3/24`，运行本目录 `launch.cmd`，点击“接收遥测”。窗口只收数据，不能通过电脑启停车辆。链路断开不改变本地自主避障会话。
 
@@ -61,27 +61,29 @@ code/camera-car-control/.venv/Scripts/python.exe code/camera-car-control/a745-au
 code/camera-car-control/.venv/Scripts/python.exe code/camera-car-control/a745-autonomous/scripts/build.py build --timeout 1800
 ```
 
-RTL 仿真使用 WSL Ubuntu-26.04 的 Icarus / Verilator，EDA 为 Gowin V1.9.12.04，器件 GW5AT-60B / GW5AT-LV60PG484AC1/I0。固定布局1、布线1、时序驱动和 hold 修复，生成 STA/SDF/物理网表。`build.py` 不烧录，不把“生成 .fs”当作时序签核。
+RTL 仿真使用 WSL Ubuntu-26.04 的 Icarus / Verilator，EDA 为 Gowin V1.9.12.04，器件 GW5AT-60B / GW5AT-LV60PG484AC1/I0。构建支持布局/布线策略 1 或 2，时序驱动和 hold 修复开启，生成 STA/SDF/物理网表。当前候选采用布局2、布线2和按频率优先的时钟路由；具体优化依据及带环境变量的构建命令见 [布线与时序说明](docs/TIMING-CLOSURE.md)。`build.py` 不烧录，不把“生成 .fs”当作时序签核。
 
-`rtl/` 为新应用，`lib/` 为已验证叶子驱动，`vendor/board/` 为原厂 PLL/DDR/TX IP，`constraints/` 为明确的活动约束。共享 `../third_party/verilog-ethernet/` 只使用 FIFO、GMII TX 和 CRC LFSR 三个文件。`REFERENCE-SOURCES.json`、`vendor/board/ORIGIN.json` 与每次构建的输入 SHA 记录来源，不依赖旧应用被忽略的 `.local` 缓存。
+`rtl/` 为新应用，`lib/` 为已验证叶子驱动，`vendor/board/` 为原厂 PLL/DDR/TX IP，`constraints/` 为明确的活动约束。共享 `../third_party/verilog-ethernet/` 使用 FIFO、MAC、GMII 收发和 CRC LFSR；`prepare.py` 明确列出文件并记录哈希。`REFERENCE-SOURCES.json`、`vendor/board/ORIGIN.json` 与每次构建的输入 SHA 记录来源，不依赖旧应用被忽略的 `.local` 缓存。
 
 位流在 `.local/gowin-a745-autonomous/impl/pnr/a745.fs`，UserCode `0xA745`。烧录必须使用仓库 `scripts/fpga/program_flash.py`、明确 SHA，并完成 Flash54@0 写入/校验、Reprogram、只读就绪及 UserCode 比对；VM 关闭，不自动 ARM。
 
 当前启动增量：PicoRV32通过PICORV32_REGS使用显式FF寄存器，维持两路组合读取；姿态valid表示最近发布的角度对，在正常新采样的CORDIC计算期间保持，坏/旧数据立即失效。FW74503包含这两项修复。专项综合网表CPU执行和真实姿态计算+自主会话联动检查均为烧录门槛。
 
-当前FW74506诊断版已写入外部SPI Flash并校验，SHA-256为b5cb8e927ebd07fccbaa1dde327acde91f565e7d8b698bc2862bd7a9c93d3a1a。实际遥测74506、CPU/摄像头/DDR正常，IDLE/ERR0000。74505前进/转弯已由用户确认，但落地ERR0001根因未定；74506只增加故障快照，未改变停车保护，不宣称已修复。新SHA真实冷启动、实屏和运动尚未验收。审计output/refactor-autonomous-20261030/flash/20261031T075334.673715Z/audit.json。
+FW74511 已由用户验收显示、冷启动、架空/落地直行与累计约20～30秒分段运行及 S1 停止；该验收不能套用于 FW74512 新位流。ERR0001 根因未确认，编码器电气毛刺根因未实测。详见根目录 `output/motion-20261102/ACCEPTANCE-74511.json`。
 
 FW74506保留包长度，EMS1的26/27字节为锁存原因/有效标志；EMF1的42/43相同，44..45为故障roll、46..47为故障pitch（Q15半周），32..35为实时IMU驱动诊断。原因bit0..3分别为航向IMU无效、原始采样无效、倾角无效、超倾角。首次故障后保留，不被实时恢复覆盖，S1才清除。详见仓库output/refactor-autonomous-20261030/imu-fault-20261031/DIAGNOSTICS.md。
 
-## 最新状态（2026-11-01，覆盖本文旧视频说明）
+## 4A 推理与检测回传（2026-11-02）
 
-FPGA 视频链路的现场故障已经定位：原来的共享 Ethernet 帧 FIFO 只有 512 字节，而 EV10 视频单个 Ethernet 帧约 1334 字节，帧 FIFO 会把超长视频帧丢弃；因此 UDP 6104 无视频包，而 UDP 6103 的 EMS1/EMF1/EML1 遥测仍可正常接收。
+网页地址 http://192.168.40.101:8090/ ，安装目录 `/home/debian/fpga`。
+量化 YOLOv5n 使用 TH1520 NPU，输入640×384（512×384等比图像加左右灰边），
+原图640×480、推理目标5次/秒、网页目标15fps。原视频与NPU修复已验证。
 
-当前最后一次成功写入 Flash 的调试位流 SHA-256 为 `5085c51dee4d1d3a79c5c9124b67db34b5915da29756b1b11102861fdb5d6607`。Flash54、Reprogram、配置状态 `0x70022020` 和 UserCode `0xA745` 通过；该位流没有完成真实视频现场验收。后续视频 FIFO/分片修复候选仍有 PNR setup/hold 违例，禁止烧录违例位流。
+FW74512最多显示8个绿色2像素框，按x+80映射回本机800×480视频，
+原HUD置顶，场消隐原子更新，约1秒无结果清框。类别和置信度继续在网页显示。
+最新推理框叠加实时本地视频，存在推理延迟；没有回传整帧JPEG或逐帧锁定。
 
-Lichee Pi 4A 已配置有线 `end1=192.168.0.3/24`。视频服务安装在 `/home/debian/fpga`，服务名为 `fpga-video.service`。系统控制中心占用 TCP 8080，本项目视频/YOLO 服务使用 TCP 8090；浏览器地址为 `http://10.0.0.237:8090/`，状态接口为 `/status.json`，FPGA 视频端口仍为 UDP 6104。
+本轮实现/布线/Flash/被动联调结果见根目录 `output/detection-display-20261102/`。
+4A服务开机配置已持久化，但新配置真实断电启动及新位流屏幕观察须独立验收。
 
-Lichee 已安装 NumPy、OpenCV、Pillow 和 `shl-python`，并部署 YOLOv5n FP32 ONNX。TH1520 NPU 驱动模块/设备节点尚未出现；OpenCV CPU 推理会使板端过载，因此实时 YOLO 必须等待 HHB/SHL NPU 可执行模型和驱动验收。软件合成 EV10 测试帧已经通过分片重组、RGB565 转换和 MJPEG 输出验证；这不等于 FPGA 实时视频已验收。
-
-软件链路最近一次合成 EV10 验收：frames=1、packets=686、bad_packets=0；测试帧来自开发机，不代表实板 UDP6104 已恢复。
-
+当前 FW74512 已烧录 SHA `888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256`，Flash54/校验、重载、就绪和UserCode通过。用户确认绿色框与原参数文字正常；60秒实测600状态/600姿态健康且未ARM，接受结果298次，摄像头29.77fps、推理4.98次/秒、网页14.92fps。本任务未做运动和新SHA完整断电启动验收。

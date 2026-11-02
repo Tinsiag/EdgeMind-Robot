@@ -1,9 +1,10 @@
 {
-  "netlist_sha256": "a03b3d8b3919842287e49a57645fb290c1ef893954317c5a6ff97aa1e4af8817",
+  "netlist_sha256": "d87dbcb3fca09b0ed42bef43a28de5f220376eb3ed0fe675f1e0a9d60d5367bd",
+  "timing_sdc_sha256": "0a19d8111ae3a5c7101c8a71f6a6dbc6d5c7f533dfe78271f83f74b3e9fa9125",
   "vendor_internal_model_sha256": "c9da2a7b0f89226a6063b3d57037f6ed3d36ca2a0914de2eaefe7bf22a119cbd",
   "internal_selector_basis": "matching vendor plaintext model; active final tool constraints required separately",
   "routed_netlist_used": true,
-  "routed_netlist_sha256": "c1ceda9039c881f8814cc8dbc6b8d78ace373dbb2c587727b8367af22a9b7905",
+  "routed_netlist_sha256": "e8a863cac55d2514974626dc2c46dfc1461e2a08d7d7ac3b430630fd5664279c",
   "ddr_exception_targets": [
     {
       "constraint": "set_false_path -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_dqs/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_dqs_gen/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_oser8_mem/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_ides8_mem/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_cmd_gen/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_ck_gen/RESET}]",
@@ -618,6 +619,63 @@
       ]
     }
   ],
-  "rx_iodelay64_count": 0,
+  "tx_oddr_q_route_targets": [
+    "transmitter/U_ODDR_clk1/Q0",
+    "transmitter/U_ODDR_en1/Q0",
+    "transmitter/[0].U_ODDR_dq1/Q0",
+    "transmitter/[1].U_ODDR_dq1/Q0",
+    "transmitter/[2].U_ODDR_dq1/Q0",
+    "transmitter/[3].U_ODDR_dq1/Q0"
+  ],
+  "ethernet_clock": {
+    "pll_output_mhz": 250,
+    "mac_clock_mhz": 125,
+    "divider": "tx_divider",
+    "kind": "dedicated CLKDIV",
+    "clock_net": "pll125"
+  },
+  "net_fifo_bundled_pointer": {
+    "source_q_pins": [
+      "net_fifo/wr_ptr_sync_commit_reg_0_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_10_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_11_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_1_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_2_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_3_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_4_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_5_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_6_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_7_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_8_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_9_s1/Q"
+    ],
+    "destination_d_pins": [
+      "net_fifo/wr_ptr_commit_sync_reg_0_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_10_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_11_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_1_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_2_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_3_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_4_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_5_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_6_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_7_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_8_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_9_s0/D"
+    ],
+    "source_q_matches_destination_d": true,
+    "bits": 12
+  },
+  "rx_iddr_count": 5,
+  "rx_iddr_cells": [
+    "receiver/lanes[0].sample",
+    "receiver/lanes[1].sample",
+    "receiver/lanes[2].sample",
+    "receiver/lanes[3].sample",
+    "receiver/control_sample"
+  ],
+  "rx_fifo_bundled_pointer_bits": 13,
+  "parser_fifo_bundled_pointer_bits": 10,
+  "detection_mailbox_payload_bits": 516,
   "hardware_programmed": false
 }

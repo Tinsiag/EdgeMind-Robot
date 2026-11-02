@@ -13,12 +13,13 @@ def main():
  assert envelope and 'SDPB ' not in envelope[0]
  # Keep a revision-specific receipt so a timed-out prior gate cannot be
  # mistaken for the current run or contaminate its generated netlists.
- out=ROOT/'.local/navigation-gate-check-74508';out.mkdir(exist_ok=True)
+ revision=re.search(r"snapshot\[159:128\]<=32'd(\d+)",(ROOT/'rtl/a745_core.v').read_text())[1]
+ out=ROOT/('.local/navigation-gate-check-'+revision+'-'+digest[:12]);out.mkdir(exist_ok=True)
  primitive=Path('C:/Gowin/Gowin_V1.9.12.04_x64/IDE/simlib/gw5a/prim_sim.v')
- sources=[ROOT/'rtl/a745_navigation_scan.v',ROOT/'rtl/a745_turn_envelope.v',ROOT/'rtl/a745_autonomy.v',ROOT/'lib/a741_motion_feedback.v',ROOT/'rtl/a745_lidar_filter.v',ROOT/'lib/a741_attitude.v']
+ sources=[ROOT/'rtl/a745_navigation_scan.v',ROOT/'rtl/a745_turn_envelope.v',ROOT/'rtl/a745_autonomy.v',ROOT/'lib/a741_motion_feedback.v',ROOT/'rtl/a745_lidar_filter.v',ROOT/'lib/a741_attitude.v',ROOT/'lib/quadrature_decoder.v']
  inputs=[primitive,Path(__file__).resolve()]+sources;models=[]
  prefix=['wsl.exe','-d','Ubuntu-26.04','--cd',linux(ROOT),'--exec']
- for module,bench_name,source in [('a745_navigation_scan','navigation_scan_tb',sources[0]),('a745_autonomy','autonomy_tb',sources[2]),('a741_motion_feedback','motion_feedback_tb',sources[3]),('a745_lidar_filter','lidar_filter_tb',sources[4]),('a741_attitude','attitude_filter_tb',sources[5])]:
+ for module,bench_name,source in [('a745_navigation_scan','navigation_scan_tb',sources[0]),('a745_autonomy','autonomy_tb',sources[2]),('a741_motion_feedback','motion_feedback_tb',sources[3]),('a745_lidar_filter','lidar_filter_tb',sources[4]),('a741_attitude','attitude_filter_tb',sources[5]),('quadrature_decoder','quadrature_filter_tb',sources[6])]:
   folder=out/module;folder.mkdir(exist_ok=True);top_name=module+'_gate_probe'
   header=re.search(r'(?ms)^module '+module+r'.*?\);',source.read_text())[0]
   header=re.sub(r'#\(parameter.*?\)\(', '(', header,flags=re.S)

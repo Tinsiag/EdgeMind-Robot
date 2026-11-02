@@ -1,0 +1,17 @@
+{
+  "firmware": 74512,
+  "unchanged_behavior": "motion protections, supervisor firmware, camera capture and outgoing video path",
+  "input_sha256": {
+    "code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "936f3242a9a81dd59488e9c97a4b97ae1e24cd51d0264a3a7310b93c6097f026",
+    "code\\camera-car-control\\a745-autonomous\\lib\\quadrature_decoder.v": "9d325e4a0ed2da8f68d5b4ae8bcfd0aa1d9b1babab6545b1053c16cfe986536f",
+    "code\\camera-car-control\\a745-autonomous\\rtl\\a745_osd.v": "3e2c80ca4d7b72a6ee039bc6cdcced21912a1d8a1954d4223d5fb8b32b3b019b",
+    "code\\camera-car-control\\a745-autonomous\\lib\\a741_attitude.v": "913de658d0c591414f6bb28b8cb3979df0928fbdf8a52d59ea53fddea746e691",
+    "code\\camera-car-control\\a745-autonomous\\rtl\\a745_video.v": "333901255eefa6388dde5e08818f584f30dcdcd0ef2261f49591fe0510db0e82",
+    "code\\camera-car-control\\a745-autonomous\\rtl\\a745_video_capture_tx.v": "6dab3b5275b0807ad2408683321316226e32f6b67c2969add4e49c3561442ab8",
+    "code\\camera-car-control\\a745-autonomous\\rtl\\a745_video_udp_tx.v": "9d56f604ef4318dcb42fb1a667cdb63f689bade99c7f2fcf1724ce79991428e3",
+    "code\\camera-car-control\\a745-autonomous\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44"
+  },
+  "motion_commands_sent": 0,
+  "motors_disconnected_user_report": true,
+  "vm_off_user_report": true
+}

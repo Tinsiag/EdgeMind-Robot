@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "a48af996e770c36a87f55eccd47ce1b8180afccc",
+  "files_unchanged_from_head": {
+    "code/camera-car-control/a745-autonomous/rtl/a745_top.v": "120fda01fc255c4e31499af23df5c6ece49641aa3b512a410cb7679581c06e72",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video.v": "333901255eefa6388dde5e08818f584f30dcdcd0ef2261f49591fe0510db0e82",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_capture_tx.v": "6dab3b5275b0807ad2408683321316226e32f6b67c2969add4e49c3561442ab8",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_udp_tx.v": "9d56f604ef4318dcb42fb1a667cdb63f689bade99c7f2fcf1724ce79991428e3",
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_boot.v": "7026647fc25ad6e397b634aa077ca2bea750e7913920de216485c471e6a3af17",
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_pads.v": "521e98ab11b64f11ef7f1c2de5ab20b02c41d9b524c2f2d4038e93a8b2103740",
+    "code/camera-car-control/a745-autonomous/rtl/a745_dvp_capture.v": "f2050bbaf858d766e83105eccd71b62e7749a22c061d9bd20a0ba536b09ac501",
+    "code/camera-car-control/a745-autonomous/lib/async_fifo.v": "1d7a1f6cb884e567687e5eaed233796d421289bf4ab6c01110daf696887fb017",
+    "code/camera-car-control/a745-autonomous/constraints/board.cst": "bf5dcb4012ed02991fb34ae441e00754d55738ff4c770c2d5cf7a8ca86eebc46",
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr3_memory_interface.v": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr_pll.v": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr_pll_mod.v": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+    "code/camera-car-control/a745-autonomous/vendor/board/ethernet_pll_mod.v": "b3ea13a9c89257271908a0f4b492dc435f8d315469dff029aacb944586a5ff27",
+    "code/camera-car-control/a745-autonomous/vendor/board/gmii_to_rgmii.v": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+    "code/camera-car-control/a745-autonomous/vendor/board/gowin_pll.v": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+    "code/camera-car-control/a745-autonomous/vendor/board/pll_init.v": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+    "code/camera-car-control/a745-autonomous/vendor/board/pll_mDRP_intf.v": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_gowin_pll.v": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_gowin_pll_mod.v": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_pll_init.v": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e"
+  },
+  "lichee_operations_stopped_at_user_request": true,
+  "motor_vm_off_user_confirmed": true,
+  "candidate_revision": 74511,
+  "front_stop_mm": 300,
+  "motion_changes": [
+    "Qualify synchronized AB pairs for 2us at 50MHz, preserving legal x4 counts and unchanged >64 qualified illegal transition stop",
+    "Latch left/right encoder invalid counts and show ENC:L/R/LR on the existing 32-column HUD",
+    "Preserve FW74510 300mm front stop, gyro turning, bounded reverse and all other safety gates"
+  ],
+  "err0001_fixed": false,
+  "timing_constraint_change": {
+    "file": "code/camera-car-control/a745-autonomous/constraints/timing.sdc",
+    "baseline_sha256": "79184569ffceb95cc6f66652bdf715fe79aa93d97f039bdcf2dd7e66c87aa60a",
+    "current_sha256": "400aa805902c84f36d1283a7242c9b3d54fd796389d9d38028e90a1f02edd046",
+    "reason": "Correct actual held FIFO commit-pointer CDC source. Account for Gowin common-clock latency in coarse 9ns absolute guard; enforce separate Q-to-pad 0.5..3ns and unchanged full clock/data relative-skew limits in mandatory SDF audit."
+  },
+  "err0004_fixed": false,
+  "recorded_utc": "2026-11-02T09:31:09.060852+00:00"
+}

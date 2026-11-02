@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 `default_nettype none
 // Local S1 owns calibration/ARM. Obstacles cause a measured quarter-turn,
-// a guarded 180-degree U-turn, or a stationary wait; CPU/IMU/encoder faults
+// a bounded reverse escape, or a stationary wait; CPU/IMU/encoder faults
 // always revoke motor permission.
 module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SLOW_MM=800,
- REAR_STOP_MM=350)(
+ REAR_STOP_MM=350,REVERSE_LEFT_COUNTS=705,REVERSE_RIGHT_COUNTS=706)(
  input wire clk,rst_n,ms_tick,tick,button_start,
  input wire imu_valid,gyro_valid,stationary,gyro_update,tilt_valid,
  input wire signed [15:0] raw_gz,roll,pitch,yaw,
@@ -17,12 +17,21 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  output reg [7:0] imu_fault_sources,imu_fault_valid_flags,
  output reg signed [15:0] imu_fault_roll,imu_fault_pitch
 );
- localparam IDLE=0,CALIBRATE=1,FORWARD=2,LEFT=3,RIGHT=4,BLOCKED=5,FAULT=8,SETTLE=9,UTURN_LEFT=12,UTURN_RIGHT=13;
+ localparam IDLE=0,CALIBRATE=1,FORWARD=2,LEFT=3,RIGHT=4,BLOCKED=5,FAULT=8,SETTLE=9,REVERSE=10,RECOVER=11;
  reg [13:0] age;reg [6:0] samples;reg signed [31:0] bias_sum;
  reg [8:0] turn_ticks;reg [3:0] wait_ticks;reg signed [15:0] turn_origin;
- wire running=state==FORWARD || state==LEFT || state==RIGHT || state==BLOCKED || state==SETTLE || state==UTURN_LEFT || state==UTURN_RIGHT;
- wire turning=state==LEFT || state==RIGHT || state==UTURN_LEFT || state==UTURN_RIGHT;
- wire uturning=state==UTURN_LEFT || state==UTURN_RIGHT;
+ reg reverse_used;reg [7:0] reverse_ticks;
+ reg signed [31:0] reverse_origin_l,reverse_origin_r;
+ wire signed [31:0] reverse_delta_l=left_count-reverse_origin_l;
+ wire signed [31:0] reverse_delta_r=right_count-reverse_origin_r;
+ // Subtract in 32 bits so encoder wrap preserves the short travel distance.
+ // Either sign stops: reversed encoder wiring must not defeat the bound.
+ wire reverse_distance_reached=reverse_delta_l<=-$signed(32'(REVERSE_LEFT_COUNTS)) ||
+  reverse_delta_l>=$signed(32'(REVERSE_LEFT_COUNTS)) ||
+  reverse_delta_r<=-$signed(32'(REVERSE_RIGHT_COUNTS)) || reverse_delta_r>=$signed(32'(REVERSE_RIGHT_COUNTS));
+ wire reverse_done=reverse_distance_reached || reverse_ticks>=199;
+ wire running=state==FORWARD || state==LEFT || state==RIGHT || state==BLOCKED || state==SETTLE || state==REVERSE || state==RECOVER;
+ wire turning=state==LEFT || state==RIGHT;
  wire rear_clear=rear>REAR_STOP_MM && rear!=65535;
  wire sensors_ok=imu_valid && gyro_valid && tilt_valid && lidar_valid && scan_valid;
  wire tilt_bad=roll>4096 || roll < -4096 || pitch>4096 || pitch < -4096;
@@ -30,13 +39,11 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  wire [7:0] imu_flags={scan_valid,lidar_valid,cpu_alive,stationary,tilt_bad,tilt_valid,gyro_valid,imu_valid};
  wire safe=armed && sensors_ok && !encoder_fault && cpu_alive && !cpu_fault && !tilt_bad && faults==0;
  // Subtract in 16 bits first: the gyro wraps at +/-180 degrees.
- wire right_turn=(state==RIGHT || state==UTURN_RIGHT);
+ wire right_turn=state==RIGHT;
  wire signed [15:0] wrapped_delta=yaw-turn_origin;
  wire signed [16:0] turn_progress=right_turn ?
   -$signed({wrapped_delta[15],wrapped_delta}):$signed({wrapped_delta[15],wrapped_delta});
- // A signed Q15 half-turn cannot represent +180 after wrap. Stop just short
- // of the wrap so a U-turn remains observable and locks the actual new yaw.
- wire signed [16:0] turn_remaining=(uturning ? 17'sd32600:17'sd16384)-turn_progress;
+ wire signed [16:0] turn_remaining=17'sd16384-turn_progress;
  wire signed [16:0] proportional_speed=turn_remaining >>> 7;
  // Clamp in 17 bits (the result is always 40..80) and register it. This
  // breaks the yaw -> wrapped_delta -> turn_progress -> turn_remaining ->
@@ -60,18 +67,17 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  // keeps the 17-bit negate off the combinational path from the gyro into
  // target_l/target_r, which failed sys_clk setup. The gating itself stays
  // combinational so the stop boundaries still apply in the same cycle.
- wire signed [15:0] reached_threshold=uturning ? 16'sd32600:16'sd15838;
+ wire signed [15:0] reached_threshold=16'sd15838;
  wire turn_reached=right_turn ? wrapped_delta<=-reached_threshold
                               : wrapped_delta>=reached_threshold;
  wire turn_reversed=right_turn ? wrapped_delta>16'sd2731:wrapped_delta<-16'sd2731;
- wire direction_clear=state==LEFT ? left_clear:state==RIGHT ? right_clear:rear_clear;
+ wire direction_clear=state==LEFT ? left_clear:right_clear;
  wire can_left=left_clear && left>=CLEAR_MM && left!=65535;
  wire can_right=right_clear && right>=CLEAR_MM && right!=65535;
- wire [15:0] left_score=left==65535 ? 0:left,right_score=right==65535 ? 0:right;
- wire uturn_left_choice=left_score>=right_score;
- wire turn_timeout=uturning ? turn_ticks>=899:turn_ticks>=449;
- wire clearance_ok=turning ? direction_clear && !turn_reached:front>STOP_MM && front!=65535;
- assign motor_enable=rst_n && safe && (state==FORWARD || turning) && clearance_ok && !button_start;
+ wire turn_timeout=turn_ticks>=449;
+ wire clearance_ok=state==REVERSE ? rear_clear && !reverse_done:
+  turning ? direction_clear && !turn_reached:front>STOP_MM && front!=65535;
+ assign motor_enable=rst_n && safe && (state==FORWARD || turning || state==REVERSE) && clearance_ok && !button_start;
  assign lidar_enabled=state!=IDLE && state!=FAULT;
  // The commanded-speed gate stays combinational on purpose: autonomy_tb and
  // reverse_escape_tb require the 300mm front boundary and the stop paths to
@@ -82,17 +88,18 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
    FORWARD:begin target_l=front>SLOW_MM ? 120:60;target_r=target_l;end
    LEFT:begin target_l=-turn_speed;target_r=turn_speed;end
    RIGHT:begin target_l=turn_speed;target_r=-turn_speed;end
-   UTURN_LEFT:begin target_l=-turn_speed;target_r=turn_speed;end
-   UTURN_RIGHT:begin target_l=turn_speed;target_r=-turn_speed;end
+   REVERSE:begin target_l=-60;target_r=-60;end
    default:begin end
   endcase
  end
  always @(posedge clk or negedge rst_n)
   if(!rst_n) begin state<=IDLE;armed<=0;calibrated<=0;bias<=0;faults<=0;
    age<=0;samples<=0;bias_sum<=0;turn_ticks<=0;wait_ticks<=0;turn_origin<=0;
+   reverse_used<=0;reverse_ticks<=0;reverse_origin_l<=0;reverse_origin_r<=0;
    imu_fault_sources<=0;imu_fault_valid_flags<=0;imu_fault_roll<=0;imu_fault_pitch<=0;end
   else if(button_start) begin
    armed<=0;age<=0;samples<=0;bias_sum<=0;turn_ticks<=0;wait_ticks<=0;
+   reverse_used<=0;reverse_ticks<=0;reverse_origin_l<=0;reverse_origin_r<=0;
    imu_fault_sources<=0;imu_fault_valid_flags<=0;imu_fault_roll<=0;imu_fault_pitch<=0;
    if(state==IDLE || state==FAULT) begin state<=CALIBRATE;calibrated<=0;faults<=0;end
    else state<=IDLE;
@@ -133,6 +140,7 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
    end
    if(running && tick) case(state)
     FORWARD:begin
+     reverse_used<=0;
      if(front<=STOP_MM) begin state<=BLOCKED;wait_ticks<=0;end
     end
     BLOCKED:begin
@@ -141,12 +149,9 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
      else if(can_left && (!can_right || left>=right)) begin
       state<=LEFT;turn_origin<=yaw;turn_ticks<=0;
      end else if(can_right) begin state<=RIGHT;turn_origin<=yaw;turn_ticks<=0;end
-     else if(front<=STOP_MM && rear_clear) begin
-      // Three sides are blocked: use the open rear sector for a guarded
-      // in-place U-turn. The larger measured side chooses rotation direction;
-      // rear_clear is the minimum CAD-derived swept-space guard.
-      state<=uturn_left_choice ? UTURN_LEFT:UTURN_RIGHT;
-      turn_origin<=yaw;turn_ticks<=0;
+     else if(front<=STOP_MM && rear_clear && !reverse_used) begin
+      state<=REVERSE;reverse_used<=1;reverse_ticks<=0;
+      reverse_origin_l<=left_count;reverse_origin_r<=right_count;
      end
     end
     LEFT,RIGHT:begin
@@ -164,12 +169,13 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
       else state<=BLOCKED;
      end
     end
-    UTURN_LEFT,UTURN_RIGHT:begin
-     if(!rear_clear) begin state<=BLOCKED;wait_ticks<=0;end
-     else if(turn_reached) begin state<=SETTLE;wait_ticks<=0;end
-     else if(turn_timeout || turn_reversed) begin
-      state<=FAULT;armed<=0;faults[7]<=1;
-     end else turn_ticks<=turn_ticks+1'b1;
+    REVERSE:begin
+     if(!rear_clear || reverse_done) begin state<=RECOVER;wait_ticks<=0;end
+     else reverse_ticks<=reverse_ticks+1'b1;
+    end
+    RECOVER:begin
+     if(wait_ticks<14) wait_ticks<=wait_ticks+1'b1;
+     else begin state<=BLOCKED;wait_ticks<=9;end
     end
     default:begin end
    endcase

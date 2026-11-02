@@ -1,0 +1,29 @@
+{
+  "recorded_utc": "2026-11-02T09:10:57.375525+00:00",
+  "user_confirmed_reconnected": true,
+  "user_confirmed_vm_off": true,
+  "user_confirmed_wheels_raised": true,
+  "cable_scan_returncode": 0,
+  "cable": "Gowin USB Cable(FT2CH)/0/548/null",
+  "usb_location": 548,
+  "chain_scan_returncode": 0,
+  "device_count": 1,
+  "device_id": "0x0001481B",
+  "family": "GW5AT",
+  "read_only_reconnect_scans": true,
+  "initial_connection_failure": {
+    "recorded_utc": "2026-11-02T06:27:46.046136+00:00",
+    "cable_scan_returncode": 1,
+    "chain_scan_returncode": 1,
+    "chain_scan_console": "Scanning! Target Cable: Gowin USB Cable(FT2CH)/0/None/null@2.5MHz. Error: No Gowin devices found!, Cable at location: 0 has no valid JTAG target. Cost 0.02 second(s).",
+    "windows_present_ftdi_matches": 0,
+    "flash_write_retry_attempted": false,
+    "read_only_checks_after_failure": true,
+    "waiting_for": "Reconnect downloader USB and JTAG; FPGA powered; keep VM off and wheels raised."
+  },
+  "programming_audit": "output\\refactor-autonomous-20261030\\flash\\20261102T090916.626313Z\\audit.json",
+  "programming_in_progress": false,
+  "automatic_arm": false,
+  "programming_completed": true,
+  "configuration_ready": true
+}

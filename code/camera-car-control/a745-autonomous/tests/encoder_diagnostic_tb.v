@@ -32,17 +32,26 @@ module encoder_diagnostic_tb;
   repeat(101) control_tick;
   if(!dut.lto || !dut.rto || faults || state!=2 || !dut.motor_enable || !snapshot[162] || !snapshot[167])
    $fatal(1,"no-pulse timeout still stopped core or telemetry missing");
-  if(snapshot[159:128]!=74509 || dut.lc!=0 || dut.rc!=0 || dut.pl.command<=0 || dut.pr.command<=0)
+  if(snapshot[159:128]!=74512 || dut.lc!=0 || dut.rc!=0 || dut.pl.command<=0 || dut.pr.command<=0)
    $fatal(1,"identity/counter/PI path changed");
   // One real, valid AB edge clears only the left warning and updates count.
-  left_b=1;repeat(10) @(negedge clk);control_tick;
+  // Repeated short common-mode spikes must not exhaust the illegal budget.
+  repeat(80) begin left_a=1;left_b=1;repeat(8) @(negedge clk);left_a=0;left_b=0;repeat(120) @(negedge clk);end
+  if(dut.invalid_l || faults || state!=2 || dut.lc) $fatal(1,"short AB noise stopped the real core");
+  left_b=1;repeat(120) @(negedge clk);control_tick;
   if(dut.lc!=1 || dut.lto || !dut.rto || snapshot[162] || !snapshot[167] || faults)
    $fatal(1,"real encoder edge did not independently clear warning");
   // Two-bit transitions remain invalid and still latch ERR0004.
-  repeat(65) begin left_a=~left_a;left_b=~left_b;repeat(8) @(negedge clk);end
+  repeat(65) begin left_a=~left_a;left_b=~left_b;repeat(120) @(negedge clk);end
   repeat(4) @(negedge clk);
   if(state!=8 || dut.armed || dut.motor_enable || faults!=4 || dut.invalid_l!=65)
    $fatal(1,"illegal quadrature no longer stops the core");
+  if(!dut.encoder_fault_valid || dut.encoder_fault_l!=65 || dut.encoder_fault_r!=0)
+   $fatal(1,"encoder fault snapshot not captured");
+  repeat(4) begin left_a=~left_a;left_b=~left_b;repeat(120) @(negedge clk);end
+  control_tick;
+  if(dut.invalid_l!=69 || dut.encoder_fault_l!=65 || !fusion_snapshot[95] || fusion_snapshot[79:65]!=65 || fusion_snapshot[94:80]!=0)
+   $fatal(1,"fault snapshot changed after stop or reserved-field mapping wrong");
   button_start=1;#1;if(dut.motor_enable) $fatal(1,"S1 did not gate motor");
   @(negedge clk);button_start=0;rst_n=0;repeat(3) @(negedge clk);
   if(dut.motor_enable || state!=0) $fatal(1,"reset stop failed");

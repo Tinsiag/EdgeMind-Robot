@@ -40,8 +40,23 @@ journalctl --user -u fpga-video.service -b -f
 
 当前使用轻量目标检测模型，识别范围为 COCO 80 类；未完成标注集精度验收。新服务及驱动参数已持久化，**新配置的真实断电启动尚未实测**。本次没有编译/烧录 FPGA，没有发送运动指令。
 
+## 4A 检测框 → FPGA 屏幕（FW74512，已烧录验收）
+
+4A 每次推理后将最多8个检测框通过 UDP6105 回传，FPGA 在本地摄像头视频上叠加绿色边框，
+原状态参数 HUD 保持最上层。TFT 继续800×480/33MHz扫描，摄像头输出640×480，
+NPU输入640×384、目标5次/秒，网页目标15fps。无结果或过期约1秒清框。
+类别及置信度继续在网页显示；本地视频叠加最新结果，存在推理延迟。
+
+部署与协议见 [README-video.md](code/camera-car-control/a745-autonomous/host/README-video.md)，
+编译、烧录和实板联调结果见 [本轮证据](output/detection-display-20261102/README.md)。
+FW74512 已完成外部 Flash 写入/校验和重载；用户已确认“有绿色框，参数文字正常”。
+一分钟实测：600状态/600姿态健康、未ARM，接受检测结果298次，摄像头29.77fps、
+推理4.98次/秒、网页14.92fps，无新增坏包/缺行。新位流真实断电冷启动尚未验证。
+结果见 [RESULT.json](output/detection-display-20261102/RESULT.json)。
+
 ## FPGA 与硬件资料
 
+- 布局布线优化与时序审核：[TIMING-CLOSURE.md](code/camera-car-control/a745-autonomous/docs/TIMING-CLOSURE.md)。
 - 使用与接线：[A745 说明](code/camera-car-control/a745-autonomous/README.md)。
 - 当前实板版本、位流及验收状态：[STATUS.json](output/refactor-autonomous-20261030/STATUS.json)。
 - 历史交接：[HANDOFF-20261031.md](HANDOFF-20261031.md)；维护约定：[AGENTS.md](AGENTS.md)。
@@ -50,6 +65,6 @@ journalctl --user -u fpga-video.service -b -f
 - 机械设计：`model/chassis/v5-rgb-touch-display/`；电源板：`pcb/power/`。
 - 当前接线依据：`doc/电机/实物接线更正_2026-10-15.md`。
 
-左轮 LAIN1/2 对应 FPGA A18/A19，右轮 RAIN1/2 对应 F13/F14；FPGA 与驱动板保持公共 GND。4A 只接收视频，不通过网络 ARM、调速或清除运动故障。
+左轮 LAIN1/2 对应 FPGA A18/A19，右轮 RAIN1/2 对应 F13/F14；FPGA 与驱动板保持公共 GND。4A 接收视频并回传仅用于显示的检测框，不通过网络 ARM、调速或清除运动故障。
 
 项目清理已完成，删除 18,685 个旧文件，约 15.92 GB，当前源码和硬件设计保留。详见 [清理记录](PROJECT-CLEANUP.md)。

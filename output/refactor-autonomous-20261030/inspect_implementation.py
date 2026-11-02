@@ -24,8 +24,14 @@ def read(path):
     return path.read_text(encoding="utf-8", errors="replace")
 
 
+def atomic_text(path, value):
+    temporary = path.with_suffix(path.suffix + '.tmp')
+    temporary.write_text(value, encoding='utf-8')
+    temporary.replace(path)
+
+
 def write(name, value):
-    (OUT / name).write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    atomic_text(OUT / name, json.dumps(value, indent=2, ensure_ascii=False) + "\n")
 
 
 def section(text, heading, next_heading):
@@ -59,14 +65,25 @@ def main():
                if not Path(name).is_file() or sha(Path(name)) != digest]
     assert not changed, changed
     assert not result["motor_locked"] and not result["screen_test"] and result["motion_lidar"]
-    report = read(PNR / "a745.tr") if (PNR / "a745.tr").is_file() else ""
+    import sys
+    sys.path.insert(0,str(PROJECT / "scripts"))
+    from timing_report import current_report
+    report_path, report = current_report(PNR,result["evidence_freshness_lower_bound_unix"])
+    assert report_path is not None
     physical = read(PNR / "a745.rpt.txt") if (PNR / "a745.rpt.txt").is_file() else ""
     log = read(BUILD / "build.log")
     commands = read(PNR / "cmd.do")
+    # Match the explicitly recorded options, including the validated video
+    # design's place/route=2. Never report a different option as signed off.
+    route, place = int(result['route_option']), int(result['place_option'])
+    assert route in (1, 2) and place in (1, 2)
     options = {key: bool(re.search(pattern, commands, re.M)) for key, pattern in {
-        "route_1": r"^-route_option 1$", "place_1": r"^-place_option 1$",
+        "route_matches_build": rf"^-route_option {route}$", "place_matches_build": rf"^-place_option {place}$",
         "timing_driven": r"^-timing$", "correct_hold": r"^-correct_hold 1$"}.items()}
     assert all(options.values()), options
+    if 'clock_route_order' in result:
+        assert re.search(r'^-clock_route_order '+str(result['clock_route_order'])+r'$',commands,re.M)
+        options['clock_route_order']=result['clock_route_order']
 
     timing = {"violated_endpoints": result.get("timing_violations", {}),
               "clock_frequencies": result.get("clock_frequencies", {}),
@@ -80,15 +97,15 @@ def main():
         timing["worst_reported_slack_ns"][name] = min(values) if values else None
         if not values and "Nothing to report!" in body:
             timing["empty_analysis_tables"].append(name)
-        (OUT / (name + "-paths.txt")).write_text(body, encoding="utf-8")
+        atomic_text(OUT / (name + "-paths.txt"), body)
     tns = section(report, "2.4 Total Negative Slack Summary", "3. Timing Details")
     for clock, analysis, slack, count in re.findall(r"(?m)^\s*(\S+)\s+(setup|hold|recovery|removal)\s+(-?\d+\.\d+)\s+(\d+)\s*$", tns):
         timing["per_clock_tns"].append({"clock": clock, "analysis": analysis, "tns_ns": float(slack), "endpoints": int(count)})
     # Keep actual exception/constraint and congestion text for human review.
     for label in ("High Fanout Nets Report", "Route Congestions Report", "Timing Constraints Report"):
         match = re.search(r"(?ms)^3\.\d+\s+" + label + r"\s*\n(.*?)(?=^3\.\d+\s|\Z)", report)
-        (OUT / (label.lower().replace(" ", "-") + ".txt")).write_text(match[1] if match else "Section not provided\n", encoding="utf-8")
-    expected_clocks = {"sys_clk": 50, "camera_pclk": 100,
+        atomic_text(OUT / (label.lower().replace(" ", "-") + ".txt"), match[1] if match else "Section not provided\n")
+    expected_clocks = {"sys_clk": 50, "camera_pclk": 100, "rx125m": 125,
                        "memory400m": 400, "ddr_ui100m": 100,
                        "tx125m": 125, "display33m":33}
     actual = timing["clock_frequencies"]
@@ -97,8 +114,9 @@ def main():
         abs(actual[name]["constraint_mhz"] - mhz) < 0.01 for name, mhz in expected_clocks.items())
     clock_summary = section(report, "2.2 Clock Summary", "2.3 Max Frequency Summary")
     summary_clocks = {name: float(freq) for name, freq in re.findall(
-        r"(?m)^\s*\d+\s+(\S+)\s+(?:Base|Generated)\s+[\d.]+\s+([\d.]+)MHz", clock_summary)}
-    expected_summary = {**expected_clocks, "tx250m": 250}
+        r"(?m)^\s*\d+\s+(\S+)\s+(?:Base|Generated)\s+[\d.]+\s+([\d.]+)(?:MHz)?", clock_summary)}
+    # tx250m only feeds the dedicated divider, so it has no data-path Fmax.
+    expected_summary = dict(expected_clocks,tx250m=250)
     timing["clock_summary"] = summary_clocks
     timing["clock_summary_matches"] = summary_clocks == expected_summary
     timing["inactive_constraints"] = [line.strip() for line in report.splitlines()
@@ -121,7 +139,7 @@ def main():
     pins = PinRows(); pins.feed(read(PNR / "a745.pin.html"))
     platform = Path(result["platform_directory"])
     expected_pins = {name: ball for name, ball in re.findall(r'IO_LOC "([^"]+)" ([A-Z0-9,]+);', read(platform / "a745.cst"))
-                     if name.startswith(("left_", "right_", "imu_", "lidar_", "tft_"))}
+                     if name.startswith(("left_", "right_", "imu_", "lidar_", "tft_", "rgmii_"))}
     assigned = {}
     for name, ball in expected_pins.items():
         rows = [row for row in pins.rows if len(row) > 17 and row[0] == name]
@@ -154,7 +172,9 @@ def main():
                 # Gowin marks generated binary outputs read-only; refresh only
                 # this script's own current-review copy, never the source file.
                 target.chmod(target.stat().st_mode | stat.S_IWRITE)
-            shutil.copy2(path, target)
+            temporary = target.with_suffix(target.suffix + '.tmp')
+            shutil.copy2(path, temporary)
+            temporary.replace(target)
         assert sha(target) == sha(path)
     write("STATUS.json", {"status": "implementation_complete_pending_review" if result["compile_passed"] else "implementation_failed",
           "compile_passed": result["compile_passed"], "seconds": result["seconds"],

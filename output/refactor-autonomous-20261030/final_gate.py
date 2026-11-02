@@ -22,6 +22,7 @@ def main():
     result = json.loads((BUILD / 'result.json').read_text())
     assert result['compile_passed'] and result['run_state'] == 'completed'
     assert not result['sources_changed'] and all(v == 0 for v in result['timing_violations'].values())
+    assert result['timing_signed_off'] and not result['path_slack_violations']
     sys.path.insert(0, str(PROJECT / 'scripts'))
     from prepare import prepare
     files, platform = prepare()
@@ -45,7 +46,8 @@ def main():
     assert geometry['passed']
     for name, expected in geometry['input_sha256'].items():
         assert sha(Path(name)) == expected, name
-    reverse_geometry = json.loads((OUT / 'reverse-clearance-74508.json').read_text())
+    revision = int(re.search(r"snapshot\[159:128\]<=32'd(\d+)", (PROJECT/'rtl/a745_core.v').read_text())[1])
+    reverse_geometry = json.loads((OUT / f'reverse-clearance-{revision}.json').read_text())
     assert reverse_geometry['generated_by'] == str(OUT / 'check_reverse_clearance.py')
     assert reverse_geometry['passed'] and reverse_geometry['rear_stop_mm'] > reverse_geometry['inflated_rear_corner_radius_mm']
     for name, expected in reverse_geometry['inputs_sha256'].items():
@@ -61,12 +63,29 @@ def main():
     assert 'SDPB cpuregs_cpuregs' not in (BUILD / 'impl/gwsynthesis/a745.vg').read_text()
     timing = json.loads((OUT / 'TIMING-REVIEW.json').read_text())
     assert timing['numeric_checks_pass'] and not timing['inactive_constraints']
-    for name in ['TFT-PAD-TIMING.json', 'TX-SKEW-REVIEW.json', 'CAMERA-INPUT-REVIEW.json']:
+    for name in ['TFT-PAD-TIMING.json', 'TX-SKEW-REVIEW.json', 'CAMERA-INPUT-REVIEW.json', 'RX-INPUT-REVIEW.json', 'DISPLAY-ISOLATION.json']:
         review = json.loads((OUT / name).read_text())
         assert review['passed'] and review['bitstream_sha256'] == result['artifact_sha256']
-    assert json.loads((OUT / 'CONSTRAINT-TARGETS.json').read_text())['routed_netlist_used']
+        if name == 'TX-SKEW-REVIEW.json':
+            assert review['q_to_pad_checks_pass'] and review['q_to_pad_budget_ns'] == [0.5,3.0]
+    targets = json.loads((OUT / 'CONSTRAINT-TARGETS.json').read_text())
+    assert targets['routed_netlist_used'] and targets['netlist_sha256'] == result['synthesis_netlist_sha256']
+    assert targets['routed_netlist_sha256'] == sha(BUILD / 'impl/pnr/a745.vo')
+    assert targets['timing_sdc_sha256'] == sha(PROJECT / 'constraints/timing.sdc')
+    assert len(targets['tx_oddr_q_route_targets']) == 6 and targets['net_fifo_bundled_pointer']['bits'] == 12
     ports = (platform / 'a745_top.v').read_text()
-    assert not any(name in ports for name in ['rgmii_rxd', 'rgmii_rx_ctl', 'rgmii_rx_clk', 'command_parser', 'network_mode'])
+    assert all(name in ports for name in ['rgmii_rxd', 'rgmii_rx_ctl', 'rgmii_rx_clk', 'a745_detection_rx #(.SESSION_CYCLES(100000000)) detection_rx'])
+    assert not any(name in ports for name in ['command_parser', 'network_mode'])
+    detection = json.loads((PROJECT / '.local/tests/detection-result.json').read_text())
+    assert detection['passed'] and detection['display_only'] and not detection['motion_command_receiver']
+    for name, expected in detection['input_sha256'].items():
+        assert sha(Path(name)) == expected, name
+    detection_gate = json.loads((PROJECT / '.local/tests/detection-gate-result.json').read_text())
+    assert detection_gate['passed'] and detection_gate['main_netlist_sha256'] == result['synthesis_netlist_sha256']
+    for name, expected in detection_gate['input_sha256'].items():
+        assert sha(Path(name)) == expected, name
+    assert targets['rx_iddr_count'] == 5
+    assert targets['ethernet_clock']['pll_output_mhz']==250 and targets['ethernet_clock']['mac_clock_mhz']==125
     for host in ['receiver.py', 'app.py']:
         tree = ast.parse((PROJECT / 'host' / host).read_text(encoding='utf-8'))
         assert not any(isinstance(n, ast.Attribute) and n.attr in ['send', 'sendto', 'sendall'] for n in ast.walk(tree))
@@ -79,7 +98,7 @@ def main():
               'artifact': str(artifact), 'artifact_sha256': result['artifact_sha256'], 'usercode': '0xA745',
               'hardware_programmed': False, 'hardware_display_verified': False, 'cold_boot_verified': False,
               'armed': False, 'rtl_tests_passed': len(expected_benches), 'protocol_checks_passed': True,
-              'network_control_enabled': False, 'vm_off_confirmed': False,
+              'network_control_enabled': False, 'detection_display_rx_enabled': True, 'vm_off_confirmed': False,
               'application_verified': False,
               'motor_pads_dynamic': True, 'common_ground_must_remain_connected': True,
               'turn_geometry_verified': True, 'navigation_gate_checks_passed': True, 'front_stop_mm': front_stop_mm,
@@ -88,7 +107,7 @@ def main():
     result.update(timing_signed_off=True, review_record=str(OUT / 'STATUS.json'))
     (BUILD / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
     shutil.copy2(BUILD / 'result.json', OUT / 'build-evidence-current/result.json')
-    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json', 'lidar-replay-result.json']:
+    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json', 'lidar-replay-result.json', 'detection-result.json', 'detection-gate-result.json']:
         shutil.copy2(PROJECT / '.local/tests' / name, OUT / ('tests-' + name))
     print(json.dumps(record, indent=2))
 

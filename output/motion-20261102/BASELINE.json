@@ -1,0 +1,16 @@
+{
+  "head": "a48af99",
+  "user_scope": "FPGA motion only; no Lichee or NPU work",
+  "vm_off_user_confirmed": true,
+  "wheels_raised_user_confirmed": true,
+  "original_reverse_test": {
+    "passed": false,
+    "message": "rear 351mm failed to allow reverse",
+    "observed_before_rtl_change": true
+  },
+  "bare_cpu_same_environment_passed": true,
+  "current_firmware_known_from_latest_video_audit": 74509,
+  "old_motion_status_json_was_stale": true,
+  "automatic_arm": false,
+  "physical_motion_verified": false
+}

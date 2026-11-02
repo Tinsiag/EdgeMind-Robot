@@ -1,0 +1,4366 @@
+{
+  "elapsed_seconds": 5.000031001000025,
+  "statuses": [
+    {
+      "seq": 12361599,
+      "ms": 12361599,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735768,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 253,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12361593,
+      "imu_errors": 0,
+      "imu_seq": 1237321,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12361699,
+      "ms": 12361699,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735774,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 254,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12361691,
+      "imu_errors": 0,
+      "imu_seq": 1237331,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12361799,
+      "ms": 12361799,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        446,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735780,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 255,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12361791,
+      "imu_errors": 0,
+      "imu_seq": 1237341,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12361899,
+      "ms": 12361899,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        446,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735786,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 0,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12361891,
+      "imu_errors": 0,
+      "imu_seq": 1237351,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12361999,
+      "ms": 12361999,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        357
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735792,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 1,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12361991,
+      "imu_errors": 0,
+      "imu_seq": 1237361,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362099,
+      "ms": 12362099,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735798,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 2,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362091,
+      "imu_errors": 0,
+      "imu_seq": 1237371,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362199,
+      "ms": 12362199,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735804,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 3,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362191,
+      "imu_errors": 0,
+      "imu_seq": 1237381,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362299,
+      "ms": 12362299,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        446,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735810,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 4,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362291,
+      "imu_errors": 0,
+      "imu_seq": 1237391,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362399,
+      "ms": 12362399,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        446,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735816,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 5,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362391,
+      "imu_errors": 0,
+      "imu_seq": 1237401,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362499,
+      "ms": 12362499,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        446,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735822,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 6,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362491,
+      "imu_errors": 0,
+      "imu_seq": 1237411,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362599,
+      "ms": 12362599,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735828,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 7,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362591,
+      "imu_errors": 0,
+      "imu_seq": 1237421,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362699,
+      "ms": 12362699,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735834,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 8,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362691,
+      "imu_errors": 0,
+      "imu_seq": 1237431,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362799,
+      "ms": 12362799,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735839,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 9,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362791,
+      "imu_errors": 0,
+      "imu_seq": 1237441,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362899,
+      "ms": 12362899,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735845,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 10,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362891,
+      "imu_errors": 0,
+      "imu_seq": 1237451,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12362999,
+      "ms": 12362999,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735851,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 11,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12362991,
+      "imu_errors": 0,
+      "imu_seq": 1237461,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363099,
+      "ms": 12363099,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        353,
+        447,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735857,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 12,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363091,
+      "imu_errors": 0,
+      "imu_seq": 1237471,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363199,
+      "ms": 12363199,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        353,
+        446,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735863,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 13,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363191,
+      "imu_errors": 0,
+      "imu_seq": 1237481,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363299,
+      "ms": 12363299,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        446,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735869,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 14,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363291,
+      "imu_errors": 0,
+      "imu_seq": 1237491,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363399,
+      "ms": 12363399,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735875,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 15,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363391,
+      "imu_errors": 0,
+      "imu_seq": 1237501,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363499,
+      "ms": 12363499,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735881,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 16,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363491,
+      "imu_errors": 0,
+      "imu_seq": 1237511,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363599,
+      "ms": 12363599,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735887,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 17,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363591,
+      "imu_errors": 0,
+      "imu_seq": 1237521,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363699,
+      "ms": 12363699,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735893,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 18,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363691,
+      "imu_errors": 0,
+      "imu_seq": 1237531,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363799,
+      "ms": 12363799,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735899,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 19,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363789,
+      "imu_errors": 0,
+      "imu_seq": 1237541,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363899,
+      "ms": 12363899,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735905,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 20,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363889,
+      "imu_errors": 0,
+      "imu_seq": 1237551,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12363999,
+      "ms": 12363999,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735911,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 21,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12363989,
+      "imu_errors": 0,
+      "imu_seq": 1237561,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364099,
+      "ms": 12364099,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735917,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 22,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364089,
+      "imu_errors": 0,
+      "imu_seq": 1237571,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364199,
+      "ms": 12364199,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735923,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 23,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364189,
+      "imu_errors": 0,
+      "imu_seq": 1237581,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364299,
+      "ms": 12364299,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735929,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 24,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364289,
+      "imu_errors": 0,
+      "imu_seq": 1237591,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364399,
+      "ms": 12364399,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735935,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 25,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364389,
+      "imu_errors": 0,
+      "imu_seq": 1237601,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364499,
+      "ms": 12364499,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        447,
+        351
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735941,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 27,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364489,
+      "imu_errors": 0,
+      "imu_seq": 1237611,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364599,
+      "ms": 12364599,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        351
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735947,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 28,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364589,
+      "imu_errors": 0,
+      "imu_seq": 1237621,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364699,
+      "ms": 12364699,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        447,
+        362
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735953,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 29,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364689,
+      "imu_errors": 0,
+      "imu_seq": 1237631,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364799,
+      "ms": 12364799,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735959,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 30,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364798,
+      "imu_errors": 0,
+      "imu_seq": 1237642,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364899,
+      "ms": 12364899,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        351
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735964,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 31,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364898,
+      "imu_errors": 0,
+      "imu_seq": 1237652,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12364999,
+      "ms": 12364999,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735970,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 32,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12364998,
+      "imu_errors": 0,
+      "imu_seq": 1237662,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365099,
+      "ms": 12365099,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        350
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735976,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 33,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365098,
+      "imu_errors": 0,
+      "imu_seq": 1237672,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365199,
+      "ms": 12365199,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735982,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 34,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365198,
+      "imu_errors": 0,
+      "imu_seq": 1237682,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365299,
+      "ms": 12365299,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735988,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 35,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365298,
+      "imu_errors": 0,
+      "imu_seq": 1237692,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365399,
+      "ms": 12365399,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        356
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 735994,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 36,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365398,
+      "imu_errors": 0,
+      "imu_seq": 1237702,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365499,
+      "ms": 12365499,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        354
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736000,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 37,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365498,
+      "imu_errors": 0,
+      "imu_seq": 1237712,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365599,
+      "ms": 12365599,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        354,
+        461,
+        351
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736006,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 38,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365598,
+      "imu_errors": 0,
+      "imu_seq": 1237722,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365699,
+      "ms": 12365699,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736012,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 39,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365698,
+      "imu_errors": 0,
+      "imu_seq": 1237732,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365799,
+      "ms": 12365799,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736018,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 40,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365798,
+      "imu_errors": 0,
+      "imu_seq": 1237742,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365899,
+      "ms": 12365899,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        346,
+        447,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736024,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 641,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 41,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365898,
+      "imu_errors": 0,
+      "imu_seq": 1237752,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12365999,
+      "ms": 12365999,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        361,
+        453,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736030,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 42,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12365998,
+      "imu_errors": 0,
+      "imu_seq": 1237762,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12366099,
+      "ms": 12366099,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        348
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736036,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 43,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12366098,
+      "imu_errors": 0,
+      "imu_seq": 1237772,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12366199,
+      "ms": 12366199,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        447,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736042,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 44,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12366198,
+      "imu_errors": 0,
+      "imu_seq": 1237782,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12366299,
+      "ms": 12366299,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        349
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736048,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 626,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 45,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12366298,
+      "imu_errors": 0,
+      "imu_seq": 1237792,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12366399,
+      "ms": 12366399,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736054,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 46,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12366398,
+      "imu_errors": 0,
+      "imu_seq": 1237802,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    },
+    {
+      "seq": 12366499,
+      "ms": 12366499,
+      "revision": 74511,
+      "flags": 41739,
+      "state": 0,
+      "faults": 0,
+      "armed": false,
+      "targets": [
+        0,
+        0
+      ],
+      "speeds": [
+        0,
+        0
+      ],
+      "counts": [
+        99,
+        43
+      ],
+      "yaw": 0.0,
+      "ranges": [
+        362,
+        461,
+        355
+      ],
+      "camera_error": 0,
+      "camera_phase": 11,
+      "camera_attempt": 1,
+      "camera_register": 18241,
+      "camera_expected": 0,
+      "camera_value": 0,
+      "video_frames": 736060,
+      "frame_ready": true,
+      "ddr_ready": true,
+      "video_error": false,
+      "camera_ready": true,
+      "rear": 625,
+      "left_clear": true,
+      "right_clear": true,
+      "scan_sequence": 47,
+      "imu_valid": true,
+      "gyro_valid": true,
+      "encoder_no_pulse_left": false,
+      "encoder_no_pulse_right": false,
+      "imu_time_ms": 12366498,
+      "imu_errors": 0,
+      "imu_seq": 1237812,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "detection_accepted": 255
+    }
+  ],
+  "attitudes": [
+    {
+      "roll": 2.449951171875,
+      "pitch": 0.85693359375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12361600,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.427978515625,
+      "pitch": 0.780029296875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12361700,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.493896484375,
+      "pitch": 1.109619140625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12361800,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.581787109375,
+      "pitch": 0.7470703125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12361900,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.35107421875,
+      "pitch": 0.758056640625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362000,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.4169921875,
+      "pitch": 0.736083984375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362100,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.713623046875,
+      "pitch": 1.021728515625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362200,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.548828125,
+      "pitch": 0.8349609375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362300,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.52685546875,
+      "pitch": 0.8349609375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362400,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.57080078125,
+      "pitch": 1.043701171875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362500,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.57080078125,
+      "pitch": 0.7470703125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362600,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.471923828125,
+      "pitch": 0.977783203125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362700,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.4169921875,
+      "pitch": 0.692138671875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362800,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.5927734375,
+      "pitch": 0.560302734375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12362900,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.5927734375,
+      "pitch": 0.63720703125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363000,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.537841796875,
+      "pitch": 0.823974609375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363100,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.48291015625,
+      "pitch": 1.1865234375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363200,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.449951171875,
+      "pitch": 0.977783203125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363300,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.4609375,
+      "pitch": 0.98876953125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363400,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.373046875,
+      "pitch": 0.999755859375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363500,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.296142578125,
+      "pitch": 1.219482421875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363600,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.373046875,
+      "pitch": 0.9228515625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363700,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.57080078125,
+      "pitch": 1.021728515625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363800,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.537841796875,
+      "pitch": 0.977783203125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12363900,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.5048828125,
+      "pitch": 1.131591796875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364000,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.48291015625,
+      "pitch": 1.175537109375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364100,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.296142578125,
+      "pitch": 1.329345703125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364200,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.26318359375,
+      "pitch": 0.845947265625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364300,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.406005859375,
+      "pitch": 1.3623046875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364400,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.4609375,
+      "pitch": 0.977783203125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364500,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.52685546875,
+      "pitch": 0.9228515625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364600,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.493896484375,
+      "pitch": 1.175537109375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364700,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.581787109375,
+      "pitch": 0.867919921875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364800,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.208251953125,
+      "pitch": 1.34033203125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12364900,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.406005859375,
+      "pitch": 1.329345703125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365000,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.603759765625,
+      "pitch": 1.263427734375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365100,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.427978515625,
+      "pitch": 1.1865234375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365200,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.548828125,
+      "pitch": 0.98876953125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365300,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.559814453125,
+      "pitch": 0.955810546875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365400,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.625732421875,
+      "pitch": 1.12060546875,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365500,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.4609375,
+      "pitch": 0.9228515625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365600,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.48291015625,
+      "pitch": 1.109619140625,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365700,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.28515625,
+      "pitch": 1.1865234375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365800,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.362060546875,
+      "pitch": 1.175537109375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12365900,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.471923828125,
+      "pitch": 1.1865234375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366000,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.48291015625,
+      "pitch": 0.85693359375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366100,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.57080078125,
+      "pitch": 1.241455078125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366200,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.471923828125,
+      "pitch": 1.351318359375,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366300,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.340087890625,
+      "pitch": 1.241455078125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366400,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    },
+    {
+      "roll": 2.373046875,
+      "pitch": 1.142578125,
+      "tilt_valid": true,
+      "cpu_alive": true,
+      "cpu_fault": false,
+      "cpu_progress": 12366500,
+      "imu_diagnostic": 117469288,
+      "imu_fault_sources": 0,
+      "imu_fault_valid_flags": 0,
+      "fault_roll": 0.0,
+      "fault_pitch": 0.0
+    }
+  ],
+  "return_frames": [
+    {
+      "seq": 1793648257,
+      "boxes": [
+        [
+          208,
+          0,
+          634,
+          469,
+          0,
+          152,
+          0
+        ],
+        [
+          226,
+          271,
+          373,
+          377,
+          66,
+          124,
+          0
+        ],
+        [
+          0,
+          234,
+          45,
+          274,
+          64,
+          85,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da35600099080045000050255e4000401193e9c0a80003c0a8000217d917d9003c81a34544313081e6e86a03008002e0010000d00000007a02d50100980000e2000f0175017901427c00000000ea002d00120140550000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648258,
+      "boxes": [
+        [
+          228,
+          268,
+          376,
+          383,
+          66,
+          153,
+          0
+        ],
+        [
+          209,
+          0,
+          639,
+          465,
+          0,
+          120,
+          0
+        ],
+        [
+          1,
+          235,
+          45,
+          272,
+          64,
+          112,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005025714000401193d6c0a80003c0a8000217d917d9003c81a34544313082e6e86a03008002e0010000e4000c0178017f0142990000d10000007f02d101007800000100eb002d00100140700000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648259,
+      "boxes": [
+        [
+          208,
+          0,
+          634,
+          468,
+          0,
+          152,
+          0
+        ],
+        [
+          2,
+          236,
+          43,
+          273,
+          64,
+          136,
+          0
+        ],
+        [
+          230,
+          268,
+          377,
+          383,
+          66,
+          112,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005025894000401193bec0a80003c0a8000217d917d9003c81a34544313083e6e86a03008002e0010000d00000007a02d401009800000200ec002b00110140880000e6000c0179017f0142700000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648260,
+      "boxes": [
+        [
+          227,
+          266,
+          374,
+          382,
+          66,
+          123,
+          0
+        ],
+        [
+          218,
+          0,
+          627,
+          468,
+          0,
+          120,
+          0
+        ],
+        [
+          2,
+          235,
+          43,
+          274,
+          64,
+          109,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da35600099080045000050258b4000401193bcc0a80003c0a8000217d917d9003c81a34544313084e6e86a03008002e0010000e3000a0176017e01427b0000da0000007302d401007800000200eb002b001201406d0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648261,
+      "boxes": [
+        [
+          228,
+          269,
+          376,
+          384,
+          66,
+          142,
+          0
+        ],
+        [
+          1,
+          235,
+          46,
+          274,
+          64,
+          105,
+          0
+        ],
+        [
+          211,
+          0,
+          639,
+          466,
+          0,
+          102,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005025994000401193aec0a80003c0a8000217d917d9003c81a34544313085e6e86a03008002e0010000e4000d0178018001428e00000100eb002e00120140690000d30000007f02d20100660000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648262,
+      "boxes": [
+        [
+          200,
+          0,
+          633,
+          466,
+          0,
+          134,
+          0
+        ],
+        [
+          228,
+          269,
+          376,
+          384,
+          66,
+          128,
+          0
+        ],
+        [
+          1,
+          235,
+          46,
+          275,
+          64,
+          85,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005025bc40004011938bc0a80003c0a8000217d917d9003c81a34544313086e6e86a03008002e0010000c80000007902d20100860000e4000d0178018001428000000100eb002e00130140550000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648263,
+      "boxes": [
+        [
+          2,
+          236,
+          43,
+          273,
+          64,
+          111,
+          0
+        ],
+        [
+          205,
+          0,
+          631,
+          469,
+          0,
+          111,
+          0
+        ],
+        [
+          226,
+          266,
+          373,
+          382,
+          66,
+          108,
+          0
+        ],
+        [
+          29,
+          0,
+          224,
+          317,
+          62,
+          78,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c25ca400040119371c0a80003c0a8000217d917d9004881af4544313087e6e86a04008002e00100000200ec002b001101406f0000cd0000007702d501006f0000e2000a0175017e01426c00001d000000e0003d013e4e0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648264,
+      "boxes": [
+        [
+          200,
+          13,
+          633,
+          451,
+          0,
+          169,
+          0
+        ],
+        [
+          229,
+          268,
+          376,
+          383,
+          66,
+          118,
+          0
+        ],
+        [
+          3,
+          234,
+          45,
+          274,
+          64,
+          85,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005025e940004011935ec0a80003c0a8000217d917d9003c81a34544313088e6e86a03008002e0010000c8000d007902c30100a90000e5000c0178017f01427600000300ea002d00120140550000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648265,
+      "boxes": [
+        [
+          205,
+          0,
+          637,
+          467,
+          0,
+          176,
+          0
+        ],
+        [
+          1,
+          237,
+          45,
+          272,
+          64,
+          150,
+          0
+        ],
+        [
+          229,
+          268,
+          376,
+          383,
+          66,
+          133,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da356000990800450000502615400040119332c0a80003c0a8000217d917d9003c81a34544313089e6e86a03008002e0010000cd0000007d02d30100b000000100ed002d00100140960000e5000c0178017f0142850000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648266,
+      "boxes": [
+        [
+          215,
+          4,
+          624,
+          458,
+          0,
+          173,
+          0
+        ],
+        [
+          229,
+          269,
+          376,
+          384,
+          66,
+          123,
+          0
+        ],
+        [
+          1,
+          235,
+          47,
+          273,
+          64,
+          81,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da356000990800450000502636400040119311c0a80003c0a8000217d917d9003c81a3454431308ae6e86a03008002e0010000d70004007002ca0100ad0000e5000d0178018001427b00000100eb002f00110140510000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648267,
+      "boxes": [
+        [
+          229,
+          268,
+          376,
+          383,
+          66,
+          133,
+          0
+        ],
+        [
+          203,
+          0,
+          636,
+          466,
+          0,
+          124,
+          0
+        ],
+        [
+          0,
+          234,
+          45,
+          274,
+          64,
+          112,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da35600099080045000050263840004011930fc0a80003c0a8000217d917d9003c81a3454431308be6e86a03008002e0010000e5000c0178017f0142850000cb0000007c02d201007c00000000ea002d00120140700000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648268,
+      "boxes": [
+        [
+          202,
+          2,
+          634,
+          472,
+          0,
+          134,
+          0
+        ],
+        [
+          229,
+          269,
+          376,
+          384,
+          66,
+          119,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da356000990800450000442643400040119310c0a80003c0a8000217d917d900308197454431308ce6e86a02008002e0010000ca0002007a02d80100860000e5000d017801800142770000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648269,
+      "boxes": [
+        [
+          226,
+          268,
+          373,
+          383,
+          66,
+          153,
+          0
+        ],
+        [
+          2,
+          235,
+          46,
+          273,
+          64,
+          122,
+          0
+        ],
+        [
+          197,
+          0,
+          630,
+          469,
+          0,
+          93,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005026564000401192f1c0a80003c0a8000217d917d9003c81a3454431308de6e86a03008002e0010000e2000c0175017f01429900000200eb002e001101407a0000c50000007602d501005d0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648270,
+      "boxes": [
+        [
+          226,
+          269,
+          380,
+          384,
+          66,
+          138,
+          0
+        ],
+        [
+          167,
+          0,
+          633,
+          469,
+          0,
+          120,
+          0
+        ],
+        [
+          0,
+          234,
+          45,
+          274,
+          64,
+          112,
+          0
+        ],
+        [
+          29,
+          0,
+          224,
+          313,
+          62,
+          84,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c26784000401192c3c0a80003c0a8000217d917d9004881af454431308ee6e86a04008002e0010000e2000d017c018001428a0000a70000007902d501007800000000ea002d001201407000001d000000e00039013e540000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648271,
+      "boxes": [
+        [
+          205,
+          0,
+          631,
+          468,
+          0,
+          169,
+          0
+        ],
+        [
+          228,
+          268,
+          376,
+          383,
+          66,
+          123,
+          0
+        ],
+        [
+          3,
+          236,
+          44,
+          272,
+          64,
+          122,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005026824000401192c5c0a80003c0a8000217d917d9003c81a3454431308fe6e86a03008002e0010000cd0000007702d40100a90000e4000c0178017f01427b00000300ec002c001001407a0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648272,
+      "boxes": [
+        [
+          225,
+          268,
+          379,
+          383,
+          66,
+          137,
+          0
+        ],
+        [
+          205,
+          0,
+          631,
+          468,
+          0,
+          134,
+          0
+        ],
+        [
+          3,
+          235,
+          44,
+          275,
+          64,
+          105,
+          0
+        ],
+        [
+          28,
+          0,
+          222,
+          315,
+          62,
+          92,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c26864000401192b5c0a80003c0a8000217d917d9004881af4544313090e6e86a04008002e0010000e1000c017b017f0142890000cd0000007702d401008600000300eb002c001301406900001c000000de003b013e5c0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648273,
+      "boxes": [
+        [
+          205,
+          0,
+          631,
+          468,
+          0,
+          138,
+          0
+        ],
+        [
+          1,
+          235,
+          45,
+          273,
+          64,
+          128,
+          0
+        ],
+        [
+          229,
+          270,
+          369,
+          375,
+          66,
+          99,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da35600099080045000050268c4000401192bbc0a80003c0a8000217d917d9003c81a34544313091e6e86a03008002e0010000cd0000007702d401008a00000100eb002d00110140800000e5000e017101770142630000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648274,
+      "boxes": [
+        [
+          228,
+          269,
+          376,
+          384,
+          66,
+          137,
+          0
+        ],
+        [
+          205,
+          0,
+          631,
+          469,
+          0,
+          134,
+          0
+        ],
+        [
+          0,
+          235,
+          45,
+          274,
+          64,
+          122,
+          0
+        ],
+        [
+          28,
+          0,
+          222,
+          312,
+          62,
+          92,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c26be40004011927dc0a80003c0a8000217d917d9004881af4544313092e6e86a04008002e0010000e4000d017801800142890000cd0000007702d501008600000000eb002d001201407a00001c000000de0038013e5c0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648275,
+      "boxes": [
+        [
+          225,
+          268,
+          379,
+          383,
+          66,
+          162,
+          0
+        ],
+        [
+          205,
+          0,
+          631,
+          468,
+          0,
+          120,
+          0
+        ],
+        [
+          1,
+          235,
+          45,
+          273,
+          64,
+          117,
+          0
+        ],
+        [
+          28,
+          0,
+          222,
+          315,
+          62,
+          105,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c26bf40004011927cc0a80003c0a8000217d917d9004881af4544313093e6e86a04008002e0010000e1000c017b017f0142a20000cd0000007702d401007800000100eb002d001101407500001c000000de003b013e690000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648276,
+      "boxes": [
+        [
+          218,
+          0,
+          627,
+          466,
+          0,
+          129,
+          0
+        ],
+        [
+          0,
+          235,
+          46,
+          273,
+          64,
+          123,
+          0
+        ],
+        [
+          226,
+          266,
+          373,
+          382,
+          66,
+          114,
+          0
+        ],
+        [
+          28,
+          0,
+          222,
+          313,
+          62,
+          79,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c26c7400040119274c0a80003c0a8000217d917d9004881af4544313094e6e86a04008002e0010000da0000007302d201008100000000eb002e001101407b0000e2000a0175017e01427200001c000000de0039013e4f0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648277,
+      "boxes": [
+        [
+          226,
+          268,
+          380,
+          383,
+          66,
+          142,
+          0
+        ],
+        [
+          223,
+          0,
+          631,
+          468,
+          0,
+          120,
+          0
+        ],
+        [
+          1,
+          235,
+          47,
+          273,
+          64,
+          107,
+          0
+        ],
+        [
+          29,
+          0,
+          224,
+          315,
+          62,
+          88,
+          0
+        ],
+        [
+          222,
+          239,
+          288,
+          269,
+          64,
+          86,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500006826ef400040119240c0a80003c0a8000217d917d9005481bb4544313095e6e86a05008002e0010000e2000c017c017f01428e0000df0000007702d401007800000100eb002f001101406b00001d000000e0003b013e580000de00ef0020010d0140560000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648278,
+      "boxes": [
+        [
+          3,
+          237,
+          44,
+          273,
+          64,
+          149,
+          0
+        ],
+        [
+          227,
+          268,
+          381,
+          383,
+          66,
+          137,
+          0
+        ],
+        [
+          27,
+          0,
+          221,
+          315,
+          62,
+          87,
+          0
+        ],
+        [
+          262,
+          0,
+          631,
+          467,
+          0,
+          84,
+          0
+        ],
+        [
+          223,
+          238,
+          288,
+          271,
+          64,
+          81,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500006826fa400040119235c0a80003c0a8000217d917d9005481bb4544313096e6e86a05008002e00100000300ed002c00110140950000e3000c017d017f01428900001b000000dd003b013e570000060100007702d30100540000df00ee0020010f0140510000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648279,
+      "boxes": [
+        [
+          203,
+          12,
+          636,
+          450,
+          0,
+          164,
+          0
+        ],
+        [
+          226,
+          269,
+          380,
+          384,
+          66,
+          133,
+          0
+        ],
+        [
+          0,
+          235,
+          46,
+          273,
+          64,
+          122,
+          0
+        ],
+        [
+          28,
+          0,
+          222,
+          313,
+          62,
+          92,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c2705400040119236c0a80003c0a8000217d917d9004881af4544313097e6e86a04008002e0010000cb000c007c02c20100a40000e2000d017c018001428500000000eb002e001101407a00001c000000de0039013e5c0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648280,
+      "boxes": [
+        [
+          205,
+          0,
+          637,
+          466,
+          0,
+          173,
+          0
+        ],
+        [
+          229,
+          269,
+          376,
+          384,
+          66,
+          123,
+          0
+        ],
+        [
+          0,
+          235,
+          45,
+          274,
+          64,
+          117,
+          0
+        ],
+        [
+          29,
+          0,
+          224,
+          313,
+          62,
+          88,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da3560009908004500005c272a400040119211c0a80003c0a8000217d917d9004881af4544313098e6e86a04008002e0010000cd0000007d02d20100ad0000e5000d0178018001427b00000000eb002d001201407500001d000000e00039013e580000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    },
+    {
+      "seq": 1793648281,
+      "boxes": [
+        [
+          206,
+          0,
+          639,
+          467,
+          0,
+          134,
+          0
+        ],
+        [
+          229,
+          268,
+          376,
+          383,
+          66,
+          132,
+          0
+        ],
+        [
+          0,
+          237,
+          46,
+          271,
+          64,
+          92,
+          0
+        ]
+      ],
+      "frame_hex": "02000000000248da356000990800450000502736400040119211c0a80003c0a8000217d917d9003c81a34544313099e6e86a03008002e0010000ce0000007f02d30100860000e5000c0178017f01428400000000ed002e000f01405c0000",
+      "udp_checksum_verified": false,
+      "nic_checksum_completion_pending": true
+    }
+  ],
+  "invalid_return_frames": [],
+  "web_start": {
+    "packets": 73653618,
+    "bad_packets": 0,
+    "frames": 153444,
+    "partial_frames": 1,
+    "missing_rows": 0,
+    "fps": 27.827331408618385,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 105.54133300138346,
+    "infer_runs": 25693,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "stream_fps": 14.951194308105885,
+    "rendered_frames": 77078,
+    "receive_buffer_bytes": 33554432,
+    "video_age_ms": 20.1,
+    "boxes": [
+      {
+        "cls": "person",
+        "score": 0.629,
+        "box": [
+          205,
+          0,
+          631,
+          469
+        ]
+      },
+      {
+        "cls": "keyboard",
+        "score": 0.523,
+        "box": [
+          226,
+          266,
+          373,
+          382
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.523,
+        "box": [
+          1,
+          235,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "display_sent": 25693,
+    "display_error": "",
+    "npu_ms": 5.439,
+    "result_seq": 153436,
+    "result_age_ms": 174.6
+  },
+  "web_end": {
+    "packets": 73725199,
+    "bad_packets": 0,
+    "frames": 153593,
+    "partial_frames": 1,
+    "missing_rows": 0,
+    "fps": 29.761146945111815,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.96566699937102,
+    "infer_runs": 25718,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "stream_fps": 14.894896649228365,
+    "rendered_frames": 77153,
+    "receive_buffer_bytes": 33554432,
+    "video_age_ms": 16.7,
+    "boxes": [
+      {
+        "cls": "person",
+        "score": 0.524,
+        "box": [
+          206,
+          0,
+          639,
+          467
+        ]
+      },
+      {
+        "cls": "keyboard",
+        "score": 0.517,
+        "box": [
+          229,
+          268,
+          376,
+          383
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.359,
+        "box": [
+          0,
+          237,
+          46,
+          271
+        ]
+      }
+    ],
+    "error": "",
+    "display_sent": 25718,
+    "display_error": "",
+    "npu_ms": 5.549,
+    "result_seq": 153585,
+    "result_age_ms": 186.4
+  },
+  "accepted_delta": 0,
+  "wire_return_count": 25,
+  "inference_hz": 4.999968999192187,
+  "camera_hz": 29.79981523518543,
+  "web_hz": 14.99990699757656,
+  "read_only": true,
+  "motion_packets_sent": 0,
+  "script_sha256": "f0883af28996faf5f0999e660ab196d4c01543c99c926b65850aa7336b8743a5"
+}

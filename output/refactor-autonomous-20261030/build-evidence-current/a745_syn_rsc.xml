@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="a745_top" Register="44" Lut="49" T_Register="15314(44)" T_Alu="2573(0)" T_Lut="17144(49)" T_MULTALU27X18="11(0)" T_MULT12X12="3(0)" T_MULT27X36="8(0)" T_Bsram="26(0)">
- <SubModule name="clocks" T_Register="100(0)" T_Alu="18(0)" T_Lut="154(0)" T_Bsram="1(0)">
+<Module name="a745_top" Register="48" Lut="195" T_Register="19926(48)" T_Alu="2902(0)" T_Lut="20582(195)" T_MULTALU27X18="11(0)" T_MULT12X12="3(0)" T_MULT27X36="8(0)" T_Bsram="37(0)">
+ <SubModule name="clocks" T_Register="100(0)" T_Alu="18(0)" T_Lut="153(0)" T_Bsram="1(0)">
   <SubModule name="u_pll"/>
-  <SubModule name="u_pll_init" Register="100" Alu="18" Lut="154" Bsram="1" T_Register="100(100)" T_Alu="18(18)" T_Lut="154(154)" T_Bsram="1(1)"/>
+  <SubModule name="u_pll_init" Register="100" Alu="18" Lut="153" Bsram="1" T_Register="100(100)" T_Alu="18(18)" T_Lut="153(153)" T_Bsram="1(1)"/>
  </SubModule>
- <SubModule name="display_clocks" T_Register="99(0)" T_Alu="18(0)" T_Lut="154(0)" T_Bsram="1(0)">
+ <SubModule name="display_clocks" T_Register="99(0)" T_Alu="18(0)" T_Lut="155(0)" T_Bsram="1(0)">
   <SubModule name="u_pll"/>
-  <SubModule name="u_pll_init" Register="99" Alu="18" Lut="154" Bsram="1" T_Register="99(99)" T_Alu="18(18)" T_Lut="154(154)" T_Bsram="1(1)"/>
+  <SubModule name="u_pll_init" Register="99" Alu="18" Lut="155" Bsram="1" T_Register="99(99)" T_Alu="18(18)" T_Lut="155(155)" T_Bsram="1(1)"/>
  </SubModule>
  <SubModule name="display_reset" Register="3" Lut="1" T_Register="3(3)" T_Lut="1(1)"/>
  <SubModule name="display_sys_reset" Register="3" T_Register="3(3)"/>
@@ -18,14 +18,33 @@
    <SubModule name="i2c_bit_shift" Register="33" Lut="83" T_Register="33(33)" T_Lut="83(83)"/>
   </SubModule>
  </SubModule>
- <SubModule name="phy" Register="64" Alu="24" Lut="103" T_Register="131(64)" T_Alu="24(24)" T_Lut="194(103)">
-  <SubModule name="bus" Register="67" Lut="91" T_Register="67(67)" T_Lut="91(91)"/>
+ <SubModule name="phy" Register="64" Alu="24" Lut="104" T_Register="131(64)" T_Alu="24(24)" T_Lut="193(104)">
+  <SubModule name="bus" Register="67" Lut="89" T_Register="67(67)" T_Lut="89(89)"/>
  </SubModule>
- <SubModule name="net_fifo" Register="108" Alu="10" Lut="109" Bsram="1" T_Register="108(108)" T_Alu="10(10)" T_Lut="109(109)" T_Bsram="1(1)"/>
- <SubModule name="mac" Register="70" Lut="118" T_Register="70(70)" T_Lut="166(118)">
-  <SubModule name="eth_crc_8" Lut="48" T_Lut="48(48)"/>
+ <SubModule name="net_fifo" Register="126" Alu="12" Lut="136" Bsram="1" T_Register="126(126)" T_Alu="12(12)" T_Lut="136(136)" T_Bsram="1(1)"/>
+ <SubModule name="rxreset" Register="3" T_Register="3(3)"/>
+ <SubModule name="receiver" Lut="1" T_Lut="1(1)"/>
+ <SubModule name="mac" T_Register="430(0)" T_Alu="26(0)" T_Lut="533(0)" T_Bsram="6(0)">
+  <SubModule name="eth_mac_1g_inst" T_Register="165(0)" T_Lut="263(0)">
+   <SubModule name="axis_gmii_rx_inst" Register="95" Lut="39" T_Register="95(95)" T_Lut="90(39)">
+    <SubModule name="eth_crc_8" Lut="51" T_Lut="51(51)"/>
+   </SubModule>
+   <SubModule name="axis_gmii_tx_inst" Register="70" Lut="123" T_Register="70(70)" T_Lut="173(123)">
+    <SubModule name="eth_crc_8" Lut="50" T_Lut="50(50)"/>
+   </SubModule>
+  </SubModule>
+  <SubModule name="tx_fifo" T_Register="131(0)" T_Alu="13(0)" T_Lut="118(0)" T_Bsram="3(0)">
+   <SubModule name="fifo_inst" Register="131" Alu="13" Lut="118" Bsram="3" T_Register="131(131)" T_Alu="13(13)" T_Lut="118(118)" T_Bsram="3(3)"/>
+  </SubModule>
+  <SubModule name="rx_fifo" T_Register="134(0)" T_Alu="13(0)" T_Lut="152(0)" T_Bsram="3(0)">
+   <SubModule name="fifo_inst" Register="134" Alu="13" Lut="152" Bsram="3" T_Register="134(134)" T_Alu="13(13)" T_Lut="152(152)" T_Bsram="3(3)"/>
+  </SubModule>
  </SubModule>
  <SubModule name="transmitter" Lut="1" T_Lut="1(1)"/>
+ <SubModule name="detection_reset" Register="3" T_Register="3(3)"/>
+ <SubModule name="detection_fifo" Register="108" Alu="10" Lut="97" Bsram="1" T_Register="108(108)" T_Alu="10(10)" T_Lut="97(97)" T_Bsram="1(1)"/>
+ <SubModule name="detection_rx" Register="1355" Alu="203" Lut="460" T_Register="1355(1355)" T_Alu="203(203)" T_Lut="460(460)"/>
+ <SubModule name="detection_mailbox" Register="1039" Lut="3" T_Register="1039(1039)" T_Lut="3(3)"/>
  <SubModule name="display_video_reset" Register="3" Lut="1" T_Register="3(3)" T_Lut="1(1)"/>
  <SubModule name="ddr_reset" Register="1" Lut="1" T_Register="1(1)" T_Lut="1(1)"/>
  <SubModule name="memory_pll" T_Register="101(0)" T_Alu="18(0)" T_Lut="176(0)" T_Bsram="1(0)">
@@ -35,10 +54,10 @@
  <SubModule name="memory" Register="3418" Alu="125" Lut="2168" Bsram="8" T_Register="3418(3418)" T_Alu="125(125)" T_Lut="2168(2168)" T_Bsram="8(8)"/>
  <SubModule name="ui_reset" Register="3" Lut="1" T_Register="3(3)" T_Lut="1(1)"/>
  <SubModule name="camera_pads"/>
- <SubModule name="video" Register="40" Alu="31" Lut="9" T_Register="811(40)" T_Alu="71(31)" T_Lut="782(9)" T_Bsram="9(0)">
+ <SubModule name="video" Register="40" Alu="31" Lut="4" T_Register="811(40)" T_Alu="71(31)" T_Lut="778(4)" T_Bsram="9(0)">
   <SubModule name="cam_reset" Register="3" T_Register="3(3)"/>
   <SubModule name="ui_fifo_reset" Register="3" T_Register="3(3)"/>
-  <SubModule name="capture" Register="97" Lut="151" T_Register="97(97)" T_Lut="151(151)"/>
+  <SubModule name="capture" Register="97" Lut="152" T_Register="97(97)" T_Lut="152(152)"/>
   <SubModule name="tokens" Register="5" Lut="30" T_Register="5(5)" T_Lut="30(30)"/>
   <SubModule name="input_fifo" Register="104" Alu="26" Lut="94" Bsram="5" T_Register="104(104)" T_Alu="26(26)" T_Lut="94(94)" T_Bsram="5(5)"/>
   <SubModule name="bcdc" Register="7" Lut="2" T_Register="7(7)" T_Lut="2(2)"/>
@@ -48,48 +67,52 @@
   <SubModule name="output_fifo" Register="56" Alu="14" Lut="52" Bsram="4" T_Register="56(56)" T_Alu="14(14)" T_Lut="52(52)" T_Bsram="4(4)"/>
   <SubModule name="pixels" Register="136" Lut="146" T_Register="136(136)" T_Lut="146(146)"/>
  </SubModule>
- <SubModule name="display_cdc" T_Register="385(0)" T_Lut="7(0)">
-  <SubModule name="to_display" Register="307" Lut="4" T_Register="307(307)" T_Lut="4(4)"/>
+ <SubModule name="capture_tx" Register="2" Lut="31" T_Register="2(2)" T_Lut="31(31)"/>
+ <SubModule name="video_net_fifo" Register="137" Alu="48" Lut="127" Bsram="4" T_Register="137(137)" T_Alu="48(48)" T_Lut="127(127)" T_Bsram="4(4)"/>
+ <SubModule name="video_tx" Register="55" Alu="41" Lut="32" T_Register="55(55)" T_Alu="41(41)" T_Lut="32(32)"/>
+ <SubModule name="display_cdc" T_Register="525(0)" T_Lut="6(0)">
+  <SubModule name="to_display" Register="447" Lut="3" T_Register="447(447)" T_Lut="3(3)"/>
   <SubModule name="to_system" Register="78" Lut="3" T_Register="78(78)" T_Lut="3(3)"/>
  </SubModule>
- <SubModule name="overlay" Register="945" Alu="6" Lut="941" MULTALU27X18="3" MULT12X12="1" T_Register="945(945)" T_Alu="6(6)" T_Lut="941(941)" T_MULTALU27X18="3(3)" T_MULT12X12="1(1)"/>
- <SubModule name="status_panel" Register="48" Lut="277" T_Register="48(48)" T_Lut="277(277)"/>
+ <SubModule name="detection_overlay" Register="1041" Lut="1760" T_Register="1041(1041)" T_Lut="1760(1760)"/>
+ <SubModule name="overlay" Register="1210" Alu="6" Lut="1140" MULTALU27X18="3" MULT12X12="1" T_Register="1210(1210)" T_Alu="6(6)" T_Lut="1140(1140)" T_MULTALU27X18="3(3)" T_MULT12X12="1(1)"/>
+ <SubModule name="status_panel" Register="48" Lut="291" T_Register="48(48)" T_Lut="291(291)"/>
  <SubModule name="s1_filter" Register="25" Lut="41" T_Register="25(25)" T_Lut="41(41)"/>
- <SubModule name="core" Register="717" Alu="63" Lut="38" T_Register="8844(717)" T_Alu="2275(63)" T_Lut="11480(38)" T_MULTALU27X18="8(0)" T_MULT12X12="2(0)" T_MULT27X36="8(0)" T_Bsram="4(0)">
-  <SubModule name="sensors" Register="31" Alu="31" T_Register="2485(31)" T_Alu="504(31)" T_Lut="3344(0)" T_MULTALU27X18="4(0)" T_MULT12X12="1(0)">
-   <SubModule name="lu" Register="34" Lut="41" T_Register="34(34)" T_Lut="41(41)"/>
-   <SubModule name="imu_bus" Register="225" Alu="4" Lut="415" T_Register="225(225)" T_Alu="4(4)" T_Lut="415(415)"/>
-   <SubModule name="imu" Register="232" Alu="31" Lut="313" T_Register="232(232)" T_Alu="31(31)" T_Lut="313(313)"/>
-   <SubModule name="heading" Register="235" Alu="91" Lut="314" MULTALU27X18="1" T_Register="235(235)" T_Alu="91(91)" T_Lut="314(314)" T_MULTALU27X18="1(1)"/>
-   <SubModule name="inclination" Register="199" Alu="60" Lut="904" MULTALU27X18="1" T_Register="199(199)" T_Alu="60(60)" T_Lut="904(904)" T_MULTALU27X18="1(1)"/>
-   <SubModule name="lidar" Register="1456" Alu="273" Lut="1286" MULTALU27X18="2" MULT12X12="1" T_Register="1529(1456)" T_Alu="287(273)" T_Lut="1357(1286)" T_MULTALU27X18="2(2)" T_MULT12X12="1(1)">
+ <SubModule name="core" Register="762" Alu="63" Lut="111" T_Register="8926(762)" T_Alu="2274(63)" T_Lut="11660(111)" T_MULTALU27X18="8(0)" T_MULT12X12="2(0)" T_MULT27X36="8(0)" T_Bsram="4(0)">
+  <SubModule name="sensors" Register="31" Alu="31" T_Register="2485(31)" T_Alu="504(31)" T_Lut="3369(0)" T_MULTALU27X18="4(0)" T_MULT12X12="1(0)">
+   <SubModule name="lu" Register="34" Lut="39" T_Register="34(34)" T_Lut="39(39)"/>
+   <SubModule name="imu_bus" Register="225" Alu="4" Lut="418" T_Register="225(225)" T_Alu="4(4)" T_Lut="418(418)"/>
+   <SubModule name="imu" Register="232" Alu="31" Lut="321" T_Register="232(232)" T_Alu="31(31)" T_Lut="321(321)"/>
+   <SubModule name="heading" Register="235" Alu="91" Lut="317" MULTALU27X18="1" T_Register="235(235)" T_Alu="91(91)" T_Lut="317(317)" T_MULTALU27X18="1(1)"/>
+   <SubModule name="inclination" Register="199" Alu="60" Lut="932" MULTALU27X18="1" T_Register="199(199)" T_Alu="60(60)" T_Lut="932(932)" T_MULTALU27X18="1(1)"/>
+   <SubModule name="lidar" Register="1456" Alu="273" Lut="1271" MULTALU27X18="2" MULT12X12="1" T_Register="1529(1456)" T_Alu="287(273)" T_Lut="1342(1271)" T_MULTALU27X18="2(2)" T_MULT12X12="1(1)">
     <SubModule name="interpolation" Register="73" Alu="14" Lut="71" T_Register="73(73)" T_Alu="14(14)" T_Lut="71(71)"/>
    </SubModule>
   </SubModule>
-  <SubModule name="supervisor" Register="110" Alu="31" Lut="182" Bsram="4" T_Register="1629(110)" T_Alu="218(31)" T_Lut="2822(182)" T_Bsram="4(4)">
-   <SubModule name="cpu" Register="527" Alu="187" Lut="2600" T_Register="1519(527)" T_Alu="187(187)" T_Lut="2640(2600)">
-    <SubModule name="cpuregs" Register="992" Lut="40" T_Register="992(992)" T_Lut="40(40)"/>
+  <SubModule name="supervisor" Register="110" Alu="31" Lut="182" Bsram="4" T_Register="1629(110)" T_Alu="218(31)" T_Lut="2852(182)" T_Bsram="4(4)">
+   <SubModule name="cpu" Register="527" Alu="187" Lut="2627" T_Register="1519(527)" T_Alu="187(187)" T_Lut="2670(2627)">
+    <SubModule name="cpuregs" Register="992" Lut="43" T_Register="992(992)" T_Lut="43(43)"/>
    </SubModule>
   </SubModule>
-  <SubModule name="ql" Register="15" Lut="10" T_Register="15(15)" T_Lut="10(10)"/>
-  <SubModule name="qr" Register="12" Lut="10" T_Register="12(12)" T_Lut="10(10)"/>
-  <SubModule name="el" Register="161" Alu="95" Lut="69" T_Register="161(161)" T_Alu="95(95)" T_Lut="69(69)"/>
-  <SubModule name="er" Register="161" Alu="95" Lut="69" T_Register="161(161)" T_Alu="95(95)" T_Lut="69(69)"/>
-  <SubModule name="sl" Register="200" Alu="65" Lut="326" MULTALU27X18="1" MULT27X36="3" T_Register="200(200)" T_Alu="65(65)" T_Lut="326(326)" T_MULTALU27X18="1(1)" T_MULT27X36="3(3)"/>
-  <SubModule name="sr" Register="200" Alu="65" Lut="326" MULTALU27X18="1" MULT27X36="3" T_Register="200(200)" T_Alu="65(65)" T_Lut="326(326)" T_MULTALU27X18="1(1)" T_MULT27X36="3(3)"/>
-  <SubModule name="return_filter" Register="120" Alu="113" Lut="101" MULTALU27X18="2" T_Register="120(120)" T_Alu="113(113)" T_Lut="101(101)" T_MULTALU27X18="2(2)"/>
-  <SubModule name="scan_guard" Register="299" Alu="169" Lut="611" T_Register="299(299)" T_Alu="169(169)" T_Lut="741(611)">
+  <SubModule name="ql" Register="24" Lut="26" T_Register="24(24)" T_Lut="26(26)"/>
+  <SubModule name="qr" Register="21" Lut="25" T_Register="21(21)" T_Lut="25(25)"/>
+  <SubModule name="el" Register="161" Alu="95" Lut="72" T_Register="161(161)" T_Alu="95(95)" T_Lut="72(72)"/>
+  <SubModule name="er" Register="161" Alu="95" Lut="68" T_Register="161(161)" T_Alu="95(95)" T_Lut="68(68)"/>
+  <SubModule name="sl" Register="200" Alu="65" Lut="323" MULTALU27X18="1" MULT27X36="3" T_Register="200(200)" T_Alu="65(65)" T_Lut="323(323)" T_MULTALU27X18="1(1)" T_MULT27X36="3(3)"/>
+  <SubModule name="sr" Register="200" Alu="65" Lut="323" MULTALU27X18="1" MULT27X36="3" T_Register="200(200)" T_Alu="65(65)" T_Lut="323(323)" T_MULTALU27X18="1(1)" T_MULT27X36="3(3)"/>
+  <SubModule name="return_filter" Register="120" Alu="113" Lut="100" MULTALU27X18="2" T_Register="120(120)" T_Alu="113(113)" T_Lut="100(100)" T_MULTALU27X18="2(2)"/>
+  <SubModule name="scan_guard" Register="299" Alu="168" Lut="624" T_Register="299(299)" T_Alu="168(168)" T_Lut="754(624)">
    <SubModule name="envelope" Lut="130" T_Lut="130(130)"/>
   </SubModule>
-  <SubModule name="autonomy" Register="220" Alu="128" Lut="613" T_Register="220(220)" T_Alu="128(128)" T_Lut="613(613)"/>
-  <SubModule name="laser" Register="60" Alu="16" Lut="105" MULT12X12="1" T_Register="134(60)" T_Alu="36(16)" T_Lut="173(105)" T_MULT12X12="1(1)">
+  <SubModule name="autonomy" Register="235" Alu="128" Lut="633" T_Register="235(235)" T_Alu="128(128)" T_Lut="633(633)"/>
+  <SubModule name="laser" Register="60" Alu="16" Lut="100" MULT12X12="1" T_Register="134(60)" T_Alu="36(16)" T_Lut="168(100)" T_MULT12X12="1(1)">
    <SubModule name="divider" Register="74" Alu="20" Lut="68" T_Register="74(74)" T_Alu="20(20)" T_Lut="68(68)"/>
   </SubModule>
-  <SubModule name="feedback" Register="38" Alu="181" Lut="127" T_Register="38(38)" T_Alu="181(181)" T_Lut="127(127)"/>
-  <SubModule name="pl" Register="479" Alu="234" Lut="559" T_Register="479(479)" T_Alu="234(234)" T_Lut="559(559)"/>
-  <SubModule name="pr" Register="479" Alu="234" Lut="553" T_Register="479(479)" T_Alu="234(234)" T_Lut="553(553)"/>
-  <SubModule name="ml" Register="52" Alu="22" Lut="92" MULT27X36="1" T_Register="52(52)" T_Alu="22(22)" T_Lut="92(92)" T_MULT27X36="1(1)"/>
-  <SubModule name="mr" Register="52" Alu="22" Lut="97" MULT27X36="1" T_Register="52(52)" T_Alu="22(22)" T_Lut="97(97)" T_MULT27X36="1(1)"/>
-  <SubModule name="telemetry" Register="1391" Alu="31" Lut="1410" T_Register="1391(1391)" T_Alu="31(31)" T_Lut="1410(1410)"/>
+  <SubModule name="feedback" Register="40" Alu="181" Lut="131" T_Register="40(40)" T_Alu="181(181)" T_Lut="131(131)"/>
+  <SubModule name="pl" Register="480" Alu="234" Lut="559" T_Register="480(480)" T_Alu="234(234)" T_Lut="559(559)"/>
+  <SubModule name="pr" Register="480" Alu="234" Lut="558" T_Register="480(480)" T_Alu="234(234)" T_Lut="558(558)"/>
+  <SubModule name="ml" Register="52" Alu="22" Lut="95" MULT27X36="1" T_Register="52(52)" T_Alu="22(22)" T_Lut="95(95)" T_MULT27X36="1(1)"/>
+  <SubModule name="mr" Register="52" Alu="22" Lut="100" MULT27X36="1" T_Register="52(52)" T_Alu="22(22)" T_Lut="100(100)" T_MULT27X36="1(1)"/>
+  <SubModule name="telemetry" Register="1391" Alu="31" Lut="1393" T_Register="1391(1391)" T_Alu="31(31)" T_Lut="1393(1393)"/>
  </SubModule>
 </Module>

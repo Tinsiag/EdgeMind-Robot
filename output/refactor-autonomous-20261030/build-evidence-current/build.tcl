@@ -7,10 +7,11 @@ set_option -use_sspi_as_gpio 1
 set_option -use_cpu_as_gpio 1
 set_option -user_code 0000A745
 set_option -bit_security 0
-set_option -route_option 1
-set_option -place_option 1
+set_option -route_option 2
+set_option -place_option 2
 set_option -timing_driven 1
 set_option -correct_hold_violation 1
 set_option -gen_sdf 1
 set_option -gen_verilog_sim_netlist 1
+set_option -clock_route_order 1
 run all

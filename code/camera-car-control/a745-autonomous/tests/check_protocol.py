@@ -69,6 +69,13 @@ def main():
     fusion[24], fusion[41] = 1, 2
     value=decode_attitude(fusion)
     assert all(value[k]==v for k,v in dict(roll=-90,pitch=45,tilt_valid=True,cpu_alive=True,cpu_fault=False,cpu_progress=0).items())
+    # Encoder counters use formerly reserved tilt-word bits. An unchanged
+    # deployed receiver must still use bit0 alone for inclination validity.
+    struct.pack_into('<I',fusion,24,0x80410083)
+    assert decode_attitude(fusion)['tilt_valid']
+    fusion[24]&=0xfe
+    assert not decode_attitude(fusion)['tilt_valid']
+    fusion[24]|=1
     struct.pack_into('<I', fusion, 37, 123456)
     fusion[41] = 4
     assert decode_attitude(fusion)['cpu_progress'] == 123456 and decode_attitude(fusion)['cpu_fault']

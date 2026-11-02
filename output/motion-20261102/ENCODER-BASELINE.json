@@ -1,0 +1,8 @@
+{
+  "baseline_quadrature_sha256": "859f1eac7cab9c34102d398e4a846733cdd41061587b254f9efc88ff7e340cf9",
+  "test_sha256": "52d4533bf416fdd9082664e77d027842e0af9afb2973f88d9fab7e53e2f27764",
+  "executed_before_decoder_change": true,
+  "passed": false,
+  "failure_log": "FATAL: /mnt/c/Users/sc/Documents/Dev/Hardware/EdgeMind-Robot/code/camera-car-control/a745-autonomous/tests/quadrature_filter_tb.v:25: short encoder spike was decoded: width=1 count=0 edges=2 illegal=2\n       Time: 7400000  Scope: quadrature_filter_tb\nw\u0000s\u0000l\u0000:\u0000 \u0000\u7e87Km0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\u9254\u0006tM\u6182\u007f\f\ufffdFO*g\\\u66c4P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN\u5249 \u0000W\u0000S\u0000L\u0000 \u0000\nN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\u9254\u0006t\u00020\n\u0000\n\u0000",
+  "meaning": "Original bench width=1 holds a 2-clock short pulse because of its task entry edge. It produces 2 illegal transitions; corrected final bench covers exact 1..99-clock pulses. Actual hardware waveform not measured."
+}

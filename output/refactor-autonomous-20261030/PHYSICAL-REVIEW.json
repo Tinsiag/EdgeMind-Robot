@@ -7,12 +7,12 @@
     },
     {
       "resource": "Logic",
-      "usage": "19797/59904",
-      "utilization": "34%"
+      "usage": "23574/59904",
+      "utilization": "40%"
     },
     {
       "resource": "--LUT,ALU,ROM16",
-      "usage": "19797(17122 LUT, 2675 ALU, 0 ROM16)",
+      "usage": "23574(20557 LUT, 3017 ALU, 0 ROM16)",
       "utilization": "-"
     },
     {
@@ -22,8 +22,8 @@
     },
     {
       "resource": "Register",
-      "usage": "15314/60780",
-      "utilization": "26%"
+      "usage": "19926/60780",
+      "utilization": "33%"
     },
     {
       "resource": "--Logic Register as Latch",
@@ -32,8 +32,8 @@
     },
     {
       "resource": "--Logic Register as FF",
-      "usage": "15274/59904",
-      "utilization": "26%"
+      "usage": "19886/59904",
+      "utilization": "34%"
     },
     {
       "resource": "--I/O Register as Latch",
@@ -47,22 +47,22 @@
     },
     {
       "resource": "CLS",
-      "usage": "15475/29952",
-      "utilization": "52%"
+      "usage": "19372/29952",
+      "utilization": "65%"
     },
     {
       "resource": "I/O Port",
-      "usage": "119/297",
-      "utilization": "41%"
+      "usage": "125/297",
+      "utilization": "43%"
     },
     {
       "resource": "I/O Buf",
-      "usage": "112",
+      "usage": "118",
       "utilization": "-"
     },
     {
       "resource": "--Input Buf",
-      "usage": "19",
+      "usage": "25",
       "utilization": "-"
     },
     {
@@ -77,13 +77,13 @@
     },
     {
       "resource": "IOLOGIC",
-      "usage": "67/293",
-      "utilization": "23%"
+      "usage": "72/293",
+      "utilization": "25%"
     },
     {
       "resource": "BSRAM",
-      "usage": "46/118",
-      "utilization": "39%"
+      "usage": "57/118",
+      "utilization": "49%"
     },
     {
       "resource": "DSP",
@@ -127,13 +127,13 @@
     },
     {
       "resource": "bank 7",
-      "usage": "5/24",
-      "utilization": "21%"
+      "usage": "7/24",
+      "utilization": "30%"
     },
     {
       "resource": "bank 8",
-      "usage": "12/24",
-      "utilization": "50%"
+      "usage": "16/24",
+      "utilization": "67%"
     },
     {
       "resource": "bank 9",
@@ -172,8 +172,8 @@
     },
     {
       "resource": "GCLK_PIN",
-      "usage": "14/40",
-      "utilization": "35%"
+      "usage": "16/40",
+      "utilization": "40%"
     },
     {
       "resource": "CLKDIV",
@@ -211,6 +211,11 @@
       "utilization": "TR BL"
     },
     {
+      "resource": "rgmii_rx_clk_d",
+      "usage": "PRIMARY",
+      "utilization": "BR BL"
+    },
+    {
       "resource": "pll125",
       "usage": "PRIMARY",
       "utilization": "BR BL"
@@ -228,20 +233,20 @@
     {
       "resource": "ui_clk",
       "usage": "PRIMARY",
-      "utilization": "BR BL"
-    },
-    {
-      "resource": "ui_n",
-      "usage": "PRIMARY",
       "utilization": "BL"
     },
     {
-      "resource": "core/sensors/lidar/n18950_4",
+      "resource": "core/sensors/lidar/n5303_7",
       "usage": "PRIMARY",
-      "utilization": "TR"
+      "utilization": "BR"
     },
     {
       "resource": "display_n",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
+      "resource": "display_sys_n",
       "usage": "LW",
       "utilization": "-"
     },
@@ -256,22 +261,17 @@
       "utilization": "-"
     },
     {
+      "resource": "detection_overlay/current_739_11",
+      "usage": "LW",
+      "utilization": "-"
+    },
+    {
       "resource": "core/ms_tick",
       "usage": "LW",
       "utilization": "-"
     },
     {
       "resource": "core/lpv",
-      "usage": "LW",
-      "utilization": "-"
-    },
-    {
-      "resource": "core/sensors/lidar/n7974_9",
-      "usage": "LW",
-      "utilization": "-"
-    },
-    {
-      "resource": "core/sensors/lidar/n5303_7",
       "usage": "LW",
       "utilization": "-"
     },
@@ -324,6 +324,16 @@
       "resource": "camera_href",
       "usage": "-",
       "utilization": "D14/1         | Y          | in    | IOT82[A] | PCIE_HOST_RSTN/TPLL0_T_IN2/TPLL0_T_FB0 | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2"
+    },
+    {
+      "resource": "rgmii_rx_clk",
+      "usage": "-",
+      "utilization": "W19/8         | Y          | in    | IOB93[A] | GCLKT_9         | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
+    },
+    {
+      "resource": "rgmii_rx_ctl",
+      "usage": "-",
+      "utilization": "AB18/8        | Y          | in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "left_enc_a",
@@ -1117,13 +1127,13 @@
     },
     {
       "resource": "AB18/8",
-      "usage": "-",
-      "utilization": "in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "rgmii_rx_ctl",
+      "utilization": "in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "V17/8",
-      "usage": "-",
-      "utilization": "in    | IOB79[A] | CSI_B           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "rgmii_rxd[0]",
+      "utilization": "in    | IOB79[A] | CSI_B           | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "W17/8",
@@ -1132,8 +1142,8 @@
     },
     {
       "resource": "V18/8",
-      "usage": "-",
-      "utilization": "in    | IOB81[A] | GCLKT_11        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+      "usage": "rgmii_rxd[1]",
+      "utilization": "in    | IOB81[A] | GCLKT_11        | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
     },
     {
       "resource": "V19/8",
@@ -1182,8 +1192,8 @@
     },
     {
       "resource": "W19/8",
-      "usage": "-",
-      "utilization": "in    | IOB93[A] | GCLKT_9         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "rgmii_rx_clk",
+      "utilization": "in    | IOB93[A] | GCLKT_9         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "W20/8",
@@ -1272,13 +1282,13 @@
     },
     {
       "resource": "P19/7",
-      "usage": "-",
-      "utilization": "in    | IOB113[A] | D06             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "rgmii_rxd[2]",
+      "utilization": "in    | IOB113[A] | D06             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "R19/7",
-      "usage": "-",
-      "utilization": "in    | IOB113[B] | D07             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "rgmii_rxd[3]",
+      "utilization": "in    | IOB113[B] | D07             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
     },
     {
       "resource": "T21/7",
@@ -2133,6 +2143,294 @@
     "right_in2": "OBUF right_in2_obuf (\n    .O(right_in2),\n    .I(right_in2_d) \n);"
   },
   "pin_assignments": {
+    "rgmii_tx_clk": [
+      "rgmii_tx_clk",
+      "-",
+      "U22/7",
+      "Y",
+      "out",
+      "IOB117[A]",
+      "PUDC_B",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "rgmii_rx_clk": [
+      "rgmii_rx_clk",
+      "-",
+      "W19/8",
+      "Y",
+      "in",
+      "IOB93[A]",
+      "GCLKT_9",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "rgmii_rx_ctl": [
+      "rgmii_rx_ctl",
+      "-",
+      "AB18/8",
+      "Y",
+      "in",
+      "IOB77[B]",
+      "BPLL1_C_IN2/BPLL1_C_FB0",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "rgmii_rxd[0]": [
+      "rgmii_rxd[0]",
+      "-",
+      "V17/8",
+      "Y",
+      "in",
+      "IOB79[A]",
+      "CSI_B",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "rgmii_rxd[1]": [
+      "rgmii_rxd[1]",
+      "-",
+      "V18/8",
+      "Y",
+      "in",
+      "IOB81[A]",
+      "GCLKT_11",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "-"
+    ],
+    "rgmii_rxd[2]": [
+      "rgmii_rxd[2]",
+      "-",
+      "P19/7",
+      "Y",
+      "in",
+      "IOB113[A]",
+      "D06",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "rgmii_rxd[3]": [
+      "rgmii_rxd[3]",
+      "-",
+      "R19/7",
+      "Y",
+      "in",
+      "IOB113[B]",
+      "D07",
+      "LVCMOS33",
+      "OFF",
+      "NONE",
+      "OFF",
+      "ON",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "OFF",
+      "bus4"
+    ],
+    "rgmii_tx_ctl": [
+      "rgmii_tx_ctl",
+      "-",
+      "AA19/8",
+      "Y",
+      "out",
+      "IOB85[A]",
+      "RDWR_B",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "-"
+    ],
+    "rgmii_txd[0]": [
+      "rgmii_txd[0]",
+      "-",
+      "U21/7",
+      "Y",
+      "out",
+      "IOB115[B]",
+      "D05",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "rgmii_txd[1]": [
+      "rgmii_txd[1]",
+      "-",
+      "W22/7",
+      "Y",
+      "out",
+      "IOB104[B]",
+      "D10",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "rgmii_txd[2]": [
+      "rgmii_txd[2]",
+      "-",
+      "W21/7",
+      "Y",
+      "out",
+      "IOB104[A]",
+      "D09",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
+    "rgmii_txd[3]": [
+      "rgmii_txd[3]",
+      "-",
+      "Y22/8",
+      "Y",
+      "out",
+      "IOB99[B]",
+      "D13",
+      "LVCMOS33",
+      "8",
+      "NONE",
+      "OFF",
+      "OFF",
+      "OFF",
+      "SLOW",
+      "OFF",
+      "OFF",
+      "OFF",
+      "3.3",
+      "MEDIUM",
+      "NONE",
+      "NONE",
+      "bus4"
+    ],
     "left_in1": [
       "left_in1",
       "-",
@@ -3023,25 +3321,26 @@
     ]
   },
   "cmd_do_options": {
-    "route_1": true,
-    "place_1": true,
+    "route_matches_build": true,
+    "place_matches_build": true,
     "timing_driven": true,
-    "correct_hold": true
+    "correct_hold": true,
+    "clock_route_order": 1
   },
   "source_inputs_match": true,
-  "netlist_sha256": "a03b3d8b3919842287e49a57645fb290c1ef893954317c5a6ff97aa1e4af8817",
+  "netlist_sha256": "d87dbcb3fca09b0ed42bef43a28de5f220376eb3ed0fe675f1e0a9d60d5367bd",
   "pnr_phase_times": [
-    "Placement Phase 0: CPU time = 0h 0m 37s, Elapsed time = 0h 0m 37s",
-    "Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s",
-    "Placement Phase 2: CPU time = 0h 1m 15s, Elapsed time = 0h 1m 15s",
-    "Placement Phase 3: CPU time = 0h 1m 24s, Elapsed time = 0h 1m 24s",
-    "Total Placement: CPU time = 0h 3m 19s, Elapsed time = 0h 3m 19s",
-    "Routing Phase 0: CPU time = 0h 0m 0.022s, Elapsed time = 0h 0m 0.022s",
-    "Routing Phase 1: CPU time = 0h 2m 15s, Elapsed time = 0h 2m 15s",
-    "Routing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s",
+    "Placement Phase 0: CPU time = 0h 0m 31s, Elapsed time = 0h 0m 31s",
+    "Placement Phase 1: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s",
+    "Placement Phase 2: CPU time = 0h 2m 32s, Elapsed time = 0h 2m 32s",
+    "Placement Phase 3: CPU time = 0h 3m 21s, Elapsed time = 0h 3m 21s",
+    "Total Placement: CPU time = 0h 6m 27s, Elapsed time = 0h 6m 27s",
+    "Routing Phase 0: CPU time = 0h 0m 0.025s, Elapsed time = 0h 0m 0.025s",
+    "Routing Phase 1: CPU time = 0h 3m 32s, Elapsed time = 0h 3m 32s",
+    "Routing Phase 2: CPU time = 0h 0m 0.921s, Elapsed time = 0h 0m 0.921s",
     "Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s",
-    "Total Routing: CPU time = 0h 2m 16s, Elapsed time = 0h 2m 16s",
-    "CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s",
-    "Total Time and Memory Usage: CPU time = 0h 5m 48s, Elapsed time = 0h 5m 48s, Peak memory usage = 1783MB"
+    "Total Routing: CPU time = 0h 3m 33s, Elapsed time = 0h 3m 33s",
+    "CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s",
+    "Total Time and Memory Usage: CPU time = 0h 10m 14s, Elapsed time = 0h 10m 14s, Peak memory usage = 1834MB"
   ]
 }

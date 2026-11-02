@@ -16,6 +16,12 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
  reg [2:0] state,field;
  reg [4:0] bit_count;reg [16:0] binary;reg [19:0] bcd;
  reg negative;reg signed [31:0] field_value,field_sample;reg [31:0] magnitude;
+ // Make the existing fault capsule readable without a host/network client.
+ // Freeze R/P at the values used by the interlock, rather than the recovered
+ // live pose. SRC identifies this view and the fault's actual input path.
+ wire imu_fault_view=working[183:176]==8 && working[192] && fusion_working[215:208]!=0;
+ wire encoder_fault_view=working[183:176]==8 && working[194] && fusion_working[95] && !imu_fault_view;
+ wire shown_tilt_valid=imu_fault_view ? fusion_working[218]:fusion_working[64];
  reg [19:0] adjusted_bcd;reg [47:0] ascii_value,angle_value;
  integer n,digit;
  function [7:0] hex_digit(input [3:0] v);
@@ -100,8 +106,8 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
   endfunction
  always @* begin
   case(field)
-   0:field_value=angle_tenths(fusion_working[47:32]);
-   1:field_value=angle_tenths(fusion_working[63:48]);
+   0:field_value=angle_tenths(imu_fault_view ? fusion_working[239:224]:fusion_working[47:32]);
+   1:field_value=angle_tenths(imu_fault_view ? fusion_working[255:240]:fusion_working[63:48]);
    2:field_value=angle_tenths(working[431:416]);
    3:field_value={16'd0,working[479:464]};
    4:field_value={16'd0,working[495:480]};
@@ -151,6 +157,15 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
    work_lines[0][255-17*8-:32]<=working[160] && working[161] ? "OK  ":"WAIT";
    work_lines[0][255-26*8-:32]<=working[798:795]==11 ? "OK  ":"WAIT";
    work_lines[3][255-16*8-:32]<=working[173] ? "OK  ":"WAIT";
+   if(imu_fault_view) begin
+    work_lines[3][255-12*8-:64]<={"SRC:",hex_digit(fusion_working[215:212]),hex_digit(fusion_working[211:208]),"  "};
+   end else if(encoder_fault_view) begin
+    work_lines[3][255-12*8-:64]<=fusion_working[79:65]>64 ?
+     (fusion_working[94:80]>64 ? "ENC:LR  ":"ENC:L   "):"ENC:R   ";
+    work_lines[1]<="ENC L:0000 R:0000 AB ERRORS     ";
+    work_lines[1][255-6*8-:32]<={hex_digit({1'b0,fusion_working[79:77]}),hex_digit(fusion_working[76:73]),hex_digit(fusion_working[72:69]),hex_digit(fusion_working[68:65])};
+    work_lines[1][255-13*8-:32]<={hex_digit({1'b0,fusion_working[94:92]}),hex_digit(fusion_working[91:88]),hex_digit(fusion_working[87:84]),hex_digit(fusion_working[83:80])};
+   end
    case(working[183:176])
     0:work_lines[3][255-5*8-:48]<="IDLE  ";
     1:work_lines[3][255-5*8-:48]<="CALIB ";
@@ -160,6 +175,8 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
     5:work_lines[3][255-5*8-:48]<="BLOCK ";
     8:work_lines[3][255-5*8-:48]<="FAULT ";
     9:work_lines[3][255-5*8-:48]<="SETTLE";
+    10:work_lines[3][255-5*8-:48]<="BACK  ";
+    11:work_lines[3][255-5*8-:48]<="REPLAN";
     default:work_lines[3][255-5*8-:48]<="WAIT  ";
    endcase
    work_lines[3][255-25*8-:8]<=hex_digit(working[207:204]);
@@ -183,9 +200,9 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
    end
   end
   STORE:case(field)
-   0:work_lines[1][255-2*8-:48]<=fusion_working[64] ? angle_value:" WAIT ";
-   1:work_lines[1][255-11*8-:48]<=fusion_working[64] ? angle_value:" WAIT ";
-   2:work_lines[1][255-20*8-:48]<=working[160] ? angle_value:" WAIT ";
+   0:if(!encoder_fault_view) work_lines[1][255-2*8-:48]<=shown_tilt_valid ? angle_value:" WAIT ";
+   1:if(!encoder_fault_view) work_lines[1][255-11*8-:48]<=shown_tilt_valid ? angle_value:" WAIT ";
+   2:if(!encoder_fault_view) work_lines[1][255-20*8-:48]<=working[160] ? angle_value:" WAIT ";
    3:work_lines[2][255-2*8-:48]<=working[163] && working[479:464]!=65535 ? ascii_value:" WAIT ";
    4:work_lines[2][255-11*8-:48]<=working[163] && working[495:480]!=65535 ? ascii_value:" WAIT ";
    5:work_lines[2][255-20*8-:48]<=working[163] && working[511:496]!=65535 ? ascii_value:" WAIT ";

@@ -8,19 +8,23 @@
   "clock_frequencies": {
     "sys_clk": {
       "constraint_mhz": 50.0,
-      "actual_mhz": 51.422
+      "actual_mhz": 50.624
     },
     "camera_pclk": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 177.264
+      "actual_mhz": 115.335
+    },
+    "rx125m": {
+      "constraint_mhz": 125.0,
+      "actual_mhz": 167.462
     },
     "tx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 222.841
+      "actual_mhz": 157.325
     },
     "display33m": {
       "constraint_mhz": 33.0,
-      "actual_mhz": 55.609
+      "actual_mhz": 53.963
     },
     "memory400m": {
       "constraint_mhz": 400.0,
@@ -28,15 +32,15 @@
     },
     "ddr_ui100m": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 123.363
+      "actual_mhz": 121.127
     }
   },
   "worst_reported_slack_ns": {
-    "setup": 0.553,
-    "hold": 0.05,
-    "recovery": 3.879,
-    "removal": 0.215,
-    "minimum_pulse_width": 1.551
+    "setup": 0.247,
+    "hold": 0.038,
+    "recovery": 3.208,
+    "removal": 0.348,
+    "minimum_pulse_width": 1.122
   },
   "per_clock_tns": [
     {
@@ -59,6 +63,18 @@
     },
     {
       "clock": "camera_pclk",
+      "analysis": "hold",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "rx125m",
+      "analysis": "setup",
+      "tns_ns": 0.0,
+      "endpoints": 0
+    },
+    {
+      "clock": "rx125m",
       "analysis": "hold",
       "tns_ns": 0.0,
       "endpoints": 0
@@ -128,6 +144,7 @@
   "expected_live_clocks": {
     "sys_clk": 50,
     "camera_pclk": 100,
+    "rx125m": 125,
     "memory400m": 400,
     "ddr_ui100m": 100,
     "tx125m": 125,
@@ -137,6 +154,7 @@
   "clock_summary": {
     "sys_clk": 50.0,
     "camera_pclk": 100.0,
+    "rx125m": 125.0,
     "tx250m": 250.0,
     "tx125m": 125.0,
     "display33m": 33.0,

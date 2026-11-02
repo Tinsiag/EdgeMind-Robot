@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "bitstream_sha256": "888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256",
+  "physical_netlist_sha256": "e8a863cac55d2514974626dc2c46dfc1461e2a08d7d7ac3b430630fd5664279c",
+  "primitive_model_sha256": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
+  "primitive_declarations_sha256": "ddff7d1e195e4d587f5724a936f4f78a4912e39d560012f79d31134764f1f4e3",
+  "data_sources": [
+    "rgmii_rx_ctl",
+    "rgmii_rxd[0]",
+    "rgmii_rxd[1]",
+    "rgmii_rxd[2]",
+    "rgmii_rxd[3]"
+  ],
+  "unreachable_motor_outputs": [
+    "left_in1",
+    "left_in2",
+    "right_in1",
+    "right_in2"
+  ],
+  "reached_cells": 10610,
+  "reached_nets": 11409,
+  "method": "Conservative data/enable/reset transitive closure through all routed primitives; sequential boundaries retained as dependencies; clocks excluded",
+  "note": "Independent source interface check also restricts core diagnostic input to EMS1 byte23"
+}

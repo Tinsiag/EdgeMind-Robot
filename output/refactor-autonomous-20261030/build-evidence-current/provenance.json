@@ -2,47 +2,69 @@
   "vendor_inputs": [
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\ddr3_memory_interface.v",
-      "sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7"
+      "sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+      "generated_sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\ddr_pll.v",
-      "sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251"
+      "sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+      "generated_sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\ddr_pll_mod.v",
-      "sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7"
+      "sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+      "generated_sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\ethernet_pll_mod.v",
-      "sha256": "d421976ffbaf0f307c72f65d13a8ef18ec91d732a433c2efee89bb34c743eb00"
+      "sha256": "b3ea13a9c89257271908a0f4b492dc435f8d315469dff029aacb944586a5ff27",
+      "generated_sha256": "f54110b6711e2ae384a355c99206c11e981442625ca9d02e3d39c8b9f6eb721c",
+      "transform": "ODIV1 6 -> 3; dedicated CLKDIV/2 restores 125MHz"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\gmii_to_rgmii.v",
-      "sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91"
+      "sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+      "generated_sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\gowin_pll.v",
-      "sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0"
+      "sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+      "generated_sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\pll_init.v",
-      "sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258"
+      "sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "generated_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\pll_mDRP_intf.v",
-      "sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad"
+      "sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+      "generated_sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\tft_gowin_pll.v",
-      "sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8"
+      "sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+      "generated_sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\tft_gowin_pll_mod.v",
-      "sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794"
+      "sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+      "generated_sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+      "transform": "byte-identical"
     },
     {
       "source": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\vendor\\board\\tft_pll_init.v",
-      "sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e"
+      "sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+      "generated_sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+      "transform": "byte-identical"
     }
   ],
   "parameters": {
@@ -62,7 +84,7 @@
     "RIGHT_DIAMETER": 66300
   },
   "config_crc": 3262599608,
-  "network": "IPv4/UDP broadcast TX only; no command receiver",
+  "network": "IPv4/UDP video/telemetry TX; ED10 display-only RX; no motion commands",
   "motor_pads_dynamic": true,
   "arm_on_boot": false
 }

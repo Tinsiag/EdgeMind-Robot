@@ -60,6 +60,32 @@ FW74508 已完成外部 Flash 写入/校验、重载、就绪和 UserCode 比对
 
 姿态层新增最近三个完整 roll/pitch 对按最大绝对倾角取中值，抑制单次加速度/振动尖峰；22.5° 阈值、valid 和真实倾斜停车保留。29 项 RTL/协议、回放、几何、CPU、8 项导航/姿态原语模型和同次 PNR/STA/SDF/PAD 已通过。运动、显示和真实冷启动未验收，`application_verified`、`err0001_fixed`、`root_cause_confirmed` 仍为 false。用户已确认 VM 关闭，烧录后未 ARM。
 
+## 当前接手：FW74510（2026-11-02，Flash完成，运动待验收）
+
+用户最新限定只处理FPGA运动，不访问荔枝派、不处理NPU。当前源码基线main/a48af99含FW74509的EV10按行视频；不能回退整个工程到74506或用旧74508状态冒充当前板卡。20个视频/摄像头/时钟/引脚文件与HEAD一致，见output/motion-20261102/VIDEO-INPUTS.json。
+
+74510恢复被74509改为UTURN的100mm/2秒短退，保持前300mm、左右600mm/CAD转向检查、后方严格>350mm才60mm/s后退、停稳150ms、同一堵塞阶段仅一次。任一轮正反方向计数达到约100mm均停。屏幕BACK/REPLAN状态及ERR0001的SRC和故障时刻R/P快照已加入。保留三样本完整倾角对中值、22.5度和全部真实故障保护；ERR0001未确认根治，当前用户还不知道运动具体症状。
+
+最终候选SHA-256为300b43a93a5e0cb259b0e139b9b50e9460643b53ae3ec1533d7310ced2996513；30项RTL、8项原语、协议/回放/几何/CPU及同次PNR-STA-SDF/PAD终检通过。setup/hold/recovery/removal最差+0.720/+0.045/+1.984/+0.322ns，违例0；TX偏斜0.023ns、裕量0.242ns。最后PNR仅改SDC，综合网表b1dc147a96b30f7766214039c828e29c72a90e69d824e43b5519ad517295a815前后不变并与原语回执绑定。时序脚本已修复漏解析文本路径表的问题，前两份失败候选未烧录；FIFO保持指针约束引用改为wr_ptr_sync_commit_reg，网口采用粗略绝对到达限制并强制完整SDF相对偏斜及Q至引脚独立预算，不能只看粗略限制。
+
+20261102T062454.950796Z真实Flash尝试返回50，未完成写入/校验或重载；审计在output/refactor-autonomous-20261030/flash/20261102T062454.950796Z/audit.json。随后只读扫描无有效JTAG目标，Windows未枚举到FTDI；未重试写入、未降级SRAM。用户VM关闭、轮子架空，已请求重新连接下载器。恢复连接后先只读扫描，再按持续授权烧录同一已通过候选；无须再问权限。新SHA的显示、冷启动、运动均未验收，不自动ARM。当前入口output/motion-20261102/CHANGE-74510.md、IMPLEMENTATION.json、JTAG-CONNECTION.json及output/refactor-autonomous-20261030/STATUS.json。没有本机FPGA直连网口遥测，不得为取遥测而违反用户限定访问4A；后续可用本机TFT的SRC与锁存R/P定位。
+
+上述连接故障已于2026-11-02恢复：用户重新确认FPGA通电、VM关闭、轮子架空；只读扫描识别FT2CH/0/548和唯一ID0x0001481B，预烧录终检再次通过。真实Flash审计output/refactor-autonomous-20261030/flash/20261102T090916.626313Z/audit.json已确认54@0写入/校验、Reprogram、74只读就绪及73 UserCode比对全部通过，最终状态0x70022020、UserCode0xA745，实板加载镜像SHA为上段300b43a9…96513。当前不再等待下载器连接，正在等待用户本地冷启动与架空S1启停验收，再做受控落地测试；显示、运动、冷启动、ERR0001根治均不可提前记为通过。未访问4A、未发送运动命令、未自动ARM。
+
+## FW74511接续（2026-11-02，冷启动及本次运动验收通过）
+
+用户已确认74510真实冷启动和画面文字正常，随后落地运行ERR0004；已重新确认VM关闭、轮子架空、FAULT保留，编码器VCC为3.3V（用户报告，未实测）。74510运动验收未通过，不能写成ERR0001/0004已根治。见output/motion-20261102/ACCEPTANCE-74510.json。
+
+ERR0004是左右非法AB跳变累计>64，不是无脉冲停车。旧三拍同步后直接译码的短毛刺误累计已执行失败用例确认。74511候选加入50MHz下100次稳定AB采样、约2us的完整二位向量过滤，保持真实四倍频/正反转及稳定非法跳变>64停车，未增阈值、未清零累计。故障时锁存左右15位饱和错误计数，在本机TFT显示ENC:L/R/LR及十六进制L/R，0041即65。使用EMF原保留位，旧tilt valid bit0和所有原字段不变，旧接收器兼容测试通过。物理毛刺、接触、供电/共地等根因还未测定。
+
+31项完整RTL/Verilator和9项同源Gowin原语通过，新增quadrature_filter_tb；视频3帧/1440包零错误，20个视频/时钟/摄像头/引脚文件保持。同次PNR-STA-SDF/PAD及最终门通过，setup/hold/recovery/removal最差+0.554/+0.043/+1.734/+0.356ns，违例0；TX偏斜0.023ns、剩余裕量0.242ns。更新证据副本时曾遇Windows临时文件锁，核对可写权限后重新归档成功，未跳过哈希或时序检查。
+
+当前已固化并从Flash重载FW74511，SHA为9b9bfb97b32df6e70a4a186caa35ede5332ee0aec3a17cd145df13a6b7d167a9；审计output/refactor-autonomous-20261030/flash/20261102T094504.939045Z/audit.json，54@0写入/校验、Reprogram、74就绪、73 UserCode比对通过，最终0x70022020。当前尚待新SHA的本机显示、架空/落地运动及真实冷启动验收；ERR0004和ERR0001均不可提前宣称根治。用户确认VM关闭后直接烧录，未自动ARM。已请求先看IDLE/ERR0000、架空2秒启停，再空旷平地最多5秒本地S1测试；若0004，关VM保留FAULT并读ENC标记和L/R十六进制计数；若0001，读SRC和触发R/P。用户要求持续只处理FPGA，不访问4A。详见output/motion-20261102/CHANGE-74511.md、IMPLEMENTATION-74511.json和output/refactor-autonomous-20261030/STATUS.json。
+
+最新用户验收回复为“架空和落地均正常，S1能停止”。74511短时架空/落地直行与S1停已通过，画面正常作为成功组合测试的前置条件记录，未拍照或独立采集应用遥测。见output/motion-20261102/ACCEPTANCE-74511.json。仅此范围通过，不把约5秒地面测试扩写为长时间稳定、转弯/后退或新SHA真实冷启动通过；err0004_fixed、err0001_fixed和硬件根因确认仍为false。接下来核实新SHA完整断电冷启动，以及累计20～30秒可分段的地面直行。无需重编译或重新烧录，禁止电脑ARM，仍不访问4A。
+
+最终用户进一步确认“冷启动正常，IDLE/ERR0000”和“累计运行正常，S1能停止，未报错”。新SHA的完整断电冷启动、画面、架空/落地直行、累计约20～30秒可分段地面运行及S1停止已验收通过，记录已更新至ACCEPTANCE-74511.json、IMPLEMENTATION-74511.json和STATUS.json。本次报告的ERR0004回归验收通过，err0004_fixed=true仅指这个已验证范围；没有实测电气毛刺波形或根因，不宣称长时间绝不复发。旧ERR0001在该段未出现，但err0001_fixed和电气根因确认仍false。本SHA的自动转弯/短退没有重新做物理验收。当前没有待完成的本次直行回归操作，不再编译、烧录或自动运动；未获新指令前不转做4A/NPU或推送远端，不关机。
+
 ## 4A 视频识别恢复（2026-11-02，本次用户已明确重新授权访问4A/NPU）
 
 本次任务由用户明确要求连接192.168.40.101（debian）修复 /home/debian/fpga 的推理，用户授权自行决定分辨率/帧率，取代前一轮仅运动/不访问4A的任务范围。未编译或烧录FPGA、未电脑ARM、未运动、未提交推送、未重启/关机；原74511运动验收状态保持。
@@ -69,3 +95,18 @@ FW74508 已完成外部 Flash 写入/校验、重载、就绪和 UserCode 比对
 发现默认rmem_max=212992导致UDP socket丢包，已持久化16777216，实际SO_RCVBUF内核双倍计账33554432。最终60.078秒299次推理，摄像头29.761fps、网页14.947fps、识别4.977次/秒，bad/partial/missing均0、推理错误0；另连续解码60张真实MJPEG、56个不同JPEG确认实时。7项协议/超时/颜色/几何测试通过，NPU真实原始头独立NumPy解码对照3person+1kite吻合；SIGSTOP模拟NPU卡住后5秒超时且自行恢复，网页不中断。
 
 服务采用已有用户systemd fpga-video.service并启用linger。驱动OCM1MiB/792MHz、modules-load和接收缓冲已设持久化；未重启4A，真实冷启动仍未验收。COCO外类别和模型精度未做标注集验收；不是通用多模态大模型，不宣称任意物体准确识别或修复CPU ONNX SIGILL。入口host/README-video.md及output/vision-inference-20261102/RESULT.json；源码/配置已逐文件比对本机与4A哈希一致。
+
+
+## 检测框回传 FPGA TFT（2026-11-02，FW74512 已烧录、实屏通过）
+
+本次用户明确授权4A推理结果回传FPGA显示、编译布线及直接Flash；用户确认VM关闭、电机驱动断开。未自动ARM、未发送运动指令、未运动、未关机。原运动逻辑、22.5度与编码器过滤保持，74511运动验收不能套给新SHA。
+
+FW74512增加RGMII RX、MAC FCS/RX_ER整帧检查及UDP6105 ED10显示元数据解析（固定MAC/IP、IP/UDP校验和、非分片、长度、字段、坐标、序号检查），最多8框。parser50MHz，经整帧FIFO和握手邮箱跨域，33MHz场消隐原子更新，约1秒过期清框。640×480推理源裁自本机800×480的x80..719，显示框x+80；绿色2px框位于原HUD下面，类别/分数在网页。叠最新本地视频、有推理延迟、非逐帧锁定；没有回传整帧JPEG或运动命令。EMS1 byte23为模256接受计数，只用于遥测；真实routed原语可达分析确认RX数据不能到四电机输出。
+
+已部署4A静态邻居systemd+NetworkManager dispatcher，主机每成功推理回传，空结果清框，发送错误隔离。保持NPU640×384/5Hz、摄像头640×480、网页15fps目标。调试曾暂关end1 TX checksum offload，现已恢复原值1，AUXDATA识别本机抓包的checksum completion pending，不能把NIC完成前seed当坏包。源码哈希HOST-HASHES.json一致。
+
+用户提醒布线优化文档；从ac56a9e^的TIMING-FIX-20261027.md、旧TIMING-CLOSURE.md及USER-OPTIMIZATION-IDEAS-1.md找到历史依据，已整理到当前docs/TIMING-CLOSURE.md并加README链接，未恢复旧工程。PLL直出125MHz时setup/hold虽通过，RAM最小脉宽-0.068ns不放行；现prepare仅将生成PLL副本ODIV1从6改3，以250MHz经专用CLKDIV/2生成125MHz，去掉强制BUFG。最终place2/route2/clock_route_order1，37项RTL、9项导航/姿态及2项显示独立原语、CPU/协议/回放/几何、同次PNR/STA/SDF/PAD全部通过。最差setup/hold/recovery/removal/脉宽+0.247/+0.038/+3.208/+0.348/+1.122ns，违例0；RX两沿三PVT最差裕量+0.376ns，TFT+2.815ns。独立叶模块执行不是整板网表执行。显示综合脚本曾在生成结果后等待退出超时，显式Tcl exit后完整重跑通过，未跳过执行。
+
+真实Flash审计output/refactor-autonomous-20261030/flash/20261102T142044.944132Z/audit.json：54@0写入/校验、Reprogram、74只读就绪、73 UserCode通过；最终0x70022020，UserCode0xA745。实板SHA888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256。60.000秒600状态/600姿态全74512/IDLE/ERR0000/未ARM/目标零，CPU/IMU/摄像头/DDR健康；299次推理/299回传，状态采样首尾接受计数增298，摄像头29.77fps、识别4.98Hz、网页14.92fps，无新增坏包/不完整帧/缺行或推理错误。
+
+用户本地回复“有绿色框，参数文字正常”，新SHA显示验收通过。application_verified=true仅限本次检测回传/显示及被动健康；新SHA完整断电启动、运动仍未验收，ERR0001根因未确认。入口output/detection-display-20261102/RESULT.json、DISPLAY-ACCEPTANCE.json及最新STATUS.json。持续Flash授权保留；本任务已完成，不为补做运动而自动ARM，不擅自推送远端。

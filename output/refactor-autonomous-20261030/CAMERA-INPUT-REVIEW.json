@@ -2,9 +2,9 @@
   "passed": true,
   "input_setup_budget_ns": 4,
   "input_hold_budget_ns": 0,
-  "bitstream_sha256": "82affbef06d0e16d9959dbfd9822c8311873014bb0cf9586e4654dcf35845a02",
+  "bitstream_sha256": "888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256",
   "camera_pclk_constraint_mhz": 100,
-  "sdf_sha256": "2cbadd2b3bd7f09fdc9e07c43b49a609704e82952804dbf237c2387b9c938e9b",
+  "sdf_sha256": "4d27c153fdcc17023d9e837881fc767e570445ba62c5aea2069bd69ac5db9637",
   "method": "ten pad-to-delay-to-capture-FF paths; STA validates all paths at original budgets",
   "board_signals_measured": false,
   "inputs": [
@@ -16,14 +16,14 @@
       "capture_ff": "video/capture/d_0_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -35,14 +35,14 @@
       "capture_ff": "video/capture/d_1_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -54,14 +54,14 @@
       "capture_ff": "video/capture/d_2_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -73,14 +73,14 @@
       "capture_ff": "video/capture/d_3_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -92,14 +92,14 @@
       "capture_ff": "video/capture/d_4_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -111,14 +111,14 @@
       "capture_ff": "video/capture/d_5_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -130,14 +130,14 @@
       "capture_ff": "video/capture/d_6_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -149,14 +149,14 @@
       "capture_ff": "video/capture/d_7_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -168,14 +168,14 @@
       "capture_ff": "video/capture/hs_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     },
@@ -187,14 +187,14 @@
       "capture_ff": "video/capture/vs_s0",
       "sdf_delay_ns": [
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ],
         [
-          1.2,
-          1.5,
-          1.8
+          1.176,
+          1.47,
+          1.764
         ]
       ]
     }

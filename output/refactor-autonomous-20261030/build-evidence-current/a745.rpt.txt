@@ -12,27 +12,27 @@
   <Part Number>: GW5AT-LV60PG484AC1/I0
   <Device>: GW5AT-60
   <Device Version>: B
-  <Created Time>:Sat Oct 31 17:24:10 2026
+  <Created Time>:Mon Nov  2 22:19:49 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 37s, Elapsed time = 0h 0m 37s
-    Placement Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
-    Placement Phase 2: CPU time = 0h 1m 15s, Elapsed time = 0h 1m 15s
-    Placement Phase 3: CPU time = 0h 1m 24s, Elapsed time = 0h 1m 24s
-    Total Placement: CPU time = 0h 3m 19s, Elapsed time = 0h 3m 19s
+    Placement Phase 0: CPU time = 0h 0m 31s, Elapsed time = 0h 0m 31s
+    Placement Phase 1: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+    Placement Phase 2: CPU time = 0h 2m 32s, Elapsed time = 0h 2m 32s
+    Placement Phase 3: CPU time = 0h 3m 21s, Elapsed time = 0h 3m 21s
+    Total Placement: CPU time = 0h 6m 27s, Elapsed time = 0h 6m 27s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.022s, Elapsed time = 0h 0m 0.022s
-    Routing Phase 1: CPU time = 0h 2m 15s, Elapsed time = 0h 2m 15s
-    Routing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    Routing Phase 0: CPU time = 0h 0m 0.025s, Elapsed time = 0h 0m 0.025s
+    Routing Phase 1: CPU time = 0h 3m 32s, Elapsed time = 0h 3m 32s
+    Routing Phase 2: CPU time = 0h 0m 0.921s, Elapsed time = 0h 0m 0.921s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 2m 16s, Elapsed time = 0h 2m 16s
+    Total Routing: CPU time = 0h 3m 33s, Elapsed time = 0h 3m 33s
  Generate output files:
-    CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+    CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s
 
- Total Time and Memory Usage: CPU time = 0h 5m 48s, Elapsed time = 0h 5m 48s, Peak memory usage = 1783MB
+ Total Time and Memory Usage: CPU time = 0h 10m 14s, Elapsed time = 0h 10m 14s, Peak memory usage = 1834MB
 
 
 3. Resource Usage Summary
@@ -40,29 +40,30 @@
   --------------------------------------------------------------------------------
   Resources                   | Usage                               | Utilization
   --------------------------------------------------------------------------------
-  Logic                       | 19797/59904                         |  34%
-    --LUT,ALU,ROM16           | 19797(17122 LUT, 2675 ALU, 0 ROM16) | -
+  Logic                       | 23574/59904                         |  40%
+    --LUT,ALU,ROM16           | 23574(20557 LUT, 3017 ALU, 0 ROM16) | -
     --SSRAM(RAM16)            | 0                                   | -
-  Register                    | 15314/60780                         |  26%
+  Register                    | 19926/60780                         |  33%
     --Logic Register as Latch | 0/59904                             |  0%
-    --Logic Register as FF    | 15274/59904                         |  26%
+    --Logic Register as FF    | 19886/59904                         |  34%
     --I/O Register as Latch   | 0/876                               |  0%
     --I/O Register as FF      | 40/876                              |  5%
-  CLS                         | 15475/29952                         |  52%
-  I/O Port                    | 119/297                             |  41%
-  I/O Buf                     | 112                                 | -
-    --Input Buf               | 19                                  | -
+  CLS                         | 19372/29952                         |  65%
+  I/O Port                    | 125/297                             |  43%
+  I/O Buf                     | 118                                 | -
+    --Input Buf               | 25                                  | -
     --Output Buf              | 71                                  | -
     --Inout Buf               | 22                                  | -
-  IOLOGIC                     | 67/293                              | 23%
+  IOLOGIC                     | 72/293                              | 25%
+    --IDDR                    | 5
     --ODDR                    | 6
     --ODDRC                   | 1
     --IDES8_MEM               | 16
     --OSER8                   | 24
     --OSER8_MEM               | 20
-    --IODELAY                 | 26
-  BSRAM                       | 46/118                              | 39%
-    --SDPB                    | 29
+    --IODELAY                 | 31
+  BSRAM                       | 57/118                              | 49%
+    --SDPB                    | 40
     --SDPX9B                  | 9
     --pROM                    | 8
   DSP                         | 28.5/118                            | 25%
@@ -84,8 +85,8 @@
   bank 4   | 1/16        | 7%          
   bank 5   | 12/34       | 36%         
   bank 6   | 13/20       | 65%         
-  bank 7   | 5/24        | 21%         
-  bank 8   | 12/24       | 50%         
+  bank 7   | 7/24        | 30%         
+  bank 8   | 16/24       | 67%         
   bank 9   | 48/66       | 73%         
   bank 10  | 1/25        | 4%          
   bank 11  | 3/25        | 12%         
@@ -100,7 +101,7 @@
   ------------------------------------------
   PRIMARY       | 8/8           | 100%
   LW            | 8/8           | 100%
-  GCLK_PIN      | 14/40         | 35%
+  GCLK_PIN      | 16/40         | 40%
   CLKDIV        | 2/20          | 10%
   DDRDLL        | 1/5           | 20%
   DQS           | 2/13          | 16%
@@ -115,19 +116,19 @@
   -------------------------------------------
   clk_d          | PRIMARY        |  TR BR BL
   camera_pclk_d  | PRIMARY        |  TR BL
+  rgmii_rx_clk_d | PRIMARY        |  BR BL
   pll125         | PRIMARY        |  BR BL
   pll250         | PRIMARY        |  BL
   display_clk    | PRIMARY        |  TR BR BL
-  ui_clk         | PRIMARY        |  BR BL
-  ui_n           | PRIMARY        |  BL
-  core/sensors/lidar/n18950_4| PRIMARY        |  TR
+  ui_clk         | PRIMARY        |  BL
+  core/sensors/lidar/n5303_7| PRIMARY        |  BR
   display_n      | LW             |  -
+  display_sys_n  | LW             |  -
   control_n      | LW             |  -
   ui_rst         | LW             |  -
+  detection_overlay/current_739_11| LW             |  -
   core/ms_tick   | LW             |  -
   core/lpv       | LW             |  -
-  core/sensors/lidar/n7974_9| LW             |  -
-  core/sensors/lidar/n5303_7| LW             |  -
   core/telemetry/bytes_511_59| LW             |  -
   pll250         | HCLK           | BANK10_BANK11_HCLK0
   memory_clk     | HCLK           | BANK9_HCLK2
@@ -153,6 +154,12 @@ camera_data[4]   | -         | C17/1         | Y          | in    | IOT106[B] | 
 camera_data[5]   | -         | E16/1         | Y          | in    | IOT87[A] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
 camera_data[6]   | -         | D16/1         | Y          | in    | IOT87[B] | -               | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
 camera_data[7]   | -         | B17/1         | Y          | in    | IOT104[A] | GCLKT_1         | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
+rgmii_rx_clk     | -         | W19/8         | Y          | in    | IOB93[A] | GCLKT_9         | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4         
+rgmii_rx_ctl     | -         | AB18/8        | Y          | in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4         
+rgmii_rxd[0]     | -         | V17/8         | Y          | in    | IOB79[A] | CSI_B           | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4         
+rgmii_rxd[1]     | -         | V18/8         | Y          | in    | IOB81[A] | GCLKT_11        | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | -            
+rgmii_rxd[2]     | -         | P19/7         | Y          | in    | IOB113[A] | D06             | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4         
+rgmii_rxd[3]     | -         | R19/7         | Y          | in    | IOB113[B] | D07             | LVCMOS33   | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus4         
 left_enc_a       | -         | A15/1         | Y          | in    | IOT99[A] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
 left_enc_b       | -         | A16/1         | Y          | in    | IOT99[B] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
 right_enc_a      | -         | E13/1         | Y          | in    | IOT78[A] | -               | LVCMOS33   | OFF   | DOWN      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus2         
@@ -389,10 +396,10 @@ V10/9    | -                | in    | IOB71[B] | BPLL1_C_IN1/BPLL1_C_FB1 | LVCMO
 U17/8    | tft_rgb[4]       | out   | IOB75[A] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4         
 U18/8    | tft_rgb[3]       | out   | IOB75[B] | -               | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4         
 AA18/8   | eth_mdc          | out   | IOB77[A] | BPLL1_T_IN2/BPLL1_T_FB0 | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4         
-AB18/8   | -                | in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
-V17/8    | -                | in    | IOB79[A] | CSI_B           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
+AB18/8   | rgmii_rx_ctl     | in    | IOB77[B] | BPLL1_C_IN2/BPLL1_C_FB0 | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
+V17/8    | rgmii_rxd[0]     | in    | IOB79[A] | CSI_B           | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 W17/8    | eth_mdio         | io    | IOB79[B] | -               | LVCMOS33 | 4     | UP        | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
-V18/8    | -                | in    | IOB81[A] | GCLKT_11        | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -            
+V18/8    | rgmii_rxd[1]     | in    | IOB81[A] | GCLKT_11        | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -            
 V19/8    | tft_hsync        | out   | IOB81[B] | GCLKC_11        | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -            
 AA19/8   | rgmii_tx_ctl     | out   | IOB85[A] | RDWR_B          | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -            
 AB20/8   | tft_clk          | out   | IOB85[B] | CSO_B/DOUT      | LVCMOS33 | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -            
@@ -402,7 +409,7 @@ AB15/8   | -                | in    | IOB89[A] | -               | LVCMOS33 | OF
 AA14/8   | -                | in    | IOB89[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 W14/8    | -                | in    | IOB91[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 V14/8    | -                | in    | IOB91[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
-W19/8    | -                | in    | IOB93[A] | GCLKT_9         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
+W19/8    | rgmii_rx_clk     | in    | IOB93[A] | GCLKT_9         | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 W20/8    | -                | in    | IOB93[B] | GCLKC_9         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 U20/8    | -                | in    | IOB95[A] | GCLKT_8         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 V20/8    | -                | in    | IOB95[B] | GCLKC_8         | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
@@ -420,8 +427,8 @@ AB17/7   | -                | in    | IOB108[A] | -               | LVCMOS33 | O
 AB16/7   | -                | in    | IOB108[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 T19/7    | -                | in    | IOB111[A] | MCS_N           | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 T20/7    | -                | in    | IOB111[B] | D08             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
-P19/7    | -                | in    | IOB113[A] | D06             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
-R19/7    | -                | in    | IOB113[B] | D07             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
+P19/7    | rgmii_rxd[2]     | in    | IOB113[A] | D06             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
+R19/7    | rgmii_rxd[3]     | in    | IOB113[B] | D07             | LVCMOS33 | OFF   | NONE      | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 T21/7    | -                | in    | IOB115[A] | D04             | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4         
 U21/7    | rgmii_txd[0]     | out   | IOB115[B] | D05             | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4         
 U22/7    | rgmii_tx_clk     | out   | IOB117[A] | PUDC_B          | LVCMOS33 | 8     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4         

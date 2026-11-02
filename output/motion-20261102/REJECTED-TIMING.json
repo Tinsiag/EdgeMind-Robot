@@ -1,0 +1,188 @@
+{
+  "candidate_sha256": "a3069e065f5dbb2a327a7fa28dc5c18cb4595fc89152ec896ae32ba0a7c57764",
+  "report_sha256": "9f57364127afd449f15995a95dfd3c830f482f80a7e198bf17a630c5a4cc8e76",
+  "programmed": false,
+  "path_violations": {
+    "setup": [
+      {
+        "slack_ns": -1.913,
+        "from": "transmitter/U_ODDR_clk1/Q0",
+        "to": "rgmii_tx_clk_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      },
+      {
+        "slack_ns": -1.913,
+        "from": "transmitter/U_ODDR_en1/Q0",
+        "to": "rgmii_tx_ctl_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      },
+      {
+        "slack_ns": -1.913,
+        "from": "transmitter/[1].U_ODDR_dq1/Q0",
+        "to": "rgmii_txd_1_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      },
+      {
+        "slack_ns": -1.905,
+        "from": "transmitter/[3].U_ODDR_dq1/Q0",
+        "to": "rgmii_txd_3_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      },
+      {
+        "slack_ns": -1.905,
+        "from": "transmitter/[2].U_ODDR_dq1/Q0",
+        "to": "rgmii_txd_2_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      },
+      {
+        "slack_ns": -1.905,
+        "from": "transmitter/[0].U_ODDR_dq1/Q0",
+        "to": "rgmii_txd_0_obuf/O",
+        "from_clock": "tx125m:[R]",
+        "to_clock": "N/A"
+      }
+    ],
+    "hold": [
+      {
+        "slack_ns": -0.302,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_1_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_1_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.256,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_2_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_2_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.235,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_4_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_4_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.235,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_7_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_7_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.235,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_10_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_10_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.223,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_8_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_8_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.219,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_11_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_11_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.168,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_6_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_6_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.168,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_3_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_3_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.157,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_9_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_9_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.099,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_5_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_5_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      },
+      {
+        "slack_ns": -0.093,
+        "from": "net_fifo/wr_ptr_sync_commit_reg_0_s1/Q",
+        "to": "net_fifo/wr_ptr_commit_sync_reg_0_s0/D",
+        "from_clock": "sys_clk:[R]",
+        "to_clock": "tx125m:[R]"
+      }
+    ]
+  },
+  "second_rejected_candidate": {
+    "sha256": "f0523a781dbe58fc5df342ed686a33ae16b7644af26b57c96d3494eacdb5901a",
+    "path_slack_violations": {
+      "setup": [
+        {
+          "slack_ns": -4.913,
+          "from": "transmitter/U_ODDR_clk1/Q0",
+          "to": "rgmii_tx_clk_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        },
+        {
+          "slack_ns": -4.913,
+          "from": "transmitter/U_ODDR_en1/Q0",
+          "to": "rgmii_tx_ctl_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        },
+        {
+          "slack_ns": -4.913,
+          "from": "transmitter/[1].U_ODDR_dq1/Q0",
+          "to": "rgmii_txd_1_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        },
+        {
+          "slack_ns": -4.905,
+          "from": "transmitter/[3].U_ODDR_dq1/Q0",
+          "to": "rgmii_txd_3_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        },
+        {
+          "slack_ns": -4.905,
+          "from": "transmitter/[2].U_ODDR_dq1/Q0",
+          "to": "rgmii_txd_2_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        },
+        {
+          "slack_ns": -4.905,
+          "from": "transmitter/[0].U_ODDR_dq1/Q0",
+          "to": "rgmii_txd_0_obuf/O",
+          "from_clock": "tx125m:[R]",
+          "to_clock": "N/A"
+        }
+      ]
+    },
+    "programmed": false,
+    "reason": "Gowin includes common PLL/clock insertion for Q-pin -from too; held FIFO pointer hold violations are now eliminated"
+  }
+}

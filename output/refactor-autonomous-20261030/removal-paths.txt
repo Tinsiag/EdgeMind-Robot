@@ -1,29 +1,29 @@
 <Report Command>:report_timing -removal -max_paths 25 -max_common_paths 1
-  Path Number   Path Slack              From Node                              To Node                      From Clock         To Clock       Relation   Clock Skew   Data Delay  
- ============= ============ ================================= ========================================== ================= ================= ========== ============ ============ 
-  1             0.215        txreset/pipe_2_s0/Q               phy_ready_tx_0_s0/CLEAR                    tx125m:[R]        tx125m:[R]        0.000      -0.177       0.345       
-  2             0.215        txreset/pipe_2_s0/Q               phy_ready_tx_1_s0/CLEAR                    tx125m:[R]        tx125m:[R]        0.000      -0.177       0.345       
-  3             0.216        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_568_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.177       0.346       
-  4             0.216        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_569_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.177       0.346       
-  5             0.356        display_video_reset/pipe_2_s0/Q   video/frames_0_s1/CLEAR                    display33m:[R]    display33m:[R]    0.000      0.000        0.309       
-  6             0.363        video/cam_reset/pipe_2_s0/Q       video/input_fifo/wb_0_s0/CLEAR             camera_pclk:[R]   camera_pclk:[R]   0.000      0.004        0.311       
-  7             0.363        video/cam_reset/pipe_2_s0/Q       video/input_fifo/wb_1_s0/CLEAR             camera_pclk:[R]   camera_pclk:[R]   0.000      0.004        0.311       
-  8             0.384        video/ui_fifo_reset/pipe_2_s0/Q   video/input_fifo/wg2_9_s0/CLEAR            ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.337       
-  9             0.387        video/cam_reset/pipe_2_s0/Q       video/input_fifo/rg1_4_s0/CLEAR            camera_pclk:[R]   camera_pclk:[R]   0.000      -0.004       0.343       
-  10            0.394        video/cam_reset/pipe_2_s0/Q       video/input_fifo/rg1_0_s0/CLEAR            camera_pclk:[R]   camera_pclk:[R]   0.000      0.000        0.346       
-  11            0.394        video/cam_reset/pipe_2_s0/Q       video/tokens/overflow_s0/CLEAR             camera_pclk:[R]   camera_pclk:[R]   0.000      0.000        0.346       
-  12            0.400        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_480_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.170       0.522       
-  13            0.400        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_481_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.170       0.522       
-  14            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_482_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  15            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_483_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  16            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_484_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  17            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_485_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  18            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_486_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  19            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_487_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  20            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_488_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  21            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_566_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  22            0.403        display_sys_reset/pipe_2_s0/Q     display_cdc/to_display/held_567_s0/CLEAR   sys_clk:[R]       sys_clk:[R]       0.000      -0.174       0.529       
-  23            0.443        display_video_reset/pipe_2_s0/Q   video/frames_31_s0/CLEAR                   display33m:[R]    display33m:[R]    0.000      0.000        0.395       
-  24            0.445        display_video_reset/pipe_2_s0/Q   video/output_fifo/wg2_1_s0/CLEAR           display33m:[R]    display33m:[R]    0.000      0.000        0.397       
-  25            0.445        display_video_reset/pipe_2_s0/Q   video/output_fifo/wg2_6_s0/CLEAR           display33m:[R]    display33m:[R]    0.000      0.000        0.397       
+  Path Number   Path Slack              From Node                               To Node                      From Clock         To Clock       Relation   Clock Skew   Data Delay  
+ ============= ============ ================================= =========================================== ================= ================= ========== ============ ============ 
+  1             0.348        display_video_reset/pipe_2_s0/Q   video/frames_1_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  2             0.348        display_video_reset/pipe_2_s0/Q   video/frames_2_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  3             0.348        display_video_reset/pipe_2_s0/Q   video/frames_3_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  4             0.348        display_video_reset/pipe_2_s0/Q   video/frames_4_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  5             0.348        display_video_reset/pipe_2_s0/Q   video/frames_5_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  6             0.348        display_video_reset/pipe_2_s0/Q   video/frames_6_s0/CLEAR                     display33m:[R]    display33m:[R]    0.000      -0.007       0.308       
+  7             0.353        video/cam_reset/pipe_2_s0/Q       video/capture/pixel_12_s0/CLEAR             camera_pclk:[R]   camera_pclk:[R]   0.000      0.000        0.305       
+  8             0.355        video/ui_fifo_reset/pipe_2_s0/Q   video/input_fifo/empty_s0/PRESET            ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.307       
+  9             0.412        ui_reset/pipe_2_s0/Q              video/framebuffer/blank_wait_s0/CLEAR       ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.364       
+  10            0.412        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_2_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.364       
+  11            0.412        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_3_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.364       
+  12            0.412        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_4_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.364       
+  13            0.412        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_5_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.364       
+  14            0.416        ui_reset/pipe_2_s0/Q              video/framebuffer/write_data_91_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.368       
+  15            0.416        ui_reset/pipe_2_s0/Q              video/framebuffer/packed_data_25_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.368       
+  16            0.416        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_0_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.004        0.364       
+  17            0.416        ui_reset/pipe_2_s0/Q              video/framebuffer/read_blocks_1_s0/CLEAR    ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.004        0.364       
+  18            0.425        rxreset/pipe_2_s0/Q               phy_ready_rx_0_s0/CLEAR                     rx125m:[R]        rx125m:[R]        0.000      -0.174       0.551       
+  19            0.425        rxreset/pipe_2_s0/Q               phy_ready_rx_1_s0/CLEAR                     rx125m:[R]        rx125m:[R]        0.000      -0.174       0.551       
+  20            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/write_data_124_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
+  21            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/write_data_126_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
+  22            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/write_data_127_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
+  23            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/packed_data_19_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
+  24            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/packed_data_26_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
+  25            0.427        ui_reset/pipe_2_s0/Q              video/framebuffer/packed_data_31_s0/CLEAR   ddr_ui100m:[R]    ddr_ui100m:[R]    0.000      0.000        0.379       
 

@@ -1,0 +1,5 @@
+#!/bin/sh
+# NetworkManager can flush permanent neighbors when end1 is reactivated.
+if [ "$1" = end1 ] && { [ "$2" = up ] || [ "$2" = dhcp4-change ]; }; then
+    /usr/sbin/ip neigh replace 192.168.0.2 lladdr 02:00:00:00:00:02 nud permanent dev end1
+fi

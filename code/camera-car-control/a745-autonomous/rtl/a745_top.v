@@ -8,6 +8,7 @@ module a745_top(
     output wire camera_reset_n,inout wire camera_sclk,camera_sdat,
     
     output wire rgmii_tx_clk,output wire [3:0] rgmii_txd,output wire rgmii_tx_ctl,
+    input wire rgmii_rx_clk,rgmii_rx_ctl,input wire [3:0] rgmii_rxd,
     output wire eth_rst_n,eth_mdc,inout wire eth_mdio,
     input wire left_enc_a,left_enc_b,right_enc_a,right_enc_b,
     output wire left_in1,left_in2,right_in1,right_in2,output wire [7:0] led,
@@ -19,12 +20,14 @@ module a745_top(
     inout wire imu_sda,imu_scl,
     output wire lidar_control
 );
-    wire pll50,pll125,unused24,locked;
-    // Direct 125 MHz output for the RGMII/MAC clock, matching the verified
-    // A741 Ethernet architecture. Avoid fabric CLKDIV in the PHY clock path.
-    Gowin_PLL clocks(.clkin(clk),.clkout0(pll50),.clkout1(pll125),.clkout2(unused24),
+    wire pll50,pll250,pll125,unused24,locked;
+    // Regenerate the RAM/MAC 125MHz clock with the dedicated divider.
+    // PLL-direct routing failed the RAM minimum-pulse-width audit.
+    Gowin_PLL clocks(.clkin(clk),.clkout0(pll50),.clkout1(pll250),.clkout2(unused24),
         .lock(locked),.mdclk(clk),.reset(!stop_n));
     wire global_n=stop_n && locked;
+    CLKDIV #(.DIV_MODE("2")) tx_divider(.HCLKIN(pll250),.RESETN(global_n),
+        .CALIB(1'b0),.CLKOUT(pll125));
     wire display_clk,display_locked,display_n,display_sys_n;
     // Unmodified 33MHz PLL parameters/init from ACG720 chapter28, renamed only
     // to coexist with the Ethernet PLL. Control timers remain at 50MHz.
@@ -75,20 +78,49 @@ module a745_top(
     (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_tx;
     always @(posedge pll125 or negedge tx_n)
       if(!tx_n) phy_ready_tx<=0;else phy_ready_tx<={phy_ready_tx[0],phy_ready};
-    wire [7:0] gmii_rxd=8'd0; wire gmii_dv=1'b0,gmii_er=1'b0;
+    wire rx_n;
+    reset_sync rxreset(.clk(rgmii_rx_clk),.async_n(global_n),.rst_n(rx_n));
+    (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_rx;
+    always @(posedge rgmii_rx_clk or negedge rx_n)
+      if(!rx_n) phy_ready_rx<=0;else phy_ready_rx<={phy_ready_rx[0],phy_ready};
+    wire [7:0] gmii_rxd,rx_data,rx_mac_data;wire gmii_dv,gmii_er,rx_ready,rx_mac_ready;
+    wire rx_mac_valid,rx_mac_last,rx_mac_user;
+    a745_rgmii_rx receiver(.clk(rgmii_rx_clk),.data(rgmii_rxd),.ctl(rgmii_rx_ctl),
+      .gmii_data(gmii_rxd),.gmii_valid(gmii_dv),.gmii_error(gmii_er));
     wire [0:0] net_keep=1'b1; wire [0:0] rx_keep; wire rx_valid,rx_last,rx_user;
-    eth_mac_1g_fifo mac(.rx_clk(pll125),.rx_rst(!tx_n),.tx_clk(pll125),.tx_rst(!tx_n),
+    eth_mac_1g_fifo mac(.rx_clk(rgmii_rx_clk),.rx_rst(!rx_n),.tx_clk(pll125),.tx_rst(!tx_n),
       .logic_clk(pll125),.logic_rst(!tx_n),.tx_axis_tdata(net_data),.tx_axis_tkeep(net_keep),
       .tx_axis_tvalid(net_valid),.tx_axis_tready(net_ready),.tx_axis_tlast(net_last),.tx_axis_tuser(1'b0),
-      .rx_axis_tdata(),.rx_axis_tkeep(rx_keep),.rx_axis_tvalid(rx_valid),.rx_axis_tready(1'b0),
-      .rx_axis_tlast(rx_last),.rx_axis_tuser(rx_user),.gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
+      .rx_axis_tdata(rx_mac_data),.rx_axis_tkeep(rx_keep),.rx_axis_tvalid(rx_mac_valid),.rx_axis_tready(rx_mac_ready),
+      .rx_axis_tlast(rx_mac_last),.rx_axis_tuser(rx_mac_user),.gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
       .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),.rx_clk_enable(1'b1),.tx_clk_enable(1'b1),
-      .rx_mii_select(1'b0),.tx_mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(1'b0),
+      .rx_mii_select(1'b0),.tx_mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1]),
       .tx_error_underflow(),.tx_fifo_overflow(),.tx_fifo_bad_frame(),.tx_fifo_good_frame(),.rx_error_bad_frame(),
       .rx_error_bad_fcs(),.rx_fifo_overflow(),.rx_fifo_bad_frame(),.rx_fifo_good_frame());
     gmii_to_rgmii transmitter(.reset_n(global_n),.gmii_tx_clk(pll125),.gmii_txd(gmii_txd),
       .gmii_txen(gmii_en),.gmii_txer(gmii_txer),.rgmii_tx_clk(rgmii_tx_clk),
       .rgmii_txd(rgmii_txd),.rgmii_txen(rgmii_tx_ctl));
+    wire [771:0] detection_data,detection_display;
+    wire detection_update,detection_ready,detection_display_update;
+    wire detection_net_n;
+    reset_sync detection_reset(.clk(pll125),.async_n(display_global_n),.rst_n(detection_net_n));
+    wire [7:0] detection_accepted;
+    // Detection traffic is <1kB/s. Keep packet validation at 50MHz and retain
+    // complete-frame atomicity while crossing from the 125MHz MAC domain.
+    axis_async_fifo #(.DEPTH(512),.DATA_WIDTH(8),.KEEP_ENABLE(0),.FRAME_FIFO(1),.DROP_BAD_FRAME(1)) detection_fifo(
+      .s_clk(pll125),.s_rst(!detection_net_n),.s_axis_tdata(rx_mac_data),.s_axis_tkeep(1'b1),
+      .s_axis_tvalid(rx_mac_valid),.s_axis_tready(rx_mac_ready),.s_axis_tlast(rx_mac_last),.s_axis_tuser(rx_mac_user),
+      .s_axis_tid(8'd0),.s_axis_tdest(8'd0),.m_clk(clk),.m_rst(!display_sys_n),
+      .m_axis_tdata(rx_data),.m_axis_tvalid(rx_valid),.m_axis_tready(rx_ready),.m_axis_tlast(rx_last),.m_axis_tuser(rx_user),
+      .s_pause_req(1'b0),.m_pause_req(1'b0));
+    a745_detection_rx #(.SESSION_CYCLES(100000000)) detection_rx(.clk(clk),.rst_n(display_sys_n),
+      .data(rx_data),.valid(rx_valid && rx_ready),.last(rx_last),.user(rx_user),.ready(rx_ready),
+      .update_ready(detection_ready),.update(detection_update),.detections(detection_data),.accepted(detection_accepted));
+    cdc_mailbox #(.WIDTH(772)) detection_mailbox(.src_clk(clk),.src_rst_n(display_sys_n),
+      .src_valid(detection_update),.src_ready(detection_ready),.src_data(detection_data),
+      .dst_clk(display_clk),.dst_rst_n(display_n),.dst_valid(detection_display_update),.dst_data(detection_display));
+    // Parser and core share 50MHz; diagnostic count is synchronous.
+    wire [7:0] detection_diagnostic=detection_accepted;
     wire raw_l1,raw_l2,raw_r1,raw_r2;
     localparam SENSOR_PINS_ENABLED=0,IMU_TEST=0,MOTION_LIDAR=1;
     wire tof_sda,tof_scl,tof_xshut;
@@ -167,7 +199,9 @@ module a745_top(
         .display_status({frame_ready,camera_bad,ddr_bad,overflow,frames}),
         .display_snapshot(display_snapshot),.display_fusion(display_fusion),.display_flags(display_flags),
         .display_update(display_update),.system_display_status({sys_frame_ready,sys_camera_bad,sys_ddr_bad,sys_overflow,sys_frames}));
-    assign overlay_pixel=camera_pixel;
+    a745_detection_overlay detection_overlay(.clk(display_clk),.rst_n(display_n),.frame_blank(frame_blank),
+      .update(detection_display_update),.detections(detection_display),.x(display_x),.y(display_y),
+      .pixel(camera_pixel),.rgb(overlay_pixel),.present());
     assign overlay_pixel_valid=pixel_valid;
     assign panel_rgb=display_rgb;
     a745_osd #(.WIDTH(800),.HEIGHT(480),.PIPELINED(1)) overlay(.clk(display_clk),.rst_n(display_n),.frame_blank(frame_blank),.de(active),
@@ -192,7 +226,7 @@ module a745_top(
     wire s1_start;
     a741_button_debounce #(.CLK_HZ(50000000)) s1_filter(.clk(clk),.rst_n(control_n),.button_n(s1_n),.press(s1_start));
     a745_core core(.clk(clk),.rst_n(control_n),.button_start(s1_start),
-        .mac_diagnostic(8'd0),.phy_ready(phy_ready),.phy_error(phy_error),
+        .mac_diagnostic(detection_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
         .lidar_control(lidar_pwm),
         .imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),.lidar_rx(lidar_rx),
         .left_a(left_enc_a),.left_b(left_enc_b),.right_a(right_enc_a),.right_b(right_enc_b),

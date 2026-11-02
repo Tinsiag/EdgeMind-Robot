@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-11-02T09:24:46.576800+00:00",
+  "revision": 74510,
+  "sha256": "300b43a93a5e0cb259b0e139b9b50e9460643b53ae3ec1533d7310ced2996513",
+  "evidence": "User local cold-boot and ground-run report",
+  "cold_boot_verified": true,
+  "display_verified": true,
+  "physical_motion_tested": true,
+  "physical_motion_passed": false,
+  "reported_fault": "0004",
+  "fault_context": "Ground run; user confirmed VM off, wheels raised and FAULT retained",
+  "encoder_fault_path": "Left or right cumulative illegal AB transitions >64; not no-pulse timeout",
+  "left_right_counts_read": false,
+  "err0001_fixed": false,
+  "electrical_root_cause_confirmed": false
+}

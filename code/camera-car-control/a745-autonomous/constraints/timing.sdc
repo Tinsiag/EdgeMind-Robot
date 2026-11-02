@@ -1,5 +1,13 @@
 create_clock -name sys_clk -period 20.000 [get_ports {clk}]
 create_clock -name camera_pclk -period 10.000 [get_ports {camera_pclk}]
+create_clock -name rx125m -period 8.000 [get_ports {rgmii_rx_clk}]
+# RTL8211F rev1.1 Table58 integrated-delay output setup/hold >=1.2ns.
+# Reserve 0.2ns board skew: DDR launch transition 1.0..3.0ns
+# after the preceding opposite RXC edge; capture at the next edge (4ns).
+set_input_delay -clock rx125m -max 3.000 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
+set_input_delay -clock rx125m -min 1.000 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
+set_input_delay -clock rx125m -clock_fall -add_delay -max 3.000 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
+set_input_delay -clock rx125m -clock_fall -add_delay -min 1.000 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
 # Gowin derives PLL output clocks from the PLL primitive automatically.
 # External timing numbers are conservative initial budgets, not board measurements.
 set_input_delay -clock camera_pclk -max 4.000 [get_ports {camera_data[*] camera_vsync camera_href}]
@@ -7,7 +15,8 @@ set_input_delay -clock camera_pclk -min 0.000 [get_ports {camera_data[*] camera_
 # Reset and encoder inputs are asynchronous; encoders enter synchronizers.
 set_false_path -from [get_ports {stop_n left_enc_a left_enc_b right_enc_a right_enc_b}]
 # Keep CDC paths visible in this initial build for explicit report review.
-create_generated_clock -name tx125m -source [get_ports {clk}] -multiply_by 5 -divide_by 2 [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}]
+create_generated_clock -name tx250m -source [get_ports {clk}] -multiply_by 5 [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}]
+create_generated_clock -name tx125m -source [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}] -master_clock tx250m -divide_by 2 [get_pins {tx_divider/CLKOUT}]
 create_generated_clock -name display33m -source [get_ports {clk}] -multiply_by 33 -divide_by 50 [get_pins {display_clocks/u_pll/PLLA_inst/CLKOUT0}]
 
 create_generated_clock -name memory400m -source [get_ports {clk}] -multiply_by 8 -phase 0 -duty_cycle 50 [get_pins {memory_pll/u_pll/PLLA_inst/CLKOUT2}]
@@ -76,12 +85,15 @@ set_false_path -hold -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_init_inte
 # This replaces the inherited mixed +2.0/-0.5 provisional no-delay budget.
 # Gowin 1.9.12.04 resets generated-output-clock latency to zero; its STA
 # does not propagate the forwarded ODDR+OBUF path to the capture clock.
-# Bound physical output latency here, and REQUIRE the post-route SDF audit
+# Gowin includes common PLL/clock insertion even with a Q-pin -from selector.
+# Use a coarse 9 ns absolute-arrival guard here; it is NOT a Q-to-pad budget.
+# REQUIRE the post-route SDF audit including clock routing and clock-to-Q
 # of all five data/CTL paths against the actual TX clock pad, both corners
 # and both edges: |FPGA skew|<=0.3ns (+0.2ns PCB budget => Table58 +/-0.5ns).
+# That audit separately enforces Q-to-pad 0.5..3 ns at all three corners.
 # These absolute bounds alone are NOT Ethernet output timing sign-off.
-set_max_delay 6.000 -from [get_clocks {tx125m}] -to [get_ports {rgmii_tx_clk rgmii_txd[*] rgmii_tx_ctl}]
-set_min_delay 0.500 -from [get_clocks {tx125m}] -to [get_ports {rgmii_tx_clk rgmii_txd[*] rgmii_tx_ctl}]
+set_max_delay 9.000 -from [get_pins {transmitter/*/Q0}] -to [get_ports {rgmii_tx_clk rgmii_txd[*] rgmii_tx_ctl}]
+set_min_delay 0.500 -from [get_pins {transmitter/*/Q0}] -to [get_ports {rgmii_tx_clk rgmii_txd[*] rgmii_tx_ctl}]
 # Slow MDIO is asynchronous to the FPGA clock. Only its first synchronizer
 # stage is excepted; the second stage and the MDC-paced sampling stay timed.
 set_false_path -from [get_ports {eth_mdio}] -to [get_pins {phy/bus/mdio_sync_0_s0/D}]
@@ -91,5 +103,23 @@ set_false_path -from [get_ports {imu_sda imu_scl}] -to [get_pins {core/sensors/i
 set_false_path -from [get_ports {lidar_rx}] -to [get_pins {core/sensors/lu/sync_0_s0/D}]
 set_max_delay 8 -to [get_pins {net_fifo/rd_ptr_gray_sync1_reg*/D net_fifo/wr_ptr_gray_sync1_reg*/D net_fifo/wr_ptr_update_sync1_reg*/D net_fifo/wr_ptr_update_ack_sync1_reg*/D net_fifo/overflow_sync2_reg*/D net_fifo/bad_frame_sync2_reg*/D net_fifo/good_frame_sync2_reg*/D net_fifo/s_rst_sync2_reg*/D net_fifo/m_rst_sync2_reg*/D}]
 set_false_path -hold -to [get_pins {net_fifo/rd_ptr_gray_sync1_reg*/D net_fifo/wr_ptr_gray_sync1_reg*/D net_fifo/wr_ptr_update_sync1_reg*/D net_fifo/wr_ptr_update_ack_sync1_reg*/D net_fifo/overflow_sync2_reg*/D net_fifo/bad_frame_sync2_reg*/D net_fifo/good_frame_sync2_reg*/D net_fifo/s_rst_sync2_reg*/D net_fifo/m_rst_sync2_reg*/D}]
-set_max_delay 8 -from [get_pins {net_fifo/wr_ptr_commit_reg*/Q}] -to [get_pins {net_fifo/wr_ptr_commit_sync_reg*/D}]
-set_false_path -hold -from [get_pins {net_fifo/wr_ptr_commit_reg*/Q}] -to [get_pins {net_fifo/wr_ptr_commit_sync_reg*/D}]
+# Bundled commit pointer is held until the synchronized update is acknowledged.
+# Match the actual held source used by upstream axis_async_fifo.tcl, not the
+# continuously updated wr_ptr_commit_reg. Only this handshake bus skips hold.
+set_max_delay 8 -from [get_pins {net_fifo/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {net_fifo/wr_ptr_commit_sync_reg*/D}]
+set_false_path -hold -from [get_pins {net_fifo/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {net_fifo/wr_ptr_commit_sync_reg*/D}]
+# Detection RX CDC: only first synchronizer stages and acknowledged held buses.
+set_max_delay 8 -to [get_pins {phy_ready_rx_0_s0/D detection_mailbox/req_sync_0_s0/D detection_mailbox/ack_sync_0_s0/D}]
+set_false_path -hold -to [get_pins {phy_ready_rx_0_s0/D detection_mailbox/req_sync_0_s0/D detection_mailbox/ack_sync_0_s0/D}]
+set_max_delay 20 -from [get_pins {detection_mailbox/held*/Q}] -to [get_pins {detection_mailbox/dst_data*/D}]
+set_false_path -hold -from [get_pins {detection_mailbox/held*/Q}] -to [get_pins {detection_mailbox/dst_data*/D}]
+set_max_delay 8 -to [get_pins {mac/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg*/D mac/rx_fifo/fifo_inst/wr_ptr_update_sync1_reg*/D mac/rx_fifo/fifo_inst/wr_ptr_update_ack_sync1_reg*/D mac/rx_fifo/fifo_inst/s_rst_sync2_reg*/D mac/rx_fifo/fifo_inst/m_rst_sync2_reg*/D}]
+set_false_path -hold -to [get_pins {mac/rx_fifo/fifo_inst/rd_ptr_gray_sync1_reg*/D mac/rx_fifo/fifo_inst/wr_ptr_update_sync1_reg*/D mac/rx_fifo/fifo_inst/wr_ptr_update_ack_sync1_reg*/D mac/rx_fifo/fifo_inst/s_rst_sync2_reg*/D mac/rx_fifo/fifo_inst/m_rst_sync2_reg*/D}]
+set_max_delay 8 -from [get_pins {mac/rx_fifo/fifo_inst/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {mac/rx_fifo/fifo_inst/wr_ptr_commit_sync_reg*/D}]
+set_false_path -hold -from [get_pins {mac/rx_fifo/fifo_inst/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {mac/rx_fifo/fifo_inst/wr_ptr_commit_sync_reg*/D}]
+
+# Complete ED10 frame crossing, MAC125 -> parser50. Registered Gray/toggles only.
+set_max_delay 8 -to [get_pins {detection_fifo/rd_ptr_gray_sync1_reg*/D detection_fifo/wr_ptr_update_sync1_reg*/D detection_fifo/wr_ptr_update_ack_sync1_reg*/D detection_fifo/s_rst_sync2_reg*/D detection_fifo/m_rst_sync2_reg*/D}]
+set_false_path -hold -to [get_pins {detection_fifo/rd_ptr_gray_sync1_reg*/D detection_fifo/wr_ptr_update_sync1_reg*/D detection_fifo/wr_ptr_update_ack_sync1_reg*/D detection_fifo/s_rst_sync2_reg*/D detection_fifo/m_rst_sync2_reg*/D}]
+set_max_delay 8 -from [get_pins {detection_fifo/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {detection_fifo/wr_ptr_commit_sync_reg*/D}]
+set_false_path -hold -from [get_pins {detection_fifo/wr_ptr_sync_commit_reg*/Q}] -to [get_pins {detection_fifo/wr_ptr_commit_sync_reg*/D}]

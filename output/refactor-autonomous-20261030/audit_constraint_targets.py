@@ -61,13 +61,63 @@ for row in records:
         assert len(dest)==8 and all(p['type']=='DFFCE' for p in dest)
     if 'recalib_s_0' in cmd or 'wloadn_1' in cmd:
         assert len(dest)==1 and dest[0]['type']=='DFFCE'
-delays=[]  # A745 has no RGMII RX path by construction.
+def select_pins(pattern):
+    regex=re.escape(pattern).replace(r'\*','.*').replace(r'\?','.')
+    return sorted(p for p in allpins if re.fullmatch(regex,p))
+
+tx_q=select_pins('transmitter/*/Q0')
+assert len(tx_q)==6 and all(allpins[p][0]=='ODDR' for p in tx_q),tx_q
+bundle_source=select_pins('net_fifo/wr_ptr_sync_commit_reg*/Q')
+bundle_dest=select_pins('net_fifo/wr_ptr_commit_sync_reg*/D')
+assert len(bundle_source)==len(bundle_dest)==12,(bundle_source,bundle_dest)
+assert all(allpins[p][0].startswith('DFF') for p in bundle_source+bundle_dest)
+normalize=lambda value:re.sub(r'\s+','',value)
+assert sorted(normalize(allpins[p][1]) for p in bundle_source)==sorted(normalize(allpins[p][1]) for p in bundle_dest)
+# Each side shares a single enable: the source holds the whole pointer until
+# acknowledged; the destination samples the whole bus on the synchronized update.
+assert all(len({cells[p.rsplit('/',1)[0]][1]['CE'].strip() for p in group})==1 for group in (bundle_source,bundle_dest))
+bundled_pointer={'source_q_pins':bundle_source,'destination_d_pins':bundle_dest,
+                 'source_q_matches_destination_d':True,'bits':len(bundle_source)}
+rx_samples=[name for name,(kind,pins) in cells.items() if kind=='IDDR' and name.startswith('receiver/')]
+assert cells['tx_divider'][0]=='CLKDIV'
+assert cells['clocks/u_pll/PLLA_inst'][1]['CLKOUT1'].strip()==cells['tx_divider'][1]['HCLKIN'].strip()
+ethernet_clock={'pll_output_mhz':250,'mac_clock_mhz':125,'divider':'tx_divider',
+                'kind':'dedicated CLKDIV','clock_net':cells['tx_divider'][1]['CLKOUT'].strip()}
+assert re.search(r'defparam\s+\\?tx_divider\s*\.DIV_MODE\s*=\s*"2"',physical.read_text(encoding='utf-8'))
+generated_pll=(PROJECT/'.local/platform/ethernet_pll_mod.v').read_text()
+assert 'defparam PLLA_inst.ODIV1_SEL = 3;' in generated_pll
+assert len(rx_samples)==5,rx_samples
+for name in rx_samples:
+    kind,pins=cells[name]
+    delay=[(n,p) for n,(k,p) in cells.items() if k=='IODELAY' and p.get('DO','').strip()==pins['D'].strip()]
+    assert len(delay)==1,(name,delay)
+    input_buf=[p for n,(k,p) in cells.items() if k=='IBUF' and p.get('O','').strip()==delay[0][1]['DI'].strip()]
+    assert len(input_buf)==1 and input_buf[0]['I'].strip().startswith('rgmii_rx'),(name,input_buf)
+    clock_buf=[p for n,(k,p) in cells.items() if k=='IBUF' and p.get('O','').strip()==pins['CLK'].strip()]
+    assert len(clock_buf)==1 and clock_buf[0]['I'].strip()=='rgmii_rx_clk'
+rx_pointer_src=select_pins('mac/rx_fifo/fifo_inst/wr_ptr_sync_commit_reg*/Q')
+rx_pointer_dst=select_pins('mac/rx_fifo/fifo_inst/wr_ptr_commit_sync_reg*/D')
+assert len(rx_pointer_src)==len(rx_pointer_dst)==13,(rx_pointer_src,rx_pointer_dst)
+assert sorted(normalize(allpins[p][1]) for p in rx_pointer_src)==sorted(normalize(allpins[p][1]) for p in rx_pointer_dst)
+for group in (rx_pointer_src,rx_pointer_dst):
+    assert len({cells[p.rsplit('/',1)[0]][1]['CE'].strip() for p in group})==1
+parser_pointer_src=select_pins('detection_fifo/wr_ptr_sync_commit_reg*/Q')
+parser_pointer_dst=select_pins('detection_fifo/wr_ptr_commit_sync_reg*/D')
+assert len(parser_pointer_src)==len(parser_pointer_dst)==10
+assert sorted(normalize(allpins[p][1]) for p in parser_pointer_src)==sorted(normalize(allpins[p][1]) for p in parser_pointer_dst)
+mailbox_src=select_pins('detection_mailbox/held*/Q')
+mailbox_dst=select_pins('detection_mailbox/dst_data*/D')
+assert len(mailbox_src)==len(mailbox_dst) and len(mailbox_src)>=308,(len(mailbox_src),len(mailbox_dst))
+assert sorted(normalize(allpins[p][1]) for p in mailbox_src)==sorted(normalize(allpins[p][1]) for p in mailbox_dst)
 result={'netlist_sha256':hashlib.sha256((BUILD/'impl/gwsynthesis/a745.vg').read_bytes()).hexdigest(),
+        'timing_sdc_sha256':hashlib.sha256((PROJECT/'constraints/timing.sdc').read_bytes()).hexdigest(),
         'vendor_internal_model_sha256':vendor_sha,
         'internal_selector_basis':'matching vendor plaintext model; active final tool constraints required separately',
         'routed_netlist_used':physical_current,
         'routed_netlist_sha256':hashlib.sha256(physical.read_bytes()).hexdigest() if physical_current else None,
-        'ddr_exception_targets':records,'rx_iodelay64_count':len(delays),
+        'ddr_exception_targets':records,'tx_oddr_q_route_targets':tx_q,'ethernet_clock':ethernet_clock,
+        'net_fifo_bundled_pointer':bundled_pointer,'rx_iddr_count':len(rx_samples),'rx_iddr_cells':rx_samples,
+        'rx_fifo_bundled_pointer_bits':len(rx_pointer_src),'parser_fifo_bundled_pointer_bits':len(parser_pointer_src),'detection_mailbox_payload_bits':len(mailbox_src),
         'hardware_programmed':False}
 report=OUT/'CONSTRAINT-TARGETS.json'
 temporary=report.with_suffix('.tmp')

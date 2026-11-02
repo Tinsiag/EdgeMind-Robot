@@ -4,14 +4,14 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def sources():
  eth=ROOT.parent/'third_party/verilog-ethernet/rtl'
- return [p for p in sorted((ROOT/'rtl').glob('*.v')) if p.name!='a745_top.v']+sorted((ROOT/'lib').glob('*.v'))+sorted((ROOT/'vendor').glob('*.v'))+[eth/n for n in ['axis_async_fifo.v','axis_gmii_tx.v','lfsr.v']]
+ return [p for p in sorted((ROOT/'rtl').glob('*.v')) if p.name!='a745_top.v']+sorted((ROOT/'lib').glob('*.v'))+sorted((ROOT/'vendor').glob('*.v'))+[eth/n for n in ['axis_async_fifo.v','axis_async_fifo_adapter.v','axis_gmii_rx.v','axis_gmii_tx.v','eth_mac_1g.v','eth_mac_1g_fifo.v','lfsr.v']]
 def linux(p):
  s=Path(p).resolve().as_posix();return '/mnt/'+s[0].lower()+s[2:]
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--only',action='append');args=ap.parse_args();out=ROOT/'.local/tests';out.mkdir(parents=True,exist_ok=True);passed=[]
  benches=sorted((ROOT/'tests').glob('*_tb.v'))
  if args.only:benches=[p for p in benches if p.stem in args.only]
- assert benches,'No selected tests';inputs=sources()+benches;hashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
+ assert benches,'No selected tests';inputs=sources()+benches+sorted((ROOT/'tests').glob('*.hex'));hashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
  for bench in benches:
   name=bench.stem;product=out/(name+'.vvp');prefix=['wsl.exe','-d','Ubuntu-26.04','--cd',linux(ROOT),'--exec']
   if name=='camera_tft800_tb':
@@ -19,7 +19,7 @@ def main():
    cmd=prefix+['verilator','--binary','--timing','-j','4','-Wno-fatal','--Mdir',obj,'--top-module',name,*map(linux,sources()),linux(bench)]
    execute=prefix+[obj+'/V'+name]
   else:
-   primitive=[linux(Path('C:/Gowin/Gowin_V1.9.12.04_x64/IDE/simlib/gw5a/prim_sim.v'))] if name=='camera_pads_tb' else []
+   primitive=[linux(Path('C:/Gowin/Gowin_V1.9.12.04_x64/IDE/simlib/gw5a/prim_sim.v'))] if name in ('camera_pads_tb','rgmii_rx_tb','ethernet_clock_tb') else []
    cmd=prefix+['iverilog','-g2012','-s',name,'-o',linux(product),*map(linux,sources()),*primitive,linux(bench)]
    execute=prefix+['vvp',linux(product)]
   p=subprocess.run(cmd,capture_output=True,text=True,errors='replace');(out/(name+'-compile.log')).write_text(p.stdout+p.stderr,encoding='utf-8')
