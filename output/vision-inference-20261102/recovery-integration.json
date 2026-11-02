@@ -1,0 +1,760 @@
+{
+  "action": "main=5282 child=5301\nstopped=5301\n",
+  "samples": [
+    {
+      "t": 343790.015,
+      "packets": 484892,
+      "bad_packets": 0,
+      "frames": 1010,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.85255821496504,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.974767516731617,
+      "rendered_frames": 507,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 17.7,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 115.6
+    },
+    {
+      "t": 343791.015,
+      "packets": 498921,
+      "bad_packets": 0,
+      "frames": 1039,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.664514131415164,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.73908865266899,
+      "rendered_frames": 521,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 27.7,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 1094.3
+    },
+    {
+      "t": 343792.015,
+      "packets": 513173,
+      "bad_packets": 0,
+      "frames": 1069,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.825995114673827,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.962916894321799,
+      "rendered_frames": 536,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 20.7,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 2095.4
+    },
+    {
+      "t": 343793.015,
+      "packets": 527571,
+      "bad_packets": 0,
+      "frames": 1099,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.794822927637146,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.985708639185102,
+      "rendered_frames": 551,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 19.7,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 3102.1
+    },
+    {
+      "t": 343794.015,
+      "packets": 542655,
+      "bad_packets": 0,
+      "frames": 1130,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.763430344398675,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.99534144226515,
+      "rendered_frames": 567,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 26.1,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 4150.6
+    },
+    {
+      "t": 343795.015,
+      "packets": 556085,
+      "bad_packets": 0,
+      "frames": 1158,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.76046790407851,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.969701324513991,
+      "rendered_frames": 581,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 26.5,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 5092.2
+    },
+    {
+      "t": 343796.015,
+      "packets": 570438,
+      "bad_packets": 0,
+      "frames": 1188,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.76371577180611,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.971444454962652,
+      "rendered_frames": 596,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 27.6,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.468,
+          "box": [
+            260,
+            203,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 6101.2
+    },
+    {
+      "t": 343797.015,
+      "packets": 584781,
+      "bad_packets": 0,
+      "frames": 1218,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.76958342429558,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.937094919241607,
+      "rendered_frames": 611,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 24.6,
+      "boxes": [],
+      "error": "npu: NPU response timeout: TIME 9.518 | DET 1 | 41 0.3485 272.57 162.78 415.67 388.30 | END | TIME 7.639 | DET 1 | 41 0.4682 272.57 162.78 415.67 388.30 | END",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 7107.2
+    },
+    {
+      "t": 343798.015,
+      "packets": 598748,
+      "bad_packets": 0,
+      "frames": 1247,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.759788894057838,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 106.59833399995478,
+      "infer_runs": 169,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.977688232104539,
+      "rendered_frames": 626,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 24.8,
+      "boxes": [],
+      "error": "npu: NPU response timeout: TIME 9.518 | DET 1 | 41 0.3485 272.57 162.78 415.67 388.30 | END | TIME 7.639 | DET 1 | 41 0.4682 272.57 162.78 415.67 388.30 | END",
+      "npu_ms": 7.639,
+      "result_seq": 1003,
+      "result_age_ms": 8081.2
+    },
+    {
+      "t": 343799.015,
+      "packets": 613327,
+      "bad_packets": 0,
+      "frames": 1277,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.767830775094602,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 90.39566699993884,
+      "infer_runs": 173,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.982420631456682,
+      "rendered_frames": 641,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 31.2,
+      "boxes": [
+        {
+          "cls": "mouse",
+          "score": 0.376,
+          "box": [
+            1,
+            234,
+            46,
+            274
+          ]
+        },
+        {
+          "cls": "tv",
+          "score": 0.345,
+          "box": [
+            24,
+            0,
+            219,
+            313
+          ]
+        },
+        {
+          "cls": "cup",
+          "score": 0.342,
+          "box": [
+            260,
+            197,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.144,
+      "result_seq": 1272,
+      "result_age_ms": 79.4
+    },
+    {
+      "t": 343800.015,
+      "packets": 627360,
+      "bad_packets": 0,
+      "frames": 1307,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.759739681793643,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 82.61700000002747,
+      "infer_runs": 178,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.943627645348139,
+      "rendered_frames": 656,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 9.3,
+      "boxes": [],
+      "error": "",
+      "npu_ms": 5.451,
+      "result_seq": 1302,
+      "result_age_ms": 71.3
+    },
+    {
+      "t": 343801.015,
+      "packets": 641760,
+      "bad_packets": 0,
+      "frames": 1337,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.747699851575824,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 83.33799999991243,
+      "infer_runs": 183,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.97330260145921,
+      "rendered_frames": 671,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 6.5,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.348,
+          "box": [
+            260,
+            197,
+            439,
+            479
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.681,
+      "result_seq": 1332,
+      "result_age_ms": 73.6
+    },
+    {
+      "t": 343802.015,
+      "packets": 656151,
+      "bad_packets": 0,
+      "frames": 1366,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.698295020884892,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 82.91499999995722,
+      "infer_runs": 188,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.96241441499597,
+      "rendered_frames": 686,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 32.0,
+      "boxes": [
+        {
+          "cls": "mouse",
+          "score": 0.414,
+          "box": [
+            1,
+            236,
+            46,
+            273
+          ]
+        },
+        {
+          "cls": "tv",
+          "score": 0.311,
+          "box": [
+            39,
+            0,
+            217,
+            307
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.603,
+      "result_seq": 1362,
+      "result_age_ms": 73.3
+    },
+    {
+      "t": 343803.015,
+      "packets": 670080,
+      "bad_packets": 0,
+      "frames": 1396,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.749686111312943,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 90.93066700006602,
+      "infer_runs": 193,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.956228100767953,
+      "rendered_frames": 701,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 11.9,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.411,
+          "box": [
+            265,
+            197,
+            432,
+            479
+          ]
+        },
+        {
+          "cls": "tv",
+          "score": 0.344,
+          "box": [
+            40,
+            0,
+            221,
+            305
+          ]
+        },
+        {
+          "cls": "mouse",
+          "score": 0.306,
+          "box": [
+            0,
+            236,
+            45,
+            273
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.777,
+      "result_seq": 1392,
+      "result_age_ms": 52.5
+    },
+    {
+      "t": 343804.015,
+      "packets": 684488,
+      "bad_packets": 0,
+      "frames": 1426,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.75790949685462,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 89.89566699983698,
+      "infer_runs": 198,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.962175620032799,
+      "rendered_frames": 716,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 19.1,
+      "boxes": [],
+      "error": "",
+      "npu_ms": 5.671,
+      "result_seq": 1421,
+      "result_age_ms": 64.2
+    },
+    {
+      "t": 343805.015,
+      "packets": 698617,
+      "bad_packets": 0,
+      "frames": 1455,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.786312990609837,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 91.71233400002166,
+      "infer_runs": 203,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.981338241341513,
+      "rendered_frames": 730,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 24.3,
+      "boxes": [
+        {
+          "cls": "tv",
+          "score": 0.345,
+          "box": [
+            26,
+            3,
+            220,
+            299
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.254,
+      "result_seq": 1451,
+      "result_age_ms": 41.5
+    },
+    {
+      "t": 343806.031,
+      "packets": 713219,
+      "bad_packets": 0,
+      "frames": 1485,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.73360668667295,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 93.64633399991362,
+      "infer_runs": 208,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.95483639408827,
+      "rendered_frames": 746,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 33.8,
+      "boxes": [
+        {
+          "cls": "cup",
+          "score": 0.438,
+          "box": [
+            260,
+            202,
+            439,
+            479
+          ]
+        },
+        {
+          "cls": "mouse",
+          "score": 0.311,
+          "box": [
+            0,
+            234,
+            45,
+            274
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.25,
+      "result_seq": 1481,
+      "result_age_ms": 52.5
+    },
+    {
+      "t": 343807.031,
+      "packets": 727761,
+      "bad_packets": 0,
+      "frames": 1516,
+      "partial_frames": 0,
+      "missing_rows": 0,
+      "fps": 29.734343473866016,
+      "backend": "npu",
+      "model": "shl.hhb.bm",
+      "infer_size": 640,
+      "infer_ms": 96.16133400004401,
+      "infer_runs": 213,
+      "infer_shape": [
+        1,
+        3,
+        384,
+        640
+      ],
+      "stream_fps_target": 15.0,
+      "stream_fps": 14.963643329603974,
+      "rendered_frames": 761,
+      "receive_buffer_bytes": 33554432,
+      "video_age_ms": 20.7,
+      "boxes": [
+        {
+          "cls": "mouse",
+          "score": 0.315,
+          "box": [
+            1,
+            234,
+            46,
+            274
+          ]
+        }
+      ],
+      "error": "",
+      "npu_ms": 5.286,
+      "result_seq": 1511,
+      "result_age_ms": 75.6
+    }
+  ],
+  "passed": true
+}

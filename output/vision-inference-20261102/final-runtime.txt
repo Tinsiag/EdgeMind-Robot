@@ -1,0 +1,29 @@
+MainPID=5282
+NRestarts=0
+ActiveState=active
+SubState=running
+Linger=yes
+UNCONN 1384832 0                   0.0.0.0:6104         0.0.0.0:*    users:(("python",pid=5282,fd=3))
+	 skmem:(r2323264,rb33554432,t0,tb212992,f3264,w0,o0,bl0,d0)
+1048576
+1098974760960
+792000
+# TH1520 runtime requires the 1 MiB on-chip memory region.
+options vha onchipmem_phys_start=0xffe0001000 onchipmem_size=0x100000 freq_khz=792000
+img_mem
+vha
+vha_info
+# A 640x480 RGB565 frame contains 480 UDP datagrams. The default 208 KiB
+# socket ceiling drops bursts while JPEG/NumPy work briefly holds the GIL.
+net.core.rmem_max=16777216
+c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad  /home/debian/fpga/npu/shl.hhb.bm
+2924174b20817bca424d426c53e979fe2f7e1c990d3f0f4c4c4d8002054e91a3  /home/debian/fpga/npu/yolov5_npu_daemon
+316e7d60484b1d6f396114703c13b84286c13017eb985e1b1eb96de437e006f8  /lib/libshl_th1520.so.2
+11月 02 19:36:09 revyos-lpi4a systemd[650]: fpga-video.service: Consumed 2min 11.894s CPU time, 72.9M memory peak.
+11月 02 19:36:09 revyos-lpi4a systemd[650]: Started fpga-video.service - FPGA camera video and TH1520 YOLO detection.
+11月 02 19:36:13 revyos-lpi4a python[4391]: EV10 UDP 6104 -> http://0.0.0.0:8090/  backend=npu
+11月 02 19:38:24 revyos-lpi4a systemd[650]: Stopping fpga-video.service - FPGA camera video and TH1520 YOLO detection...
+11月 02 19:38:24 revyos-lpi4a systemd[650]: Stopped fpga-video.service - FPGA camera video and TH1520 YOLO detection.
+11月 02 19:38:24 revyos-lpi4a systemd[650]: fpga-video.service: Consumed 3min 5.828s CPU time, 82.8M memory peak.
+11月 02 19:38:24 revyos-lpi4a systemd[650]: Started fpga-video.service - FPGA camera video and TH1520 YOLO detection.
+11月 02 19:38:29 revyos-lpi4a python[5282]: EV10 UDP 6104 -> http://0.0.0.0:8090/  backend=npu

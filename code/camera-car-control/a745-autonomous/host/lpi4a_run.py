@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Run a command on the Lichee Pi 4A over SSH (password auth) and print output."""
-import sys, paramiko
+import os, sys, paramiko
 
-HOST, USER, PWD = '10.0.0.237', 'debian', 'debian'
+HOST = os.environ.get('LPI4A_HOST', '192.168.40.101')
+USER = os.environ.get('LPI4A_USER', 'debian')
+PWD = os.environ.get('LPI4A_PASSWORD', 'debian')
 
 def main():
     cmd = sys.stdin.read() if sys.argv[1:2] == ['-'] else ' '.join(sys.argv[1:])

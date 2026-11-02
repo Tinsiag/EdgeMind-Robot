@@ -10,7 +10,7 @@ Threads: UDP receive/assemble (never blocks), detector (runs on the newest
 complete frame, slow is fine), renderer (overlay newest boxes, JPEG at a
 fixed rate). Browser: http://<4a-ip>:8090/   status: /status.json
 """
-import http.server, json, os, socket, struct, subprocess, threading, time
+import http.server, json, os, socket, struct, threading, time
 import numpy as np
 import cv2
 
@@ -24,8 +24,8 @@ NMS = float(os.environ.get('YOLO_NMS', '0.45'))
 STREAM_FPS = float(os.environ.get('STREAM_FPS', '15'))
 # NPU backend (the only one fast enough on the TH1520). Talks to the HHB
 # yolov5_daemon subprocess; falls back to video-only if it cannot start.
-NPU_MODEL = os.environ.get('YOLO_NPU_MODEL', os.path.expanduser('~/fpga/npu/hhb.bm'))
-NPU_DAEMON = os.environ.get('YOLO_NPU_DAEMON', os.path.expanduser('~/fpga/npu/yolov5_daemon'))
+NPU_MODEL = os.environ.get('YOLO_NPU_MODEL', os.path.expanduser('~/fpga/npu/shl.hhb.bm'))
+NPU_DAEMON = os.environ.get('YOLO_NPU_DAEMON', os.path.expanduser('~/fpga/npu/yolov5_npu_daemon'))
 NPU_H, NPU_W = 384, 640          # model input; the FPGA frame is 640x480
 NPU_MIN_GAP = float(os.environ.get('YOLO_NPU_MIN_GAP', '0.2'))
 NPU_TIMEOUT = float(os.environ.get('YOLO_NPU_TIMEOUT', '5.0'))
@@ -54,6 +54,8 @@ class Assembler:
         self.rows = np.zeros(HEIGHT, bool)
         self.fid = None
         self.frame = None          # latest complete RGB565 frame (HEIGHT, WIDTH*2)
+        self.last_frame = 0.0
+        self.receive_buffer_bytes = 0
         self.seq = 0               # increments per published frame
         self.stats = dict(packets=0, bad_packets=0, frames=0, partial_frames=0, missing_rows=0)
         self.fps = 0.0; self._t = time.monotonic(); self._n = 0
@@ -64,6 +66,7 @@ class Assembler:
             self.stats['missing_rows'] += HEIGHT - got
             with self.lock:
                 self.frame = self.buf.copy(); self.seq += 1; self.stats['frames'] += 1
+                self.last_frame = time.monotonic()
                 self.lock.notify_all()
             self._n += 1; now = time.monotonic()
             if now - self._t >= 1.0:
@@ -90,12 +93,12 @@ class Assembler:
 
 
 def rgb565_to_bgr(raw):
-    v = raw.view('<u2').reshape(HEIGHT, WIDTH)
-    bgr = np.empty((HEIGHT, WIDTH, 3), np.uint8)
-    r = (v >> 11) & 31; g = (v >> 5) & 63; b = v & 31
-    bgr[..., 2] = (r << 3) | (r >> 2)
-    bgr[..., 1] = (g << 2) | (g >> 4)
-    bgr[..., 0] = (b << 3) | (b >> 2)
+    # Native conversion releases the GIL while the UDP receiver assembles rows.
+    bgr = cv2.cvtColor(raw.reshape(HEIGHT, WIDTH, 2), cv2.COLOR_BGR5652BGR)
+    # OpenCV expands by shifting. Replicate low bits to preserve 255 whites.
+    bgr[..., 0] |= bgr[..., 0] >> 5
+    bgr[..., 1] |= bgr[..., 1] >> 6
+    bgr[..., 2] |= bgr[..., 2] >> 5
     return bgr
 
 
@@ -206,150 +209,73 @@ class Detector:
 
 
 class NpuDetector:
-    """TH1520 NPU backend driving the HHB yolov5_daemon subprocess.
-
-    The daemon loads hhb.bm once and services one float32 CHW blob per line
-    on stdin, replying "TIME <ms>" then "DET n" / n box lines / "END" on
-    stdout. If the subprocess dies or a call times out it is restarted; if it
-    never comes up, inference disables itself and the video keeps streaming.
-    """
+    """YOLO on the NPU through the HHB file-path protocol."""
     def __init__(self, asm):
-        self.asm = asm; self.boxes = []; self.ms = 0.0; self.runs = 0; self.error = ''
-        self.lock = threading.Lock(); self.backend = 'npu'; self.size = NPU_W
-        self.proc = None; self.failures = 0; self._io_lock = threading.Lock()
-        # letterbox: NPU is 384 tall, 640 wide; frame 640x480 -> scale 0.8,
-        # pad top/bottom only, so x maps 1:1 and y /= 0.8.
-        self.scale = NPU_H / HEIGHT
-        self.ox = 0
-        self.oy = 0
-        self._start()
-
-    def _start(self):
-        try:
-            self.proc = subprocess.Popen(
-                ['stdbuf', '-oL', NPU_DAEMON, NPU_MODEL, '0.25', '0.45'],
-                stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT, bufsize=0)
-            try:
-                open('/home/debian/fpga/.npu.pid', 'w').write(str(self.proc.pid))
-            except OSError:
-                pass
-            # The daemon prints NNA/Heap INFO lines before READY; skip them.
-            deadline = time.monotonic() + 120
-            seen = []
-            while time.monotonic() < deadline:
-                line = self.proc.stdout.readline().decode()
-                if not line:
-                    break
-                if line.startswith('READY'):
-                    self.error = ''
-                    return
-                seen.append(line.strip())
-            raise RuntimeError('daemon did not reach READY: ' + ' | '.join(seen[-3:])[:200])
-        except Exception as exc:
-            self.proc = None
-            self.error = f'npu start: {str(exc)[:160]}'
+        from npu_daemon import NpuDaemon
+        self.asm = asm; self.boxes = []; self.ms = 0.0; self.npu_ms = 0.0
+        self.runs = 0; self.error = ''; self.lock = threading.Lock()
+        self.backend = 'npu'; self.size = NPU_W; self.model = NPU_MODEL
+        self.last_result = 0.0; self.result_seq = 0; self.failures = 0
+        self.client = NpuDaemon(['stdbuf', '-oL', NPU_DAEMON, NPU_MODEL,
+                                 str(CONF), str(NMS)], timeout=NPU_TIMEOUT,
+                                start_timeout=float(os.environ.get('YOLO_NPU_START_TIMEOUT', '120')),
+                                input_bytes=NPU_H * NPU_W * 3 * 4)
+        self.scale = min(NPU_W / WIDTH, NPU_H / HEIGHT)
+        self.rw = int(round(WIDTH * self.scale))
+        self.rh = int(round(HEIGHT * self.scale))
+        self.ox = (NPU_W - self.rw) // 2
+        self.oy = (NPU_H - self.rh) // 2
 
     def loop(self):
         seen = 0
         if os.environ.get('YOLO_ENABLE', '1') != '1':
-            self.backend = 'npu-disabled'
-            self.error = 'disabled by YOLO_ENABLE=0'
+            self.backend = 'npu-disabled'; self.error = 'disabled by YOLO_ENABLE=0'
             return
-        while True:
-            with self.asm.lock:
-                self.asm.lock.wait_for(lambda: self.asm.seq != seen)
-                seen = self.asm.seq; raw = self.asm.frame
-            if self.proc is None:
-                time.sleep(2)
-                self._start()
-                continue
+        while self.failures < 4:
             try:
+                if self.client.proc is None:
+                    self.client.start()
+                with self.asm.lock:
+                    self.asm.lock.wait_for(lambda: self.asm.seq != seen)
+                    seen = self.asm.seq; raw = self.asm.frame
                 t = time.monotonic()
                 boxes = self.detect(rgb565_to_bgr(raw))
                 took = time.monotonic() - t
                 with self.lock:
                     self.boxes = boxes; self.ms = took * 1000; self.runs += 1
-                    self.failures = 0
-                gap = NPU_MIN_GAP - took
-                if gap > 0:
-                    time.sleep(gap)
+                    self.failures = 0; self.error = ''
+                    self.last_result = time.monotonic(); self.result_seq = seen
+                time.sleep(max(0, NPU_MIN_GAP - took))
             except Exception as exc:
                 with self.lock:
-                    self.failures += 1
-                    self.error = f'npu: {str(exc)[:160]}'
-                self._shutdown()
-                if self.failures > 3:
-                    # Give up on inference rather than let a crashing NPU
-                    # subprocess loop forever; the video stream stays up.
-                    self.proc = None
-                    self.backend = 'npu-disabled'
-                    with self.lock: self.boxes = []
-                    return
+                    self.failures += 1; self.error = f'npu: {str(exc)[:600]}'
+                    self.boxes = []
+                self.client.close()
                 time.sleep(2)
-                self._start()
-
-    def _shutdown(self):
-        try:
-            if self.proc and self.proc.stdin:
-                self.proc.stdin.write(b'QUIT\n'); self.proc.stdin.flush()
-                self.proc.stdin.close()
-            if self.proc:
-                self.proc.wait(timeout=3)
-        except Exception:
-            pass
-        try:
-            if self.proc: self.proc.kill()
-        except Exception:
-            pass
-        self.proc = None
+        self.backend = 'npu-disabled'
 
     def detect(self, bgr):
-        if self.proc is None or self.proc.stdin is None:
-            raise RuntimeError('daemon not running')
-        # RGB, normalize, letterbox height to NPU_H (pad vertical grey 114).
-        rh = int(round(HEIGHT * self.scale))
-        r = cv2.resize(bgr, (WIDTH, rh), interpolation=cv2.INTER_LINEAR)
         canvas = np.full((NPU_H, NPU_W, 3), 114, np.uint8)
-        canvas[self.oy:self.oy + rh, :] = r
-        blob = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
-        blob = np.ascontiguousarray(blob.transpose(2, 0, 1))
-        with self._io_lock:
-            self.proc.stdin.write(blob.tobytes())
-            self.proc.stdin.flush()
-            ms = None; n = None; dets = []
-            while True:
-                line = self.proc.stdout.readline().decode().strip()
-                if not line:
-                    raise RuntimeError('daemon EOF')
-                if line.startswith('TIME'):
-                    ms = float(line.split()[1])
-                elif line.startswith('DET'):
-                    n = int(line.split()[1])
-                elif line == 'END':
-                    break
-                else:
-                    p = line.split()
-                    if len(p) == 6:
-                        dets.append((int(p[0]), float(p[1]), float(p[2]),
-                                     float(p[3]), float(p[4]), float(p[5])))
-        if ms is not None:
-            self.ms = ms
+        canvas[self.oy:self.oy + self.rh, self.ox:self.ox + self.rw] = cv2.resize(
+            bgr, (self.rw, self.rh), interpolation=cv2.INTER_LINEAR)
+        rgb = cv2.cvtColor(canvas, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
+        blob = np.ascontiguousarray(rgb.transpose(2, 0, 1), dtype='<f4')
+        self.npu_ms, dets = self.client.infer(blob.tobytes())
         res = []
         for label, score, x1, y1, x2, y2 in dets:
-            # map letterboxed coords back to the 640x480 frame
-            X1 = max(0, int(x1)); Y1 = max(0, int((y1 - self.oy) / self.scale))
-            X2 = min(WIDTH - 1, int(x2)); Y2 = min(HEIGHT - 1, int((y2 - self.oy) / self.scale))
-            if X2 <= X1 or Y2 <= Y1:
-                continue
-            res.append(dict(cls=COCO[label] if label < len(COCO) else str(label),
-                            score=round(score, 3), box=[X1, Y1, X2, Y2]))
+            X1 = max(0, min(WIDTH - 1, int((x1 - self.ox) / self.scale)))
+            Y1 = max(0, min(HEIGHT - 1, int((y1 - self.oy) / self.scale)))
+            X2 = max(0, min(WIDTH - 1, int((x2 - self.ox) / self.scale)))
+            Y2 = max(0, min(HEIGHT - 1, int((y2 - self.oy) / self.scale)))
+            if X2 > X1 and Y2 > Y1 and score >= CONF:
+                res.append(dict(cls=COCO[label], score=round(score, 3), box=[X1,Y1,X2,Y2]))
         return res
 
 
 class Renderer:
     def __init__(self, asm, det):
         self.asm = asm; self.det = det; self.jpeg = None; self.cond = threading.Condition()
+        self.frames = 0; self.fps = 0.0; self._n = 0; self._t = time.monotonic()
 
     def loop(self):
         seen = 0; period = 1.0 / STREAM_FPS
@@ -359,7 +285,9 @@ class Renderer:
                 seq, raw = self.asm.seq, self.asm.frame
             if raw is not None and seq != seen:
                 seen = seq; img = rgb565_to_bgr(raw)
-                with self.det.lock: boxes = list(self.det.boxes)
+                with self.det.lock:
+                    age = time.monotonic() - getattr(self.det, 'last_result', time.monotonic())
+                    boxes = list(self.det.boxes) if age < 2.0 else []
                 for b in boxes:
                     x1, y1, x2, y2 = b['box']
                     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
@@ -368,18 +296,20 @@ class Renderer:
                 ok, enc = cv2.imencode('.jpg', img, [cv2.IMWRITE_JPEG_QUALITY, 80])
                 if ok:
                     with self.cond: self.jpeg = enc.tobytes(); self.cond.notify_all()
+                    self.frames += 1; self._n += 1
+                    now = time.monotonic()
+                    if now - self._t >= 1:
+                        self.fps = self._n / (now-self._t); self._n = 0; self._t = now
             time.sleep(max(0.0, period - (time.monotonic() - t)))
 
 
-asm = Assembler()
-_backend = os.environ.get('YOLO_BACKEND', 'npu')
-det = NpuDetector(asm) if _backend == 'npu' else Detector(asm)
-ren = Renderer(asm, det)
+asm = det = ren = None
 
 
 def receive():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 16 * 1024 * 1024)
+    asm.receive_buffer_bytes = s.getsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF)
     s.bind(('', UDP_PORT))
     buf = bytearray(2048)
     while True:
@@ -395,8 +325,8 @@ pre{white-space:pre-wrap;background:#1b1b1b;padding:8px;border-radius:6px}</styl
 <body><main><h3>FPGA Camera &rarr; Lichee Pi 4A YOLOv5</h3><img src="/video.mjpg">
 <pre id="s">...</pre></main><script>
 setInterval(()=>fetch('/status.json').then(r=>r.json()).then(j=>{
-s.textContent=`video ${j.fps.toFixed(1)} fps | frames ${j.frames} | packets ${j.packets} | bad ${j.bad_packets} | partial ${j.partial_frames}
-detector ${j.backend} ${j.infer_ms.toFixed(0)} ms | runs ${j.infer_runs} ${j.error}
+s.textContent=`camera ${j.fps.toFixed(1)} fps | web ${j.stream_fps.toFixed(1)} fps | frames ${j.frames}
+detector ${j.backend} ${j.infer_ms.toFixed(0)} ms | NPU ${j.npu_ms?.toFixed(1) ?? '-'} ms | runs ${j.infer_runs} ${j.error}
 `+j.boxes.map(b=>`${b.cls} ${b.score} [${b.box}]`).join('\\n')}),1000)</script></body></html>'''
 
 
@@ -406,11 +336,26 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/status.json':
             with det.lock:
-                st = dict(asm.stats, fps=asm.fps, backend=det.backend, model=os.path.basename(MODEL),
+                st = dict(asm.stats, fps=asm.fps, backend=det.backend, model=os.path.basename(getattr(det, 'model', MODEL)),
                           infer_size=det.size, infer_ms=det.ms, infer_runs=det.runs,
-                          boxes=det.boxes, error=det.error)
+                          infer_shape=[1, 3, NPU_H, NPU_W] if isinstance(det, NpuDetector) else None,
+                          stream_fps_target=STREAM_FPS,
+                          stream_fps=ren.fps, rendered_frames=ren.frames,
+                          receive_buffer_bytes=asm.receive_buffer_bytes,
+                          video_age_ms=round((time.monotonic()-asm.last_frame)*1000, 1)
+                              if asm.last_frame else None,
+                          boxes=det.boxes, error=det.error,
+                          npu_ms=getattr(det, 'npu_ms', None),
+                          result_seq=getattr(det, 'result_seq', None),
+                          result_age_ms=round((time.monotonic()-det.last_result)*1000, 1)
+                              if getattr(det, 'last_result', 0) else None)
             body = json.dumps(st).encode()
             self.send_response(200); self.send_header('Content-Type', 'application/json')
+        elif self.path == '/snapshot.jpg':
+            with ren.cond: body = ren.jpeg
+            if body is None:
+                self.send_error(503, 'Waiting for FPGA frame'); return
+            self.send_response(200); self.send_header('Content-Type', 'image/jpeg')
         elif self.path == '/':
             body = PAGE; self.send_response(200); self.send_header('Content-Type', 'text/html; charset=utf-8')
         elif self.path == '/video.mjpg':
@@ -436,6 +381,11 @@ class Server(http.server.ThreadingHTTPServer):
 
 
 if __name__ == '__main__':
+    cv2.setNumThreads(1)
+    asm = Assembler()
+    backend = os.environ.get('YOLO_BACKEND', 'npu')
+    det = NpuDetector(asm) if backend == 'npu' else Detector(asm)
+    ren = Renderer(asm, det)
     for fn in (receive, det.loop, ren.loop):
         threading.Thread(target=fn, daemon=True).start()
     print(f'EV10 UDP {UDP_PORT} -> http://0.0.0.0:{HTTP_PORT}/  backend={det.backend}', flush=True)

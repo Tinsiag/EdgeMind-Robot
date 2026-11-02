@@ -1,0 +1,19 @@
+Executed on 4A, 2026-11-02:
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 ./venv-system/bin/python -m unittest -v test_video_npu.py
+
+test_letterbox_and_inverse_coordinates ... ok
+test_rgb565_conversion_matches_reference_all_values ... ok
+test_eof_and_invalid_reply ... ok
+test_file_protocol_repeats_and_cleanup ... ok
+test_reject_wrong_blob_size ... ok
+test_reply_timeout_closes_process_and_tensor ... ok
+test_start_timeout_without_newline ... ok
+Ran 7 tests in 5.770s; OK
+
+Independent real-NPU raw-head NumPy verification: known-image-reference.json
+NPU SIGSTOP timeout/restart integration: recovery-integration.json
+Final continuous monitor: final-live-monitor.json
+MJPEG decode (60 frames): browser-stream-check.json
+Compiled final C with -O2 -march=rv64gc -mabi=lp64d -Wall -Wextra -Werror; no warnings/errors.
+Deployed source equality: all 9 runtime source/config files byte-equal to local; hashes in RESULT.json.
+Git diff --check for changed host files and AGENTS.md: passed.

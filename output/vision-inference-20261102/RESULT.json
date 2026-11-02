@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-02",
+  "board": "192.168.40.101",
+  "directory": "/home/debian/fpga",
+  "url": "http://192.168.40.101:8090/",
+  "service": "user fpga-video.service",
+  "status": "deployed and verified on live FPGA input",
+  "reviewed_commits": [
+    "a48af99",
+    "0651fbf",
+    "ef0dce7",
+    "14eb916",
+    "3f53f6f",
+    "f7315df",
+    "52ee265",
+    "5818cab"
+  ],
+  "model": "quantized YOLOv5n / COCO 80 classes",
+  "backend": "TH1520 NPU / SHL 2.4.5",
+  "model_sha256": "c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad",
+  "daemon_sha256": "2924174b20817bca424d426c53e979fe2f7e1c990d3f0f4c4c4d8002054e91a3",
+  "inference_shape": [
+    1,
+    3,
+    384,
+    640
+  ],
+  "letterbox": {
+    "resized": [
+      512,
+      384
+    ],
+    "left": 64,
+    "right": 64,
+    "top": 0,
+    "bottom": 0
+  },
+  "fps_targets": {
+    "web": 15,
+    "inference": 5
+  },
+  "final_monitor": {
+    "duration_s": 60.07799999997951,
+    "camera_fps": 29.76131029662455,
+    "web_fps": 14.947235260832688,
+    "infer_fps": 4.976863410900862,
+    "inferences": 299,
+    "bad_packets": 0,
+    "partial_frames": 0,
+    "missing_rows": 0,
+    "errors": [],
+    "npu_ms_range": [
+      5.287,
+      10.886
+    ],
+    "infer_ms_range": [
+      82.70533300037641,
+      99.66166699996393
+    ]
+  },
+  "browser_stream": {
+    "decoded_frames": 60,
+    "seconds": 3.905999999959022,
+    "approx_fps": 15.104966718028411,
+    "distinct_jpegs": 56,
+    "resolution": [
+      640,
+      480
+    ]
+  },
+  "protocol_and_image_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "independent_raw_head_decode_verified": true,
+  "known_image_classes": [
+    "person",
+    "person",
+    "person",
+    "kite"
+  ],
+  "recovery_fault_injection_passed": true,
+  "socket_drops_after_restart": 0,
+  "systemd_restart_count": 0,
+  "user_linger": true,
+  "persistent_config_installed": true,
+  "cold_boot_with_new_config_verified": false,
+  "accuracy_dataset_evaluated": false,
+  "fpga_rebuilt": false,
+  "fpga_flashed": false,
+  "motion_commands_sent": 0,
+  "deployed_source_sha256": {
+    "fpga_video_yolo_web.py": "706572354ebc1415efa910537128778106e103d54ce675e0d2e7eb04d4c4c445",
+    "npu_daemon.py": "582227a3c4b04691672d02fc7043d3845422db6acb3cdc123d98ddf8524b9a61",
+    "yolov5_npu_daemon.c": "fce489a5d9cb86b7102e7a73e535402c235c9293f18159882bebecfc6b7ae708",
+    "start_video.sh": "cc73eb91eef89aef537ab8b6ee86dd32b63262e1ca5c30b35b87fc4146ddb87e",
+    "fpga-video.service": "ca5dbf1a0db48b9706ee891329071434870a1967abad4500cb7013bddee6fc93",
+    "build_npu_daemon.sh": "622860fb2b2943cf78a33d2cd757761233bb11ac499490f18c007cbb9b863fa2",
+    "fpga-npu.conf": "8c2297b89fc96f3f8a9b95157e8a097e25f91ad9431b772d4a0749410fb49e9a",
+    "fpga-video-sysctl.conf": "3a7413d9261271b22636cf90c20265a07df035d791535420834b7a8978632b22",
+    "test_video_npu.py": "65fef994091bff4d0e32a905bd406cffc66f7b27bac63dd39c5167872174d1c0"
+  },
+  "live_overlay_evidence": {
+    "image": "live-verified.jpg",
+    "status": "live-verified-status.json",
+    "observed_class": "person",
+    "observed_status_confidence": 0.816,
+    "source": "Actual FPGA camera MJPEG snapshot; person box rendered by 4A service"
+  },
+  "git_status_at_verification": {
+    "committed": false,
+    "pushed": false
+  }
+}

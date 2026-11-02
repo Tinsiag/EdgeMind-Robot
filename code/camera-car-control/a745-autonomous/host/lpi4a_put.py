@@ -5,7 +5,9 @@ usage: lpi4a_put.py <remote_dir> <local_file> [local_file ...]
 """
 import sys, os, paramiko
 
-HOST, USER, PWD = '10.0.0.237', 'debian', 'debian'
+HOST = os.environ.get('LPI4A_HOST', '192.168.40.101')
+USER = os.environ.get('LPI4A_USER', 'debian')
+PWD = os.environ.get('LPI4A_PASSWORD', 'debian')
 
 def main():
     remote_dir, files = sys.argv[1], sys.argv[2:]

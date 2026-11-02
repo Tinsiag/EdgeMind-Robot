@@ -59,3 +59,13 @@ S1先释放后新按启动LD06和静止校准，再按S1停止；S0复位急停�
 FW74508 已完成外部 Flash 写入/校验、重载、就绪和 UserCode 比对。实板 SHA-256 `899034472dc21c4f39669929d592031e9521faabf2b6718ffb9ee83ab8813690`；审计 `output/refactor-autonomous-20261030/flash/20261031T092737.270324Z/audit.json`；最终状态 `0x70022020`。被动健康 `output/refactor-autonomous-20261030/imu-fault-20261031/74508-health-20261031.json` 有 300 状态/300 姿态，均 FW74508、IDLE/ERR0000、未 ARM、目标为零，CPU/IMU/摄像头/DDR 正常。
 
 姿态层新增最近三个完整 roll/pitch 对按最大绝对倾角取中值，抑制单次加速度/振动尖峰；22.5° 阈值、valid 和真实倾斜停车保留。29 项 RTL/协议、回放、几何、CPU、8 项导航/姿态原语模型和同次 PNR/STA/SDF/PAD 已通过。运动、显示和真实冷启动未验收，`application_verified`、`err0001_fixed`、`root_cause_confirmed` 仍为 false。用户已确认 VM 关闭，烧录后未 ARM。
+
+## 4A 视频识别恢复（2026-11-02，本次用户已明确重新授权访问4A/NPU）
+
+本次任务由用户明确要求连接192.168.40.101（debian）修复 /home/debian/fpga 的推理，用户授权自行决定分辨率/帧率，取代前一轮仅运动/不访问4A的任务范围。未编译或烧录FPGA、未电脑ARM、未运动、未提交推送、未重启/关机；原74511运动验收状态保持。
+
+已部署量化YOLOv5n的TH1520 NPU检测，浏览器 http://192.168.40.101:8090/ ，640×480预览目标15fps、640×384 NPU输入目标5次/秒。等比512×384后左右各64灰边，框完整逆映射。修复Python往文件路径协议的daemon写tensor导致双向pipe_write死锁；新增真实启动/读写超时和失败恢复；新C源码纠正YOLOv3 exp宽高解码为YOLOv5 sigmoid平方、分类NMS；用现有合法npu/shl.hhb.bm序列化模型（SHA c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad）。新daemon SHA 2924174b20817bca424d426c53e979fe2f7e1c990d3f0f4c4c4d8002054e91a3。
+
+发现默认rmem_max=212992导致UDP socket丢包，已持久化16777216，实际SO_RCVBUF内核双倍计账33554432。最终60.078秒299次推理，摄像头29.761fps、网页14.947fps、识别4.977次/秒，bad/partial/missing均0、推理错误0；另连续解码60张真实MJPEG、56个不同JPEG确认实时。7项协议/超时/颜色/几何测试通过，NPU真实原始头独立NumPy解码对照3person+1kite吻合；SIGSTOP模拟NPU卡住后5秒超时且自行恢复，网页不中断。
+
+服务采用已有用户systemd fpga-video.service并启用linger。驱动OCM1MiB/792MHz、modules-load和接收缓冲已设持久化；未重启4A，真实冷启动仍未验收。COCO外类别和模型精度未做标注集验收；不是通用多模态大模型，不宣称任意物体准确识别或修复CPU ONNX SIGILL。入口host/README-video.md及output/vision-inference-20261102/RESULT.json；源码/配置已逐文件比对本机与4A哈希一致。

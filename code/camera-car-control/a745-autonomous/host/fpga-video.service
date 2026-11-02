@@ -1,0 +1,17 @@
+[Unit]
+Description=FPGA camera video and TH1520 YOLO detection
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/fpga
+Environment=YOLO_ENABLE=1 YOLO_BACKEND=npu STREAM_FPS=15 YOLO_NPU_MIN_GAP=0.2
+Environment=OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+EnvironmentFile=-%h/fpga/video.env
+ExecStart=%h/fpga/venv-system/bin/python -u %h/fpga/fpga_video_yolo_web.py
+Restart=on-failure
+RestartSec=3
+KillMode=control-group
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target

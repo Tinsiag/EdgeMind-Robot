@@ -1,0 +1,40 @@
+{
+  "packets": 4847520,
+  "bad_packets": 0,
+  "frames": 10099,
+  "partial_frames": 0,
+  "missing_rows": 0,
+  "fps": 29.76553686610546,
+  "backend": "npu",
+  "model": "shl.hhb.bm",
+  "infer_size": 640,
+  "infer_ms": 94.94499999982509,
+  "infer_runs": 1652,
+  "infer_shape": [
+    1,
+    3,
+    384,
+    640
+  ],
+  "stream_fps_target": 15.0,
+  "stream_fps": 14.975156215844457,
+  "rendered_frames": 5073,
+  "receive_buffer_bytes": 33554432,
+  "video_age_ms": 9.7,
+  "boxes": [
+    {
+      "cls": "person",
+      "score": 0.816,
+      "box": [
+        275,
+        21,
+        632,
+        475
+      ]
+    }
+  ],
+  "error": "",
+  "npu_ms": 6.048,
+  "result_seq": 10095,
+  "result_age_ms": 47.6
+}

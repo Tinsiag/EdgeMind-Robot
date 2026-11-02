@@ -1,0 +1,1375 @@
+[
+  {
+    "t": 343497.484,
+    "packets": 407576,
+    "bad_packets": 0,
+    "frames": 482,
+    "partial_frames": 419,
+    "missing_rows": 153,
+    "fps": 5.686861976026997,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.07199999990189,
+    "infer_runs": 92,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.422,
+        "box": [
+          260,
+          203,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.392,
+        "box": [
+          2,
+          236,
+          43,
+          272
+        ]
+      },
+      {
+        "cls": "tv",
+        "score": 0.313,
+        "box": [
+          35,
+          0,
+          211,
+          312
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 482,
+    "result_age_ms": 5801.9
+  },
+  {
+    "t": 343498.484,
+    "packets": 419926,
+    "bad_packets": 0,
+    "frames": 483,
+    "partial_frames": 448,
+    "missing_rows": 153,
+    "fps": 0.14812469687057905,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.5173330001453,
+    "infer_runs": 93,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          260,
+          197,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.326,
+        "box": [
+          3,
+          234,
+          45,
+          273
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.196,
+    "result_seq": 483,
+    "result_age_ms": 33.0
+  },
+  {
+    "t": 343499.484,
+    "packets": 432811,
+    "bad_packets": 0,
+    "frames": 483,
+    "partial_frames": 477,
+    "missing_rows": 153,
+    "fps": 0.14812469687057905,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.5173330001453,
+    "infer_runs": 93,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          260,
+          197,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.326,
+        "box": [
+          3,
+          234,
+          45,
+          273
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.196,
+    "result_seq": 483,
+    "result_age_ms": 1039.5
+  },
+  {
+    "t": 343500.484,
+    "packets": 445565,
+    "bad_packets": 0,
+    "frames": 483,
+    "partial_frames": 507,
+    "missing_rows": 153,
+    "fps": 0.14812469687057905,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.5173330001453,
+    "infer_runs": 93,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          260,
+          197,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.326,
+        "box": [
+          3,
+          234,
+          45,
+          273
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.196,
+    "result_seq": 483,
+    "result_age_ms": 2046.2
+  },
+  {
+    "t": 343501.484,
+    "packets": 457732,
+    "bad_packets": 0,
+    "frames": 483,
+    "partial_frames": 536,
+    "missing_rows": 153,
+    "fps": 0.14812469687057905,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.5173330001453,
+    "infer_runs": 93,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          260,
+          197,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.326,
+        "box": [
+          3,
+          234,
+          45,
+          273
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.196,
+    "result_seq": 483,
+    "result_age_ms": 3010.5
+  },
+  {
+    "t": 343502.484,
+    "packets": 470350,
+    "bad_packets": 0,
+    "frames": 483,
+    "partial_frames": 566,
+    "missing_rows": 153,
+    "fps": 0.14812469687057905,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.5173330001453,
+    "infer_runs": 93,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          260,
+          197,
+          439,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.326,
+        "box": [
+          3,
+          234,
+          45,
+          273
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.196,
+    "result_seq": 483,
+    "result_age_ms": 4013.9
+  },
+  {
+    "t": 343503.484,
+    "packets": 483155,
+    "bad_packets": 0,
+    "frames": 484,
+    "partial_frames": 596,
+    "missing_rows": 153,
+    "fps": 0.2125935606243019,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.54466700009289,
+    "infer_runs": 94,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.404,
+        "box": [
+          260,
+          199,
+          439,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.301,
+    "result_seq": 484,
+    "result_age_ms": 329.3
+  },
+  {
+    "t": 343504.484,
+    "packets": 495844,
+    "bad_packets": 0,
+    "frames": 484,
+    "partial_frames": 625,
+    "missing_rows": 153,
+    "fps": 0.2125935606243019,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.54466700009289,
+    "infer_runs": 94,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.404,
+        "box": [
+          260,
+          199,
+          439,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.301,
+    "result_seq": 484,
+    "result_age_ms": 1326.6
+  },
+  {
+    "t": 343505.484,
+    "packets": 508821,
+    "bad_packets": 0,
+    "frames": 484,
+    "partial_frames": 655,
+    "missing_rows": 153,
+    "fps": 0.2125935606243019,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.54466700009289,
+    "infer_runs": 94,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.404,
+        "box": [
+          260,
+          199,
+          439,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.301,
+    "result_seq": 484,
+    "result_age_ms": 2340.7
+  },
+  {
+    "t": 343506.484,
+    "packets": 521170,
+    "bad_packets": 0,
+    "frames": 484,
+    "partial_frames": 685,
+    "missing_rows": 153,
+    "fps": 0.2125935606243019,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.54466700009289,
+    "infer_runs": 94,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.404,
+        "box": [
+          260,
+          199,
+          439,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.301,
+    "result_seq": 484,
+    "result_age_ms": 3327.3
+  },
+  {
+    "t": 343507.484,
+    "packets": 533732,
+    "bad_packets": 0,
+    "frames": 484,
+    "partial_frames": 715,
+    "missing_rows": 153,
+    "fps": 0.2125935606243019,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.54466700009289,
+    "infer_runs": 94,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.404,
+        "box": [
+          260,
+          199,
+          439,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.301,
+    "result_seq": 484,
+    "result_age_ms": 4332.1
+  },
+  {
+    "t": 343508.484,
+    "packets": 546957,
+    "bad_packets": 0,
+    "frames": 501,
+    "partial_frames": 728,
+    "missing_rows": 166,
+    "fps": 0.21723648401426454,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 83.89900000020134,
+    "infer_runs": 98,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.392,
+        "box": [
+          0,
+          236,
+          45,
+          273
+        ]
+      },
+      {
+        "cls": "cup",
+        "score": 0.381,
+        "box": [
+          259,
+          197,
+          438,
+          479
+        ]
+      },
+      {
+        "cls": "tv",
+        "score": 0.327,
+        "box": [
+          35,
+          0,
+          213,
+          307
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.335,
+    "result_seq": 496,
+    "result_age_ms": 130.0
+  },
+  {
+    "t": 343509.5,
+    "packets": 561153,
+    "bad_packets": 0,
+    "frames": 529,
+    "partial_frames": 730,
+    "missing_rows": 190,
+    "fps": 20.767281819174034,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 89.87200000001394,
+    "infer_runs": 103,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.355,
+        "box": [
+          259,
+          199,
+          438,
+          479
+        ]
+      },
+      {
+        "cls": "mouse",
+        "score": 0.33,
+        "box": [
+          3,
+          235,
+          44,
+          272
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.451,
+    "result_seq": 523,
+    "result_age_ms": 118.1
+  },
+  {
+    "t": 343510.5,
+    "packets": 573599,
+    "bad_packets": 0,
+    "frames": 531,
+    "partial_frames": 757,
+    "missing_rows": 190,
+    "fps": 20.767281819174034,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.87699999982578,
+    "infer_runs": 105,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.446,
+        "box": [
+          266,
+          200,
+          433,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.257,
+    "result_seq": 531,
+    "result_age_ms": 710.8
+  },
+  {
+    "t": 343511.5,
+    "packets": 587398,
+    "bad_packets": 0,
+    "frames": 532,
+    "partial_frames": 788,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.87699999982578,
+    "infer_runs": 105,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "cup",
+        "score": 0.446,
+        "box": [
+          266,
+          200,
+          433,
+          479
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.257,
+    "result_seq": 531,
+    "result_age_ms": 1786.7
+  },
+  {
+    "t": 343512.515,
+    "packets": 599211,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 815,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 686.1
+  },
+  {
+    "t": 343513.515,
+    "packets": 611740,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 845,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 1680.4
+  },
+  {
+    "t": 343514.515,
+    "packets": 624644,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 875,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 2702.1
+  },
+  {
+    "t": 343515.515,
+    "packets": 637232,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 905,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 3686.9
+  },
+  {
+    "t": 343516.515,
+    "packets": 649845,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 934,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 4680.7
+  },
+  {
+    "t": 343517.515,
+    "packets": 662480,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 963,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 5673.6
+  },
+  {
+    "t": 343518.515,
+    "packets": 675132,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 993,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 6671.0
+  },
+  {
+    "t": 343519.515,
+    "packets": 688081,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1024,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 7699.9
+  },
+  {
+    "t": 343520.515,
+    "packets": 700713,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1053,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 8689.4
+  },
+  {
+    "t": 343521.515,
+    "packets": 713364,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1083,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 9686.7
+  },
+  {
+    "t": 343522.515,
+    "packets": 725651,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1112,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 10655.6
+  },
+  {
+    "t": 343523.515,
+    "packets": 738722,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1142,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 11688.1
+  },
+  {
+    "t": 343524.531,
+    "packets": 751523,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1172,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 12690.7
+  },
+  {
+    "t": 343525.546,
+    "packets": 764330,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1203,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 13708.3
+  },
+  {
+    "t": 343526.546,
+    "packets": 777139,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1233,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 14705.1
+  },
+  {
+    "t": 343527.546,
+    "packets": 789905,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1263,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 15714.0
+  },
+  {
+    "t": 343528.546,
+    "packets": 802778,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1293,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 16726.8
+  },
+  {
+    "t": 343529.546,
+    "packets": 815592,
+    "bad_packets": 0,
+    "frames": 533,
+    "partial_frames": 1323,
+    "missing_rows": 210,
+    "fps": 9.100637650282598,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 82.28199999985009,
+    "infer_runs": 107,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [
+      {
+        "cls": "mouse",
+        "score": 0.352,
+        "box": [
+          1,
+          234,
+          46,
+          274
+        ]
+      }
+    ],
+    "error": "",
+    "npu_ms": 5.231,
+    "result_seq": 533,
+    "result_age_ms": 17746.4
+  },
+  {
+    "t": 343530.546,
+    "packets": 827742,
+    "bad_packets": 0,
+    "frames": 534,
+    "partial_frames": 1351,
+    "missing_rows": 210,
+    "fps": 0.10863693311450034,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 89.95333399980154,
+    "infer_runs": 108,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [],
+    "error": "",
+    "npu_ms": 5.646,
+    "result_seq": 534,
+    "result_age_ms": 489.5
+  },
+  {
+    "t": 343531.546,
+    "packets": 840888,
+    "bad_packets": 0,
+    "frames": 534,
+    "partial_frames": 1381,
+    "missing_rows": 210,
+    "fps": 0.10863693311450034,
+    "backend": "npu",
+    "model": "shl.hhb.bm",
+    "infer_size": 640,
+    "infer_ms": 89.95333399980154,
+    "infer_runs": 108,
+    "infer_shape": [
+      1,
+      3,
+      384,
+      640
+    ],
+    "stream_fps_target": 15.0,
+    "boxes": [],
+    "error": "",
+    "npu_ms": 5.646,
+    "result_seq": 534,
+    "result_age_ms": 1526.9
+  }
+]
