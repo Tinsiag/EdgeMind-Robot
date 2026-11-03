@@ -1,0 +1,20 @@
+    PID %CPU %MEM   RSS COMMAND
+   3508  400  0.0  3716 ps -eo pid,pcpu,pmem,rss,args --sort=-pcpu
+   2995  103  0.9 151628 /home/debian/fpga/venv-system/bin/python -u /home/debian/fpga/fpga_video_yolo_web.py
+   3507 50.0  0.0  2856 bash -c ps -eo pid,pcpu,pmem,rss,args --sort=-pcpu | head -9; sha256sum /home/debian/fpga/npu/{shl.hhb.bm,yolov5_npu_daemon} /lib/libshl_th1520.so.2; ls -l /sys/class/devfreq; loginctl show-user debian -p Linger; cat /sys/class/net/end1/statistics/{rx_errors,rx_dropped}; cat /sys/module/vha/parameters/onchipmem_size
+   3020 16.9  0.1 22728 /home/debian/fpga/npu/yolov5_npu_daemon /home/debian/fpga/npu/shl.hhb.bm 0.3 0.45
+   3463 11.1  0.0  8420 sshd-session: debian [priv]
+   3493  3.1  0.0  5704 sshd-session: debian@notty
+    451  0.7  0.0  3476 avahi-daemon: running [revyos-lpi4a.local]
+     16  0.4  0.0     0 [rcu_sched]
+c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad  /home/debian/fpga/npu/shl.hhb.bm
+27b8fbf0e6dc678b77598c410e71b68a1b4c1b130fc8a50aefac5569e5ea6cd5  /home/debian/fpga/npu/yolov5_npu_daemon
+316e7d60484b1d6f396114703c13b84286c13017eb985e1b1eb96de437e006f8  /lib/libshl_th1520.so.2
+总计 0
+lrwxrwxrwx 1 root root 0 11月 2日 18:31 ffecc00000.vdec -> ../../devices/platform/soc/ffecc00000.vdec/devfreq/ffecc00000.vdec
+lrwxrwxrwx 1 root root 0 11月 2日 19:32 ffecc10000.venc -> ../../devices/platform/soc/ffecc10000.venc/devfreq/ffecc10000.venc
+lrwxrwxrwx 1 root root 0 11月 2日 19:32 fffc800000.vha -> ../../devices/platform/soc/fffc800000.vha/devfreq/fffc800000.vha
+Linger=no
+0
+0
+1048576

@@ -1,27 +1,27 @@
 {
   "passed": true,
-  "main_netlist_sha256": "a22bdcb6bc825f8b3028b3bc5e202b210ac6ea9ac9bcf1cd8592a74d3b2fc34e",
+  "main_netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
   "scope": "Independent observable mission leaves, not optimized full-board execution",
   "tests": [
     {
       "module": "a745_motion_planner",
       "bench": "motion_planner_tb",
-      "netlist_sha256": "2360fb085490dc8bd0ab99a027ef32c6592cb1ea9da9e910a3685b02fc79f54b"
+      "netlist_sha256": "408c6a50754e3e0265d7ad2328be60446ca8df0f9ee48ef40ef2003e0e86705c"
     },
     {
       "module": "a745_task_rx",
       "bench": "task_rx_tb",
-      "netlist_sha256": "c2a311c60f9f9eb1f4b0a0d62356741d029638a56618fc1bb406dc1dffca4018"
+      "netlist_sha256": "7463f97cb7b3576fedc751e0d682dc31436497910a7ea97141de53ce88a657e0"
     },
     {
       "module": "a745_path_guard",
       "bench": "path_guard_tb",
-      "netlist_sha256": "613c2f6f35fe9d3a4cda9fccea4b2fce9e1befb177534f3d7900255542cef325"
+      "netlist_sha256": "60c7046686be888b906722c572459c213147d18cb01cdbfe02a0e27d2ba8d1e1"
     },
     {
       "module": "a745_mode_display",
       "bench": "mode_display_tb",
-      "netlist_sha256": "1a33bc86a8ec097bac5bf61eb428ccdc20196af90222cd257abf4fe49b8bd691"
+      "netlist_sha256": "4caa6d3c7c44104a2e96d891b9219007cd89296dc880a80a29284e132688dc73"
     }
   ],
   "input_sha256": {

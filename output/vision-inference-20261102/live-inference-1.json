@@ -1,0 +1,18 @@
+{
+  "packets": 328535,
+  "bad_packets": 0,
+  "frames": 408,
+  "partial_frames": 337,
+  "missing_rows": 403,
+  "fps": 28.766863756746265,
+  "backend": "npu",
+  "model": "shl.hhb.bm",
+  "infer_size": 640,
+  "infer_ms": 97.41066699962175,
+  "infer_runs": 85,
+  "boxes": [],
+  "error": "",
+  "npu_ms": 5.618,
+  "result_seq": 402,
+  "result_age_ms": 172.1
+}

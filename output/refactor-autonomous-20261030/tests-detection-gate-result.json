@@ -1,17 +1,17 @@
 {
   "passed": true,
-  "main_netlist_sha256": "a22bdcb6bc825f8b3028b3bc5e202b210ac6ea9ac9bcf1cd8592a74d3b2fc34e",
+  "main_netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
   "scope": "Independently synthesized display leaves, not optimized full-board execution",
   "tests": [
     {
       "module": "a745_detection_rx",
       "bench": "detection_rx_tb",
-      "netlist_sha256": "ed7a9d4f9f54545808a206a1b2ad0b0e4f879da012f99c80859f97695c197b30"
+      "netlist_sha256": "98b8eaa7114c80a09c7c7dd6f9b2341fbcda79212ac8d80ab176d339d67640fe"
     },
     {
       "module": "a745_detection_overlay",
       "bench": "detection_overlay_tb",
-      "netlist_sha256": "3b2a19a1f9256f96ca668e79f9a2761004040dc3e4eea34f262adb93fb64387c"
+      "netlist_sha256": "39b3e797243e0148baab78c227c47a1d31dd6446022791d009c5ce9e9293ee60"
     }
   ],
   "input_sha256": {

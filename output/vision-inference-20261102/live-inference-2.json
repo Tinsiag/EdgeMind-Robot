@@ -1,0 +1,39 @@
+{
+  "packets": 357406,
+  "bad_packets": 0,
+  "frames": 450,
+  "partial_frames": 358,
+  "missing_rows": 459,
+  "fps": 19.84243780888775,
+  "backend": "npu",
+  "model": "shl.hhb.bm",
+  "infer_size": 640,
+  "infer_ms": 87.25933300001998,
+  "infer_runs": 96,
+  "boxes": [
+    {
+      "cls": "cup",
+      "score": 0.392,
+      "box": [
+        260,
+        199,
+        439,
+        479
+      ]
+    },
+    {
+      "cls": "mouse",
+      "score": 0.308,
+      "box": [
+        0,
+        236,
+        45,
+        273
+      ]
+    }
+  ],
+  "error": "",
+  "npu_ms": 5.67,
+  "result_seq": 447,
+  "result_age_ms": 107.7
+}

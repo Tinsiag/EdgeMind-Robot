@@ -81,7 +81,7 @@ Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\c
 WARN  (EX3801) : Parameter 'STYLE_INT' becomes localparam in 'lfsr' with formal parameter declaration list("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\lfsr.v":355)
 Analyzing Verilog file 'C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v'
 WARN  (EX3073) : Port 'm_axis_tkeep' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":76)
-WARN  (EX3073) : Port 'm_axis_tkeep' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":132)
+WARN  (EX3073) : Port 'm_axis_tkeep' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":126)
 Compiling module 'a745_top'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":3)
 Compiling module 'Gowin_PLL'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\gowin_pll.v":1)
 Compiling module 'Gowin_PLL_MOD'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\ethernet_pll_mod.v":10)
@@ -101,7 +101,6 @@ Extracting RAM for identifier 'mem'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":431)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":445)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\axis_async_fifo.v":670)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":97)
 Compiling module 'a745_rgmii_rx'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_rgmii_rx.v":4)
 WARN  (EX3073) : Port 'tx_axis_ptp_ts' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\eth_mac_1g_fifo.v":227)
 WARN  (EX3073) : Port 's_pause_ack' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\third_party\verilog-ethernet\rtl\eth_mac_1g_fifo.v":278)
@@ -1189,8 +1188,8 @@ Compiling module 'a745_detection_overlay'("C:\Users\sc\Documents\Dev\Hardware\Ed
 Compiling module 'a745_osd(PIPELINED=1)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_osd.v":6)
 Compiling module 'a741_tft800_panel'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_tft800_panel.v":7)
 Compiling module 'a741_button_debounce'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\lib\a741_button_debounce.v":5)
-WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":257)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 2("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":258)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":251)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 2("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\platform\a745_top.v":252)
 Compiling module 'a745_mode_display'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_mode_display.v":5)
 WARN  (EX3073) : Port 'tof_valid' remains unconnected for this instance("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v":44)
 Compiling module 'a745_core(ADVANCED=1,GEOMETRY_VERIFIED=1,FUSION_CONFIG_CRC=32'hc27751b8)'("C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\rtl\a745_core.v":3)
@@ -1348,5 +1347,5 @@ Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.vo" completed
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr.html" completed
 Generate file "C:\Users\sc\Documents\Dev\Hardware\EdgeMind-Robot\code\camera-car-control\a745-autonomous\.local\gowin-a745-autonomous\impl\pnr\a745.tr" completed
-Tue Nov  3 12:07:50 2026
+Tue Nov  3 14:24:18 2026
 

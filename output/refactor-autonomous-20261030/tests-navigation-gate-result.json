@@ -1,53 +1,53 @@
 {
   "passed": true,
-  "main_netlist_sha256": "a22bdcb6bc825f8b3028b3bc5e202b210ac6ea9ac9bcf1cd8592a74d3b2fc34e",
+  "main_netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
   "tests": [
     {
       "module": "a745_navigation_scan",
       "test": "navigation_scan_tb",
-      "netlist_sha256": "c2c4b7f1e5a49df3d39657da693afeb0e1e9afbabfee7c44cc20ed6159e7542b"
+      "netlist_sha256": "006f53fdb7838649653922b248da656c8ecca3cf73268a35739f8fe510d2ebf4"
     },
     {
       "module": "a745_autonomy",
       "test": "autonomy_tb",
-      "netlist_sha256": "54bc4f203040bba35df10c5f94decbfcaf0296274141f60e7a95f18bc1d67adc"
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
     },
     {
       "module": "a741_motion_feedback",
       "test": "motion_feedback_tb",
-      "netlist_sha256": "6decedd4674fdb68a4547d0bbc64167a1f767f7522dcb1faba2fbbe0d7c8bb51"
+      "netlist_sha256": "5aeb4b802663ece16607a22cac12767f4265eb0d36779285492228a58b32ff09"
     },
     {
       "module": "a745_lidar_filter",
       "test": "lidar_filter_tb",
-      "netlist_sha256": "b10ebc3920564d328fc8137dcba0c5bf63d5fb1f64fe6af4f46823aa9a6f5699"
+      "netlist_sha256": "0b7e4981b9bc2f16f1836043b129ec158546acb5289bb13a1213e8fd217ed02e"
     },
     {
       "module": "a741_attitude",
       "test": "attitude_filter_tb",
-      "netlist_sha256": "71b71731dcff82bfef900b14520b6b57ef28bba60a3c9c970e086a925419cf7d"
+      "netlist_sha256": "20751fa9d054fb4ede9307e15ede9bb4ee981722744b83462c91bf51db2e524b"
     },
     {
       "module": "quadrature_decoder",
       "test": "quadrature_filter_tb",
-      "netlist_sha256": "7fe842bd187b45751e2464d669ed056fa3a4a7b7e42c9c8d42b2469b5eda5229"
+      "netlist_sha256": "3126b49ba0bc441ae305cf8e56b132a444502c5738131ccb6e57a191eda8bece"
     },
     {
       "module": "a745_autonomy",
       "test": "imu_fault_latch_tb",
-      "netlist_sha256": "54bc4f203040bba35df10c5f94decbfcaf0296274141f60e7a95f18bc1d67adc"
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
     },
     {
       "module": "a745_autonomy",
       "test": "reverse_escape_tb",
-      "netlist_sha256": "54bc4f203040bba35df10c5f94decbfcaf0296274141f60e7a95f18bc1d67adc"
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
     },
     {
       "module": "a741_attitude+a745_autonomy",
       "test": "attitude_session_tb",
       "netlist_sha256": [
-        "71b71731dcff82bfef900b14520b6b57ef28bba60a3c9c970e086a925419cf7d",
-        "54bc4f203040bba35df10c5f94decbfcaf0296274141f60e7a95f18bc1d67adc"
+        "20751fa9d054fb4ede9307e15ede9bb4ee981722744b83462c91bf51db2e524b",
+        "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
       ]
     }
   ],

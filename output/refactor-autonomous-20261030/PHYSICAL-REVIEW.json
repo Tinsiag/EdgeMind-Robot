@@ -7,12 +7,12 @@
     },
     {
       "resource": "Logic",
-      "usage": "26673/59904",
+      "usage": "26624/59904",
       "utilization": "45%"
     },
     {
       "resource": "--LUT,ALU,ROM16",
-      "usage": "26673(22926 LUT, 3747 ALU, 0 ROM16)",
+      "usage": "26624(22876 LUT, 3748 ALU, 0 ROM16)",
       "utilization": "-"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "resource": "Register",
-      "usage": "21154/60780",
+      "usage": "21152/60780",
       "utilization": "35%"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "resource": "--Logic Register as FF",
-      "usage": "21109/59904",
+      "usage": "21107/59904",
       "utilization": "36%"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "resource": "CLS",
-      "usage": "20843/29952",
+      "usage": "20924/29952",
       "utilization": "70%"
     },
     {
@@ -233,7 +233,7 @@
     {
       "resource": "ui_clk",
       "usage": "PRIMARY",
-      "utilization": "BR BL"
+      "utilization": "BL"
     },
     {
       "resource": "core/sensors/lidar/n5303_7",
@@ -3352,19 +3352,19 @@
     "correct_hold": true
   },
   "source_inputs_match": true,
-  "netlist_sha256": "a22bdcb6bc825f8b3028b3bc5e202b210ac6ea9ac9bcf1cd8592a74d3b2fc34e",
+  "netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
   "pnr_phase_times": [
-    "Placement Phase 0: CPU time = 0h 0m 39s, Elapsed time = 0h 0m 39s",
-    "Placement Phase 1: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s",
-    "Placement Phase 2: CPU time = 0h 1m 51s, Elapsed time = 0h 1m 51s",
-    "Placement Phase 3: CPU time = 0h 1m 30s, Elapsed time = 0h 1m 30s",
-    "Total Placement: CPU time = 0h 4m 4s, Elapsed time = 0h 4m 4s",
-    "Routing Phase 0: CPU time = 0h 0m 0.022s, Elapsed time = 0h 0m 0.022s",
-    "Routing Phase 1: CPU time = 0h 5m 9s, Elapsed time = 0h 5m 9s",
+    "Placement Phase 0: CPU time = 0h 0m 44s, Elapsed time = 0h 0m 44s",
+    "Placement Phase 1: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s",
+    "Placement Phase 2: CPU time = 0h 1m 59s, Elapsed time = 0h 1m 59s",
+    "Placement Phase 3: CPU time = 0h 1m 56s, Elapsed time = 0h 1m 56s",
+    "Total Placement: CPU time = 0h 4m 43s, Elapsed time = 0h 4m 43s",
+    "Routing Phase 0: CPU time = 0h 0m 0.036s, Elapsed time = 0h 0m 0.036s",
+    "Routing Phase 1: CPU time = 0h 10m 51s, Elapsed time = 0h 10m 51s",
     "Routing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s",
     "Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s",
-    "Total Routing: CPU time = 0h 5m 10s, Elapsed time = 0h 5m 10s",
-    "CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s",
-    "Total Time and Memory Usage: CPU time = 0h 9m 21s, Elapsed time = 0h 9m 21s, Peak memory usage = 1888MB"
+    "Total Routing: CPU time = 0h 10m 52s, Elapsed time = 0h 10m 52s",
+    "CPU time = 0h 0m 10s, Elapsed time = 0h 0m 10s",
+    "Total Time and Memory Usage: CPU time = 0h 15m 45s, Elapsed time = 0h 15m 45s, Peak memory usage = 1854MB"
   ]
 }
