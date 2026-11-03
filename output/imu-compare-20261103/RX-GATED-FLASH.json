@@ -1,0 +1,16 @@
+{
+  "status": "flash_verified_pending_physical_startup_acceptance",
+  "firmware_revision": 74513,
+  "change": "Gate Ethernet RX clock/MAC enable to locally selected mode 3; synchronize mode in rgmii_rx_clk domain",
+  "artifact_sha256": "58e810489aab320590d5e3052fd7b40cbf168e7267ae56bd4be0f47747dfc72c",
+  "flash_audit": "code/camera-car-control/.local/programming/20261103T041953.573189Z/audit.json",
+  "configuration_status": "0x70022020",
+  "user_code": "0xA745",
+  "hardware_programmed": true,
+  "physical_startup_verified": false,
+  "err0011_fixed": false,
+  "imu_root_cause_confirmed": false,
+  "computer_arm_used": false,
+  "motor_vm_off_confirmed": true,
+  "downloader_vm_off_confirmed": true
+}

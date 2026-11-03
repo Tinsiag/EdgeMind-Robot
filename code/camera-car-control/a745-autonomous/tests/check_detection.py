@@ -20,7 +20,11 @@ def main():
     assert '.fresh(task_fresh)' in top and '.session_id(task_session)' in top
     assert 'a745_detection_overlay detection_overlay' in top
     assert '.pixel(overlay_pixel)' in top and '.pixel(camera_pixel)' in top
-    assert '.cfg_rx_enable(phy_ready_rx[1])' in top
+    # FW74513 gates the receive MAC in local modes so the 125 MHz RGMII
+    # datapath is inactive while LicheePi is unavailable.  Mode 3 retains
+    # the PHY-ready qualification.
+    assert '.cfg_rx_enable(phy_ready_rx[1] && rx_mode_enabled)' in top
+    assert '.rx_clk_enable(rx_mode_enabled)' in top
     assert not any(x in top for x in ('command_parser', 'network_mode'))
     p = subprocess.run([sys.executable, '-m', 'unittest', '-v', 'test_detection_return.py'],
                        cwd=ROOT/'host', capture_output=True, text=True)

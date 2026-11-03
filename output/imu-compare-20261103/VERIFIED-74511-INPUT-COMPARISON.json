@@ -1,0 +1,106 @@
+{
+  "receipt": "output/motion-20261102/VIDEO-INPUTS-74511.json",
+  "files": {
+    "code/camera-car-control/a745-autonomous/rtl/a745_top.v": {
+      "fw74511_sha256": "120fda01fc255c4e31499af23df5c6ece49641aa3b512a410cb7679581c06e72",
+      "current_sha256": "cdc333265d5cc291fe57f06cabd4b1687066f0012c978794a42103289a86b191",
+      "same": false
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_video.v": {
+      "fw74511_sha256": "333901255eefa6388dde5e08818f584f30dcdcd0ef2261f49591fe0510db0e82",
+      "current_sha256": "333901255eefa6388dde5e08818f584f30dcdcd0ef2261f49591fe0510db0e82",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_capture_tx.v": {
+      "fw74511_sha256": "6dab3b5275b0807ad2408683321316226e32f6b67c2969add4e49c3561442ab8",
+      "current_sha256": "6dab3b5275b0807ad2408683321316226e32f6b67c2969add4e49c3561442ab8",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_udp_tx.v": {
+      "fw74511_sha256": "9d56f604ef4318dcb42fb1a667cdb63f689bade99c7f2fcf1724ce79991428e3",
+      "current_sha256": "9d56f604ef4318dcb42fb1a667cdb63f689bade99c7f2fcf1724ce79991428e3",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_boot.v": {
+      "fw74511_sha256": "7026647fc25ad6e397b634aa077ca2bea750e7913920de216485c471e6a3af17",
+      "current_sha256": "7026647fc25ad6e397b634aa077ca2bea750e7913920de216485c471e6a3af17",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_pads.v": {
+      "fw74511_sha256": "521e98ab11b64f11ef7f1c2de5ab20b02c41d9b524c2f2d4038e93a8b2103740",
+      "current_sha256": "521e98ab11b64f11ef7f1c2de5ab20b02c41d9b524c2f2d4038e93a8b2103740",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/rtl/a745_dvp_capture.v": {
+      "fw74511_sha256": "f2050bbaf858d766e83105eccd71b62e7749a22c061d9bd20a0ba536b09ac501",
+      "current_sha256": "f2050bbaf858d766e83105eccd71b62e7749a22c061d9bd20a0ba536b09ac501",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/lib/async_fifo.v": {
+      "fw74511_sha256": "1d7a1f6cb884e567687e5eaed233796d421289bf4ab6c01110daf696887fb017",
+      "current_sha256": "1d7a1f6cb884e567687e5eaed233796d421289bf4ab6c01110daf696887fb017",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/constraints/board.cst": {
+      "fw74511_sha256": "bf5dcb4012ed02991fb34ae441e00754d55738ff4c770c2d5cf7a8ca86eebc46",
+      "current_sha256": "f76c9d7f6fc5b6e5cf38c39d26f5a1fdf804b42213433db16784ff80da73ed33",
+      "same": false
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr3_memory_interface.v": {
+      "fw74511_sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+      "current_sha256": "2080c23ac90e2800f2c3c5f0660061ae6cd9e5d2f13a1c8ecf5ff0b49ec200c7",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr_pll.v": {
+      "fw74511_sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+      "current_sha256": "1029730ed0b0cbe5285fed46910c45a5036dba764216ed334b853b164013c251",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/ddr_pll_mod.v": {
+      "fw74511_sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+      "current_sha256": "08388ce82400dfa69c4fcbc9ba245a5025f53cdda11d6da99b9e9557a4e046b7",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/ethernet_pll_mod.v": {
+      "fw74511_sha256": "b3ea13a9c89257271908a0f4b492dc435f8d315469dff029aacb944586a5ff27",
+      "current_sha256": "b3ea13a9c89257271908a0f4b492dc435f8d315469dff029aacb944586a5ff27",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/gmii_to_rgmii.v": {
+      "fw74511_sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+      "current_sha256": "603dcd696f1eaf5a33153bccb32c954618b836a4684e5ca9941a565b97e25c91",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/gowin_pll.v": {
+      "fw74511_sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+      "current_sha256": "08759f94d64823d5a6d23935e3f10e80c174401ce30613d3f0dbe332fb7ad4e0",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/pll_init.v": {
+      "fw74511_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "current_sha256": "3fc6bef9a7086f0920bfa47265b1766854a53f6ca1c0f75084eaf6b6ef4d6258",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/pll_mDRP_intf.v": {
+      "fw74511_sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+      "current_sha256": "6380774c682f607f11088cafa39ed1556e4c4db925ee2e72b78340026d4fd6ad",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_gowin_pll.v": {
+      "fw74511_sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+      "current_sha256": "1e122d89b462ea429491cf9985191afb26ce209da30097714be372a14e3b55c8",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_gowin_pll_mod.v": {
+      "fw74511_sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+      "current_sha256": "8190458ccb3d4225f3aad5381652f998a53258aef135fb664b20b580738d0794",
+      "same": true
+    },
+    "code/camera-car-control/a745-autonomous/vendor/board/tft_pll_init.v": {
+      "fw74511_sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+      "current_sha256": "728781d9aefb891e58311491ef68234bfb27e83b468b3af60bf8636250de1f3e",
+      "same": true
+    }
+  },
+  "limitation": "There is no standalone 74511 git commit; do not label the complete 74509 commit as 74511. Top/CST/vendor video inputs have exact prior hashes; navigation probes and change records cover additional historical changes."
+}

@@ -2,13 +2,17 @@
 
 当前 FPGA 工程是 [A745 片上自主避障](code/camera-car-control/a745-autonomous/README.md)。上电未 ARM，S1 本地启停，网口发送视频和遥测。Lichee Pi 4A 接收摄像头画面，在 TH1520 NPU 上做目标检测并提供浏览器预览。
 
+## 当前实板：FW74513 RX 门控候选（2026-11-03）
+
+已完成 FW74511 对比并烧录修复候选：模式1/2下关闭以太网接收时钟和MAC RX，模式3才接收ET10/ED10；模式选择同步到RGMII RX时钟域。候选镜像 SHA 为 `58e810489aab320590d5e3052fd7b40cbf168e7267ae56bd4be0f47747dfc72c`，Flash写入校验、重载、`0x70022020`及UserCode核对通过。实体冷启动、模式1/2启动和ERR0011回归仍待用户本地S1验收。74511回退审计保留在[回退记录](output/rollback-74511-20261103/README.md)，当前实板状态见[STATUS.json](output/refactor-autonomous-20261030/STATUS.json)。
+
 ## FW74513 模式与寻物联调（2026-11-03）
 
 FW74513已完成编译布线与Flash写入、校验、重载。S2/S3待机选择模式，数码管显示1绕障行驶、2原地一圈、3视觉寻物；S1启动/停止，S0复位停车。新增车体几何出口检查、局部四转绕行、有限视觉任务通道；原摄像头→4A NPU→FPGA检测框与HUD链路保留。
 
 45秒被动监测：451组状态/姿态/任务状态，均74513、IDLE、ERR0000、未ARM、目标轮速零；视频29.76fps、推理4.98Hz、网页14.90fps，224次框回传被接收，无新增坏包/缺行。44项RTL、CPU及15项导航/任务/显示独立原语、协议/几何/回放和同次时序审核通过。
 
-**实体模式按键、数码管、运动和冷启动尚待本版本实物验收；相机/雷达未标定，自动接近仍禁用，不能宣称寻物到达完成。**操作与边界见 [README-MODES-AND-TARGET-74513.md](code/camera-car-control/a745-autonomous/docs/README-MODES-AND-TARGET-74513.md)，最新证据见 [RESULT.json](output/motion-task-20261103/RESULT.json)。下文74512及此前视频验收为历史记录，不代替74513验收。
+**数码管和模式选择已由用户确认正常；模式1/2启动约10秒后报ERR0011、SRC37、R/P WAIT，启动验收未通过。用户另报告电源由可同时带两块板变为只能带一块，疑似供电问题，尚无电压测量确认。运动和冷启动仍待验收；相机/雷达未标定，自动接近禁用。**详见[本次故障记录](output/motion-task-20261103/startup-err0011/USER-REPORT.json)。操作与边界见 [README-MODES-AND-TARGET-74513.md](code/camera-car-control/a745-autonomous/docs/README-MODES-AND-TARGET-74513.md)，最新证据见 [RESULT.json](output/motion-task-20261103/RESULT.json)。下文74512及此前视频验收为历史记录，不代替74513验收。
 
 ## FPGA 摄像头 → Lichee Pi 4A 实时识别（2026-11-02）
 

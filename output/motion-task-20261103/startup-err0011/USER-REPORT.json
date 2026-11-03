@@ -1,0 +1,33 @@
+{
+  "recorded_utc": "2026-11-03T02:19:47.449852+00:00",
+  "firmware_revision": 74513,
+  "artifact_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
+  "evidence_source": "user_report_not_remote_telemetry",
+  "mode_display_verified": true,
+  "local_mode_selection_verified": true,
+  "tested_modes": [
+    1,
+    2
+  ],
+  "startup_passed": false,
+  "reported_fault_hex": "0011",
+  "reported_imu_sources_hex": "37",
+  "fault_roll_display": "WAIT",
+  "fault_pitch_display": "WAIT",
+  "startup_delay_approximately_seconds": 10,
+  "vehicle_reported_stationary_and_level": true,
+  "licheepi_powered": false,
+  "imu_led_on": true,
+  "imu_power_source_reported": "FPGA",
+  "motor_vm_last_confirmed_on": true,
+  "motor_vm_off_requested_but_not_yet_confirmed": true,
+  "downloader_virtual_machine_reported_off": true,
+  "power_symptom": "Previously powered FPGA and LicheePi together; now can only power one board",
+  "voltage_measurements_received": false,
+  "suspected_power_problem_not_confirmed": true,
+  "root_cause_confirmed": false,
+  "computer_arm_used": false,
+  "recompiled": false,
+  "reflashed": false,
+  "next_step": "Motor VM off; charge with compatible charger or restore verified stable supply; before S1 verify IMU OK and numeric roll/pitch; measure loaded supply rails if possible"
+}

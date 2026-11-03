@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "bitstream_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
-  "physical_netlist_sha256": "846578cd0137845e459ae764b767042d0f2eab896d85b7d2ac56281eadbec0f4",
+  "bitstream_sha256": "58e810489aab320590d5e3052fd7b40cbf168e7267ae56bd4be0f47747dfc72c",
+  "physical_netlist_sha256": "22d8677ecc8de07b853655c7e56269deef42dccf0d857b8e4a48f412a8e70867",
   "primitive_model_sha256": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
   "primitive_declarations_sha256": "ddff7d1e195e4d587f5724a936f4f78a4912e39d560012f79d31134764f1f4e3",
   "data_sources": [
@@ -535,15 +535,15 @@
     "detection_data[8]",
     "detection_data[9]"
   ],
-  "ed10_reached_cells": 3877,
+  "ed10_reached_cells": 3936,
   "raw_rx_reaches_motor_outputs": true,
   "local_session_regressions": [
     "mission_core_tb",
     "task_rx_tb",
     "motion_planner_tb"
   ],
-  "reached_cells": 25831,
-  "reached_nets": 29188,
+  "reached_cells": 25829,
+  "reached_nets": 29186,
   "method": "Conservative data/enable/reset transitive closure through all routed primitives; sequential boundaries retained as dependencies; clocks excluded",
   "note": "Decoded ED10 box/class/score data is isolated from motor outputs. ED10 update/ready shares transport with ET10; the diagnostic counter reaches TX RAM, whose conservative all-bit graph also reaches freshness. These control/diagnostic paths are not claimed structurally isolated. Separate checksum-correct ED10-port/magic rejection and connected local-session regressions verify display packets cannot be accepted as ET10 motion intents. No claim of all-RX isolation."
 }

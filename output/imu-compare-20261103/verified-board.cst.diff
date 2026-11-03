@@ -1,0 +1,44 @@
+--- verified_FW74511/constraints/board.cst
+
++++ FW74513/constraints/board.cst
+
+@@ -33,6 +33,21 @@
+
+ IO_PORT "camera_data[6]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+ IO_PORT "camera_data[7]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+ IO_LOC "rgmii_tx_clk" U22;
++IO_LOC "rgmii_rx_clk" W19;
++// Keep RAM/MAC clocks on dedicated global routing; do not spend a primary
++// clock network on the frame-rate display update enable.
++CLOCK_LOC "detection_display_update" LOCAL_CLOCK;
++IO_LOC "rgmii_rx_ctl" AB18;
++IO_LOC "rgmii_rxd[0]" V17;
++IO_LOC "rgmii_rxd[1]" V18;
++IO_LOC "rgmii_rxd[2]" P19;
++IO_LOC "rgmii_rxd[3]" R19;
++IO_PORT "rgmii_rx_clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
++IO_PORT "rgmii_rx_ctl" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
++IO_PORT "rgmii_rxd[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
++IO_PORT "rgmii_rxd[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
++IO_PORT "rgmii_rxd[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
++IO_PORT "rgmii_rxd[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+ IO_LOC "rgmii_tx_ctl" AA19;
+ IO_LOC "rgmii_txd[0]" U21;
+ IO_LOC "rgmii_txd[1]" W22;
+@@ -268,3 +283,15 @@
+
+ 
+ IO_LOC "s1_n" A20;
+ IO_PORT "s1_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
++
++// Board pin table Sheet1 and original GW5AT60K chapter13 reference.
++IO_LOC "s2_n" B20;
++IO_LOC "s3_n" A21;
++IO_PORT "s2_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
++IO_PORT "s3_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;
++IO_LOC "seg7_dio" M18;
++IO_LOC "seg7_rclk" C2;
++IO_LOC "seg7_sclk" F4;
++IO_PORT "seg7_dio" IO_TYPE=LVCMOS33 DRIVE=4;
++IO_PORT "seg7_rclk" IO_TYPE=LVCMOS33 DRIVE=4;
++IO_PORT "seg7_sclk" IO_TYPE=LVCMOS33 DRIVE=4;

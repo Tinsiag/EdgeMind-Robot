@@ -1,14 +1,14 @@
 Report Command:report_high_fanout_nets -max_nets 10
   FANOUT            NET NAME             WORST SLACK   MAX DELAY  
  ======== ============================= ============= =========== 
-  13283    clk_d                         1.168         2.343      
-  9129     control_n                     6.132         2.854      
-  3928     ui_clk                        2.180         3.116      
+  13283    clk_d                         0.022         2.343      
+  9129     control_n                     6.724         2.186      
+  3928     ui_clk                        0.687         2.343      
   3398     display_clk                   2.104         2.343      
-  3153     ui_rst                        3.945         3.550      
-  2786     display_n                     24.152        2.258      
-  2156     display_sys_n                 16.100        2.133      
-  901      core/telemetry/n4454_6        7.191         5.878      
-  848      core_ms_tick                  7.354         2.587      
-  824      core/telemetry/bytes_511_59   7.836         3.375      
+  3153     ui_rst                        4.034         2.517      
+  2786     display_n                     23.680        2.141      
+  2156     display_sys_n                 16.239        2.744      
+  901      core/telemetry/n4454_6        9.444         3.539      
+  853      core_ms_tick                  5.995         3.193      
+  824      core/telemetry/bytes_511_59   9.652         2.285      
 

@@ -1,0 +1,13 @@
+{
+  "physical_netlist_sha256": "846578cd0137845e459ae764b767042d0f2eab896d85b7d2ac56281eadbec0f4",
+  "imu_bus_and_driver_ff_count": 455,
+  "clocks": [
+    "clk_d"
+  ],
+  "resets": [
+    "gowin_split_inv_from_n3794_s2_onet"
+  ],
+  "network_and_mode_keys_reach_imu_driver_state": false,
+  "reachable_state_examples": [],
+  "scope": "Conservative primitive data/enable/reset reachability; clock pins excluded from traversal. All IMU bus/driver FF clocks separately verified as input clk_d; no analog board-level or reset timing proof."
+}

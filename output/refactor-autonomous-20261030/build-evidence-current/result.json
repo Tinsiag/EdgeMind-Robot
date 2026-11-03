@@ -74,7 +74,7 @@
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g.v": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g_fifo.v": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\lfsr.v": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745_top.v": "0d2ab3659a2194b9019d08b1fa68f44fe3c782d15ac312cada61d15bd5d25513",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745_top.v": "1ce1167d02b7b1de134dcb9afa971fef10e64ffac8bf975373fda0452f9c67a1",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.cst": "f76c9d7f6fc5b6e5cf38c39d26f5a1fdf804b42213433db16784ff80da73ed33",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.sdc": "b976ec638f76e46ca41922eeddd5c1042dfd66854326d05aa9b3a020efc25e92",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44"
@@ -83,8 +83,8 @@
   "synthesis_passed": true,
   "timing_signed_off": true,
   "hardware_programmed": false,
-  "route_option": 2,
-  "place_option": 2,
+  "route_option": 1,
+  "place_option": 1,
   "network_control_enabled": true,
   "motor_pads_dynamic": true,
   "motor_locked": false,
@@ -95,24 +95,23 @@
     480
   ],
   "platform_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform",
-  "evidence_freshness_lower_bound_unix": 1793640954.3561237,
-  "clock_route_order": 1,
+  "evidence_freshness_lower_bound_unix": 1793678095.8971243,
   "returncode": 0,
-  "seconds": 986.75,
+  "seconds": 775.9369999999763,
   "timed_out": false,
   "sources_changed": [],
   "network_arm_enabled": false,
-  "synthesis_netlist_sha256": "b4386e1c207385ece03f3af8d73c80bee13ac84d20a3b4e7805368611efeea0f",
+  "synthesis_netlist_sha256": "a22bdcb6bc825f8b3028b3bc5e202b210ac6ea9ac9bcf1cd8592a74d3b2fc34e",
   "artifact": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.fs",
-  "artifact_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
+  "artifact_sha256": "58e810489aab320590d5e3052fd7b40cbf168e7267ae56bd4be0f47747dfc72c",
   "clock_frequencies": {
     "sys_clk": {
       "constraint_mhz": 50.0,
-      "actual_mhz": 53.1
+      "actual_mhz": 50.054
     },
     "camera_pclk": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 120.071
+      "actual_mhz": 139.587
     },
     "rx125m": {
       "constraint_mhz": 125.0,
@@ -120,11 +119,11 @@
     },
     "tx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 147.766
+      "actual_mhz": 150.864
     },
     "display33m": {
       "constraint_mhz": 33.0,
-      "actual_mhz": 52.589
+      "actual_mhz": 51.178
     },
     "memory400m": {
       "constraint_mhz": 400.0,
@@ -132,7 +131,7 @@
     },
     "ddr_ui100m": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 127.879
+      "actual_mhz": 107.38
     }
   },
   "timing_violations": {
