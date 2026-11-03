@@ -2,17 +2,19 @@
 
 当前 FPGA 工程是 [A745 片上自主避障](code/camera-car-control/a745-autonomous/README.md)。上电未 ARM，S1 本地启停，网口发送视频和遥测。Lichee Pi 4A 接收摄像头画面，在 TH1520 NPU 上做目标检测并提供浏览器预览。
 
-## 当前实板：FW74513 RX 门控候选（2026-11-03）
+## 当前实板：FW74513 ED10 全模式显示（2026-11-03）
 
-已完成 FW74511 对比并烧录修复候选：模式1/2下关闭以太网接收时钟和MAC RX，模式3才接收ET10/ED10；模式选择同步到RGMII RX时钟域。候选镜像 SHA 为 `58e810489aab320590d5e3052fd7b40cbf168e7267ae56bd4be0f47747dfc72c`，Flash写入校验、重载、`0x70022020`及UserCode核对通过。实体冷启动、模式1/2启动和ERR0011回归仍待用户本地S1验收。74511回退审计保留在[回退记录](output/rollback-74511-20261103/README.md)，当前实板状态见[STATUS.json](output/refactor-autonomous-20261030/STATUS.json)。
+本轮固件保持 RGMII RX 接收，使 4A 回传的 ED10 推理框在模式1、模式2和模式3都可进入显示解析；ET10 运动任务仍独立限制为本地模式3、S1会话、有效传感器和安全联锁，模式1/2或未 ARM 网络包不能驱动电机。当前位流 SHA 为 `96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16`，Flash写入校验、重载、`0x70022020`及UserCode `0xA745`核对通过，审计见 `code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json`。
+
+4A `fpga-video.service` 已 active，NPU输入640×384、推理约5Hz、网页约15fps；模式1被动15秒收到150组状态，FPGA检测接受计数增加74、4A `display_sent`增加75（采样边界相差1包），期间74513/IDLE/ERR0000/未ARM/轮速为零。检测接收链路已验证，模式1/2屏幕绿色框仍需用户肉眼确认；没有电脑模拟S1或自动ARM。历史74511回退审计保留在[回退记录](output/rollback-74511-20261103/README.md)，当前源码和实板记录见 [AGENTS.md](AGENTS.md) 及本轮输出目录。
 
 ## FW74513 模式与寻物联调（2026-11-03）
 
-FW74513已完成编译布线与Flash写入、校验、重载。S2/S3待机选择模式，数码管显示1绕障行驶、2原地一圈、3视觉寻物；S1启动/停止，S0复位停车。新增车体几何出口检查、局部四转绕行、有限视觉任务通道；原摄像头→4A NPU→FPGA检测框与HUD链路保留。
+FW74513已完成编译布线与Flash写入、校验、重载。S2/S3待机选择模式，数码管显示1绕障行驶、2原地一圈、3视觉寻物；S1启动/停止，S0复位停车。新增车体几何出口检查、局部四转绕行、有限视觉任务通道；原摄像头→4A NPU→FPGA检测框与HUD链路保留。网页支持COCO类别、预设颜色筛选和点击框锁定；标定未验证时不会把框大小当实测距离。
 
 45秒被动监测：451组状态/姿态/任务状态，均74513、IDLE、ERR0000、未ARM、目标轮速零；视频29.76fps、推理4.98Hz、网页14.90fps，224次框回传被接收，无新增坏包/缺行。44项RTL、CPU及15项导航/任务/显示独立原语、协议/几何/回放和同次时序审核通过。
 
-**数码管和模式选择已由用户确认正常；模式1/2启动约10秒后报ERR0011、SRC37、R/P WAIT，启动验收未通过。用户另报告电源由可同时带两块板变为只能带一块，疑似供电问题，尚无电压测量确认。运动和冷启动仍待验收；相机/雷达未标定，自动接近禁用。**详见[本次故障记录](output/motion-task-20261103/startup-err0011/USER-REPORT.json)。操作与边界见 [README-MODES-AND-TARGET-74513.md](code/camera-car-control/a745-autonomous/docs/README-MODES-AND-TARGET-74513.md)，最新证据见 [RESULT.json](output/motion-task-20261103/RESULT.json)。下文74512及此前视频验收为历史记录，不代替74513验收。
+此前 RX 门控候选曾在模式1/2启动测试中出现 ERR0011/SRC37，记录保留在[故障记录](output/motion-task-20261103/startup-err0011/USER-REPORT.json)；本轮新位流已改为全模式保持 ED10 接收并重新烧录。当前模式1被动 ED10 接收已验证，模式2屏幕、运动和冷启动仍按实物范围单独验收；相机/雷达未标定，自动接近禁用。操作与边界见 [README-MODES-AND-TARGET-74513.md](code/camera-car-control/a745-autonomous/docs/README-MODES-AND-TARGET-74513.md)，最新证据见 [RESULT.json](output/detection-task-20261103/RESULT.json)。下文74512及此前视频验收为历史记录，不代替74513验收。
 
 ## FPGA 摄像头 → Lichee Pi 4A 实时识别（2026-11-02）
 

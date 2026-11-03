@@ -1,6 +1,10 @@
 import math,struct,tempfile,threading,time,unittest
 from types import SimpleNamespace
-from vision_task import Confirmation,associate,encode,VisionTask,CALIBRATION,target_bearing
+try:
+    import cv2,numpy as np
+except ImportError:
+    cv2=np=None
+from vision_task import Confirmation,associate,encode,VisionTask,CALIBRATION,target_bearing,color_from_bgr
 
 class VisionTaskTests(unittest.TestCase):
     def box(self,label='bottle',score=.9,x=270):
@@ -33,6 +37,14 @@ class VisionTaskTests(unittest.TestCase):
         self.assertEqual(struct.unpack_from('<IIII',b,4),(7,123,42,9))
         self.assertEqual(tuple(b[20:24]),(1,39,3,220))
         self.assertEqual(struct.unpack_from('<hHHHHHIQ',b,24),(-100,1000,400,55,60,0,777,0))
+    def test_preset_color_classification_and_ambiguity(self):
+        if cv2 is None: self.skipTest('OpenCV is installed on the target 4A, not the build venv')
+        red=np.zeros((120,120,3),np.uint8);red[:]=[0,0,220]
+        self.assertEqual(color_from_bgr(red,[0,0,120,120])[0],'red')
+        blue=np.zeros((120,120,3),np.uint8);blue[:]=[220,0,0]
+        self.assertEqual(color_from_bgr(blue,[0,0,120,120])[0],'blue')
+        mixed=np.zeros((120,120,3),np.uint8);mixed[:,:60]=[0,0,220];mixed[:,60:]=[220,0,0]
+        self.assertIn(color_from_bgr(mixed,[0,0,120,120])[0],('mixed','unknown'))
     def test_config_never_arms_and_defaults_unverified(self):
         asm=SimpleNamespace(last_frame=0)
         det=SimpleNamespace(lock=threading.Lock(),boxes=[],error='')
@@ -45,6 +57,10 @@ class VisionTaskTests(unittest.TestCase):
             t.config['calibration']['target_lidar_observable']=True
             t.configure({'label':'bottle'})
             self.assertFalse(t.config['calibration']['target_lidar_observable'])
+            t.configure({'label':'bottle','color':'red','task_mode':'follow','lock_point':[320,240]})
+            self.assertEqual(t.snapshot()['color'],'red')
+            self.assertEqual(t.snapshot()['task_mode'],'follow')
+            self.assertEqual(t.snapshot()['lock_point'],[320,240])
     def test_measured_bearing_uses_camera_offset_and_yaw(self):
         cal=dict(CALIBRATION,fx=500,cx=300,camera_x_mm=100,camera_y_mm=50,camera_yaw_deg=10)
         x,y=1200,300

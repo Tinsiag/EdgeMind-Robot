@@ -84,18 +84,12 @@ module a745_top(
     (* ASYNC_REG="TRUE" *) reg [1:0] phy_ready_rx;
     always @(posedge rgmii_rx_clk or negedge rx_n)
       if(!rx_n) phy_ready_rx<=0;else phy_ready_rx<={phy_ready_rx[0],phy_ready};
-    // The local avoidance and spin modes must not power or clock the Ethernet
-    // receive datapath.  The RX path is needed only for mode 3 ET10/ED10
-    // traffic; keeping it active while LicheePi is off adds an unnecessary
-    // 125 MHz receive domain and was correlated with startup IMU loss.
-    // Synchronize the mode directly into the physical RGMII receive clock
-    // domain.  The RX enable/reset controls below are consumed by logic
-    // clocked from rgmii_rx_clk; synchronizing through pll125 would create a
-    // second asynchronous crossing and a hold-violating reset/CE path.
-    (* ASYNC_REG="TRUE" *) reg [1:0] selected_mode_rx;
-    always @(posedge rgmii_rx_clk or negedge rx_n)
-      if(!rx_n) selected_mode_rx<=0;else selected_mode_rx<={selected_mode_rx[0],selected_mode};
-    wire rx_mode_enabled=selected_mode_rx==2'd3;
+    // ED10 is a display-only stream and must remain available in every local
+    // mode.  ET10 motion validity is gated separately below by mode3, the
+    // local S1 session and the FPGA task receiver.  The previous candidate
+    // gated the whole RX MAC to mode3, which made valid 4A boxes disappear in
+    // modes 1 and 2.  The MAC's own PHY-ready gate keeps reset-time traffic
+    // out until the RGMII interface is initialized.
     wire [7:0] gmii_rxd,rx_data,rx_mac_data;wire gmii_dv,gmii_er,rx_ready,rx_mac_ready;
     wire rx_mac_valid,rx_mac_last,rx_mac_user;
     a745_rgmii_rx receiver(.clk(rgmii_rx_clk),.data(rgmii_rxd),.ctl(rgmii_rx_ctl),
@@ -106,8 +100,8 @@ module a745_top(
       .tx_axis_tvalid(net_valid),.tx_axis_tready(net_ready),.tx_axis_tlast(net_last),.tx_axis_tuser(1'b0),
       .rx_axis_tdata(rx_mac_data),.rx_axis_tkeep(rx_keep),.rx_axis_tvalid(rx_mac_valid),.rx_axis_tready(rx_mac_ready),
       .rx_axis_tlast(rx_mac_last),.rx_axis_tuser(rx_mac_user),.gmii_rxd(gmii_rxd),.gmii_rx_dv(gmii_dv),.gmii_rx_er(gmii_er),
-      .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),.rx_clk_enable(rx_mode_enabled),.tx_clk_enable(1'b1),
-      .rx_mii_select(1'b0),.tx_mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1] && rx_mode_enabled),
+      .gmii_txd(gmii_txd),.gmii_tx_en(gmii_en),.gmii_tx_er(gmii_txer),.rx_clk_enable(1'b1),.tx_clk_enable(1'b1),
+      .rx_mii_select(1'b0),.tx_mii_select(1'b0),.cfg_ifg(8'd12),.cfg_tx_enable(phy_ready_tx[1]),.cfg_rx_enable(phy_ready_rx[1]),
       .tx_error_underflow(),.tx_fifo_overflow(),.tx_fifo_bad_frame(),.tx_fifo_good_frame(),.rx_error_bad_frame(),
       .rx_error_bad_fcs(),.rx_fifo_overflow(),.rx_fifo_bad_frame(),.rx_fifo_good_frame());
     gmii_to_rgmii transmitter(.reset_n(global_n),.gmii_tx_clk(pll125),.gmii_txd(gmii_txd),

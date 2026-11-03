@@ -13,6 +13,7 @@ fixed rate). Browser: http://<4a-ip>:8090/   status: /status.json
 import http.server, json, os, socket, struct, threading, time
 import numpy as np
 import cv2
+from vision_task import color_from_bgr
 
 UDP_PORT = int(os.environ.get('VIDEO_UDP_PORT', '6104'))
 HTTP_PORT = int(os.environ.get('VIDEO_HTTP_PORT', '8090'))
@@ -206,8 +207,10 @@ class Detector:
         res = []
         for i in np.array(idx).reshape(-1):
             x, y, w, h = xywh[i]
+            box=[max(0, x), max(0, y), min(WIDTH - 1, x + w), min(HEIGHT - 1, y + h)]
+            color, color_score = color_from_bgr(bgr, box)
             res.append(dict(cls=COCO[int(cls[i])], score=round(float(score[i]), 3),
-                            box=[max(0, x), max(0, y), min(WIDTH - 1, x + w), min(HEIGHT - 1, y + h)]))
+                            box=box, color=color, color_score=round(color_score, 3)))
         return res
 
 
@@ -276,7 +279,10 @@ class NpuDetector:
             X2 = max(0, min(WIDTH - 1, int((x2 - self.ox) / self.scale)))
             Y2 = max(0, min(HEIGHT - 1, int((y2 - self.oy) / self.scale)))
             if X2 > X1 and Y2 > Y1 and score >= CONF:
-                res.append(dict(cls=COCO[label], score=round(score, 3), box=[X1,Y1,X2,Y2]))
+                box=[X1,Y1,X2,Y2]
+                color, color_score = color_from_bgr(bgr, box)
+                res.append(dict(cls=COCO[label], score=round(score, 3), box=box,
+                                color=color, color_score=round(color_score, 3)))
         return res
 
 
@@ -328,25 +334,31 @@ def receive():
 PAGE = b'''<!doctype html><html><head><meta charset="utf-8"><title>FPGA Camera YOLO</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>body{margin:0;background:#111;color:#ddd;font:14px system-ui,sans-serif}
-main{max-width:660px;margin:auto;padding:12px}img{width:100%;border-radius:6px;background:#000}
+main{max-width:660px;margin:auto;padding:12px}img{width:100%;border-radius:6px;background:#000;cursor:crosshair}
 pre{white-space:pre-wrap;background:#1b1b1b;padding:8px;border-radius:6px}</style></head>
 <body><main><h3>FPGA Camera &rarr; Lichee Pi 4A YOLOv5</h3><img src="/video.mjpg">
 <pre id="s">...</pre>
-<label>YOLO target <select id="target"></select></label> <button id="apply">Apply target</button>
-<p>FPGA: S2/S3 select mode 3; S1 starts/stops. Choose a tall, opaque object visible to both camera and lidar.</p>
+<label>YOLO target <select id="target"></select></label>
+<label> color <select id="color"><option value="any">any</option><option value="red">red</option><option value="orange">orange</option><option value="yellow">yellow</option><option value="green">green</option><option value="blue">blue</option><option value="purple">purple</option><option value="black">black</option><option value="white">white</option><option value="gray">gray</option></select></label>
+<label> task <select id="task"><option value="search">search and approach</option><option value="follow">follow locked target</option></select></label>
+<button id="apply">Apply</button> <button id="stop">Stop task</button>
+<p>For follow mode, click the target box in the video to lock it. FPGA: S2/S3 select mode 3; local S1 starts/stops. Radar and local faults always stop motion.</p>
 <pre id="taskstatus">...</pre></main><script>
+let taskState={};
+function sendConfig(extra={}){return fetch('/task/config',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({label:target.value,color:color.value,task_mode:task.value},extra))}).then(r=>r.json()).then(j=>{taskState=j;return j})}
 fetch('/task/status.json').then(r=>r.json()).then(j=>{
- for(const c of j.classes){const o=document.createElement('option');o.value=c;o.textContent=c;target.appendChild(o)}target.value=j.label});
-apply.onclick=()=>fetch('/task/config',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:target.value})});
+ taskState=j;for(const c of j.classes){const o=document.createElement('option');o.value=c;o.textContent=c;target.appendChild(o)}target.value=j.label;color.value=j.color||'any';task.value=j.task_mode||'search'});
+apply.onclick=()=>sendConfig();stop.onclick=()=>sendConfig({task_mode:'off',lock_point:null});
+document.querySelector('img').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();sendConfig({task_mode:'follow',lock_point:[Math.round((e.clientX-r.left)*640/r.width),Math.round((e.clientY-r.top)*480/r.height)]})};
 setInterval(()=>fetch('/task/status.json').then(r=>r.json()).then(j=>{
- taskstatus.textContent=JSON.stringify({target:j.label,message:j.message,confirmations:j.confirmations,distance_mm:j.distance_mm,
+ taskState=j;taskstatus.textContent=JSON.stringify({target:j.label,color:j.color,task:j.task_mode,locked:j.lock_point,message:j.message,confirmations:j.confirmations,distance_mm:j.distance_mm,
  calibrated:j.calibrated,preview_confirmations:j.preview_confirmations,preview_distance_mm:j.preview_distance_mm,
  fpga:j.fpga,error:j.error},null,2)}),500);
 
 setInterval(()=>fetch('/status.json').then(r=>r.json()).then(j=>{
 s.textContent=`camera ${j.fps.toFixed(1)} fps | web ${j.stream_fps.toFixed(1)} fps | frames ${j.frames}
 detector ${j.backend} ${j.infer_ms.toFixed(0)} ms | NPU ${j.npu_ms?.toFixed(1) ?? '-'} ms | runs ${j.infer_runs} ${j.error}
-`+j.boxes.map(b=>`${b.cls} ${b.score} [${b.box}]`).join('\\n')}),1000)</script></body></html>'''
+`+j.boxes.map(b=>`${b.cls} ${b.color||'unknown'} ${b.score} [${b.box}]`).join('\\n')}),1000)</script></body></html>'''
 
 
 class Handler(http.server.BaseHTTPRequestHandler):

@@ -1,0 +1,74 @@
+{
+  "recorded_local": "2026-11-03T14:50:00+08:00",
+  "status": "flash_verified_mode1_ed10_received_host_task_controls_verified",
+  "firmware_revision": 74513,
+  "artifact": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.fs",
+  "artifact_sha256": "96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16",
+  "flash_audit": "code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json",
+  "configuration_status": "0x70022020",
+  "usercode": "0xA745",
+  "hardware_programmed": true,
+  "network_control_enabled": true,
+  "network_arm_enabled": false,
+  "local_mode3_required": true,
+  "detection_display_rx_enabled": true,
+  "ed10_rx_modes": [
+    1,
+    2,
+    3
+  ],
+  "motor_vm_off_user_report": true,
+  "downloader_vm_off_user_report": true,
+  "computer_arm_used": false,
+  "motion_packets_sent": 0,
+  "physical_motion_verified": false,
+  "cold_boot_verified": false,
+  "mode1_passive": {
+    "sample_file": "output/detection-task-20261103/MODE1-PASSIVE.json",
+    "seconds": 15.013938667999355,
+    "status_packets": 150,
+    "accepted_delta": 74,
+    "display_sent_delta": 75,
+    "invalid_packets": 0,
+    "revision": 74513,
+    "mode": 1,
+    "state": "IDLE",
+    "faults": 0,
+    "armed": false,
+    "wheel_targets_zero": true
+  },
+  "host": {
+    "service": "fpga-video.service active",
+    "web": "http://192.168.40.101:8090/",
+    "backend": "npu",
+    "input": "640x384",
+    "inference_target_hz": 5,
+    "web_target_fps": 15,
+    "category_color_follow_search_controls_verified": true,
+    "invalid_class_rejected": true,
+    "stale_and_unarmed_stop_policy": true,
+    "remote_install_dir": "/home/debian/fpga",
+    "runtime_hashes": {
+      "vision_task.py": "4362d7d36848974071cb00eb17ed0a8692f57142e77ae6af5444b0f4f4b41ddb",
+      "fpga_video_yolo_web.py": "0b40fd767127d1643b16e5312301377611ab1bcb1f4b2011fb624c7e4bae465e",
+      "detection_return.py": "da6dfd3de9ce8357d2685830c860624d21e8362ea8922465d1b13b400cb0af6e",
+      "receiver.py": "a0b3870f79f1bef6f93719c1927835ba08f7276b7ed3fd6c6b270b9aa789dddc"
+    }
+  },
+  "tests": {
+    "rtl_verilator": 44,
+    "cpu_gate": "passed",
+    "navigation_gate": "passed",
+    "mission_gate": "passed",
+    "detection_gate": "passed",
+    "vision_task_unit": "11 passed, 1 skipped (OpenCV target-only)",
+    "detection_return_unit": "3 passed",
+    "timing_violations": 0
+  },
+  "limitations": [
+    "Mode2 screen green-box observation is still pending user visual confirmation.",
+    "Mode3 S1 motion, follow, search, turn and arrival require physical acceptance; no computer S1 or ARM was used.",
+    "Camera/lidar calibration remains verified=false, so automatic approach/arrival is disabled.",
+    "COCO class precision has no labeled-dataset acceptance."
+  ]
+}

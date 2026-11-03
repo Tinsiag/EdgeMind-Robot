@@ -1,6 +1,6 @@
 # FW74513 模式与寻物联调
 
-2026-11-03。FW74513已完成Flash写入、校验、重载和被动健康检查，SHA `9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c`。Flash审计 `output/refactor-autonomous-20261030/flash/20261102T175648.955546Z/audit.json`。实体按键、数码管、运动、冷启动及寻物到达尚待验收，具体状态以 `output/motion-task-20261103/` 和 `output/refactor-autonomous-20261030/STATUS.json` 为准。不得把仿真或74511/74512验收当成本版本运动验收。
+2026-11-03。FW74513已完成Flash写入、校验、重载和被动健康检查，当前位流 SHA `96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16`。Flash审计 `code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json`。模式1被动15秒已确认ED10接受计数随4A回传增加；实体模式2屏幕、数码管、运动、冷启动及寻物到达尚待验收，具体状态以 `output/detection-task-20261103/RESULT.json` 和 `output/refactor-autonomous-20261030/STATUS.json` 为准。不得把仿真或74511/74512验收当成本版本运动验收。
 
 ## 本地操作
 

@@ -1,5 +1,13 @@
 # EdgeMind-Robot 维护约定
 
+## 当前实板：FW74513 ED10 全模式显示候选（2026-11-03）
+
+本轮目标是让 4A 回传的 ED10 推理框在模式1/2也能显示，同时保留模式3的网页视觉任务。`a745_top.v` 已将 RGMII RX 时钟/MAC 接收保持开启，ED10 显示解析不再被本地模式3门控；ET10 仍由本地模式3、S1会话、传感器新鲜度和全部安全联锁单独限制，不能由模式1/2或未ARM网络包驱动电机。主机侧已加入 YOLO 类别选择、HSV 预设颜色筛选、点击框锁定、follow/search 任务和过期停车；标定默认 `verified=false`，未完成实物相机/雷达标定前不会宣称自动接近或到达。
+
+最终位流 `code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.fs` SHA `96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16`。44项 RTL/Verilator、CPU、导航/任务/显示原语、协议/几何/回放及同次 PNR/STA/SDF/PAD 已通过；setup/hold/recovery/removal/最小脉宽最差裕量为 `+0.015/+0.040/+3.479/+0.345/+1.127ns`，违例0，RX裕量 `+0.376ns`。真实 Flash 审计 `code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json` 已完成54@0写入校验、Reprogram、74状态 `0x70022020`、73 UserCode `0xA745`。
+
+烧录后4A `fpga-video.service` active，NPU输入640×384、推理约5Hz、网页约15fps。模式1被动15秒收到150组状态，FPGA检测接受计数累计74，4A `display_sent` 增量75（采样边界相差1包）；期间74513/IDLE/ERR0000/未ARM/轮速0。该计数证明 ED10 已被新固件接收，但模式1/2屏幕绿色框仍需用户肉眼确认；本轮未模拟S1、未ARM、未发送运动任务，也未把未标定目标寻物写成完成。
+
 ## FW74513 RX 门控候选已烧录（2026-11-03，实体回归待验收）
 
 已完成 FW74511 与 FW74513 对比。IMU 驱动、引脚、复位和时钟路径一致；差异中 FW74513 新增以太网 RGMII RX/ET10/ED10 接收，在模式1/2及荔枝派断电时仍保持接收域活动，可能造成启动时 IMU 校准丢样。候选已将 RX 时钟/MAC 接收门控到本地模式3，并把模式同步直接放在 `rgmii_rx_clk` 域，避免跨 `pll125` 到 RGMII 域的 hold 违例。
