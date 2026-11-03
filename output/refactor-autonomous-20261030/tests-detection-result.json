@@ -1,19 +1,20 @@
 {
   "passed": true,
   "display_only": true,
-  "motion_command_receiver": false,
+  "motion_command_receiver": true,
+  "task_channel_separate": true,
   "diagnostic_core_usage": "EMS1 byte23 only",
   "packet_destination": "192.168.0.2:6105",
   "host_tests": 3,
   "input_sha256": {
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_top.v": "6ff69a1e7ee076fdafef7b226ce1b7c528646992f834413c95fcb6ce780cecf6",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "97a917d3d624b02c3725674a116ced06e5b0f8a4054ca21cc0e0737b82af2d53",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_top.v": "cdc333265d5cc291fe57f06cabd4b1687066f0012c978794a42103289a86b191",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "8c2db7d3b013b4c68852dde29eef22d5623fb178f6823f24bf80ea07879a6a37",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_rx.v": "8d0796b832fa636a925af28ba181442581e268e67a9a6a4434d9913ba9df3d3b",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_overlay.v": "7d6a916a8abcfab0acf2eadb1fb7e2637eb4f961179865415dc62c7a61ed3729",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_rgmii_rx.v": "76a723a80e7aa8fecea61692b048112d4c7c7c957ecd3f0511c1d17a9e2f5d75",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\detection_return.py": "da6dfd3de9ce8357d2685830c860624d21e8362ea8922465d1b13b400cb0af6e",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\test_detection_return.py": "5efadd12972280d4d93251adb25ae984411fdc7b45fd7d86a23ae03941cac4d8",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\fpga_video_yolo_web.py": "1227fb7459630f44b23d286dd26a6fb82bb8594ed807fad60a82f6ae0582d27b",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_detection.py": "84eb4989e5fdabd01fcd328e149d48b5b2c7be082b9e1a8fc25c7f96f76dfe4d"
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\host\\fpga_video_yolo_web.py": "7b0774db34bbd49501f383db2da7b5e99c91d05f770ea4df570d93df890f404c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_detection.py": "6b629b69056b5ccfcec0e606ad06592bd9854a5e9709c5628e7e65fc740de5aa"
   }
 }

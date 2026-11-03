@@ -2,9 +2,9 @@
   "passed": true,
   "clock_40_to_60_percent_duty_pass": true,
   "method": "same PLL output origin; routed clock + CLK/Q + output route + OBUF, all RGB/DE/HS/VS transitions, three SDF PVT corners; PCLK rising centered half-cycle after data launch",
-  "bitstream_sha256": "888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256",
-  "sdf_sha256": "4d27c153fdcc17023d9e837881fc767e570445ba62c5aea2069bd69ac5db9637",
-  "physical_netlist_sha256": "e8a863cac55d2514974626dc2c46dfc1461e2a08d7d7ac3b430630fd5664279c",
+  "bitstream_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
+  "sdf_sha256": "695dfa49ab539b67d160465b9b74cd787207e8cf4929e908589be74b1da2dfc7",
+  "physical_netlist_sha256": "846578cd0137845e459ae764b767042d0f2eab896d85b7d2ac56281eadbec0f4",
   "sample_edge": "rising",
   "frequency_mhz": 33,
   "corner_order": [

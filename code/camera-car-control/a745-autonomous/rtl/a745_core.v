@@ -1,9 +1,11 @@
 `timescale 1ns/1ps
 `default_nettype none
-module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1,
+module a745_core #(parameter ADVANCED=0,CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=27000,LIDAR_CLOCKWISE=1,
  RADIUS_MM=257,LIDAR_X=164,LIDAR_Y=0,TRACK_MM=234,FRONT_EXTENT=221,REAR_EXTENT=70,HALF_WIDTH=131,
  LEFT_CPR=1469,RIGHT_CPR=1471,LEFT_DIAMETER=66300,RIGHT_DIAMETER=66300,FUSION_CONFIG_CRC=0)(
  input wire clk,rst_n,button_start,imu_int,lidar_rx,
+ input wire [1:0] selected_mode,input wire task_fresh,input wire [2:0] task_action,
+ input wire [31:0] task_session,network_video_frame,input wire [7:0] task_accepted,output wire control_ms_tick,
  input wire phy_ready,phy_error,input wire [7:0] mac_diagnostic,
  inout wire imu_sda,imu_scl,
  input wire left_a,left_b,right_a,right_b,
@@ -20,6 +22,7 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
  localparam DIV_BITS=$clog2(MS_DIV)>0 ? $clog2(MS_DIV):1;
  reg [DIV_BITS-1:0] divider;reg [3:0] period;
  wire ms_tick=divider==MS_DIV-1,tick=ms_tick && period==9;
+ assign control_ms_tick=ms_tick;
  always @(posedge clk or negedge rst_n)
   if(!rst_n) begin divider<=0;period<=0;end
   else if(ms_tick) begin divider<=0;period<=period==9 ? 0:period+1'b1;end
@@ -45,6 +48,16 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
  wire signed [1:0] ls,rs;wire li,ri,lto,rto;
  wire signed [31:0] lc,rc,delta_l,delta_r,speed_l,speed_r,target_l,target_r;
  wire [31:0] invalid_l,invalid_r;
+ reg [7:0] wheel_quiet_ms;
+ reg [31:0] previous_camera_frame;reg [9:0] camera_age_ms;
+ always @(posedge clk or negedge rst_n)
+  if(!rst_n)begin previous_camera_frame<=0;camera_age_ms<=1000;end
+  else if(video_frames!=previous_camera_frame)begin previous_camera_frame<=video_frames;camera_age_ms<=0;end
+  else if(ms_tick && camera_age_ms<1000)camera_age_ms<=camera_age_ms+1'b1;
+ always @(posedge clk or negedge rst_n)
+  if(!rst_n)wheel_quiet_ms<=0;
+  else if(ls!=0 || rs!=0)wheel_quiet_ms<=0;
+  else if(ms_tick && wheel_quiet_ms<200)wheel_quiet_ms<=wheel_quiet_ms+1'b1;
  // 2 us pair qualification at the actual system clock. Even at the
  // configured 400 mm/s limit, nominal AB states last about 354 us.
  localparam ENCODER_FILTER_CYCLES=(CLK_HZ+499999)/500000;
@@ -80,16 +93,35 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
   .clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.stream_valid(lv),.point_valid(filtered_point),.angle(filtered_angle),
   .distance(filtered_distance),.confidence(filtered_confidence),.scan_valid(scan_valid),.front(front),.left(left),.right(right),
   .rear(rear),.left_clear(left_clear),.right_clear(right_clear),.scan_sequence(scan_sequence));
- a745_autonomy #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.REAR_STOP_MM(350),
+ wire [7:0] base_state,planned_state,plan_reason,route_stage;
+ wire [15:0] base_faults;wire base_motor,plan_enable,plan_fault;
+ wire signed [31:0] base_l,base_r,plan_l,plan_r,plan_rotation;
+ wire advance_clear,reverse_clear,left_exit_clear,right_exit_clear,spin_clear;
+ a745_path_guard #(.LIDAR_ZERO(LIDAR_ZERO),.LIDAR_CLOCKWISE(LIDAR_CLOCKWISE)) path_guard(
+  .clk(clk),.rst_n(rst_n),.stream_valid(lv),.scan_valid(scan_valid),.point_valid(filtered_point),
+  .angle(filtered_angle),.distance(filtered_distance),.confidence(filtered_confidence),
+  .advance_clear(advance_clear),.reverse_clear(reverse_clear),.left_exit_clear(left_exit_clear),
+  .right_exit_clear(right_exit_clear),.spin_clear(spin_clear));
+ a745_motion_planner planner(.clk(clk),.rst_n(rst_n),.tick(tick),.permission(ADVANCED!=0 && base_motor),
+  .mode(selected_mode),.yaw(yaw),.left_count(lc),.right_count(rc),.front(front),.left(left),.right(right),.rear(rear),
+  .scan_valid(scan_valid),.left_clear(left_clear),.right_clear(right_clear),.advance_clear(advance_clear),
+  .reverse_clear(reverse_clear),.left_exit_clear(left_exit_clear),.right_exit_clear(right_exit_clear),.spin_clear(spin_clear),
+  .task_fresh(task_fresh && camera_age_ms<600),.task_action(task_action),.enable(plan_enable),.target_l(plan_l),.target_r(plan_r),
+  .state(planned_state),.reason(plan_reason),.fault(plan_fault),.rotation(plan_rotation),.route_stage(route_stage));
+ assign state=(ADVANCED==0 || base_state==0 || base_state==1 || base_state==8) ? base_state:planned_state;
+ assign faults=base_faults;
+ assign motor_enable=base_motor && (ADVANCED==0 || plan_enable) && !button_start;
+ assign target_l=ADVANCED!=0 ? plan_l:base_l;assign target_r=ADVANCED!=0 ? plan_r:base_r;
+ a745_autonomy #(.GEOMETRY_VERIFIED(GEOMETRY_VERIFIED),.USE_PLANNER_FAULT(ADVANCED),.REAR_STOP_MM(350),
   .REVERSE_LEFT_COUNTS(REVERSE_LEFT_COUNTS),.REVERSE_RIGHT_COUNTS(REVERSE_RIGHT_COUNTS)) autonomy(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.tick(tick),
   .button_start(button_start),.imu_valid(iv),.gyro_valid(gv),.stationary(stationary),.gyro_update(gu),.tilt_valid(tilt),
-  .raw_gz($signed(raw[95:80])),.roll(roll),.pitch(pitch),.yaw(yaw),.wheels_stationary(ls==0 && rs==0),
+  .raw_gz($signed(raw[95:80])),.roll(roll),.pitch(pitch),.yaw(yaw),.wheels_stationary(ADVANCED!=0 ? wheel_quiet_ms>=100:ls==0 && rs==0),
   // User requested no-pulse timeout as telemetry only. Bad quadrature still
   // stops; counts, wheel-speed feedback and the original PI remain active.
   .encoder_fault(encoder_bad),.left_count(lc),.right_count(rc),.cpu_alive(cpu_alive),.cpu_fault(cpu_fault),
-  .lidar_valid(lv),.scan_valid(scan_valid),.front(front),.left(left),.right(right),.rear(rear),.left_clear(left_clear),.right_clear(right_clear),
-  .armed(armed),.calibrated(calibrated),.bias(bias),.lidar_enabled(laser_enable),.motor_enable(motor_enable),
-  .state(state),.faults(faults),.target_l(target_l),.target_r(target_r),
+  .lidar_valid(lv),.scan_valid(scan_valid),.front(ADVANCED!=0 ? 16'd2000:front),.left(left),.right(right),.rear(rear),.left_clear(left_clear),.right_clear(right_clear),
+  .planner_fault(plan_fault),.armed(armed),.calibrated(calibrated),.bias(bias),.lidar_enabled(laser_enable),.motor_enable(base_motor),
+  .state(base_state),.faults(base_faults),.target_l(base_l),.target_r(base_r),
   .imu_fault_sources(imu_fault_sources),.imu_fault_valid_flags(imu_fault_valid_flags),
   .imu_fault_roll(imu_fault_roll),.imu_fault_pitch(imu_fault_pitch));
  ld06_control #(.CLK_HZ(CLK_HZ)) laser(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.enabled(laser_enable),
@@ -115,7 +147,7 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
   else if(ms_tick) begin
    seq<=seq+1'b1;snapshot<=0;
    snapshot[31:0]<=32'h31534d45;snapshot[47:32]<=1;snapshot[63:48]<=112;
-    snapshot[95:64]<=seq;snapshot[127:96]<=now_ms;snapshot[159:128]<=32'd74512;
+    snapshot[95:64]<=seq;snapshot[127:96]<=now_ms;snapshot[159:128]<=32'd74513;
    snapshot[175:160]<={1'b1,phy_error,phy_ready,video_overflow,ddr_error,camera_error,frame_ready,ddr_ready,
     rto,(state==1),armed,calibrated,lv,lto,gv,iv};
     snapshot[183:176]<=state;snapshot[191:184]<=mac_diagnostic;snapshot[207:192]<=faults;
@@ -130,8 +162,10 @@ module a745_core #(parameter CLK_HZ=50000000,GEOMETRY_VERIFIED=0,LIDAR_ZERO=2700
    snapshot[799:792]<=camera_diagnostic[39:32];snapshot[831:800]<=isq;snapshot[895:864]<=lsq;
    snapshot[847:832]<=rear;snapshot[855:848]<={6'd0,right_clear,left_clear};snapshot[863:856]<=scan_sequence;
   end
- a745_udp_tx #(.CLK_HZ(CLK_HZ)) telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.phy_ready(phy_ready),
-  .snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.lidar_valid(lpv),.lidar_packet(packet),.lidar_seq(lsq),.lidar_time(lt),
+ wire [511:0] task_snapshot={256'd0,plan_rotation,{route_stage,plan_reason,8'(selected_mode),state},
+  network_video_frame,task_session,now_ms,32'd74513,16'd64,16'd1,32'h31544d45};
+ a745_udp_tx #(.CLK_HZ(CLK_HZ),.TASK_ENABLE(ADVANCED)) telemetry(.clk(clk),.rst_n(rst_n),.ms_tick(ms_tick),.phy_ready(phy_ready),
+  .snapshot(snapshot),.fusion_snapshot(fusion_snapshot),.task_snapshot(task_snapshot),.lidar_valid(lpv),.lidar_packet(packet),.lidar_seq(lsq),.lidar_time(lt),
   .data(eth_tx_data),.valid(eth_tx_valid),.last(eth_tx_last),.ready(eth_tx_ready),.dropped(dropped));
 endmodule
 `default_nettype wire

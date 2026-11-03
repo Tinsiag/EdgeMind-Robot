@@ -8,23 +8,23 @@
   "clock_frequencies": {
     "sys_clk": {
       "constraint_mhz": 50.0,
-      "actual_mhz": 50.624
+      "actual_mhz": 53.1
     },
     "camera_pclk": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 115.335
+      "actual_mhz": 120.071
     },
     "rx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 167.462
+      "actual_mhz": 167.799
     },
     "tx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 157.325
+      "actual_mhz": 147.766
     },
     "display33m": {
       "constraint_mhz": 33.0,
-      "actual_mhz": 53.963
+      "actual_mhz": 52.589
     },
     "memory400m": {
       "constraint_mhz": 400.0,
@@ -32,14 +32,14 @@
     },
     "ddr_ui100m": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 121.127
+      "actual_mhz": 127.879
     }
   },
   "worst_reported_slack_ns": {
-    "setup": 0.247,
+    "setup": 1.02,
     "hold": 0.038,
-    "recovery": 3.208,
-    "removal": 0.348,
+    "recovery": 3.945,
+    "removal": 0.213,
     "minimum_pulse_width": 1.122
   },
   "per_clock_tns": [

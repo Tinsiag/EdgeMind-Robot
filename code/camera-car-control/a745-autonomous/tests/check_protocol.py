@@ -14,6 +14,17 @@ def main():
     exported = ROOT / '.local/tests/udp-frames.hex'
     frames = [bytes.fromhex(line) for line in exported.read_text().splitlines()]
     assert len(frames) == 3
+    task_exported=ROOT/'.local/tests/task-telemetry.hex'
+    task_frames=[bytes.fromhex(line) for line in task_exported.read_text().splitlines()]
+    assert len(task_frames)==3
+    task_frame=task_frames[2]
+    assert len(task_frame)==106 and task_frame[42:46]==b'EMT1'
+    assert struct.unpack_from('<HHI',task_frame,46)==(1,64,74513)
+    assert struct.unpack_from('<I',task_frame,62)[0]==0x12345678
+    assert struct.unpack_from('!4H',task_frame,34)==(6103,6103,72,0)
+    task_checksum=sum(struct.unpack('!10H',task_frame[14:34]))
+    while task_checksum>>16:task_checksum=(task_checksum&65535)+(task_checksum>>16)
+    assert task_checksum==65535
     records = []
     for frame, magic, payload_length in zip(frames, [b'EMS1', b'EMF1', b'EML1'], [112, 48, 64]):
         assert len(frame) == 14 + 20 + 8 + payload_length
@@ -95,7 +106,7 @@ def main():
                'malformed_length_magic_version_rejected': True, 'packets_sent': 0,
                'export_sha256': hashlib.sha256(exported.read_bytes()).hexdigest(),
                'input_sha256': {str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in
-                                [ROOT/'host/receiver.py',Path(__file__).resolve(),exported]}}
+                                [ROOT/'host/receiver.py',Path(__file__).resolve(),exported,task_exported]}}
     (ROOT / '.local/tests/protocol-result.json').write_text(json.dumps(receipt, indent=2) + '\n')
     print(json.dumps(receipt, indent=2))
 

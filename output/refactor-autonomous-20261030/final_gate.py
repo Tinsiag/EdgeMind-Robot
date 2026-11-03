@@ -77,7 +77,7 @@ def main():
     assert all(name in ports for name in ['rgmii_rxd', 'rgmii_rx_ctl', 'rgmii_rx_clk', 'a745_detection_rx #(.SESSION_CYCLES(100000000)) detection_rx'])
     assert not any(name in ports for name in ['command_parser', 'network_mode'])
     detection = json.loads((PROJECT / '.local/tests/detection-result.json').read_text())
-    assert detection['passed'] and detection['display_only'] and not detection['motion_command_receiver']
+    assert detection['passed'] and detection['display_only'] and detection['motion_command_receiver'] and detection['task_channel_separate']
     for name, expected in detection['input_sha256'].items():
         assert sha(Path(name)) == expected, name
     detection_gate = json.loads((PROJECT / '.local/tests/detection-gate-result.json').read_text())
@@ -85,6 +85,14 @@ def main():
     for name, expected in detection_gate['input_sha256'].items():
         assert sha(Path(name)) == expected, name
     assert targets['rx_iddr_count'] == 5
+    for receipt in ['mission-gate-result.json','path-geometry-result.json']:
+        mission=json.loads((PROJECT/'.local/tests'/receipt).read_text())
+        assert mission['passed']
+        if receipt=='mission-gate-result.json':assert mission['main_netlist_sha256']==result['synthesis_netlist_sha256']
+        for name,expected in mission['input_sha256'].items():assert sha(Path(name))==expected,name
+    assert result['network_control_enabled'] and not result['network_arm_enabled']
+    isolation=json.loads((OUT/'DISPLAY-ISOLATION.json').read_text())
+    assert isolation['raw_rx_reaches_motor_outputs'] and len(isolation['unreachable_motor_outputs_from_ed10_box_data'])==4
     assert targets['ethernet_clock']['pll_output_mhz']==250 and targets['ethernet_clock']['mac_clock_mhz']==125
     for host in ['receiver.py', 'app.py']:
         tree = ast.parse((PROJECT / 'host' / host).read_text(encoding='utf-8'))
@@ -98,16 +106,18 @@ def main():
               'artifact': str(artifact), 'artifact_sha256': result['artifact_sha256'], 'usercode': '0xA745',
               'hardware_programmed': False, 'hardware_display_verified': False, 'cold_boot_verified': False,
               'armed': False, 'rtl_tests_passed': len(expected_benches), 'protocol_checks_passed': True,
-              'network_control_enabled': False, 'detection_display_rx_enabled': True, 'vm_off_confirmed': False,
+              'network_control_enabled': True, 'network_arm_enabled': False, 'local_mode3_required': True,
+              'detection_display_rx_enabled': True, 'vm_off_confirmed': False,
               'application_verified': False,
               'motor_pads_dynamic': True, 'common_ground_must_remain_connected': True,
               'turn_geometry_verified': True, 'navigation_gate_checks_passed': True, 'front_stop_mm': front_stop_mm,
               'recorded_utc': datetime.now(timezone.utc).isoformat()}
-    (OUT / 'STATUS.json').write_text(json.dumps(record, indent=2) + '\n')
-    result.update(timing_signed_off=True, review_record=str(OUT / 'STATUS.json'))
+    candidate=ROOT/'output/motion-task-20261103'/f'CANDIDATE-{revision}.json'
+    candidate.write_text(json.dumps(record, indent=2) + '\n')
+    result.update(timing_signed_off=True, review_record=str(candidate))
     (BUILD / 'result.json').write_text(json.dumps(result, indent=2) + '\n')
     shutil.copy2(BUILD / 'result.json', OUT / 'build-evidence-current/result.json')
-    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json', 'lidar-replay-result.json', 'detection-result.json', 'detection-gate-result.json']:
+    for name in ['result.json', 'protocol-result.json', 'cpu-gate-result.json', 'turn-geometry-result.json', 'navigation-gate-result.json', 'lidar-replay-result.json', 'detection-result.json', 'detection-gate-result.json', 'mission-gate-result.json', 'path-geometry-result.json']:
         shutil.copy2(PROJECT / '.local/tests' / name, OUT / ('tests-' + name))
     print(json.dumps(record, indent=2))
 

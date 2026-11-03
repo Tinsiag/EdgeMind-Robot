@@ -1,28 +1,33 @@
 {
-  "profile": "A745-S1-AUTONOMOUS-DISPLAY-RX",
+  "profile": "A745-LOCAL-MODES-BOUNDED-VISION-TASK",
   "run_state": "completed",
   "mode": "build",
   "source_sha256": {
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "936f3242a9a81dd59488e9c97a4b97ae1e24cd51d0264a3a7310b93c6097f026",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "395d649cc13dda480b078c5a54662d2442eaaf9ce50a56e840118fe9a9707e6c",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_camera_boot.v": "7026647fc25ad6e397b634aa077ca2bea750e7913920de216485c471e6a3af17",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_camera_pads.v": "521e98ab11b64f11ef7f1c2de5ab20b02c41d9b524c2f2d4038e93a8b2103740",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "97a917d3d624b02c3725674a116ced06e5b0f8a4054ca21cc0e0737b82af2d53",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_core.v": "8c2db7d3b013b4c68852dde29eef22d5623fb178f6823f24bf80ea07879a6a37",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_cpu_regs.v": "c3936a74e7f44cefab246cf4f59f51cb0c75641605fe189ca0d03ca3835b7da0",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_overlay.v": "7d6a916a8abcfab0acf2eadb1fb7e2637eb4f961179865415dc62c7a61ed3729",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_rx.v": "8d0796b832fa636a925af28ba181442581e268e67a9a6a4434d9913ba9df3d3b",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_dvp_capture.v": "f2050bbaf858d766e83105eccd71b62e7749a22c061d9bd20a0ba536b09ac501",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_lidar_filter.v": "47a95b0960d13204f615d840aedbb267d4b00e0f6676c1d869bb80f23eb27854",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_mode_display.v": "5a79cc1eaea31615ec1948383ae0f478918e16489f3a5170439212e175f74d09",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_motion_planner.v": "9667e5d69334c75a140a73b54225d8ca3789eb52a8718447f78c297d042868c5",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_osd.v": "3e2c80ca4d7b72a6ee039bc6cdcced21912a1d8a1954d4223d5fb8b32b3b019b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_osd.v": "4364ec82bffca1b6c12f350286c4bd251b0ad54d976e38ebedfe424a7192b608",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_path_envelope.v": "b01e3450939e30e52de0fb8d7b6e52a079d64fb0ae07717b6cd4bdba57dfdb21",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_path_guard.v": "a0cf221422fcb47c61f9b72ce58fb35649fbf8ce5f320895ab83c36c8184f5ee",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_rgmii_rx.v": "76a723a80e7aa8fecea61692b048112d4c7c7c957ecd3f0511c1d17a9e2f5d75",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_task_rx.v": "5cfa9d0b0a986029169da3d595dcc6fd6e5a1ea829e8cc80ce7f2c03b86383f8",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_udp_tx.v": "9a6c73bdb231a20479fd37c951b4fe2fb51ae91e09a56495fa5561381cccf2e1",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_udp_tx.v": "d18dc7ad7ddf936d48c2921d97d39749b3e078a7084cf05f700f257d835724ce",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_video.v": "333901255eefa6388dde5e08818f584f30dcdcd0ef2261f49591fe0510db0e82",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_video_capture_tx.v": "6dab3b5275b0807ad2408683321316226e32f6b67c2969add4e49c3561442ab8",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_video_udp_tx.v": "9d56f604ef4318dcb42fb1a667cdb63f689bade99c7f2fcf1724ce79991428e3",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_attitude.v": "913de658d0c591414f6bb28b8cb3979df0928fbdf8a52d59ea53fddea746e691",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_bare_cpu.v": "e52463dbfda2c4d81fed0e1cfb4985d900dd4dd1ca539c5f083256f36627d55c",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_button_debounce.v": "f488dfc0e0586989e4bd5b43ca705a6e413e7ce57fbb0d8bdd332d6dff689565",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_button_debounce.v": "0330bbc46c4c7ece73da1174672f7e7038808631bf045a715a77276357500559",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_display_cdc.v": "504670def8a6a9e3a6c138998832ab30f15be29a2a70a4fe2910595bb7065302",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_divider.v": "6ef116a71b94c4df50b5213effc10a5232da82eb801741f5aa3e37d7a369eea0",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_imu_i2c.v": "ca08c56ac95ce852383183481dedbc54d99776dc08aff2298222d95c4c1fca8a",
@@ -69,18 +74,18 @@
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g.v": "5e53e066ac7b7d5c7699fb4fa97e633766133e499f22c4addb9b3e2d8dd97900",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\eth_mac_1g_fifo.v": "65d6217f3b0ae020b02acb1d9e45c58a32d871bdef160c5b545c0b6c1887b355",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\third_party\\verilog-ethernet\\rtl\\lfsr.v": "86362b06f992221f26c8e81ed82bbeb26eeb94edc381fd87d35bf0cca3b23c95",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745_top.v": "5dfeb63f9f3583b35c1f26178900cd54777737a5fd57a9f2c75159743bd0acc6",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.cst": "31ca9cec2ac0c9d705da708666af6744d584447b42810da1cf8b34484c6b676c",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.sdc": "0a19d8111ae3a5c7101c8a71f6a6dbc6d5c7f533dfe78271f83f74b3e9fa9125",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745_top.v": "0d2ab3659a2194b9019d08b1fa68f44fe3c782d15ac312cada61d15bd5d25513",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.cst": "f76c9d7f6fc5b6e5cf38c39d26f5a1fdf804b42213433db16784ff80da73ed33",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform\\a745.sdc": "b976ec638f76e46ca41922eeddd5c1042dfd66854326d05aa9b3a020efc25e92",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\firmware\\mission.hex": "99421e4b7d18d816c72886a2aa9732869209a63dffbfee73f013761dc95cae44"
   },
   "compile_passed": true,
   "synthesis_passed": true,
   "timing_signed_off": true,
-  "hardware_programmed": true,
+  "hardware_programmed": false,
   "route_option": 2,
   "place_option": 2,
-  "network_control_enabled": false,
+  "network_control_enabled": true,
   "motor_pads_dynamic": true,
   "motor_locked": false,
   "screen_test": false,
@@ -90,35 +95,36 @@
     480
   ],
   "platform_directory": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\platform",
-  "evidence_freshness_lower_bound_unix": 1793628300.3139126,
+  "evidence_freshness_lower_bound_unix": 1793640954.3561237,
   "clock_route_order": 1,
   "returncode": 0,
-  "seconds": 899.719000000041,
+  "seconds": 986.75,
   "timed_out": false,
   "sources_changed": [],
-  "synthesis_netlist_sha256": "d87dbcb3fca09b0ed42bef43a28de5f220376eb3ed0fe675f1e0a9d60d5367bd",
+  "network_arm_enabled": false,
+  "synthesis_netlist_sha256": "b4386e1c207385ece03f3af8d73c80bee13ac84d20a3b4e7805368611efeea0f",
   "artifact": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.fs",
-  "artifact_sha256": "888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256",
+  "artifact_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
   "clock_frequencies": {
     "sys_clk": {
       "constraint_mhz": 50.0,
-      "actual_mhz": 50.624
+      "actual_mhz": 53.1
     },
     "camera_pclk": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 115.335
+      "actual_mhz": 120.071
     },
     "rx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 167.462
+      "actual_mhz": 167.799
     },
     "tx125m": {
       "constraint_mhz": 125.0,
-      "actual_mhz": 157.325
+      "actual_mhz": 147.766
     },
     "display33m": {
       "constraint_mhz": 33.0,
-      "actual_mhz": 53.963
+      "actual_mhz": 52.589
     },
     "memory400m": {
       "constraint_mhz": 400.0,
@@ -126,7 +132,7 @@
     },
     "ddr_ui100m": {
       "constraint_mhz": 100.0,
-      "actual_mhz": 121.127
+      "actual_mhz": 127.879
     }
   },
   "timing_violations": {
@@ -139,6 +145,5 @@
   "timing_report": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\.local\\gowin-a745-autonomous\\impl\\pnr\\a745.tr",
   "path_slack_violations": {},
   "max_delay_violations": [],
-  "review_record": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\refactor-autonomous-20261030\\STATUS.json",
-  "flash_audit": "output\\refactor-autonomous-20261030\\flash\\20261102T142044.944132Z\\audit.json"
+  "review_record": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\output\\motion-task-20261103\\CANDIDATE-74513.json"
 }

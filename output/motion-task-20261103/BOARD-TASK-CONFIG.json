@@ -1,0 +1,16 @@
+{
+  "version": 11,
+  "label": "bottle",
+  "threshold": 0.65,
+  "calibration": {
+    "verified": false,
+    "fx": 520.0,
+    "cx": 319.5,
+    "camera_x_mm": 164.0,
+    "camera_y_mm": 0.0,
+    "camera_yaw_deg": 0.0,
+    "bearing_tolerance_deg": 2.0,
+    "lidar_height_mm": null,
+    "target_lidar_observable": false
+  }
+}

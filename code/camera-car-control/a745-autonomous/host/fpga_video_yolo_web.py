@@ -57,6 +57,7 @@ class Assembler:
         self.last_frame = 0.0
         self.receive_buffer_bytes = 0
         self.seq = 0               # increments per published frame
+        self.source_fid = 0; self.source_time = 0.0
         self.stats = dict(packets=0, bad_packets=0, frames=0, partial_frames=0, missing_rows=0)
         self.fps = 0.0; self._t = time.monotonic(); self._n = 0
 
@@ -67,6 +68,7 @@ class Assembler:
             with self.lock:
                 self.frame = self.buf.copy(); self.seq += 1; self.stats['frames'] += 1
                 self.last_frame = time.monotonic()
+                self.source_fid = self.fid; self.source_time = self.last_frame
                 self.lock.notify_all()
             self._n += 1; now = time.monotonic()
             if now - self._t >= 1.0:
@@ -155,6 +157,7 @@ class Detector:
             with self.asm.lock:
                 self.asm.lock.wait_for(lambda: self.asm.seq != seen)
                 seen = self.asm.seq; raw = self.asm.frame
+                source_frame = self.asm.source_fid; source_time = self.asm.source_time
             try:
                 t = time.monotonic(); boxes = self.detect(rgb565_to_bgr(raw))
                 took = time.monotonic() - t
@@ -240,6 +243,7 @@ class NpuDetector:
                 with self.asm.lock:
                     self.asm.lock.wait_for(lambda: self.asm.seq != seen)
                     seen = self.asm.seq; raw = self.asm.frame
+                    source_frame = self.asm.source_fid; source_time = self.asm.source_time
                 t = time.monotonic()
                 boxes = self.detect(rgb565_to_bgr(raw))
                 took = time.monotonic() - t
@@ -247,6 +251,7 @@ class NpuDetector:
                     self.boxes = boxes; self.ms = took * 1000; self.runs += 1
                     self.failures = 0; self.error = ''
                     self.last_result = time.monotonic(); self.result_seq = seen
+                    self.source_frame = source_frame; self.source_time = source_time
                 self.display_return.send(boxes)
                 time.sleep(max(0, NPU_MIN_GAP - took))
             except Exception as exc:
@@ -306,7 +311,7 @@ class Renderer:
             time.sleep(max(0.0, period - (time.monotonic() - t)))
 
 
-asm = det = ren = None
+asm = det = ren = task = None
 
 
 def receive():
@@ -326,7 +331,18 @@ PAGE = b'''<!doctype html><html><head><meta charset="utf-8"><title>FPGA Camera Y
 main{max-width:660px;margin:auto;padding:12px}img{width:100%;border-radius:6px;background:#000}
 pre{white-space:pre-wrap;background:#1b1b1b;padding:8px;border-radius:6px}</style></head>
 <body><main><h3>FPGA Camera &rarr; Lichee Pi 4A YOLOv5</h3><img src="/video.mjpg">
-<pre id="s">...</pre></main><script>
+<pre id="s">...</pre>
+<label>YOLO target <select id="target"></select></label> <button id="apply">Apply target</button>
+<p>FPGA: S2/S3 select mode 3; S1 starts/stops. Choose a tall, opaque object visible to both camera and lidar.</p>
+<pre id="taskstatus">...</pre></main><script>
+fetch('/task/status.json').then(r=>r.json()).then(j=>{
+ for(const c of j.classes){const o=document.createElement('option');o.value=c;o.textContent=c;target.appendChild(o)}target.value=j.label});
+apply.onclick=()=>fetch('/task/config',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({label:target.value})});
+setInterval(()=>fetch('/task/status.json').then(r=>r.json()).then(j=>{
+ taskstatus.textContent=JSON.stringify({target:j.label,message:j.message,confirmations:j.confirmations,distance_mm:j.distance_mm,
+ calibrated:j.calibrated,preview_confirmations:j.preview_confirmations,preview_distance_mm:j.preview_distance_mm,
+ fpga:j.fpga,error:j.error},null,2)}),500);
+
 setInterval(()=>fetch('/status.json').then(r=>r.json()).then(j=>{
 s.textContent=`camera ${j.fps.toFixed(1)} fps | web ${j.stream_fps.toFixed(1)} fps | frames ${j.frames}
 detector ${j.backend} ${j.infer_ms.toFixed(0)} ms | NPU ${j.npu_ms?.toFixed(1) ?? '-'} ms | runs ${j.infer_runs} ${j.error}
@@ -336,7 +352,29 @@ detector ${j.backend} ${j.infer_ms.toFixed(0)} ms | NPU ${j.npu_ms?.toFixed(1) ?
 class Handler(http.server.BaseHTTPRequestHandler):
     def log_message(self, *a): pass
 
+    def do_POST(self):
+        if self.path != '/task/config':
+            self.send_error(404); return
+        origin = self.headers.get('Origin')
+        if origin and origin.rstrip('/') != 'http://' + self.headers.get('Host', ''):
+            self.send_error(403); return
+        try:
+            length = int(self.headers.get('Content-Length', '0'))
+            if not 0 < length <= 1024: raise ValueError('Invalid length')
+            result = task.configure(json.loads(self.rfile.read(length)))
+            body = json.dumps(result).encode()
+        except (ValueError, TypeError, KeyError) as exc:
+            body = json.dumps({'error': str(exc)}, ensure_ascii=False).encode('utf-8')
+            self.send_response(400); self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Content-Length', str(len(body))); self.end_headers(); self.wfile.write(body); return
+        self.send_response(200); self.send_header('Content-Type', 'application/json')
+        self.send_header('Content-Length', str(len(body))); self.end_headers(); self.wfile.write(body)
+
     def do_GET(self):
+        if self.path == '/task/status.json':
+            body = json.dumps(task.snapshot()).encode()
+            self.send_response(200); self.send_header('Content-Type', 'application/json')
+            self.send_header('Content-Length', str(len(body))); self.end_headers(); self.wfile.write(body); return
         if self.path == '/status.json':
             with det.lock:
                 st = dict(asm.stats, fps=asm.fps, backend=det.backend, model=os.path.basename(getattr(det, 'model', MODEL)),
@@ -391,6 +429,9 @@ if __name__ == '__main__':
     backend = os.environ.get('YOLO_BACKEND', 'npu')
     det = NpuDetector(asm) if backend == 'npu' else Detector(asm)
     ren = Renderer(asm, det)
+    from vision_task import VisionTask
+    task = VisionTask(COCO, asm, det)
+    threading.Thread(target=task.run, daemon=True).start()
     for fn in (receive, det.loop, ren.loop):
         threading.Thread(target=fn, daemon=True).start()
     print(f'EV10 UDP {UDP_PORT} -> http://0.0.0.0:{HTTP_PORT}/  backend={det.backend}', flush=True)

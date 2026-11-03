@@ -84,7 +84,8 @@
     "RIGHT_DIAMETER": 66300
   },
   "config_crc": 3262599608,
-  "network": "IPv4/UDP video/telemetry TX; ED10 display-only RX; no motion commands",
+  "network": "IPv4/UDP video/telemetry TX; ED10 display-only RX; ET10 bounded intents in locally armed mode3 only",
+  "network_arm_enabled": false,
   "motor_pads_dynamic": true,
   "arm_on_boot": false
 }

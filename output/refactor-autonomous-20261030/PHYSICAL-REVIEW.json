@@ -7,12 +7,12 @@
     },
     {
       "resource": "Logic",
-      "usage": "23574/59904",
-      "utilization": "40%"
+      "usage": "26623/59904",
+      "utilization": "45%"
     },
     {
       "resource": "--LUT,ALU,ROM16",
-      "usage": "23574(20557 LUT, 3017 ALU, 0 ROM16)",
+      "usage": "26623(22876 LUT, 3747 ALU, 0 ROM16)",
       "utilization": "-"
     },
     {
@@ -22,8 +22,8 @@
     },
     {
       "resource": "Register",
-      "usage": "19926/60780",
-      "utilization": "33%"
+      "usage": "21152/60780",
+      "utilization": "35%"
     },
     {
       "resource": "--Logic Register as Latch",
@@ -32,8 +32,8 @@
     },
     {
       "resource": "--Logic Register as FF",
-      "usage": "19886/59904",
-      "utilization": "34%"
+      "usage": "21107/59904",
+      "utilization": "36%"
     },
     {
       "resource": "--I/O Register as Latch",
@@ -42,32 +42,32 @@
     },
     {
       "resource": "--I/O Register as FF",
-      "usage": "40/876",
-      "utilization": "5%"
+      "usage": "45/876",
+      "utilization": "6%"
     },
     {
       "resource": "CLS",
-      "usage": "19372/29952",
-      "utilization": "65%"
+      "usage": "20928/29952",
+      "utilization": "70%"
     },
     {
       "resource": "I/O Port",
-      "usage": "125/297",
-      "utilization": "43%"
+      "usage": "130/297",
+      "utilization": "44%"
     },
     {
       "resource": "I/O Buf",
-      "usage": "118",
+      "usage": "123",
       "utilization": "-"
     },
     {
       "resource": "--Input Buf",
-      "usage": "25",
+      "usage": "27",
       "utilization": "-"
     },
     {
       "resource": "--Output Buf",
-      "usage": "71",
+      "usage": "74",
       "utilization": "-"
     },
     {
@@ -102,8 +102,8 @@
     },
     {
       "resource": "bank 2",
-      "usage": "3/26",
-      "utilization": "12%"
+      "usage": "5/26",
+      "utilization": "20%"
     },
     {
       "resource": "bank 3",
@@ -117,8 +117,8 @@
     },
     {
       "resource": "bank 5",
-      "usage": "12/34",
-      "utilization": "36%"
+      "usage": "13/34",
+      "utilization": "39%"
     },
     {
       "resource": "bank 6",
@@ -147,8 +147,8 @@
     },
     {
       "resource": "bank 11",
-      "usage": "3/25",
-      "utilization": "12%"
+      "usage": "5/25",
+      "utilization": "20%"
     },
     {
       "resource": "bank 12",
@@ -261,12 +261,12 @@
       "utilization": "-"
     },
     {
-      "resource": "detection_overlay/current_739_11",
+      "resource": "core_ms_tick",
       "usage": "LW",
       "utilization": "-"
     },
     {
-      "resource": "core/ms_tick",
+      "resource": "detection_overlay/current_739_11",
       "usage": "LW",
       "utilization": "-"
     },
@@ -309,6 +309,16 @@
       "resource": "s1_n",
       "usage": "-",
       "utilization": "A20/2         | Y          | in    | IOT122[B] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "s2_n",
+      "usage": "-",
+      "utilization": "B20/2         | Y          | in    | IOT122[A] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus1"
+    },
+    {
+      "resource": "s3_n",
+      "usage": "-",
+      "utilization": "A21/2         | Y          | in    | IOT135[B] | -               | LVCMOS33   | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | OFF           | bus0"
     },
     {
       "resource": "camera_pclk",
@@ -404,6 +414,21 @@
       "resource": "tft_bl",
       "usage": "-",
       "utilization": "AB21/8        | Y          | out   | IOB97[A] | D14             | LVCMOS33   | 8     | DOWN      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "seg7_dio",
+      "usage": "-",
+      "utilization": "M18/5         | Y          | out   | IOR66[A] | SO/SSI1/RPLL1_T_IN1/RPLL1_T_FB1 | LVCMOS33   | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus4"
+    },
+    {
+      "resource": "seg7_rclk",
+      "usage": "-",
+      "utilization": "C2/11         | Y          | out   | IOL25[A] | -               | LVCMOS33   | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | -"
+    },
+    {
+      "resource": "seg7_sclk",
+      "usage": "-",
+      "utilization": "F4/11         | Y          | out   | IOL21[B] | -               | LVCMOS33   | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3        | MEDIUM        | NONE          | NONE          | bus2"
     },
     {
       "resource": "camera_reset_n",
@@ -692,7 +717,7 @@
     },
     {
       "resource": "B20/2",
-      "usage": "-",
+      "usage": "s2_n",
       "utilization": "in    | IOT122[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus1"
     },
     {
@@ -737,7 +762,7 @@
     },
     {
       "resource": "A21/2",
-      "usage": "-",
+      "usage": "s3_n",
       "utilization": "in    | IOT135[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus0"
     },
     {
@@ -1452,8 +1477,8 @@
     },
     {
       "resource": "F4/11",
-      "usage": "-",
-      "utilization": "in    | IOL21[B] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus2"
+      "usage": "seg7_sclk",
+      "utilization": "out   | IOL21[B] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus2"
     },
     {
       "resource": "B1/11",
@@ -1467,8 +1492,8 @@
     },
     {
       "resource": "C2/11",
-      "usage": "-",
-      "utilization": "in    | IOL25[A] | -               | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | -"
+      "usage": "seg7_rclk",
+      "utilization": "out   | IOL25[A] | -               | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | -"
     },
     {
       "resource": "B2/11",
@@ -1972,8 +1997,8 @@
     },
     {
       "resource": "M18/5",
-      "usage": "-",
-      "utilization": "in    | IOR66[A] | SO/SSI1/RPLL1_T_IN1/RPLL1_T_FB1 | LVCMOS33 | OFF   | UP        | OFF       | ON         | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | OFF           | bus4"
+      "usage": "seg7_dio",
+      "utilization": "out   | IOR66[A] | SO/SSI1/RPLL1_T_IN1/RPLL1_T_FB1 | LVCMOS33 | 4     | NONE      | OFF       | OFF        | OFF        | SLOW      | OFF        | OFF             | OFF           | 3.3   | MEDIUM        | NONE          | NONE          | bus4"
     },
     {
       "resource": "L18/5",
@@ -3328,19 +3353,19 @@
     "clock_route_order": 1
   },
   "source_inputs_match": true,
-  "netlist_sha256": "d87dbcb3fca09b0ed42bef43a28de5f220376eb3ed0fe675f1e0a9d60d5367bd",
+  "netlist_sha256": "b4386e1c207385ece03f3af8d73c80bee13ac84d20a3b4e7805368611efeea0f",
   "pnr_phase_times": [
-    "Placement Phase 0: CPU time = 0h 0m 31s, Elapsed time = 0h 0m 31s",
+    "Placement Phase 0: CPU time = 0h 0m 38s, Elapsed time = 0h 0m 38s",
     "Placement Phase 1: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s",
-    "Placement Phase 2: CPU time = 0h 2m 32s, Elapsed time = 0h 2m 32s",
-    "Placement Phase 3: CPU time = 0h 3m 21s, Elapsed time = 0h 3m 21s",
-    "Total Placement: CPU time = 0h 6m 27s, Elapsed time = 0h 6m 27s",
-    "Routing Phase 0: CPU time = 0h 0m 0.025s, Elapsed time = 0h 0m 0.025s",
-    "Routing Phase 1: CPU time = 0h 3m 32s, Elapsed time = 0h 3m 32s",
-    "Routing Phase 2: CPU time = 0h 0m 0.921s, Elapsed time = 0h 0m 0.921s",
+    "Placement Phase 2: CPU time = 0h 2m 40s, Elapsed time = 0h 2m 40s",
+    "Placement Phase 3: CPU time = 0h 3m 32s, Elapsed time = 0h 3m 32s",
+    "Total Placement: CPU time = 0h 6m 53s, Elapsed time = 0h 6m 53s",
+    "Routing Phase 0: CPU time = 0h 0m 0.028s, Elapsed time = 0h 0m 0.028s",
+    "Routing Phase 1: CPU time = 0h 3m 41s, Elapsed time = 0h 3m 41s",
+    "Routing Phase 2: CPU time = 0h 0m 0.763s, Elapsed time = 0h 0m 0.764s",
     "Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s",
-    "Total Routing: CPU time = 0h 3m 33s, Elapsed time = 0h 3m 33s",
-    "CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s",
-    "Total Time and Memory Usage: CPU time = 0h 10m 14s, Elapsed time = 0h 10m 14s, Peak memory usage = 1834MB"
+    "Total Routing: CPU time = 0h 3m 42s, Elapsed time = 0h 3m 42s",
+    "CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s",
+    "Total Time and Memory Usage: CPU time = 0h 10m 48s, Elapsed time = 0h 10m 48s, Peak memory usage = 1853MB"
   ]
 }

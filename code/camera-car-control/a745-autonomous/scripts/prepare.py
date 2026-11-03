@@ -27,5 +27,5 @@ def prepare():
  if any(not 10000<=v<=200000 for v in calibration['wheel_diameter_um']):raise ValueError('Wheel diameter out of range')
  values.update(LEFT_CPR=calibration['wheel_cpr'][0],RIGHT_CPR=calibration['wheel_cpr'][1],LEFT_DIAMETER=calibration['wheel_diameter_um'][0],RIGHT_DIAMETER=calibration['wheel_diameter_um'][1])
  params=''.join(f'defparam core.{k}={v};\n' for k,v in values.items())+f"defparam core.FUSION_CONFIG_CRC=32'h{crc:08x};\n";generated=out/'a745_top.v';put(generated,(ROOT/'rtl/a745_top.v').read_text(encoding='utf-8').replace('endmodule',params+'endmodule').encode());files=[p for p in files if p.name!='a745_top.v']+[generated]
- put(out/'provenance.json',(json.dumps({'vendor_inputs':origins,'parameters':values,'config_crc':crc,'network':'IPv4/UDP video/telemetry TX; ED10 display-only RX; no motion commands','motor_pads_dynamic':True,'arm_on_boot':False},indent=2)+'\n').encode())
+ put(out/'provenance.json',(json.dumps({'vendor_inputs':origins,'parameters':values,'config_crc':crc,'network':'IPv4/UDP video/telemetry TX; ED10 display-only RX; ET10 bounded intents in locally armed mode3 only','network_arm_enabled':False,'motor_pads_dynamic':True,'arm_on_boot':False},indent=2)+'\n').encode())
  return list(dict.fromkeys(files)),out

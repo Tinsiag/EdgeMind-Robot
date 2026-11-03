@@ -1,29 +1,29 @@
 <Report Command>:report_timing -setup -max_paths 25 -max_common_paths 1
-  Path Number   Path Slack         From Node                     To Node                  From Clock         To Clock       Relation   Clock Skew   Data Delay  
- ============= ============ ======================= ================================== ================= ================= ========== ============ ============ 
-  1             0.247        core/er/count_0_s1/Q    core/feedback/corrected_l_0_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        19.688      
-  2             0.442        core/er/count_0_s1/Q    core/feedback/corrected_l_4_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        19.492      
-  3             0.512        core/er/count_0_s1/Q    core/feedback/corrected_l_6_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.017        19.209      
-  4             0.546        core/er/count_0_s1/Q    core/feedback/corrected_l_2_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        19.396      
-  5             0.609        core/er/count_0_s1/Q    core/feedback/corrected_l_3_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        19.333      
-  6             0.638        core/er/count_0_s1/Q    core/feedback/corrected_l_8_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        19.296      
-  7             0.692        core/er/count_0_s1/Q    core/feedback/corrected_l_1_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        19.251      
-  8             0.810        core/er/count_0_s1/Q    core/feedback/corrected_l_5_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        19.124      
-  9             0.910        core/er/count_0_s1/Q    core/feedback/corrected_l_7_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        19.024      
-  10            1.084        core/er/count_0_s1/Q    core/feedback/corrected_r_6_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        18.858      
-  11            1.152        core/er/count_0_s1/Q    core/feedback/corrected_r_2_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        18.782      
-  12            1.233        core/er/count_0_s1/Q    core/feedback/corrected_r_1_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        18.701      
-  13            1.283        core/er/count_0_s1/Q    core/feedback/corrected_r_3_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.008        18.651      
-  14            1.287        core/er/count_0_s1/Q    core/feedback/corrected_r_7_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        18.656      
-  15            1.298        core/er/count_0_s1/Q    core/feedback/corrected_r_0_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.017        18.628      
-  16            1.300        core/er/count_0_s1/Q    core/feedback/corrected_r_4_s1/D   sys_clk:[R]       sys_clk:[R]       20.000     0.000        18.642      
-  17            1.330        video/capture/vs_s0/Q   video/capture/high_byte_2_s0/CE    camera_pclk:[R]   camera_pclk:[R]   10.000     0.017        8.373       
-  18            1.410        video/capture/vs_s0/Q   video/capture/high_byte_3_s0/CE    camera_pclk:[R]   camera_pclk:[R]   10.000     0.008        8.301       
-  19            1.425        video/capture/vs_s0/Q   video/capture/high_byte_4_s0/CE    camera_pclk:[R]   camera_pclk:[R]   10.000     0.017        8.278       
-  20            1.471        video/capture/vs_s0/Q   video/capture/pixel_6_s0/CE        camera_pclk:[R]   camera_pclk:[R]   10.000     -0.437       8.686       
-  21            1.020        rgmii_rxd_2_ibuf/I      receiver/lanes[2].sample/D         rx125m:[F]        rx125m:[R]        4.000      -3.178       6.140       
-  22            1.020        rgmii_rxd_1_ibuf/I      receiver/lanes[1].sample/D         rx125m:[F]        rx125m:[R]        4.000      -3.178       6.140       
-  23            1.020        rgmii_rxd_0_ibuf/I      receiver/lanes[0].sample/D         rx125m:[F]        rx125m:[R]        4.000      -3.178       6.140       
-  24            1.029        rgmii_rx_ctl_ibuf/I     receiver/control_sample/D          rx125m:[F]        rx125m:[R]        4.000      -3.186       6.140       
-  25            1.029        rgmii_rxd_3_ibuf/I      receiver/lanes[3].sample/D         rx125m:[F]        rx125m:[R]        4.000      -3.186       6.140       
+  Path Number   Path Slack                       From Node                                              To Node                         From Clock     To Clock     Relation   Clock Skew   Data Delay  
+ ============= ============ ==================================================== ===================================================== ============= ============= ========== ============ ============ 
+  1             1.168        core/er/count_0_s1/Q                                 core/feedback/corrected_r_5_s1/D                      sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.775      
+  2             1.176        core/er/count_0_s1/Q                                 core/feedback/corrected_r_7_s1/D                      sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.766      
+  3             1.187        core/er/count_0_s1/Q                                 core/pl/unwind_s0/CE                                  sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.524      
+  4             1.198        core/er/count_0_s1/Q                                 core/feedback/corrected_r_3_s1/D                      sys_clk:[R]   sys_clk:[R]   20.000     -0.008       18.758      
+  5             1.232        core/er/count_0_s1/Q                                 core/pr/next_applied_14_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.479      
+  6             1.233        mac/tx_fifo/fifo_inst/rd_ptr_gray_sync2_reg_9_s0/Q   mac/tx_fifo/fifo_inst/wr_ptr_sync_commit_reg_3_s1/D   tx125m:[R]    tx125m:[R]    8.000      -0.008       6.718       
+  7             1.235        mac/tx_fifo/fifo_inst/rd_ptr_gray_sync2_reg_9_s0/Q   mac/tx_fifo/fifo_inst/wr_ptr_sync_commit_reg_7_s1/D   tx125m:[R]    tx125m:[R]    8.000      -0.008       6.716       
+  8             1.260        core/er/count_0_s1/Q                                 core/feedback/corrected_l_4_s1/D                      sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.683      
+  9             1.298        mac/tx_fifo/fifo_inst/rd_ptr_gray_sync2_reg_9_s0/Q   mac/tx_fifo/fifo_inst/wr_ptr_sync_commit_reg_6_s1/D   tx125m:[R]    tx125m:[R]    8.000      -0.008       6.653       
+  10            1.299        core/er/count_0_s1/Q                                 core/feedback/corrected_l_2_s1/D                      sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.636      
+  11            1.324        mac/tx_fifo/fifo_inst/rd_ptr_gray_sync2_reg_9_s0/Q   mac/tx_fifo/fifo_inst/wr_ptr_sync_commit_reg_9_s1/D   tx125m:[R]    tx125m:[R]    8.000      -0.008       6.627       
+  12            1.340        core/er/count_0_s1/Q                                 core/pl/integral_delta_10_s0/CE                       sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.371      
+  13            1.340        core/er/count_0_s1/Q                                 core/pl/integral_delta_11_s0/CE                       sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.371      
+  14            1.340        core/er/count_0_s1/Q                                 core/pl/integral_delta_12_s0/CE                       sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.371      
+  15            1.346        core/er/count_0_s1/Q                                 core/pl/next_applied_8_s0/CE                          sys_clk:[R]   sys_clk:[R]   20.000     0.000        18.373      
+  16            1.368        core/er/count_0_s1/Q                                 core/pl/applied_down_24_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.343      
+  17            1.368        core/er/count_0_s1/Q                                 core/pl/applied_down_25_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.343      
+  18            1.368        core/er/count_0_s1/Q                                 core/pl/applied_down_26_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.343      
+  19            1.368        core/er/count_0_s1/Q                                 core/pl/applied_down_27_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.343      
+  20            1.368        core/er/count_0_s1/Q                                 core/pl/applied_down_28_s0/CE                         sys_clk:[R]   sys_clk:[R]   20.000     0.008        18.343      
+  21            1.020        rgmii_rxd_2_ibuf/I                                   receiver/lanes[2].sample/D                            rx125m:[F]    rx125m:[R]    4.000      -3.178       6.140       
+  22            1.020        rgmii_rxd_1_ibuf/I                                   receiver/lanes[1].sample/D                            rx125m:[F]    rx125m:[R]    4.000      -3.178       6.140       
+  23            1.020        rgmii_rxd_0_ibuf/I                                   receiver/lanes[0].sample/D                            rx125m:[F]    rx125m:[R]    4.000      -3.178       6.140       
+  24            1.029        rgmii_rx_ctl_ibuf/I                                  receiver/control_sample/D                             rx125m:[F]    rx125m:[R]    4.000      -3.186       6.140       
+  25            1.029        rgmii_rxd_3_ibuf/I                                   receiver/lanes[3].sample/D                            rx125m:[F]    rx125m:[R]    4.000      -3.186       6.140       
 

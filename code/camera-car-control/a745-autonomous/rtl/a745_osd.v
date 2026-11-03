@@ -173,6 +173,13 @@ module a745_osd #(parameter WIDTH=800,HEIGHT=480,PIPELINED=0)(
     3:work_lines[3][255-5*8-:48]<="LEFT  ";
     4:work_lines[3][255-5*8-:48]<="RIGHT ";
     5:work_lines[3][255-5*8-:48]<="BLOCK ";
+    6:work_lines[3][255-5*8-:48]<="READY ";
+    12:work_lines[3][255-5*8-:48]<="SPIN  ";
+    13:work_lines[3][255-5*8-:48]<="SPACE ";
+    14:work_lines[3][255-5*8-:48]<="DONE  ";
+    15:work_lines[3][255-5*8-:48]<="TARGET";
+    16:work_lines[3][255-5*8-:48]<="PAUSE ";
+    17:work_lines[3][255-5*8-:48]<="BRAKE ";
     8:work_lines[3][255-5*8-:48]<="FAULT ";
     9:work_lines[3][255-5*8-:48]<="SETTLE";
     10:work_lines[3][255-5*8-:48]<="BACK  ";

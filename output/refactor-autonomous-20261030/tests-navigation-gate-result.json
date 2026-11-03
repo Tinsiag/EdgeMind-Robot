@@ -1,53 +1,53 @@
 {
   "passed": true,
-  "main_netlist_sha256": "d87dbcb3fca09b0ed42bef43a28de5f220376eb3ed0fe675f1e0a9d60d5367bd",
+  "main_netlist_sha256": "b4386e1c207385ece03f3af8d73c80bee13ac84d20a3b4e7805368611efeea0f",
   "tests": [
     {
       "module": "a745_navigation_scan",
       "test": "navigation_scan_tb",
-      "netlist_sha256": "040880b9e14d212b0a399fcfcfc42df88bc3ce05afa772bc9ab31fbc4abfe6ca"
+      "netlist_sha256": "82fb05e453c1a6bcfb9f744595092af563759205c5a89f1518ca8a2456923c9b"
     },
     {
       "module": "a745_autonomy",
       "test": "autonomy_tb",
-      "netlist_sha256": "b2ea1a42b0f30de701a20c267a63849d7ed2e845a415472a5953a4102e15eb74"
+      "netlist_sha256": "668a7571f00dda6954dff727c70a554220f75603b73208fef8cbd789572e2743"
     },
     {
       "module": "a741_motion_feedback",
       "test": "motion_feedback_tb",
-      "netlist_sha256": "7e474bdf4307c36cc02eb7ff2ac11ceea80ed80f0bdc169f4b4f47ca719ec544"
+      "netlist_sha256": "c3c74996881ccfa7afe38df1c77bcb1f5526e602546a7d5c0196d2d70e41e4d2"
     },
     {
       "module": "a745_lidar_filter",
       "test": "lidar_filter_tb",
-      "netlist_sha256": "a8030fa5edde6beb901d44a8f920d2d2f29657309e2640313c31b3d8ebfbd8db"
+      "netlist_sha256": "c2ae3986eb9bd564bbc10836c6c597ff1f3cbee1c5bdbed57d2e19150038e525"
     },
     {
       "module": "a741_attitude",
       "test": "attitude_filter_tb",
-      "netlist_sha256": "86455ce57a64d871a18e3fc6a1cd8dfdad99647c2dd1cbf504c939dcd301d833"
+      "netlist_sha256": "14b7eb8b919a4d27545c23bc7e6fd000aef09b37c7ba0dfa29fecd9b7e64cb6d"
     },
     {
       "module": "quadrature_decoder",
       "test": "quadrature_filter_tb",
-      "netlist_sha256": "56bbaccde13ee1793720245f15aee0804ebc8642cbfdbbabd2a634a1f98891f8"
+      "netlist_sha256": "d4189288f8d4eeb98a25c4c7513b44effe752ebccb9f9ba207fdadb625041ac8"
     },
     {
       "module": "a745_autonomy",
       "test": "imu_fault_latch_tb",
-      "netlist_sha256": "b2ea1a42b0f30de701a20c267a63849d7ed2e845a415472a5953a4102e15eb74"
+      "netlist_sha256": "668a7571f00dda6954dff727c70a554220f75603b73208fef8cbd789572e2743"
     },
     {
       "module": "a745_autonomy",
       "test": "reverse_escape_tb",
-      "netlist_sha256": "b2ea1a42b0f30de701a20c267a63849d7ed2e845a415472a5953a4102e15eb74"
+      "netlist_sha256": "668a7571f00dda6954dff727c70a554220f75603b73208fef8cbd789572e2743"
     },
     {
       "module": "a741_attitude+a745_autonomy",
       "test": "attitude_session_tb",
       "netlist_sha256": [
-        "86455ce57a64d871a18e3fc6a1cd8dfdad99647c2dd1cbf504c939dcd301d833",
-        "b2ea1a42b0f30de701a20c267a63849d7ed2e845a415472a5953a4102e15eb74"
+        "14b7eb8b919a4d27545c23bc7e6fd000aef09b37c7ba0dfa29fecd9b7e64cb6d",
+        "668a7571f00dda6954dff727c70a554220f75603b73208fef8cbd789572e2743"
       ]
     }
   ],
@@ -56,22 +56,22 @@
   "actual_board_tested": false,
   "input_sha256": {
     "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\check_navigation_gate.py": "8923359812660e8056b3cd7ffaee95522bf4dbafb42080cd5fad9deb122e9350",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\check_navigation_gate.py": "b1e156712dc93a4914131ef79f35c4950de3134945670c7ba3011d5869514252",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "936f3242a9a81dd59488e9c97a4b97ae1e24cd51d0264a3a7310b93c6097f026",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "395d649cc13dda480b078c5a54662d2442eaaf9ce50a56e840118fe9a9707e6c",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_motion_feedback.v": "26f294b0a23072e4eecaccbca71d60cdb7eb98c9568894d6d3ee4f3f3a0e5a22",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_lidar_filter.v": "47a95b0960d13204f615d840aedbb267d4b00e0f6676c1d869bb80f23eb27854",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_attitude.v": "913de658d0c591414f6bb28b8cb3979df0928fbdf8a52d59ea53fddea746e691",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\quadrature_decoder.v": "9d325e4a0ed2da8f68d5b4ae8bcfd0aa1d9b1babab6545b1053c16cfe986536f",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\navigation_scan_tb.v": "d2fe61aa996d71138c4a11044ce47703c24142bac4b27565c66407e282569eaf",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\autonomy_tb.v": "23d95a3626c2fbca65b5851eff6ab5ad7e7dee42049615aa638fc81777062f08",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\autonomy_tb.v": "fd88d71365d834bb11df7efa047da6d4436f04e9b1098f18397ec1faeb68598e",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\motion_feedback_tb.v": "b21f2634571888e16c7657ff7587defda751cd69d6983572c25c5725456497ed",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\lidar_filter_tb.v": "001a92ee685274e8931385e4ab8712b5244ddcd55128b8781c750b9ea6256259",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\attitude_filter_tb.v": "1a9e9a9a6f0ad78a611bd29079b66281a021e12c44b7fdcdd764ed6271b4ad6e",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\quadrature_filter_tb.v": "7d8504054dfb26130a86c8129c8aac9f38e56d89936d39a14da588c95f26bce9",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\imu_fault_latch_tb.v": "4743cb9f9f7c0fe738c94baa773f0b9189ab12dc1f545ac918ecc99f36137916",
-    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\reverse_escape_tb.v": "e8744443bed2a8b61fd8107dc647a2e317a2fb187edc9bc21e4f7a1d7aff912f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\reverse_escape_tb.v": "a577006f26ca3db855223352627ecbc8030cf31a72660ea3a5542f6bd55dc0c2",
     "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\attitude_session_tb.v": "2df1b3dbe1140fe4bc0da6021dfe89ba9864b3c52581b78ecce009fb5446ef24"
   }
 }

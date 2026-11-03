@@ -39,10 +39,10 @@ def main():
         ET.SubElement(listing, 'File', path=path.as_posix(), type='file.verilog', enable='1')
     (out / 'cpu.gprj').write_bytes(ET.tostring(project, encoding='utf-8', xml_declaration=True))
     tcl = out / 'build.tcl'
-    tcl.write_text('cd [file dirname [file normalize [info script]]]\nopen_project cpu.gprj\nset_option -top_module cpu_gate_probe\nset_option -output_base_name cpu\nset_option -verilog_std sysv2017\nrun syn\n')
+    tcl.write_text('cd [file dirname [file normalize [info script]]]\nopen_project cpu.gprj\nset_option -top_module cpu_gate_probe\nset_option -output_base_name cpu\nset_option -verilog_std sysv2017\nrun syn\nexit\n')
     with (out / 'build.log').open('w', encoding='utf-8') as log:
         subprocess.run(['C:/Gowin/Gowin_V1.9.12.04_x64/IDE/bin/gw_sh.exe', str(tcl)],
-                       cwd=out, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=120)
+                       cwd=out, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=300)
     netlist = out / 'impl/gwsynthesis/cpu.vg'
     text = netlist.read_text(encoding='utf-8')
     assert 'SDPB cpuregs_cpuregs' not in text, 'Synchronous RAM cannot implement combinational register reads'

@@ -4,7 +4,7 @@ module udp_tx_tb;
  reg rst_n=0,ms_tick=0,phy_ready=0,lidar_valid=0;reg [895:0] snapshot=0;reg [255:0] fusion_snapshot=0;
  reg [375:0] lidar_packet=0;reg [31:0] lidar_seq=0,lidar_time=0;
  wire [7:0] data;wire valid,last;wire [31:0] dropped;reg ready=0;
- a745_udp_tx dut(.*);
+ a745_udp_tx dut(.*,.task_snapshot(512'd0));
  integer cycle=0,count=0,frames=0,fd=0;
  reg stalled=0;reg [7:0] held;reg held_last;
  always @(negedge clk) begin cycle=cycle+1;ready=cycle%5!=0;end

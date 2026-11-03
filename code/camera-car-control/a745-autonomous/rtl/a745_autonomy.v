@@ -3,13 +3,13 @@
 // Local S1 owns calibration/ARM. Obstacles cause a measured quarter-turn,
 // a bounded reverse escape, or a stationary wait; CPU/IMU/encoder faults
 // always revoke motor permission.
-module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SLOW_MM=800,
+module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,USE_PLANNER_FAULT=0,STOP_MM=300,CLEAR_MM=600,SLOW_MM=800,
  REAR_STOP_MM=350,REVERSE_LEFT_COUNTS=705,REVERSE_RIGHT_COUNTS=706)(
  input wire clk,rst_n,ms_tick,tick,button_start,
  input wire imu_valid,gyro_valid,stationary,gyro_update,tilt_valid,
  input wire signed [15:0] raw_gz,roll,pitch,yaw,
  input wire signed [31:0] left_count,right_count,
- input wire wheels_stationary,encoder_fault,cpu_alive,cpu_fault,lidar_valid,scan_valid,
+ input wire wheels_stationary,encoder_fault,cpu_alive,cpu_fault,lidar_valid,scan_valid,planner_fault,
  input wire [15:0] front,left,right,rear,input wire left_clear,right_clear,
  output reg armed,calibrated,output reg signed [15:0] bias,
  output wire lidar_enabled,motor_enable,output reg [7:0] state,
@@ -37,7 +37,8 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
  wire tilt_bad=roll>4096 || roll < -4096 || pitch>4096 || pitch < -4096;
  wire [7:0] imu_sources={4'd0,tilt_bad,!tilt_valid,!gyro_valid,!imu_valid};
  wire [7:0] imu_flags={scan_valid,lidar_valid,cpu_alive,stationary,tilt_bad,tilt_valid,gyro_valid,imu_valid};
- wire safe=armed && sensors_ok && !encoder_fault && cpu_alive && !cpu_fault && !tilt_bad && faults==0;
+ wire planner_bad=USE_PLANNER_FAULT!=0 && planner_fault;
+ wire safe=armed && sensors_ok && !encoder_fault && cpu_alive && !cpu_fault && !tilt_bad && faults==0 && !planner_bad;
  // Subtract in 16 bits first: the gyro wraps at +/-180 degrees.
  wire right_turn=state==RIGHT;
  wire signed [15:0] wrapped_delta=yaw-turn_origin;
@@ -103,7 +104,7 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
    imu_fault_sources<=0;imu_fault_valid_flags<=0;imu_fault_roll<=0;imu_fault_pitch<=0;
    if(state==IDLE || state==FAULT) begin state<=CALIBRATE;calibrated<=0;faults<=0;end
    else state<=IDLE;
-  end else if(running && (!sensors_ok || encoder_fault || cpu_fault || !cpu_alive || tilt_bad)) begin
+  end else if(running && (!sensors_ok || encoder_fault || cpu_fault || !cpu_alive || tilt_bad || planner_bad)) begin
    armed<=0;state<=FAULT;
    if(!imu_valid || !gyro_valid || !tilt_valid || tilt_bad) begin
     faults[0]<=1;imu_fault_sources<=imu_sources;imu_fault_valid_flags<=imu_flags;
@@ -112,6 +113,7 @@ module a745_autonomy #(parameter GEOMETRY_VERIFIED=0,STOP_MM=300,CLEAR_MM=600,SL
    if(!lidar_valid || !scan_valid) faults[1]<=1;
    if(encoder_fault) faults[2]<=1;
    if(cpu_fault || !cpu_alive) faults[3]<=1;
+   if(planner_bad) faults[7]<=1;
   end else begin
    if(state==CALIBRATE) begin
     if(ms_tick && age<10000) age<=age+1'b1;

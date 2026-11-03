@@ -19,7 +19,12 @@ module a741_button_debounce #(parameter CLK_HZ=50000000,DEBOUNCE_MS=20)(
         else begin
             sync0<=button_n;sync1<=sync0;press<=0;
             if(sync1==stable) begin
-                count<=0;
+                // A released level at power-on also needs qualification.
+                // Require a complete stable high interval, including startup.
+                if(!qualified && sync1) begin
+                    if(count==LIMIT-1) begin qualified<=1;count<=0;end
+                    else count<=count+1'b1;
+                end else count<=0;
             end
             else if(count==LIMIT-1) begin
                 stable<=sync1;count<=0;

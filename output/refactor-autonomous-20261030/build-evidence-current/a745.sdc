@@ -14,6 +14,9 @@ set_input_delay -clock camera_pclk -max 4.000 [get_ports {camera_data[*] camera_
 set_input_delay -clock camera_pclk -min 0.000 [get_ports {camera_data[*] camera_vsync camera_href}]
 # Reset and encoder inputs are asynchronous; encoders enter synchronizers.
 set_false_path -from [get_ports {stop_n left_enc_a left_enc_b right_enc_a right_enc_b}]
+# Local keys enter three independent two-stage synchronizers. No synchronous
+# data or inter-stage paths are cut by these asynchronous pad exceptions.
+set_false_path -from [get_ports {s1_n s2_n s3_n}]
 # Keep CDC paths visible in this initial build for explicit report review.
 create_generated_clock -name tx250m -source [get_ports {clk}] -multiply_by 5 [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}]
 create_generated_clock -name tx125m -source [get_pins {clocks/u_pll/PLLA_inst/CLKOUT1}] -master_clock tx250m -divide_by 2 [get_pins {tx_divider/CLKOUT}]

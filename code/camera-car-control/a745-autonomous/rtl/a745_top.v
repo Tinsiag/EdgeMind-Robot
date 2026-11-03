@@ -3,7 +3,8 @@
 module a745_top(
     output wire tft_clk,tft_de,tft_hsync,tft_vsync,tft_bl,
     output wire [15:0] tft_rgb,
-    input wire clk,stop_n,s1_n,
+    input wire clk,stop_n,s1_n,s2_n,s3_n,
+    output wire seg7_dio,seg7_rclk,seg7_sclk,
     input wire camera_pclk,camera_vsync,camera_href,input wire [7:0] camera_data,
     output wire camera_reset_n,inout wire camera_sclk,camera_sdat,
     
@@ -102,6 +103,10 @@ module a745_top(
       .rgmii_txd(rgmii_txd),.rgmii_txen(rgmii_tx_ctl));
     wire [771:0] detection_data,detection_display;
     wire detection_update,detection_ready,detection_display_update;
+    wire detection_parser_ready,task_parser_ready,task_fresh;wire [2:0] task_action;
+    wire [7:0] task_accepted;wire [31:0] task_config,task_sequence;
+    wire s1_start,s2_press,s3_press,core_ms_tick;reg [1:0] selected_mode;
+    reg [31:0] session_counter,task_session;
     wire detection_net_n;
     reset_sync detection_reset(.clk(pll125),.async_n(display_global_n),.rst_n(detection_net_n));
     wire [7:0] detection_accepted;
@@ -114,8 +119,14 @@ module a745_top(
       .m_axis_tdata(rx_data),.m_axis_tvalid(rx_valid),.m_axis_tready(rx_ready),.m_axis_tlast(rx_last),.m_axis_tuser(rx_user),
       .s_pause_req(1'b0),.m_pause_req(1'b0));
     a745_detection_rx #(.SESSION_CYCLES(100000000)) detection_rx(.clk(clk),.rst_n(display_sys_n),
-      .data(rx_data),.valid(rx_valid && rx_ready),.last(rx_last),.user(rx_user),.ready(rx_ready),
+      .data(rx_data),.valid(rx_valid && rx_ready),.last(rx_last),.user(rx_user),.ready(detection_parser_ready),
       .update_ready(detection_ready),.update(detection_update),.detections(detection_data),.accepted(detection_accepted));
+    assign rx_ready=detection_parser_ready && task_parser_ready;
+    a745_task_rx task_rx(.clk(clk),.rst_n(control_n),.ms_tick(core_ms_tick),
+      .data(rx_data),.valid(rx_valid && rx_ready),.last(rx_last),.user(rx_user),.ready(task_parser_ready),
+      .session_valid(selected_mode==3 && snapshot[165] && state!=0 && state!=1 && state!=8 && !s1_start),
+      .session_id(task_session),.video_frame(video_tx_frames),.fresh(task_fresh),.action(task_action),
+      .accepted(task_accepted),.config_id(task_config),.last_sequence(task_sequence));
     cdc_mailbox #(.WIDTH(772)) detection_mailbox(.src_clk(clk),.src_rst_n(display_sys_n),
       .src_valid(detection_update),.src_ready(detection_ready),.src_data(detection_data),
       .dst_clk(display_clk),.dst_rst_n(display_n),.dst_valid(detection_display_update),.dst_data(detection_display));
@@ -223,9 +234,24 @@ module a745_top(
         if(!control_n) ddr_ready_sync<=0;else ddr_ready_sync<={ddr_ready_sync[0],calibrated};
     wire lidar_pwm;
     assign lidar_control=global_n && lidar_pwm;
-    wire s1_start;
     a741_button_debounce #(.CLK_HZ(50000000)) s1_filter(.clk(clk),.rst_n(control_n),.button_n(s1_n),.press(s1_start));
-    a745_core core(.clk(clk),.rst_n(control_n),.button_start(s1_start),
+    a741_button_debounce #(.CLK_HZ(50000000)) s2_filter(.clk(clk),.rst_n(control_n),.button_n(s2_n),.press(s2_press));
+    a741_button_debounce #(.CLK_HZ(50000000)) s3_filter(.clk(clk),.rst_n(control_n),.button_n(s3_n),.press(s3_press));
+    always @(posedge clk or negedge control_n)
+      if(!control_n)begin selected_mode<=1;session_counter<=0;task_session<=0;end
+      else begin
+        session_counter<=session_counter+1'b1;
+        if(state==0 && !s1_start)begin
+          if(s2_press && !s3_press)selected_mode<=selected_mode==3 ? 1:selected_mode+1'b1;
+          else if(s3_press && !s2_press)selected_mode<=selected_mode==1 ? 3:selected_mode-1'b1;
+        end
+        if(s1_start && (state==0 || state==8))task_session<=session_counter;
+      end
+    a745_mode_display mode_display(.clk(clk),.rst_n(control_n),.mode(selected_mode),
+      .dio(seg7_dio),.rclk(seg7_rclk),.sclk(seg7_sclk));
+    a745_core #(.ADVANCED(1)) core(.clk(clk),.rst_n(control_n),.button_start(s1_start),
+        .selected_mode(selected_mode),.task_fresh(task_fresh),.task_action(task_action),
+        .task_session(task_session),.network_video_frame(video_tx_frames),.task_accepted(task_accepted),.control_ms_tick(core_ms_tick),
         .mac_diagnostic(detection_diagnostic),.phy_ready(phy_ready),.phy_error(phy_error),
         .lidar_control(lidar_pwm),
         .imu_int(imu_int),.imu_sda(imu_sda),.imu_scl(imu_scl),.lidar_rx(lidar_rx),

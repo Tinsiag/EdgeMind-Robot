@@ -9,7 +9,7 @@ module autonomy_tb;
  wire armed,calibrated,lidar_enabled,motor_enable;wire signed [15:0] bias;
  wire [7:0] state;wire [15:0] faults;wire signed [31:0] target_l,target_r;
  wire [7:0] imu_fault_sources,imu_fault_valid_flags;wire signed [15:0] imu_fault_roll,imu_fault_pitch;
- a745_autonomy #(.GEOMETRY_VERIFIED(1)) dut(.*);
+ a745_autonomy #(.GEOMETRY_VERIFIED(1)) dut(.*,.planner_fault(1'b0));
  task step;begin @(negedge clk);end endtask
  task press;begin step;button_start=1;step;button_start=0;step;end endtask
  task control_tick;begin step;ms_tick=1;tick=1;step;ms_tick=0;tick=0;step;end endtask

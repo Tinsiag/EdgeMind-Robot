@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "firmware_revision": 74513,
+  "artifact_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
+  "main_netlist_sha256": "b4386e1c207385ece03f3af8d73c80bee13ac84d20a3b4e7805368611efeea0f",
+  "host_deployment_hashes_match": true,
+  "receipt_sha256": {
+    "HEALTH-74513.json": "3721840de1baff6dc29145872e5e3229b22ac61d7f2e83b557558b50bdb83194",
+    "HEALTH-74513-REVIEW.json": "b773f79c021c43f72d48745e3fa56c9ff9aa4caffa1721c00b6b0e802cad81e1",
+    "HOST-LIVE-74513.json": "9c86b21fd2895670fb7a748ca8a9c355fbeaf046a4f7385751df57e39fa6f3c9",
+    "HOST-HASHES.json": "8d48bb1bcdddcb2a6f594a47040e935fec41cee04b7366d50e9cfd861fa7c8a1",
+    "CANDIDATE-74513.json": "19919805308419ca1790cd378ef5d1e5aeee2358e4128f665dd50cc2f786e72c"
+  },
+  "computer_arm_used": false,
+  "physical_acceptance_pending": true,
+  "task_calibration_verified": false,
+  "recorded_utc": "2026-11-02T18:04:37.787637+00:00"
+}

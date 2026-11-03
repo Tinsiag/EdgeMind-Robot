@@ -1,0 +1,459 @@
+{
+  "passed": true,
+  "bitstream_sha256": "9abe7916e6a23454f8108eca4b157802ec9297a54e7859484bc189f87467614c",
+  "sdf_sha256": "695dfa49ab539b67d160465b9b74cd787207e8cf4929e908589be74b1da2dfc7",
+  "physical_netlist_sha256": "846578cd0137845e459ae764b767042d0f2eab896d85b7d2ac56281eadbec0f4",
+  "rx_clock_mhz": 125,
+  "phy_basis": "RTL8211F rev1.1 Table58 integrated-delay output setup/hold >=1.2ns",
+  "pcb_skew_budget_ns": 0.2,
+  "uncertainty_reserve_ns": 0.035,
+  "minimum_margin_ns": 0.376,
+  "board_signals_measured": false,
+  "inputs": [
+    {
+      "port": "rgmii_rx_ctl",
+      "iddr": "receiver/control_sample",
+      "ibuf": "rgmii_rx_ctl_ibuf",
+      "delay_cell": "receiver/control_delay",
+      "taps": 96,
+      "data_path_ns": [
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ],
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ]
+      ],
+      "clock_path_ns": [
+        [
+          1.561,
+          2.418,
+          3.274
+        ],
+        [
+          1.561,
+          2.418,
+          3.274
+        ]
+      ],
+      "checks": [
+        {
+          "data_edge": "posedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.381,
+            0.732,
+            1.082
+          ],
+          "hold_margin_ns": [
+            1.504,
+            1.153,
+            0.803
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.381,
+            0.732,
+            1.082
+          ],
+          "hold_margin_ns": [
+            1.504,
+            1.153,
+            0.803
+          ]
+        },
+        {
+          "data_edge": "posedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.379,
+            0.73,
+            1.08
+          ],
+          "hold_margin_ns": [
+            1.502,
+            1.151,
+            0.801
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.379,
+            0.73,
+            1.08
+          ],
+          "hold_margin_ns": [
+            1.502,
+            1.151,
+            0.801
+          ]
+        }
+      ]
+    },
+    {
+      "port": "rgmii_rxd[0]",
+      "iddr": "receiver/lanes[0].sample",
+      "ibuf": "rgmii_rxd_0_ibuf",
+      "delay_cell": "receiver/lanes[0].delay",
+      "taps": 96,
+      "data_path_ns": [
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ],
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ]
+      ],
+      "clock_path_ns": [
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ],
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ]
+      ],
+      "checks": [
+        {
+          "data_edge": "posedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "posedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        }
+      ]
+    },
+    {
+      "port": "rgmii_rxd[1]",
+      "iddr": "receiver/lanes[1].sample",
+      "ibuf": "rgmii_rxd_1_ibuf",
+      "delay_cell": "receiver/lanes[1].delay",
+      "taps": 96,
+      "data_path_ns": [
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ],
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ]
+      ],
+      "clock_path_ns": [
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ],
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ]
+      ],
+      "checks": [
+        {
+          "data_edge": "posedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "posedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        }
+      ]
+    },
+    {
+      "port": "rgmii_rxd[2]",
+      "iddr": "receiver/lanes[2].sample",
+      "ibuf": "rgmii_rxd_2_ibuf",
+      "delay_cell": "receiver/lanes[2].delay",
+      "taps": 96,
+      "data_path_ns": [
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ],
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ]
+      ],
+      "clock_path_ns": [
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ],
+        [
+          1.5579999999999998,
+          2.412,
+          3.2649999999999997
+        ]
+      ],
+      "checks": [
+        {
+          "data_edge": "posedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.378,
+            0.726,
+            1.073
+          ],
+          "hold_margin_ns": [
+            1.507,
+            1.159,
+            0.812
+          ]
+        },
+        {
+          "data_edge": "posedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.376,
+            0.724,
+            1.071
+          ],
+          "hold_margin_ns": [
+            1.505,
+            1.157,
+            0.81
+          ]
+        }
+      ]
+    },
+    {
+      "port": "rgmii_rxd[3]",
+      "iddr": "receiver/lanes[3].sample",
+      "ibuf": "rgmii_rxd_3_ibuf",
+      "delay_cell": "receiver/lanes[3].delay",
+      "taps": 96,
+      "data_path_ns": [
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ],
+        [
+          2.128,
+          2.634,
+          3.1399999999999997
+        ]
+      ],
+      "clock_path_ns": [
+        [
+          1.561,
+          2.418,
+          3.274
+        ],
+        [
+          1.561,
+          2.418,
+          3.274
+        ]
+      ],
+      "checks": [
+        {
+          "data_edge": "posedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.381,
+            0.732,
+            1.082
+          ],
+          "hold_margin_ns": [
+            1.504,
+            1.153,
+            0.803
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "posedge",
+          "setup_margin_ns": [
+            0.381,
+            0.732,
+            1.082
+          ],
+          "hold_margin_ns": [
+            1.504,
+            1.153,
+            0.803
+          ]
+        },
+        {
+          "data_edge": "posedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.379,
+            0.73,
+            1.08
+          ],
+          "hold_margin_ns": [
+            1.502,
+            1.151,
+            0.801
+          ]
+        },
+        {
+          "data_edge": "negedge",
+          "clock_edge": "negedge",
+          "setup_margin_ns": [
+            0.379,
+            0.73,
+            1.08
+          ],
+          "hold_margin_ns": [
+            1.502,
+            1.151,
+            0.801
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 `timescale 1ns/1ps
 `default_nettype none
-// Ethernet/IPv4/UDP broadcast telemetry. No RX, ARP cache, command parser,
-// host session, configuration writes or network-controlled motion exists.
+// Ethernet/IPv4/UDP broadcast telemetry. RX and the locally enabled bounded
+// mission channel are separate modules; telemetry cannot create ARM.
 // IPv4 permits a zero UDP checksum. The MAC adds preamble/padding/FCS.
-module a745_udp_tx #(parameter CLK_HZ=50000000)(
+module a745_udp_tx #(parameter CLK_HZ=50000000,TASK_ENABLE=0)(
  input wire clk,rst_n,ms_tick,phy_ready,
+ input wire [511:0] task_snapshot,
  input wire [895:0] snapshot,input wire [255:0] fusion_snapshot,
  input wire lidar_valid,input wire [375:0] lidar_packet,input wire [31:0] lidar_seq,lidar_time,
  output wire [7:0] data,output wire valid,last,input wire ready,
  output reg [31:0] dropped
 );
- reg sending,radar_pending,status_pending,fusion_pending;
+ reg sending,radar_pending,status_pending,fusion_pending,task_pending;
  reg [6:0] status_timer;reg [7:0] index,length;
  reg [895:0] bytes;reg [511:0] radar;
  reg [15:0] ip_checksum;
@@ -41,11 +42,11 @@ module a745_udp_tx #(parameter CLK_HZ=50000000)(
  assign valid=sending;
  assign last=sending && index==length+8'd41;
  always @(posedge clk or negedge rst_n)
-  if(!rst_n) begin sending<=0;radar_pending<=0;status_pending<=0;fusion_pending<=0;
+  if(!rst_n) begin sending<=0;radar_pending<=0;status_pending<=0;fusion_pending<=0;task_pending<=0;
    status_timer<=0;index<=0;length<=0;bytes<=0;radar<=0;ip_checksum<=0;dropped<=0;end
   else begin
    if(ms_tick) begin
-    if(status_timer==99) begin status_timer<=0;status_pending<=1;fusion_pending<=1;end
+    if(status_timer==99) begin status_timer<=0;status_pending<=1;fusion_pending<=1;task_pending<=TASK_ENABLE!=0;end
     else status_timer<=status_timer+1'b1;
    end
    if(lidar_valid) begin
@@ -59,6 +60,8 @@ module a745_udp_tx #(parameter CLK_HZ=50000000)(
     end else if(fusion_pending) begin
      bytes<={512'd0,fusion_snapshot,snapshot[127:64],16'd48,16'd1,32'h31464d45};
      length<=48;ip_checksum<=header_checksum(76);fusion_pending<=0;sending<=1;
+    end else if(task_pending)begin
+     bytes<={384'd0,task_snapshot};length<=64;ip_checksum<=header_checksum(92);task_pending<=0;sending<=1;
     end else if(radar_pending) begin
      bytes<={384'd0,radar};length<=64;ip_checksum<=header_checksum(92);radar_pending<=lidar_valid;sending<=1;
     end

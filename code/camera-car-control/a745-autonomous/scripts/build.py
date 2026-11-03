@@ -73,7 +73,7 @@ def main():
    subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],capture_output=True);rc=-1;timed_out=True
   worker.join(timeout=10)
  netlist=out/'impl/gwsynthesis/a745.vg';artifact=out/'impl/pnr/a745.fs';changed=[str(p) for p in inputs if sha(p)!=hashes[str(p)]];text=(out/'build.log').read_text(encoding='utf-8')
- record.update(returncode=rc,seconds=time.monotonic()-started,timed_out=timed_out,run_state='completed' if rc==0 else 'failed',sources_changed=changed,synthesis_passed=netlist.is_file() and ('GowinSynthesis finish' in text or args.mode=='pnr'),compile_passed=rc==0 and not changed and not timed_out and (args.mode=='synth' or artifact.is_file()))
+ record.update(returncode=rc,seconds=time.monotonic()-started,timed_out=timed_out,run_state='completed' if rc==0 else 'failed',sources_changed=changed,synthesis_passed=netlist.is_file() and ('GowinSynthesis finish' in text or args.mode=='pnr'),compile_passed=rc==0 and not changed and not timed_out and (args.mode=='synth' or artifact.is_file()),network_control_enabled=True,network_arm_enabled=False,profile='A745-LOCAL-MODES-BOUNDED-VISION-TASK')
  if netlist.is_file():record['synthesis_netlist_sha256']=sha(netlist)
  if args.mode=='pnr' and record.get('synthesis_netlist_sha256')!=previous['synthesis_netlist_sha256']:
   record.update(synthesis_passed=False,compile_passed=False,reused_synthesis_changed=True)

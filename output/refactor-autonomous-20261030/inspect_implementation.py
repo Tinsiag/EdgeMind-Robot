@@ -176,7 +176,7 @@ def main():
             shutil.copy2(path, temporary)
             temporary.replace(target)
         assert sha(target) == sha(path)
-    write("STATUS.json", {"status": "implementation_complete_pending_review" if result["compile_passed"] else "implementation_failed",
+    write("CANDIDATE-IMPLEMENTATION.json", {"status": "implementation_complete_pending_review" if result["compile_passed"] else "implementation_failed",
           "compile_passed": result["compile_passed"], "seconds": result["seconds"],
           "timing_numeric_checks_pass": timing["numeric_checks_pass"], "timing_signed_off": False,
           "motor_pads_grounded": False, "artifact": str(artifact) if artifact else None,
