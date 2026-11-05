@@ -32,7 +32,7 @@ python app.py --demo
 
 数据线为 **雷达 TX → 适配器 RX，并共地**。程序只接收 UART 数据，不向雷达发送命令，不控制 CTL/PWM、电源或电机。CTL 接法继续以你手里设备的资料及已验证接线为准。
 
-FPGA集成属于另一套[A741网口工程](../camera-car-control/a741/README.md)，当前实验分配为CTL H20、DATA H14；早期对话里的G1/H2是历史候选，已经被替换，不能照旧接。切换到FPGA外部PWM控制前应断电核对接线，CTL不能同时直接接地和接FPGA输出，H14的USB_PA3复用冲突仍待核实。此串口GUI没有FPGA通信、地图积分或导航功能。
+FPGA集成属于另一套[A745工程](../camera-car-control/a745-autonomous/README.md)，当前实验分配为CTL H20、DATA H14；早期对话里的G1/H2是历史候选，已经被替换，不能照旧接。切换到FPGA外部PWM控制前应断电核对接线，CTL不能同时直接接地和接FPGA输出，H14的USB_PA3复用冲突仍待核实。此串口GUI没有FPGA通信、地图积分或导航功能。
 
 ## 界面操作
 

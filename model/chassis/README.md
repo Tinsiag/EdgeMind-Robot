@@ -4,4 +4,4 @@
 
 V5的build_model.py读取v4-lidar-imu/EdgeMind_Chassis.FCStd和verification.json；export_model.py读取该目录preview-meshes.json。parameters.json和EdgeMind_Assembly.step还用于当前FPGA导航几何来源核对。这五个文件必须保留。查看器使用V5自己的vendor目录和本目录viewer_template.html，无须V1目录。
 
-旧版本整包和根目录历史生成脚本列入清理清单；强制清理已经执行。不要将旧装配当作新版本交付。
+保留与清理边界见[维护说明](../../docs/maintenance.md)。当前交付为V5，上述V4五个文件是活动输入。

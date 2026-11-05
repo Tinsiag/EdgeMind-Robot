@@ -19,3 +19,11 @@ model/chassis/v5-rgb-touch-display/EdgeMind_Assembly.step filter=lfs diff=lfs me
 output/releases/fw74504/a745.fs filter=lfs diff=lfs merge=lfs -text
 output/refactor-autonomous-20261030/build-evidence-current/a745.sdf filter=lfs diff=lfs merge=lfs -text
 output/refactor-autonomous-20261030/build-evidence-current/a745.vo filter=lfs diff=lfs merge=lfs -text
+
+# Preserve relocated review inputs and the bytes used by their SHA checks.
+scripts/fpga/validation/** -text whitespace=cr-at-eol
+doc/电源板/calculation.json -text whitespace=cr-at-eol
+output/** whitespace=cr-at-eol
+# Raw vendor console/progress and report dumps are byte-preserved evidence.
+output/current-firmware/flash/*.console.log -diff
+output/current-firmware/*.txt -diff

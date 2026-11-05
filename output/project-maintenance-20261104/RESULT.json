@@ -1,0 +1,1764 @@
+{
+  "recorded_utc": "2026-11-04T11:16:43.449276+00:00",
+  "status": "core_organization_and_documentation_verified_recursive_cache_cleanup_blocked",
+  "task_complete": false,
+  "version": {
+    "branch": "main",
+    "head": "d433c0115daf1964e5aa9650bb2ea3e3a9139984",
+    "remote_main": "d433c0115daf1964e5aa9650bb2ea3e3a9139984",
+    "head_matches_remote_main": true,
+    "initial_worktree_clean": true,
+    "local_cleanup_changes_committed": false,
+    "pushed": false
+  },
+  "completed": {
+    "data_files_relocated_and_hash_verified": 25,
+    "validation_scripts_relocated": 9,
+    "receive_only_capture_tools_relocated": 2,
+    "obsolete_documents_deleted": [
+      "HANDOFF-20261031.md",
+      "NEXT-AI-PROMPT-20261031.md",
+      "VISION-VIDEO-HANDOFF-20261031.md",
+      ".agent/main/handoff.md",
+      "PROJECT-CLEANUP.md"
+    ],
+    "handoff_markdown_remaining": 0,
+    "maintained_documentation_files_checked": 42,
+    "local_links_checked": 146,
+    "current_evidence_directory": "output/current-firmware",
+    "model": "code/camera-car-control/a745-autonomous/host/npu/shl.hhb.bm",
+    "replay_fixture": "code/camera-car-control/a745-autonomous/tests/fixtures/ld06-capture.json",
+    "new_entrypoint": "scripts/check_project.py"
+  },
+  "deletion": {
+    "recursive_cache_backup_deletion_executed": false,
+    "cache_backup_directories_deleted": 0,
+    "automatic_review_rejections": [
+      {
+        "action": "bulk recursive cache/backup deletion after validated path plan",
+        "result": "blocked by policy",
+        "started": false
+      },
+      {
+        "action": "single historical detection-gate-74512-d87dbcb3fca0 recursive directory deletion with exact absolute path guard",
+        "result": "blocked by policy",
+        "started": false
+      }
+    ],
+    "more_specific_review_reason_provided": false,
+    "alternate_tool_bypass_attempted": false,
+    "initial_plan_targets": 339,
+    "initial_plan_files": 4602,
+    "initial_plan_bytes": 2123005084,
+    "remaining_planned_targets": 335,
+    "remaining_files_in_planned_targets": 4597,
+    "remaining_bytes_in_planned_targets": 2122976467,
+    "bytes_reclaimed_from_cache_backup_directory_deletion": 0,
+    "remaining": [
+      {
+        "path": "output/.local",
+        "files_now": 4,
+        "bytes_now": 1363
+      },
+      {
+        "path": "output/detection-display-20261102",
+        "files_now": 19,
+        "bytes_now": 1290118
+      },
+      {
+        "path": "output/detection-task-20261103",
+        "files_now": 0,
+        "bytes_now": 0
+      },
+      {
+        "path": "output/imu-compare-20261103",
+        "files_now": 11,
+        "bytes_now": 66199
+      },
+      {
+        "path": "output/motion-20261102",
+        "files_now": 12,
+        "bytes_now": 34543
+      },
+      {
+        "path": "output/motion-task-20261103",
+        "files_now": 30,
+        "bytes_now": 986753
+      },
+      {
+        "path": "output/power-budget-20261029",
+        "files_now": 0,
+        "bytes_now": 0
+      },
+      {
+        "path": "output/refactor-autonomous-20261030",
+        "files_now": 376,
+        "bytes_now": 371388145
+      },
+      {
+        "path": "output/releases",
+        "files_now": 2,
+        "bytes_now": 19634014
+      },
+      {
+        "path": "output/rollback-74511-20261103",
+        "files_now": 20,
+        "bytes_now": 19956907
+      },
+      {
+        "path": "output/vision-inference-20261102",
+        "files_now": 31,
+        "bytes_now": 13896138
+      },
+      {
+        "path": ".agent",
+        "files_now": 0,
+        "bytes_now": 0
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/attitude-unfiltered-regression",
+        "files_now": 3,
+        "bytes_now": 101511
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/cpu-gate-check",
+        "files_now": 15,
+        "bytes_now": 1160751
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512",
+        "files_now": 32,
+        "bytes_now": 35684341
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-318ee6741477-explicit-exit",
+        "files_now": 30,
+        "bytes_now": 35679257
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-6bddbecd3bd3",
+        "files_now": 30,
+        "bytes_now": 35678478
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-a22bdcb6bc82-explicit-exit",
+        "files_now": 30,
+        "bytes_now": 35679249
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-b4386e1c2073-explicit-exit",
+        "files_now": 30,
+        "bytes_now": 35679249
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-d87dbcb3fca0",
+        "files_now": 11,
+        "bytes_now": 638972
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-d87dbcb3fca0-explicit-exit",
+        "files_now": 30,
+        "bytes_now": 35679247
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-dba1ec581515",
+        "files_now": 30,
+        "bytes_now": 35678484
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-318ee6741477",
+        "files_now": 60,
+        "bytes_now": 46271940
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-a22bdcb6bc82",
+        "files_now": 60,
+        "bytes_now": 46271916
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-b4386e1c2073",
+        "files_now": 64,
+        "bytes_now": 46285034
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check",
+        "files_now": 71,
+        "bytes_now": 37539083
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74507",
+        "files_now": 72,
+        "bytes_now": 51434305
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74508",
+        "files_now": 87,
+        "bytes_now": 92163384
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74510",
+        "files_now": 92,
+        "bytes_now": 91556160
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74511",
+        "files_now": 102,
+        "bytes_now": 92180088
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512",
+        "files_now": 103,
+        "bytes_now": 92183357
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-1a77ab61c139",
+        "files_now": 102,
+        "bytes_now": 92181670
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-6bddbecd3bd3",
+        "files_now": 102,
+        "bytes_now": 92181945
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-d87dbcb3fca0",
+        "files_now": 102,
+        "bytes_now": 92181676
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-dba1ec581515",
+        "files_now": 102,
+        "bytes_now": 92181957
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-318ee6741477",
+        "files_now": 102,
+        "bytes_now": 92182962
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-a22bdcb6bc82",
+        "files_now": 102,
+        "bytes_now": 92182944
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-b4386e1c2073",
+        "files_now": 102,
+        "bytes_now": 92182930
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/lidar-replay",
+        "files_now": 5,
+        "bytes_now": 885513
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/async_fifo_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 38638
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/attitude_filter_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 55199
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/attitude_session_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 102256
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/autonomy_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 90249
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/bare_cpu_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 188244
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/button_debounce_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 7682
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/button_startup_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 7350
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/camera-tft800.ppm",
+        "files_now": 1,
+        "bytes_now": 1152015
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/camera_boot_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 113969
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/camera_pads_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 93982
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/cpu_regs_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 36235
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_hud_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 106025
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_linux_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 44130
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_overlay_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 14228
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_rx_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 64048
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/dvp_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 25834
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/encoder_diagnostic_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 805571
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/ethernet_clock_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 21270
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/imu_fault_latch_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 73196
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/imu_sensor_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 181853
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/ld06_embedded_header_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 52769
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/ld06_recovery_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 57755
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/lidar_filter_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 39262
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/lidar_guard_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 35361
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/local_offline_startup_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 804778
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/mission_core_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 804756
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/mode_display_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 10071
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/motion_feedback_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 26166
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/motion_planner_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 88650
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_driver_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 43323
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_heading_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 46322
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_i2c_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 33084
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/navigation_filter_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 145408
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/navigation_scan_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 56564
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/osd_layout_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 109158
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/path_guard_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 54164
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/pi_target_limit_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 32594
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/quadrature_filter_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 23433
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/reverse_escape_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 94972
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/rgmii_rx_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 460530
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/speed_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 15573
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/task_rx_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 54657
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/task_telemetry_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 29392
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/udp_tx_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 29135
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/tests/video_udp_tx_tb.vvp",
+        "files_now": 1,
+        "bytes_now": 83980
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/a745.gprj.user",
+        "files_now": 1,
+        "bytes_now": 1441
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.bin",
+        "files_now": 1,
+        "bytes_now": 2464499
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.binx",
+        "files_now": 1,
+        "bytes_now": 2465116
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.db",
+        "files_now": 1,
+        "bytes_now": 979112
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.p",
+        "files_now": 1,
+        "bytes_now": 5264586
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.pr",
+        "files_now": 1,
+        "bytes_now": 97621422
+      },
+      {
+        "path": "code/camera-car-control/.local",
+        "files_now": 17,
+        "bytes_now": 40396742
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/__pycache__",
+        "files_now": 1,
+        "bytes_now": 1236
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/bcrypt/__pycache__",
+        "files_now": 1,
+        "bytes_now": 607
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cffi/__pycache__",
+        "files_now": 20,
+        "bytes_now": 422419
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/__pycache__",
+        "files_now": 6,
+        "bytes_now": 21817
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/__pycache__",
+        "files_now": 2,
+        "bytes_now": 22193
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/asn1/__pycache__",
+        "files_now": 2,
+        "bytes_now": 19157
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/backends/__pycache__",
+        "files_now": 1,
+        "bytes_now": 532
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/backends/openssl/__pycache__",
+        "files_now": 2,
+        "bytes_now": 14349
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/bindings/__pycache__",
+        "files_now": 1,
+        "bytes_now": 286
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/bindings/openssl/__pycache__",
+        "files_now": 3,
+        "bytes_now": 10544
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/decrepit/__pycache__",
+        "files_now": 1,
+        "bytes_now": 286
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/decrepit/ciphers/__pycache__",
+        "files_now": 3,
+        "bytes_now": 8518
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/__pycache__",
+        "files_now": 13,
+        "bytes_now": 33937
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/asymmetric/__pycache__",
+        "files_now": 14,
+        "bytes_now": 101846
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/ciphers/__pycache__",
+        "files_now": 5,
+        "bytes_now": 20659
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/kdf/__pycache__",
+        "files_now": 8,
+        "bytes_now": 7315
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/serialization/__pycache__",
+        "files_now": 5,
+        "bytes_now": 93657
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/twofactor/__pycache__",
+        "files_now": 3,
+        "bytes_now": 8229
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/x509/__pycache__",
+        "files_now": 9,
+        "bytes_now": 208785
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/fitz/__pycache__",
+        "files_now": 3,
+        "bytes_now": 1320
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/flatbuffers/__pycache__",
+        "files_now": 10,
+        "bytes_now": 132214
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/__pycache__",
+        "files_now": 34,
+        "bytes_now": 717438
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/compiler/__pycache__",
+        "files_now": 2,
+        "bytes_now": 3607
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/internal/__pycache__",
+        "files_now": 18,
+        "bytes_now": 310920
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/pyext/__pycache__",
+        "files_now": 2,
+        "bytes_now": 1938
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/testdata/__pycache__",
+        "files_now": 1,
+        "bytes_now": 231
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/util/__pycache__",
+        "files_now": 1,
+        "bytes_now": 227
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/__pycache__",
+        "files_now": 16,
+        "bytes_now": 288579
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/completion/__pycache__",
+        "files_now": 2,
+        "bytes_now": 5943
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/parser/__pycache__",
+        "files_now": 4,
+        "bytes_now": 40873
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/__pycache__",
+        "files_now": 1,
+        "bytes_now": 220
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/fluidity/__pycache__",
+        "files_now": 3,
+        "bytes_now": 17492
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/lexicon/__pycache__",
+        "files_now": 4,
+        "bytes_now": 8360
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/yaml/__pycache__",
+        "files_now": 17,
+        "bytes_now": 252079
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/__pycache__",
+        "files_now": 9,
+        "bytes_now": 67276
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/bindings/__pycache__",
+        "files_now": 16,
+        "bytes_now": 173030
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/pwhash/__pycache__",
+        "files_now": 5,
+        "bytes_now": 22858
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/__pycache__",
+        "files_now": 7,
+        "bytes_now": 109117
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/__pycache__",
+        "files_now": 57,
+        "bytes_now": 917018
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/approximation/__pycache__",
+        "files_now": 15,
+        "bytes_now": 166311
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/approximation/tests/__pycache__",
+        "files_now": 15,
+        "bytes_now": 144909
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/assortativity/__pycache__",
+        "files_now": 6,
+        "bytes_now": 36372
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/assortativity/tests/__pycache__",
+        "files_now": 7,
+        "bytes_now": 50347
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/bipartite/__pycache__",
+        "files_now": 15,
+        "bytes_now": 172356
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/bipartite/tests/__pycache__",
+        "files_now": 15,
+        "bytes_now": 171553
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/centrality/__pycache__",
+        "files_now": 22,
+        "bytes_now": 211950
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/centrality/tests/__pycache__",
+        "files_now": 21,
+        "bytes_now": 247476
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/coloring/__pycache__",
+        "files_now": 3,
+        "bytes_now": 37989
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/coloring/tests/__pycache__",
+        "files_now": 2,
+        "bytes_now": 28372
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/community/__pycache__",
+        "files_now": 14,
+        "bytes_now": 176272
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/community/tests/__pycache__",
+        "files_now": 14,
+        "bytes_now": 144213
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/components/__pycache__",
+        "files_now": 7,
+        "bytes_now": 47187
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/components/tests/__pycache__",
+        "files_now": 7,
+        "bytes_now": 48181
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/connectivity/__pycache__",
+        "files_now": 10,
+        "bytes_now": 173660
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/connectivity/tests/__pycache__",
+        "files_now": 9,
+        "bytes_now": 145454
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/flow/__pycache__",
+        "files_now": 12,
+        "bytes_now": 167566
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/flow/tests/__pycache__",
+        "files_now": 6,
+        "bytes_now": 95591
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/isomorphism/__pycache__",
+        "files_now": 9,
+        "bytes_now": 219235
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/isomorphism/tests/__pycache__",
+        "files_now": 11,
+        "bytes_now": 277589
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/link_analysis/__pycache__",
+        "files_now": 3,
+        "bytes_now": 32998
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/link_analysis/tests/__pycache__",
+        "files_now": 3,
+        "bytes_now": 20800
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/minors/__pycache__",
+        "files_now": 2,
+        "bytes_now": 28508
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/minors/tests/__pycache__",
+        "files_now": 1,
+        "bytes_now": 27493
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/operators/__pycache__",
+        "files_now": 5,
+        "bytes_now": 55642
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/operators/tests/__pycache__",
+        "files_now": 5,
+        "bytes_now": 81504
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/shortest_paths/__pycache__",
+        "files_now": 6,
+        "bytes_now": 157011
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/shortest_paths/tests/__pycache__",
+        "files_now": 7,
+        "bytes_now": 140344
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tests/__pycache__",
+        "files_now": 58,
+        "bytes_now": 895852
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/traversal/__pycache__",
+        "files_now": 6,
+        "bytes_now": 56659
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/traversal/tests/__pycache__",
+        "files_now": 6,
+        "bytes_now": 47094
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tree/__pycache__",
+        "files_now": 8,
+        "bytes_now": 125483
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tree/tests/__pycache__",
+        "files_now": 8,
+        "bytes_now": 106832
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/classes/__pycache__",
+        "files_now": 10,
+        "bytes_now": 401551
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/classes/tests/__pycache__",
+        "files_now": 16,
+        "bytes_now": 439594
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/drawing/__pycache__",
+        "files_now": 6,
+        "bytes_now": 240844
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/drawing/tests/__pycache__",
+        "files_now": 7,
+        "bytes_now": 180475
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/generators/__pycache__",
+        "files_now": 30,
+        "bytes_now": 510882
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/generators/tests/__pycache__",
+        "files_now": 29,
+        "bytes_now": 323540
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/linalg/__pycache__",
+        "files_now": 8,
+        "bytes_now": 94889
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/linalg/tests/__pycache__",
+        "files_now": 8,
+        "bytes_now": 86385
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/__pycache__",
+        "files_now": 13,
+        "bytes_now": 250845
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/json_graph/__pycache__",
+        "files_now": 5,
+        "bytes_now": 28956
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/json_graph/tests/__pycache__",
+        "files_now": 5,
+        "bytes_now": 20535
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/tests/__pycache__",
+        "files_now": 12,
+        "bytes_now": 316167
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/tests/__pycache__",
+        "files_now": 11,
+        "bytes_now": 153292
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/utils/__pycache__",
+        "files_now": 10,
+        "bytes_now": 211716
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/utils/tests/__pycache__",
+        "files_now": 11,
+        "bytes_now": 120063
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/__pycache__",
+        "files_now": 13,
+        "bytes_now": 96341
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/char/__pycache__",
+        "files_now": 1,
+        "bytes_now": 1296
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/core/__pycache__",
+        "files_now": 19,
+        "bytes_now": 15726
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ctypeslib/__pycache__",
+        "files_now": 2,
+        "bytes_now": 22898
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/doc/__pycache__",
+        "files_now": 1,
+        "bytes_now": 5650
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/__pycache__",
+        "files_now": 18,
+        "bytes_now": 510871
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/tests/__pycache__",
+        "files_now": 35,
+        "bytes_now": 317808
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/_backends/__pycache__",
+        "files_now": 3,
+        "bytes_now": 16380
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/fft/__pycache__",
+        "files_now": 3,
+        "bytes_now": 81289
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/fft/tests/__pycache__",
+        "files_now": 3,
+        "bytes_now": 58382
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/lib/__pycache__",
+        "files_now": 32,
+        "bytes_now": 960872
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/lib/tests/__pycache__",
+        "files_now": 26,
+        "bytes_now": 1279628
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/linalg/__pycache__",
+        "files_now": 2,
+        "bytes_now": 128956
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/linalg/tests/__pycache__",
+        "files_now": 4,
+        "bytes_now": 165250
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ma/__pycache__",
+        "files_now": 5,
+        "bytes_now": 442285
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ma/tests/__pycache__",
+        "files_now": 9,
+        "bytes_now": 631982
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/matrixlib/__pycache__",
+        "files_now": 2,
+        "bytes_now": 36775
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/matrixlib/tests/__pycache__",
+        "files_now": 8,
+        "bytes_now": 82877
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/polynomial/__pycache__",
+        "files_now": 9,
+        "bytes_now": 469507
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/polynomial/tests/__pycache__",
+        "files_now": 11,
+        "bytes_now": 308668
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/__pycache__",
+        "files_now": 2,
+        "bytes_now": 10490
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/tests/__pycache__",
+        "files_now": 11,
+        "bytes_now": 573345
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/tests/data/__pycache__",
+        "files_now": 1,
+        "bytes_now": 230
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/_examples/cffi/__pycache__",
+        "files_now": 2,
+        "bytes_now": 4003
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/_examples/numba/__pycache__",
+        "files_now": 2,
+        "bytes_now": 6658
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/rec/__pycache__",
+        "files_now": 1,
+        "bytes_now": 309
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/strings/__pycache__",
+        "files_now": 1,
+        "bytes_now": 313
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/__pycache__",
+        "files_now": 3,
+        "bytes_now": 11755
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/tests/__pycache__",
+        "files_now": 2,
+        "bytes_now": 130038
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/_private/__pycache__",
+        "files_now": 3,
+        "bytes_now": 122631
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/tests/__pycache__",
+        "files_now": 12,
+        "bytes_now": 73088
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/__pycache__",
+        "files_now": 2,
+        "bytes_now": 16255
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/tests/__pycache__",
+        "files_now": 4,
+        "bytes_now": 17641
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/tests/data/pass/__pycache__",
+        "files_now": 35,
+        "bytes_now": 222965
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/__pycache__",
+        "files_now": 29,
+        "bytes_now": 1015303
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/__pycache__",
+        "files_now": 68,
+        "bytes_now": 4063743
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/examples/cython/__pycache__",
+        "files_now": 1,
+        "bytes_now": 1303
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/examples/limited_api/__pycache__",
+        "files_now": 1,
+        "bytes_now": 843
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_pyinstaller/__pycache__",
+        "files_now": 2,
+        "bytes_now": 1176
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_pyinstaller/tests/__pycache__",
+        "files_now": 3,
+        "bytes_now": 5234
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_typing/__pycache__",
+        "files_now": 12,
+        "bytes_now": 50093
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_utils/__pycache__",
+        "files_now": 4,
+        "bytes_now": 33292
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/olefile/__pycache__",
+        "files_now": 2,
+        "bytes_now": 102760
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/__pycache__",
+        "files_now": 1,
+        "bytes_now": 19876
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/backend/__pycache__",
+        "files_now": 3,
+        "bytes_now": 13563
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/capi/__pycache__",
+        "files_now": 9,
+        "bytes_now": 109200
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/datasets/__pycache__",
+        "files_now": 1,
+        "bytes_now": 967
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/__pycache__",
+        "files_now": 17,
+        "bytes_now": 567415
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/CalTableFlatBuffers/__pycache__",
+        "files_now": 3,
+        "bytes_now": 9210
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/execution_providers/qnn/__pycache__",
+        "files_now": 6,
+        "bytes_now": 67866
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/fusions/__pycache__",
+        "files_now": 5,
+        "bytes_now": 35259
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/neural_compressor/__pycache__",
+        "files_now": 4,
+        "bytes_now": 107032
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/operators/__pycache__",
+        "files_now": 24,
+        "bytes_now": 103705
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/__pycache__",
+        "files_now": 17,
+        "bytes_now": 285096
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/mobile_helpers/__pycache__",
+        "files_now": 2,
+        "bytes_now": 31220
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/__pycache__",
+        "files_now": 5,
+        "bytes_now": 45410
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/ort_flatbuffers_py/__pycache__",
+        "files_now": 1,
+        "bytes_now": 260
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/ort_flatbuffers_py/fbs/__pycache__",
+        "files_now": 46,
+        "bytes_now": 301898
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/qdq_helpers/__pycache__",
+        "files_now": 2,
+        "bytes_now": 1958
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/qnn/__pycache__",
+        "files_now": 3,
+        "bytes_now": 34245
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/__pycache__",
+        "files_now": 83,
+        "bytes_now": 1331822
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/bart/__pycache__",
+        "files_now": 2,
+        "bytes_now": 6234
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/bert/__pycache__",
+        "files_now": 2,
+        "bytes_now": 12970
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/gpt2/__pycache__",
+        "files_now": 7,
+        "bytes_now": 131145
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/llama/__pycache__",
+        "files_now": 10,
+        "bytes_now": 156576
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/longformer/__pycache__",
+        "files_now": 5,
+        "bytes_now": 55725
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/phi2/__pycache__",
+        "files_now": 3,
+        "bytes_now": 43327
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/sam2/__pycache__",
+        "files_now": 11,
+        "bytes_now": 117908
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/stable_diffusion/__pycache__",
+        "files_now": 17,
+        "bytes_now": 337129
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/t5/__pycache__",
+        "files_now": 6,
+        "bytes_now": 59889
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/whisper/__pycache__",
+        "files_now": 11,
+        "bytes_now": 191137
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/packaging/__pycache__",
+        "files_now": 20,
+        "bytes_now": 440029
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/packaging/licenses/__pycache__",
+        "files_now": 2,
+        "bytes_now": 55690
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/paramiko/__pycache__",
+        "files_now": 42,
+        "bytes_now": 767898
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/PIL/__pycache__",
+        "files_now": 97,
+        "bytes_now": 1384699
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/__pycache__",
+        "files_now": 3,
+        "bytes_now": 3835
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/__pycache__",
+        "files_now": 9,
+        "bytes_now": 112813
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/cli/__pycache__",
+        "files_now": 13,
+        "bytes_now": 105067
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/commands/__pycache__",
+        "files_now": 18,
+        "bytes_now": 149616
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/distributions/__pycache__",
+        "files_now": 5,
+        "bytes_now": 16412
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/index/__pycache__",
+        "files_now": 4,
+        "bytes_now": 75874
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/locations/__pycache__",
+        "files_now": 4,
+        "bytes_now": 35176
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/metadata/__pycache__",
+        "files_now": 4,
+        "bytes_now": 60252
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/metadata/importlib/__pycache__",
+        "files_now": 4,
+        "bytes_now": 28943
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/models/__pycache__",
+        "files_now": 12,
+        "bytes_now": 67665
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/network/__pycache__",
+        "files_now": 8,
+        "bytes_now": 73867
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/__pycache__",
+        "files_now": 4,
+        "bytes_now": 43457
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/build/__pycache__",
+        "files_now": 8,
+        "bytes_now": 22460
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/install/__pycache__",
+        "files_now": 3,
+        "bytes_now": 36269
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/req/__pycache__",
+        "files_now": 6,
+        "bytes_now": 125189
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/__pycache__",
+        "files_now": 2,
+        "bytes_now": 1450
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/legacy/__pycache__",
+        "files_now": 2,
+        "bytes_now": 22851
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/resolvelib/__pycache__",
+        "files_now": 9,
+        "bytes_now": 120583
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/utils/__pycache__",
+        "files_now": 26,
+        "bytes_now": 156231
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/vcs/__pycache__",
+        "files_now": 6,
+        "bytes_now": 73930
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/__pycache__",
+        "files_now": 2,
+        "bytes_now": 144070
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/cachecontrol/__pycache__",
+        "files_now": 9,
+        "bytes_now": 48317
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/cachecontrol/caches/__pycache__",
+        "files_now": 3,
+        "bytes_now": 11017
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/certifi/__pycache__",
+        "files_now": 3,
+        "bytes_now": 4279
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/distlib/__pycache__",
+        "files_now": 13,
+        "bytes_now": 469287
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/distro/__pycache__",
+        "files_now": 3,
+        "bytes_now": 55149
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/idna/__pycache__",
+        "files_now": 8,
+        "bytes_now": 284325
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/msgpack/__pycache__",
+        "files_now": 4,
+        "bytes_now": 53687
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/packaging/__pycache__",
+        "files_now": 14,
+        "bytes_now": 177641
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/packaging/licenses/__pycache__",
+        "files_now": 2,
+        "bytes_now": 51554
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pkg_resources/__pycache__",
+        "files_now": 1,
+        "bytes_now": 161296
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/platformdirs/__pycache__",
+        "files_now": 8,
+        "bytes_now": 83861
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/__pycache__",
+        "files_now": 16,
+        "bytes_now": 167333
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/filters/__pycache__",
+        "files_now": 1,
+        "bytes_now": 37947
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/formatters/__pycache__",
+        "files_now": 14,
+        "bytes_now": 172574
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/lexers/__pycache__",
+        "files_now": 3,
+        "bytes_now": 125959
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/styles/__pycache__",
+        "files_now": 2,
+        "bytes_now": 6384
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/__pycache__",
+        "files_now": 2,
+        "bytes_now": 18865
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__",
+        "files_now": 2,
+        "bytes_now": 16462
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/requests/__pycache__",
+        "files_now": 18,
+        "bytes_now": 211034
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/resolvelib/__pycache__",
+        "files_now": 5,
+        "bytes_now": 46699
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/resolvelib/compat/__pycache__",
+        "files_now": 2,
+        "bytes_now": 692
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/rich/__pycache__",
+        "files_now": 77,
+        "bytes_now": 1132688
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/tomli/__pycache__",
+        "files_now": 4,
+        "bytes_now": 34239
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/truststore/__pycache__",
+        "files_now": 6,
+        "bytes_now": 56389
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/__pycache__",
+        "files_now": 11,
+        "bytes_now": 166897
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/__pycache__",
+        "files_now": 7,
+        "bytes_now": 87036
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__",
+        "files_now": 3,
+        "bytes_now": 32513
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/__pycache__",
+        "files_now": 2,
+        "bytes_now": 41526
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__",
+        "files_now": 3,
+        "bytes_now": 9478
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__",
+        "files_now": 13,
+        "bytes_now": 100657
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/psutil/__pycache__",
+        "files_now": 10,
+        "bytes_now": 383250
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pycparser/__pycache__",
+        "files_now": 7,
+        "bytes_now": 288271
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/__pycache__",
+        "files_now": 18,
+        "bytes_now": 5262957
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/__pycache__",
+        "files_now": 14,
+        "bytes_now": 215856
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/onnx/__pycache__",
+        "files_now": 19,
+        "bytes_now": 413927
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/presidio/__pycache__",
+        "files_now": 2,
+        "bytes_now": 34717
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/__pycache__",
+        "files_now": 5,
+        "bytes_now": 36365
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/__pycache__",
+        "files_now": 6,
+        "bytes_now": 204948
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/chunking/__pycache__",
+        "files_now": 9,
+        "bytes_now": 123589
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/table_html/__pycache__",
+        "files_now": 3,
+        "bytes_now": 7475
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/llama/__pycache__",
+        "files_now": 1,
+        "bytes_now": 4519
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/ocr/__pycache__",
+        "files_now": 13,
+        "bytes_now": 53098
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/__pycache__",
+        "files_now": 19,
+        "bytes_now": 670983
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/actions/__pycache__",
+        "files_now": 2,
+        "bytes_now": 9142
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/annotations/__pycache__",
+        "files_now": 4,
+        "bytes_now": 22226
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/generic/__pycache__",
+        "files_now": 15,
+        "bytes_now": 315236
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_codecs/__pycache__",
+        "files_now": 8,
+        "bytes_now": 997483
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_crypt_providers/__pycache__",
+        "files_now": 5,
+        "bytes_now": 20587
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_text_extraction/__pycache__",
+        "files_now": 2,
+        "bytes_now": 28703
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_text_extraction/_layout_mode/__pycache__",
+        "files_now": 4,
+        "bytes_now": 43440
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/serial/__pycache__",
+        "files_now": 10,
+        "bytes_now": 197434
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/serial/threaded/__pycache__",
+        "files_now": 1,
+        "bytes_now": 13892
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/serial/tools/__pycache__",
+        "files_now": 9,
+        "bytes_now": 109323
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/serial/urlhandler/__pycache__",
+        "files_now": 8,
+        "bytes_now": 62969
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/tabulate/__pycache__",
+        "files_now": 1,
+        "bytes_now": 102038
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/yaml/__pycache__",
+        "files_now": 17,
+        "bytes_now": 250682
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/ziglang/__pycache__",
+        "files_now": 2,
+        "bytes_now": 953
+      },
+      {
+        "path": "code/camera-car-control/.venv/Lib/site-packages/_yaml/__pycache__",
+        "files_now": 1,
+        "bytes_now": 894
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/host/__pycache__",
+        "files_now": 12,
+        "bytes_now": 173367
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/scripts/__pycache__",
+        "files_now": 7,
+        "bytes_now": 59347
+      },
+      {
+        "path": "code/camera-car-control/a745-autonomous/tests/__pycache__",
+        "files_now": 1,
+        "bytes_now": 10753
+      }
+    ]
+  },
+  "preserved": {
+    "bitstream_sha256": "96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16",
+    "compiled_source_inputs_unchanged": true,
+    "source_hashes_checked": 75,
+    "protected_input_paths_present": 142,
+    "cad_pcb_vendor_license_and_dev_environment_preserved": true,
+    "physical_acceptance_flags_not_promoted": true
+  },
+  "verification": {
+    "report": "output/project-maintenance-20261104/DOC-REVIEW.json",
+    "project_check_passed": true,
+    "implementation_and_interface_audits_passed": 7,
+    "final_gate_passed": true,
+    "reverse_clearance_check_passed": true,
+    "lidar_replay_passed": true,
+    "lidar_replay_points": 54660,
+    "rtl_test_receipts_revalidated": 44,
+    "new_rtl_or_full_eda_build_run": false,
+    "git_diff_check_passed": true
+  },
+  "hardware_actions": 0,
+  "lichee_pi_accessed": false,
+  "motion_started": false,
+  "shutdown_performed": false,
+  "skill": {
+    "name": "docs",
+    "mode": "update",
+    "source": "https://github.com/mthines/agent-skills/blob/main/skills/authoring/docs/SKILL.md"
+  }
+}

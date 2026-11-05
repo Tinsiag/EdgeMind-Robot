@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "main_netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
+  "scope": "Independently synthesized display leaves, not optimized full-board execution",
+  "tests": [
+    {
+      "module": "a745_detection_rx",
+      "bench": "detection_rx_tb",
+      "netlist_sha256": "98b8eaa7114c80a09c7c7dd6f9b2341fbcda79212ac8d80ab176d339d67640fe"
+    },
+    {
+      "module": "a745_detection_overlay",
+      "bench": "detection_overlay_tb",
+      "netlist_sha256": "39b3e797243e0148baab78c227c47a1d31dd6446022791d009c5ce9e9293ee60"
+    }
+  ],
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\check_detection_gate.py": "cd69e76ccf4cc8c3678aab036ecddf59502e34f572d0540bd06edb96a97a530f",
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_rx.v": "8d0796b832fa636a925af28ba181442581e268e67a9a6a4434d9913ba9df3d3b",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\detection_rx_tb.v": "e627ffc7ebc7bbf52c48fad1233105ae4c5b15132ce5f0484fd93f30cb392259",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_detection_overlay.v": "7d6a916a8abcfab0acf2eadb1fb7e2637eb4f961179865415dc62c7a61ed3729",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\detection_overlay_tb.v": "55f76159729daf9abeec03351dc86a5cfd518a66f3c52862fd9ce9a002a60383"
+  }
+}

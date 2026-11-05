@@ -1,0 +1,29 @@
+<Report Command>:report_timing -hold -max_paths 25 -max_common_paths 1
+  Path Number   Path Slack                       From Node                                               To Node                            From Clock        To Clock      Relation   Clock Skew   Data Delay  
+ ============= ============ ==================================================== ======================================================= ================ ================ ========== ============ ============ 
+  1             0.040        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_125_s0/Q   video/output_fifo/gowin_add_SDPB_mem_mem_0_3_s/DI[13]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.254       
+  2             0.040        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_93_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[13]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.254       
+  3             0.040        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_92_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[12]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.254       
+  4             0.040        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_91_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[11]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.254       
+  5             0.043        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_81_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[1]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.254       
+  6             0.044        memory_pll/u_pll_init/rRomAddr_4_s1/Q                memory_pll/u_pll_init/rRomDReg_0_s4/AD[9]               sys_clk:[R]      sys_clk:[R]      0.000      -0.181       0.257       
+  7             0.045        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_80_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[0]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.256       
+  8             0.045        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_52_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[4]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.256       
+  9             0.047        memory_pll/u_pll_init/rRomAddr_5_s1/Q                memory_pll/u_pll_init/rRomDReg_0_s4/AD[10]              sys_clk:[R]      sys_clk:[R]      0.000      -0.181       0.259       
+  10            0.062        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_63_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[15]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.174       0.269       
+  11            0.062        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_62_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[14]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.174       0.269       
+  12            0.098        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_94_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[14]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.312       
+  13            0.098        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_90_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[10]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.312       
+  14            0.107        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_126_s0/Q   video/output_fifo/gowin_add_SDPB_mem_mem_0_3_s/DI[14]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.321       
+  15            0.107        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_123_s0/Q   video/output_fifo/gowin_add_SDPB_mem_mem_0_3_s/DI[11]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.321       
+  16            0.107        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_89_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[9]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.321       
+  17            0.111        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_87_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[7]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.321       
+  18            0.113        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_86_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_2_s/DI[6]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.323       
+  19            0.113        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_55_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[7]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.323       
+  20            0.113        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_53_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[5]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.177       0.323       
+  21            0.116        memory_pll/u_pll_init/rRomAddr_2_s1/Q                memory_pll/u_pll_init/rRomDReg_0_s4/AD[7]               sys_clk:[R]      sys_clk:[R]      0.000      -0.181       0.328       
+  22            0.117        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_127_s0/Q   video/output_fifo/gowin_add_SDPB_mem_mem_0_3_s/DI[15]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.185       0.335       
+  23            0.117        memory_pll/u_pll_init/rRomAddr_3_s1/Q                memory_pll/u_pll_init/rRomDReg_0_s4/AD[8]               sys_clk:[R]      sys_clk:[R]      0.000      -0.181       0.329       
+  24            0.121        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_121_s0/Q   video/output_fifo/gowin_add_SDPB_mem_mem_0_3_s/DI[9]    ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.335       
+  25            0.121        memory/gw3_top/u_gwmc_top/phy_rd_data_dly_61_s0/Q    video/output_fifo/gowin_add_SDPB_mem_mem_0_1_s/DI[13]   ddr_ui100m:[R]   ddr_ui100m:[R]   0.000      -0.181       0.335       
+

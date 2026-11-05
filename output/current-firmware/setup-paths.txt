@@ -1,0 +1,29 @@
+<Report Command>:report_timing -setup -max_paths 25 -max_common_paths 1
+  Path Number   Path Slack           From Node                          To Node                  From Clock     To Clock     Relation   Clock Skew   Data Delay  
+ ============= ============ ============================ ====================================== ============= ============= ========== ============ ============ 
+  1             0.015        core/er/count_1_s1/Q         core/planner/lateral_counts_31_s0/CE   sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.696      
+  2             0.045        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_3_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.898      
+  3             0.050        core/er/count_1_s1/Q         core/feedback/corrected_l_4_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.892      
+  4             0.057        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_7_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.895      
+  5             0.069        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_2_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.882      
+  6             0.071        core/er/count_1_s1/Q         core/feedback/corrected_l_2_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.863      
+  7             0.075        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_8_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.877      
+  8             0.094        core/autonomy/state_0_s0/Q   core/feedback/corrected_l_3_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.863      
+  9             0.104        core/er/count_1_s1/Q         core/mr/duty_q_21_s1/D                 sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.830      
+  10            0.124        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_0_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.827      
+  11            0.124        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_1_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     -0.008       19.827      
+  12            0.158        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_5_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.776      
+  13            0.178        core/er/count_1_s1/Q         core/planner/lateral_counts_4_s0/CE    sys_clk:[R]   sys_clk:[R]   20.000     0.017        19.525      
+  14            0.178        core/er/count_1_s1/Q         core/planner/lateral_counts_6_s0/CE    sys_clk:[R]   sys_clk:[R]   20.000     0.017        19.525      
+  15            0.186        core/er/count_1_s1/Q         core/planner/lateral_counts_2_s0/CE    sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.525      
+  16            0.186        core/er/count_1_s1/Q         core/planner/lateral_counts_10_s0/CE   sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.525      
+  17            0.222        core/autonomy/state_0_s0/Q   core/feedback/corrected_r_4_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.720      
+  18            0.225        core/er/count_1_s1/Q         core/mr/duty_q_20_s1/D                 sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.709      
+  19            0.297        core/er/count_1_s1/Q         core/feedback/corrected_l_1_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.646      
+  20            0.301        core/er/count_1_s1/Q         core/feedback/corrected_l_0_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.641      
+  21            0.361        core/er/count_1_s1/Q         core/planner/lateral_counts_3_s0/CE    sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.350      
+  22            0.364        core/autonomy/state_0_s0/Q   core/feedback/corrected_l_8_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.578      
+  23            0.367        core/er/count_1_s1/Q         core/pl/next_applied_20_s0/CE          sys_clk:[R]   sys_clk:[R]   20.000     0.008        19.344      
+  24            0.376        core/er/count_1_s1/Q         core/pl/next_applied_19_s0/CE          sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.344      
+  25            0.390        core/autonomy/state_0_s0/Q   core/feedback/corrected_l_6_s1/D       sys_clk:[R]   sys_clk:[R]   20.000     0.000        19.552      
+

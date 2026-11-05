@@ -1,0 +1,681 @@
+{
+  "netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
+  "timing_sdc_sha256": "b976ec638f76e46ca41922eeddd5c1042dfd66854326d05aa9b3a020efc25e92",
+  "vendor_internal_model_sha256": "c9da2a7b0f89226a6063b3d57037f6ed3d36ca2a0914de2eaefe7bf22a119cbd",
+  "internal_selector_basis": "matching vendor plaintext model; active final tool constraints required separately",
+  "routed_netlist_used": true,
+  "routed_netlist_sha256": "6632983513e2e147ec8cb365b38ded3799cad5d3a7891fcd63efda45b7b5aff8",
+  "ddr_exception_targets": [
+    {
+      "constraint": "set_false_path -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_dqs/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_dqs_gen/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_oser8_mem/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_ides8_mem/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_cmd_gen/RESET memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_ck_gen/RESET}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0/Q",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs/RESET",
+            "type": "DQS",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem/RESET",
+            "type": "IDES8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[0].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[1].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[2].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[3].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[4].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[5].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[6].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[7].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/oserdes_gen[8].u_oser8_mem/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs/RESET",
+            "type": "DQS",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs_gen/RESET",
+            "type": "OSER8_MEM",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[0].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[10].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[11].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[12].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[13].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[14].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[15].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[16].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[17].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[18].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[19].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[1].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[20].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[21].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[22].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[2].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[3].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[4].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[5].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[6].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[7].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[8].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/cmd_oserdes_gen[9].u_cmd_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/u_ck_gen/RESET",
+            "type": "OSER8",
+            "net": "ui_rst"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen*.rburst_neg*_s0/CLEAR}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_rsti_reg_2_s0/Q",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[0].rburst_neg_r_s0/CLEAR",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[0].rburst_neg_s0/CLEAR",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[1].rburst_neg_r_s0/CLEAR",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_calibration_logic_gen[1].rburst_neg_s0/CLEAR",
+            "type": "DFFCE",
+            "net": "ui_rst"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -from [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_*_s0/Q memory/gw3_top/u_ddr_phy_top/u_ddr_init/hold_gen*.hold_i_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/u_dqs/HOLD}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/hold_gen[0].hold_i_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_init/hold_gen[0].hold_i"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/hold_gen[1].hold_i_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_init/hold_gen[1].hold_i"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_0_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf [0]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf_1_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_init/read_rclksel_conf [1]"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs/HOLD",
+            "type": "DQS",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/hold_Z [0]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/u_dqs/HOLD",
+            "type": "DQS",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/hold_Z [1]"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -from [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*/ides_calib_d_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/*u_ides8_mem/CALIB}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[0].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[1].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[2].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[3].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[4].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[5].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[6].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/iserdes_gen[7].u_ides8_mem/CALIB",
+            "type": "IDES8_MEM",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/ides_calib_d"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -through [get_pins {memory/gw3_top/u_ddr_phy_top/u_dll/STEP*}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/dll_step_base_*_s0/D}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/u_dll/STEP",
+            "type": "DDRDLL",
+            "net": "{\\memory/gw3_top/u_ddr_phy_top/dll_step [7:0]}"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_0_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [0]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_1_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [1]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_2_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [2]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_3_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [3]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_4_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [4]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_5_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [5]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_6_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [6]"
+          },
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/dll_step_base_7_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/dll_step [7]"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_max_delay 10 -to [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_sync/recalib_s_0_s0/D}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_sync/recalib_s_0_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/sys_reset_Z"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -hold -to [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_sync/recalib_s_0_s0/D}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_sync/recalib_s_0_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/sys_reset_Z"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_max_delay 10 -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/wloadn_1_s0/D}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/wloadn_1_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r"
+          }
+        ]
+      ]
+    },
+    {
+      "constraint": "set_false_path -hold -from [get_pins {memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r_s0/Q}] -to [get_pins {memory/gw3_top/u_ddr_phy_top/wloadn_1_s0/D}]",
+      "groups": [
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r_s0/Q",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r"
+          }
+        ],
+        [
+          {
+            "pin": "memory/gw3_top/u_ddr_phy_top/wloadn_1_s0/D",
+            "type": "DFFCE",
+            "net": "\\memory/gw3_top/u_ddr_phy_top/ddr_init_internal_r"
+          }
+        ]
+      ]
+    }
+  ],
+  "tx_oddr_q_route_targets": [
+    "transmitter/U_ODDR_clk1/Q0",
+    "transmitter/U_ODDR_en1/Q0",
+    "transmitter/[0].U_ODDR_dq1/Q0",
+    "transmitter/[1].U_ODDR_dq1/Q0",
+    "transmitter/[2].U_ODDR_dq1/Q0",
+    "transmitter/[3].U_ODDR_dq1/Q0"
+  ],
+  "ethernet_clock": {
+    "pll_output_mhz": 250,
+    "mac_clock_mhz": 125,
+    "divider": "tx_divider",
+    "kind": "dedicated CLKDIV",
+    "clock_net": "pll125"
+  },
+  "net_fifo_bundled_pointer": {
+    "source_q_pins": [
+      "net_fifo/wr_ptr_sync_commit_reg_0_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_10_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_11_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_1_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_2_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_3_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_4_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_5_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_6_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_7_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_8_s1/Q",
+      "net_fifo/wr_ptr_sync_commit_reg_9_s1/Q"
+    ],
+    "destination_d_pins": [
+      "net_fifo/wr_ptr_commit_sync_reg_0_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_10_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_11_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_1_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_2_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_3_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_4_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_5_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_6_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_7_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_8_s0/D",
+      "net_fifo/wr_ptr_commit_sync_reg_9_s0/D"
+    ],
+    "source_q_matches_destination_d": true,
+    "bits": 12
+  },
+  "rx_iddr_count": 5,
+  "rx_iddr_cells": [
+    "receiver/lanes[0].sample",
+    "receiver/lanes[1].sample",
+    "receiver/lanes[2].sample",
+    "receiver/lanes[3].sample",
+    "receiver/control_sample"
+  ],
+  "rx_fifo_bundled_pointer_bits": 13,
+  "parser_fifo_bundled_pointer_bits": 10,
+  "detection_mailbox_payload_bits": 516,
+  "hardware_programmed": false
+}

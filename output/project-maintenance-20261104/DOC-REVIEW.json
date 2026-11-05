@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "scope": "local_documentation_and_frozen_build_evidence",
+  "counts": {
+    "markdown_files": 42,
+    "local_links": 146,
+    "source_hashes": 75,
+    "receipt_hashes": 195,
+    "python_entrypoints": 14,
+    "retained_assets": 34
+  },
+  "head": "d433c0115daf1964e5aa9650bb2ea3e3a9139984",
+  "failures": [],
+  "network_accessed": false,
+  "hardware_accessed": false,
+  "historical_output_docs_excluded": true,
+  "cache_deletion_complete": false,
+  "recorded_utc": "2026-11-04T11:16:42.210380+00:00",
+  "skill": {
+    "name": "docs",
+    "mode": "update",
+    "source": "https://github.com/mthines/agent-skills/blob/main/skills/authoring/docs/SKILL.md"
+  },
+  "lint": "git diff --check passed",
+  "rtl_simulations_rerun": false,
+  "existing_rtl_benches_revalidated": 44
+}

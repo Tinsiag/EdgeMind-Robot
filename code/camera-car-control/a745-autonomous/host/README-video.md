@@ -1,44 +1,46 @@
-# FPGA 摄像头 → Lichee Pi 4A → 网页识别
+# 4A 视频、NPU 与视觉任务
 
-## 当前已部署（2026-11-02）
+FPGA 向 Lichee Pi 4A 发送摄像头视频，4A 运行量化 YOLOv5n、提供网页，并回传检测框。
+FW74513 还支持本地模式3的有限视觉任务。当前固件及验收以[项目状态](../../../../docs/project-status.md)为准；下面的地址和部署状态最后核实于2026-11-03，本轮资料整理未连接4A。
 
-浏览器打开 **http://192.168.40.101:8090/**。
+## 使用
 
-- FPGA 发出 640×480 RGB565，EV10 每行一包，UDP 6104；4A 有线口 end1 为 192.168.0.3。
-- 4A 在 TH1520 NPU 上运行量化 YOLOv5n，COCO 80 类，输入固定为 640×384。
-- 原画面等比缩至 512×384，左右各填充 64 像素；检测框逆变换回 640×480。
-- 网页目标 15 fps，检测目标 5 次/秒。推理、收包和 JPEG 渲染独立；超时或进程退出后恢复 NPU，过期两秒的框隐藏。
-- `/video.mjpg` 为浏览器 MJPEG，`/snapshot.jpg` 为当前带框 JPEG，`/status.json` 为实时计数、耗时和错误。
-- 安装目录 `/home/debian/fpga`，Python 使用 `venv-system/bin/python`。
-
-本轮接续的最近提交为 `5d3af6d`（74513 RX门控候选）；本次进一步修改了 ED10 全模式接收、4A 视觉任务和联调记录，并已完成同源编译、Flash和模式1被动接收验证。没有电脑模拟S1、没有自动ARM，也没有发送运动任务。
-
-## 本次故障和修复
-
-1. 旧 Python 给 daemon 标准输入写入约 2.95 MB tensor；实际 daemon 用 `fgets` 接收**输入文件路径**，随后自行读 float32 文件。双方堵在 pipe_write，`infer_runs=2` 不再增长。`npu_daemon.py` 改用内存文件路径协议，完整检查 TIME/DET/END，并对启动、请求、读取实施真实超时。
-2. 旧 daemon 用 YOLOv3 的 exp 宽高公式解码 YOLOv5 原始头，造成重复/超大框。新源码 `yolov5_npu_daemon.c` 用 `(sigmoid*2-.5+grid)*stride` 和 `(sigmoid*2)^2*anchor`，按类别 NMS，直接加载现有合法的序列化 `npu/shl.hhb.bm`。旧测试图的 7 个 person 框修正为 3 个 person，另有 1 个 kite；独立 NumPy 解码逐框吻合。
-3. 旧代码把 640×480 横向不变、纵向压成 384，又只对 y 逆缩放。现改为等比 letterbox 和 x/y 完整逆变换。
-4. Linux 原有 `net.core.rmem_max=212992` 限制了 SO_RCVBUF，推理并发时收包溢出。安装 `fpga-video-sysctl.conf` 后请求 16 MiB，内核报告 32 MiB（Linux 双倍计账），视频恢复约 30 fps。
-5. 视频关闭模式不再初始化 NPU；使用 systemd 管理整个进程组，替代可能杀到无关进程的端口 fuser 清理。
-
-## 运行与日志
+最后部署地址为 **http://192.168.40.101:8090/**，服务目录 `/home/debian/fpga`，Python 为 `venv-system/bin/python`。
 
 ```sh
 cd /home/debian/fpga
-sh start_video.sh 1 npu       # 视频和 NPU 检测；保存配置并重启服务
-sh start_video.sh 0 npu       # 只看视频，不初始化 NPU
+sh start_video.sh 1 npu
 systemctl --user status fpga-video.service
 journalctl --user -u fpga-video.service -b -f
 curl -s localhost:8090/status.json
 ```
 
-用户服务已启用，debian 的 linger 已启用，退出 SSH 后持续运行。配置 `video.env` 由启动脚本写入；额外模型/阈值/限帧配置可写入该 EnvironmentFile。默认置信度 0.30、NMS 0.45。CPU 后端仍为历史诊断入口，本板不建议使用，未宣称解决旧 CPU ONNX SIGILL。
+`sh start_video.sh 0 npu` 切换为纯视频，不初始化 NPU。启动脚本写入 `video.env` 并重启用户服务；已有 linger 让退出 SSH 后服务继续运行。
+`/video.mjpg` 为实时 MJPEG，`/snapshot.jpg` 为当前 JPEG，`/status.json` 提供计数、耗时和错误。
 
-NPU 驱动的持久化参数在 `/etc/modprobe.d/fpga-npu.conf`，启动模块清单在 `/etc/modules-load.d/fpga-npu.conf`；当前运行时已确认 1 MiB OCM 和 792 MHz。接收缓冲设置在 `/etc/sysctl.d/90-fpga-video.conf`。本次没有重启 4A，故这些新配置的真实断电启动仍未实测。
+网页支持 COCO 类别选择、HSV 预设颜色筛选、点击框锁定以及 `follow`/`search` 任务。颜色筛选依赖 OpenCV，不等于任意物体的语义颜色识别。
+跟随模式未锁定框不发运动；丢目标、旧帧或 FPGA 状态异常会撤销动作。
+相机/雷达标定默认 `verified=false`，目标雷达可观测性也未验证，**自动接近和到达判定保持禁用**。
+按键与任务限制见[三种模式](../docs/README-MODES-AND-TARGET-74513.md)。网页不能 ARM，任务仅在本地模式3由 S1 建立会话后才可能驱动电机。
+
+## 图像与推理
+
+| 环节 | 配置 |
+| --- | --- |
+| FPGA→4A | 640×480 RGB565，EV10 UDP6104，每行一包 |
+| NPU | TH1520、量化 YOLOv5n、COCO80类，640×384输入，目标5Hz |
+| 输入变换 | 原画面等比缩至512×384，左右各64灰边，检测框完整逆映射 |
+| 网页 | 目标15fps，收包、推理和JPEG渲染独立 |
+| 4A→TFT | ED10 UDP6105，最多8框；无检测发送空结果 |
+
+NPU daemon 通过输入文件路径读取 tensor，Python 对启动、请求和读回实施超时，异常后恢复。
+解码使用 YOLOv5 的 sigmoid 平方宽高公式与按类 NMS；不要套用 YOLOv3 的 exp 宽高或其他模型头。
+固定序列化模型在 [npu/shl.hhb.bm](npu/shl.hhb.bm)，来源及哈希见[模型说明](npu/README.md)。
+这不是通用多模态模型，COCO之外类别与检测准确率未做标注集验收。
 
 ## 重建与部署
 
-源码和配置从本 host 目录复制到 `/home/debian/fpga/`。保留已有 `venv-system`、`npu/shl.hhb.bm` 和匹配的 SHL 2.4.5 运行库，执行：
+将本 `host/` 源码和配置部署到 `/home/debian/fpga/`，包括 `npu/shl.hhb.bm`；保留板上已有 `venv-system`、匹配的 SHL 2.4.5 运行库及驱动。
 
 ```sh
 cd /home/debian/fpga
@@ -47,43 +49,18 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 ./venv-system/bin/python -m unittest -v
 sh start_video.sh 1 npu
 ```
 
-构建脚本使用板上 `/home/debian/shl-c920/c920/include` 的兼容 CSI-NN 头文件、GCC rv64gc 和 `libshl_th1520.so.2`；可用 `CSINN_INCLUDE` 指定匹配头文件路径。不要把不同模型的 anchors/类别/输出头直接套入该固定 YOLOv5n 解码器。
+构建脚本使用板上 `/home/debian/shl-c920/c920/include`、GCC rv64gc 和 `libshl_th1520.so.2`；可用 `CSINN_INCLUDE` 指定兼容头文件。
+4A 使用系统 OpenCV/Pillow 等依赖，开发机依赖文件不用于覆盖板上系统库。
+本地 `lpi4a_run.py` / `lpi4a_put.py` 支持 `LPI4A_HOST`、`LPI4A_USER` 和 `LPI4A_PASSWORD` 环境变量；凭据不得写入仓库。
 
-首次配置接收缓冲和驱动持久化时，以管理员身份将提供的 `fpga-video-sysctl.conf`、`fpga-npu.conf` 分别安装到上述 `/etc` 位置，并应用 `sysctl -p /etc/sysctl.d/90-fpga-video.conf`。驱动若已加载且缺 OCM，仅在停止所有 NPU 使用者后执行已有 `npu_reload.sh`；运行中不能卸载。
+接收缓冲配置 `fpga-video-sysctl.conf` 对应 `/etc/sysctl.d/90-fpga-video.conf`；申请16MiB，Linux socket统计会双倍计账。
+驱动配置 `fpga-npu.conf` 对应 `/etc/modprobe.d/` 和 `/etc/modules-load.d/`。最后观察为 OCM1MiB、792MHz，4A真实断电启动仍未验收。
+驱动已加载且缺 OCM 时，只能停止所有 NPU 使用者后运行 `npu_reload.sh`，不能运行中卸载。
 
-开发机的 `lpi4a_run.py` / `lpi4a_put.py` 默认地址已更新为 `192.168.40.101`；支持 `LPI4A_HOST`、`LPI4A_USER`、`LPI4A_PASSWORD` 环境变量。
+## 网口与协议
 
-## 验证证据与限制
-
-证据在仓库根 `output/vision-inference-20261102/`：7 项协议/超时/图像变换测试、真实 NPU 的独立解码对照、真实 FPGA 视频与网页快照、连续状态采样和 NPU 卡住恢复试验。以 `RESULT.json` 汇总的最终实测为准。
-
-识别属于轻量 YOLO 目标检测。COCO 80 类之外物体不能据此保证识别；容器被标为 cup、低分误检或未检出仍可能出现，没有标注集精度验收。本次没有更换权重、重训模型或宣称任意物体识别能力。
-
-4A 接收视频并回传仅用于显示的检测框，不发送 ARM、速度、配置或故障清除指令；不把视觉结果接入运动控制。当前 FPGA 版本与验收以最新 STATUS.json 为准。
-
-## EV10 UDP 负载
-
-| 偏移 | 长度 | 内容 |
-|---|---|---|
-| 0 | 4 | ASCII EV10 |
-| 4 | 4 | frame_id，u32 LE |
-| 8 | 2 | line，u16 LE，0..479 |
-| 10 | 2 | payload bytes，u16 LE，1280 |
-| 12 | 1280 | 640 个 RGB565 小端像素 |
-
-每包一行，完整一帧 480 包。接收器保留 95% 行数发布门槛，丢失行保持旧内容；最终正常监测期间无需依赖此容错。
-
-## FW74512：检测框回传到 FPGA TFT
-
-继续使用 640×480 摄像头裁剪、640×384 NPU 输入、目标 5 次/秒推理和 15fps 网页预览。每次成功推理发送最新结果；无目标发送 count=0 清框。最多发送置信度最高的 8 个框。
-
-FPGA 新增 RGMII RX 和 UDP 6105 的 ED10 显示数据接收器，校验限定 MAC/IP、IP 头、非分片、端口、UDP 校验和、长度、字段、坐标和序号。MAC 丢弃坏 FCS/RX_ER 整帧。结果通过握手邮箱进入 33MHz 显示域，在场消隐边界原子更新；约 1 秒无新结果清框，约 2 秒后允许发送端重新开始序号。
-
-FPGA 在原摄像头像素上画绿色 2 像素边框，原参数 HUD 保持最上层，保留 800×480/33MHz 扫描。推理画面裁自本机视频 x=80..719，回传框显示时 x 加 80。返回负载含类别和置信度，当前 TFT 仅画框，类别文字继续在网页显示。
-
-最新推理框叠加到实时本地画面，目标移动时存在推理延迟；没有逐帧锁定，也不回传整帧 JPEG。检测框落入 HUD 范围时，原状态参数覆盖框。检测结果与运动控制没有连接。
-
-4A 配置静态邻居（FPGA 没有 ARP 应答）：
+固定有线链路：FPGA `192.168.0.2` / `02:00:00:00:00:02`，4A end1 `192.168.0.3` / `48:da:35:60:00:99`。
+FPGA 不应答 ARP，需启用提供的静态邻居配置。更换网卡必须同步接收端限定源 MAC。
 
 ```sh
 sudo install -m 644 fpga-detection-neighbor.service /etc/systemd/system/
@@ -92,32 +69,14 @@ sudo systemctl enable --now fpga-detection-neighbor.service
 sudo install -m 755 fpga-detection-neighbor-dispatcher /etc/NetworkManager/dispatcher.d/90-fpga-detection-neighbor
 ```
 
-FPGA MAC `02:00:00:00:00:02`、IP `192.168.0.2`；4A end1 为 `192.168.0.3`、MAC `48:da:35:60:00:99`。更换网卡后需同步接收端的限定源 MAC。主机环境变量 `FPGA_DETECTION_RETURN=0` 可禁用回传。
+`FPGA_DETECTION_RETURN=0` 禁用检测回传。
+EV10 每包负载为12字节头加1280字节像素：魔数4字节、frame_id(u32 LE)、line(u16 LE)、payload bytes(u16 LE)，随后640个小端RGB565像素。480行组成一帧，收包器保留95%行数发布门槛，缺行沿用旧内容。
+ED10固定16字节头及每框12字节坐标/类别/分数，具体编解码由 `detection_return.py` 和对应RTL/测试共同维护。
 
-| ED10 负载偏移 | 长度 | 内容 |
-|---|---|---|
-| 0 | 4 | ASCII ED10 |
-| 4 | 4 | 递增 u32 LE 序号 |
-| 8 | 1 | 框数 0..8 |
-| 9 | 1 | 保留 0 |
-| 10 | 2 | 宽 640，u16 LE |
-| 12 | 2 | 高 480，u16 LE |
-| 14 | 2 | 保留 0 |
-| 16+12i | 8 | x1/y1/x2/y2，4 个 u16 LE，包含边界像素 |
-| 24+12i | 1 | COCO 类别 0..79 |
-| 25+12i | 1 | 置信度 1..255 |
-| 26+12i | 2 | 保留 0 |
+模式1/2/3均接收 ED10，显示域场消隐原子更新，约1秒过期清框。640×480框映射到本地800×480画面的x+80，HUD置顶；最新框叠实时画面，有推理延迟，不是逐帧锁定。
+ET10是独立的UDP6106有限动作协议，要求本地模式3、S1会话、新鲜视频/观测和全部传感器/几何保护。整个RX不再与电机结构隔离；ED10框数据的隔离和共享接收流控的限制见模式说明。
 
-EMS1 byte23 从 FW74512 起为有效检测结果接受计数（模 256），用于联调诊断。旧解析器兼容，其余故障和电机字段不变。
+## 证据边界
 
-本次证据入口为仓库根 `output/detection-display-20261102/` 和最新 `STATUS.json`。仿真与工具审核不能替代新位流的屏幕实物观察及断电冷启动验收。
-
-## FW74513 全模式检测框与视觉任务（2026-11-03）
-
-当前 FPGA 位流 SHA 为 `96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16`。RGMII RX/ED10 显示接收在本地模式1、2、3均保持可用；ET10 运动命令仍要求本地模式3和S1已建立的会话，显示数据与电机输出保持独立。烧录审计为 `code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json`。
-
-4A 网页在 `http://192.168.40.101:8090/` 增加了颜色筛选（HSV 预设色）、点击检测框锁定和 `follow`/`search` 任务模式。跟随模式未点击锁定框时不发送运动；目标丢失、推理过期、FPGA 状态异常都会停车。相机/雷达标定默认未验证，自动接近和到达判定保持禁用，避免将视觉框面积当作毫米距离。
-
-烧录后模式1被动15秒采样收到150组FPGA状态，检测接受计数增加74，与4A `display_sent`增加74一致；期间IDLE、ERR0000、未ARM、轮速为零。该结果证明模式1的ED10接收链路已工作，模式2的屏幕显示和模式3的实际S1运动/跟随仍需实体观察，不能用被动采样替代。
-
-FW74512 实板回传显示验收已通过：用户确认绿色框与原参数正常。60秒299次推理、299次发送，采样窗口内接受计数增加298（首尾状态采样边界差）；摄像头29.77fps、识别4.98次/秒、网页14.92fps，600状态/600姿态健康且未ARM，无新增坏包/缺行。Flash位流SHA `888761b35c206f21d920bb192c920d785f3606ed9b2b73b64ff488a354bf4256`。新SHA完整断电启动仍未验收。
+当前记录汇总在[当前固件证据](../../../../output/current-firmware/README.md)。模式1被动接收计数增长证明链路接收，不能替代模式1/2实屏绿色框、冷启动或模式3运动验收。
+此前74512绿色框实屏和74511直行验收不转用于当前SHA。当前标定和寻物到达仍未完成。

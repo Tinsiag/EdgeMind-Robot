@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "main_netlist_sha256": "318ee6741477010eedce15b9762b36eef076089da6859d6ee19e92ed3e6b18d7",
+  "tests": [
+    {
+      "module": "a745_navigation_scan",
+      "test": "navigation_scan_tb",
+      "netlist_sha256": "006f53fdb7838649653922b248da656c8ecca3cf73268a35739f8fe510d2ebf4"
+    },
+    {
+      "module": "a745_autonomy",
+      "test": "autonomy_tb",
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
+    },
+    {
+      "module": "a741_motion_feedback",
+      "test": "motion_feedback_tb",
+      "netlist_sha256": "5aeb4b802663ece16607a22cac12767f4265eb0d36779285492228a58b32ff09"
+    },
+    {
+      "module": "a745_lidar_filter",
+      "test": "lidar_filter_tb",
+      "netlist_sha256": "0b7e4981b9bc2f16f1836043b129ec158546acb5289bb13a1213e8fd217ed02e"
+    },
+    {
+      "module": "a741_attitude",
+      "test": "attitude_filter_tb",
+      "netlist_sha256": "20751fa9d054fb4ede9307e15ede9bb4ee981722744b83462c91bf51db2e524b"
+    },
+    {
+      "module": "quadrature_decoder",
+      "test": "quadrature_filter_tb",
+      "netlist_sha256": "3126b49ba0bc441ae305cf8e56b132a444502c5738131ccb6e57a191eda8bece"
+    },
+    {
+      "module": "a745_autonomy",
+      "test": "imu_fault_latch_tb",
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
+    },
+    {
+      "module": "a745_autonomy",
+      "test": "reverse_escape_tb",
+      "netlist_sha256": "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
+    },
+    {
+      "module": "a741_attitude+a745_autonomy",
+      "test": "attitude_session_tb",
+      "netlist_sha256": [
+        "20751fa9d054fb4ede9307e15ede9bb4ee981722744b83462c91bf51db2e524b",
+        "0e60a214f0bc7617efc6115c90ca5597b82269b429f4f79168f4a56f224fa8b6"
+      ]
+    }
+  ],
+  "model_scope": "Independent synthesis of current leaf inputs with full observable ports; main board optimizer crosses hierarchy boundaries. Main envelope separately checked for asynchronous ROM mapping.",
+  "asynchronous_turn_rom_synchronous_ram_count": 0,
+  "actual_board_tested": false,
+  "input_sha256": {
+    "C:\\Gowin\\Gowin_V1.9.12.04_x64\\IDE\\simlib\\gw5a\\prim_sim.v": "7109c2568188627465d218bc099cf72f12e90807c21d4d862d2335b499043544",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\check_navigation_gate.py": "b1e156712dc93a4914131ef79f35c4950de3134945670c7ba3011d5869514252",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_navigation_scan.v": "9a2ccad8e4c6674d2af1058f0f909844ccd84bc108449b4de6429973acaa22a9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_autonomy.v": "395d649cc13dda480b078c5a54662d2442eaaf9ce50a56e840118fe9a9707e6c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_motion_feedback.v": "26f294b0a23072e4eecaccbca71d60cdb7eb98c9568894d6d3ee4f3f3a0e5a22",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_lidar_filter.v": "47a95b0960d13204f615d840aedbb267d4b00e0f6676c1d869bb80f23eb27854",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\a741_attitude.v": "913de658d0c591414f6bb28b8cb3979df0928fbdf8a52d59ea53fddea746e691",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\lib\\quadrature_decoder.v": "9d325e4a0ed2da8f68d5b4ae8bcfd0aa1d9b1babab6545b1053c16cfe986536f",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\navigation_scan_tb.v": "d2fe61aa996d71138c4a11044ce47703c24142bac4b27565c66407e282569eaf",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\autonomy_tb.v": "fd88d71365d834bb11df7efa047da6d4436f04e9b1098f18397ec1faeb68598e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\motion_feedback_tb.v": "b21f2634571888e16c7657ff7587defda751cd69d6983572c25c5725456497ed",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\lidar_filter_tb.v": "001a92ee685274e8931385e4ab8712b5244ddcd55128b8781c750b9ea6256259",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\attitude_filter_tb.v": "1a9e9a9a6f0ad78a611bd29079b66281a021e12c44b7fdcdd764ed6271b4ad6e",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\quadrature_filter_tb.v": "7d8504054dfb26130a86c8129c8aac9f38e56d89936d39a14da588c95f26bce9",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\imu_fault_latch_tb.v": "4743cb9f9f7c0fe738c94baa773f0b9189ab12dc1f545ac918ecc99f36137916",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\reverse_escape_tb.v": "a577006f26ca3db855223352627ecbc8030cf31a72660ea3a5542f6bd55dc0c2",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\attitude_session_tb.v": "2df1b3dbe1140fe4bc0da6021dfe89ba9864b3c52581b78ecce009fb5446ef24"
+  }
+}

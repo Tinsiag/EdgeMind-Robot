@@ -1,7 +1,7 @@
 # Gowin 布局布线与时序审核
 
 适用 GW5AT-60B / GW5AT-LV60PG484AC1/I0、Gowin V1.9.12.04。
-当前构建是否签核、是否烧录，以根目录 `output/refactor-autonomous-20261030/STATUS.json`
+当前构建是否签核、是否烧录，以[当前STATUS](../../../../output/current-firmware/STATUS.json)
 和真实 Flash 审计为准。本文中的优化方案不代表实板验收通过。
 
 ## 历史优化说明的来源
@@ -62,6 +62,6 @@ IPUG281-2.6E §4.4.2/4.4.3；匹配板卡的明文仿真模型在 `vendor/refere
 
 须通过完整 RTL、独立协议/几何/回放/CPU、同源导航与显示叶模块原语执行，
 并核对同次 PNR 的 setup、hold、recovery、removal、minimum pulse width。
-再执行 `inspect_implementation.py`、六项 `audit_*.py` 和 `final_gate.py`。
+再执行 `scripts/fpga/validation/` 内的实现检查、六项接口审核和最终门，完整命令见[开发指南](../../../../docs/contributing.md)。
 所有审核绑定同一位流 SHA；Flash 写入/校验、重载、就绪、UserCode 和被动健康另外记录。
 屏幕实物观察与真实断电启动单独验收。

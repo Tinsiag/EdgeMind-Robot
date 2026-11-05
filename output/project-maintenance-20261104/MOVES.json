@@ -1,0 +1,157 @@
+{
+  "state": "core_files_relocated",
+  "count": 25,
+  "moves": [
+    {
+      "source": "output/vision-inference-20261102/shl.hhb.bm",
+      "destination": "code/camera-car-control/a745-autonomous/host/npu/shl.hhb.bm",
+      "sha256": "c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad",
+      "bytes": 1991641
+    },
+    {
+      "source": "output/vision-inference-20261102/live-verified.jpg",
+      "destination": "docs/assets/vision-example.jpg",
+      "sha256": "d770af813d7a261e9417a6f8f4af4513ee5f791b406551a0fbb155fbd3783dbe",
+      "bytes": 44628
+    },
+    {
+      "source": "output/detection-task-20261103/MODE1-PASSIVE.json",
+      "destination": "output/current-firmware/MODE1-PASSIVE.json",
+      "sha256": "a830d3286186720489224c35ad1110eb9bab3549b009cc1666b1cc2dd753f12a",
+      "bytes": 6448
+    },
+    {
+      "source": "output/detection-task-20261103/RESULT.json",
+      "destination": "output/current-firmware/APPLICATION-REVIEW.json",
+      "sha256": "9ee1295d67d355765149490599a18b619122adebc9c9dafac59ed9c6eada3d45",
+      "bytes": 2863
+    },
+    {
+      "source": "output/motion-task-20261103/startup-err0011/USER-REPORT.json",
+      "destination": "output/current-firmware/STARTUP-ERR0011.json",
+      "sha256": "69c8f050d4af87fed35dd7da7abb26e1b3ba268ddbd987a14c81948513f4cb9d",
+      "bytes": 1350
+    },
+    {
+      "source": "output/motion-20261102/ACCEPTANCE-74511.json",
+      "destination": "output/current-firmware/BASELINE-74511-ACCEPTANCE.json",
+      "sha256": "f98c7b09a1a22b60e82d3290572093d88b8c9e08410ac7fca4d36c939752ade2",
+      "bytes": 2598
+    },
+    {
+      "source": "output/refactor-autonomous-20261030/STATUS.json",
+      "destination": "output/current-firmware/STATUS.json",
+      "sha256": "df8998433232d27fe04126da97da2f80703faaa322de63d7bc120b876b5e2fe0",
+      "bytes": 2070
+    },
+    {
+      "source": "output/refactor-autonomous-20261030/turn-diagnostics-20261031/raw-telemetry.json",
+      "destination": "code/camera-car-control/a745-autonomous/tests/fixtures/ld06-capture.json",
+      "sha256": "5840b6a317e1884dda6252db35bd04ec9c5f244865d8940e74810f617f26b333",
+      "bytes": 866394
+    },
+    {
+      "source": "output/power-budget-20261029/calculation.json",
+      "destination": "doc/电源板/calculation.json",
+      "sha256": "b438aee8b2e6c24e0e52f9d89f14ede1ea8c7c0c837c4f7f455680f83d446ffa",
+      "bytes": 1894
+    },
+    {
+      "source": "output/power-budget-20261029/整机供电核对.md",
+      "destination": "doc/电源板/整机供电核对.md",
+      "sha256": "1284d84a2b08c1b5b656fadc8dc701dfb2a2730d6d8564d224444a39f313b0e1",
+      "bytes": 11698
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json",
+      "destination": "output/current-firmware/flash/audit.json",
+      "sha256": "f58af5f7228252aa3a807397298a839d664b5b219ef0aac72d345ba30a8da455",
+      "bytes": 12412
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/flash_program_verify.console.log",
+      "destination": "output/current-firmware/flash/flash_program_verify.console.log",
+      "sha256": "845995aeb6563ffcfd68c2e790563b564b82533054122ec8d43f63a0d6e3a580",
+      "bytes": 692877
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status.console.log",
+      "destination": "output/current-firmware/flash/read_status.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_001.console.log",
+      "destination": "output/current-firmware/flash/read_status_001.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_002.console.log",
+      "destination": "output/current-firmware/flash/read_status_002.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_003.console.log",
+      "destination": "output/current-firmware/flash/read_status_003.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_004.console.log",
+      "destination": "output/current-firmware/flash/read_status_004.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_005.console.log",
+      "destination": "output/current-firmware/flash/read_status_005.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_006.console.log",
+      "destination": "output/current-firmware/flash/read_status_006.console.log",
+      "sha256": "39e67bcce8753302b0804dce8682e3d216a15108641e1aa340091e4524eed79f",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_007.console.log",
+      "destination": "output/current-firmware/flash/read_status_007.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_008.console.log",
+      "destination": "output/current-firmware/flash/read_status_008.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_009.console.log",
+      "destination": "output/current-firmware/flash/read_status_009.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_010.console.log",
+      "destination": "output/current-firmware/flash/read_status_010.console.log",
+      "sha256": "cc414e59d08eab696743ff5a43f93a10e268513f8db5947a68c960eeb7e1c762",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_user_code.console.log",
+      "destination": "output/current-firmware/flash/read_user_code.console.log",
+      "sha256": "bc3935bd28d9b5cfb0a1705f72363f2c7e1646c41f423eaee059b8a35ca1e402",
+      "bytes": 213
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/reprogram.console.log",
+      "destination": "output/current-firmware/flash/reprogram.console.log",
+      "sha256": "e9a3acacd7992d73577c7ac2da754b731324712296f1d96493018fcded766ca1",
+      "bytes": 180
+    }
+  ],
+  "bulk_deletion": "automatic approval rejected; not executed"
+}

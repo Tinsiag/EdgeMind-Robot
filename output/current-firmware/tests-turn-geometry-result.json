@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checked_rotated_edge_points": 122536,
+  "orientation_step_deg": 0.1,
+  "body_margin_mm": 40,
+  "minimum_envelope_excess_mm": 10.403968473420093,
+  "physical_measurement": false,
+  "input_sha256": {
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\config\\geometry.json": "c71338aebce07b9a977c1ff0d38e809a9b523da03e42fb0a3c9a404bd97c5ad3",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\rtl\\a745_turn_envelope.v": "e89f28c992cf8bf2edf888ea3f7d7d142a8114e0387befbe4f16d075f392cc1a",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\scripts\\generate_turn_envelope.py": "597f729b14e6516d0818ff9f4a7f52d4dd1b1bb3534d5c61e7b8d19e6e6b512c",
+    "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot\\code\\camera-car-control\\a745-autonomous\\tests\\check_turn_geometry.py": "0ae9aefec1514d0a95c647f9e3243ca1f3247d411beb246ec8174982f6e0cf6b"
+  }
+}

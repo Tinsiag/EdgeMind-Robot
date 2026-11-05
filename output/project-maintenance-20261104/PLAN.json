@@ -1,0 +1,2686 @@
+{
+  "recorded_utc": "2026-11-04T10:53:30.120256+00:00",
+  "workspace": "C:\\Users\\sc\\Documents\\Dev\\Hardware\\EdgeMind-Robot",
+  "baseline_head": "d433c0115daf1964e5aa9650bb2ea3e3a9139984",
+  "remote_main": "d433c0115daf1964e5aa9650bb2ea3e3a9139984",
+  "initial_inventory_files": 23844,
+  "initial_inventory_bytes": 3337998084,
+  "authorization": "2026-11-04 user explicitly requested deleting historical build caches, all backups and handoff documents; ordinary workspace deletion, no alternate retry after any policy rejection",
+  "skill": "https://github.com/mthines/agent-skills/blob/main/skills/authoring/docs/SKILL.md",
+  "moves": [
+    {
+      "source": "output/vision-inference-20261102/shl.hhb.bm",
+      "destination": "code/camera-car-control/a745-autonomous/host/npu/shl.hhb.bm",
+      "sha256": "c343b37b699fd4b5d87373c2931612d3c4a57edc484739224b978021a42fafad",
+      "bytes": 1991641
+    },
+    {
+      "source": "output/vision-inference-20261102/live-verified.jpg",
+      "destination": "docs/assets/vision-example.jpg",
+      "sha256": "d770af813d7a261e9417a6f8f4af4513ee5f791b406551a0fbb155fbd3783dbe",
+      "bytes": 44628
+    },
+    {
+      "source": "output/detection-task-20261103/MODE1-PASSIVE.json",
+      "destination": "output/current-firmware/MODE1-PASSIVE.json",
+      "sha256": "a830d3286186720489224c35ad1110eb9bab3549b009cc1666b1cc2dd753f12a",
+      "bytes": 6448
+    },
+    {
+      "source": "output/detection-task-20261103/RESULT.json",
+      "destination": "output/current-firmware/APPLICATION-REVIEW.json",
+      "sha256": "9ee1295d67d355765149490599a18b619122adebc9c9dafac59ed9c6eada3d45",
+      "bytes": 2863
+    },
+    {
+      "source": "output/motion-task-20261103/startup-err0011/USER-REPORT.json",
+      "destination": "output/current-firmware/STARTUP-ERR0011.json",
+      "sha256": "69c8f050d4af87fed35dd7da7abb26e1b3ba268ddbd987a14c81948513f4cb9d",
+      "bytes": 1350
+    },
+    {
+      "source": "output/motion-20261102/ACCEPTANCE-74511.json",
+      "destination": "output/current-firmware/BASELINE-74511-ACCEPTANCE.json",
+      "sha256": "f98c7b09a1a22b60e82d3290572093d88b8c9e08410ac7fca4d36c939752ade2",
+      "bytes": 2598
+    },
+    {
+      "source": "output/refactor-autonomous-20261030/STATUS.json",
+      "destination": "output/current-firmware/STATUS.json",
+      "sha256": "df8998433232d27fe04126da97da2f80703faaa322de63d7bc120b876b5e2fe0",
+      "bytes": 2070
+    },
+    {
+      "source": "output/refactor-autonomous-20261030/turn-diagnostics-20261031/raw-telemetry.json",
+      "destination": "code/camera-car-control/a745-autonomous/tests/fixtures/ld06-capture.json",
+      "sha256": "5840b6a317e1884dda6252db35bd04ec9c5f244865d8940e74810f617f26b333",
+      "bytes": 866394
+    },
+    {
+      "source": "output/power-budget-20261029/calculation.json",
+      "destination": "doc/电源板/calculation.json",
+      "sha256": "b438aee8b2e6c24e0e52f9d89f14ede1ea8c7c0c837c4f7f455680f83d446ffa",
+      "bytes": 1894
+    },
+    {
+      "source": "output/power-budget-20261029/整机供电核对.md",
+      "destination": "doc/电源板/整机供电核对.md",
+      "sha256": "1284d84a2b08c1b5b656fadc8dc701dfb2a2730d6d8564d224444a39f313b0e1",
+      "bytes": 11698
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/audit.json",
+      "destination": "output/current-firmware/flash/audit.json",
+      "sha256": "f58af5f7228252aa3a807397298a839d664b5b219ef0aac72d345ba30a8da455",
+      "bytes": 12412
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/flash_program_verify.console.log",
+      "destination": "output/current-firmware/flash/flash_program_verify.console.log",
+      "sha256": "845995aeb6563ffcfd68c2e790563b564b82533054122ec8d43f63a0d6e3a580",
+      "bytes": 692877
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status.console.log",
+      "destination": "output/current-firmware/flash/read_status.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_001.console.log",
+      "destination": "output/current-firmware/flash/read_status_001.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_002.console.log",
+      "destination": "output/current-firmware/flash/read_status_002.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_003.console.log",
+      "destination": "output/current-firmware/flash/read_status_003.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_004.console.log",
+      "destination": "output/current-firmware/flash/read_status_004.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_005.console.log",
+      "destination": "output/current-firmware/flash/read_status_005.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_006.console.log",
+      "destination": "output/current-firmware/flash/read_status_006.console.log",
+      "sha256": "39e67bcce8753302b0804dce8682e3d216a15108641e1aa340091e4524eed79f",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_007.console.log",
+      "destination": "output/current-firmware/flash/read_status_007.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_008.console.log",
+      "destination": "output/current-firmware/flash/read_status_008.console.log",
+      "sha256": "53dd519783a35d0c349a6c8e092b15d2ac35489f39d5e6b6d6d5f8c63afef9ef",
+      "bytes": 220
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_009.console.log",
+      "destination": "output/current-firmware/flash/read_status_009.console.log",
+      "sha256": "8cb73e13d63ae03404bef12afa79abe7169a9c1882c65338f04b3172e1286ddf",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_status_010.console.log",
+      "destination": "output/current-firmware/flash/read_status_010.console.log",
+      "sha256": "cc414e59d08eab696743ff5a43f93a10e268513f8db5947a68c960eeb7e1c762",
+      "bytes": 221
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/read_user_code.console.log",
+      "destination": "output/current-firmware/flash/read_user_code.console.log",
+      "sha256": "bc3935bd28d9b5cfb0a1705f72363f2c7e1646c41f423eaee059b8a35ca1e402",
+      "bytes": 213
+    },
+    {
+      "source": "code/camera-car-control/.local/programming/20261103T063008.029218Z/reprogram.console.log",
+      "destination": "output/current-firmware/flash/reprogram.console.log",
+      "sha256": "e9a3acacd7992d73577c7ac2da754b731324712296f1d96493018fcded766ca1",
+      "bytes": 180
+    }
+  ],
+  "delete_targets": [
+    {
+      "path": "output/.local",
+      "files": 4,
+      "bytes": 1363,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/detection-display-20261102",
+      "files": 19,
+      "bytes": 1290118,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/detection-task-20261103",
+      "files": 0,
+      "bytes": 0,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/imu-compare-20261103",
+      "files": 11,
+      "bytes": 66199,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/motion-20261102",
+      "files": 12,
+      "bytes": 34543,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/motion-task-20261103",
+      "files": 30,
+      "bytes": 986753,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/power-budget-20261029",
+      "files": 0,
+      "bytes": 0,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/refactor-autonomous-20261030",
+      "files": 376,
+      "bytes": 371388145,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/releases",
+      "files": 2,
+      "bytes": 19634014,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/rollback-74511-20261103",
+      "files": 20,
+      "bytes": 19956907,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": "output/vision-inference-20261102",
+      "files": 31,
+      "bytes": 13896138,
+      "reason": "Superseded output, backups and handoff; necessary fixtures, model and current evidence are relocated first",
+      "stage": "now"
+    },
+    {
+      "path": ".agent",
+      "files": 1,
+      "bytes": 14505,
+      "reason": "Old handoff/cleanup narrative replaced by maintained project docs",
+      "stage": "now"
+    },
+    {
+      "path": "HANDOFF-20261031.md",
+      "files": 1,
+      "bytes": 2609,
+      "reason": "Old handoff/cleanup narrative replaced by maintained project docs",
+      "stage": "now"
+    },
+    {
+      "path": "NEXT-AI-PROMPT-20261031.md",
+      "files": 1,
+      "bytes": 3817,
+      "reason": "Old handoff/cleanup narrative replaced by maintained project docs",
+      "stage": "now"
+    },
+    {
+      "path": "VISION-VIDEO-HANDOFF-20261031.md",
+      "files": 1,
+      "bytes": 6232,
+      "reason": "Old handoff/cleanup narrative replaced by maintained project docs",
+      "stage": "now"
+    },
+    {
+      "path": "PROJECT-CLEANUP.md",
+      "files": 1,
+      "bytes": 1470,
+      "reason": "Old handoff/cleanup narrative replaced by maintained project docs",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/attitude-unfiltered-regression",
+      "files": 3,
+      "bytes": 101511,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/cpu-gate-check",
+      "files": 15,
+      "bytes": 1160751,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512",
+      "files": 32,
+      "bytes": 35684341,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-318ee6741477-explicit-exit",
+      "files": 30,
+      "bytes": 35679257,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-6bddbecd3bd3",
+      "files": 30,
+      "bytes": 35678478,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-a22bdcb6bc82-explicit-exit",
+      "files": 30,
+      "bytes": 35679249,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-b4386e1c2073-explicit-exit",
+      "files": 30,
+      "bytes": 35679249,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-d87dbcb3fca0",
+      "files": 11,
+      "bytes": 638972,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-d87dbcb3fca0-explicit-exit",
+      "files": 30,
+      "bytes": 35679247,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/detection-gate-74512-dba1ec581515",
+      "files": 30,
+      "bytes": 35678484,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-318ee6741477",
+      "files": 60,
+      "bytes": 46271940,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-a22bdcb6bc82",
+      "files": 60,
+      "bytes": 46271916,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/mission-gate-74513-b4386e1c2073",
+      "files": 64,
+      "bytes": 46285034,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check",
+      "files": 71,
+      "bytes": 37539083,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74507",
+      "files": 72,
+      "bytes": 51434305,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74508",
+      "files": 87,
+      "bytes": 92163384,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74510",
+      "files": 92,
+      "bytes": 91556160,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74511",
+      "files": 102,
+      "bytes": 92180088,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512",
+      "files": 103,
+      "bytes": 92183357,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-1a77ab61c139",
+      "files": 102,
+      "bytes": 92181670,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-6bddbecd3bd3",
+      "files": 102,
+      "bytes": 92181945,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-d87dbcb3fca0",
+      "files": 102,
+      "bytes": 92181676,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74512-dba1ec581515",
+      "files": 102,
+      "bytes": 92181957,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-318ee6741477",
+      "files": 102,
+      "bytes": 92182962,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-a22bdcb6bc82",
+      "files": 102,
+      "bytes": 92182944,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/navigation-gate-check-74513-b4386e1c2073",
+      "files": 102,
+      "bytes": 92182930,
+      "reason": "Historical or regenerable leaf-gate cache",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/lidar-replay",
+      "files": 5,
+      "bytes": 885497,
+      "reason": "Regenerable replay simulator; run receipt and source capture remain",
+      "stage": "after_verification"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/async_fifo_tb.vvp",
+      "files": 1,
+      "bytes": 38638,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/attitude_filter_tb.vvp",
+      "files": 1,
+      "bytes": 55199,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/attitude_session_tb.vvp",
+      "files": 1,
+      "bytes": 102256,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/autonomy_tb.vvp",
+      "files": 1,
+      "bytes": 90249,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/bare_cpu_tb.vvp",
+      "files": 1,
+      "bytes": 188244,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/button_debounce_tb.vvp",
+      "files": 1,
+      "bytes": 7682,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/button_startup_tb.vvp",
+      "files": 1,
+      "bytes": 7350,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/camera-tft800.ppm",
+      "files": 1,
+      "bytes": 1152015,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/camera_boot_tb.vvp",
+      "files": 1,
+      "bytes": 113969,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/camera_pads_tb.vvp",
+      "files": 1,
+      "bytes": 93982,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/cpu_regs_tb.vvp",
+      "files": 1,
+      "bytes": 36235,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_hud_tb.vvp",
+      "files": 1,
+      "bytes": 106025,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_linux_tb.vvp",
+      "files": 1,
+      "bytes": 44130,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_overlay_tb.vvp",
+      "files": 1,
+      "bytes": 14228,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/detection_rx_tb.vvp",
+      "files": 1,
+      "bytes": 64048,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/dvp_tb.vvp",
+      "files": 1,
+      "bytes": 25834,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/encoder_diagnostic_tb.vvp",
+      "files": 1,
+      "bytes": 805571,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/ethernet_clock_tb.vvp",
+      "files": 1,
+      "bytes": 21270,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/imu_fault_latch_tb.vvp",
+      "files": 1,
+      "bytes": 73196,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/imu_sensor_tb.vvp",
+      "files": 1,
+      "bytes": 181853,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/ld06_embedded_header_tb.vvp",
+      "files": 1,
+      "bytes": 52769,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/ld06_recovery_tb.vvp",
+      "files": 1,
+      "bytes": 57755,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/lidar_filter_tb.vvp",
+      "files": 1,
+      "bytes": 39262,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/lidar_guard_tb.vvp",
+      "files": 1,
+      "bytes": 35361,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/local_offline_startup_tb.vvp",
+      "files": 1,
+      "bytes": 804778,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/mission_core_tb.vvp",
+      "files": 1,
+      "bytes": 804756,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/mode_display_tb.vvp",
+      "files": 1,
+      "bytes": 10071,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/motion_feedback_tb.vvp",
+      "files": 1,
+      "bytes": 26166,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/motion_planner_tb.vvp",
+      "files": 1,
+      "bytes": 88650,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_driver_tb.vvp",
+      "files": 1,
+      "bytes": 43323,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_heading_tb.vvp",
+      "files": 1,
+      "bytes": 46322,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/mpu_i2c_tb.vvp",
+      "files": 1,
+      "bytes": 33084,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/navigation_filter_tb.vvp",
+      "files": 1,
+      "bytes": 145408,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/navigation_scan_tb.vvp",
+      "files": 1,
+      "bytes": 56564,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/osd_layout_tb.vvp",
+      "files": 1,
+      "bytes": 109158,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/path_guard_tb.vvp",
+      "files": 1,
+      "bytes": 54164,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/pi_target_limit_tb.vvp",
+      "files": 1,
+      "bytes": 32594,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/quadrature_filter_tb.vvp",
+      "files": 1,
+      "bytes": 23433,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/reverse_escape_tb.vvp",
+      "files": 1,
+      "bytes": 94972,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/rgmii_rx_tb.vvp",
+      "files": 1,
+      "bytes": 460530,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/speed_tb.vvp",
+      "files": 1,
+      "bytes": 15573,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/task_rx_tb.vvp",
+      "files": 1,
+      "bytes": 54657,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/task_telemetry_tb.vvp",
+      "files": 1,
+      "bytes": 29392,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/udp_tx_tb.vvp",
+      "files": 1,
+      "bytes": 29135,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/tests/video_udp_tx_tb.vvp",
+      "files": 1,
+      "bytes": 83980,
+      "reason": "Regenerable simulation executable/preview",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/a745.gprj.user",
+      "files": 1,
+      "bytes": 1441,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.bin",
+      "files": 1,
+      "bytes": 2464499,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.binx",
+      "files": 1,
+      "bytes": 2465116,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.db",
+      "files": 1,
+      "bytes": 979112,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.p",
+      "files": 1,
+      "bytes": 5264586,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.pr",
+      "files": 1,
+      "bytes": 97621422,
+      "reason": "Current build intermediate; retain sole FS, routed SDF/VO/STA and synthesis netlist",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.local",
+      "files": 17,
+      "bytes": 40396742,
+      "reason": "Downloader staging copies; current audit moved before deletion",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/__pycache__",
+      "files": 1,
+      "bytes": 1236,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/bcrypt/__pycache__",
+      "files": 1,
+      "bytes": 607,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cffi/__pycache__",
+      "files": 20,
+      "bytes": 422419,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/__pycache__",
+      "files": 6,
+      "bytes": 21817,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/__pycache__",
+      "files": 2,
+      "bytes": 22193,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/asn1/__pycache__",
+      "files": 2,
+      "bytes": 19157,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/backends/__pycache__",
+      "files": 1,
+      "bytes": 532,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/backends/openssl/__pycache__",
+      "files": 2,
+      "bytes": 14349,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/bindings/__pycache__",
+      "files": 1,
+      "bytes": 286,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/bindings/openssl/__pycache__",
+      "files": 3,
+      "bytes": 10544,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/decrepit/__pycache__",
+      "files": 1,
+      "bytes": 286,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/decrepit/ciphers/__pycache__",
+      "files": 3,
+      "bytes": 8518,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/__pycache__",
+      "files": 13,
+      "bytes": 33937,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/asymmetric/__pycache__",
+      "files": 14,
+      "bytes": 101846,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/ciphers/__pycache__",
+      "files": 5,
+      "bytes": 20659,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/kdf/__pycache__",
+      "files": 8,
+      "bytes": 7315,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/serialization/__pycache__",
+      "files": 5,
+      "bytes": 93657,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/hazmat/primitives/twofactor/__pycache__",
+      "files": 3,
+      "bytes": 8229,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/cryptography/x509/__pycache__",
+      "files": 9,
+      "bytes": 208785,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/fitz/__pycache__",
+      "files": 3,
+      "bytes": 1320,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/flatbuffers/__pycache__",
+      "files": 10,
+      "bytes": 132214,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/__pycache__",
+      "files": 34,
+      "bytes": 717438,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/compiler/__pycache__",
+      "files": 2,
+      "bytes": 3607,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/internal/__pycache__",
+      "files": 18,
+      "bytes": 310920,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/pyext/__pycache__",
+      "files": 2,
+      "bytes": 1938,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/testdata/__pycache__",
+      "files": 1,
+      "bytes": 231,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/google/protobuf/util/__pycache__",
+      "files": 1,
+      "bytes": 227,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/__pycache__",
+      "files": 16,
+      "bytes": 288579,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/completion/__pycache__",
+      "files": 2,
+      "bytes": 5943,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/parser/__pycache__",
+      "files": 4,
+      "bytes": 40873,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/__pycache__",
+      "files": 1,
+      "bytes": 220,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/fluidity/__pycache__",
+      "files": 3,
+      "bytes": 17492,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/lexicon/__pycache__",
+      "files": 4,
+      "bytes": 8360,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/invoke/vendor/yaml/__pycache__",
+      "files": 17,
+      "bytes": 252079,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/__pycache__",
+      "files": 9,
+      "bytes": 67276,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/bindings/__pycache__",
+      "files": 16,
+      "bytes": 173030,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/nacl/pwhash/__pycache__",
+      "files": 5,
+      "bytes": 22858,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/__pycache__",
+      "files": 7,
+      "bytes": 109117,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/__pycache__",
+      "files": 57,
+      "bytes": 917018,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/approximation/__pycache__",
+      "files": 15,
+      "bytes": 166311,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/approximation/tests/__pycache__",
+      "files": 15,
+      "bytes": 144909,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/assortativity/__pycache__",
+      "files": 6,
+      "bytes": 36372,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/assortativity/tests/__pycache__",
+      "files": 7,
+      "bytes": 50347,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/bipartite/__pycache__",
+      "files": 15,
+      "bytes": 172356,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/bipartite/tests/__pycache__",
+      "files": 15,
+      "bytes": 171553,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/centrality/__pycache__",
+      "files": 22,
+      "bytes": 211950,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/centrality/tests/__pycache__",
+      "files": 21,
+      "bytes": 247476,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/coloring/__pycache__",
+      "files": 3,
+      "bytes": 37989,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/coloring/tests/__pycache__",
+      "files": 2,
+      "bytes": 28372,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/community/__pycache__",
+      "files": 14,
+      "bytes": 176272,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/community/tests/__pycache__",
+      "files": 14,
+      "bytes": 144213,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/components/__pycache__",
+      "files": 7,
+      "bytes": 47187,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/components/tests/__pycache__",
+      "files": 7,
+      "bytes": 48181,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/connectivity/__pycache__",
+      "files": 10,
+      "bytes": 173660,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/connectivity/tests/__pycache__",
+      "files": 9,
+      "bytes": 145454,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/flow/__pycache__",
+      "files": 12,
+      "bytes": 167566,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/flow/tests/__pycache__",
+      "files": 6,
+      "bytes": 95591,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/isomorphism/__pycache__",
+      "files": 9,
+      "bytes": 219235,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/isomorphism/tests/__pycache__",
+      "files": 11,
+      "bytes": 277589,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/link_analysis/__pycache__",
+      "files": 3,
+      "bytes": 32998,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/link_analysis/tests/__pycache__",
+      "files": 3,
+      "bytes": 20800,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/minors/__pycache__",
+      "files": 2,
+      "bytes": 28508,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/minors/tests/__pycache__",
+      "files": 1,
+      "bytes": 27493,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/operators/__pycache__",
+      "files": 5,
+      "bytes": 55642,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/operators/tests/__pycache__",
+      "files": 5,
+      "bytes": 81504,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/shortest_paths/__pycache__",
+      "files": 6,
+      "bytes": 157011,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/shortest_paths/tests/__pycache__",
+      "files": 7,
+      "bytes": 140344,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tests/__pycache__",
+      "files": 58,
+      "bytes": 895852,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/traversal/__pycache__",
+      "files": 6,
+      "bytes": 56659,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/traversal/tests/__pycache__",
+      "files": 6,
+      "bytes": 47094,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tree/__pycache__",
+      "files": 8,
+      "bytes": 125483,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/algorithms/tree/tests/__pycache__",
+      "files": 8,
+      "bytes": 106832,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/classes/__pycache__",
+      "files": 10,
+      "bytes": 401551,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/classes/tests/__pycache__",
+      "files": 16,
+      "bytes": 439594,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/drawing/__pycache__",
+      "files": 6,
+      "bytes": 240844,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/drawing/tests/__pycache__",
+      "files": 7,
+      "bytes": 180475,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/generators/__pycache__",
+      "files": 30,
+      "bytes": 510882,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/generators/tests/__pycache__",
+      "files": 29,
+      "bytes": 323540,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/linalg/__pycache__",
+      "files": 8,
+      "bytes": 94889,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/linalg/tests/__pycache__",
+      "files": 8,
+      "bytes": 86385,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/__pycache__",
+      "files": 13,
+      "bytes": 250845,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/json_graph/__pycache__",
+      "files": 5,
+      "bytes": 28956,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/json_graph/tests/__pycache__",
+      "files": 5,
+      "bytes": 20535,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/readwrite/tests/__pycache__",
+      "files": 12,
+      "bytes": 316167,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/tests/__pycache__",
+      "files": 11,
+      "bytes": 153292,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/utils/__pycache__",
+      "files": 10,
+      "bytes": 211716,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/networkx/utils/tests/__pycache__",
+      "files": 11,
+      "bytes": 120063,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/__pycache__",
+      "files": 13,
+      "bytes": 96341,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/char/__pycache__",
+      "files": 1,
+      "bytes": 1296,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/core/__pycache__",
+      "files": 19,
+      "bytes": 15726,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ctypeslib/__pycache__",
+      "files": 2,
+      "bytes": 22898,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/doc/__pycache__",
+      "files": 1,
+      "bytes": 5650,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/__pycache__",
+      "files": 18,
+      "bytes": 510871,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/tests/__pycache__",
+      "files": 35,
+      "bytes": 317808,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/f2py/_backends/__pycache__",
+      "files": 3,
+      "bytes": 16380,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/fft/__pycache__",
+      "files": 3,
+      "bytes": 81289,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/fft/tests/__pycache__",
+      "files": 3,
+      "bytes": 58382,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/lib/__pycache__",
+      "files": 32,
+      "bytes": 960872,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/lib/tests/__pycache__",
+      "files": 26,
+      "bytes": 1279628,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/linalg/__pycache__",
+      "files": 2,
+      "bytes": 128956,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/linalg/tests/__pycache__",
+      "files": 4,
+      "bytes": 165250,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ma/__pycache__",
+      "files": 5,
+      "bytes": 442285,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/ma/tests/__pycache__",
+      "files": 9,
+      "bytes": 631982,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/matrixlib/__pycache__",
+      "files": 2,
+      "bytes": 36775,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/matrixlib/tests/__pycache__",
+      "files": 8,
+      "bytes": 82877,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/polynomial/__pycache__",
+      "files": 9,
+      "bytes": 469507,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/polynomial/tests/__pycache__",
+      "files": 11,
+      "bytes": 308668,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/__pycache__",
+      "files": 2,
+      "bytes": 10490,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/tests/__pycache__",
+      "files": 11,
+      "bytes": 573345,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/tests/data/__pycache__",
+      "files": 1,
+      "bytes": 230,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/_examples/cffi/__pycache__",
+      "files": 2,
+      "bytes": 4003,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/random/_examples/numba/__pycache__",
+      "files": 2,
+      "bytes": 6658,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/rec/__pycache__",
+      "files": 1,
+      "bytes": 309,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/strings/__pycache__",
+      "files": 1,
+      "bytes": 313,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/__pycache__",
+      "files": 3,
+      "bytes": 11755,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/tests/__pycache__",
+      "files": 2,
+      "bytes": 130038,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/testing/_private/__pycache__",
+      "files": 3,
+      "bytes": 122631,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/tests/__pycache__",
+      "files": 12,
+      "bytes": 73088,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/__pycache__",
+      "files": 2,
+      "bytes": 16255,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/tests/__pycache__",
+      "files": 4,
+      "bytes": 17641,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/typing/tests/data/pass/__pycache__",
+      "files": 35,
+      "bytes": 222965,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/__pycache__",
+      "files": 29,
+      "bytes": 1015303,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/__pycache__",
+      "files": 68,
+      "bytes": 4063743,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/examples/cython/__pycache__",
+      "files": 1,
+      "bytes": 1303,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_core/tests/examples/limited_api/__pycache__",
+      "files": 1,
+      "bytes": 843,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_pyinstaller/__pycache__",
+      "files": 2,
+      "bytes": 1176,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_pyinstaller/tests/__pycache__",
+      "files": 3,
+      "bytes": 5234,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_typing/__pycache__",
+      "files": 12,
+      "bytes": 50093,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/numpy/_utils/__pycache__",
+      "files": 4,
+      "bytes": 33292,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/olefile/__pycache__",
+      "files": 2,
+      "bytes": 102760,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/__pycache__",
+      "files": 1,
+      "bytes": 19876,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/backend/__pycache__",
+      "files": 3,
+      "bytes": 13563,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/capi/__pycache__",
+      "files": 9,
+      "bytes": 109200,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/datasets/__pycache__",
+      "files": 1,
+      "bytes": 967,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/__pycache__",
+      "files": 17,
+      "bytes": 567415,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/CalTableFlatBuffers/__pycache__",
+      "files": 3,
+      "bytes": 9210,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/execution_providers/qnn/__pycache__",
+      "files": 6,
+      "bytes": 67866,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/fusions/__pycache__",
+      "files": 5,
+      "bytes": 35259,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/neural_compressor/__pycache__",
+      "files": 4,
+      "bytes": 107032,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/quantization/operators/__pycache__",
+      "files": 24,
+      "bytes": 103705,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/__pycache__",
+      "files": 17,
+      "bytes": 285096,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/mobile_helpers/__pycache__",
+      "files": 2,
+      "bytes": 31220,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/__pycache__",
+      "files": 5,
+      "bytes": 45410,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/ort_flatbuffers_py/__pycache__",
+      "files": 1,
+      "bytes": 260,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/ort_format_model/ort_flatbuffers_py/fbs/__pycache__",
+      "files": 46,
+      "bytes": 301898,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/qdq_helpers/__pycache__",
+      "files": 2,
+      "bytes": 1958,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/tools/qnn/__pycache__",
+      "files": 3,
+      "bytes": 34245,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/__pycache__",
+      "files": 83,
+      "bytes": 1331822,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/bart/__pycache__",
+      "files": 2,
+      "bytes": 6234,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/bert/__pycache__",
+      "files": 2,
+      "bytes": 12970,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/gpt2/__pycache__",
+      "files": 7,
+      "bytes": 131145,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/llama/__pycache__",
+      "files": 10,
+      "bytes": 156576,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/longformer/__pycache__",
+      "files": 5,
+      "bytes": 55725,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/phi2/__pycache__",
+      "files": 3,
+      "bytes": 43327,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/sam2/__pycache__",
+      "files": 11,
+      "bytes": 117908,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/stable_diffusion/__pycache__",
+      "files": 17,
+      "bytes": 337129,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/t5/__pycache__",
+      "files": 6,
+      "bytes": 59889,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/onnxruntime/transformers/models/whisper/__pycache__",
+      "files": 11,
+      "bytes": 191137,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/packaging/__pycache__",
+      "files": 20,
+      "bytes": 440029,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/packaging/licenses/__pycache__",
+      "files": 2,
+      "bytes": 55690,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/paramiko/__pycache__",
+      "files": 42,
+      "bytes": 767898,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/PIL/__pycache__",
+      "files": 97,
+      "bytes": 1384699,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/__pycache__",
+      "files": 3,
+      "bytes": 3835,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/__pycache__",
+      "files": 9,
+      "bytes": 112813,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/cli/__pycache__",
+      "files": 13,
+      "bytes": 105067,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/commands/__pycache__",
+      "files": 18,
+      "bytes": 149616,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/distributions/__pycache__",
+      "files": 5,
+      "bytes": 16412,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/index/__pycache__",
+      "files": 4,
+      "bytes": 75874,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/locations/__pycache__",
+      "files": 4,
+      "bytes": 35176,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/metadata/__pycache__",
+      "files": 4,
+      "bytes": 60252,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/metadata/importlib/__pycache__",
+      "files": 4,
+      "bytes": 28943,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/models/__pycache__",
+      "files": 12,
+      "bytes": 67665,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/network/__pycache__",
+      "files": 8,
+      "bytes": 73867,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/__pycache__",
+      "files": 4,
+      "bytes": 43457,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/build/__pycache__",
+      "files": 8,
+      "bytes": 22460,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/operations/install/__pycache__",
+      "files": 3,
+      "bytes": 36269,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/req/__pycache__",
+      "files": 6,
+      "bytes": 125189,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/__pycache__",
+      "files": 2,
+      "bytes": 1450,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/legacy/__pycache__",
+      "files": 2,
+      "bytes": 22851,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/resolution/resolvelib/__pycache__",
+      "files": 9,
+      "bytes": 120583,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/utils/__pycache__",
+      "files": 26,
+      "bytes": 156231,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_internal/vcs/__pycache__",
+      "files": 6,
+      "bytes": 73930,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/__pycache__",
+      "files": 2,
+      "bytes": 144070,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/cachecontrol/__pycache__",
+      "files": 9,
+      "bytes": 48317,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/cachecontrol/caches/__pycache__",
+      "files": 3,
+      "bytes": 11017,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/certifi/__pycache__",
+      "files": 3,
+      "bytes": 4279,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/distlib/__pycache__",
+      "files": 13,
+      "bytes": 469287,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/distro/__pycache__",
+      "files": 3,
+      "bytes": 55149,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/idna/__pycache__",
+      "files": 8,
+      "bytes": 284325,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/msgpack/__pycache__",
+      "files": 4,
+      "bytes": 53687,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/packaging/__pycache__",
+      "files": 14,
+      "bytes": 177641,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/packaging/licenses/__pycache__",
+      "files": 2,
+      "bytes": 51554,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pkg_resources/__pycache__",
+      "files": 1,
+      "bytes": 161296,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/platformdirs/__pycache__",
+      "files": 8,
+      "bytes": 83861,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/__pycache__",
+      "files": 16,
+      "bytes": 167333,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/filters/__pycache__",
+      "files": 1,
+      "bytes": 37947,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/formatters/__pycache__",
+      "files": 14,
+      "bytes": 172574,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/lexers/__pycache__",
+      "files": 3,
+      "bytes": 125959,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pygments/styles/__pycache__",
+      "files": 2,
+      "bytes": 6384,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/__pycache__",
+      "files": 2,
+      "bytes": 18865,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__",
+      "files": 2,
+      "bytes": 16462,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/requests/__pycache__",
+      "files": 18,
+      "bytes": 211034,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/resolvelib/__pycache__",
+      "files": 5,
+      "bytes": 46699,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/resolvelib/compat/__pycache__",
+      "files": 2,
+      "bytes": 692,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/rich/__pycache__",
+      "files": 77,
+      "bytes": 1132688,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/tomli/__pycache__",
+      "files": 4,
+      "bytes": 34239,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/truststore/__pycache__",
+      "files": 6,
+      "bytes": 56389,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/__pycache__",
+      "files": 11,
+      "bytes": 166897,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/__pycache__",
+      "files": 7,
+      "bytes": 87036,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__pycache__",
+      "files": 3,
+      "bytes": 32513,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/__pycache__",
+      "files": 2,
+      "bytes": 41526,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/packages/backports/__pycache__",
+      "files": 3,
+      "bytes": 9478,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pip/_vendor/urllib3/util/__pycache__",
+      "files": 13,
+      "bytes": 100657,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/psutil/__pycache__",
+      "files": 10,
+      "bytes": 383250,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pycparser/__pycache__",
+      "files": 7,
+      "bytes": 288271,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/__pycache__",
+      "files": 18,
+      "bytes": 5262957,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/__pycache__",
+      "files": 14,
+      "bytes": 215856,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/onnx/__pycache__",
+      "files": 19,
+      "bytes": 413927,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf/layout/presidio/__pycache__",
+      "files": 2,
+      "bytes": 34717,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/__pycache__",
+      "files": 5,
+      "bytes": 36365,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/__pycache__",
+      "files": 6,
+      "bytes": 204948,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/chunking/__pycache__",
+      "files": 9,
+      "bytes": 123589,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/helpers/table_html/__pycache__",
+      "files": 3,
+      "bytes": 7475,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/llama/__pycache__",
+      "files": 1,
+      "bytes": 4519,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pymupdf4llm/ocr/__pycache__",
+      "files": 13,
+      "bytes": 53098,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/__pycache__",
+      "files": 19,
+      "bytes": 670983,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/actions/__pycache__",
+      "files": 2,
+      "bytes": 9142,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/annotations/__pycache__",
+      "files": 4,
+      "bytes": 22226,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/generic/__pycache__",
+      "files": 15,
+      "bytes": 315236,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_codecs/__pycache__",
+      "files": 8,
+      "bytes": 997483,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_crypt_providers/__pycache__",
+      "files": 5,
+      "bytes": 20587,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_text_extraction/__pycache__",
+      "files": 2,
+      "bytes": 28703,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/pypdf/_text_extraction/_layout_mode/__pycache__",
+      "files": 4,
+      "bytes": 43440,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/serial/__pycache__",
+      "files": 10,
+      "bytes": 197434,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/serial/threaded/__pycache__",
+      "files": 1,
+      "bytes": 13892,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/serial/tools/__pycache__",
+      "files": 9,
+      "bytes": 109323,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/serial/urlhandler/__pycache__",
+      "files": 8,
+      "bytes": 62969,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/tabulate/__pycache__",
+      "files": 1,
+      "bytes": 102038,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/yaml/__pycache__",
+      "files": 17,
+      "bytes": 250682,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/ziglang/__pycache__",
+      "files": 2,
+      "bytes": 953,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/.venv/Lib/site-packages/_yaml/__pycache__",
+      "files": 1,
+      "bytes": 894,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/host/__pycache__",
+      "files": 12,
+      "bytes": 173367,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/scripts/__pycache__",
+      "files": 7,
+      "bytes": 59347,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    },
+    {
+      "path": "code/camera-car-control/a745-autonomous/tests/__pycache__",
+      "files": 1,
+      "bytes": 10753,
+      "reason": "Python bytecode or CAD automatic backup",
+      "stage": "now"
+    }
+  ],
+  "protected_current_inputs": [
+    "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/firmware/mission.hex",
+    "code/camera-car-control/a745-autonomous/.local/gowin-a745-autonomous/impl/pnr/a745.fs",
+    "code/camera-car-control/a745-autonomous/.local/platform/a745.cst",
+    "code/camera-car-control/a745-autonomous/.local/platform/a745.sdc",
+    "code/camera-car-control/a745-autonomous/.local/platform/a745_top.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/ddr3_memory_interface.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/ddr_pll.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/ddr_pll_mod.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/ethernet_pll_mod.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/gmii_to_rgmii.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/gowin_pll.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/pll_init.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/pll_mDRP_intf.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/tft_gowin_pll.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/tft_gowin_pll_mod.v",
+    "code/camera-car-control/a745-autonomous/.local/platform/tft_pll_init.v",
+    "code/camera-car-control/a745-autonomous/.local/tests/task-telemetry.hex",
+    "code/camera-car-control/a745-autonomous/.local/tests/udp-frames.hex",
+    "code/camera-car-control/a745-autonomous/config/geometry.json",
+    "code/camera-car-control/a745-autonomous/firmware/mission.hex",
+    "code/camera-car-control/a745-autonomous/host/detection_return.py",
+    "code/camera-car-control/a745-autonomous/host/fpga_video_yolo_web.py",
+    "code/camera-car-control/a745-autonomous/host/receiver.py",
+    "code/camera-car-control/a745-autonomous/host/test_detection_return.py",
+    "code/camera-car-control/a745-autonomous/lib/a741_attitude.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_bare_cpu.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_button_debounce.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_display_cdc.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_divider.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_imu_i2c.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_lidar_guard.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_motion_feedback.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_phy_config.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_pi.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_sensors.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_speed.v",
+    "code/camera-car-control/a745-autonomous/lib/a741_tft800_panel.v",
+    "code/camera-car-control/a745-autonomous/lib/async_fifo.v",
+    "code/camera-car-control/a745-autonomous/lib/capture_tokens.v",
+    "code/camera-car-control/a745-autonomous/lib/cdc_mailbox.v",
+    "code/camera-car-control/a745-autonomous/lib/ddr_framebuffer.v",
+    "code/camera-car-control/a745-autonomous/lib/encoder_counter.v",
+    "code/camera-car-control/a745-autonomous/lib/ld06_control.v",
+    "code/camera-car-control/a745-autonomous/lib/ld06_parser.v",
+    "code/camera-car-control/a745-autonomous/lib/motor_pwm_safe.v",
+    "code/camera-car-control/a745-autonomous/lib/mpu6050_driver.v",
+    "code/camera-car-control/a745-autonomous/lib/mpu6050_heading.v",
+    "code/camera-car-control/a745-autonomous/lib/quadrature_decoder.v",
+    "code/camera-car-control/a745-autonomous/lib/reset_sync.v",
+    "code/camera-car-control/a745-autonomous/lib/uart_rx.v",
+    "code/camera-car-control/a745-autonomous/lib/video_pixels.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_autonomy.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_boot.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_camera_pads.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_core.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_cpu_regs.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_detection_overlay.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_detection_rx.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_dvp_capture.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_lidar_filter.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_mode_display.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_motion_planner.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_navigation_scan.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_osd.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_path_envelope.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_path_guard.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_rgmii_rx.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_task_rx.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_top.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_turn_envelope.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_udp_tx.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_capture_tx.v",
+    "code/camera-car-control/a745-autonomous/rtl/a745_video_udp_tx.v",
+    "code/camera-car-control/a745-autonomous/scripts/check_detection_gate.py",
+    "code/camera-car-control/a745-autonomous/scripts/check_mission_gate.py",
+    "code/camera-car-control/a745-autonomous/scripts/check_navigation_gate.py",
+    "code/camera-car-control/a745-autonomous/scripts/generate_path_envelope.py",
+    "code/camera-car-control/a745-autonomous/scripts/generate_turn_envelope.py",
+    "code/camera-car-control/a745-autonomous/tests/async_fifo_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/attitude_filter_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/attitude_session_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/autonomy_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/bare_cpu_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/button_debounce_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/button_startup_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/camera_boot_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/camera_pads_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/camera_tft800_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/check_detection.py",
+    "code/camera-car-control/a745-autonomous/tests/check_lidar_replay.py",
+    "code/camera-car-control/a745-autonomous/tests/check_path_geometry.py",
+    "code/camera-car-control/a745-autonomous/tests/check_protocol.py",
+    "code/camera-car-control/a745-autonomous/tests/check_turn_geometry.py",
+    "code/camera-car-control/a745-autonomous/tests/cpu_regs_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/detection_hud_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/detection_linux_frame.hex",
+    "code/camera-car-control/a745-autonomous/tests/detection_linux_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/detection_overlay_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/detection_rx_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/dvp_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/encoder_diagnostic_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/ethernet_clock_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/gates/supervisor_gate_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/imu_fault_latch_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/imu_sensor_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/ld06_embedded_header_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/ld06_recovery_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/lidar_filter_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/lidar_guard_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/mission_core_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/mode_display_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/motion_feedback_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/motion_planner_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/mpu_driver_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/mpu_heading_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/mpu_i2c_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/navigation_filter_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/navigation_scan_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/osd_layout_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/path_guard_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/pi_target_limit_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/quadrature_filter_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/reverse_escape_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/rgmii_rx_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/speed_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/task_packet.hex",
+    "code/camera-car-control/a745-autonomous/tests/task_rx_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/task_telemetry_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/udp_tx_tb.v",
+    "code/camera-car-control/a745-autonomous/tests/video_udp_tx_tb.v",
+    "code/camera-car-control/a745-autonomous/vendor/i2c_bit_shift.v",
+    "code/camera-car-control/a745-autonomous/vendor/i2c_control.v",
+    "code/camera-car-control/a745-autonomous/vendor/ov5640_init_table_rgb.v",
+    "code/camera-car-control/a745-autonomous/vendor/picorv32.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_async_fifo_adapter.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_rx.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/axis_gmii_tx.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/eth_mac_1g_fifo.v",
+    "code/camera-car-control/third_party/verilog-ethernet/rtl/lfsr.v"
+  ],
+  "current_bitstream_sha256": "96626b87fb5afaff0b5052bd16e39145bf644bf20f786357bbfad5ebcf74ee16",
+  "deletion_estimate_files": 4602,
+  "deletion_estimate_bytes": 2123005084,
+  "preserve_environment": "code/camera-car-control/.venv is the active development environment, not a historical build cache",
+  "preserve_cad": "V4 five geometry inputs, V5 editable models/exports, hardware originals and PCB sources"
+}
